@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => 'Alerj - Parla', //env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
