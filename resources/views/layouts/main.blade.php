@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>PragmRX</title>
+        <title>{{ config('app.name') }}</title>
 
         <link rel="stylesheet" href="/css/app.css">
 
@@ -25,17 +25,17 @@
             <nav class="flex items-center justify-between flex-wrap bg-red-dark p-6">
                 <div class="flex items-center flex-no-shrink text-white mr-6">
                     <span class="text-3xl tracking-tight">
-                        <router-link to="/">
-                            PragmaRX
-                        </router-link>
+                        <title>{{ config('app.name') }}</title>
                     </span>
                 </div>
-
-                <main-menu></main-menu>
             </nav>
 
-            <div class="mt-6 h-full">
-                <router-view></router-view>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        @yield('contents')
+                    </div>
+                </div>
             </div>
 
             @version

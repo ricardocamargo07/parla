@@ -41,7 +41,7 @@ if (token) {
  * Swiper
  */
 
-window.swiper = require('swiper');
+// window.Swiper = require('swiper');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
