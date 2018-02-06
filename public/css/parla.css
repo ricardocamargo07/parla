@@ -168,6 +168,11 @@ figcaption.article-image-caption {
     color: #9493a5;
     letter-spacing: 0.4px;
 }
+.article-image-author {
+    color: #384043;
+    float: right;
+    font-style: italic;
+}
 
 
 .article-details {
@@ -186,6 +191,23 @@ figcaption.article-image-caption {
 }
 
 
+
+
+.article-side-list a {
+    /*color: #586064;*/
+}
+
+.article-side-list a:hover {
+    text-decoration: none;
+}
+
+
+.article-side-list h4 {
+    font-size: ;
+}
+.article-side-list h4 a {
+    color: #586064;
+}
 .article-side-list article .col-xs-7 {
     padding-left: 0px;
 }
@@ -199,6 +221,7 @@ figcaption.article-image-caption {
     font-size: 9pt;
     line-height: 1.4;
     margin-top: 5px;
+    color: #9493a5;
 }
 
 
@@ -209,6 +232,28 @@ figcaption.article-image-caption {
 
 .col-md-4.article-side-list {
     border-top: 1px solid #babd7b;
+}
+
+
+.article-side-list .article-info {
+    text-align: right;
+    font-size: 80%;
+}
+
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #96a53b;
+    border-color: #96a53b;
+    padding: .2em 1em .2em;
+    font-size: 95%;
+}
+
+.btn-primary:hover {
+    background-color: #9493a5;
+    border-color: #9493a5;
 }
 
 

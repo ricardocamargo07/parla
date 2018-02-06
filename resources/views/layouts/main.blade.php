@@ -57,23 +57,6 @@
                             <img src="/images/parla_horizontal_fundoescuro.svg">
                             <p class="publication-name">Publicação quinzenal da Subdiretoria-Geral e Comunicação Social da Assembléia Legislativa do Estado do Rio de Janeiro
                             </p>
-
-
-
-{{--
-
-                            <ul>
-                                <li>Jornalista responsável: Daniella Sholl (MTB 3847)</li>
-                                <li>Editor: André Coelho</li>
-                                <li>Coordenação: Daniela Matta e Jorge Ramos</li>
-                                <li>Equipe: Buanna Rosa, Camilla Pontes, Gustavo Natario, Isabela Cabral, Octacílio Barbosa, Tainah Vieira, Thiago Lontra, Symone Munay e Vanessa Schumacker</li>
-                                <li>Edição de Arte: Daniel Tiriba e Rodrigo Cortez</li>
-                                <li>Editor de Fotografia: Rafael Wallace</li>
-                                <li>Secretária da Redação: Regina Torres</li>
-                                <li>Estagiários: Carolina Moura, Danilo Gabriel (redes sociais), Elisa Calmon, Leon Lucius, Luís Gustavoc(foto) e Thiago Oliveira (redes sociais)</li>
-                            </ul>--}}
-
-
                         </div>
                         <div class="col-md-9 expediente">
                             <div class="expediente-linha"><span class="expediente-label">Jornalista responsável: </span><span class="expediente-names">Daniella Sholl (MTB 3847)</span></div>

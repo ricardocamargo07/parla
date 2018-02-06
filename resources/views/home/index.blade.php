@@ -283,23 +283,21 @@
 
     <div class="article-internal">
         <div class="container">
-
             <div class="row">
-
                 <article class="col-md-8">
                     <div class="article-details">
                         <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span><span class="post-author ">Nome e Sobrenome do Autor</span>
-
                     </div>
-
                     <h1 class="article-title">Exposição ‘Ex Africa’ leva cultura africana ao centro do Rio</h1>
                     <h5 class="article-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit., consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit.  </h5>
-
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                            <img class="img img-responsive article-img" src="https://picsum.photos/1000/750" >
                             <figcaption class="article-image-caption">
+                                <span class="article-image-author">Nome do Autor</span>
+
                                 A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea
+
                             </figcaption>
                         </figure>
                     </div>
@@ -330,15 +328,14 @@
 
                 <div class="col-md-4 article-side-list">
                     <article class="">
-                        <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
                         <div class="row">
-
                             <figure class="col-xs-5">
                                 <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
+                                <div class="article-info"><span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span></div>
                                 <h4 class="article-title"><a href="">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
@@ -351,13 +348,13 @@
                     </article>
 
                     <article class="">
-                        <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
                         <div class="row">
-
                             <figure class="col-xs-5">
+
                                 <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
+
                             </figure>
                             <div class="col-xs-7">
                                 <h4 class="article-title"><a href="">Your article title goes here</a></h4>
@@ -370,85 +367,8 @@
                             </div>
                         </div>
                     </article>
-                    <article class="">
-                        <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                        <div class="row">
 
-                            <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
-                                <figcaption class="article-caption">
-                                </figcaption>
-                            </figure>
-                            <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
-                                <div class="article-intro" >
-                                    <p>
-                                        Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
-                                    </p>
-                                </div>
 
-                            </div>
-                        </div>
-                    </article>
-                    <article class="">
-                        <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                        <div class="row">
-
-                            <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
-                                <figcaption class="article-caption">
-                                </figcaption>
-                            </figure>
-                            <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
-                                <div class="article-intro" >
-                                    <p>
-                                        Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </article>
-                    <article class="">
-                        <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                        <div class="row">
-
-                            <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
-                                <figcaption class="article-caption">
-                                </figcaption>
-                            </figure>
-                            <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
-                                <div class="article-intro" >
-                                    <p>
-                                        Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </article>
-                    <article class="">
-                        <div class="row">
-
-                            <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
-                                <figcaption class="article-caption">
-                                </figcaption>
-                            </figure>
-                            <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
-                                <div class="article-intro" >
-                                    <p>
-                                        Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </article>
 
 
                 </div>
