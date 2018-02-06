@@ -30,24 +30,22 @@
 
     <div class="row">
         <div class="col-md-12">
+            <!-- Swiper -->
             <div class="swiper-container">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    ...
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?1" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?2" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?3" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?4" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?5" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?6" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?7" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?8" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?9" alt=""></div>
+                    <div class="swiper-slide"><img src="https://picsum.photos/300/200/?10" alt="">0</div>
                 </div>
-                <!-- If we need pagination -->
+                <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
             </div>
         </div>
     </div>
