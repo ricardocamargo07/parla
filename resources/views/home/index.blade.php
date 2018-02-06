@@ -1,11 +1,6 @@
 @extends('layouts.main')
 
 @section('contents')
-
-
-
-
-
         <div class="container header-main-inner">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 block-logo">
@@ -92,14 +87,14 @@
                 <article class="col-md-4">
                     <div class="row">
                     <figure class="col-xs-12">
-                        <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                        <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                         <figcaption class="article-caption">
                         </figcaption>
                     </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                   {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                   {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -116,14 +111,14 @@
                 <article class="col-md-4">
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                             <figcaption class="article-caption">
                             </figcaption>
                         </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                    {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                    {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -140,14 +135,14 @@
                 <article class="col-md-4">
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                             <figcaption class="article-caption">
                             </figcaption>
                         </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                    {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                    {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -164,14 +159,14 @@
                 <article class="col-md-4">
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                             <figcaption class="article-caption">
                             </figcaption>
                         </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                    {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                    {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -188,14 +183,14 @@
                 <article class="col-md-4">
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                             <figcaption class="article-caption">
                             </figcaption>
                         </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                    {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                    {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -212,14 +207,14 @@
                 <article class="col-md-4">
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                             <figcaption class="article-caption">
                             </figcaption>
                         </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                    {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                    {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -236,14 +231,14 @@
                 <article class="col-md-4">
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
                             <figcaption class="article-caption">
                             </figcaption>
                         </figure>
                     </div>
-                    <h3 class="article-title"><a href="">Your article title goes here</a></h3>
+                    <h3 class="article-title"><a href="/post">Your article title goes here</a></h3>
                     <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
-                    {{--<h5 class="article-subtitle"><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
+                    {{--<h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>--}}
                     <div class="article-intro" >
                         <p>
                             Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
@@ -297,7 +292,7 @@
 
                     <div class="row">
                         <figure class="col-xs-12">
-                            <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                            <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                             <figcaption class="article-image-caption">
                                 A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea
                             </figcaption>
@@ -334,12 +329,12 @@
                         <div class="row">
 
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                                <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
+                                <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
                                         Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
@@ -355,12 +350,12 @@
                         <div class="row">
 
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                                <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
+                                <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
                                         Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
@@ -375,12 +370,12 @@
                         <div class="row">
 
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                                <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
+                                <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
                                         Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
@@ -395,12 +390,12 @@
                         <div class="row">
 
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                                <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
+                                <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
                                         Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
@@ -415,12 +410,12 @@
                         <div class="row">
 
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                                <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
+                                <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
                                         Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
@@ -434,12 +429,12 @@
                         <div class="row">
 
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
+                                <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750" ></a>
                                 <figcaption class="article-caption">
                                 </figcaption>
                             </figure>
                             <div class="col-xs-7">
-                                <h4 class="article-title"><a href="">Your article title goes here</a></h4>
+                                <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
                                 <div class="article-intro" >
                                     <p>
                                         Phasellus et nisl quis erat imperdiet pulvinar. Vestibulum aliquam arcu nec laoreet aliquam. Pellentesque cursus porta dignissim.
