@@ -21,6 +21,5 @@
     "swiper": "^4.1.0",
     "webpack-livereload-plugin": "^1.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

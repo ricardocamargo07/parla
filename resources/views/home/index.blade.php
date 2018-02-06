@@ -28,14 +28,61 @@
                 <!-- Swiper -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=250" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=350" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=450" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=550" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=4505" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=4506" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/1000/750/?image=4507" alt="" class="img-responsive"></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/300/200/?10" alt="">0</div>
+                        <div class="swiper-slide">
+                            <article>
+                                <div class="row">
+                                    <figure class="col-xs-12">
+                                        <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                                        <figcaption class="article-caption">
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <h3 class="article-title"><a href="/post">Your article title goes here 1</a></h3>
+                                <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
+                                {{--
+                                <h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
+                                --}}
+                                <div class="article-intro" >
+                                    <p>
+                                        Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
+                                    </p>
+                                </div>
+                                <a href="#" class="readmore btn btn-primary">Leia Mais</a>
+                                <footer>
+                                    <span class="label label-default">alerj</span>
+                                    <span class="label label-default">tags</span>
+                                    <span class="label label-default">jornal</span>
+                                </footer>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article>
+                                <div class="row">
+                                    <figure class="col-xs-12">
+                                        <a href="/post"><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?random" ></a>
+                                        <figcaption class="article-caption">
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <h3 class="article-title"><a href="/post">Your article title goes here 2</a></h3>
+                                <span class="post-category ">Saúde</span><span class="post-divider">/</span><span class="post-created ">06 Fevereiro 2018</span>
+                                {{--
+                                <h5 class="article-subtitle"><a href="/post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
+                                --}}
+                                <div class="article-intro" >
+                                    <p>
+                                        Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor..
+                                    </p>
+                                </div>
+                                <a href="#" class="readmore btn btn-primary">Leia Mais</a>
+                                <footer>
+                                    <span class="label label-default">alerj</span>
+                                    <span class="label label-default">tags</span>
+                                    <span class="label label-default">jornal</span>
+                                </footer>
+                            </article>
+                        </div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
