@@ -5,8 +5,8 @@
 
 
 
-    <div class="header-main-inner">
-        <div class="container">
+
+        <div class="container header-main-inner">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 block-logo">
                 <div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         </div>
-    </div>
+
 
 
 
