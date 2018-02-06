@@ -258,6 +258,26 @@ figcaption.article-image-caption {
 
 
 
+
+
+
+
+
+.row.swiper-row {
+    padding-top: 30px;
+    /* border-top: 1px solid; */
+    /* margin-top: 5px; */
+}
+.swiper-row .col-md-3 {
+    margin-left:  0;
+    padding-left:  0;
+}
+
+.row.swiper-row .col-md-9 {
+    padding-right: 0;
+}
+
+
 #172a52
 #96a53b
 #9493a5

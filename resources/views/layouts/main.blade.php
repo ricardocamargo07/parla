@@ -40,14 +40,15 @@
                 </div>
             </nav>
 
-            <div class="container">
+{{--            <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
                         @yield('contents')
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
+            @yield('contents')
 
 
             <footer class="bd-footer">
@@ -67,21 +68,9 @@
                             <div class="expediente-linha"><span class="expediente-label">Editor de Fotografia: </span><span class="expediente-names">Rafael Wallace</span></div>
                             <div class="expediente-linha"><span class="expediente-label">Secretária da Redação: </span><span class="expediente-names">Regina Torres</span></div>
                             <div class="expediente-linha"><span class="expediente-label">Estagiários: </span><span class="expediente-names">Carolina Moura, Danilo Gabriel (redes sociais), Elisa Calmon, Leon Lucius, Luís Gustavoc(foto) e Thiago Oliveira (redes sociais)</span></div>
-
                         </div>
                     </div>
-              {{--      <ul class="bd-footer-links">
-                        <li><a href="https://github.com/twbs/bootstrap">GitHub</a>
-                        </li>
-                        <li><a href="https://twitter.com/getbootstrap">Twitter</a>
-                        </li>
-                        <li><a href="/docs/4.0/examples/">Examples</a>
-                        </li>
-                        <li><a href="/docs/4.0/about/overview/">About</a>
-                        </li>
-                    </ul>--}}
-                    <span>@version</span><span>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></span>
-
+                     <span>@version</span><span>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></span>
                 </div>
             </footer>
 
