@@ -51,12 +51,19 @@
             <footer class="bd-footer">
                 <div class="container">
                     <div class="row">
-                        <div class="footer-01 col-md-3">
+                        <div class="footer-01 col-md-4">
                             <img src="/images/parla_horizontal_fundoescuro.svg">
-                            <p class="publication-name">Publicação quinzenal da Subdiretoria-Geral e Comunicação Social da Assembléia Legislativa do Estado do Rio de Janeiro
+                            <p>Publicação quinzenal da Subdiretoria-Geral e Comunicação Social da Assembléia Legislativa do Estado do Rio de Janeiro
                             </p>
 
-
+                                <li>Jornalista responsável: Daniella Sholl (MTB 3847)</li>
+                                <li>Editor: André Coelho</li>
+                                <li>Coordenação: Daniela Matta e Jorge Ramos</li>
+                                <li>Equipe: Buanna Rosa, Camilla Pontes, Gustavo Natario, Isabela Cabral, Octacílio Barbosa, Tainah Vieira, Thiago Lontra, Symone Munay e Vanessa Schumacker</li>
+                                <li>Edição de Arte: Daniel Tiriba e Rodrigo Cortez</li>
+                                <li>Editor de Fotografia: Rafael Wallace</li>
+                                <li>Secretária da Redação: Regina Torres</li>
+                                <li>Estagiários: Carolina Moura, Danilo Gabriel (redes sociais), Elisa Calmon, Leon Lucius, Luís Gustavoc(foto) e Thiago Oliveira (redes sociais)</li>
 
 {{--
 
@@ -73,19 +80,11 @@
 
 
                         </div>
-                        <div class="col-md-9 expediente">
-                            <div class="expediente-linha"><span class="expediente-label">Jornalista responsável: </span><span class="expediente-names">Daniella Sholl (MTB 3847)</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Editor: </span><span class="expediente-names">André Coelho</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Coordenação: </span><span class="expediente-names">Daniela Matta e Jorge Ramos</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Equipe: </span><span class="expediente-names">Buanna Rosa, Camilla Pontes, Gustavo Natario, Isabela Cabral, Octacílio Barbosa, Tainah Vieira, Thiago Lontra, Symone Munay e Vanessa Schumacker</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Edição de Arte: </span><span class="expediente-names">Daniel Tiriba e Rodrigo Cortez</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Editor de Fotografia: </span><span class="expediente-names">Rafael Wallace</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Secretária da Redação: </span><span class="expediente-names">Regina Torres</span></div>
-                            <div class="expediente-linha"><span class="expediente-label">Estagiários: </span><span class="expediente-names">Carolina Moura, Danilo Gabriel (redes sociais), Elisa Calmon, Leon Lucius, Luís Gustavoc(foto) e Thiago Oliveira (redes sociais)</span></div>
-
+                        <div class="col-md-4">
+                            <h3>Edições Anteriores</h3>
                         </div>
                     </div>
-              {{--      <ul class="bd-footer-links">
+                    <ul class="bd-footer-links">
                         <li><a href="https://github.com/twbs/bootstrap">GitHub</a>
                         </li>
                         <li><a href="https://twitter.com/getbootstrap">Twitter</a>
@@ -94,8 +93,9 @@
                         </li>
                         <li><a href="/docs/4.0/about/overview/">About</a>
                         </li>
-                    </ul>--}}
-                    <span>@version</span><span>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></span>
+                    </ul>
+                    <p>@version</p>
+                    <p>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></p>
 
                 </div>
             </footer>
