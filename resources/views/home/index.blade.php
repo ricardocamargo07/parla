@@ -5,8 +5,8 @@
 
 
 
-    <div class="header-main-inner">
-        <div class="container">
+
+        <div class="container header-main-inner">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 block-logo">
                 <div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         </div>
-    </div>
+
 
 
 
@@ -307,7 +307,7 @@
 
 
 
-                    <div class="article-intro" >
+                    <div class="article-body" >
                         <p>
                             A representatividade dos povos africanos e a divulgação de suas identidades culturais são os temas centrais da exposição “Ex África”, que está em cartaz no Centro Cultural Banco do Brasil (CCBB) até o dia 26 de março. A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea. A entrada é franca e a exposição está aberta de quarta a segunda, das 9h às 21h. A poucos metros da Assembleia Legislativa do Estado do Rio de Janeiro (Alerj), o CCBB é uma ótima opção cultural para quem trabalha no Centro e está localizado na Rua Primeiro de Março, número 66.
                         </p>

@@ -1,9 +1,22 @@
 
+/********************!  HEADER  !*************************/
+.header-main-inner {
+    border-bottom: 1px solid #babd7b;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
 
 .header-right {
-  text-align: right;
-  margin-top: 15px;
+    letter-spacing: 0.5px;
+    font-family: Roboto;
+    text-align: right;
+    margin-top: 15px;
+    color: #9493a5;
 }
+/********************!  END HEADER  !*************************/
+
+
+
 
 article {
   font-family: "Open Sans";
@@ -133,6 +146,30 @@ span.post-author {
 }
 
 
+
+.article-subtitle {
+    font-family: 'Open Sans Condensed';
+    font-size: 16pt;
+    color: #9493a5;
+    margin-bottom: 30px;
+    letter-spacing: 0.2px;
+}
+
+.article-body {
+    margin-top: 15px;
+}
+
+.article-body h3 {
+    font-weight: bold;
+}
+
+figcaption.article-image-caption {
+    font-family: 'Open Sans Condensed';
+    color: #9493a5;
+    letter-spacing: 0.4px;
+}
+
+
 .article-details {
     padding: 7px;
     margin-bottom: 10px;
@@ -141,6 +178,13 @@ span.post-author {
     border-bottom: 1px solid #babd7b;
 
 }
+
+.article-body h3 {
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    color: #9493a5;
+}
+
 
 .article-side-list article .col-xs-7 {
     padding-left: 0px;
