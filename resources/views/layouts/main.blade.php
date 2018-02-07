@@ -40,13 +40,19 @@
                 </div>
             </nav>
 
-{{--            <div class="container">
+
+{{--
+
+            <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
                         @yield('contents')
                     </div>
                 </div>
-            </div>--}}
+            </div>
+
+--}}
+
 
             @yield('contents')
 
