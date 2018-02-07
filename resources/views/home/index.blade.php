@@ -2,25 +2,7 @@
 
 @section('contents')
 
-    <div class="container header-main-inner">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 block-logo">
-                <div>
-                    <div id="block-sitebranding" class="margin-top-15 clearfix site-branding block block-system block-system-branding-block no-title">
-                        <a href="/monte/" title="Home" rel="home" class="site-branding-logo padding-top-20">
-                            <img src="/images/parla_horizontal.png" alt="Home" class="img-responsive">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 header-right">
-                <div class="header-right-inner">
-                    Edição Número 000<br>
-                    de 06/Fevereiro/2018 à 26/Fevereiro/2018
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="container">
         <div class="row swiper-row">
             <div class="col-md-12">

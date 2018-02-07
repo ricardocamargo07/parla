@@ -1,137 +1,16 @@
 
 /********************!  HEADER  !*************************/
-.header-main-inner {
-    border-bottom: 1px solid #babd7b;
-    padding-bottom: 30px;
-    padding-top: 30px;
-}
 
-.header-right {
-    letter-spacing: 0.5px;
-    font-family: Roboto;
-    text-align: right;
-    margin-top: 15px;
-    color: #9493a5;
-}
 /********************!  END HEADER  !*************************/
 
 
 
 
-article {
-  font-family: "Open Sans";
-}
-
-.articles {
-  margin-top: 30px;
-}
-.articles article {
-  font-family: "Open Sans";
-  margin-bottom: 30px;
-}
-
-
-h3.article-title {
-  font-family: "Open Sans";
-  color:"#172a52";
-  font-weight: 500;
-}
-
-h3.article-title a {
-  font-family: "Open Sans";
-  color:#172a52;
-}
-
-.article-intro {
-  line-height: 1.5;
-  margin-bottom: 20px;
-  margin-top: 5px;
-}
-
-
-
-
-span.post-category {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #96a53b;
-}
-
-span.post-divider{
-  margin: 0 5px;
-}
 
 
 
 
 
-a.readmore {
-  float: right;
-  color: #ffffff;
-
-}
-
-
-
-/***********! FOOTER  !***************/
-
-.bd-footer {
-    padding-top: 30px;
-  font-size: 85%;
-  text-align: center;
-  background-color: #172a52;
-    margin-top: 30px;
-    color: #ffffff;
-}
-
-.bd-footer a {
-  font-weight: 500;
-  color: #495057;
-}
-
-.bd-footer-links {
-  padding-left: 0;
-  margin-bottom: 40px;
-}
-.bd-footer-links li {
-    display: inline-block;
-}
-
-.footer-01 {
-    text-align: left;
-}
-.publication-name {
-    margin-top: 30px;
-    font-size: 115%;
-
-}
-
-.expediente {
-    letter-spacing: 1px;
-    text-align: left;
-}
-
-
-.publication-name {
-    margin-top: 30px;
-    font-size: 115%;
-    letter-spacing: 0.8px;
-    text-align: center;
-}
-
-
-
-.expediente-linha {
-    margin-bottom: 5px;
-
-}
-
-span.expediente-label {
-    font-weight: bold;
-    color: #babd7b;
-}
-
-/***********!  END FOOTER  !*******************/
 
 
 
@@ -147,98 +26,8 @@ span.post-author {
 
 
 
-.article-subtitle {
-    font-family: 'Open Sans Condensed';
-    font-size: 16pt;
-    color: #9493a5;
-    margin-bottom: 30px;
-    letter-spacing: 0.2px;
-}
-
-.article-body {
-    margin-top: 15px;
-}
-
-.article-body h3 {
-    font-weight: bold;
-}
-
-figcaption.article-image-caption {
-    font-family: 'Open Sans Condensed';
-    color: #9493a5;
-    letter-spacing: 0.4px;
-}
-.article-image-author {
-    color: #384043;
-    float: right;
-    font-style: italic;
-}
 
 
-.article-details {
-    padding: 7px;
-    margin-bottom: 10px;
-    /* background: #9493a5; */
-    border-top: 1px solid #babd7b;
-    border-bottom: 1px solid #babd7b;
-
-}
-
-.article-body h3 {
-    letter-spacing: 0.2px;
-    font-weight: 600;
-    color: #9493a5;
-}
-
-
-
-
-.article-side-list a {
-    /*color: #586064;*/
-}
-
-.article-side-list a:hover {
-    text-decoration: none;
-}
-
-
-.article-side-list h4 {
-    font-size: ;
-}
-.article-side-list h4 a {
-    color: #586064;
-}
-.article-side-list article .col-xs-7 {
-    padding-left: 0px;
-}
-
-.article-side-list article h4 {
-    font-size: 13pt;
-    margin: 0;
-}
-
-.article-side-list article .article-intro {
-    font-size: 9pt;
-    line-height: 1.4;
-    margin-top: 5px;
-    color: #9493a5;
-}
-
-
-.article-side-list article {
-    border-bottom: 1px solid #babd7b;
-    padding-top: 10px;
-}
-
-.col-md-4.article-side-list {
-    border-top: 1px solid #babd7b;
-}
-
-
-.article-side-list .article-info {
-    text-align: right;
-    font-size: 80%;
-}
 
 
 
@@ -263,6 +52,10 @@ figcaption.article-image-caption {
 
 
 
+
+
+
+
 .row.swiper-row {
     padding-top: 30px;
     /* border-top: 1px solid; */
@@ -278,8 +71,14 @@ figcaption.article-image-caption {
 }
 
 
-#172a52
-#96a53b
-#9493a5
-#babd7b
 
+
+
+
+
+
+a.readmore {
+    float: right;
+    color: #ffffff;
+
+}
