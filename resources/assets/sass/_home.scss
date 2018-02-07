@@ -1,0 +1,89 @@
+
+// Home
+
+.articles {
+  margin-top: 30px;
+
+  article {
+    font-family: "Open Sans";
+    margin-bottom: 30px;
+  }
+
+}
+
+
+.article-title {
+  h3 {
+    font-family: "Open Sans";
+    color:#172a52;
+    font-weight: 500;
+  }
+  a {
+    font-family: "Open Sans";
+    color:#172a52;
+  }
+
+}
+
+
+
+
+.article-intro {
+  line-height: 1.5;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.article-image-author {
+  color: #384043;
+  float: right;
+  font-style: italic;
+}
+.article-details {
+  padding: 7px;
+  margin-bottom: 10px;
+  /* background: #9493a5; */
+  border-top: 1px solid #babd7b;
+  border-bottom: 1px solid #babd7b;
+
+}
+
+
+
+
+span.post-category {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #96a53b;
+}
+
+span.post-divider{
+  margin: 0 5px;
+}
+
+
+.article-subtitle {
+  font-family: 'Open Sans Condensed';
+  font-size: 16pt;
+  color: #9493a5;
+  margin-bottom: 30px;
+  letter-spacing: 0.2px;
+}
+
+.article-body {
+  margin-top: 15px;
+  h3 {
+    letter-spacing: 0.2px;
+    font-weight: 600;
+    color: #9493a5;
+
+  }
+
+}
+
+
+figcaption.article-image-caption {
+  font-family: 'Open Sans Condensed';
+  color: #9493a5;
+  letter-spacing: 0.4px;
+}
+

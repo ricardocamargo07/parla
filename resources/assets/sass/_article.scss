@@ -1,0 +1,51 @@
+
+// Article
+
+
+
+.article-side-list {
+  a {
+    /*color: #586064;*/
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  h4 {
+
+    a {
+      color: #586064;
+    }
+
+  }
+  article .col-xs-7 {
+    padding-left: 0px;
+  }
+  article h4 {
+    font-size: 13pt;
+    margin: 0;
+  }
+  article .article-intro {
+    font-size: 9pt;
+    line-height: 1.4;
+    margin-top: 5px;
+    color: #9493a5;
+  }
+  article {
+    border-bottom: 1px solid #babd7b;
+    padding-top: 10px;
+  }
+
+}
+
+
+
+
+
+
+.col-md-4.article-side-list {
+  border-top: 1px solid #babd7b;
+}
+.article-side-list .article-info {
+  text-align: right;
+  font-size: 80%;
+}
