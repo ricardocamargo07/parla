@@ -15,7 +15,7 @@
                     <h5 class="article-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit., consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit.  </h5>
                     <div class="row">
                         <figure class="col-xs-12">
-                            <img class="img img-responsive article-img" src="https://picsum.photos/1000/750" >
+                            <img class="img img-responsive article-img" src="https://picsum.photos/1500/1000" >
                             <figcaption class="article-image-caption">
                                 <span class="article-image-author">Nome do Autor</span>
                                 A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea
@@ -46,7 +46,7 @@
                     <article class="">
                         <div class="row">
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/" ></a>
+                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1500/1000/" ></a>
                             </figure>
                             <div class="col-xs-7">
                                 <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
@@ -61,7 +61,7 @@
                     <article class="">
                         <div class="row">
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?image=1" ></a>
+                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1500/1000/?image=1" ></a>
                             </figure>
                             <div class="col-xs-7">
                                 <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
@@ -76,7 +76,7 @@
                     <article class="">
                         <div class="row">
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?image=100" ></a>
+                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1500/1000/?image=100" ></a>
                             </figure>
                             <div class="col-xs-7">
                                 <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
@@ -91,7 +91,7 @@
                     <article class="">
                         <div class="row">
                             <figure class="col-xs-5">
-                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1000/750/?image=111" ></a>
+                                <a href=""><img class="img img-responsive article-img" src="https://picsum.photos/1500/1000/?image=111" ></a>
                             </figure>
                             <div class="col-xs-7">
                                 <h4 class="article-title"><a href="/post">Your article title goes here</a></h4>
