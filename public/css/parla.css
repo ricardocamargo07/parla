@@ -15,35 +15,6 @@
 
 
 
-.btn-primary {
-    color: #fff;
-    background-color: #96a53b;
-    border-color: #96a53b;
-}
-span.post-author {
-    float: right;
-}
-
-
-
-
-
-
-
-
-
-.btn-primary {
-    color: #fff;
-    background-color: #96a53b;
-    border-color: #96a53b;
-    padding: .2em 1em .2em;
-    font-size: 95%;
-}
-
-.btn-primary:hover {
-    background-color: #9493a5;
-    border-color: #9493a5;
-}
 
 
 
@@ -56,29 +27,4 @@ span.post-author {
 
 
 
-.row.swiper-row {
-    padding-top: 30px;
-    /* border-top: 1px solid; */
-    /* margin-top: 5px; */
-}
-.swiper-row .col-md-3 {
-    margin-left:  0;
-    padding-left:  0;
-}
 
-.row.swiper-row .col-md-9 {
-    padding-right: 0;
-}
-
-
-
-
-
-
-
-
-a.readmore {
-    float: right;
-    color: #ffffff;
-
-}
