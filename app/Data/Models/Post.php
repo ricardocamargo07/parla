@@ -27,22 +27,26 @@ class Post
             'photos' => [
                 [
                     'main' => true,
-                    'url' => '/images/photos/GabrielSorriso1_RafaelWallace.jpg',
+                    'url_highres' => '/images/photos/GabrielSorriso1_RafaelWallace.jpg',
+                    'url_lowres' => '/images/photos/GabrielSorriso1_RafaelWallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
                 ],
                 [
                     'main' => false,
-                    'url' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra.jpg',
+                    'url_highres' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra.jpg',
+                    'url_lowres' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra-1200x900.jpg',
                     'author' => 'Thiago Lontra',
                 ],
                 [
                     'main' => false,
-                    'url' => '/images/photos/DaisaConceicao.jpg',
+                    'url_highres' => '/images/photos/DaisaConceicao.jpg',
+                    'url_lowres' => '/images/photos/DaisaConceicao.jpg',
                     'author' => '',
                 ],
                 [
                     'main' => false,
-                    'url' => '/images/photos/GabrielSorriso.jpg',
+                    'url_highres' => '/images/photos/GabrielSorriso.jpg',
+                    'url_lowres' => '/images/photos/GabrielSorriso.jpg',
                     'author' => '',
                 ],
             ],
@@ -85,12 +89,14 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'photos' => [
                 [
                     'main' => true,
-                    'url' => '/images/photos/1070-Matéria-saúde-carnaval-Rafael-Wallace.jpg',
+                    'url_highres' => '/images/photos/1070-Materia-saude-carnaval-Rafael-Wallace.jpg',
+                    'url_lowres' => '/images/photos/1070-Materia-saude-carnaval-Rafael-Wallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
                 ],
                 [
                     'main' => false,
-                    'url' => '/images/photos/antigorestaurante.jpg',
+                    'url_highres' => '/images/photos/antigorestaurante.jpg',
+                    'url_lowres' => '/images/photos/antigorestaurante-1200x800.jpg',
                     'author' => '',
                 ]
             ],
@@ -135,17 +141,20 @@ nos dias de festa. Procure um posto e garanta a sua.
             'photos' => [
                 [
                     'main' => true,
-                    'url' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_highres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_lowres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                 ],
                 [
                     'main' => false,
-                    'url' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_highres' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_lowres' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                 ],
                 [
                     'main' => false,
-                    'url' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                 ],
             ],
@@ -194,19 +203,10 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
             'photos' => [
                 [
                     'main' => false,
-                    'url' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_highres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_lowres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
-                ],
-                [
-                    'main' => true,
-                    'url' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'author' => 'Alexandre Macieira',
-                ],
-                [
-                    'main' => false,
-                    'url' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'author' => 'Alexandre Macieira',
-                ],
+                ]
             ],
 
             'lead' => 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
@@ -250,7 +250,8 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'photos' => [
                 [
                     'main' => true,
-                    'url' => '/images/photos/antigorestaurante.jpg',
+                    'url_highres' => '/images/photos/antigorestaurante.jpg',
+                    'url_lowres' => '/images/photos/antigorestaurante-1200x800.jpg',
                     'author' => '',
                 ],
             ],

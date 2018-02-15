@@ -14,7 +14,7 @@
                     <h5 class="article-subtitle">{{ $post->subtitle }}</h5>
                     <div class="row">
                         <figure class="col-xs-12">
-                            <img class="img img-responsive article-img" src="{{ $post->main_photo->url }}" >
+                            <img class="img img-responsive article-img" src="{{ $post->main_photo->url_lowres }}" >
                             <figcaption class="article-image-caption">
                                 <span class="article-image-author">{{ $post->main_photo->author }}</span>
                                 {{--A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea--}}
@@ -37,7 +37,7 @@
                     <div class="row" style="margin-top: 50px;"> {{-- ACR - transoformar este style em css!!!! --}}
                         @foreach ($post->other_photos as $photo)
                             <figure class="col-xs-6 col-md-3">
-                                <img class="img img-responsive article-img" src="{{ $photo['url'] }}" >
+                                <img class="img img-responsive article-img" src="{{ $photo['url_lowres'] }}" >
                                 <figcaption class="article-image-caption">
                                     <span class="article-image-author">{{ $photo['author'] }}</span>
                                 </figcaption>

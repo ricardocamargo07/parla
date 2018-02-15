@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <figure class="col-xs-8">
                                         <a :href="post.link">
-                                            <img class="img img-responsive article-img" :src="post.main_photo.url">
+                                            <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                                         </a>
                                         <div v-if="post.main_photo.author" style="font-size: 0.7em;" class="text-right">
                                             por @{{ post.main_photo.author }}
@@ -58,7 +58,7 @@
                     <div class="row">
                         <figure class="col-xs-12">
                             <a :href="post.link">
-                                <img class="img img-responsive article-img" :src="post.main_photo.url">
+                                <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                             </a>
                             <div v-if="post.main_photo.author" style="font-size: 0.7em;" class="text-right">
                                 por @{{ post.main_photo.author }}
