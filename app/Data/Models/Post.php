@@ -311,7 +311,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
     private static function makeAuthorsString($authors)
     {
-        return join(' and ', array_filter(array_merge(array(join(', ', array_slice($authors, 0, -1))), array_slice($authors, -1)), 'strlen'));
+        return join(' e ', array_filter(array_merge(array(join(', ', array_slice($authors, 0, -1))), array_slice($authors, -1)), 'strlen'));
     }
 
     public static function nonFeatured()

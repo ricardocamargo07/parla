@@ -4,7 +4,7 @@
     <div class="article-internal">
         <div class="container">
             <div class="row">
-                <article class="col-md-8">
+                <article class="col-md-12">
                     <div class="article-details">
                         <span class="post-category ">{{ $post->category }}</span>
                         <span class="post-divider">/</span><span class="post-created ">{{ $post->date }}</span>
@@ -21,10 +21,22 @@
                             </figcaption>
                         </figure>
                     </div>
+
                     <div class="article-body">
                         <p>{!! $post->lead !!}</p>
 
                         <p>{!! $post->body !!}</p>
+                    </div>
+
+                    <div class="row" style="margin-top: 50px;"> {{-- ACR - transoformar este style em css!!!! --}}
+                        @foreach ($post->other_photos as $photo)
+                            <figure class="col-xs-6 col-md-3">
+                                <img class="img img-responsive article-img" src="{{ $photo['url'] }}" >
+                                <figcaption class="article-image-caption">
+                                    <span class="article-image-author">{{ $photo['author'] }}</span>
+                                </figcaption>
+                            </figure>
+                        @endforeach
                     </div>
 
                     <footer>
