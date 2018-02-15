@@ -14,6 +14,12 @@ try {
 } catch (e) {}
 
 /**
+ * Vue
+ */
+
+window.Vue = require('vue')
+
+/**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
@@ -22,6 +28,12 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Fullcalendar
+ */
+
+window.fullcalendar = require('fullcalendar');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -36,12 +48,6 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
-/**
- * Swiper
- */
-
-// window.Swiper = require('swiper');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -59,3 +65,4 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
