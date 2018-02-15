@@ -28,6 +28,12 @@
                         <p>{!! $post->body !!}</p>
                     </div>
 
+                    <footer>
+                        @foreach ($post->tags as $tag)
+                            <span class="label label-default">{{ $tag }}</span>
+                        @endforeach
+                    </footer>
+
                     <div class="row" style="margin-top: 50px;"> {{-- ACR - transoformar este style em css!!!! --}}
                         @foreach ($post->other_photos as $photo)
                             <figure class="col-xs-6 col-md-3">
@@ -38,12 +44,6 @@
                             </figure>
                         @endforeach
                     </div>
-
-                    <footer>
-                        @foreach ($post->tags as $tag)
-                            <span class="label label-default">{{ $tag }}</span>
-                        @endforeach
-                    </footer>
                 </article>
 
                 {{--<div class="col-md-4 article-side-list">--}}
