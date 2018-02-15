@@ -4505,13 +4505,13 @@ textarea {
 }
 
 a {
-  color: black;
+  color: #172a52;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: black;
+  color: #060b16;
   text-decoration: underline;
 }
 
@@ -4780,12 +4780,12 @@ mark,
 }
 
 .text-primary {
-  color: black;
+  color: #172a52;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: black;
+  color: #0c162a;
 }
 
 .text-success {
@@ -4829,12 +4829,12 @@ a.text-danger:focus {
 }
 
 .bg-primary {
-  background-color: black;
+  background-color: #172a52;
 }
 
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: black;
+  background-color: #0c162a;
 }
 
 .bg-success {
@@ -6452,10 +6452,10 @@ output {
 }
 
 .form-control:focus {
-  border-color: #404040;
+  border-color: #335db6;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 64, 64, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(64, 64, 64, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(51, 93, 182, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(51, 93, 182, 0.6);
 }
 
 .form-control::-moz-placeholder {
@@ -7174,29 +7174,29 @@ fieldset[disabled] .btn-default.focus {
 
 .btn-primary {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #172a52;
+  border-color: #11203e;
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: black;
+  background-color: #0c162a;
   border-color: black;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #0c162a;
+  border-color: #04070e;
 }
 
 .btn-primary:active,
 .btn-primary.active,
 .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #0c162a;
+  border-color: #04070e;
 }
 
 .btn-primary:active:hover,
@@ -7209,7 +7209,7 @@ fieldset[disabled] .btn-default.focus {
 .open > .btn-primary.dropdown-toggle:focus,
 .open > .btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: black;
+  background-color: #04070e;
   border-color: black;
 }
 
@@ -7228,12 +7228,12 @@ fieldset[disabled] .btn-default.focus {
 fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: black;
-  border-color: black;
+  background-color: #172a52;
+  border-color: #11203e;
 }
 
 .btn-primary .badge {
-  color: black;
+  color: #172a52;
   background-color: #fff;
 }
 
@@ -7498,7 +7498,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .btn-link {
-  color: black;
+  color: #172a52;
   font-weight: normal;
   border-radius: 0;
 }
@@ -7522,7 +7522,7 @@ fieldset[disabled] .btn-link {
 
 .btn-link:hover,
 .btn-link:focus {
-  color: black;
+  color: #060b16;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -7690,7 +7690,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: black;
+  background-color: #172a52;
 }
 
 .dropdown-menu > .disabled > a,
@@ -8193,7 +8193,7 @@ tbody.collapse.in {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: black;
+  border-color: #172a52;
 }
 
 .nav .nav-divider {
@@ -8253,7 +8253,7 @@ tbody.collapse.in {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: black;
+  background-color: #172a52;
 }
 
 .nav-stacked > li {
@@ -9057,7 +9057,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 6px 12px;
   line-height: 1.6;
   text-decoration: none;
-  color: black;
+  color: #172a52;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -9081,7 +9081,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   z-index: 2;
-  color: black;
+  color: #060b16;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -9094,8 +9094,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #172a52;
+  border-color: #172a52;
   cursor: default;
 }
 
@@ -9243,12 +9243,12 @@ a.label:focus {
 }
 
 .label-primary {
-  background-color: black;
+  background-color: #172a52;
 }
 
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: black;
+  background-color: #0c162a;
 }
 
 .label-success {
@@ -9320,7 +9320,7 @@ a.label:focus {
 
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: black;
+  color: #172a52;
   background-color: #fff;
 }
 
@@ -9424,7 +9424,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: black;
+  border-color: #172a52;
 }
 
 .alert {
@@ -9559,7 +9559,7 @@ a.thumbnail.active {
   line-height: 22px;
   color: #fff;
   text-align: center;
-  background-color: black;
+  background-color: #172a52;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -9745,8 +9745,8 @@ button.list-group-item {
 .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #172a52;
+  border-color: #172a52;
 }
 
 .list-group-item.active .list-group-item-heading,
@@ -9764,7 +9764,7 @@ button.list-group-item {
 .list-group-item.active .list-group-item-text,
 .list-group-item.active:hover .list-group-item-text,
 .list-group-item.active:focus .list-group-item-text {
-  color: #666666;
+  color: #6286d3;
 }
 
 .list-group-item-success {
@@ -10221,26 +10221,26 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-primary {
-  border-color: black;
+  border-color: #172a52;
 }
 
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #172a52;
+  border-color: #172a52;
 }
 
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: black;
+  border-top-color: #172a52;
 }
 
 .panel-primary > .panel-heading .badge {
-  color: black;
+  color: #172a52;
   background-color: #fff;
 }
 
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: black;
+  border-bottom-color: #172a52;
 }
 
 .panel-success {
