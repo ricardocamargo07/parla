@@ -202,9 +202,9 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
 
             'photos' => [
                 [
-                    'main' => false,
-                    'url_highres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'url_lowres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
+                    'main' => true,
+                    'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
+                    'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                 ]
             ],
@@ -296,6 +296,8 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
             $post['main_photo'] = coollect($post['photos'])->where('main', true)->first();
 
             $post['other_photos'] = coollect($post['photos'])->where('main', false);
+
+            $post['lead_limited'] = $markdown->convert(str_limit($post['lead'], 200));
 
             $post['lead'] = $markdown->convert($post['lead']);
 

@@ -26,7 +26,7 @@
                                         <h5 class="article-subtitle"><a :href="post.link">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
                                         --}}
                                         <div class="article-intro" >
-                                            <p v-html="post.lead"></p>
+                                            <p v-html="post.lead_limited"></p>
                                         </div>
 
                                         <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
@@ -74,7 +74,7 @@
                     <h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>
 
                     <div class="article-intro" >
-                        <p v-html="post.lead"></p>
+                        <p v-html="post.lead_limited"></p>
                     </div>
 
                     <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
