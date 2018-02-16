@@ -11,8 +11,7 @@
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 header-right">
             <div class="header-right-inner">
-                Parla n&ordm; 1<br>
-                19 fevereiro 2018
+                Parla n&ordm; 1 - Fevereiro 2018
             </div>
         </div>
     </div>

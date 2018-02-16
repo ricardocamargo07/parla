@@ -39,7 +39,7 @@
                             <figure class="col-xs-6 col-md-3">
                                 <img class="img img-responsive article-img" src="{{ $photo['url_lowres'] }}" >
                                 <figcaption class="article-image-caption">
-                                    <span class="article-image-author">{{ $photo['author'] }}</span>
+                                    <span class="article-image-author">{{ $photo['notes_and_author'] }}</span>
                                 </figcaption>
                             </figure>
                         @endforeach

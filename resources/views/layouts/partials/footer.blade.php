@@ -7,7 +7,7 @@
                 </p>
             </div>
             <div class="col-md-9 expediente">
-                <div class="expediente-linha"><span class="expediente-label">Jornalista responsável: </span><span class="expediente-names">Célia Abend</span></div>
+                <div class="expediente-linha"><span class="expediente-label">Jornalista responsável: </span><span class="expediente-names">Celia Abend</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Editor: </span><span class="expediente-names">André Coelho</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Coordenação: </span><span class="expediente-names">Daniela Matta e Jorge Ramos</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Equipe: </span><span class="expediente-names">Buanna Rosa, Camilla Pontes, Gustavo Natario, Isabela Cabral, Octacílio Barbosa, Tainah Vieira, Thiago Lontra, Symone Munay e Vanessa Schumacker</span></div>

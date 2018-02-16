@@ -30,30 +30,34 @@ class Post
                     'url_highres' => '/images/photos/GabrielSorriso1_RafaelWallace.jpg',
                     'url_lowres' => '/images/photos/GabrielSorriso1_RafaelWallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
+                    'notes' => 'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
                 ],
                 [
                     'main' => false,
                     'url_highres' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra.jpg',
                     'url_lowres' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra-1200x900.jpg',
                     'author' => 'Thiago Lontra',
+                    'notes' => 'O serralheiro Antonio Conceição atua como compositor e interprete'
                 ],
                 [
                     'main' => false,
                     'url_highres' => '/images/photos/DaisaConceicao.jpg',
                     'url_lowres' => '/images/photos/DaisaConceicao.jpg',
                     'author' => '',
+                    'notes' => 'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança',
                 ],
                 [
                     'main' => false,
                     'url_highres' => '/images/photos/GabrielSorriso.jpg',
                     'url_lowres' => '/images/photos/GabrielSorriso.jpg',
                     'author' => '',
+                    'notes' => 'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D',
                 ],
             ],
 
             'lead' => 'Entre os dias 9 e 13 de fevereiro, o Rio de Janeiro será tomado por plumas, paetês e muito samba no pé. Para muitos funcionários da Assembleia Legislativa do Estado do Rio de Janeiro (Alerj) esta é a época do ano mais esperada. É o momento de vestir a fantasia e defender na Marques de Sapucaí as cores das suas escolas de samba do coração.',
 
-            'body' => 'Este é o caso da auxiliar de serviços gerais, Daiza Maria da Conceição, de 60 anos. Moradora  de Manguinhos, na Zona Norte da cidade, Daiza  marca presença na quadra da Estação Primeira de  Mangueira e nos desfiles da escola na Sapucaí desde criança.  "Já desfilo há tanto tempo que nem lembro há quantos anos saio pela minha escola do coração",  admite Daiza, que há 26 anos trabalha nas dependências do Palácio Tiradentes e no prédio anexo da Alerj. Todas as quintas-feiras e domingos Daiza não abre mão do ensaio no Palácio do Samba, quadra da Mangueira, para no domingo de carnaval se somar à Ala da Comunidade da escola e  fazer "bonito na avenida".
+            'body' => 'Este é o caso da auxiliar de serviços gerais, Daiza Maria da Conceição, de 60 anos. Moradora  de Manguinhos, na Zona Norte da cidade, Daiza  marca presença na quadra da Estação Primeira de  Mangueira e nos desfiles da escola na Sapucaí desde criança.  "Já desfilo há tanto tempo que nem lembro há quantos anos saio pela minha escola do coração",  admite Daiza, que há 26 anos trabalha nas dependências do Palácio Tiradentes e no prédio anexo da Alerj. Todas as quintas-feiras e domingos Daiza não abre mão do ensaio no Palácio do Samba, quadra da Mangueira, para no domingo de Carnaval se somar à Ala da Comunidade da escola e  fazer "bonito na avenida".
 
 Outro apaixonado por samba é Gabriel Eleno da Conceição,  mais conhecido como Gabriel Sorriso. Operador e editor de áudio na Alerj, Sorriso dedica todo o seu tempo livre à composição de sambas. No ano passado, Sorriso teve duas alegrias: foi campeão na escolha do samba enredo da Acadêmicos do Engenho da Rainha (grupo B) e da Acadêmicos de Madureira (grupo D). "Sempre estive envolvido com a música, especialmente com o samba carioca e sua tradição. É uma paixão antiga. Participei de outras escolhas de samba-enredo, mas 2018 me deu alegria em dobro", disse ele.
 
@@ -61,7 +65,7 @@ Outro apaixonado por samba é Gabriel Eleno da Conceição,  mais conhecido como
 
 Recentemente o time de compositores da Alerj ganhou mais um nome, o serralheiro Antônio Conceição. Apesar de compartilhar do mesmo sobrenome e paixão pelo samba que seus colegas, eles não são da mesma família. Ele começou a trabalhar na oficina da Casa em janeiro deste ano, mas frequenta  o mundo do samba desde 1981, quando começou a compor para blocos e escolas de samba.
 
-Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na Sapucaí, foram 15 anos em cima do carro de som de agremiações como a Inocentes de Belford Roxo e a União de Jacarepaguá. "Desde garoto sempre gostei de brincar carnaval. Depois passei a compor e a cantar, e não consigo imaginar a minha vida sem o carnaval", disse Nick, que este ano estará defendendo o samba da Império da Uva, agremiação de Nova Iguaçu, na Baixada Fluminense.
+Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na Sapucaí, foram 15 anos em cima do carro de som de agremiações como a Inocentes de Belford Roxo e a União de Jacarepaguá. "Desde garoto sempre gostei de brincar Carnaval. Depois passei a compor e a cantar, e não consigo imaginar a minha vida sem o Carnaval", disse Nick, que este ano estará defendendo o samba da Império da Uva, agremiação de Nova Iguaçu, na Baixada Fluminense.
 ',
 
             'featured' => true,
@@ -79,7 +83,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
 
             'created_at' => '2018-02-08',
 
-            'subtitle' => 'Saiba como curtir o carnaval se protegendo do verão carioca',
+            'subtitle' => 'Saiba como curtir o Carnaval se protegendo do verão carioca',
 
             'authors' => [
                 'Buanna Rosa',
@@ -89,15 +93,17 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'photos' => [
                 [
                     'main' => true,
-                    'url_highres' => '/images/photos/1070-Materia-saude-carnaval-Rafael-Wallace.jpg',
-                    'url_lowres' => '/images/photos/1070-Materia-saude-carnaval-Rafael-Wallace-1200x800.jpg',
+                    'url_highres' => '/images/photos/1070-Materia-saude-Carnaval-Rafael-Wallace.jpg',
+                    'url_lowres' => '/images/photos/1070-Materia-saude-Carnaval-Rafael-Wallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
+                    'notes' => 'A diretora do departamento médico da Alerj, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e também o consumo de muito líquido para ajudar na hidratação',
                 ],
                 [
                     'main' => false,
                     'url_highres' => '/images/photos/antigorestaurante.jpg',
                     'url_lowres' => '/images/photos/antigorestaurante-1200x800.jpg',
                     'author' => '',
+                    'notes' => '',
                 ]
             ],
 
@@ -114,7 +120,7 @@ nos dias de festa. Procure um posto e garanta a sua.
 
 - Comida: estar bem alimentado é fundamental para aguentar as horas extensas dos blocos e desfiles. Coma bem antes de sair de casa e durante o dia procure estabelecimentos, como restaurantes, padarias e lanchonetes. Evite comer na rua. Muitas pessoas acabam perdendo o restante do Carnaval ao ter uma infecção alimentar.
 
-- O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do carnavalesco. E, por fim, tenha sempre um documento de identificação.
+- O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do Carnavalesco. E, por fim, tenha sempre um documento de identificação.
 ',
 
             'featured' => false,
@@ -126,7 +132,7 @@ nos dias de festa. Procure um posto e garanta a sua.
         ],
 
         [
-            'title' => "Exposição ‘Ex África’ leva cultura africana ao centro do Rio.",
+            'title' => "Exposição ‘Ex África’ leva cultura africana ao Centro do Rio.",
 
             'category' => 'Cultura',
 
@@ -144,18 +150,21 @@ nos dias de festa. Procure um posto e garanta a sua.
                     'url_highres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
                     'url_lowres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
+                    'notes' => 'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos',
                 ],
                 [
                     'main' => false,
                     'url_highres' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur.jpg',
                     'url_lowres' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
+                    'notes' => 'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou',
                 ],
                 [
                     'main' => false,
                     'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
                     'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
+                    'notes' => 'A entrada é franca e a exposição está aberta de quarta a segunda',
                 ],
             ],
 
@@ -201,12 +210,13 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
             ],
 
             'photos' => [
-                [
-                    'main' => true,
-                    'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
-                    'author' => 'Alexandre Macieira',
-                ]
+//                [
+//                    'main' => true,
+//                    'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
+//                    'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
+//                    'author' => 'Alexandre Macieira',
+//                    'notes' => '',
+//                ]
             ],
 
             'lead' => 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
@@ -253,6 +263,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
                     'url_highres' => '/images/photos/antigorestaurante.jpg',
                     'url_lowres' => '/images/photos/antigorestaurante-1200x800.jpg',
                     'author' => '',
+                    'notes' => 'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes',
                 ],
             ],
 
@@ -276,7 +287,11 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
     {
         $markdown = new Service();
 
-        return collect(static::$posts)->mapWithKeys(function($post) use ($markdown) {
+        return collect(static::$posts)->mapWithKeys(/**
+         * @param $post
+         * @return array
+         */
+            function($post) use ($markdown) {
             $slug = str_slug($post['title']);
 
             $date = Carbon::parse($post['created_at']);
@@ -291,11 +306,11 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             $post['created_at'] = $date;
 
-            $post['date'] = Carbon::parse($post['created_at'])->format('d F Y');
+            $post['date'] = Carbon::parse($post['created_at'])->format('j F Y');
 
-            $post['main_photo'] = coollect($post['photos'])->where('main', true)->first();
+            $post['main_photo'] = static::makePhotosCollection($post['photos'])->where('main', true)->first();
 
-            $post['other_photos'] = coollect($post['photos'])->where('main', false);
+            $post['other_photos'] = static::makePhotosCollection($post['photos'])->where('main', false);
 
             $post['lead_limited'] = $markdown->convert(str_limit($post['lead'], 200));
 
@@ -325,5 +340,18 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
     public static function findBySlug($slug)
     {
         return new Coollection(static::all()->where('slug', $slug)->first());
+    }
+
+    public static function makePhotosCollection($photos)
+    {
+        return coollect($photos)->map(function ($photo) {
+            $author = $photo['author'];
+
+            $notes = $photo['notes'];
+
+            $photo['notes_and_author'] = $notes . (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
+
+            return $photo;
+        });
     }
 }
