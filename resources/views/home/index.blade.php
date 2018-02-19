@@ -14,19 +14,19 @@
                                         <a :href="post.link">
                                             <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                                         </a>
-                                        <div v-if="post.main_photo.notes_and_author" style="font-size: 0.7em;" class="text-right">
-                                            @{{ post.main_photo.notes_and_author }}
-                                        </div>
                                         <figcaption class="article-caption">
+                                            <div v-if="post.main_photo.notes_and_author" style="font-size: 0.7em;" class="text-right">
+                                                @{{ post.main_photo.notes_and_author }}
+                                            </div>
                                         </figcaption>
                                     </figure>
                                     <div class="col-xs-4">
                                         <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
-                                        {{--<span class="post-category "> @{{ post.category }}</span> --}}
+                                        {{--<span class="post-category "> @{{ post.category }}</span>   CATEGORIA DESABILITADA        --}}
                                         {{--<span class="post-divider">/</span> --}}
                                         <span class="post-created ">@{{ post.date }}</span>
                                         {{--
-                                        <h5 class="article-subtitle"><a :href="post.link">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
+                                            <h5 class="article-subtitle"><a :href="post.link">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
                                         --}}
                                         <div class="article-intro" >
                                             <p v-html="post.lead_limited"></p>
