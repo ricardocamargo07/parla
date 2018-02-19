@@ -3,62 +3,63 @@
 
 
 
-.bd-footer {
+.footer {
   padding-top: 30px;
   font-size: 85%;
   text-align: center;
   background-color: #172a52;
   margin-top: 30px;
   color: #ffffff;
+  font-family: Roboto;
 
   a {
     font-weight: 500;
     color: #495057;
   }
-}
 
 
 
-.bd-footer-links {
-  padding-left: 0;
-  margin-bottom: 40px;
+  .bd-footer-links {
+    padding-left: 0;
+    margin-bottom: 40px;
 
-  li {
-    display: inline-block;
+    li {
+      display: inline-block;
+    }
+
   }
 
-}
-
-.footer-01 {
-  text-align: left;
-}
-
-.publication-name {
-  margin-top: 30px;
-  font-size: 90%;
-}
-
-.expediente {
-  letter-spacing: 1px;
-  text-align: left;
-  font-size: 90%;
-}
+  .footer-01 {
+    text-align: left;
+  }
 
 
-.publication-name {
-  margin-top: 30px;
-  font-size: 115%;
-  letter-spacing: 0.8px;
-  text-align: center;
-}
+  .publication-name {
+    margin-top: 30px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    font-size: 15px;
+  }
 
-.expediente-linha {
-  margin-bottom: 7px;
-  line-height: 18px;
-}
+  .expediente {
+    letter-spacing: 1px;
+    text-align: left;
+    font-size: 90%;
+  }
 
-span.expediente-label {
-  font-weight: bold;
-  color: #babd7b;
+
+
+  .expediente-linha {
+    margin-bottom: 7px;
+    line-height: 18px;
+  }
+
+  span.expediente-label {
+    /*font-weight: bold;*/
+    color: #babd7b;
+  }
+
+
+
 }
 
