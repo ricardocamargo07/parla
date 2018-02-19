@@ -34,3 +34,10 @@ Publicação quinzenal da Subdiretoria-Geral de Comunicação Social da Assemble
 #### Passos extras específicos desta aplicação
 
 - Não possui
+
+#### No ambiente de desenvolvimento
+
+- vendor/bin/cghooks add --ignore-lock (uma vez)
+- vendor/bin/cghooks update (uma vez)
+- npm install (sempre)
+- npm run watch (enquanto estiver programando)

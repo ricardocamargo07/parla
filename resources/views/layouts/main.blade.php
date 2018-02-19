@@ -37,7 +37,9 @@
 
             @include('layouts.partials.header')
 
-            @yield('contents')
+            <div v-cloak>
+                @yield('contents')
+            </div>
 
             @include('layouts.partials.footer')
         </div>
