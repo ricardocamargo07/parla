@@ -11453,6 +11453,54 @@ button.close {
   min-height: 650px;
 }
 
+h1,
+.h1 {
+  font-size: 40px;
+}
+
+.article-internal h2,
+.article-internal .h2 {
+  font-size: 32px;
+}
+
+@media screen and (min-width: 798px) {
+  .article-internal .article-details {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 798px) {
+  .article-internal .article-title {
+    margin-left: 130px;
+    margin-right: 130px;
+  }
+}
+
+@media screen and (min-width: 798px) {
+  .article-internal .article-subtitle {
+    margin-left: 130px;
+    margin-right: 130px;
+  }
+}
+
+@media screen and (min-width: 798px) {
+  .article-internal .article-body {
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 130px;
+    margin-top: 60px;
+  }
+}
+
+.article-internal .article-body .article-gallery {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.article-internal .article-body .article-tags .article-tag {
+  margin-right: 10px;
+}
+
 .article-side-list a {
   /*color: #586064;*/
 }
@@ -11496,58 +11544,54 @@ button.close {
   font-size: 80%;
 }
 
-.bd-footer {
+.footer {
   padding-top: 30px;
   font-size: 85%;
   text-align: center;
   background-color: #172a52;
   margin-top: 30px;
   color: #ffffff;
+  font-family: Roboto;
 }
 
-.bd-footer a {
+.footer a {
   font-weight: 500;
   color: #495057;
 }
 
-.bd-footer-links {
+.footer .bd-footer-links {
   padding-left: 0;
   margin-bottom: 40px;
 }
 
-.bd-footer-links li {
+.footer .bd-footer-links li {
   display: inline-block;
 }
 
-.footer-01 {
+.footer .footer-01 {
   text-align: left;
 }
 
-.publication-name {
+.footer .publication-name {
   margin-top: 30px;
-  font-size: 90%;
+  letter-spacing: 0.8px;
+  text-align: center;
+  font-size: 15px;
 }
 
-.expediente {
+.footer .expediente {
   letter-spacing: 1px;
   text-align: left;
   font-size: 90%;
 }
 
-.publication-name {
-  margin-top: 30px;
-  font-size: 115%;
-  letter-spacing: 0.8px;
-  text-align: center;
-}
-
-.expediente-linha {
+.footer .expediente-linha {
   margin-bottom: 7px;
   line-height: 18px;
 }
 
-span.expediente-label {
-  font-weight: bold;
+.footer span.expediente-label {
+  /*font-weight: bold;*/
   color: #babd7b;
 }
 
@@ -11557,35 +11601,60 @@ span.expediente-label {
   /* margin-top: 5px; */
 }
 
-.articles {
-  margin-top: 30px;
+.articles-list {
+  margin-top: 60px;
 }
 
-.articles article {
+.articles-list article {
   font-family: "Open Sans";
   margin-bottom: 30px;
 }
 
-.article-title h3 {
+.articles-list article .article-title h3 {
   font-family: "Open Sans";
   color: #172a52;
   font-weight: 500;
 }
 
-.article-title a {
+.articles-list article .article-title a {
   font-family: "Open Sans";
-  color: #172a52;
+  color: #636b6f;
 }
 
-.article-title a:hover {
+.articles-list article .article-title a:hover {
   text-decoration: none;
 }
 
-.article-title a:focus {
+.articles-list article .article-title a:focus {
   text-decoration: none;
 }
 
-.article-title a:active {
+.articles-list article .article-title a:active {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle {
+  font-family: 'Open Sans Condensed';
+  font-size: 22px;
+  color: #9493a5;
+  margin-bottom: 30px;
+  margin-top: -10px;
+  letter-spacing: 0.2px;
+}
+
+.articles-list article .article-subtitle a {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle a:hover {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle a:focus {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle a:active {
   text-decoration: none;
 }
 
@@ -11612,14 +11681,6 @@ span.expediente-label {
   border-bottom: 1px solid #babd7b;
 }
 
-.article-subtitle {
-  font-family: 'Open Sans Condensed';
-  font-size: 16pt;
-  color: #9493a5;
-  margin-bottom: 30px;
-  letter-spacing: 0.2px;
-}
-
 .article-body {
   margin-top: 15px;
 }
@@ -11644,6 +11705,10 @@ figcaption.article-image-caption {
   font-family: 'Open Sans Condensed';
   color: #9493a5;
   letter-spacing: 0.4px;
+  text-align: right;
+  line-height: 1.3em;
+  font-size: 0.8em;
+  margin-top: 5px;
 }
 
 .label {

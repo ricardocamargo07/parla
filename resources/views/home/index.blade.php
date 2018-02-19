@@ -14,9 +14,9 @@
                                         <a :href="post.link">
                                             <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                                         </a>
-                                        <figcaption class="article-caption">
-                                            <div v-if="post.main_photo.author_credits" style="font-size: 0.7em;" class="text-right">
-                                                @{{ post.main_photo.author_credits }}
+                                        <figcaption class="article-image-caption">
+                                            <div v-if="post.main_photo.notes_and_author">
+                                                @{{ post.main_photo.notes_and_author }}
                                             </div>
                                         </figcaption>
                                     </figure>
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="articles">
+    <div class="articles-list">
         <div class="container">
             <div class="row" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / 3 : 1)">
                 <article v-for="post in (tables.nonFeatured ? slice(tables.nonFeatured, (i - 1) * 3, i * 3) : [])" class="col-md-4 equal">
@@ -62,18 +62,20 @@
                             <a :href="post.link">
                                 <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                             </a>
-                            <div v-if="post.main_photo.author_credits" style="font-size: 0.7em;" class="text-right">
-                                @{{ post.main_photo.author_credits }}
-                            </div>
-                            <figcaption class="article-caption"></figcaption>
+                           <figcaption class="article-image-caption">
+                                <div v-if="post.main_photo.notes_and_author">
+                                    @{{ post.main_photo.notes_and_author }}
+                                </div>
+                            </figcaption>
                         </figure>
                     </div>
 
+                    {{--<span class="post-created">@{{ post.date }}</span>--}}
                     <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
 
                     {{--<span class="post-category ">@{{ post.category }}</span>--}}
                     {{--<span class="post-divider">/</span>--}}
-                    <span class="post-created ">@{{ post.date }}</span>
+
 
                     <h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>
 

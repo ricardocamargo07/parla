@@ -34,24 +34,27 @@
                         <p>{!! $post->lead !!}</p>
 
                         <p>{!! $post->body !!}</p>
+
+                        <div class="row article-gallery" > {{-- ACR - transoformar este style em css!!!! --}}
+                            @foreach ($post->other_photos as $photo)
+                                <figure class="col-xs-6 col-md-3">
+                                    <img class="img img-responsive article-img" src="{{ $photo['url_lowres'] }}" >
+                                    <figcaption class="article-image-caption">
+                                        <span class="article-image-author">{{ $photo['notes_and_author'] }}</span>
+                                    </figcaption>
+                                </figure>
+                            @endforeach
+                        </div>
+
+                        <footer class="article-tags">
+                            @foreach ($post->tags as $tag)
+                                <span class="label label-default article-tag">{{ $tag }}</span>
+                            @endforeach
+                        </footer>
+
                     </div>
 
-                    <footer>
-                        @foreach ($post->tags as $tag)
-                            <span class="label label-default">{{ $tag }}</span>
-                        @endforeach
-                    </footer>
 
-                    <div class="row" style="margin-top: 50px;"> {{-- ACR - transoformar este style em css!!!! --}}
-                        @foreach ($post->other_photos as $photo)
-                            <figure class="col-xs-6 col-md-3">
-                                <img class="img img-responsive article-img" src="{{ $photo['url_lowres'] }}" >
-                                <figcaption class="article-image-caption">
-                                    <span class="article-image-author">{{ $photo['notes_and_author'] }}</span>
-                                </figcaption>
-                            </figure>
-                        @endforeach
-                    </div>
                 </article>
 
                 {{--<div class="col-md-4 article-side-list">--}}
