@@ -14,8 +14,8 @@
                                         <a :href="post.link">
                                             <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                                         </a>
-                                        <figcaption class="article-caption">
-                                            <div v-if="post.main_photo.notes_and_author" style="font-size: 0.7em;" class="text-right">
+                                        <figcaption class="article-image-caption">
+                                            <div v-if="post.main_photo.notes_and_author">
                                                 @{{ post.main_photo.notes_and_author }}
                                             </div>
                                         </figcaption>
@@ -62,10 +62,11 @@
                             <a :href="post.link">
                                 <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                             </a>
-                            <div v-if="post.main_photo.notes_and_author" style="font-size: 0.7em;" class="text-right">
-                                @{{ post.main_photo.notes_and_author }}
-                            </div>
-                            <figcaption class="article-caption"></figcaption>
+                            <figcaption class="article-image-caption">
+                                <div v-if="post.main_photo.notes_and_author">
+                                    @{{ post.main_photo.notes_and_author }}
+                                </div>
+                            </figcaption>
                         </figure>
                     </div>
 
