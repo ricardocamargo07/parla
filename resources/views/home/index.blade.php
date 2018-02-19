@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="articles">
+    <div class="articles-list">
         <div class="container">
             <div class="row" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / 3 : 1)">
                 <article v-for="post in (tables.nonFeatured ? slice(tables.nonFeatured, (i - 1) * 3, i * 3) : [])" class="col-md-4 equal">
@@ -70,11 +70,12 @@
                         </figure>
                     </div>
 
+                    {{--<span class="post-created">@{{ post.date }}</span>--}}
                     <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
 
                     {{--<span class="post-category ">@{{ post.category }}</span>--}}
                     {{--<span class="post-divider">/</span>--}}
-                    <span class="post-created ">@{{ post.date }}</span>
+
 
                     <h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>
 

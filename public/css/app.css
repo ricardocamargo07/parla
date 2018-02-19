@@ -11601,35 +11601,60 @@ h1,
   /* margin-top: 5px; */
 }
 
-.articles {
-  margin-top: 30px;
+.articles-list {
+  margin-top: 60px;
 }
 
-.articles article {
+.articles-list article {
   font-family: "Open Sans";
   margin-bottom: 30px;
 }
 
-.article-title h3 {
+.articles-list article .article-title h3 {
   font-family: "Open Sans";
   color: #172a52;
   font-weight: 500;
 }
 
-.article-title a {
+.articles-list article .article-title a {
   font-family: "Open Sans";
-  color: #172a52;
+  color: #636b6f;
 }
 
-.article-title a:hover {
+.articles-list article .article-title a:hover {
   text-decoration: none;
 }
 
-.article-title a:focus {
+.articles-list article .article-title a:focus {
   text-decoration: none;
 }
 
-.article-title a:active {
+.articles-list article .article-title a:active {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle {
+  font-family: 'Open Sans Condensed';
+  font-size: 22px;
+  color: #9493a5;
+  margin-bottom: 30px;
+  margin-top: -10px;
+  letter-spacing: 0.2px;
+}
+
+.articles-list article .article-subtitle a {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle a:hover {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle a:focus {
+  text-decoration: none;
+}
+
+.articles-list article .article-subtitle a:active {
   text-decoration: none;
 }
 
@@ -11654,15 +11679,6 @@ h1,
   /* background: #9493a5; */
   border-top: 1px solid #babd7b;
   border-bottom: 1px solid #babd7b;
-}
-
-.article-subtitle {
-  font-family: 'Open Sans Condensed';
-  font-size: 28px;
-  color: #9493a5;
-  margin-bottom: 30px;
-  margin-top: -10px;
-  letter-spacing: 0.2px;
 }
 
 .article-body {
