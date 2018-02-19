@@ -132,7 +132,7 @@ nos dias de festa. Procure um posto e garanta a sua.
         ],
 
         [
-            'title' => "Exposição ‘Ex África’ leva cultura africana ao Centro do Rio.",
+            'title' => "Exposição leva cultura africana ao Centro do Rio",
 
             'category' => 'Cultura',
 
