@@ -4,12 +4,39 @@
 .header-main-inner {
   padding-bottom: 30px;
   padding-top: 30px;
+
+  .header-right {
+    letter-spacing: 0.5px;
+    font-family: Roboto;
+    text-align: right;
+    /*margin-top: 15px;*/
+    color: #9493a5;
+  }
+
+  @media screen and (min-width: 798px) {
+    .Aligner {
+    display: flex;
+    align-items: center;
+    min-height: 6.3em;
+    justify-content: center;
+    }
+    .Aligner-item {
+    flex: 1;
+    }
+  }
+
+
+
 }
 
-.header-right {
-  letter-spacing: 0.5px;
-  font-family: Roboto;
-  text-align: right;
-  margin-top: 15px;
-  color: #9493a5;
+
+
+
+
+
+
+
+
+
+.parla-edition {
 }
