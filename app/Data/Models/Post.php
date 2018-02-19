@@ -302,7 +302,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             $post['created_at'] = $date;
 
-            $post['date'] = Carbon::parse($post['created_at'])->format('j F Y');
+            $post['date'] = Carbon::parse($post['created_at'])->format('F Y');
 
             $post['main_photo'] = static::makePhotosCollection($post['photos'])->where('main', true)->first();
 
