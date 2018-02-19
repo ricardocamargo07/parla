@@ -287,11 +287,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
     {
         $markdown = new Service();
 
-        return collect(static::$posts)->mapWithKeys(/**
-         * @param $post
-         * @return array
-         */
-            function($post) use ($markdown) {
+        return collect(static::$posts)->map(function($post) use ($markdown) {
             $slug = str_slug($post['title']);
 
             $date = Carbon::parse($post['created_at']);
@@ -318,13 +314,13 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             $post['body'] = $markdown->convert($post['body']);
 
-            return [$slug => $post];
+            return $post;
         });
     }
 
     public static function featured()
     {
-        return static::all()->where('featured', true);
+        return static::all()->where('featured', true)->toArray();
     }
 
     private static function makeAuthorsString($authors)
@@ -334,7 +330,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
     public static function nonFeatured()
     {
-        return static::all()->where('featured', false);
+        return static::all()->where('featured', false)->toArray();
     }
 
     public static function findBySlug($slug)

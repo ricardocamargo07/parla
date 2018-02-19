@@ -74405,6 +74405,20 @@ if (jQuery("#" + appName).length > 0) {
             },
             openProcesso: function openProcesso(id) {
                 window.location.href = '/processos/' + id;
+            },
+            count: function count(items) {
+                return Object.keys(items).length;
+            },
+            slice: function slice(items, start, end) {
+                var sliced = [];
+
+                for (var i = start + 1; i < end + 1; i++) {
+                    if (items[i]) {
+                        sliced.push(items[i]);
+                    }
+                }
+
+                return sliced;
             }
         },
 

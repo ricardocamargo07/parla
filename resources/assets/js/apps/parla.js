@@ -66,6 +66,22 @@ if (jQuery("#" + appName).length > 0) {
             openProcesso(id) {
                 window.location.href = '/processos/'+id;
             },
+
+            count(items) {
+                return Object.keys(items).length
+            },
+
+            slice(items, start, end) {
+                var sliced = [];
+
+                for (var i=start+1; i<end+1; i++) {
+                    if (items[i]) {
+                        sliced.push(items[i]);
+                    }
+                }
+
+                return sliced;
+            },
         },
 
         mounted() {
