@@ -14,11 +14,14 @@
                     <h5 class="article-subtitle">{{ $post->subtitle }}</h5>
                     <div class="row">
                         <figure class="col-xs-12">
-                            <img class="img img-responsive article-img" src="{{ $post->main_photo->url_lowres }}" >
-                            <figcaption class="article-image-caption">
-                                <span class="article-image-author">{{ $post->main_photo->author }}</span>
-                                {{--A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea--}}
-                            </figcaption>
+                            @if ($post->main_photo->count() > 0)
+                                <img class="img img-responsive article-img" src="{{ $post->main_photo->url_lowres }}" >
+
+                                <figcaption class="article-image-caption">
+                                    <span class="article-image-author">{{ $post->main_photo->author }}</span>
+                                    {{--A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea--}}
+                                </figcaption>
+                            @endif
                         </figure>
                     </div>
 

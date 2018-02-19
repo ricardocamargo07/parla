@@ -210,13 +210,13 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
             ],
 
             'photos' => [
-//                [
-//                    'main' => true,
-//                    'url_highres' => '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur.jpg',
-//                    'url_lowres' => '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
-//                    'author' => 'Alexandre Macieira',
-//                    'notes' => '',
-//                ]
+                [
+                    'main' => true,
+                    'url_highres' => '/images/parla_placeholder.jpg',
+                    'url_lowres' => '/images/parla_placeholder.jpg',
+                    'author' => '',
+                    'notes' => '',
+                ]
             ],
 
             'lead' => 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
