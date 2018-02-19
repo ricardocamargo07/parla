@@ -132,7 +132,7 @@ nos dias de festa. Procure um posto e garanta a sua.
         ],
 
         [
-            'title' => "Exposição ‘Ex África’ leva cultura africana ao Centro do Rio.",
+            'title' => "Exposição leva cultura africana ao Centro do Rio",
 
             'category' => 'Cultura',
 
@@ -302,7 +302,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             $post['created_at'] = $date;
 
-            $post['date'] = Carbon::parse($post['created_at'])->format('j F Y');
+            $post['date'] = Carbon::parse($post['created_at'])->format('F Y');
 
             $post['main_photo'] = static::makePhotosCollection($post['photos'])->where('main', true)->first();
 
@@ -347,7 +347,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             $photo['notes_and_author'] = $notes . (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
 
-            $photo['author_credits'] = (!empty($author) ? "Foto: $author" : '');
+            $photo['author_credits'] = (!empty($author) ? "(Foto: $author)" : '');
 
             return $photo;
         });

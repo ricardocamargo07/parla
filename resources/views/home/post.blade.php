@@ -24,7 +24,7 @@
                                 <img class="img img-responsive article-img" src="{{ $post->main_photo->url_lowres }}" >
 
                                 <figcaption class="article-image-caption">
-                                    <span class="article-image-author">{{ $post->main_photo->author }}</span>
+                                    <span class="article-image-author">{{ $post->main_photo->notes_and_author }}</span>
                                     {{--A mostra conta com vídeos, músicas, esculturas, fotogra as e pinturas que remetem à cultura africana contemporânea--}}
                                 </figcaption>
                             @endif

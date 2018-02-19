@@ -11,7 +11,7 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 header-right Aligner">
             <div class="header-right-inner parla-edition Aligner-item">
-                Parla n&ordm; 1 - Fevereiro de 2018
+                Parla n&ordm; 0 - Fevereiro de 2018
             </div>
         </div>
     </div>
