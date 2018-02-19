@@ -24,10 +24,9 @@
                                         <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
                                         {{--<span class="post-category "> @{{ post.category }}</span>   CATEGORIA DESABILITADA        --}}
                                         {{--<span class="post-divider">/</span> --}}
+
                                         <span class="post-created ">@{{ post.date }}</span>
-                                        {{--
-                                            <h5 class="article-subtitle"><a :href="post.link">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
-                                        --}}
+
                                         <div class="article-intro" >
                                             <p v-html="post.lead_limited"></p>
                                         </div>
