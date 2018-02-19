@@ -27,29 +27,29 @@ class Post
             'photos' => [
                 [
                     'main' => true,
-                    'url_highres' => '/images/photos/GabrielSorriso1_RafaelWallace.jpg',
-                    'url_lowres' => '/images/photos/GabrielSorriso1_RafaelWallace-1200x800.jpg',
+                    'url_highres' => '/images/photos/gabriel-sorriso1_rafael-wallace.jpg',
+                    'url_lowres' => '/images/photos/gabriel-sorriso1_rafael-wallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
                     'notes' => 'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
                 ],
                 [
                     'main' => false,
-                    'url_highres' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra.jpg',
-                    'url_lowres' => '/images/photos/AntonioConceicao4_01_02_2018-ThiagoLontra-1200x900.jpg',
+                    'url_highres' => '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra.jpg',
+                    'url_lowres' => '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra-1200x900.jpg',
                     'author' => 'Thiago Lontra',
                     'notes' => 'O serralheiro Antonio Conceição atua como compositor e interprete'
                 ],
                 [
                     'main' => false,
-                    'url_highres' => '/images/photos/DaisaConceicao.jpg',
-                    'url_lowres' => '/images/photos/DaisaConceicao.jpg',
+                    'url_highres' => '/images/photos/daisa-conceicao.jpg',
+                    'url_lowres' => '/images/photos/daisa-conceicao.jpg',
                     'author' => '',
                     'notes' => 'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança',
                 ],
                 [
                     'main' => false,
-                    'url_highres' => '/images/photos/GabrielSorriso.jpg',
-                    'url_lowres' => '/images/photos/GabrielSorriso.jpg',
+                    'url_highres' => '/images/photos/gabriel-sorriso.jpg',
+                    'url_lowres' => '/images/photos/gabriel-sorriso.jpg',
                     'author' => '',
                     'notes' => 'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D',
                 ],
@@ -93,15 +93,15 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'photos' => [
                 [
                     'main' => true,
-                    'url_highres' => '/images/photos/1070-Materia-saude-Carnaval-Rafael-Wallace.jpg',
-                    'url_lowres' => '/images/photos/1070-Materia-saude-Carnaval-Rafael-Wallace-1200x800.jpg',
+                    'url_highres' => '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
+                    'url_lowres' => '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
                     'notes' => 'A diretora do departamento médico da Alerj, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e também o consumo de muito líquido para ajudar na hidratação',
                 ],
                 [
                     'main' => false,
-                    'url_highres' => '/images/photos/antigorestaurante.jpg',
-                    'url_lowres' => '/images/photos/antigorestaurante-1200x800.jpg',
+                    'url_highres' => '/images/photos/antigo-restaurante.jpg',
+                    'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
                     'author' => '',
                     'notes' => '',
                 ]
@@ -147,22 +147,22 @@ nos dias de festa. Procure um posto e garanta a sua.
             'photos' => [
                 [
                     'main' => true,
-                    'url_highres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'url_lowres' => '/images/photos/Ex-Africa-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
+                    'url_highres' => '/images/photos/ex-africa-foto-alexandre-macieira-riotur.jpg',
+                    'url_lowres' => '/images/photos/ex-africa-foto-alexandre-macieira-riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                     'notes' => 'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos',
                 ],
                 [
                     'main' => false,
-                    'url_highres' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'url_lowres' => '/images/photos/Ex-Africa-2-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
+                    'url_highres' => '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur.jpg',
+                    'url_lowres' => '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                     'notes' => 'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou',
                 ],
                 [
                     'main' => false,
-                    'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
-                    'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
+                    'url_highres' => '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur.jpg',
+                    'url_lowres' => '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
                     'author' => 'Alexandre Macieira',
                     'notes' => 'A entrada é franca e a exposição está aberta de quarta a segunda',
                 ],
@@ -212,8 +212,8 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
             'photos' => [
 //                [
 //                    'main' => true,
-//                    'url_highres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur.jpg',
-//                    'url_lowres' => '/images/photos/Ex-Africa-3-Foto-Alexandre-Macieira-Riotur-1200x800.jpg',
+//                    'url_highres' => '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur.jpg',
+//                    'url_lowres' => '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
 //                    'author' => 'Alexandre Macieira',
 //                    'notes' => '',
 //                ]
@@ -260,8 +260,8 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'photos' => [
                 [
                     'main' => true,
-                    'url_highres' => '/images/photos/antigorestaurante.jpg',
-                    'url_lowres' => '/images/photos/antigorestaurante-1200x800.jpg',
+                    'url_highres' => '/images/photos/antigo-restaurante.jpg',
+                    'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
                     'author' => '',
                     'notes' => 'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes',
                 ],
