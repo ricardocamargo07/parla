@@ -12,14 +12,13 @@
                         {{--<span class="post-divider">--}}
                             {{--/--}}
                         {{--</span>--}}
-                        <span class="post-created">
-                            {{--{{ $post->date }}--}}
-                            &nbsp; {{-- só até resolver os problemas de design--}}
-                        </span>
-                        <span class="post-author">{{ $post->authors_string }}</span>
+
+                        {{--<span class="post-created ">{{ $post->date }}</span>--}}
+                        {{--<div class="post-author ">{{ $post->authors_string }}</div>--}}
                     </div>
                     <h1 class="article-title">{{ $post->title }}</h1>
                     <h5 class="article-subtitle">{{ $post->subtitle }}</h5>
+                    <div class="post-author ">{{ $post->authors_string }}</div>
                     <div class="row">
                         <figure class="col-xs-12">
                             @if ($post->main_photo->count() > 0)
