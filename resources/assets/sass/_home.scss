@@ -1,7 +1,6 @@
 
 // Home
 
-
 .row.swiper-row {
   padding-top: 30px;
   border-top: 1px solid #babd7b;
@@ -140,8 +139,6 @@ figcaption.article-image-caption {
   }
 }
 
-
-
 span.post-author {
   float: right;
 }
@@ -152,5 +149,8 @@ a.readmore {
 
 }
 
+[v-cloak] {
+  display: none;
+}
 
 

@@ -62,7 +62,7 @@
                             <a :href="post.link">
                                 <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                             </a>
-                            <figcaption class="article-image-caption">
+                           <figcaption class="article-image-caption">
                                 <div v-if="post.main_photo.notes_and_author">
                                     @{{ post.main_photo.notes_and_author }}
                                 </div>

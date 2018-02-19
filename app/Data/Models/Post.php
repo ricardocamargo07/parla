@@ -347,6 +347,8 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             $photo['notes_and_author'] = $notes . (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
 
+            $photo['author_credits'] = (!empty($author) ? "Foto: $author" : '');
+
             return $photo;
         });
     }
