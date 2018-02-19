@@ -1,6 +1,7 @@
 # Parla
+### https://parla.alerj.rj.gov.br/
 
-## https://parla.alerj.rj.gov.br/
+Publicação quinzenal da Subdiretoria-Geral de Comunicação Social da Assembleia Legislativa do Estado do Rio de Janeiro
 
 ## Características da aplicação
 
