@@ -11437,7 +11437,6 @@ button.close {
 }
 
 .header-main-inner {
-  border-bottom: 1px solid #babd7b;
   padding-bottom: 30px;
   padding-top: 30px;
 }
@@ -11526,12 +11525,13 @@ button.close {
 
 .publication-name {
   margin-top: 30px;
-  font-size: 115%;
+  font-size: 90%;
 }
 
 .expediente {
   letter-spacing: 1px;
   text-align: left;
+  font-size: 90%;
 }
 
 .publication-name {
@@ -11542,7 +11542,8 @@ button.close {
 }
 
 .expediente-linha {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+  line-height: 18px;
 }
 
 span.expediente-label {
@@ -11552,7 +11553,7 @@ span.expediente-label {
 
 .row.swiper-row {
   padding-top: 30px;
-  /* border-top: 1px solid; */
+  border-top: 1px solid #babd7b;
   /* margin-top: 5px; */
 }
 
@@ -11598,13 +11599,16 @@ span.expediente-label {
   color: #384043;
   float: right;
   font-style: italic;
+  line-height: 20px;
+  margin-top: 5px;
+  font-size: 16px;
 }
 
 .article-details {
   padding: 7px;
   margin-bottom: 10px;
   /* background: #9493a5; */
-  /*border-top: 1px solid #babd7b;*/
+  border-top: 1px solid #babd7b;
   border-bottom: 1px solid #babd7b;
 }
 

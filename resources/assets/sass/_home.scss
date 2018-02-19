@@ -4,7 +4,7 @@
 
 .row.swiper-row {
   padding-top: 30px;
-  /* border-top: 1px solid; */
+  border-top: 1px solid #babd7b;
   /* margin-top: 5px; */
 }
 
@@ -49,12 +49,16 @@
   color: #384043;
   float: right;
   font-style: italic;
+  line-height: 20px;
+  margin-top: 5px;
+  font-size: 16px;
 }
+
 .article-details {
   padding: 7px;
   margin-bottom: 10px;
   /* background: #9493a5; */
-  /*border-top: 1px solid #babd7b;*/
+  border-top: 1px solid #babd7b;
   border-bottom: 1px solid #babd7b;
 }
 .article-subtitle {
