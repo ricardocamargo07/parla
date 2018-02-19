@@ -8,6 +8,8 @@
 
         <title>{{ config('app.name') }}</title>
 
+        @include('layouts.partials.favicon')
+
         {{--<link rel="stylesheet" href="/css/monte.css">--}}
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
