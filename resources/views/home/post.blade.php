@@ -6,8 +6,13 @@
             <div class="row">
                 <article class="col-md-12">
                     <div class="article-details">
-                        <span class="post-category ">{{ $post->category }}</span>
-                        <span class="post-divider">/</span><span class="post-created ">{{ $post->date }}</span>
+                        {{--<span class="post-category">    CATEGORIA DESABILITADA       --}}
+                            {{--{{ $post->category }}--}}
+                        {{--</span>--}}
+                        {{--<span class="post-divider">--}}
+                            {{--/--}}
+                        {{--</span>--}}
+                        <span class="post-created ">{{ $post->date }}</span>
                         <span class="post-author ">{{ $post->authors_string }}</span>
                     </div>
                     <h1 class="article-title">{{ $post->title }}</h1>
