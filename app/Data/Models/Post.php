@@ -197,6 +197,45 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
         ],
 
         [
+            'title' => "Curiosidades do Palácio Tiradentes",
+
+            'category' => 'Alerj',
+
+            'created_at' => '2018-02-08',
+
+            'subtitle' => '',
+
+            'authors' => [
+                'Symone Munay',
+                'Leon Lucius',
+            ],
+
+            'photos' => [
+                [
+                    'main' => true,
+                    'url_highres' => '/images/photos/antigo-restaurante.jpg',
+                    'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
+                    'author' => '',
+                    'notes' => 'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes',
+                ],
+            ],
+
+            'lead' => 'Todos que circulam diariamente pelo Palácio Tiradentes sabem que há muita história a contar nesses 92 anos de existência. O prédio chama a atenção por sua beleza arquitetônica e também pela imponência. A atual sede da Assembleia Legislativa do Estado do Rio de Janeiro já foi cadeia no Brasil Colônia - onde inclusive o mártir da Inconfidência Mineira, Tiradentes, ficou preso e, já na República, foi Câmara dos Deputados.',
+
+            'body' => '
+Um local de tantas histórias tem alguns detalhes que podem passar despercebidos. Você sabia, por exemplo, que onde hoje funciona um banco, no térreo, já foi um restaurante?
+ 
+O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozinha e mobiliário para comportar até 150 pessoas. Os artistas Augusto José Marques Júnior e Genesco Murta pintaram seis painéis para decorar as paredes. Os tamanhos das pinturas variam entre 1,58m de altura por 1,54m e 2,6m de largura e representam cenas do campo e da pecuária. As telas são descritas pelos artistas como a “visão bucólica das paisagens nativas, representando poéticos cenários dos nossos crepúsculos sobre os campos lavradios”. O restaurante, no entanto, foi desativado há décadas. Desde 1984, o atual banco ocupa o espaço que guarda ainda lembranças do seu passado.
+',
+
+            'featured' => false,
+
+            'tags' => [
+                'palácio tiradentes',
+            ],
+        ],
+
+        [
             'title' => "Onde solucionar seu problema",
 
             'category' => 'RH',
@@ -241,45 +280,6 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'tags' => [
                 'rh',
                 'administrativo',
-            ],
-        ],
-
-        [
-            'title' => "Curiosidades do Palácio Tiradentes",
-
-            'category' => 'Alerj',
-
-            'created_at' => '2018-02-08',
-
-            'subtitle' => '',
-
-            'authors' => [
-                'Symone Munay',
-                'Leon Lucius',
-            ],
-
-            'photos' => [
-                [
-                    'main' => true,
-                    'url_highres' => '/images/photos/antigo-restaurante.jpg',
-                    'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
-                    'author' => '',
-                    'notes' => 'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes',
-                ],
-            ],
-
-            'lead' => 'Todos que circulam diariamente pelo Palácio Tiradentes sabem que há muita história a contar nesses 92 anos de existência. O prédio chama a atenção por sua beleza arquitetônica e também pela imponência. A atual sede da Assembleia Legislativa do Estado do Rio de Janeiro já foi cadeia no Brasil Colônia - onde inclusive o mártir da Inconfidência Mineira, Tiradentes, ficou preso e, já na República, foi Câmara dos Deputados.',
-
-            'body' => '
-Um local de tantas histórias tem alguns detalhes que podem passar despercebidos. Você sabia, por exemplo, que onde hoje funciona um banco, no térreo, já foi um restaurante?
- 
-O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozinha e mobiliário para comportar até 150 pessoas. Os artistas Augusto José Marques Júnior e Genesco Murta pintaram seis painéis para decorar as paredes. Os tamanhos das pinturas variam entre 1,58m de altura por 1,54m e 2,6m de largura e representam cenas do campo e da pecuária. As telas são descritas pelos artistas como a “visão bucólica das paisagens nativas, representando poéticos cenários dos nossos crepúsculos sobre os campos lavradios”. O restaurante, no entanto, foi desativado há décadas. Desde 1984, o atual banco ocupa o espaço que guarda ainda lembranças do seu passado.
-',
-
-            'featured' => false,
-
-            'tags' => [
-                'palácio tiradentes',
             ],
         ],
     ];
