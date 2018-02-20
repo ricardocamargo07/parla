@@ -32,8 +32,6 @@
                                             <p v-html="post.lead_limited"></p>
                                         </div>
 
-                                        <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
-
                                         <footer>
                                             <span v-for="tag in post.tags">
                                                 <span class="label label-default">
@@ -41,6 +39,9 @@
                                                 </span>
                                             </span>
                                         </footer>
+
+                                        <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+
                                     </div>
                                 </div>
                             </article>
@@ -83,8 +84,6 @@
                         <p v-html="post.lead_limited"></p>
                     </div>
 
-                    <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
-
                     <footer>
                         <span v-for="tag in post.tags">
                             <span class="label label-default">
@@ -92,6 +91,9 @@
                             </span>
                         </span>
                     </footer>
+
+                    <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+
                 </article>
             </div>
         </div>

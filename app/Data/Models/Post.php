@@ -192,6 +192,7 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
                 'exposição',
                 'arte',
                 'áfrica',
+                'ccbb',
             ],
         ],
 
