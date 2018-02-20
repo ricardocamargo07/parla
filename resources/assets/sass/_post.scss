@@ -21,7 +21,7 @@ h1, .h1 {
 
   .article-subtitle {
     font-family: 'Open Sans Condensed';
-    font-size: 22px;
+    font-size: 26px;
     color: #9493a5;
     margin-bottom: 15px;
     letter-spacing: 0.2px;
@@ -48,7 +48,8 @@ h1, .h1 {
   }
 
   .article-title {
-    font-weight: 600;
+    font-weight: 800;
+    color: #172a52;
 
     @media screen and (min-width: 798px) {
       margin-left: 130px;
