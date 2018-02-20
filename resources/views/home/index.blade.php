@@ -10,7 +10,7 @@
                         <div v-for="post in tables.featured" class="swiper-slide">
                             <article>
                                 <div class="row">
-                                    <figure class="col-xs-12 col-md-7">
+                                    <figure class="col-xs-12 col-md-8">
                                         <a :href="post.link">
                                             <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                                         </a>
@@ -20,7 +20,7 @@
                                             </div>
                                         </figcaption>
                                     </figure>
-                                    <div class="col-xs-12 col-md-5">
+                                    <div class="col-xs-12 col-md-4">
                                         <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
                                         {{--<span class="post-category"> @{{ post.category }}</span>   CATEGORIA DESABILITADA        --}}
                                         {{--<span class="post-divider">/</span> --}}
