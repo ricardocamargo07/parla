@@ -253,8 +253,8 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
             'photos' => [
                 [
                     'main' => true,
-                    'url_highres' => '/images/parla_placeholder.jpg',
-                    'url_lowres' => '/images/parla_placeholder.jpg',
+                    'url_highres' => '/images/photos/humano-papel-e-caneta.jpg',
+                    'url_lowres' => '/images/photos/humano-papel-e-caneta.jpg',
                     'author' => 'Parla - Alerj',
                     'notes' => '',
                 ]
