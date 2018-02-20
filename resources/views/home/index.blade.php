@@ -89,7 +89,7 @@
                         <span v-for="tag in post.tags">
                             <span class="label label-default">
                                 @{{ tag }}
-                            </span>&nbsp;
+                            </span>
                         </span>
                     </footer>
                 </article>
