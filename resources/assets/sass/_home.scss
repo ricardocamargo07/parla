@@ -237,6 +237,10 @@ figcaption.article-image-caption {
     border-color: #b8c27a;
   }
   &:active{
+    background-color: #96a53b;
+    border-color: #96a53b;
+  }
+  &:active:hover{
     background-color: #b8c27a;
     border-color: #b8c27a;
   }
@@ -245,8 +249,8 @@ figcaption.article-image-caption {
     border-color: #b8c27a;
   }
   &:visited{
-    background-color: #b8c27a;
-    border-color: #b8c27a;
+    background-color: #96a53b;
+    border-color: #96a53b;
   }
 }
 
