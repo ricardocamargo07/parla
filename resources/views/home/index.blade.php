@@ -31,12 +31,12 @@
                                         <div class="article-intro" >
                                             <p v-html="post.lead_limited"></p>
                                         </div>
-
+{{--
                                         <footer>
                                             <span v-for="tag in post.tags">
                                                 <span class="label label-default">@{{ tag }}</span>
                                             </span>
-                                        </footer>
+                                        </footer>--}}
 
                                         <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
 
@@ -76,17 +76,17 @@
                     {{--<span class="post-divider">/</span>--}}
 
 
-                    <h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>
+                    {{--<h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>--}}
 
                     <div class="article-intro" >
                         <p v-html="post.lead_limited"></p>
                     </div>
 
-                    <footer>
+                    {{--<footer>
                         <span v-for="tag in post.tags">
                             <span class="label label-default">@{{ tag }}</span>
                         </span>
-                    </footer>
+                    </footer>--}}
 
                     <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
 
