@@ -11713,6 +11713,14 @@ h1,
   margin-right: 15px;
 }
 
+.row.swiper-row .swiper-slide .label {
+  padding: .6em 1em .7em;
+  /*font-size: 75%;*/
+  font-weight: normal;
+  line-height: 2.6;
+  /*letter-spacing: .1em;*/
+}
+
 .articles-list {
   margin-top: 60px;
 }
@@ -11789,6 +11797,19 @@ h1,
   font-size: 16px;
 }
 
+.articles-list article .label {
+  padding: .6em 1em .7em;
+  /*font-size: 75%;*/
+  font-weight: normal;
+  line-height: 2.6;
+  /*letter-spacing: .1em;*/
+}
+
+.label-default {
+  background-color: #cccccc;
+  color: #ffffff;
+}
+
 .article-image-author {
   color: #384043;
   float: right;
@@ -11826,18 +11847,6 @@ figcaption.article-image-caption {
   line-height: 1.3em;
   font-size: 0.8em;
   margin-top: 5px;
-}
-
-.label {
-  padding: .6em 1em .7em;
-  font-size: 75%;
-  font-weight: normal;
-  letter-spacing: .1em;
-}
-
-.label-default {
-  background-color: #cccccc;
-  color: #ffffff;
 }
 
 .btn-primary {
