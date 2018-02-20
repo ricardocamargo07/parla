@@ -14,11 +14,11 @@
                                         <a :href="post.link">
                                             <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                                         </a>
-                                        <figcaption class="article-image-caption">
-                                            <div v-if="post.main_photo.author_credits">
-                                                @{{ post.main_photo.author_credits }}
-                                            </div>
-                                        </figcaption>
+                                        {{--<figcaption class="article-image-caption">--}}
+                                            {{--<div v-if="post.main_photo.author_credits">--}}
+                                                {{--@{{ post.main_photo.author_credits }}--}}
+                                            {{--</div>--}}
+                                        {{--</figcaption>--}}
                                     </figure>
                                     <div class="col-xs-12 col-md-4">
                                         <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
@@ -61,11 +61,11 @@
                             <a :href="post.link">
                                 <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                             </a>
-                           <figcaption class="article-image-caption">
-                                <div v-if="post.main_photo.author_credits">
-                                    @{{ post.main_photo.author_credits }}
-                                </div>
-                            </figcaption>
+                           {{--<figcaption class="article-image-caption">--}}
+                                {{--<div v-if="post.main_photo.author_credits">--}}
+                                    {{--@{{ post.main_photo.author_credits }}--}}
+                                {{--</div>--}}
+                            {{--</figcaption>--}}
                         </figure>
                     </div>
 

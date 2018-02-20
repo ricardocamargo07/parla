@@ -3,7 +3,6 @@
 namespace App\Data\Models;
 
 use App\Services\Markdown\Service;
-use Illuminate\Database\Eloquent\Collection;
 use Jenssegers\Date\Date as Carbon;
 use PragmaRX\Coollection\Package\Coollection;
 
@@ -12,6 +11,8 @@ class Post
     protected static $posts = [
         [
             'title' => 'Alerj na folia',
+
+            'order' => 1,
 
             'category' => 'Cidade',
 
