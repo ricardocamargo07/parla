@@ -29,7 +29,7 @@
                                             <h5 class="article-subtitle"><a :href="post.link">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pellentesque turpis ut velit malesuada suscipit. </a></h5>
                                         --}}
                                         <div class="article-intro" >
-                                            <p v-html="post.lead_limited"></p>
+                                            <p v-html="post.lead_limited_featured"></p>
                                         </div>
 {{--
                                         <footer>

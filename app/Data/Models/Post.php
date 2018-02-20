@@ -80,6 +80,8 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
         [
             'title' => 'A-la-la-ô mas que calor...',
 
+            'order' => 2,
+
             'category' => 'Saúde',
 
             'created_at' => '2018-02-08',
@@ -134,6 +136,8 @@ nos dias de festa. Procure um posto e garanta a sua.
 
         [
             'title' => "Exposição leva cultura africana ao Centro do Rio",
+
+            'order' => 3,
 
             'category' => 'Cultura',
 
@@ -200,6 +204,8 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
         [
             'title' => "Curiosidades do Palácio Tiradentes",
 
+            'order' => 4,
+
             'category' => 'Alerj',
 
             'created_at' => '2018-02-08',
@@ -238,6 +244,8 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
         [
             'title' => "Onde solucionar seu problema",
+
+            'order' => 5,
 
             'category' => 'RH',
 
@@ -310,6 +318,8 @@ Para os **estagiários**, o ramal de atendimento é 1369.
 
             $post['other_photos'] = static::makePhotosCollection($post['photos'])->where('main', false);
 
+            $post['lead_limited_featured'] = $markdown->convert(str_limit($post['lead'], 450));
+
             $post['lead_limited'] = $markdown->convert(str_limit($post['lead'], 200));
 
             $post['lead'] = $markdown->convert($post['lead']);
@@ -317,7 +327,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             $post['body'] = $markdown->convert($post['body']);
 
             return $post;
-        });
+        })->sortBy('order');
     }
 
     public static function featured()
