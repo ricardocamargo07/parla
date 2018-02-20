@@ -214,7 +214,7 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
                     'main' => true,
                     'url_highres' => '/images/parla_placeholder.jpg',
                     'url_lowres' => '/images/parla_placeholder.jpg',
-                    'author' => '',
+                    'author' => 'Parla - Alerj',
                     'notes' => '',
                 ]
             ],
