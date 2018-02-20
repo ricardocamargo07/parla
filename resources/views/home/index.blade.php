@@ -34,9 +34,7 @@
 
                                         <footer>
                                             <span v-for="tag in post.tags">
-                                                <span class="label label-default">
-                                                    @{{ tag }}
-                                                </span>
+                                                <span class="label label-default">@{{ tag }}</span>
                                             </span>
                                         </footer>
 
@@ -86,9 +84,7 @@
 
                     <footer>
                         <span v-for="tag in post.tags">
-                            <span class="label label-default">
-                                @{{ tag }}
-                            </span>
+                            <span class="label label-default">@{{ tag }}</span>
                         </span>
                     </footer>
 
