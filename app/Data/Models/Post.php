@@ -3,7 +3,6 @@
 namespace App\Data\Models;
 
 use App\Services\Markdown\Service;
-use Illuminate\Database\Eloquent\Collection;
 use Jenssegers\Date\Date as Carbon;
 use PragmaRX\Coollection\Package\Coollection;
 
@@ -12,6 +11,8 @@ class Post
     protected static $posts = [
         [
             'title' => 'Alerj na folia',
+
+            'order' => 1,
 
             'category' => 'Cidade',
 
@@ -197,54 +198,6 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
         ],
 
         [
-            'title' => "Onde solucionar seu problema",
-
-            'category' => 'RH',
-
-            'created_at' => '2018-02-08',
-
-            'subtitle' => '',
-
-            'authors' => [
-                'Symone Munay',
-                'Leon Lucius',
-            ],
-
-            'photos' => [
-                [
-                    'main' => true,
-                    'url_highres' => '/images/parla_placeholder.jpg',
-                    'url_lowres' => '/images/parla_placeholder.jpg',
-                    'author' => 'Parla - Alerj',
-                    'notes' => '',
-                ]
-            ],
-
-            'lead' => 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
-
-            'body' => '
-Para começar, qualquer demanda sobre **Legislação de Pessoal**, ligue 1370. Este canal atendente a todos os servidores efetivos, requisitados e demais colaboradores da Casa.
-
-Para casos específicos entre em contato com o setor através dos seguintes números:
-
-Caso seja **efetivo**, o número é 1395;
-
-Se você é **comissionado**, ligue para 1493;
-
-Servidores **requisitados**, 1368;
-
-Para os **estagiários**, o ramal de atendimento é 1369.
-',
-
-            'featured' => false,
-
-            'tags' => [
-                'rh',
-                'administrativo',
-            ],
-        ],
-
-        [
             'title' => "Curiosidades do Palácio Tiradentes",
 
             'category' => 'Alerj',
@@ -280,6 +233,54 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
 
             'tags' => [
                 'palácio tiradentes',
+            ],
+        ],
+
+        [
+            'title' => "Onde solucionar seu problema",
+
+            'category' => 'RH',
+
+            'created_at' => '2018-02-08',
+
+            'subtitle' => '',
+
+            'authors' => [
+                'Symone Munay',
+                'Leon Lucius',
+            ],
+
+            'photos' => [
+                [
+                    'main' => true,
+                    'url_highres' => '/images/photos/humano-papel-e-caneta.jpg',
+                    'url_lowres' => '/images/photos/humano-papel-e-caneta.jpg',
+                    'author' => 'Parla - Alerj',
+                    'notes' => '',
+                ]
+            ],
+
+            'lead' => 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
+
+            'body' => '
+Para começar, qualquer demanda sobre **Legislação de Pessoal**, ligue 1370. Este canal atendente a todos os servidores efetivos, requisitados e demais colaboradores da Casa.
+
+Para casos específicos entre em contato com o setor através dos seguintes números:
+
+Caso seja **efetivo**, o número é 1395;
+
+Se você é **comissionado**, ligue para 1493;
+
+Servidores **requisitados**, 1368;
+
+Para os **estagiários**, o ramal de atendimento é 1369.
+',
+
+            'featured' => false,
+
+            'tags' => [
+                'rh',
+                'administrativo',
             ],
         ],
     ];
