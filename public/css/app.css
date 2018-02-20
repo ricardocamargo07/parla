@@ -11659,14 +11659,30 @@ h1,
   }
 }
 
+.row.swiper-row .swiper-slide {
+  /*    .label-default {
+      margin-right: 15px;
+    }
+
+    .label {
+      padding: .6em 1em .7em;
+      !*font-size: 75%;*!
+      font-weight: normal;
+      line-height: 2.6;
+      !*letter-spacing: .1em;*!
+    }*/
+}
+
 .row.swiper-row .swiper-slide .article-title h3,
 .row.swiper-row .swiper-slide .article-title .h3 {
-  font-family: "Open Sans";
-  color: #172a52;
-  font-weight: 500;
+  font-size: 28px;
+  margin-top: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .row.swiper-row .swiper-slide .article-title a {
+  font-weight: 600;
   font-family: "Open Sans";
   color: #636b6f;
 }
@@ -11714,18 +11730,6 @@ h1,
   font-size: 16px;
 }
 
-.row.swiper-row .swiper-slide .label-default {
-  margin-right: 15px;
-}
-
-.row.swiper-row .swiper-slide .label {
-  padding: .6em 1em .7em;
-  /*font-size: 75%;*/
-  font-weight: normal;
-  line-height: 2.6;
-  /*letter-spacing: .1em;*/
-}
-
 .articles-list {
   margin-top: 60px;
 }
@@ -11747,7 +11751,6 @@ h1,
 .articles-list article .article-title .h3 {
   font-family: "Open Sans";
   color: #172a52;
-  font-weight: 500;
 }
 
 .articles-list article .article-title a {
@@ -11805,17 +11808,18 @@ h1,
   font-size: 16px;
 }
 
-.articles-list article .label {
-  padding: .6em 1em .7em;
-  /*font-size: 75%;*/
-  font-weight: normal;
-  line-height: 2.6;
-  /*letter-spacing: .1em;*/
-}
-
 .label-default {
   background-color: #cccccc;
   color: #ffffff;
+  margin-right: 10px;
+}
+
+.label {
+  padding: .6em 1em .7em;
+  /*font-size: 75%;*/
+  font-weight: 600;
+  line-height: 3.5;
+  letter-spacing: .1em;
 }
 
 .article-image-author {
@@ -11888,6 +11892,7 @@ figcaption.article-image-caption {
 a.readmore {
   float: right;
   color: #ffffff;
+  margin-top: 30px;
 }
 
 [v-cloak] {
