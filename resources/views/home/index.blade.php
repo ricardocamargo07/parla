@@ -54,8 +54,8 @@
 
     <div class="articles-list">
         <div class="container">
-            <div class="row" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / 3 : 1)">
-                <article v-for="post in (tables.nonFeatured ? slice(tables.nonFeatured, (i - 1) * 3, i * 3) : [])" class="col-md-4 equal">
+            <div class="row" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / edition.columns : 1)">
+                <article v-for="post in (tables.nonFeatured ? slice(tables.nonFeatured, (i - 1) * edition.columns, i * edition.columns) : [])" :class="'equal col-md-'+edition.column_size">
                     <div class="row">
                         <figure class="col-xs-12">
                             <a :href="post.link">

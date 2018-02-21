@@ -5,6 +5,11 @@ if (jQuery("#" + appName).length > 0) {
         el: '#'+appName,
 
         data: {
+            edition: {
+                columns: 2,
+                column_size: 6,
+            },
+
             tables: {
                 featured: [],
 
