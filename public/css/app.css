@@ -11683,7 +11683,6 @@ h1,
   margin-top: 15px;
   font-weight: 600;
   margin-bottom: 5px;
-  min-height: 65px;
 }
 
 .row.swiper-row .swiper-slide .article-title a {
@@ -11750,6 +11749,7 @@ h1,
   margin-top: 15px;
   font-weight: 600;
   margin-bottom: 15px;
+  min-height: 65px;
 }
 
 .articles-list article .article-title h3,
@@ -11820,7 +11820,7 @@ h1,
 }
 
 .label {
-  padding: .3em .8em .4m;
+  padding: .3em .8em .4em;
   font-size: 65%;
   font-weight: 500;
   line-height: 3.5;
