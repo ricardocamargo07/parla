@@ -11449,8 +11449,14 @@ button.close {
   color: #9493a5;
 }
 
+@media screen and (max-width: 769px) {
+  .header-main-inner .header-right {
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 798px) {
-  .header-main-inner .Aligner {
+  .header-main-inner .aligner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11463,7 +11469,7 @@ button.close {
             justify-content: center;
   }
 
-  .header-main-inner .Aligner-item {
+  .header-main-inner .aligner-item {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -11472,6 +11478,12 @@ button.close {
 
 .equal {
   min-height: 650px;
+}
+
+@media screen and (max-width: 769px) {
+  .equal {
+    min-height: auto;
+  }
 }
 
 h1,
@@ -11663,8 +11675,15 @@ h1,
   }
 }
 
+@media screen and (max-width: 769px) {
+  .row.swiper-row {
+    border-bottom: 1px solid #babd7b;
+    padding-bottom: 30px;
+  }
+}
+
 .row.swiper-row .swiper-slide {
-  /*    .label-default {
+  /*.label-default {
       margin-right: 15px;
     }
 
@@ -11734,14 +11753,38 @@ h1,
   font-size: 16px;
 }
 
+.row.swiper-row .swiper-slide footer {
+  text-align: right;
+}
+
 .articles-list {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 60px;
+}
+
+.articles-list .row.articles-row {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 769px) {
+  .articles-list .row.articles-row {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
 }
 
 .articles-list article {
   font-family: "Open Sans";
   /*margin-bottom: 30px;*/
+}
+
+@media screen and (max-width: 769px) {
+  .articles-list article {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #babd7b;
+    margin-bottom: 30px;
+  }
 }
 
 .articles-list article h3,
@@ -11750,7 +11793,14 @@ h1,
   margin-top: 15px;
   font-weight: 600;
   margin-bottom: 15px;
-  min-height: 65px;
+  min-height: 60px;
+}
+
+@media screen and (max-width: 769px) {
+  .articles-list article h3,
+  .articles-list article .h3 {
+    min-height: auto;
+  }
 }
 
 .articles-list article .article-title h3,
@@ -11774,12 +11824,6 @@ h1,
 
 .articles-list article .article-title a:active {
   text-decoration: none;
-}
-
-.articles-list article .article-details {
-  margin-bottom: 10px;
-  /* background: #9493a5; */
-  border-top: 1px solid #babd7b;
 }
 
 .articles-list article .article-subtitle {
@@ -11807,11 +11851,21 @@ h1,
   text-decoration: none;
 }
 
+.articles-list article .article-details {
+  margin-bottom: 10px;
+  /* background: #9493a5; */
+  border-top: 1px solid #babd7b;
+}
+
 .articles-list article .article-intro {
   line-height: 1.5;
   margin-bottom: 30px;
   /*margin-top: 5px;*/
   font-size: 16px;
+}
+
+.articles-list article footer {
+  text-align: right;
 }
 
 .label-default {
@@ -11901,7 +11955,7 @@ figcaption.article-image-caption {
 }
 
 a.readmore {
-  float: right;
+  /*float: right;*/
   color: #ffffff;
   margin-top: 30px;
 }

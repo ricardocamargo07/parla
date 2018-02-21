@@ -31,14 +31,14 @@
                                         <div class="article-intro" >
                                             <p v-html="post.lead_limited_featured"></p>
                                         </div>
-{{--
                                         <footer>
-                                            <span v-for="tag in post.tags">
+                                            <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+                                            {{--<span v-for="tag in post.tags">
                                                 <span class="label label-default">@{{ tag }}</span>
-                                            </span>
-                                        </footer>--}}
+                                            </span>--}}
+                                        </footer>
 
-                                        <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+
 
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
 
     <div class="articles-list">
         <div class="container">
-            <div class="row" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / edition.columns : 1)">
+            <div class="row articles-row" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / edition.columns : 1)">
                 <article v-for="post in (tables.nonFeatured ? slice(tables.nonFeatured, (i - 1) * edition.columns, i * edition.columns) : [])" :class="'equal col-md-'+edition.column_size">
                     <div class="row">
                         <figure class="col-xs-12">
@@ -82,13 +82,16 @@
                         <p v-html="post.lead_limited"></p>
                     </div>
 
-                    {{--<footer>
-                        <span v-for="tag in post.tags">
+                    <footer>
+{{--                        <span v-for="tag in post.tags">
                             <span class="label label-default">@{{ tag }}</span>
-                        </span>
-                    </footer>--}}
+                        </span>--}}
 
-                    <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+                        <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+                    </footer>
+
+
+
 
                 </article>
             </div>

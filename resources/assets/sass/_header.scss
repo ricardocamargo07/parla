@@ -11,16 +11,19 @@
     text-align: right;
     /*margin-top: 15px;*/
     color: #9493a5;
+    @media screen and (max-width: 769px) {
+      text-align: center;
+    }
   }
 
   @media screen and (min-width: 798px) {
-    .Aligner {
+    .aligner {
     display: flex;
     align-items: center;
     min-height: 6.3em;
     justify-content: center;
     }
-    .Aligner-item {
+    .aligner-item {
     flex: 1;
     }
   }
