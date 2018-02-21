@@ -83,16 +83,18 @@
 
 .articles-list {
   margin-top: 60px;
+  margin-bottom: 60px;
 
   article {
     font-family: "Open Sans";
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 
     h3, .h3 {
       font-size: 28px;
       margin-top: 15px;
       font-weight: 600;
-      margin-bottom: 15px
+      margin-bottom: 15px;
+      min-height:65px;
     }
 
     .article-title {
@@ -166,7 +168,7 @@
 }
 
 .label {
-  padding: .3em .8em .4m;
+  padding: .3em .8em .4em;
   font-size: 65%;
   font-weight: 500;
   line-height: 3.5;

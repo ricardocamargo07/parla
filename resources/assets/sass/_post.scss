@@ -18,21 +18,6 @@ h1, .h1 {
 
 .article-internal {
 
-
-  .article-subtitle {
-    font-family: 'Open Sans Condensed';
-    font-size: 26px;
-    color: #9493a5;
-    margin-bottom: 15px;
-    letter-spacing: 0.2px;
-
-    @media screen and (min-width: 798px) {
-      margin-left: 130px;
-      /*margin-right: 130px;*/
-    }
-  }
-
-
   h2, .h2 {
     font-size: 30px;
     font-weight: 600;
@@ -52,8 +37,23 @@ h1, .h1 {
     color: #172a52;
 
     @media screen and (min-width: 798px) {
+      margin-top: 30px;
       margin-left: 130px;
-      /*margin-right: 130px;*/
+      margin-right: 130px;
+    }
+  }
+
+  .article-subtitle {
+    font-family: 'Open Sans Condensed';
+    font-size: 26px;
+    color: #9493a5;
+    margin-bottom: 15px;
+    letter-spacing: 0.2px;
+
+    @media screen and (min-width: 798px) {
+      margin-left: 130px;
+      margin-right: 130px;
+      margin-bottom: 30px;
     }
   }
 
@@ -78,7 +78,7 @@ h1, .h1 {
       margin-left: 130px;
       margin-right: 130px;
       margin-bottom: 130px;
-      margin-top: 30px;
+      margin-top: 0px;
       line-height: 1.8;
     }
 

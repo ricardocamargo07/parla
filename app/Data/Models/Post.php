@@ -99,7 +99,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
                     'url_highres' => '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
                     'url_lowres' => '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
                     'author' => 'Rafael Wallace',
-                    'notes' => 'A diretora do departamento médico da Alerj, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e também o consumo de muito líquido para ajudar na hidratação',
+                    'notes' => 'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação',
                 ],
                 [
                     'main' => false,
