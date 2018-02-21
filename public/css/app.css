@@ -11681,6 +11681,7 @@ h1,
   margin-top: 15px;
   font-weight: 600;
   margin-bottom: 5px;
+  min-height: 65px;
 }
 
 .row.swiper-row .swiper-slide .article-title a {
