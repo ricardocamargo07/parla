@@ -11736,11 +11736,12 @@ h1,
 
 .articles-list {
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .articles-list article {
   font-family: "Open Sans";
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 
 .articles-list article h3,
