@@ -3,6 +3,10 @@
 
 .equal {
   min-height: 650px;
+
+  @media screen and (max-width: 769px) {
+    min-height: auto;
+  }
 }
 
 

@@ -11,6 +11,12 @@
     padding-top: 60px;
   }
 
+  @media screen and (max-width: 769px) {
+    border-bottom: 1px solid #babd7b;
+    padding-bottom: 30px;
+  }
+
+
   .swiper-slide {
 
     .article-title {
@@ -65,7 +71,12 @@
       font-size: 16px;
     }
 
-/*    .label-default {
+
+    footer  {
+      text-align: right;
+    }
+
+    /*.label-default {
       margin-right: 15px;
     }
 
@@ -82,19 +93,43 @@
 
 
 .articles-list {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 60px;
+
+  .row.articles-row {
+    margin-top: 15px;
+
+    @media screen and (max-width: 769px) {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+
+    }
+
+  }
 
   article {
     font-family: "Open Sans";
     /*margin-bottom: 30px;*/
+
+    @media screen and (max-width: 769px) {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #babd7b;
+      margin-bottom: 30px;
+    }
+
+
 
     h3, .h3 {
       font-size: 28px;
       margin-top: 15px;
       font-weight: 600;
       margin-bottom: 15px;
-      min-height:65px;
+      min-height:60px;
+
+      @media screen and (max-width: 769px) {
+        min-height: auto;
+      }
     }
 
     .article-title {
@@ -116,14 +151,6 @@
         }
       }
     }
-
-
-    .article-details {
-      margin-bottom: 10px;
-      /* background: #9493a5; */
-      border-top: 1px solid #babd7b;
-    }
-
 
     .article-subtitle {
       font-family: 'Open Sans Condensed';
@@ -147,6 +174,11 @@
       }
     }
 
+    .article-details {
+      margin-bottom: 10px;
+      /* background: #9493a5; */
+      border-top: 1px solid #babd7b;
+    }
 
     .article-intro {
       line-height: 1.5;
@@ -155,6 +187,9 @@
       font-size: 16px;
     }
 
+    footer {
+      text-align: right;
+    }
 
   }
 
@@ -259,7 +294,7 @@ figcaption.article-image-caption {
 
 
 a.readmore {
-  float: right;
+  /*float: right;*/
   color: #ffffff;
   margin-top: 30px;
 }
