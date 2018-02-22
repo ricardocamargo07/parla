@@ -78,7 +78,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
         ],
 
         [
-            'title' => 'A-la-la-ô mas que calor...',
+            'title' => 'A-la-la-ô mas que calor... Cuide-se no verão',
 
             'order' => 2,
 
