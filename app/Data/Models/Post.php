@@ -14,6 +14,8 @@ class Post
 
             'order' => 1,
 
+            'published' => true,
+
             'category' => 'Cidade',
 
             'created_at' => '2018-02-08',
@@ -82,6 +84,8 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
 
             'order' => 2,
 
+            'published' => true,
+
             'category' => 'Saúde',
 
             'created_at' => '2018-02-08',
@@ -138,6 +142,8 @@ nos dias de festa. Procure um posto e garanta a sua.
             'title' => "Exposição leva cultura africana ao Centro do Rio",
 
             'order' => 3,
+
+            'published' => true,
 
             'category' => 'Cultura',
 
@@ -206,6 +212,8 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
 
             'order' => 4,
 
+            'published' => true,
+
             'category' => 'Alerj',
 
             'created_at' => '2018-02-08',
@@ -246,6 +254,8 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
             'title' => "Onde solucionar seu problema",
 
             'order' => 5,
+
+            'published' => false,
 
             'category' => 'RH',
 
@@ -297,7 +307,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
     {
         $markdown = new Service();
 
-        return collect(static::$posts)->map(function($post) use ($markdown) {
+        return coollect(static::$posts)->map(function($post) use ($markdown) {
             $slug = str_slug($post['title']);
 
             $date = Carbon::parse($post['created_at']);
@@ -327,6 +337,8 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             $post['body'] = $markdown->convert($post['body']);
 
             return $post;
+        })->reject(function($post) {
+            return !$post->published;
         })->sortBy('order');
     }
 
