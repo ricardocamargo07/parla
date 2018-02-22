@@ -121,45 +121,7 @@
                 {{--</div>--}}
             </div>
 
-            <div class="row articles-row read-also">
-                <article class="equal col-md-4">
-                    <div class="row">
-                        <figure class="col-xs-12"><a href="http://parla.test/posts/2018/2/8/a-la-la-o-mas-que-calor"><img src="/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg" class="img img-responsive article-img"></a></figure>
-                    </div>
-                    <h3 class="article-title"><a href="http://parla.test/posts/2018/2/8/a-la-la-o-mas-que-calor">A-la-la-ô mas que calor...</a></h3>
-                    <div class="article-intro">
-                        <p>
-                        <p>Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano s...</p>
-                        </p>
-                    </div>
-                    <footer><a href="http://parla.test/posts/2018/2/8/a-la-la-o-mas-que-calor" class="readmore btn btn-primary">Leia Mais</a></footer>
-                </article>
-                <article class="equal col-md-4">
-                    <div class="row">
-                        <figure class="col-xs-12"><a href="http://parla.test/posts/2018/2/8/exposicao-leva-cultura-africana-ao-centro-do-rio"><img src="/images/photos/ex-africa-foto-alexandre-macieira-riotur-1200x800.jpg" class="img img-responsive article-img"></a></figure>
-                    </div>
-                    <h3 class="article-title"><a href="http://parla.test/posts/2018/2/8/exposicao-leva-cultura-africana-ao-centro-do-rio">Exposição leva cultura africana ao Centro do Rio</a></h3>
-                    <div class="article-intro">
-                        <p>
-                        <p>A representatividade dos povos africanos e a divulgação de suas identidades culturais são os temas centrais da exposição “Ex África”, que está em cartaz no Centro Cultural Banco do Brasil (CCBB) até o...</p>
-                        </p>
-                    </div>
-                    <footer><a href="http://parla.test/posts/2018/2/8/exposicao-leva-cultura-africana-ao-centro-do-rio" class="readmore btn btn-primary">Leia Mais</a></footer>
-                </article>
-                <article class="equal col-md-4">
-                    <div class="row">
-                        <figure class="col-xs-12"><a href="http://parla.test/posts/2018/2/8/curiosidades-do-palacio-tiradentes"><img src="/images/photos/antigo-restaurante-1200x800.jpg" class="img img-responsive article-img"></a></figure>
-                    </div>
-                    <h3 class="article-title"><a href="http://parla.test/posts/2018/2/8/curiosidades-do-palacio-tiradentes">Curiosidades do Palácio Tiradentes</a></h3>
-                    <div class="article-intro">
-                        <p>
-                        <p>Todos que circulam diariamente pelo Palácio Tiradentes sabem que há muita história a contar nesses 92 anos de existência. O prédio chama a atenção por sua beleza arquitetônica e também pela imponência...</p>
-                        </p>
-                    </div>
-                    <footer><a href="http://parla.test/posts/2018/2/8/curiosidades-do-palacio-tiradentes" class="readmore btn btn-primary">Leia Mais</a></footer>
-                </article>
-            </div>
+            @include('home.read-also')
         </div>
-
     </div>
 @stop

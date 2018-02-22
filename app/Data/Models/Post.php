@@ -303,48 +303,62 @@ Para os **estagiários**, o ramal de atendimento é 1369.
         ],
     ];
 
-    private static function all()
+    private static function allPosts()
     {
-        $markdown = new Service();
+        return coollect(static::$posts)->reject(function($post) {
+            return !$post->published;
+        })->map(function($post) {
+            return static::formatPost($post);
+        })->sortBy('order');
+    }
 
-        return coollect(static::$posts)->map(function($post) use ($markdown) {
-            $slug = str_slug($post['title']);
-
-            $date = Carbon::parse($post['created_at']);
-
-            $post['featured'] = isset($post['featured']) ? $post['featured'] : false;
-
-            $post['link'] = route('posts.show', ['year' => $date->year, 'month' => $date->month, 'day' => $date->day, 'slug' => $slug]);
-
-            $post['authors_string'] = static::makeAuthorsString($post['authors']);
-
-            $post['slug'] = $slug;
-
-            $post['created_at'] = $date;
-
-            $post['date'] = Carbon::parse($post['created_at'])->format('F Y');
-
-            $post['main_photo'] = static::makePhotosCollection($post['photos'])->where('main', true)->first();
-
-            $post['other_photos'] = static::makePhotosCollection($post['photos'])->where('main', false);
-
-            $post['lead_limited_featured'] = $markdown->convert(str_limit($post['lead'], 450));
-
-            $post['lead_limited'] = $markdown->convert(str_limit($post['lead'], 200));
-
-            $post['lead'] = $markdown->convert($post['lead']);
-
-            $post['body'] = $markdown->convert($post['body']);
+    public static function all()
+    {
+        return static::allPosts()->map(function($post) {
+            $post['read_also'] = static::allPosts()->whereNotIn('slug', [$post->slug]);
 
             return $post;
-        })->reject(function($post) {
-            return !$post->published;
-        })->sortBy('order');
+        });
     }
 
     public static function featured()
     {
         return static::all()->where('featured', true)->toArray();
+    }
+
+    private static function formatPost($post)
+    {
+        $markdown = new Service();
+
+        $slug = str_slug($post['title']);
+
+        $date = Carbon::parse($post['created_at']);
+
+        $post['featured'] = isset($post['featured']) ? $post['featured'] : false;
+
+        $post['link'] = route('posts.show', ['year' => $date->year, 'month' => $date->month, 'day' => $date->day, 'slug' => $slug]);
+
+        $post['authors_string'] = static::makeAuthorsString($post['authors']);
+
+        $post['slug'] = $slug;
+
+        $post['created_at'] = $date;
+
+        $post['date'] = Carbon::parse($post['created_at'])->format('F Y');
+
+        $post['main_photo'] = static::makePhotosCollection($post['photos'])->where('main', true)->first();
+
+        $post['other_photos'] = static::makePhotosCollection($post['photos'])->where('main', false);
+
+        $post['lead_limited_featured'] = $markdown->convert(str_limit($post['lead'], 450));
+
+        $post['lead_limited'] = $markdown->convert(str_limit($post['lead'], 200));
+
+        $post['lead'] = $markdown->convert($post['lead']);
+
+        $post['body'] = $markdown->convert($post['body']);
+
+        return $post;
     }
 
     private static function makeAuthorsString($authors)
