@@ -24,13 +24,14 @@
       h3, .h3 {
         font-size: 28px;
         margin-top: 15px;
-        font-weight: 600;
+        font-weight: 800;
+        color: #172a52;
         margin-bottom: 5px;
       }
       a {
-        font-weight: 600;
+        font-weight: 800;
         font-family: "Open Sans";
-        color:#636b6f;
+        color:#172a52;
         &:hover{
           text-decoration: none;
         }
@@ -123,7 +124,8 @@
     h3, .h3 {
       font-size: 28px;
       margin-top: 15px;
-      font-weight: 600;
+      font-weight: 800;
+      color: #172a52;
       margin-bottom: 15px;
       min-height:60px;
 
@@ -139,7 +141,7 @@
       }
       a {
         font-family: "Open Sans";
-        color:#636b6f;
+        color:#172a52;
         &:hover{
           text-decoration: none;
         }
