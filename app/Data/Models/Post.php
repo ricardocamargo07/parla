@@ -139,7 +139,7 @@ nos dias de festa. Procure um posto e garanta a sua.
         ],
 
         [
-            'title' => "Exposição leva cultura africana ao Centro do Rio",
+            'title' => "Cultura africana no Centro do Rio",
 
             'order' => 3,
 
