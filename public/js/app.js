@@ -74331,8 +74331,8 @@ if (jQuery("#" + appName).length > 0) {
 
         data: {
             edition: {
-                columns: 2,
-                column_size: 6
+                columns: 3,
+                column_size: 4
             },
 
             tables: {
