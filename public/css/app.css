@@ -11520,6 +11520,29 @@ h1,
   }
 }
 
+.article-internal .read-also {
+  border-top: 1px solid #babd7b;
+  padding-top: 30px;
+}
+
+.article-internal .read-also .article-title {
+  font-weight: 800;
+  color: #172a52;
+  min-height: 115px;
+}
+
+@media screen and (min-width: 798px) {
+  .article-internal .read-also .article-title {
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.article-internal .read-also footer {
+  text-align: right;
+}
+
 .article-internal .article-subtitle {
   font-family: 'Open Sans Condensed';
   font-size: 26px;
@@ -11795,7 +11818,7 @@ h1,
   font-weight: 800;
   color: #172a52;
   margin-bottom: 15px;
-  min-height: 60px;
+  min-height: 91px;
 }
 
 @media screen and (max-width: 769px) {
