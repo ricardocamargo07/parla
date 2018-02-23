@@ -11818,10 +11818,23 @@ h1,
   font-weight: 800;
   color: #172a52;
   margin-bottom: 15px;
-  min-height: 91px;
 }
 
 @media screen and (max-width: 769px) {
+  .articles-list article h3,
+  .articles-list article .h3 {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  .articles-list article h3,
+  .articles-list article .h3 {
+    min-height: 91px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .articles-list article h3,
   .articles-list article .h3 {
     min-height: auto;

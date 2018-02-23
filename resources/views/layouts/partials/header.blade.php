@@ -9,8 +9,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 header-right Aligner">
-            <div class="header-right-inner parla-edition Aligner-item">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 header-right aligner">
+            <div class="header-right-inner parla-edition aligner-item">
                 Parla n&ordm; 0 - Fevereiro de 2018
             </div>
         </div>
