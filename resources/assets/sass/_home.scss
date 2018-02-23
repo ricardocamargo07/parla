@@ -127,9 +127,16 @@
       font-weight: 800;
       color: #172a52;
       margin-bottom: 15px;
-      min-height:91px;
 
       @media screen and (max-width: 769px) {
+        min-height: auto;
+      }
+
+      @media screen and (max-width: 1200px) and (min-width: 992px) {
+        min-height: 91px;
+      }
+
+      @media screen and (min-width: 1200px) {
         min-height: auto;
       }
     }
