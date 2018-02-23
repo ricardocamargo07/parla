@@ -7,7 +7,7 @@
             <h3 class="article-title"><a href="{{ $readAlso->link }}">{{ $readAlso->title }}</a></h3>
             <div class="article-intro">
                 <p>
-                    {{ $readAlso->lead_limited_featured }}
+                    {!! $readAlso->lead_limited_featured !!}
                 </p>
             </div>
             <footer><a href="{{ $readAlso->link }}" class="readmore btn btn-primary">Leia Mais</a></footer>
