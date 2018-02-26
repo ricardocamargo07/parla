@@ -5,19 +5,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-
-
-
 // Variables
 @import "variables";
-
-
-
 
 // Swiper
 @import "swiper";
 
-@import "node_modules/font-awesome/scss/font-awesome.scss";
+@import "~font-awesome/scss/font-awesome.scss";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
@@ -25,9 +19,11 @@
 // Swiper
 @import "~swiper/dist/css/swiper.min.css";
 
+// Lightbox
+@import "~lightbox2/dist/css/lightbox.min.css";
+
 // Header
 @import "header";
-
 
 // Post
 @import "post";

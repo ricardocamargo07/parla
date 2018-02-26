@@ -75,7 +75,6 @@
                     {{--<span class="post-category">@{{ post.category }}</span>--}}
                     {{--<span class="post-divider">/</span>--}}
 
-
                     {{--<h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>--}}
 
                     <div class="article-intro" >
@@ -89,10 +88,6 @@
 
                         <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
                     </footer>
-
-
-
-
                 </article>
             </div>
         </div>

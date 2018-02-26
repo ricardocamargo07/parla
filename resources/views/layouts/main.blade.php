@@ -17,10 +17,9 @@
             window.Laravel = {!! json_encode([
                 'csrfToken' => csrf_token(),
                 'apiPrefix' => '/api/v1',
+                'currentPost' => isset($post) ? json_decode(json_encode($post->toArray())) : null,
             ]) !!};
         </script>
-
-        <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
         <link rel="stylesheet" href="/css/app.css">
         <link rel="stylesheet" href="/css/parla.css">

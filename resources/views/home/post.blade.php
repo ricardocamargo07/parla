@@ -41,10 +41,15 @@
                         <div class="row article-gallery" > {{-- ACR - transoformar este style em css!!!! --}}
                             @foreach ($post->other_photos as $photo)
                                 <figure class="col-xs-6 col-md-3">
-                                    <img class="img img-responsive article-img" src="{{ $photo['url_lowres'] }}" >
-                                    <figcaption class="article-image-caption">
-                                        <span class="article-image-author">{{ $photo['notes_and_author'] }}</span>
-                                    </figcaption>
+                                    <a href="{{ $photo['url_lowres'] }}" data-lightbox="post-{{ $photo['id'] }}" data-title="{{ $photo['notes_and_author'] }}">
+                                        <img
+                                            class="img img-responsive article-img"
+                                            src="{{ $photo['url_lowres'] }}"
+                                        >
+                                    </a>
+                                    {{--<figcaption class="article-image-caption">--}}
+                                        {{--<span class="article-image-author">{{ $photo['notes_and_author'] }}</span>--}}
+                                    {{--</figcaption>--}}
                                 </figure>
                             @endforeach
                         </div>

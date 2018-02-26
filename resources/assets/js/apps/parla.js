@@ -23,6 +23,11 @@ if (jQuery("#" + appName).length > 0) {
             filler: false,
 
             modalMode: 'filter',
+
+            currentPost: {
+                laravel: Laravel.currentPost,
+                imported: null,
+            },
         },
 
         methods: {
@@ -76,6 +81,10 @@ if (jQuery("#" + appName).length > 0) {
                 return Object.keys(items).length
             },
 
+            currentPostPhotos(items) {
+                Object.keys(items).length
+            },
+
             slice(items, start, end) {
                 var sliced = [];
 
@@ -87,12 +96,42 @@ if (jQuery("#" + appName).length > 0) {
 
                 return sliced;
             },
+
+            refreshCurrentPost: function () {
+                if (this.currentPost.laravel.slug) {
+                    axios.get('/api/posts/'+this.currentPost.laravel.slug)
+                        .then(function(response) {
+                            me.currentPost.imported = response.data
+                        })
+                        .catch(function(error) {
+                            console.log(error)
+
+                            me.currentPost.imported = null
+                        })
+                }
+            },
+
+            otherPhotosForLightbox() {
+                if (! this.currentPost.imported || ! this.currentPost.imported.other_photos) {
+                    return []
+                }
+
+                return this.currentPost.imported.other_photos.map(photo => {
+                    return {
+                        thumb: photo.url_lowres,
+                        src: photo.url_hires,
+                        caption: photo.notes_and_author,
+                    }
+                })
+            },
         },
 
         mounted() {
             this.refreshTable('featured')
 
             this.refreshTable('nonFeatured')
+
+            this.refreshCurrentPost()
         },
     })
 }
