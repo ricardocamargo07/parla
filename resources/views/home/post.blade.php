@@ -47,9 +47,9 @@
                                             src="{{ $photo['url_lowres'] }}"
                                         >
                                     </a>
-                                    {{--<figcaption class="article-image-caption">--}}
-                                        {{--<span class="article-image-author">{{ $photo['notes_and_author'] }}</span>--}}
-                                    {{--</figcaption>--}}
+                                    <figcaption class="article-image-caption">
+                                        <span class="article-image-author">{{ $photo['notes_and_author'] }}</span>
+                                    </figcaption>
                                 </figure>
                             @endforeach
                         </div>
