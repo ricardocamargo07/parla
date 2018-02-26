@@ -105,13 +105,6 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
                     'author' => 'Rafael Wallace',
                     'notes' => 'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação',
                 ],
-                [
-                    'main' => false,
-                    'url_highres' => '/images/photos/antigo-restaurante.jpg',
-                    'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
-                    'author' => '',
-                    'notes' => '',
-                ]
             ],
 
             'lead' => 'Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano será do dia 9 a 13 de fevereiro. Mas no auge do verão carioca, muitos esquecem de cuidar da saúde antes de aproveitar a festa de Momo. A Riotur informou que espera seis milhões de foliões no Rio, 400 mil turistas a mais que em 2017.',
@@ -315,7 +308,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
     public static function all()
     {
         return static::allPosts()->map(function($post) {
-            $post['read_also'] = static::allPosts()->whereNotIn('slug', [$post->slug]);
+            $post['read_also'] = static::allPosts()->whereNotIn('slug', [$post->slug])->values();
 
             return $post;
         });
@@ -329,6 +322,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
     private static function formatPost($post)
     {
         $markdown = new Service();
+
 
         $slug = str_slug($post['title']);
 
@@ -348,7 +342,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
 
         $post['main_photo'] = static::makePhotosCollection($post['photos'])->where('main', true)->first();
 
-        $post['other_photos'] = static::makePhotosCollection($post['photos'])->where('main', false);
+        $post['other_photos'] = static::makePhotosCollection($post['photos'])->where('main', false)->values();
 
         $post['lead_limited_featured'] = $markdown->convert(str_limit($post['lead'], 450));
 
