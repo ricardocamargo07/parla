@@ -23,7 +23,7 @@ window.Vue = require('vue')
  * Lightbox 2
  */
 
-require('lightbox2');
+window.lightbox = require('lightbox2');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

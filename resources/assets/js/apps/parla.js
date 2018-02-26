@@ -124,6 +124,12 @@ if (jQuery("#" + appName).length > 0) {
                     }
                 })
             },
+
+            configureLightbox: function () {
+                lightbox.option({
+                    albumLabel:	"Foto %1 de %2"
+                })
+            },
         },
 
         mounted() {
@@ -132,6 +138,8 @@ if (jQuery("#" + appName).length > 0) {
             this.refreshTable('nonFeatured')
 
             this.refreshCurrentPost()
+
+            this.configureLightbox()
         },
     })
 }

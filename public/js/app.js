@@ -27605,7 +27605,7 @@ window.Vue = __webpack_require__(136);
  * Lightbox 2
  */
 
-__webpack_require__(182);
+window.lightbox = __webpack_require__(182);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -74447,6 +74447,13 @@ if (jQuery("#" + appName).length > 0) {
                         caption: photo.notes_and_author
                     };
                 });
+            },
+
+
+            configureLightbox: function configureLightbox() {
+                lightbox.option({
+                    albumLabel: "Foto %1 de %2"
+                });
             }
         },
 
@@ -74456,6 +74463,8 @@ if (jQuery("#" + appName).length > 0) {
             this.refreshTable('nonFeatured');
 
             this.refreshCurrentPost();
+
+            this.configureLightbox();
         }
     });
 }
