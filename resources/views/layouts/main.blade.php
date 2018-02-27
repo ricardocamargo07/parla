@@ -21,8 +21,7 @@
             ]) !!};
         </script>
 
-        <link rel="stylesheet" href="/css/app.css">
-        <link rel="stylesheet" href="/css/parla.css">
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
 
     <body class="bg-grey-light">
@@ -38,7 +37,7 @@
             @include('layouts.partials.footer')
         </div>
 
-        <script src="/js/app.js"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
 
         @include('layouts.partials.livereload')
 
