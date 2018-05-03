@@ -98,7 +98,7 @@ if (jQuery("#" + appName).length > 0) {
             },
 
             refreshCurrentPost: function () {
-                if (this.currentPost.laravel.slug) {
+                if (this.currentPost.laravel && this.currentPost.laravel.slug) {
                     axios.get('/api/posts/'+this.currentPost.laravel.slug)
                         .then(function(response) {
                             me.currentPost.imported = response.data
