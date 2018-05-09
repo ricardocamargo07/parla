@@ -1,0 +1,26 @@
+
+// Navbar
+
+
+.navbar-default {
+  background-color: #96a53b;
+  border: none;
+
+  .navbar-nav > li > a {
+    color: #ffffff;
+  }
+
+  .navbar-nav > li > a:hover {
+    color: #e8ebd3;
+  }
+
+  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #b8c27a;
+  }
+
+
+
+}
+
+

@@ -26,9 +26,9 @@
 
     <body class="bg-grey-light">
         <div id="vue-parla">
-            @include('layouts.partials.nav')
-
             @include('layouts.partials.header')
+
+            @include('layouts.partials.nav')
 
             <div v-cloak>
                 @yield('contents')

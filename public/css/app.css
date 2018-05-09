@@ -11476,6 +11476,26 @@ button.close {
   }
 }
 
+.navbar-default {
+  background-color: #96a53b;
+  border: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #e8ebd3;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #b8c27a;
+}
+
 .equal {
   min-height: 650px;
 }
@@ -11727,13 +11747,13 @@ h1,
 
 .row.swiper-row {
   padding-top: 30px;
-  border-top: 1px solid #babd7b;
+  /*border-top: 1px solid #babd7b;*/
   /* margin-top: 5px; */
 }
 
 @media screen and (min-width: 798px) {
   .row.swiper-row {
-    padding-top: 60px;
+    padding-top: 30px;
   }
 }
 
