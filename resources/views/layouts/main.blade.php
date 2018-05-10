@@ -34,6 +34,9 @@
                 @yield('contents')
             </div>
 
+
+            @include('layouts.partials.contact')
+
             @include('layouts.partials.footer')
         </div>
 

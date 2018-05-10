@@ -40,13 +40,32 @@
 
             </ul>
 
-{{--
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+                {{--<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
                 <li><a href="../navbar-static-top/">Static top</a></li>
-                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                <li><a href="../navbar-fixed-top/">Fixed top</a></li>--}}
+                {{--<form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control pull-right" style="width: 300px; margin-right: 35px, border: 1px solid black; background-color: #e5e5e5;" placeholder="Search">
+						<span class="input-group-btn">
+							<button type="reset" class="btn btn-default">
+								<span class="glyphicon glyphicon-remove">
+									<span class="sr-only">Close</span>
+								</span>
+                            </button>
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search</span>
+								</span>
+                            </button>
+						</span>
+                    </div>
+                </form>--}}
             </ul>
---}}
+
+
+
+
 
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
