@@ -36,17 +36,33 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Fale Conosco</a></li>
+                <li><a href="/contact">Fale Conosco</a></li>
 
             </ul>
 
-{{--
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+                {{--<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
                 <li><a href="../navbar-static-top/">Static top</a></li>
-                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                <li><a href="../navbar-fixed-top/">Fixed top</a></li>--}}
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control pull-right nav-search" placeholder="Procurar">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Procurar</span>
+								</span>
+                            </button>
+						</span>
+                    </div>
+                </form>
+
             </ul>
---}}
+
+
+
+
 
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

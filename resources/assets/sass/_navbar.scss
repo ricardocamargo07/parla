@@ -6,21 +6,107 @@
   background-color: #96a53b;
   border: none;
 
-  .navbar-nav > li > a {
-    color: #ffffff;
+  .navbar-nav {
+    li {
+      a {
+        color: #ffffff;
+        &:hover {
+          color: #e8ebd3;
+        }
+      }
+    }
+
+    .active {
+      a {
+        color: #ffffff;
+        background-color: #b8c27a;
+        &:hover {
+          color: #ffffff;
+          background-color: #b8c27a;
+        }
+        &:focus {
+          color: #ffffff;
+          background-color: #b8c27a;
+        }
+      }
+    }
+
+    .open {
+      a {
+        background-color: #aab661;
+        color: #ffffff;
+        &:hover{
+          background-color: #aab661;
+          color: #ffffff;
+        }
+        &:focus {
+          background-color: #aab661;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #aab661;
+      border: 4px solid #96a53b;
+      border-top: none;
+
+      .divider {
+        background: #96a53b;
+      }
+
+      ul {
+        li {
+          background: #5744ff;
+          &:hover {
+            background: #e8ebd3 !important;
+          }
+        }
+      }
+
+      li {
+        color: #ffffff;
+        &:hover{
+          background: #96a53b !important;
+        }
+      }
+    }
+
+
+    .nav-search {
+      color: #ffffff;
+      width: 300px;
+      border: 2px solid #697329;
+      border-right: none;
+      background-color: #849134;
+
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: #dfe2d1;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #dfe2d1;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #dfe2d1;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: #dfe2d1;
+      }
+
+    }
+
+    button.btn.btn-default {
+      color: #ffffff;
+      background-color: #5a6323;
+      border: 1px solid #697329;
+      border-left: none;
+    }
+
+
+
+
+
   }
-
-  .navbar-nav > li > a:hover {
-    color: #e8ebd3;
-  }
-
-  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    background-color: #b8c27a;
-  }
-
-
-
 }
 
 

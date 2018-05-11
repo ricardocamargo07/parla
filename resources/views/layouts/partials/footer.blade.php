@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="footer-01 col-md-3">
                 <img src="/images/parla_horizontal_fundoescuro.svg">
