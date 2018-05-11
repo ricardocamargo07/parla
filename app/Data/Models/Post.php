@@ -316,7 +316,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
 
     public static function featured()
     {
-        return static::all()->where('featured', true)->toArray();
+        return static::all()->where('featured', true)->values()->toArray();
     }
 
     private static function formatPost($post)
@@ -362,7 +362,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
 
     public static function nonFeatured()
     {
-        return static::all()->where('featured', false)->toArray();
+        return static::all()->where('featured', false)->values()->toArray();
     }
 
     public static function findBySlug($slug)

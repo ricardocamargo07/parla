@@ -74949,8 +74949,6 @@ if (jQuery("#" + appName).length > 0) {
                 nonFeatured: []
             },
 
-            pesquisa: '',
-
             refreshing: false,
 
             filler: false,
@@ -74960,10 +74958,36 @@ if (jQuery("#" + appName).length > 0) {
             currentPost: {
                 laravel: Laravel.currentPost,
                 imported: null
+            },
+
+            search: ''
+        },
+
+        computed: {
+            filteredFeaturedPosts: function filteredFeaturedPosts() {
+                var _this = this;
+
+                return this.tables.featured.filter(function (item) {
+                    return _this.canShowItem(item);
+                });
+            },
+            filteredNonFeaturedPosts: function filteredNonFeaturedPosts() {
+                var _this2 = this;
+
+                return this.tables.nonFeatured.filter(function (item) {
+                    return _this2.canShowItem(item);
+                });
             }
         },
 
         methods: {
+            canShowItem: function canShowItem(item) {
+                var can = this.search.length === 0 || item.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.subtitle.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.body.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+
+                console.log(can, this.search);
+
+                return can;
+            },
             typeKeyUp: function typeKeyUp() {
                 // clearTimeout(this.timeout)
                 //

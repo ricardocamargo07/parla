@@ -47,7 +47,12 @@
 
                 <form class="navbar-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control pull-right nav-search" placeholder="Procurar">
+                        <input
+                            type="text"
+                            class="form-control pull-right nav-search"
+                            placeholder="Procurar"
+                            v-model="search"
+                        >
 						<span class="input-group-btn">
 							<button type="submit" class="btn btn-default">
 								<span class="glyphicon glyphicon-search">
@@ -59,11 +64,7 @@
                 </form>
 
             </ul>
-
-
-
-
-
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>
+

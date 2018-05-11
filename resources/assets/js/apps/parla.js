@@ -16,8 +16,6 @@ if (jQuery("#" + appName).length > 0) {
                 nonFeatured: [],
             },
 
-            pesquisa: '',
-
             refreshing: false,
 
             filler: false,
@@ -28,9 +26,37 @@ if (jQuery("#" + appName).length > 0) {
                 laravel: Laravel.currentPost,
                 imported: null,
             },
+
+            search: '',
+        },
+
+        computed: {
+            filteredFeaturedPosts() {
+                return this.tables.featured.filter(item => {
+                    return this.canShowItem(item);
+                })
+            },
+
+            filteredNonFeaturedPosts() {
+                return this.tables.nonFeatured.filter(item => {
+                    return this.canShowItem(item);
+                })
+            },
         },
 
         methods: {
+            canShowItem(item) {
+                const can = this.search.length === 0 ||
+
+                item.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1 ||
+                item.subtitle.toLowerCase().indexOf(this.search.toLowerCase()) > -1 ||
+                item.body.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+
+                console.log(can, this.search);
+
+                return can;
+            },
+
             typeKeyUp() {
                 // clearTimeout(this.timeout)
                 //
