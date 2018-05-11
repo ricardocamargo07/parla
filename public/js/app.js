@@ -74982,9 +74982,7 @@ if (jQuery("#" + appName).length > 0) {
 
         methods: {
             canShowItem: function canShowItem(item) {
-                var can = this.search.length === 0 || item.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.subtitle.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.body.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
-
-                console.log(can, this.search);
+                var can = this.search.length === 0 || item.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.lead.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.subtitle.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.body.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
 
                 return can;
             },
