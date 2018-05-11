@@ -11545,6 +11545,41 @@ button.close {
   background: #96a53b !important;
 }
 
+.navbar-default .navbar-nav .nav-search {
+  color: #ffffff;
+  width: 300px;
+  border: 2px solid #697329;
+  border-right: none;
+  background-color: #849134;
+}
+
+.navbar-default .navbar-nav .nav-search::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #dfe2d1;
+}
+
+.navbar-default .navbar-nav .nav-search:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #dfe2d1;
+}
+
+.navbar-default .navbar-nav .nav-search::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #dfe2d1;
+}
+
+.navbar-default .navbar-nav .nav-search:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #dfe2d1;
+}
+
+.navbar-default .navbar-nav button.btn.btn-default {
+  color: #ffffff;
+  background-color: #5a6323;
+  border: 1px solid #697329;
+  border-left: none;
+}
+
 .equal {
   min-height: 650px;
 }
@@ -12072,7 +12107,7 @@ figcaption.article-image-caption {
   background-color: #96a53b;
   border-color: #96a53b;
   padding: .2em 1em .2em;
-  font-size: 95%;
+  /*font-size: 95%;*/
 }
 
 .btn-primary:hover {

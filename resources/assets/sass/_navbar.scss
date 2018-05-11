@@ -73,12 +73,40 @@
     }
 
 
+    .nav-search {
+      color: #ffffff;
+      width: 300px;
+      border: 2px solid #697329;
+      border-right: none;
+      background-color: #849134;
+
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: #dfe2d1;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #dfe2d1;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #dfe2d1;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: #dfe2d1;
+      }
+
+    }
+
+    button.btn.btn-default {
+      color: #ffffff;
+      background-color: #5a6323;
+      border: 1px solid #697329;
+      border-left: none;
+    }
+
+
+
 
 
   }
-
-
-
 }
 
 
