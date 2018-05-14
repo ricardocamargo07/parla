@@ -353,5 +353,22 @@ a.readmore {
     padding-bottom: 30px;
     margin-bottom: 30px;
     border-bottom: #96a53b solid 1px;
+
+    h3 {
+      font-size: 28px;
+      margin-top: 15px;
+      font-weight: 800;
+      color: #172a52;
+      margin-bottom: 15px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: right;
+    }
+
   }
 }

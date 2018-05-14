@@ -12179,6 +12179,22 @@ a.readmore {
   border-bottom: #96a53b solid 1px;
 }
 
+.article-search .article-search-item h3 {
+  font-size: 28px;
+  margin-top: 15px;
+  font-weight: 800;
+  color: #172a52;
+  margin-bottom: 15px;
+}
+
+.article-search .article-search-item a {
+  text-decoration: none;
+}
+
+.article-search .article-search-item footer {
+  text-align: right;
+}
+
 .contact {
   color: #172a52;
 }
