@@ -99,8 +99,8 @@
             <h1>Resultados da procura</h1>
 
             <div class="articles-row">
-                <article v-for="post in allFiltered" class="col-xs-10 col-xs-offset-1 article-search-item">
-                    <figure class="col-xs-4">
+                <article v-for="post in allFiltered" class="col-xs-12 col-md-10 col-md-offset-1 article-search-item">
+                    <figure class="col-xs-12 col-md-4 ">
                         <a :href="post.link">
                             <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
                         </a>
