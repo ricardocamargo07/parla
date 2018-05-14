@@ -11,6 +11,10 @@ Route::get('/posts/nonFeatured', function (Request $request) {
     return Post::nonFeatured();
 });
 
+Route::get('/posts/all', function (Request $request) {
+    return Post::all();
+});
+
 Route::get('/posts/{slug}', function (Request $request, $slug) {
     return Response::json(Post::findBySlug($slug));
 });

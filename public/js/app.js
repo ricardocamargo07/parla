@@ -74944,6 +74944,7 @@ if (jQuery("#" + appName).length > 0) {
             },
 
             tables: {
+                all: [],
                 featured: [],
 
                 nonFeatured: []
@@ -74965,17 +74966,16 @@ if (jQuery("#" + appName).length > 0) {
 
         computed: {
             filteredFeaturedPosts: function filteredFeaturedPosts() {
-                var _this = this;
-
-                return this.tables.featured.filter(function (item) {
-                    return _this.canShowItem(item);
-                });
+                return this.tables.featured;
             },
             filteredNonFeaturedPosts: function filteredNonFeaturedPosts() {
-                var _this2 = this;
+                return this.tables.nonFeatured;
+            },
+            allFiltered: function allFiltered() {
+                var _this = this;
 
-                return this.tables.nonFeatured.filter(function (item) {
-                    return _this2.canShowItem(item);
+                return this.tables.all.filter(function (item) {
+                    return _this.canShowItem(item);
                 });
             }
         },
@@ -75081,6 +75081,8 @@ if (jQuery("#" + appName).length > 0) {
             this.refreshTable('featured');
 
             this.refreshTable('nonFeatured');
+
+            this.refreshTable('all');
 
             this.refreshCurrentPost();
 

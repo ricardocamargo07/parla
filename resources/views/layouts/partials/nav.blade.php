@@ -22,7 +22,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Capa</a></li>
+                <li class="active"><a href="/">Capa</a></li>
                 {{--<li><a href="#">Outras Edições</a></li>--}}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outras Edições <span class="caret"></span></a>
@@ -37,7 +37,6 @@
                     </ul>
                 </li>
                 <li><a href="/contact">Fale Conosco</a></li>
-
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

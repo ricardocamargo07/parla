@@ -9,6 +9,7 @@ class Home extends Controller
     public function index()
     {
         return view('home.index')
+                ->with('allPosts', Post::all())
                 ->with('featured', Post::featured())
                 ->with('nonFeatured', Post::nonFeatured());
     }

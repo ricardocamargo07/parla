@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <h1> Fale Conosco </h1>
-                                <p class="bd-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in dictum sapien, et mollis neque. Quisque luctus quam quis mattis ultrices. Nam a felis quis neque pretium laoreet. Phasellus sed felis placerat, fermentum elit at, vulputate velit. In facilisis enim at nibh tempus, at blandit mi euismod. Nam blandit molestie mi, tempus consequat odio pulvinar quis. Mauris malesuada orci vel lectus elementum efficitur. Sed porta consequat diam, sed placerat est. Sed egestas lobortis risus sit amet tincidunt. Phasellus at sapien et quam sagittis bibendum et sit amet libero. In erat justo, vestibulum in turpis vitae, convallis feugiat nisi.</p>
+                                {{--<p class="bd-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in dictum sapien, et mollis neque. Quisque luctus quam quis mattis ultrices. Nam a felis quis neque pretium laoreet. Phasellus sed felis placerat, fermentum elit at, vulputate velit. In facilisis enim at nibh tempus, at blandit mi euismod. Nam blandit molestie mi, tempus consequat odio pulvinar quis. Mauris malesuada orci vel lectus elementum efficitur. Sed porta consequat diam, sed placerat est. Sed egestas lobortis risus sit amet tincidunt. Phasellus at sapien et quam sagittis bibendum et sit amet libero. In erat justo, vestibulum in turpis vitae, convallis feugiat nisi.</p>--}}
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">

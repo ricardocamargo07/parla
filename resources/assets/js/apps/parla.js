@@ -11,6 +11,7 @@ if (jQuery("#" + appName).length > 0) {
             },
 
             tables: {
+                all: [],
                 featured: [],
 
                 nonFeatured: [],
@@ -32,13 +33,15 @@ if (jQuery("#" + appName).length > 0) {
 
         computed: {
             filteredFeaturedPosts() {
-                return this.tables.featured.filter(item => {
-                    return this.canShowItem(item);
-                })
+                return this.tables.featured
             },
 
             filteredNonFeaturedPosts() {
-                return this.tables.nonFeatured.filter(item => {
+                return this.tables.nonFeatured
+            },
+
+            allFiltered() {
+                return this.tables.all.filter(item => {
                     return this.canShowItem(item);
                 })
             },
@@ -160,6 +163,8 @@ if (jQuery("#" + appName).length > 0) {
             this.refreshTable('featured')
 
             this.refreshTable('nonFeatured')
+
+            this.refreshTable('all')
 
             this.refreshCurrentPost()
 
