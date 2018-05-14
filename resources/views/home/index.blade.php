@@ -96,7 +96,7 @@
 
     <div class="article-search" v-if="search">
         <div class="container">
-            <h1>Resultados da procura</h1>
+            <h1>Resultado da procura</h1>
 
             <div class="articles-row">
                 <article v-for="post in allFiltered" class="col-xs-12 col-md-10 col-md-offset-1 article-search-item">
