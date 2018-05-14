@@ -93,4 +93,57 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <div class="articles-list">
+        <div class="container">
+            <div class="row articles-row article-search" v-for="i in Math.ceil(tables.nonFeatured ? count(tables.nonFeatured) / edition.columns : 1)">
+
+
+                <h1> Resultados da Busca </h1>
+
+                {{--<article v-for="post in (filteredNonFeaturedPosts ? slice(filteredNonFeaturedPosts, (i - 1) * edition.columns, i * edition.columns) : [])" :class="'equal col-md-'+edition.column_size">--}}
+                <article v-for="post in filteredNonFeaturedPosts" class="col-xs-10 col-xs-offset-1 article-search-item">
+
+                        <figure class="col-xs-4">
+                            <a :href="post.link">
+                                <img class="img img-responsive article-img" :src="post.main_photo.url_lowres">
+                            </a>
+                            {{--<figcaption class="article-image-caption">--}}
+                            {{--<div v-if="post.main_photo.author_credits">--}}
+                            {{--@{{ post.main_photo.author_credits }}--}}
+                            {{--</div>--}}
+                            {{--</figcaption>--}}
+                        </figure>
+
+
+                    <span class="post-created">@{{ post.date }}</span>
+                    <h3 class="article-title"><a :href="post.link">@{{ post.title }}</a></h3>
+
+                    {{--<span class="post-category">@{{ post.category }}</span>--}}
+                    {{--<span class="post-divider">/</span>--}}
+
+{{--                    <h5 class="article-subtitle"><a :href="post.link">@{{ post.subtitle }}</a></h5>--}}
+
+                    <div class="article-intro" >
+                        <p v-html="post.lead_limited"></p>
+                    </div>
+
+                    <footer>
+                                                <span v-for="tag in post.tags">
+                                                    <span class="label label-default">@{{ tag }}</span>
+                                                </span>
+
+                        <a :href="post.link" class="readmore btn btn-primary">Leia Mais</a>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
 @stop

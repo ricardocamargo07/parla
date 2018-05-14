@@ -12164,6 +12164,21 @@ a.readmore {
   }
 }
 
+.article-search h1 {
+  color: #96a53b;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: #96a53b solid 1px;
+}
+
+.article-search .article-search-item {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: #96a53b solid 1px;
+}
+
 .contact {
   color: #172a52;
 }
