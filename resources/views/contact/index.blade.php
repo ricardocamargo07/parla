@@ -15,14 +15,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_name">Nome *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Nome é um campo obrigatório.">
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Seu nome *" required="required" data-error="Nome é um campo obrigatório.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_lastname">Sobrenome *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Por favor insira o seu nome *" required="required" data-error="Sobrenome é um campo obrigatório.">
+                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Seu sobrenome *" required="required" data-error="Sobrenome é um campo obrigatório.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -31,14 +31,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Por favor insira o seu email *" required="required" data-error="É necessário a inserção de um endereço de email válido.">
+                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Seu email *" required="required" data-error="É necessário a inserção de um endereço de email válido.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_phone">Telefone</label>
-                                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Por favor insira o seu telefone">
+                                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Seu telefone">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
