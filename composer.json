@@ -12,7 +12,8 @@
         "laravel/tinker": "~1.0",
         "league/commonmark": "^0.17.0",
         "pragmarx/coollection": "^0.5.2",
-        "pragmarx/version": "^0.2.4"
+        "pragmarx/version": "^0.2.4",
+        "pragmarx/yaml": "^0.1.6"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "^2.4",
