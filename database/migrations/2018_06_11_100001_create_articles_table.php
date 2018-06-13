@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->integer('edition_id')->unsigned();
             $table->string('title')->index();
             $table->integer('order')->index();
-            $table->timestamp('published_at')->nullabled();
+            $table->timestamp('published_at')->nullable();
             $table->string('category');
             $table->string('subtitle');
             $table->text('lead');
