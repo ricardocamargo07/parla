@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
 
             $table->integer('edition_id')->unsigned();
             $table->string('title')->index();
+            $table->string('slug');
             $table->integer('order')->index();
             $table->timestamp('published_at')->nullable();
             $table->string('category');

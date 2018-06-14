@@ -54,11 +54,11 @@
                             @endforeach
                         </div>
 
-                        <footer class="article-tags">
-                            @foreach ($post->tags as $tag)
-                                <span class="label label-default article-tag">{{ $tag }}</span>
-                            @endforeach
-                        </footer>
+                        {{--<footer class="article-tags">--}}
+                            {{--@foreach ($post->tags as $tag)--}}
+                                {{--<span class="label label-default article-tag">{{ $tag }}</span>--}}
+                            {{--@endforeach--}}
+                        {{--</footer>--}}
                     </div>
                 </article>
 

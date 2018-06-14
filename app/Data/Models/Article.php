@@ -2,7 +2,9 @@
 namespace App\Data\Models;
 
 use Spatie\Tags\HasTags;
+use Jenssegers\Date\Date as Carbon;
 use Illuminate\Database\Eloquent\Model;
+use App\Services\Markdown\Service as Markdown;
 
 class Article extends Model
 {
@@ -20,9 +22,28 @@ class Article extends Model
         'featured'
     ];
 
+    protected $appends = [
+        'link',
+        'authors_string',
+        'date',
+        'main_photo',
+        'other_photos',
+        'lead_limited_featured',
+        'lead_limited',
+        'lead'
+    ];
+
     public function edition()
     {
         return $this->belongsTo(Edition::class);
+    }
+
+    /**
+     * @return Markdown
+     */
+    protected function getMarkdown(): Markdown
+    {
+        return new Markdown();
     }
 
     public function photos()
@@ -33,5 +54,103 @@ class Article extends Model
     public function authors()
     {
         return $this->hasMany(ArticleAuthor::class);
+    }
+
+    public function save(array $options = [])
+    {
+        if (empty($this->slug)) {
+            $this->slug = str_slug($this->title);
+        }
+
+        parent::save($options);
+    }
+
+    public function getLinkAttribute()
+    {
+        return route('posts.show', [
+            'year' => $this->edition->year,
+            'month' => $this->edition->month,
+            'number' => $this->edition->number,
+            'slug' => $slug = $this->slug
+        ]);
+    }
+
+    public function getAuthorsStringAttribute()
+    {
+        return $this->makeAuthorsString($this->authors);
+    }
+
+    public function getMainPhotoAttribute()
+    {
+        return $this->makePhotosCollection($this->photos)
+            ->where('main', true)
+            ->first();
+    }
+
+    public function getOtherPhotosAttribute()
+    {
+        return $this->makePhotosCollection($this->photos)
+            ->where('main', false)
+            ->values();
+    }
+
+    public function getLeadLimitedFeaturedAttribute()
+    {
+        return $this->getMarkdown()->convert(str_limit($this->lead, 450));
+    }
+
+    public function getLeadLimitedAttribute()
+    {
+        return $this->getMarkdown()->convert(str_limit($this->lead, 200));
+    }
+
+    public function getBodyAttribute($value)
+    {
+        return $this->getMarkdown()->convert($value);
+    }
+
+    public function getLeadAttribute($value)
+    {
+        return $this->getMarkdown()->convert($value);
+    }
+
+    protected function makeAuthorsString($authors)
+    {
+        $authors = $authors->pluck('name')->toArray();
+
+        return join(
+            ' e ',
+            array_filter(
+                array_merge(
+                    array(join(', ', array_slice($authors, 0, -1))),
+                    array_slice($authors, -1)
+                ),
+                'strlen'
+            )
+        );
+    }
+
+    protected function makePhotosCollection($photos)
+    {
+        return coollect($photos)->map(function ($photo) {
+            $author = $photo['author'];
+
+            $notes = $photo['notes'];
+
+            $photo['notes_and_author'] =
+                $notes .
+                (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
+
+            $photo['author_credits'] = (
+                !empty($author) ? "(Foto: $author)" : ''
+            );
+
+            return $photo;
+        });
+    }
+
+    public function getDateAttribute()
+    {
+        return Carbon::parse($this->created_at)->format('F Y');
     }
 }
