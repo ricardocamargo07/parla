@@ -8,7 +8,6 @@ Publicação quinzenal da Subdiretoria-Geral de Comunicação Social da Assemble
 - Git
 - PHP 7.1 ou superior
 - Composer
-- Não possui banco de dados
 
 ### Instalação 
 #### Guia genérico de uma aplicação desenvolvida em PHP pelo Projetos Especiais
@@ -33,7 +32,11 @@ Publicação quinzenal da Subdiretoria-Geral de Comunicação Social da Assemble
 
 #### Passos extras específicos desta aplicação
 
-- Não possui
+- Enquanto a aplicação não possuir um módulo de administração, a migração do banco deverá ser feita através do comando:
+
+```
+php artisan migrate:fresh --seed
+```
 
 #### No ambiente de desenvolvimento
 
