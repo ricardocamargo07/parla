@@ -310,5 +310,14 @@ Para os **estagiários**, o ramal de atendimento é 1369.
         $this->createArticle3($edition);
         $this->createArticle4($edition);
         $this->createArticle5($edition);
+
+        $edition = Edition::create([
+            'year' => 2018,
+            'month' => 6,
+            'number' => 1,
+            'published_at' => null
+        ]);
+
+        $this->createArticle6($edition); // materia 1
     }
 }
