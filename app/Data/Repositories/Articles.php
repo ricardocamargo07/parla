@@ -29,6 +29,7 @@ class Articles
     {
         return Article
             ::with(['edition', 'photos', 'authors'])
+            ->where('edition_id', Edition::where('number', 1)->first()->id)
             ->whereNotNull('published_at');
     }
 
