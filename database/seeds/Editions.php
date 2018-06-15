@@ -7,6 +7,34 @@ use Illuminate\Database\Seeder;
 
 class Editions extends Seeder
 {
+    public function run()
+    {
+        $edition = Edition::create([
+            'year' => 2018,
+            'month' => 2,
+            'number' => 0,
+            'published_at' => null
+        ]);
+
+        $this->createArticle1($edition);
+        $this->createArticle2($edition);
+        $this->createArticle3($edition);
+        $this->createArticle4($edition);
+        $this->createArticle5($edition);
+
+        $edition = Edition::create([
+            'year' => 2018,
+            'month' => 6,
+            'number' => 1,
+            'published_at' => null
+        ]);
+
+        $this->createArticle6($edition); // materia 1
+        $this->createArticle7($edition); // materia 2
+        $this->createArticle8($edition); // materia 3
+        $this->createArticle9($edition); // materia 4
+    }
+
     private function createArticle1($edition)
     {
         $article = Article::create([
@@ -291,33 +319,209 @@ Para os **estagiários**, o ramal de atendimento é 1369.
         ]);
     }
 
+    private function createArticle6($edition)
+    {
+        $article = Article::create([
+            'edition_id' => $edition->id,
+            'title' => 'A-la-la-ô mas que calor... Cuide-se no verão',
+            'order' => 2,
+            'published_at' => '2018-06-11',
+            'category' => 'Saúde',
+            'created_at' => '2018-02-08',
+            'subtitle' =>
+                'Saiba como curtir o Carnaval se protegendo do verão carioca',
+            'lead' =>
+                'Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano será do dia 9 a 13 de fevereiro. Mas no auge do verão carioca, muitos esquecem de cuidar da saúde antes de aproveitar a festa de Momo. A Riotur informou que espera seis milhões de foliões no Rio, 400 mil turistas a mais que em 2017.',
+            'body' =>
+                'Com o calor e tantas pessoas na rua, algumas doenças se proliferam com mais facilidade. Mononucleose, herpes e insolação são alguns casos frequentes registrados nesta época do ano. Para evitar que doenças estraguem a festa, a diretora do departamento médico da Alerj, Mônica Antun Maia, dá algumas dicas para os funcionários da Casa curtirem com tranquilidade:
+- Protetor solar: é fundamental passar o protetor antes de sair de casa e reaplicá-lo ao longo do dia, mesmo com o céu nublado. A radiação ultravioleta pode causar danos como, manchas, queimaduras e envelhecimento precoce.  
+- Camisinha: como já dizia a roqueira Rita Lee, “amor é bossa nova, sexo é Carnaval”. O preservativo é o melhor método para prevenir gravidez indesejada, doenças sexualmente transmissíveis, como sífilis, HPV e Aids. De acordo com as secretarias municipal e estadual de Saúde, serão distribuídas sete milhões de camisinhas
+nos dias de festa. Procure um posto e garanta a sua.   
+- Hidratação: “Bebeu água? Não! Tá com sede? Tô. Olha, olha, olha, olha a água mineral”. Não espere se hidratar apenas quando a sede chegar. Esse deve ser o hino dos foliões. A água ajuda a manter o corpo hidratado e previne uma possível ressaca.
+- Comida: estar bem alimentado é fundamental para aguentar as horas extensas dos blocos e desfiles. Coma bem antes de sair de casa e durante o dia procure estabelecimentos, como restaurantes, padarias e lanchonetes. Evite comer na rua. Muitas pessoas acabam perdendo o restante do Carnaval ao ter uma infecção alimentar.
+- O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do Carnavalesco. E, por fim, tenha sempre um documento de identificação.
+',
+            'featured' => false
+        ]);
+
+        $article->attachTags(['saúde', 'carnaval']);
+
+        ArticleAuthor::create([
+            'article_id' => $article->id,
+            'name' => 'Buanna Rosa'
+        ]);
+
+        ArticleAuthor::create([
+            'article_id' => $article->id,
+            'name' => 'David Barbosa'
+        ]);
+
+        ArticlePhoto::create([
+            'article_id' => $article->id,
+            'main' => true,
+            'url_highres' =>
+                '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
+            'url_lowres' =>
+                '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
+            'author' => 'Rafael Wallace',
+            'notes' =>
+                'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
+        ]);
+    }
+
+    private function createArticle7($edition)
+    {
+        $article = Article::create([
+            'edition_id' => $edition->id,
+            'title' => 'Exemplo de solidariedade através do esporte',
+            'order' => 2,
+            'published_at' => '2018-06-18',
+            'category' => '',
+            'created_at' => '2018-06-18',
+            'subtitle' =>
+                '',
+            'lead' =>
+                'Ele sempre foi irrequieto, alto, e gostava de desafios. Por isso, não foi difícil perceber que aquele adolescente, então com 14 anos, tinha o biótipo e a personalidade ideais para as artes marciais. E foi a partir do convite desse amigo que Elton Moura, hoje com 34 anos, 1,80 m de altura, e 98 kg; entrou no mundo dos golpes, tatames, quimonos e faixas. E dele não saiu mais. “Na primeira aula já me identifiquei com o jiu-jitsu e, com dois meses de treino, já competia”, lembra Elton, cinegrafista da Assembleia Legislativa do Rio de Janeiro (Alerj).',
+            'body' =>
+                'Na equipe “Gama Filho Serginho Jiu-Jitsu”, o menino começou a mudar de faixa e a colecionar medalhas. A rápida ascensão, no entanto, foi de encontro à necessidade de ajudar a mãe que, sozinha, criou quatro filhos. “Não pude me dedicar ao esporte como gostaria porque tenho três irmãos e tive que ajudar a minha mãe a sustentá-los”, explica.
+
+Foi justamente a necessidade econômica que trouxe Elton, aos 21 anos, para a Alerj, onde começou como assistente de cinegrafista. “Nunca tinha pensado em trabalhar em TV, mas gostei”, lembra. Depois de duas passagens pela Casa, a última começou há dez anos, foi promovido a cinegrafista, casou e se tornou pai. Mas nunca esqueceu a antiga paixão pelo esporte.
+
+Mesmo sem competir como no início, continuou treinando e trocando de faixas: branca, azul, roxa...e agora a marrom. Conquistas que o levaram, recentemente, a ser auxiliar do seu mestre Alexssandro Feitosa, durante os treinos.
+
+No último ano, também passou a treinar mais pesado, emagreceu e se dedicou de tal forma que ganhou o Campeonato Copa Alfa. Vitória que acabou rendendo um convite. “A diretoria da equipe GF Team, após o campeonato, fez uma seleção para convocar uma equipe mundial master de jiu-jitsu (faixa marrom), em Miami, em junho, e fui selecionado”, comemora.
+
+Se dependesse de vontade, a mala já estaria pronta, mas Elton foi obrigado a recusar o convite: “A escolha do meu nome é fruto de muita dedicação ao esporte durante esses anos, mas falta patrocínio. A viagem é cara e não tenho como bancar os custos”, lamenta.
+
+Como bom atleta, não deixou que essa frustração o paralisasse e, passou a pensar como poderia reverter o que aprendeu no esporte em benefício dos colegas de trabalho. Com o incentivo do apresentador do programa “Arena Esportiva" da TV Alerj, Rui Guilherme, começou a formatar um projeto para levar o jiu-jtsu para os funcionários da Casa. Rui lembra a importância da arte marcial para melhorar a relação interpessoal, a disciplina e a confraternização.
+
+Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já receberam o apoio de colegas. Ainda em busca de um nome para a ideia, o faixa-marrom ressalta o caráter sem fim lucrativo da iniciativa. Como o jiu-jitsu não utiliza armas e recorre mais à técnica do que à força, esta arte marcial tornou-se ideal como defesa pessoal. Característica que levou a subdiretora-geral de Segurança, Cristina de Vilhena Castro, a engrossar a fila dos que esperam que as aulas de jiu-jitsu venham logo e para ficar. “O jiu-jitsu é adequado para o perfil da segurança da Casa porque temos que ter uma pronta defesa contra um agressor ou invasor”, ressalta Cristina.
+',
+            'featured' => false
+        ]);
+
+        $article->attachTags(['', '']);
+
+        ArticleAuthor::create([
+            'article_id' => $article->id,
+            'name' => 'Márcia Manga'
+        ]);
+
+        ArticlePhoto::create([
+            'article_id' => $article->id,
+            'main' => true,
+            'url_highres' =>
+                '/images/photos/elton-moura-e-cinegrafista-da-tv-alerj-e-tem-no-jiu-jitsu-sua-grande-paixao_thiago-lontra.jpg',
+            'url_lowres' =>
+                '/images/photos/elton-moura-e-cinegrafista-da-tv-alerj-e-tem-no-jiu-jitsu-sua-grande-paixao_thiago-lontra-1200x800.jpg',
+            'author' => 'Thiago Lontra',
+            'notes' =>
+                'Elton Moura é cinegrafista da TV Alerj e tem no jiu jitsu sua grande paixão'
+        ]);
+    }
+
+    private function createArticle8($edition)
+    {
+        $article = Article::create([
+            'edition_id' => $edition->id,
+            'title' => 'Sindalerj: associado extra-quadro número um',
+            'order' => 2,
+            'published_at' => '2018-06-18',
+            'category' => 'Saúde',
+            'created_at' => '2018-06-18',
+            'subtitle' =>
+                '',
+            'lead' =>
+                'O assistente parlamentar Rafael Ribeiro Riccio, 30 anos, foi o primeiro servidor extra-quadro a se cadastrar no Sindicato dos Servidores da Alerj - Sindalerj, no início deste ano, depois da alteração do estatuto da entidade e da campanha interna visando às novas filiações. Com a mudança, os funcionários comissionados ou requisitados já podem se filiar ao Sindalerj. Com uma contribuição mensal de R$ 35, o sindicato oferece convênios e diversos serviços aos seus novos associados, assim como aos 700 servidores ativos e aposentados e a seus familiares.',
+            'body' =>
+                '"Trabalho na Casa há 12 anos, sempre tive contato com os representantes do sindicato, acompanhei de perto várias lutas e conquistas. Assim que tive a oportunidade de me vincular à instituição, não perdi tempo. Foi assim que me tornei o extra-quadro número um do Sindalerj", disse Riccio, que ingressou na Alerj como estagiário e hoje trabalha no protocolo do Plenário, setor ligado à Secretaria da Mesa Diretora. Ele é responsável pelo recebimento dos projetos de lei, emendas e projetos de resoluções dos parlamentares.
+
+Segundo o presidente do sindicato, Nelson Braga Moreno, a adesão dos comissionados ainda está tímida, mas ele espera alcançar resultados positivos quando todos tiverem acesso à pauta de reivindicações para 2018/2019. A realização de um concurso público para os diversos setores da Casa faz parte da lista. "Somos poucos servidores na ativa e muitos às vésperas da aposentadoria. Precisamos renovar nossos quadros", disse Moreno, que enumerou como prioridades o ajuste no auxílio-alimentação (já concedido); a criação do auxílio-saúde e o novo plano de cargos e salários.
+
+"Lutamos por todos, seja estatutário ou não. O importante é que aqueles que trabalham na Alerj sejam comissionados ou requisitados, se sintam representados dentro das normas legais. Ser sindicalizado é se fazer ouvir", destacou o presidente.
+
+##Filiação e benefícios
+
+O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na Travessa do Paço, 23 - Sala 205, Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: (nome)[mailto:sindalerj@sindalerj.com.br].
+
+Os associados do Sindalerj contam com os benefícios exclusivos por meio das parcerias com planos de saúde, faculdades, restaurantes, farmácias e agências de viagem. Dispõem também de assistência jurídica e serviço contábil.
+
+
+',
+            'featured' => false
+        ]);
+
+        $article->attachTags(['', '']);
+
+        ArticleAuthor::create([
+            'article_id' => $article->id,
+            'name' => 'Symone Munay'
+        ]);
+
+        ArticlePhoto::create([
+            'article_id' => $article->id,
+            'main' => true,
+            'url_highres' =>
+                '/images/photos/rafael-riccio-trabalha-na-alerj-ha-12-anos-e-desde-o-inicio-deste-ano-integra-o-sindalerj_octacilio-barbosa.jpg',
+            'url_lowres' =>
+                '/images/photos/rafael-riccio-trabalha-na-alerj-ha-12-anos-e-desde-o-inicio-deste-ano-integra-o-sindalerj_octacilio-barbosa-1200x800.jpg',
+            'author' => 'Octacílio Barbosa',
+            'notes' =>
+                'Rafael Riccio trabalha na Alerj há 12 anos e desde o início deste ano integra o Sindalerj '
+        ]);
+    }
+    private function createArticle9($edition)
+    {
+        $article = Article::create([
+            'edition_id' => $edition->id,
+            'title' => 'Você sabe',
+            'order' => 2,
+            'published_at' => '2018-06-11',
+            'category' => 'Saúde',
+            'created_at' => '2018-02-08',
+            'subtitle' =>
+                'Saiba como curtir o Carnaval se protegendo do verão carioca',
+            'lead' =>
+                'Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano será do dia 9 a 13 de fevereiro. Mas no auge do verão carioca, muitos esquecem de cuidar da saúde antes de aproveitar a festa de Momo. A Riotur informou que espera seis milhões de foliões no Rio, 400 mil turistas a mais que em 2017.',
+            'body' =>
+                'Com o calor e tantas pessoas na rua, algumas doenças se proliferam com mais facilidade. Mononucleose, herpes e insolação são alguns casos frequentes registrados nesta época do ano. Para evitar que doenças estraguem a festa, a diretora do departamento médico da Alerj, Mônica Antun Maia, dá algumas dicas para os funcionários da Casa curtirem com tranquilidade:
+- Protetor solar: é fundamental passar o protetor antes de sair de casa e reaplicá-lo ao longo do dia, mesmo com o céu nublado. A radiação ultravioleta pode causar danos como, manchas, queimaduras e envelhecimento precoce.  
+- Camisinha: como já dizia a roqueira Rita Lee, “amor é bossa nova, sexo é Carnaval”. O preservativo é o melhor método para prevenir gravidez indesejada, doenças sexualmente transmissíveis, como sífilis, HPV e Aids. De acordo com as secretarias municipal e estadual de Saúde, serão distribuídas sete milhões de camisinhas
+nos dias de festa. Procure um posto e garanta a sua.   
+- Hidratação: “Bebeu água? Não! Tá com sede? Tô. Olha, olha, olha, olha a água mineral”. Não espere se hidratar apenas quando a sede chegar. Esse deve ser o hino dos foliões. A água ajuda a manter o corpo hidratado e previne uma possível ressaca.
+- Comida: estar bem alimentado é fundamental para aguentar as horas extensas dos blocos e desfiles. Coma bem antes de sair de casa e durante o dia procure estabelecimentos, como restaurantes, padarias e lanchonetes. Evite comer na rua. Muitas pessoas acabam perdendo o restante do Carnaval ao ter uma infecção alimentar.
+- O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do Carnavalesco. E, por fim, tenha sempre um documento de identificação.
+',
+            'featured' => false
+        ]);
+
+        $article->attachTags(['saúde', 'carnaval']);
+
+        ArticleAuthor::create([
+            'article_id' => $article->id,
+            'name' => 'Camilla Pontes'
+        ]);
+
+        ArticlePhoto::create([
+            'article_id' => $article->id,
+            'main' => true,
+            'url_highres' =>
+                '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
+            'url_lowres' =>
+                '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
+            'author' => 'Rafael Wallace',
+            'notes' =>
+                'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
+        ]);
+    }
+
+
+
+
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
-        $edition = Edition::create([
-            'year' => 2018,
-            'month' => 2,
-            'number' => 0,
-            'published_at' => null
-        ]);
 
-        $this->createArticle1($edition);
-        $this->createArticle2($edition);
-        $this->createArticle3($edition);
-        $this->createArticle4($edition);
-        $this->createArticle5($edition);
-
-        $edition = Edition::create([
-            'year' => 2018,
-            'month' => 6,
-            'number' => 1,
-            'published_at' => null
-        ]);
-
-        $this->createArticle6($edition); // materia 1
-    }
 }
