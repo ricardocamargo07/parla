@@ -337,7 +337,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
 
 Desde outubro de 2017, o sonho de se formar em uma pós-graduação ficou mais perto para Henry Ferraz, assessor parlamentar da liderança do MDB na Assembleia Legislativa do Estado do Rio (Alerj). “Sou formado em Ciência Política pela Universidade Federal do Estado do Rio de Janeiro (Unirio) e sempre tive interesse em me especializar. Poder me qualificar na área em que eu trabalho foi uma oportunidade incrível. O curso me trouxe enriquecimento teórico para a prática que eu exerço”, afirmou Ferraz, que já está produzindo o Trabalho de Conclusão de Curso (TCC. Para se formar, os alunos terão que produzir um artigo científico e publicá-lo.
 
-##Caminho percorrido
+## Caminho percorrido
 
 Para receber a permissão do CEE-RJ, a Elerj precisou atender a três requisitos: corpo docente, projeto pedagógico e instalações. "Nós avaliamos que a Elerj tinha plenas condições legais e técnicas para ministrar esses cursos", afirmou Marcelo Rosa, relator e conselheiro do CEE-RJ. Após a implementação do curso de pós, Rosemery acredita conseguir o mestrado de forma mais fácil.
 
@@ -448,7 +448,7 @@ Segundo o presidente do sindicato, Nelson Braga Moreno, a adesão dos comissiona
 
 "Lutamos por todos, seja estatutário ou não. O importante é que aqueles que trabalham na Alerj sejam comissionados ou requisitados, se sintam representados dentro das normas legais. Ser sindicalizado é se fazer ouvir", destacou o presidente.
 
-##Filiação e benefícios
+## Filiação e benefícios
 
 O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na Travessa do Paço, 23 - Sala 205, Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: (nome)[mailto:sindalerj@sindalerj.com.br].
 
