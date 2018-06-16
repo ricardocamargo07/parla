@@ -346,13 +346,15 @@ O que eles falam sobre o curso:
 Gabriela Rocha - Assessora Parlamentar da deputada Márcia Jeovani (DEM)
 As aulas são maravilhosas. Sou publicitária e adorei as aulas de Marketing Público, o conteúdo vai me ajudar muito na aplicação do que eu já aprendi na faculdade. Outra matéria que achei muito interessante foi a de Estrutura e Funcionamento do Processo Legislativo. Aprendi mais sobre a formação da política e o agir da sociedade.
 
+![Gabriela Rocha](/images/photos/gabriela-rocha-citacao-elerj-thiago-lontra-1200x800.jpg)
+
 Welberth Saddi - Consultor Orçamentário e Financeiro da Alerj
 Como gestor de departamento, me especializar é sempre importante. A pós me ajudou a entender melhor como trabalhar com a minha equipe e conseguir melhores resultados. Trabalho no dia a dia com a área orçamentária e poder trocar o conhecimento que eu tenho com os outros alunos foi incrível também.
 
 Gabriela Naegele - Assessora Parlamentar do deputado Luiz Paulo (PSDB)
 O curso ampliou o meu leque de amizades na Casa. Passei a conhecer melhor pessoas que trabalham no administrativo, com quem tinha pouco contato. Além dos relacionamentos estreitados, a pós me fez relembrar algumas matérias da época da faculdade. Também aprendi sobre a qualidade do serviço público que é papel importante para um assessor parlamentar. Se o mestrado da Alerj sair do papel, com certeza, vou me matricular.
 
-![Gabriela Rocha](/images/photos/gabriela-naegele-citcao_elerj_thiago-lontra-1200x800.jpg)
+![Gabriela Naegele](/images/photos/gabriela-naegele-citcao-elerj-thiago-lontra-1200x800.jpg)
 
 Eduardo Costa - Professor da Elerj
 Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.',
