@@ -323,49 +323,57 @@ Para os **estagiários**, o ramal de atendimento é 1369.
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'A-la-la-ô mas que calor... Cuide-se no verão',
+            'title' => 'Elerj: diploma na mão',
             'order' => 2,
-            'published_at' => '2018-06-11',
-            'category' => 'Saúde',
-            'created_at' => '2018-02-08',
+            'published_at' => '2018-06-18',
+            'category' => 'Escola do Legislativo',
+            'created_at' => '2018-06-18',
             'subtitle' =>
-                'Saiba como curtir o Carnaval se protegendo do verão carioca',
+                'Primeira turma da pós-graduação se forma em outubro',
             'lead' =>
-                'Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano será do dia 9 a 13 de fevereiro. Mas no auge do verão carioca, muitos esquecem de cuidar da saúde antes de aproveitar a festa de Momo. A Riotur informou que espera seis milhões de foliões no Rio, 400 mil turistas a mais que em 2017.',
+                'A primeira turma de pós-graduação da Escola do Legislativo do Estado do Rio de Janeiro (Elerj) termina o curso em outubro. Autorizada pelo Conselho Estadual de Educação (CEE-RJ) em maio de 2017, a pós de Gestão no Poder Legislativo conta com 44 alunos e, segundo a diretora a Elerj, Rosemery Borges, a criação de novas turmas já está nos planos para o próximo ano.',
             'body' =>
-                'Com o calor e tantas pessoas na rua, algumas doenças se proliferam com mais facilidade. Mononucleose, herpes e insolação são alguns casos frequentes registrados nesta época do ano. Para evitar que doenças estraguem a festa, a diretora do departamento médico da Alerj, Mônica Antun Maia, dá algumas dicas para os funcionários da Casa curtirem com tranquilidade:
-- Protetor solar: é fundamental passar o protetor antes de sair de casa e reaplicá-lo ao longo do dia, mesmo com o céu nublado. A radiação ultravioleta pode causar danos como, manchas, queimaduras e envelhecimento precoce.  
-- Camisinha: como já dizia a roqueira Rita Lee, “amor é bossa nova, sexo é Carnaval”. O preservativo é o melhor método para prevenir gravidez indesejada, doenças sexualmente transmissíveis, como sífilis, HPV e Aids. De acordo com as secretarias municipal e estadual de Saúde, serão distribuídas sete milhões de camisinhas
-nos dias de festa. Procure um posto e garanta a sua.   
-- Hidratação: “Bebeu água? Não! Tá com sede? Tô. Olha, olha, olha, olha a água mineral”. Não espere se hidratar apenas quando a sede chegar. Esse deve ser o hino dos foliões. A água ajuda a manter o corpo hidratado e previne uma possível ressaca.
-- Comida: estar bem alimentado é fundamental para aguentar as horas extensas dos blocos e desfiles. Coma bem antes de sair de casa e durante o dia procure estabelecimentos, como restaurantes, padarias e lanchonetes. Evite comer na rua. Muitas pessoas acabam perdendo o restante do Carnaval ao ter uma infecção alimentar.
-- O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do Carnavalesco. E, por fim, tenha sempre um documento de identificação.
-',
+                'A qualificação é primordial para o Legislativo e queremos que esse projeto permaneça. Inclusive, demos entrada no Ministério de Educação (MEC), no mês de maio, solicitando autorização para a implementação do mestrado na Elerj. Um passo importante para a nossa Casa e para os funcionários que trabalham aqui”, afirmou Rosemery.
+
+Desde outubro de 2017, o sonho de se formar em uma pós-graduação ficou mais perto para Henry Ferraz, assessor parlamentar da liderança do MDB na Assembleia Legislativa do Estado do Rio (Alerj). “Sou formado em Ciência Política pela Universidade Federal do Estado do Rio de Janeiro (Unirio) e sempre tive interesse em me especializar. Poder me qualificar na área em que eu trabalho foi uma oportunidade incrível. O curso me trouxe enriquecimento teórico para a prática que eu exerço”, afirmou Ferraz, que já está produzindo o Trabalho de Conclusão de Curso (TCC. Para se formar, os alunos terão que produzir um artigo científico e publicá-lo.
+
+##Caminho percorrido
+
+Para receber a permissão do CEE-RJ, a Elerj precisou atender a três requisitos: corpo docente, projeto pedagógico e instalações. "Nós avaliamos que a Elerj tinha plenas condições legais e técnicas para ministrar esses cursos", afirmou Marcelo Rosa, relator e conselheiro do CEE-RJ. Após a implementação do curso de pós, Rosemery acredita conseguir o mestrado de forma mais fácil.
+
+O que eles falam sobre o curso:
+
+Gabriela Rocha - Assessora Parlamentar da deputada Márcia Jeovani (DEM)
+As aulas são maravilhosas. Sou publicitária e adorei as aulas de Marketing Público, o conteúdo vai me ajudar muito na aplicação do que eu já aprendi na faculdade. Outra matéria que achei muito interessante foi a de Estrutura e Funcionamento do Processo Legislativo. Aprendi mais sobre a formação da política e o agir da sociedade.
+
+Welberth Saddi - Consultor Orçamentário e Financeiro da Alerj
+Como gestor de departamento, me especializar é sempre importante. A pós me ajudou a entender melhor como trabalhar com a minha equipe e conseguir melhores resultados. Trabalho no dia a dia com a área orçamentária e poder trocar o conhecimento que eu tenho com os outros alunos foi incrível também.
+
+Gabriela Naegele - Assessora Parlamentar do deputado Luiz Paulo (PSDB)
+O curso ampliou o meu leque de amizades na Casa. Passei a conhecer melhor pessoas que trabalham no administrativo, com quem tinha pouco contato. Além dos relacionamentos estreitados, a pós me fez relembrar algumas matérias da época da faculdade. Também aprendi sobre a qualidade do serviço público que é papel importante para um assessor parlamentar. Se o mestrado da Alerj sair do papel, com certeza, vou me matricular.
+
+Eduardo Costa - Professor da Elerj
+Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.',
             'featured' => false
         ]);
 
-        $article->attachTags(['saúde', 'carnaval']);
+        $article->attachTags(['elerj', 'escola do legislativo', 'pós graduação,', 'curso', 'alunos']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
             'name' => 'Buanna Rosa'
         ]);
 
-        ArticleAuthor::create([
-            'article_id' => $article->id,
-            'name' => 'David Barbosa'
-        ]);
-
         ArticlePhoto::create([
             'article_id' => $article->id,
             'main' => true,
             'url_highres' =>
-                '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
+                '/images/photos/eduardo-costa-sala-de-aula_elerj_thiago-lontra.jpg',
             'url_lowres' =>
-                '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
-            'author' => 'Rafael Wallace',
+                '/images/photos/eduardo-costa-sala-de-aula_elerj_thiago-lontra_1200x800.jpg',
+            'author' => 'Thiago Lontra',
             'notes' =>
-                'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
+                ''
         ]);
     }
 
