@@ -324,7 +324,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
         $article = Article::create([
             'edition_id' => $edition->id,
             'title' => 'Elerj: diploma na mão',
-            'order' => 2,
+            'order' => 1,
             'published_at' => '2018-06-18',
             'category' => 'Escola do Legislativo',
             'created_at' => '2018-06-18',
@@ -354,7 +354,7 @@ O curso ampliou o meu leque de amizades na Casa. Passei a conhecer melhor pessoa
 
 Eduardo Costa - Professor da Elerj
 Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.',
-            'featured' => false
+            'featured' => true
         ]);
 
         $article->attachTags(['elerj', 'escola do legislativo', 'pós graduação,', 'curso', 'alunos']);
