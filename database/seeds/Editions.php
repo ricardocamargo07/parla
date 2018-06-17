@@ -372,9 +372,9 @@ Sou formado em Administração e já lecionei cursos na Elerj, então para mim f
             'article_id' => $article->id,
             'main' => true,
             'url_highres' =>
-                '/images/photos/eduardo-costa-sala-de-aula_elerj_thiago-lontra.jpg',
+                '/images/photos/eduardo-costa-sala-de-aula-elerj-thiago-lontra.jpg',
             'url_lowres' =>
-                '/images/photos/eduardo-costa-sala-de-aula_elerj_thiago-lontra_1200x800.jpg',
+                '/images/photos/eduardo-costa-sala-de-aula-elerj-thiago-lontra-1200x800.jpg',
             'author' => 'Thiago Lontra',
             'notes' =>
                 ''
@@ -423,9 +423,9 @@ Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já recebera
             'article_id' => $article->id,
             'main' => true,
             'url_highres' =>
-                '/images/photos/elton-moura-cinegrafista-tv-alerj_thiago-lontra.jpg',
+                '/images/photos/elton-moura-cinegrafista-tv-alerj-thiago-lontra.jpg',
             'url_lowres' =>
-                '/images/photos/elton-moura-cinegrafista-tv-alerj_thiago-lontra-1200x800.jpg',
+                '/images/photos/elton-moura-cinegrafista-tv-alerj-thiago-lontra-1200x800.jpg',
             'author' => 'Thiago Lontra',
             'notes' =>
                 'Elton Moura é cinegrafista da TV Alerj e tem no jiu jitsu sua grande paixão'
@@ -474,9 +474,9 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
             'article_id' => $article->id,
             'main' => true,
             'url_highres' =>
-                '/images/photos/rafael-riccio-sindalerj_octacilio-barbosa.jpg',
+                '/images/photos/rafael-riccio-sindalerj-octacilio-barbosa.jpg',
             'url_lowres' =>
-                '/images/photos/rafael-riccio-sindalerj_octacilio-barbosa-1200x800.jpg',
+                '/images/photos/rafael-riccio-sindalerj-octacilio-barbosa-1200x800.jpg',
             'author' => 'Octacílio Barbosa',
             'notes' =>
                 'Rafael Riccio trabalha na Alerj há 12 anos e desde o início deste ano integra o Sindalerj '
