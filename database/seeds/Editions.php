@@ -371,7 +371,7 @@ O que eles falam sobre o curso:
 
 ---
 
-![Eduardo Costa](/images/photos/eduardo-costa-citacao-elerj-thiago-lontra-1200x800.jpg){.blockquote-photo-left}
+![Eduardo Costa](/images/photos/eduardo-costa-citacao-elerj-thiago-lontra-1200x800.jpg){.blockquote-photo-left data-lightbox="eduardo-costa-1"}
 
 **Eduardo Costa - Professor da Elerj**
 {.title-right}                                                                                                                                                                                                                                                                                                                                                                                   

@@ -342,16 +342,6 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             ->toArray();
     }
 
-    public static function findBySlug($slug)
-    {
-        return new Coollection(
-            static
-                ::all()
-                ->where('slug', $slug)
-                ->first()
-        );
-    }
-
     public static function makePhotosCollection($photos)
     {
         return coollect($photos)->map(function ($photo) {

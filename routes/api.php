@@ -14,8 +14,8 @@ Route::group(['prefix' => '/posts/{edition_id}'], function () {
     Route::get('/all', function (Request $request, $edition_id) {
         return app(ArticlesRepository::class)->all($edition_id);
     });
+});
 
-    Route::get('/{slug}', function (Request $request, $edition_id, $slug) {
-        return Response::json(app(ArticlesRepository::class)->findBySlug($edition_id, $slug));
-    });
+Route::get('/posts/{slug}', function (Request $request, $slug) {
+    return Response::json(app(ArticlesRepository::class)->findBySlug($slug));
 });
