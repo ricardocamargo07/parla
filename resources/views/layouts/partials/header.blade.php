@@ -11,7 +11,7 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 header-right">
             <div class="header-right-inner parla-edition aligner-item">
-                Parla n&ordm; 1 - Junho de 2018
+                Parla n&ordm; @{{ this.laravel.currentEdition.number }} - @{{ this.laravel.currentEdition.month_name }} de @{{ this.laravel.currentEdition.year }}
             </div>
         </div>
     </div>
