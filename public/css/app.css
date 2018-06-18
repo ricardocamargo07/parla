@@ -11726,6 +11726,12 @@ h1,
   }
 }
 
+.article-internal .article-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .article-internal .article-body .article-gallery {
   margin-top: 60px;
   margin-bottom: 60px;

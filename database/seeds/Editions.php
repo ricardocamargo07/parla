@@ -354,10 +354,12 @@ Como gestor de departamento, me especializar é sempre importante. A pós me aju
 Gabriela Naegele - Assessora Parlamentar do deputado Luiz Paulo (PSDB)
 O curso ampliou o meu leque de amizades na Casa. Passei a conhecer melhor pessoas que trabalham no administrativo, com quem tinha pouco contato. Além dos relacionamentos estreitados, a pós me fez relembrar algumas matérias da época da faculdade. Também aprendi sobre a qualidade do serviço público que é papel importante para um assessor parlamentar. Se o mestrado da Alerj sair do papel, com certeza, vou me matricular.
 
-![Gabriela Naegele](/images/photos/gabriela-naegele-citcao-elerj-thiago-lontra-1200x800.jpg)
+![Gabriela Naegele](/images/photos/gabriela-naegele-citacao-elerj-thiago-lontra-1200x800.jpg)
 
 Eduardo Costa - Professor da Elerj
-Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.',
+Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.
+
+![Eduardo Costa](/images/photos/eduardo-costa-citacao-elerj-thiago-lontra-1200x800.jpg)',
             'featured' => true
         ]);
 
@@ -385,7 +387,7 @@ Sou formado em Administração e já lecionei cursos na Elerj, então para mim f
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'Exemplo de solidariedade através do esporte',
+            'title' => 'Exemplo de solidariedade através do esporte',gabri
             'order' => 2,
             'published_at' => '2018-06-18',
             'category' => '',
