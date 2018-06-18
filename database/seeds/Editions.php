@@ -451,7 +451,7 @@ Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já recebera
             'edition_id' => $edition->id,
             'title' => 'Sindalerj: associado extra-quadro número um',
             'order' => 3,
-            'published_at' => '2018-06-18',
+            'published_at' => null,
             'category' => 'Sindalerj',
             'created_at' => '2018-06-18',
             'subtitle' => '',
