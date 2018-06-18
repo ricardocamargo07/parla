@@ -175,4 +175,12 @@ class Articles
             )
         );
     }
+
+    public function findBySlug($slug)
+    {
+        return Article
+            ::all()
+            ->where('slug', $slug)
+            ->first();
+    }
 }
