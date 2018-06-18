@@ -1,7 +1,7 @@
 <?php
 Route::get('/', 'Home@index')->name('home');
 
-Route::get('/editions/{id}', 'Home@editions')->name('editions');
+Route::get('/editions/{number}', 'Home@editions')->name('editions');
 
 Route::get('/posts', 'Home@post')->name('post');
 

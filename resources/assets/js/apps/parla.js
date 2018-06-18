@@ -92,7 +92,7 @@ if (jQuery("#" + appName).length > 0) {
             refreshTable(table) {
                 me = this
 
-                axios.get('/api/posts/'+this.laravel.currentEdition+'/'+table)
+                axios.get('/api/posts/'+this.laravel.currentEdition.number+'/'+table)
                     .then(function(response) {
                         me.tables[table] = response.data
                     })

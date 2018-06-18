@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Data\Models\Edition;
 use App\Data\Repositories\Articles;
 use App\Data\Repositories\Articles as ArticlesRepository;
 
@@ -16,9 +17,12 @@ class Home extends Controller
         $this->articlesRepository = $articlesRepository;
     }
 
-    public function index()
+    public function index($number = 'last')
     {
-        return view('home.index');
+        return view('home.index')->with(
+            'currentEdition',
+            $this->articlesRepository->findEditionByNumber($number)
+        );
     }
 
     public function post()
@@ -26,8 +30,8 @@ class Home extends Controller
         return view('home.post');
     }
 
-    public function editions($id)
+    public function editions($number)
     {
-        return $this->index()->with('currentEdition', $id);
+        return $this->index($number);
     }
 }
