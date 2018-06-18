@@ -73,9 +73,9 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'article_id' => $article->id,
             'main' => true,
             'url_highres' =>
-                '/images/photos/gabriel-sorriso1_rafael-wallace.jpg',
+                '/images/photos/gabriel-sorriso1-rafael-wallace.jpg',
             'url_lowres' =>
-                '/images/photos/gabriel-sorriso1_rafael-wallace-1200x800.jpg',
+                '/images/photos/gabriel-sorriso1-rafael-wallace-1200x800.jpg',
             'author' => 'Rafael Wallace',
             'notes' =>
                 'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
@@ -85,9 +85,9 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'article_id' => $article->id,
             'main' => false,
             'url_highres' =>
-                '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra.jpg',
+                '/images/photos/antonio-conceicao4-01-02-2018-thiago-lontra.jpg',
             'url_lowres' =>
-                '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra-1200x900.jpg',
+                '/images/photos/antonio-conceicao4-01-02-2018-thiago-lontra-1200x900.jpg',
             'author' => 'Thiago Lontra',
             'notes' =>
                 'O serralheiro Antonio Conceição atua como compositor e interprete'
