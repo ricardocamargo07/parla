@@ -11732,6 +11732,11 @@ h1,
   height: auto;
 }
 
+.article-internal .article-body img.photo-left {
+  float: left;
+  margin-right: 15px;
+}
+
 .article-internal .article-body .article-gallery {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -12203,5 +12208,10 @@ a.readmore {
 
 .contact {
   color: #172a52;
+}
+
+.error-404 {
+  text-align: center;
+  padding: 40px 15px;
 }
 

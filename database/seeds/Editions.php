@@ -329,8 +329,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'published_at' => '2018-06-18',
             'category' => 'Escola do Legislativo',
             'created_at' => '2018-06-18',
-            'subtitle' =>
-                'Primeira turma da pós-graduação se forma em outubro',
+            'subtitle' => 'Primeira turma da pós-graduação se forma em outubro',
             'lead' =>
                 'A primeira turma de pós-graduação da Escola do Legislativo do Estado do Rio de Janeiro (Elerj) termina o curso em outubro. Autorizada pelo Conselho Estadual de Educação (CEE-RJ) em maio de 2017, a pós de Gestão no Poder Legislativo conta com 44 alunos e, segundo a diretora a Elerj, Rosemery Borges, a criação de novas turmas já está nos planos para o próximo ano.',
             'body' =>
@@ -369,7 +368,13 @@ O que eles falam sobre o curso:
             'featured' => true
         ]);
 
-        $article->attachTags(['elerj', 'escola do legislativo', 'pós graduação,', 'curso', 'alunos']);
+        $article->attachTags([
+            'elerj',
+            'escola do legislativo',
+            'pós graduação,',
+            'curso',
+            'alunos'
+        ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
@@ -384,8 +389,7 @@ O que eles falam sobre o curso:
             'url_lowres' =>
                 '/images/photos/eduardo-costa-sala-de-aula-elerj-thiago-lontra-1200x800.jpg',
             'author' => 'Thiago Lontra',
-            'notes' =>
-                ''
+            'notes' => ''
         ]);
     }
 
@@ -398,8 +402,7 @@ O que eles falam sobre o curso:
             'published_at' => '2018-06-18',
             'category' => '',
             'created_at' => '2018-06-18',
-            'subtitle' =>
-                '',
+            'subtitle' => '',
             'lead' =>
                 'Ele sempre foi irrequieto, alto, e gostava de desafios. Por isso, não foi difícil perceber que aquele adolescente, então com 14 anos, tinha o biótipo e a personalidade ideais para as artes marciais. E foi a partir do convite desse amigo que Elton Moura, hoje com 34 anos, 1,80 m de altura, e 98 kg; entrou no mundo dos golpes, tatames, quimonos e faixas. E dele não saiu mais. “Na primeira aula já me identifiquei com o jiu-jitsu e, com dois meses de treino, já competia”, lembra Elton, cinegrafista da Assembleia Legislativa do Rio de Janeiro (Alerj).',
             'body' =>
@@ -415,7 +418,7 @@ Se dependesse de vontade, a mala já estaria pronta, mas Elton foi obrigado a re
 
 Como bom atleta, não deixou que essa frustração o paralisasse e, passou a pensar como poderia reverter o que aprendeu no esporte em benefício dos colegas de trabalho. Com o incentivo do apresentador do programa “Arena Esportiva" da TV Alerj, Rui Guilherme, começou a formatar um projeto para levar o jiu-jtsu para os funcionários da Casa. Rui lembra a importância da arte marcial para melhorar a relação interpessoal, a disciplina e a confraternização.
 
-![Elton Moura](/images/photos/elton-moura-kimono-tv-alerj-thiago-lontra.jpg)
+![Elton Moura](/images/photos/elton-moura-kimono-tv-alerj-thiago-lontra.jpg){.photo-left}
 
 Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já receberam o apoio de colegas. Ainda em busca de um nome para a ideia, o faixa-marrom ressalta o caráter sem fim lucrativo da iniciativa. Como o jiu-jitsu não utiliza armas e recorre mais à técnica do que à força, esta arte marcial tornou-se ideal como defesa pessoal. Característica que levou a subdiretora-geral de Segurança, Cristina de Vilhena Castro, a engrossar a fila dos que esperam que as aulas de jiu-jitsu venham logo e para ficar. “O jiu-jitsu é adequado para o perfil da segurança da Casa porque temos que ter uma pronta defesa contra um agressor ou invasor”, ressalta Cristina.
 ',
@@ -451,8 +454,7 @@ Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já recebera
             'published_at' => '2018-06-18',
             'category' => 'Sindalerj',
             'created_at' => '2018-06-18',
-            'subtitle' =>
-                '',
+            'subtitle' => '',
             'lead' =>
                 'O assistente parlamentar Rafael Ribeiro Riccio, 30 anos, foi o primeiro servidor extra-quadro a se cadastrar no Sindicato dos Servidores da Alerj - Sindalerj, no início deste ano, depois da alteração do estatuto da entidade e da campanha interna visando às novas filiações. Com a mudança, os funcionários comissionados ou requisitados já podem se filiar ao Sindalerj. Com uma contribuição mensal de R$ 35, o sindicato oferece convênios e diversos serviços aos seus novos associados, assim como aos 700 servidores ativos e aposentados e a seus familiares.',
             'body' =>
@@ -473,7 +475,13 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
             'featured' => false
         ]);
 
-        $article->attachTags(['sindalerj', 'servidor', 'associação', 'sindicato', 'extra-quadro']);
+        $article->attachTags([
+            'sindalerj',
+            'servidor',
+            'associação',
+            'sindicato',
+            'extra-quadro'
+        ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
@@ -502,8 +510,7 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
             'category' => 'Curiosidades do Palácio',
             'category' => 'Curiosidades do Palácio',
             'created_at' => '2018-06-18',
-            'subtitle' =>
-                '',
+            'subtitle' => '',
             'lead' =>
                 'Todos que circulam diariamente pelo Palácio Tiradentes sabem que há muita história a contar nesses 92 anos de existência. O prédio chama a atenção por sua beleza arquitetônica e também pela imponência. A atual sede da Assembleia Legislativa do Estado do Rio de Janeiro já foi cadeia no Brasil Colônia - onde inclusive o mártir da Inconfidência Mineira, Tiradentes, ficou preso -e, já na República, foi Câmara dos Deputados.',
             'body' =>
@@ -515,7 +522,11 @@ As telas são descritas pelos artistas como a “visão bucólica das paisagens 
             'featured' => false
         ]);
 
-        $article->attachTags(['curiosidades', 'Palácio Tiradentes', 'história']);
+        $article->attachTags([
+            'curiosidades',
+            'Palácio Tiradentes',
+            'história'
+        ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
@@ -525,24 +536,16 @@ As telas são descritas pelos artistas como a “visão bucólica das paisagens 
         ArticlePhoto::create([
             'article_id' => $article->id,
             'main' => true,
-            'url_highres' =>
-                '/images/photos/antigo-restaurante.jpg',
-            'url_lowres' =>
-                '/images/photos/antigo-restaurante-1200x800.jpg',
+            'url_highres' => '/images/photos/antigo-restaurante.jpg',
+            'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
             'author' => '',
-            'notes' =>
-                ''
+            'notes' => ''
         ]);
     }
-
-
-
 
     /**
      * Run the database seeds.
      *
      * @return void
      */
-
 }
-
