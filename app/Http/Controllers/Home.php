@@ -25,4 +25,9 @@ class Home extends Controller
     {
         return view('home.post');
     }
+
+    public function editions($id)
+    {
+        return $this->index()->with('currentEdition', $id);
+    }
 }

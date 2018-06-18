@@ -74945,6 +74945,7 @@ if (jQuery("#" + appName).length > 0) {
 
             tables: {
                 all: [],
+
                 featured: [],
 
                 nonFeatured: []
@@ -74961,7 +74962,9 @@ if (jQuery("#" + appName).length > 0) {
                 imported: null
             },
 
-            search: ''
+            search: '',
+
+            laravel: Laravel
         },
 
         computed: {
@@ -75013,7 +75016,7 @@ if (jQuery("#" + appName).length > 0) {
             refreshTable: function refreshTable(table) {
                 me = this;
 
-                axios.get('/api/posts/' + table).then(function (response) {
+                axios.get('/api/posts/' + this.laravel.currentEdition + '/' + table).then(function (response) {
                     me.tables[table] = response.data;
                 }).catch(function (error) {
                     console.log(error);

@@ -364,7 +364,8 @@ O que eles falam sobre o curso:
 **Eduardo Costa - Professor da Elerj**
 > Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.
 
-![Eduardo Costa](/images/photos/eduardo-costa-citacao-elerj-thiago-lontra-1200x800.jpg)',
+![Eduardo Costa](/images/photos/eduardo-costa-citacao-elerj-thiago-lontra-1200x800.jpg)
+',
             'featured' => true
         ]);
 

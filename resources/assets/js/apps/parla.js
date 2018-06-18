@@ -12,6 +12,7 @@ if (jQuery("#" + appName).length > 0) {
 
             tables: {
                 all: [],
+
                 featured: [],
 
                 nonFeatured: [],
@@ -29,6 +30,8 @@ if (jQuery("#" + appName).length > 0) {
             },
 
             search: '',
+
+            laravel: Laravel,
         },
 
         computed: {
@@ -89,7 +92,7 @@ if (jQuery("#" + appName).length > 0) {
             refreshTable(table) {
                 me = this
 
-                axios.get('/api/posts/'+table)
+                axios.get('/api/posts/'+this.laravel.currentEdition+'/'+table)
                     .then(function(response) {
                         me.tables[table] = response.data
                     })

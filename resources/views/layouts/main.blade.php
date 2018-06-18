@@ -18,6 +18,7 @@
                 'csrfToken' => csrf_token(),
                 'apiPrefix' => '/api/v1',
                 'currentPost' => isset($post) ? json_decode(json_encode($post->toArray())) : null,
+                'currentEdition' => isset($currentEdition) ? $currentEdition : 'last',
             ]) !!};
         </script>
 

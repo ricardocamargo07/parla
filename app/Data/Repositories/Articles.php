@@ -8,14 +8,14 @@ use Jenssegers\Date\Date as Carbon;
 
 class Articles
 {
-    public function all()
+    public function all($edition_id)
     {
-        return $this->fillArticlesData($this->getBaseQuery()->get());
+        return $this->fillArticlesData($this->getBaseQuery($edition_id)->get());
     }
 
-    public function featured()
+    public function featured($edition_id)
     {
-        return $this->all()->where('featured', true);
+        return $this->all($edition_id)->where('featured', true);
     }
 
     protected function fillArticlesData($articles)
@@ -25,30 +25,60 @@ class Articles
         });
     }
 
-    private function getBaseQuery()
+    protected function findEdition($edition_id)
+    {
+        info($edition_id);
+        info(
+            $edition_id === 'last'
+                ? $this->getLastEdition()->number
+                : $edition_id
+        );
+
+        return Edition
+            ::where(
+                'number',
+                $edition_id === 'last'
+                    ? $this->getLastEdition()->number
+                    : $edition_id
+            )
+            ->take(1)
+            ->get()
+            ->first();
+    }
+
+    protected function getBaseQuery($edition_id)
     {
         return Article
             ::with(['edition', 'photos', 'authors'])
-            ->where('edition_id', Edition::where('number', 1)->first()->id)
+            ->where('edition_id', $this->findEdition($edition_id)->id)
             ->whereNotNull('published_at');
+    }
+
+    protected function getLastEdition()
+    {
+        return Edition
+            ::orderBy('number', 'desc')
+            ->take(1)
+            ->get()
+            ->first();
     }
 
     /**
      * @param $article
      * @return Article[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection
      */
-    protected function makeReadAlso($article)
+    protected function makeReadAlso($article, $edition_id)
     {
-        return $this->getBaseQuery()
+        return $this->getBaseQuery($edition_id)
             ->get()
             ->reject(function ($item) use ($article) {
                 return $item->id === $article->id;
             });
     }
 
-    public function nonFeatured()
+    public function nonFeatured($edition_id)
     {
-        return $this->all()->where('featured', false);
+        return $this->all($edition_id)->where('featured', false);
     }
 
     protected function fillArticleData($article)
@@ -96,7 +126,10 @@ class Articles
 
         $article['body'] = $markdown->convert($article['body']);
 
-        $article['read_also'] = $this->makeReadAlso($article);
+        $article['read_also'] = $this->makeReadAlso(
+            $article,
+            $article->edition->number
+        );
 
         return $article;
     }
