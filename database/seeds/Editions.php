@@ -348,8 +348,8 @@ As aulas são maravilhosas. Sou publicitária e adorei as aulas de Marketing Pú
 
 ![Gabriela Rocha](/images/photos/gabriela-rocha-citacao-elerj-thiago-lontra-1200x800.jpg)
 
-Welberth Saddi - Consultor Orçamentário e Financeiro da Alerj
-Como gestor de departamento, me especializar é sempre importante. A pós me ajudou a entender melhor como trabalhar com a minha equipe e conseguir melhores resultados. Trabalho no dia a dia com a área orçamentária e poder trocar o conhecimento que eu tenho com os outros alunos foi incrível também.
+**Welberth Saddi - Consultor Orçamentário e Financeiro da Alerj**
+> Como gestor de departamento, me especializar é sempre importante. A pós me ajudou a entender melhor como trabalhar com a minha equipe e conseguir melhores resultados. Trabalho no dia a dia com a área orçamentária e poder trocar o conhecimento que eu tenho com os outros alunos foi incrível também.
 
 ![Welberth Saddi](/images/photos/welberth-saddi-citacao-elerj-thiago-lontra-1200x800.jpg)
 
