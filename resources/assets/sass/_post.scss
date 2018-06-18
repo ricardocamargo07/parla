@@ -148,7 +148,34 @@ h1, .h1 {
 
     img.photo-left {
       float: left;
+      max-width: 60%;
       margin-right: 15px;
+    }
+
+    img.blockquote-photo-left {
+      float: left;
+      margin-left: -130px;
+      max-width: 60%;
+      margin-right: 25px;
+      margin-bottom: 60px;
+    }
+    blockquote.blockquote-right {
+      margin-right: -160px;
+      max-width: 70%;
+      float: right;
+      font-size: 110%;
+      line-height: 1.5;
+    }
+    p.title-right {
+      margin-right: -150px;
+    }
+
+    hr {
+      margin-top: 160px;
+      margin-bottom: 60px;
+      border: 0;
+      border-top: 6px solid #eeeeee;
+      clear: both;
     }
 
 
