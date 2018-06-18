@@ -343,8 +343,8 @@ Para receber a permissão do CEE-RJ, a Elerj precisou atender a três requisitos
 
 O que eles falam sobre o curso:
 
-Gabriela Rocha - Assessora Parlamentar da deputada Márcia Jeovani (DEM)
-As aulas são maravilhosas. Sou publicitária e adorei as aulas de Marketing Público, o conteúdo vai me ajudar muito na aplicação do que eu já aprendi na faculdade. Outra matéria que achei muito interessante foi a de Estrutura e Funcionamento do Processo Legislativo. Aprendi mais sobre a formação da política e o agir da sociedade.
+**Gabriela Rocha - Assessora Parlamentar da deputada Márcia Jeovani (DEM)**
+>As aulas são maravilhosas. Sou publicitária e adorei as aulas de Marketing Público, o conteúdo vai me ajudar muito na aplicação do que eu já aprendi na faculdade. Outra matéria que achei muito interessante foi a de Estrutura e Funcionamento do Processo Legislativo. Aprendi mais sobre a formação da política e o agir da sociedade.
 
 ![Gabriela Rocha](/images/photos/gabriela-rocha-citacao-elerj-thiago-lontra-1200x800.jpg)
 
@@ -354,13 +354,13 @@ As aulas são maravilhosas. Sou publicitária e adorei as aulas de Marketing Pú
 ![Welberth Saddi](/images/photos/welberth-saddi-citacao-elerj-thiago-lontra-1200x800.jpg)
 
 
-Gabriela Naegele - Assessora Parlamentar do deputado Luiz Paulo (PSDB)
-O curso ampliou o meu leque de amizades na Casa. Passei a conhecer melhor pessoas que trabalham no administrativo, com quem tinha pouco contato. Além dos relacionamentos estreitados, a pós me fez relembrar algumas matérias da época da faculdade. Também aprendi sobre a qualidade do serviço público que é papel importante para um assessor parlamentar. Se o mestrado da Alerj sair do papel, com certeza, vou me matricular.
+**Gabriela Naegele - Assessora Parlamentar do deputado Luiz Paulo (PSDB)**
+> O curso ampliou o meu leque de amizades na Casa. Passei a conhecer melhor pessoas que trabalham no administrativo, com quem tinha pouco contato. Além dos relacionamentos estreitados, a pós me fez relembrar algumas matérias da época da faculdade. Também aprendi sobre a qualidade do serviço público que é papel importante para um assessor parlamentar. Se o mestrado da Alerj sair do papel, com certeza, vou me matricular.
 
 ![Gabriela Naegele](/images/photos/gabriela-naegele-citacao-elerj-thiago-lontra-1200x800.jpg)
 
-Eduardo Costa - Professor da Elerj
-Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.
+**Eduardo Costa - Professor da Elerj**
+> Sou formado em Administração e já lecionei cursos na Elerj, então para mim foi um prazer poder retornar às salas de aula da Escola do Legislativo para o curso da pós-graduação. Estou ensinando sobre a qualidade do atendimento no setor público. Esta pós é fantástica, uma oportunidade única para o colaborador, seja comissionado ou não. É um grande diferencial preparar as pessoas que vão trabalhar com você.
 
 ![Eduardo Costa](/images/photos/eduardo-costa-citacao-elerj-thiago-lontra-1200x800.jpg)',
             'featured' => true
