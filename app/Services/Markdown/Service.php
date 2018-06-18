@@ -2,7 +2,11 @@
 
 namespace App\Services\Markdown;
 
-use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Converter;
+use League\CommonMark\DocParser;
+use League\CommonMark\Environment;
+use League\CommonMark\HtmlRenderer;
+use Webuni\CommonMark\AttributesExtension\AttributesExtension;
 
 class Service
 {
@@ -10,7 +14,11 @@ class Service
 
     public function __construct()
     {
-        $this->markdown = new CommonMarkConverter();
+        $environment = Environment::createCommonMarkEnvironment();
+
+        $environment->addExtension(new AttributesExtension());
+
+        $this->markdown = new Converter(new DocParser($environment), new HtmlRenderer($environment));
     }
 
     public function convert($markdown)
