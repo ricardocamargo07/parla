@@ -387,7 +387,7 @@ Sou formado em Administração e já lecionei cursos na Elerj, então para mim f
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'Exemplo de solidariedade através do esporte',gabri
+            'title' => 'Exemplo de solidariedade através do esporte',
             'order' => 2,
             'published_at' => '2018-06-18',
             'category' => '',
