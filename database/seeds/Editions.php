@@ -4,6 +4,7 @@ use App\Data\Models\ArticleAuthor;
 use App\Data\Models\ArticlePhoto;
 use App\Data\Models\Edition;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class Editions extends Seeder
 {
@@ -491,9 +492,10 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'Você sabe',
+            'title' => 'Você sabe onde ficava o antigo restaurante da Alerj?',
             'order' => 4,
             'published_at' => '2018-06-18',
+            'category' => 'Curiosidades do Palácio',
             'category' => 'Curiosidades do Palácio',
             'created_at' => '2018-06-18',
             'subtitle' =>
@@ -539,3 +541,4 @@ As telas são descritas pelos artistas como a “visão bucólica das paisagens 
      */
 
 }
+
