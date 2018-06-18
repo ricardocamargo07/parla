@@ -12175,6 +12175,11 @@ figcaption.article-image-caption {
   border-color: #96a53b;
 }
 
+.btn-primary:visited:hover {
+  background-color: #b8c27a;
+  border-color: #b8c27a;
+}
+
 a.readmore {
   /*float: right;*/
   color: #ffffff;
