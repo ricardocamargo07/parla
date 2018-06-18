@@ -413,6 +413,8 @@ Se dependesse de vontade, a mala já estaria pronta, mas Elton foi obrigado a re
 
 Como bom atleta, não deixou que essa frustração o paralisasse e, passou a pensar como poderia reverter o que aprendeu no esporte em benefício dos colegas de trabalho. Com o incentivo do apresentador do programa “Arena Esportiva" da TV Alerj, Rui Guilherme, começou a formatar um projeto para levar o jiu-jtsu para os funcionários da Casa. Rui lembra a importância da arte marcial para melhorar a relação interpessoal, a disciplina e a confraternização.
 
+![Elton Moura](/images/photos/elton-moura-kimono-tv-alerj-thiago-lontra.jpg)
+
 Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já receberam o apoio de colegas. Ainda em busca de um nome para a ideia, o faixa-marrom ressalta o caráter sem fim lucrativo da iniciativa. Como o jiu-jitsu não utiliza armas e recorre mais à técnica do que à força, esta arte marcial tornou-se ideal como defesa pessoal. Característica que levou a subdiretora-geral de Segurança, Cristina de Vilhena Castro, a engrossar a fila dos que esperam que as aulas de jiu-jitsu venham logo e para ficar. “O jiu-jitsu é adequado para o perfil da segurança da Casa porque temos que ter uma pronta defesa contra um agressor ou invasor”, ressalta Cristina.
 ',
             'featured' => false
