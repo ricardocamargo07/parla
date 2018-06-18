@@ -36,9 +36,9 @@
                         {{--<li><a href="#">One more separated link</a></li>--}}
                     {{--</ul>--}}
                 {{--</li>--}}
-                <li class="{{ Request::is('contact') ? 'active' : '' }}">
-                    <a href="/contact">Fale Conosco</a>
-                </li>
+                {{--<li class="{{ Request::is('contact') ? 'active' : '' }}">--}}
+                    {{--<a href="/contact">Fale Conosco</a>--}}
+                {{--</li>--}}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
