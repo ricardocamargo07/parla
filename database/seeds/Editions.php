@@ -459,7 +459,7 @@ Segundo o presidente do sindicato, Nelson Braga Moreno, a adesão dos comissiona
 
 ## Filiação e benefícios
 
-O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na Travessa do Paço, 23 - Sala 205, Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: (nome)[mailto:sindalerj@sindalerj.com.br].
+O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na [Travessa do Paço, 23 - Sala 205](https://goo.gl/maps/6EW68gb3cSB2), Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: [sindalerj@sindalerj.com.br](mailto:sindalerj@sindalerj.com.br).
 
 Os associados do Sindalerj contam com os benefícios exclusivos por meio das parcerias com planos de saúde, faculdades, restaurantes, farmácias e agências de viagem. Dispõem também de assistência jurídica e serviço contábil.
 
