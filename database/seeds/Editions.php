@@ -463,29 +463,25 @@ Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já recebera
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'Sindalerj: associado extra-quadro número um',
+            'title' => 'Sindalerj recebe servidores comissionados',
             'order' => 3,
-            'published_at' => null,
+            'published_at' => '2018-06-18',
             'category' => 'Sindalerj',
             'created_at' => '2018-06-18',
             'subtitle' => '',
             'lead' =>
-                'O assistente parlamentar Rafael Ribeiro Riccio, 30 anos, foi o primeiro servidor extra-quadro a se cadastrar no Sindicato dos Servidores da Alerj - Sindalerj, no início deste ano, depois da alteração do estatuto da entidade e da campanha interna visando às novas filiações. Com a mudança, os funcionários comissionados ou requisitados já podem se filiar ao Sindalerj. Com uma contribuição mensal de R$ 35, o sindicato oferece convênios e diversos serviços aos seus novos associados, assim como aos 700 servidores ativos e aposentados e a seus familiares.',
+                'Todo servidor comissionado e requisitado a partir de agora pode se filiar ao Sindicato dos Servidores da Alerj - Sindalerj. Com uma contribuição mensal de apenas R$ 20, o sindicato, que antes aceitava apenas integrantes concursados, oferece convênios e diversos serviços aos seus novos associados, assim como aos 700 servidores ativos, aposentados e familiares. Na próxima semana o presidente da entidade, Nelson Braga Moreno, dará início à campanha interna e visitará os setores para falar sobre as vantagens e benefícios da adesão.',
             'body' =>
-                '"Trabalho na Casa há 12 anos, sempre tive contato com os representantes do sindicato, acompanhei de perto várias lutas e conquistas. Assim que tive a oportunidade de me vincular à instituição, não perdi tempo. Foi assim que me tornei o extra-quadro número um do Sindalerj", disse Riccio, que ingressou na Alerj como estagiário e hoje trabalha no protocolo do Plenário, setor ligado à Secretaria da Mesa Diretora. Ele é responsável pelo recebimento dos projetos de lei, emendas e projetos de resoluções dos parlamentares.
+                '"Estamos anunciando um desconto na contribuição, que era de R$ 35 reais, para motivar novos associados", afirmou Moreno. Segundo ele, a entrada dos comissionados ainda está tímida, mas ele espera alcançar mais adeptos quando todos tiverem acesso à pauta de reivindicações para 2018/2019. A realização de um concurso público para os diversos setores da Casa faz parte da lista.
 
-Segundo o presidente do sindicato, Nelson Braga Moreno, a adesão dos comissionados ainda está tímida, mas ele espera alcançar resultados positivos quando todos tiverem acesso à pauta de reivindicações para 2018/2019. A realização de um concurso público para os diversos setores da Casa faz parte da lista. "Somos poucos servidores na ativa e muitos às vésperas da aposentadoria. Precisamos renovar nossos quadros", disse Moreno, que enumerou como prioridades o ajuste no auxílio-alimentação (já concedido); a criação do auxílio-saúde e o novo plano de cargos e salários.
+"Somos poucos servidores na ativa e muitos às vésperas da aposentadoria. Precisamos renovar nossos quadros", disse Moreno, que enumerou como prioridades o ajuste no auxílio-alimentação (já concedido); a criação do auxílio-saúde e o novo plano de cargos e salários.
 
 "Lutamos por todos, seja estatutário ou não. O importante é que aqueles que trabalham na Alerj sejam comissionados ou requisitados, se sintam representados dentro das normas legais. Ser sindicalizado é se fazer ouvir", destacou o presidente.
 
-## Filiação e benefícios
+Filiação e benefícios
+O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na Travessa do Paço, 23 - Sala 205, Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: sindalerj@sindalerj.com.br.
 
-O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na [Travessa do Paço, 23 - Sala 205](https://goo.gl/maps/6EW68gb3cSB2), Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: [sindalerj@sindalerj.com.br](mailto:sindalerj@sindalerj.com.br).
-
-Os associados do Sindalerj contam com os benefícios exclusivos por meio das parcerias com planos de saúde, faculdades, restaurantes, farmácias e agências de viagem. Dispõem também de assistência jurídica e serviço contábil.
-
-
-',
+Os associados do Sindalerj contam com os benefícios exclusivos por meio das parcerias com planos de saúde, faculdades, restaurantes, farmácias e agências de viagem. Dispõem também de assistência jurídica e serviço contábil.',
             'featured' => false
         ]);
 
@@ -506,12 +502,12 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
             'article_id' => $article->id,
             'main' => true,
             'url_highres' =>
-                '/images/photos/rafael-riccio-sindalerj-octacilio-barbosa.jpg',
+                '/images/photos/logo-novo-sindalerj.jpg',
             'url_lowres' =>
-                '/images/photos/rafael-riccio-sindalerj-octacilio-barbosa-1200x800.jpg',
-            'author' => 'Octacílio Barbosa',
+                '/images/photos/logo-novo-sindalerj-1200x800.jpg',
+            'author' => '',
             'notes' =>
-                'Rafael Riccio trabalha na Alerj há 12 anos e desde o início deste ano integra o Sindalerj '
+                'Sindalerj '
         ]);
     }
     private function createArticle9($edition)

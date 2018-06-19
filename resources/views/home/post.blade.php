@@ -5,17 +5,17 @@
         <div class="container">
             <div class="row">
                 <article class="col-md-12">
-                    <div class="article-details">
-                        {{--<span class="post-category">    CATEGORIA DESABILITADA       --}}
-                            {{--{{ $post->category }}--}}
-                        {{--</span>--}}
-                        {{--<span class="post-divider">--}}
-                            {{--/--}}
-                        {{--</span>--}}
+{{--                    <div class="article-details">
+                        --}}{{--<span class="post-category">    CATEGORIA DESABILITADA       --}}{{--
+                            --}}{{--{{ $post->category }}--}}{{--
+                        --}}{{--</span>--}}{{--
+                        --}}{{--<span class="post-divider">--}}{{--
+                            --}}{{--/--}}{{--
+                        --}}{{--</span>--}}{{--
 
-                        {{--<span class="post-created ">{{ $post->date }}</span>--}}
-                        {{--<div class="post-author ">{{ $post->authors_string }}</div>--}}
-                    </div>
+                        --}}{{--<span class="post-created ">{{ $post->date }}</span>--}}{{--
+                        --}}{{--<div class="post-author ">{{ $post->authors_string }}</div>--}}{{--
+                    </div>--}}
 
                     <div class="row">
                         <figure class="col-xs-12">
