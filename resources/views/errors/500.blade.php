@@ -6,14 +6,10 @@
 
         <h1>404</h1>
 
-        <p><strong>Arquivo não encontrado</strong></p>
+        <p><strong>ERRO</strong></p>
 
         <p>
-            A página que você tentou acessar não existe.
-        </p>
-
-        <p>
-            Verifique o endereço digitado ou clique no botão abaixo para ir à página principal:<br>
+            Ocorreu um erro na página. Nossos administradores estão verificando, por favor tente mais tarde.
         </p>
 
         <a href="/" class="btn btn-primary">
