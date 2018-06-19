@@ -4,8 +4,6 @@
 
 
     <div class="container text-center">
-
-
         <img  width="100"  src="/images/exclamation-triangle.svg">
 
         <h1>404</h1>
@@ -16,15 +14,12 @@
         </p>
 
         <p>
-            Verifique o endereço digitado ou clique na imagem abaixo para acessar a página inicial.<br>
-            {{--For root URLs (like <code>http://parla.alerj.rj.gov.br/</code>) you must provide an
-            <code>index.html</code> file.--}}
+            Verifique o endereço digitado ou clique no botão abaixo para ir à página principal:<br>
         </p>
 
-        <a href="/" class="logo logo-img-1x">
-            <img width="200" title="" alt="" src="/images/parla_horizontal.svg">
+        <a href="/" class="btn btn-primary">
+            Ir para a página principal
         </a>
-
     </div>
 
 {{--
