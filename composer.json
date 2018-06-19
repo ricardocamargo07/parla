@@ -12,7 +12,7 @@
         "laravel/tinker": "~1.0",
         "league/commonmark": "^0.17.0",
         "pragmarx/coollection": "^0.5.2",
-        "pragmarx/version": "^0.2.4",
+        "pragmarx/version": "^0.2.7",
         "pragmarx/yaml": "^0.1.6",
         "spatie/laravel-tags": "^2.0",
         "webuni/commonmark-attributes-extension": "dev-master"

@@ -501,13 +501,10 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
         ArticlePhoto::create([
             'article_id' => $article->id,
             'main' => true,
-            'url_highres' =>
-                '/images/photos/logo-novo-sindalerj.jpg',
-            'url_lowres' =>
-                '/images/photos/logo-novo-sindalerj-1200x800.jpg',
+            'url_highres' => '/images/photos/logo-novo-sindalerj.jpg',
+            'url_lowres' => '/images/photos/logo-novo-sindalerj-1200x800.jpg',
             'author' => '',
-            'notes' =>
-                'Sindalerj '
+            'notes' => 'Sindalerj '
         ]);
     }
     private function createArticle9($edition)

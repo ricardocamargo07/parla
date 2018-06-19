@@ -1,5 +1,5 @@
 <footer class="footer">
-<div class="container">
+    <div class="container">
         <div class="row">
             <div class="footer-01 col-md-3">
                 <img src="/images/parla_horizontal_fundoescuro.svg">
@@ -17,6 +17,9 @@
                 <div class="expediente-linha"><span class="expediente-label">Estagiários: </span><span class="expediente-names">Carolina Moura, Danilo Gabriel (redes sociais), Elisa Calmon, Leon Lucius, Luís Gustavo (foto) e Thiago Oliveira (redes sociais)</span></div>
             </div>
         </div>
-        <span>@version</span><span>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></span>
+
+        <p>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></p>
+
+        <p class="version">@version</p>
     </div>
 </footer>
