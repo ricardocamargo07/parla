@@ -411,7 +411,7 @@ O que eles falam sobre o curso:
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'Exemplo de solidariedade através do esporte',
+            'title' => 'Solidariedade através do esporte',
             'order' => 2,
             'published_at' => '2018-06-18',
             'category' => '',
@@ -511,7 +511,7 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
     {
         $article = Article::create([
             'edition_id' => $edition->id,
-            'title' => 'Você sabe onde ficava o antigo restaurante da Alerj?',
+            'title' => 'Você sabe onde ficava o restaurante da Alerj?',
             'order' => 4,
             'published_at' => '2018-06-18',
             'category' => 'Curiosidades do Palácio',
