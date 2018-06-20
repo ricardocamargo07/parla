@@ -4,7 +4,7 @@
     <div class="container text-center">
         <img  width="100"  src="/images/exclamation-triangle.svg">
 
-        <h1>404</h1>
+        <h1>500</h1>
 
         <p><strong>ERRO</strong></p>
 
