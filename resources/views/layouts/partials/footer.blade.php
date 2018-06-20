@@ -10,11 +10,11 @@
                 <div class="expediente-linha"><span class="expediente-label">Jornalista responsável: </span><span class="expediente-names">Celia Abend</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Editor: </span><span class="expediente-names">André Coelho</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Coordenação: </span><span class="expediente-names">Daniela Matta e Jorge Ramos</span></div>
-                <div class="expediente-linha"><span class="expediente-label">Equipe: </span><span class="expediente-names">Buanna Rosa, Camilla Pontes, Gustavo Natario, Isabela Cabral, Octacílio Barbosa, Tainah Vieira, Thiago Lontra, Symone Munay e Vanessa Schumacker</span></div>
+                <div class="expediente-linha"><span class="expediente-label">Equipe: </span><span class="expediente-names"> Buanna Rosa, Camilla Pontes, Gherson Murillo, Gustavo Natario, Hélio Lopes, Isabela Cabral, Leon Lucius, Octacílio Barbosa, Tainah Vieira, Thiago Lontra (foto), Symone Munay, Vanessa Schumacker e Wagner da Silva</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Edição de Arte: </span><span class="expediente-names">Daniel Tiriba</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Editor de Fotografia: </span><span class="expediente-names">Rafael Wallace</span></div>
                 <div class="expediente-linha"><span class="expediente-label">Secretária da Redação: </span><span class="expediente-names">Regina Torres</span></div>
-                <div class="expediente-linha"><span class="expediente-label">Estagiários: </span><span class="expediente-names">Carolina Moura, Danilo Gabriel (redes sociais), Elisa Calmon, Leon Lucius, Luís Gustavo (foto) e Thiago Oliveira (redes sociais)</span></div>
+                <div class="expediente-linha"><span class="expediente-label">Estagiários: </span><span class="expediente-names">Audryn Karolyne, David Barbosa, Julia Passos (redes sociais), Luan Damasceno, Luís Gustavo (foto)</span></div>
             </div>
         </div>
 
