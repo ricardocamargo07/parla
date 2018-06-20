@@ -331,7 +331,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'created_at' => '2018-06-18',
             'subtitle' => 'Primeira turma da pós-graduação se forma em outubro',
             'lead' =>
-                'A primeira turma de pós-graduação da Escola do Legislativo do Estado do Rio de Janeiro (Elerj) termina o curso em outubro. Autorizada pelo Conselho Estadual de Educação (CEE-RJ) em maio de 2017, a pós de Gestão no Poder Legislativo conta com 44 alunos e, segundo a diretora a Elerj, Rosemery Borges, a criação de novas turmas já está nos planos para o próximo ano.',
+                'A primeira turma da pós graduação totalmente organizada pela Escola do Legislativo do Estado do Rio de Janeiro (Elerj) termina o curso em outubro. Autorizada pelo Conselho Estadual de Educação (CEE-RJ) em maio de 2017, a pós de Gestão no Poder Legislativo conta com 44 alunos e, segundo a diretora a Elerj, Rosemery Borges, a criação de novas turmas já está nos planos para o próximo ano. Antes dessa turma, outros cursos de especialização já haviam sido realizados, mas sempre em parceria com instituições de ensino.',
             'body' =>
                 '               
 A qualificação é primordial para o Legislativo e queremos que esse projeto permaneça. Inclusive, demos entrada no Ministério de Educação (MEC), no mês de maio, solicitando autorização para a implementação do mestrado na Elerj. Um passo importante para a nossa Casa e para os funcionários que trabalham aqui”, afirmou Rosemery.
