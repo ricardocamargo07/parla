@@ -10,3 +10,7 @@ Route
     ->name('posts.show');
 
 Route::get('/contact', 'Contact@index')->name('contact.index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
