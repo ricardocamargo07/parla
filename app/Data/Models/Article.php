@@ -29,8 +29,7 @@ class Article extends Model
         'main_photo',
         'other_photos',
         'lead_limited_featured',
-        'lead_limited',
-        'lead'
+        'lead_limited'
     ];
 
     public function edition()

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Services\Markdown;
 
 use League\CommonMark\Converter;
@@ -18,7 +17,10 @@ class Service
 
         $environment->addExtension(new AttributesExtension());
 
-        $this->markdown = new Converter(new DocParser($environment), new HtmlRenderer($environment));
+        $this->markdown = new Converter(
+            new DocParser($environment),
+            new HtmlRenderer($environment)
+        );
     }
 
     public function convert($markdown)
