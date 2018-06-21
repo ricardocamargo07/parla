@@ -47,7 +47,7 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="btn btn-success" @click="__createArticle()">
-                                                Novo Artigo
+                                                Novo Post
                                             </div>
                                         &nbsp;</div>
 
@@ -121,7 +121,7 @@
                                             </td>
 
                                             <td>@{{ article.order }}</td>
-                                            <td>@{{ article.title }}</td>
+                                            <td>@{{ article.title ? article.title : 'NOVO POST' }}</td>
                                             <td>@{{ article.category }}</td>
                                             <td>@{{ article.published_at ? 'sim' : 'não' }}</td>
                                         </tr>
@@ -141,7 +141,7 @@
                         <div class="row">
                             <h4 class="col-md-8">
                                 <span v-if="currentArticle.title">@{{ currentArticle.title }}</span>
-                                <span v-if="!currentArticle.title && currentArticle.new">NOVO ARTIGO</span>
+                                <span v-if="!currentArticle.title && currentArticle.new">NOVO POST</span>
                             </h4>
 
                             <div class="col-md-4">
