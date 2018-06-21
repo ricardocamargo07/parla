@@ -283,8 +283,6 @@ Para os **estagiários**, o ramal de atendimento é 1369.
 
     private static function formatPost($post)
     {
-        $markdown = new Service();
-
         $slug = str_slug($post['title']);
 
         $date = Carbon::parse($post['created_at']);
@@ -317,18 +315,6 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             ::makePhotosCollection($post['photos'])
             ->where('main', false)
             ->values();
-
-        $post['lead_limited_featured'] = $markdown->convert(
-            str_limit($post['lead'], 450)
-        );
-
-        $post['lead_limited'] = $markdown->convert(
-            str_limit($post['lead'], 200)
-        );
-
-        $post['lead'] = $markdown->convert($post['lead']);
-
-        $post['body'] = $markdown->convert($post['body']);
 
         return $post;
     }

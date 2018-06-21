@@ -65,6 +65,161 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/autogrow/autogrow.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;;(function( window, factory ) {
+  // universal module definition
+  /*jshint strict: false */ /* globals define, module, require */
+  if ( true ) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__("./node_modules/jquery/dist/jquery.js") ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
+      return factory( window, jQuery );
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('jquery')
+    );
+  } else {
+    // browser global
+    factory(
+      window,
+      window.jQuery
+    );
+  }
+
+}( window, function factory( window, jQuery ) {
+
+  ;(function($){
+      //pass in just the context as a $(obj) or a settings JS object
+      $.fn.autogrow = function(opts) {
+          var that = $(this).css({overflow: 'hidden', resize: 'none'}) //prevent scrollies
+              , defaults = {
+                  context: $(document) //what to wire events to
+                  , selector: 'textarea' // el selector
+                  , animate: true //if you want the size change to animate
+                  , speed: 200 //speed of animation
+                  , fixMinHeight: true //if you don't want the box to shrink below its initial size
+                  , cloneClass: 'autogrowclone' //helper CSS class for clone if you need to add special rules
+                  , onInitialize: false //resizes the textareas when the plugin is initialized
+              }
+          ;
+          opts = $.isPlainObject(opts) ? opts : {context: opts ? opts : $(document)};
+          opts = $.extend({}, defaults, opts);
+          that.each(function(i, elem){
+              var min, clone;
+              elem = $(elem);
+              //if the element is "invisible", we get an incorrect height value
+              //to get correct value, clone and append to the body.
+              if (elem.is(':visible') || parseInt(elem.css('height'), 10) > 0) {
+                  min = parseInt(elem.css('height'), 10) || elem.innerHeight();
+              } else {
+                  clone = elem.clone()
+                      .addClass(opts.cloneClass)
+                      .val(elem.val())
+                      .css({
+                          position: 'absolute'
+                          , visibility: 'hidden'
+                          , display: 'block'
+                      })
+                  ;
+                  $('body').append(clone);
+                  min = clone.innerHeight();
+                  clone.remove();
+              }
+              if (opts.fixMinHeight) {
+                  elem.data('autogrow-start-height', min); //set min height
+              }
+              elem.css('height', min);
+
+              if (opts.onInitialize && elem.length) {
+                  resize.call(elem[0]);
+              }
+          });
+
+          opts.context
+              .on('keyup paste', opts.selector, resize)
+          ;
+
+          function resize (e){
+              var box = $(this)
+                  , oldHeight = box.innerHeight()
+                  , newHeight = this.scrollHeight
+                  , minHeight = box.data('autogrow-start-height') || 0
+                  , clone
+              ;
+              if (oldHeight < newHeight) { //user is typing
+                  this.scrollTop = 0; //try to reduce the top of the content hiding for a second
+                  if(opts.animate) {
+                      box.stop().animate({height: newHeight}, {duration: opts.speed, complete: notifyGrown});
+                  } else {
+                      box.innerHeight(newHeight);
+                      notifyGrown();
+                  }
+
+              } else if (!e || e.which == 8 || e.which == 46 || (e.ctrlKey && e.which == 88)) { //user is deleting, backspacing, or cutting
+                  if (oldHeight > minHeight) { //shrink!
+                      //this cloning part is not particularly necessary. however, it helps with animation
+                      //since the only way to cleanly calculate where to shrink the box to is to incrementally
+                      //reduce the height of the box until the $.innerHeight() and the scrollHeight differ.
+                      //doing this on an exact clone to figure out the height first and then applying it to the
+                      //actual box makes it look cleaner to the user
+                      clone = box.clone()
+                          //add clone class for extra css rules
+                          .addClass(opts.cloneClass)
+                          //make "invisible", remove height restriction potentially imposed by existing CSS
+                          .css({position: 'absolute', zIndex:-10, height: ''})
+                          //populate with content for consistent measuring
+                          .val(box.val())
+                      ;
+                      box.after(clone); //append as close to the box as possible for best CSS matching for clone
+                      do { //reduce height until they don't match
+                          newHeight = clone[0].scrollHeight - 1;
+                          clone.innerHeight(newHeight);
+                      } while (newHeight === clone[0].scrollHeight);
+                      newHeight++; //adding one back eliminates a wiggle on deletion
+                      clone.remove();
+                      box.focus(); // Fix issue with Chrome losing focus from the textarea.
+
+                      //if user selects all and deletes or holds down delete til beginning
+                      //user could get here and shrink whole box
+                      newHeight < minHeight && (newHeight = minHeight);
+                      if(oldHeight > newHeight) {
+                          if(opts.animate) {
+                              box.stop().animate({height: newHeight}, {duration: opts.speed, complete: notifyShrunk});
+                          } else {
+                              box.innerHeight(newHeight);
+                              notifyShrunk();
+                          }
+                      }
+
+                  } else { //just set to the minHeight
+                      box.innerHeight(minHeight);
+                  }
+              }
+          }
+
+          // Trigger event to indicate a textarea has grown.
+          function notifyGrown() {
+              opts.context.trigger('autogrow:grow');
+          }
+
+          // Trigger event to indicate a textarea has shrunk.
+          function notifyShrunk() {
+              opts.context.trigger('autogrow:shrink');
+          }
+
+          return that;
+      }
+  })(jQuery);
+
+}));
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -74926,6 +75081,172 @@ __webpack_require__("./resources/assets/js/bootstrap.js");
 
 __webpack_require__("./resources/assets/js/apps/parla.js");
 
+__webpack_require__("./resources/assets/js/apps/admin.js");
+
+/***/ }),
+
+/***/ "./resources/assets/js/apps/admin.js":
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var appName = 'vue-admin';
+
+if (jQuery("#" + appName).length > 0) {
+    var _methods;
+
+    var app = new Vue({
+        el: '#' + appName,
+
+        data: {
+            edition: {
+                columns: 3,
+                column_size: 4
+            },
+
+            tables: {
+                editions: [],
+
+                articles: []
+            },
+
+            loading: {
+                editions: false,
+
+                articles: false
+            },
+
+            filler: false,
+
+            modalMode: 'filter',
+
+            currentPost: {
+                laravel: Laravel.currentPost,
+                imported: null
+            },
+
+            search: '',
+
+            orderBy: '',
+
+            currentArticle: false,
+
+            currentEdition: false,
+
+            laravel: Laravel
+        },
+
+        computed: {},
+
+        methods: (_methods = {
+            __typeKeyUp: function __typeKeyUp() {
+                clearTimeout(this.timeout);
+
+                me = this;
+
+                this.timeout = setTimeout(function () {
+                    me.__refresh();
+                }, 700);
+            },
+            __clearFilter: function __clearFilter() {
+                this.filter = '';
+            },
+            __loadEditions: function __loadEditions() {},
+            __loadArticles: function __loadArticles(edition) {
+                var me = this;
+
+                me.loading.articles = true;
+
+                if (edition) {
+                    axios.get('/api/posts/' + edition.number + '/all').then(function (response) {
+                        me.tables.articles = response.data;
+
+                        me.__selectArticle(me.tables.articles[0]);
+
+                        me.loading.articles = false;
+                    });
+                }
+            }
+        }, _defineProperty(_methods, '__loadEditions', function __loadEditions() {
+            var me = this;
+
+            me.loading.articles = true;
+
+            axios.get('/api/editions').then(function (response) {
+                me.tables.editions = response.data;
+
+                me.__selectEdition(me.tables.editions[0]);
+
+                me.loading.articles = false;
+            });
+        }), _defineProperty(_methods, '__getArrowClass', function __getArrowClass() {
+            if (this.orderType == 'asc') {
+                return 'fa-arrow-down';
+            }
+
+            return 'fa-arrow-up';
+        }), _defineProperty(_methods, '__selectEdition', function __selectEdition(edition) {
+            this.currentEdition = edition;
+
+            this.__loadArticles(edition);
+        }), _defineProperty(_methods, '__selectArticle', function __selectArticle(article) {
+            this.currentArticle = article;
+
+            this.currentArticleCopy = JSON.parse(JSON.stringify(article));
+        }), _defineProperty(_methods, '__isCurrentArticle', function __isCurrentArticle(article) {
+            return article.id === this.currentArticle.id;
+        }), _defineProperty(_methods, '__unchanged', function __unchanged() {
+            return JSON.stringify(this.currentArticle) === JSON.stringify(this.currentArticleCopy);
+        }), _defineProperty(_methods, '__updateLead', function __updateLead(article, lead) {
+            article.lead = lead;
+
+            this.__typeKeyUp();
+        }), _defineProperty(_methods, '__updateBody', function __updateBody(article, body) {
+            article.body = body;
+
+            this.__typeKeyUp();
+        }), _defineProperty(_methods, '__refresh', function __refresh() {
+            article = this.currentArticle;
+
+            axios.post('/api/markdown/to/html', { lead: article.lead, body: article.body }).then(function (response) {
+                article.lead_html = response.data.lead_html;
+
+                article.body_html = response.data.body_html;
+            });
+        }), _defineProperty(_methods, '__createArticle', function __createArticle() {
+            var article = clone(this.currentArticle);
+
+            for (var prop in article) {
+                if (article.hasOwnProperty(prop)) {
+                    article[prop] = '';
+                }
+            }
+
+            article['new'] = true;
+
+            article['order'] = this.tables.articles.reduce(function (a, b) {
+                dd('------------------------');
+                dd(a, b, a.order, b.order);
+                return a.order >= b.order ? a : b;
+            }).order + 1;
+
+            this.tables.articles.push(article);
+
+            this.currentArticle = article;
+        }), _methods),
+
+        mounted: function mounted() {
+            this.__loadEditions();
+
+            this.__loadArticles();
+
+            this.__clearFilter();
+
+            jQuery('textarea').autogrow();
+        }
+    });
+}
+
 /***/ }),
 
 /***/ "./resources/assets/js/apps/parla.js":
@@ -75100,6 +75421,8 @@ if (jQuery("#" + appName).length > 0) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
+__webpack_require__("./resources/assets/js/helpers.js");
+
 window._ = __webpack_require__("./node_modules/lodash/lodash.js");
 
 /**
@@ -75110,6 +75433,8 @@ window._ = __webpack_require__("./node_modules/lodash/lodash.js");
 
 try {
   window.$ = window.jQuery = __webpack_require__("./node_modules/jquery/dist/jquery.js");
+
+  __webpack_require__("./node_modules/autogrow/autogrow.js");
 
   __webpack_require__("./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
 } catch (e) {}
@@ -75172,6 +75497,39 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/assets/js/helpers.js":
+/***/ (function(module, exports) {
+
+window.dd = function () {
+    for (i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+    }
+};
+
+window.unaccent = function (inStr) {
+    if (typeof inStr == 'string') {
+        return inStr.replace(/([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])/g, function (str, a, c, e, i, n, o, s, u, y, ae) {
+            if (a) return 'a';else if (c) return 'c';else if (e) return 'e';else if (i) return 'i';else if (n) return 'n';else if (o) return 'o';else if (s) return 's';else if (u) return 'u';else if (y) return 'y';else if (ae) return 'ae';
+        });
+    }
+
+    return '';
+};
+
+window.uuid = function () {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+};
+
+window.clone = function (obj) {
+    return JSON.parse(JSON.stringify(obj));
+};
 
 /***/ }),
 

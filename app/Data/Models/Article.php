@@ -28,8 +28,10 @@ class Article extends Model
         'date',
         'main_photo',
         'other_photos',
-        'lead_limited_featured',
-        'lead_limited'
+        'lead_limited_featured_html',
+        'lead_limited_html',
+        'lead_html',
+        'body_html'
     ];
 
     public function edition()
@@ -93,24 +95,24 @@ class Article extends Model
             ->values();
     }
 
-    public function getLeadLimitedFeaturedAttribute()
+    public function getLeadLimitedFeaturedHtmlAttribute()
     {
         return $this->getMarkdown()->convert(str_limit($this->lead, 450));
     }
 
-    public function getLeadLimitedAttribute()
+    public function getLeadLimitedHtmlAttribute()
     {
         return $this->getMarkdown()->convert(str_limit($this->lead, 200));
     }
 
-    public function getBodyAttribute($value)
+    public function getBodyHtmlAttribute()
     {
-        return $this->getMarkdown()->convert($value);
+        return $this->getMarkdown()->convert($this->body);
     }
 
-    public function getLeadAttribute($value)
+    public function getLeadHtmlAttribute()
     {
-        return $this->getMarkdown()->convert($value);
+        return $this->getMarkdown()->convert($this->lead);
     }
 
     protected function makeAuthorsString($authors)

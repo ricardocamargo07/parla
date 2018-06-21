@@ -23,7 +23,8 @@
         "swiper": "^4.1.6",
         "vue": "^2.5.7",
         "webpack-livereload-plugin": "^1.0.0",
-        "lightbox2": "^2.10.0"
+        "lightbox2": "^2.10.0",
+        "autogrow": "^1.0.6"
     },
     "dependencies": {}
 }

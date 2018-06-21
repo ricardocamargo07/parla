@@ -34,9 +34,9 @@
 
                     <div class="post-author">{{ $post->authors_string }}</div>
                     <div class="article-body">
-                        <p>{!! $post->lead !!}</p>
+                        <p>{!! $post->lead_html !!}</p>
 
-                        <p>{!! $post->body !!}</p>
+                        <p>{!! $post->body_html !!}</p>
 
                         <div class="row article-gallery" > {{-- ACR - transoformar este style em css!!!! --}}
                             @foreach ($post->other_photos as $photo)

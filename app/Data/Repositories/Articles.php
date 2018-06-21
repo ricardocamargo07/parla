@@ -105,18 +105,6 @@ class Articles
             ->where('main', false)
             ->values();
 
-        $article['lead_limited_featured'] = $markdown->convert(
-            str_limit($article['lead'], 450)
-        );
-
-        $article['lead_limited'] = $markdown->convert(
-            str_limit($article['lead'], 200)
-        );
-
-        $article['lead'] = $markdown->convert($article['lead']);
-
-        $article['body'] = $markdown->convert($article['body']);
-
         $article['read_also'] = $this->makeReadAlso(
             $article,
             $article->edition->number
@@ -182,5 +170,10 @@ class Articles
             ::all()
             ->where('slug', $slug)
             ->first();
+    }
+
+    public function edittions()
+    {
+        return Edition::all();
     }
 }
