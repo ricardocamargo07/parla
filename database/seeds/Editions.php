@@ -14,7 +14,7 @@ class Editions extends Seeder
             'year' => 2018,
             'month' => 2,
             'number' => 0,
-            'published_at' => null
+            'published_at' => null,
         ]);
 
         $this->createArticle1($edition);
@@ -27,7 +27,7 @@ class Editions extends Seeder
             'year' => 2018,
             'month' => 6,
             'number' => 1,
-            'published_at' => null
+            'published_at' => null,
         ]);
 
         $this->createArticle6($edition); // materia 1
@@ -54,19 +54,19 @@ Outro apaixonado por samba é Gabriel Eleno da Conceição,  mais conhecido como
 Recentemente o time de compositores da Alerj ganhou mais um nome, o serralheiro Antônio Conceição. Apesar de compartilhar do mesmo sobrenome e paixão pelo samba que seus colegas, eles não são da mesma família. Ele começou a trabalhar na oficina da Casa em janeiro deste ano, mas frequenta  o mundo do samba desde 1981, quando começou a compor para blocos e escolas de samba.
 Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na Sapucaí, foram 15 anos em cima do carro de som de agremiações como a Inocentes de Belford Roxo e a União de Jacarepaguá. "Desde garoto sempre gostei de brincar Carnaval. Depois passei a compor e a cantar, e não consigo imaginar a minha vida sem o Carnaval", disse Nick, que este ano estará defendendo o samba da Império da Uva, agremiação de Nova Iguaçu, na Baixada Fluminense.
 ',
-            'featured' => true
+            'featured' => true,
         ]);
 
         $article->attachTags(['cidade', 'carnaval']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Symone Munay'
+            'name' => 'Symone Munay',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Vanessa Schumacker'
+            'name' => 'Vanessa Schumacker',
         ]);
 
         ArticlePhoto::create([
@@ -78,7 +78,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
                 '/images/photos/gabriel-sorriso1-rafael-wallace-1200x800.jpg',
             'author' => 'Rafael Wallace',
             'notes' =>
-                'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
+                'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.',
         ]);
 
         ArticlePhoto::create([
@@ -90,7 +90,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
                 '/images/photos/antonio-conceicao4-01-02-2018-thiago-lontra-1200x900.jpg',
             'author' => 'Thiago Lontra',
             'notes' =>
-                'O serralheiro Antonio Conceição atua como compositor e interprete'
+                'O serralheiro Antonio Conceição atua como compositor e interprete',
         ]);
 
         ArticlePhoto::create([
@@ -100,7 +100,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'url_lowres' => '/images/photos/daisa-conceicao.jpg',
             'author' => '',
             'notes' =>
-                'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança'
+                'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança',
         ]);
         ArticlePhoto::create([
             'article_id' => $article->id,
@@ -109,7 +109,7 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'url_lowres' => '/images/photos/gabriel-sorriso.jpg',
             'author' => '',
             'notes' =>
-                'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D'
+                'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D',
         ]);
     }
 
@@ -135,19 +135,19 @@ nos dias de festa. Procure um posto e garanta a sua.
 - Comida: estar bem alimentado é fundamental para aguentar as horas extensas dos blocos e desfiles. Coma bem antes de sair de casa e durante o dia procure estabelecimentos, como restaurantes, padarias e lanchonetes. Evite comer na rua. Muitas pessoas acabam perdendo o restante do Carnaval ao ter uma infecção alimentar.
 - O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do Carnavalesco. E, por fim, tenha sempre um documento de identificação.
 ',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags(['saúde', 'carnaval']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Buanna Rosa'
+            'name' => 'Buanna Rosa',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'David Barbosa'
+            'name' => 'David Barbosa',
         ]);
 
         ArticlePhoto::create([
@@ -159,7 +159,7 @@ nos dias de festa. Procure um posto e garanta a sua.
                 '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
             'author' => 'Rafael Wallace',
             'notes' =>
-                'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
+                'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação',
         ]);
     }
 
@@ -186,14 +186,14 @@ Para que o Estado do Rio tenha cada vez mais exposições sobre a cultura africa
 O acervo do futuro museu será composto por objetos que possam reconstituir a contribuição cultural e histórica dos afrodescendentes. O espaço cultural também será responsável pela capacitação de professores e intelectuais para implantarem estudos sobre a escravidão e cultura africana nas instituições de ensino do Rio.
 “A escravidão é o fato histórico mais relevante da história do Brasil. Seus efeitos sociais, culturais e econômicos estão em toda parte. A violência da escravidão durou mais de 300 anos, consumiu a vida de 3 milhões de africanos e de incontáveis descendentes, e deu ao país a fisionomia mestiça, injusta e desigual que ele tem até hoje”, argumentou o autor da lei.
 ',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags(['exposição', 'arte', 'áfrica', 'ccbb']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Gustavo Natario'
+            'name' => 'Gustavo Natario',
         ]);
 
         ArticlePhoto::create([
@@ -205,7 +205,7 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
                 '/images/photos/ex-africa-foto-alexandre-macieira-riotur-1200x800.jpg',
             'author' => 'Alexandre Macieira',
             'notes' =>
-                'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos'
+                'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos',
         ]);
         ArticlePhoto::create([
             'article_id' => $article->id,
@@ -216,7 +216,7 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
                 '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur-1200x800.jpg',
             'author' => 'Alexandre Macieira',
             'notes' =>
-                'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou'
+                'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou',
         ]);
         ArticlePhoto::create([
             'article_id' => $article->id,
@@ -227,7 +227,7 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
                 '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
             'author' => 'Alexandre Macieira',
             'notes' =>
-                'A entrada é franca e a exposição está aberta de quarta a segunda'
+                'A entrada é franca e a exposição está aberta de quarta a segunda',
         ]);
     }
 
@@ -248,19 +248,19 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
 Um local de tantas histórias tem alguns detalhes que podem passar despercebidos. Você sabia, por exemplo, que onde hoje funciona um banco, no térreo, já foi um restaurante?
 O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozinha e mobiliário para comportar até 150 pessoas. Os artistas Augusto José Marques Júnior e Genesco Murta pintaram seis painéis para decorar as paredes. Os tamanhos das pinturas variam entre 1,58m de altura por 1,54m e 2,6m de largura e representam cenas do campo e da pecuária. As telas são descritas pelos artistas como a “visão bucólica das paisagens nativas, representando poéticos cenários dos nossos crepúsculos sobre os campos lavradios”. O restaurante, no entanto, foi desativado há décadas. Desde 1984, o atual banco ocupa o espaço que guarda ainda lembranças do seu passado.
 ',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags(['palácio tiradentes']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Symone Munay'
+            'name' => 'Symone Munay',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Leon Lucius'
+            'name' => 'Leon Lucius',
         ]);
 
         ArticlePhoto::create([
@@ -270,7 +270,7 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
             'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
             'author' => '',
             'notes' =>
-                'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes'
+                'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes',
         ]);
     }
 
@@ -295,19 +295,19 @@ Se você é **comissionado**, ligue para 1493;
 Servidores **requisitados**, 1368;
 Para os **estagiários**, o ramal de atendimento é 1369.
 ',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags(['rh', 'administrativo']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Symone Munay'
+            'name' => 'Symone Munay',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Leon Lucius'
+            'name' => 'Leon Lucius',
         ]);
 
         ArticlePhoto::create([
@@ -316,7 +316,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'url_highres' => '/images/photos/humano-papel-e-caneta.jpg',
             'url_lowres' => '/images/photos/humano-papel-e-caneta.jpg',
             'author' => 'Parla - Alerj',
-            'notes' => ''
+            'notes' => '',
         ]);
     }
 
@@ -379,7 +379,7 @@ O que eles falam sobre o curso:
 {.blockquote-right}
 
 ',
-            'featured' => true
+            'featured' => true,
         ]);
 
         $article->attachTags([
@@ -387,12 +387,12 @@ O que eles falam sobre o curso:
             'escola do legislativo',
             'pós graduação,',
             'curso',
-            'alunos'
+            'alunos',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Buanna Rosa'
+            'name' => 'Buanna Rosa',
         ]);
 
         ArticlePhoto::create([
@@ -403,7 +403,7 @@ O que eles falam sobre o curso:
             'url_lowres' =>
                 '/images/photos/eduardo-costa-sala-de-aula-elerj-thiago-lontra-1200x800.jpg',
             'author' => 'Thiago Lontra',
-            'notes' => ''
+            'notes' => '',
         ]);
     }
 
@@ -418,7 +418,7 @@ O que eles falam sobre o curso:
             'created_at' => '2018-06-18',
             'subtitle' => '',
             'lead' =>
-                'Ele sempre foi irrequieto, alto, e gostava de desafios. Por isso, não foi difícil perceber que aquele adolescente, então com 14 anos, tinha o biótipo e a personalidade ideais para as artes marciais. E foi a partir do convite desse amigo que Elton Moura, hoje com 34 anos, 1,80 m de altura, e 98 kg; entrou no mundo dos golpes, tatames, quimonos e faixas. E dele não saiu mais. “Na primeira aula já me identifiquei com o jiu-jitsu e, com dois meses de treino, já competia”, lembra Elton, cinegrafista da Assembleia Legislativa do Rio de Janeiro (Alerj).',
+                'Ele sempre foi irrequieto, alto, e gostava de desafios. Por isso, não foi difícil perceber que aquele adolescente, então com 14 anos, tinha o biótipo e a personalidade ideais para as artes marciais. E foi a partir do convite de um amigo que Elton Moura, hoje com 34 anos, 1,80 m de altura, e 98 kg; entrou no mundo dos golpes, tatames, quimonos e faixas. E dele não saiu mais. “Na primeira aula já me identifiquei com o jiu-jitsu e, com dois meses de treino, já competia”, lembra Elton, cinegrafista da Assembleia Legislativa do Rio de Janeiro (Alerj).',
             'body' =>
                 'Na equipe “Gama Filho Serginho Jiu-Jitsu”, o menino começou a mudar de faixa e a colecionar medalhas. A rápida ascensão, no entanto, foi de encontro à necessidade de ajudar a mãe que, sozinha, criou quatro filhos. “Não pude me dedicar ao esporte como gostaria porque tenho três irmãos e tive que ajudar a minha mãe a sustentá-los”, explica.
 
@@ -436,14 +436,14 @@ Como bom atleta, não deixou que essa frustração o paralisasse e, passou a pen
 
 Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já receberam o apoio de colegas. Ainda em busca de um nome para a ideia, o faixa-marrom ressalta o caráter sem fim lucrativo da iniciativa. Como o jiu-jitsu não utiliza armas e recorre mais à técnica do que à força, esta arte marcial tornou-se ideal como defesa pessoal. Característica que levou a subdiretora-geral de Segurança, Cristina de Vilhena Castro, a engrossar a fila dos que esperam que as aulas de jiu-jitsu venham logo e para ficar. “O jiu-jitsu é adequado para o perfil da segurança da Casa porque temos que ter uma pronta defesa contra um agressor ou invasor”, ressalta Cristina.
 ',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags(['', '']);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Márcia Manga'
+            'name' => 'Márcia Manga',
         ]);
 
         ArticlePhoto::create([
@@ -455,7 +455,7 @@ Juntos, Elton e Rui começaram a divulgar informalmente o projeto e já recebera
                 '/images/photos/elton-moura-cinegrafista-tv-alerj-thiago-lontra-1200x800.jpg',
             'author' => 'Thiago Lontra',
             'notes' =>
-                'Elton Moura é cinegrafista da TV Alerj e tem no jiu jitsu sua grande paixão'
+                'Elton Moura é cinegrafista da TV Alerj e tem no jiu jitsu sua grande paixão',
         ]);
     }
 
@@ -482,7 +482,7 @@ Filiação e benefícios
 O cadastro deve ser feito através do preenchimento de uma ficha de inscrição na sede do sindicato, na Travessa do Paço, 23 - Sala 205, Centro, ao lado do Palácio Tiradentes. Mais informações podem ser obtidas pelo telefones 2253-0435 e 2203-0415 ou pelo e-mail: sindalerj@sindalerj.com.br.
 
 Os associados do Sindalerj contam com os benefícios exclusivos por meio das parcerias com planos de saúde, faculdades, restaurantes, farmácias e agências de viagem. Dispõem também de assistência jurídica e serviço contábil.',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags([
@@ -490,12 +490,12 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
             'servidor',
             'associação',
             'sindicato',
-            'extra-quadro'
+            'extra-quadro',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Symone Munay'
+            'name' => 'Symone Munay',
         ]);
 
         ArticlePhoto::create([
@@ -504,7 +504,7 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
             'url_highres' => '/images/photos/logo-novo-sindalerj.jpg',
             'url_lowres' => '/images/photos/logo-novo-sindalerj-1200x800.jpg',
             'author' => '',
-            'notes' => 'Sindalerj '
+            'notes' => 'Sindalerj ',
         ]);
     }
     private function createArticle9($edition)
@@ -526,18 +526,18 @@ Os associados do Sindalerj contam com os benefícios exclusivos por meio das par
 O espaço, com paredes e colunas decoradas com detalhes em gesso, tinha cozinha e mobiliário para comportar até 150 pessoas. Os artistas Augusto José Marques Júnior e Genesco Murta pintaram seis painéis para decorar as paredes. Os tamanhos das pinturas variam entre 1,58m de altura por 1,54m e 2,6m de largura e representam cenas do campo e da pecuária.
 
 As telas são descritas pelos artistas como a “visão bucólica das paisagens nativas, representando poéticos cenários dos nossos crepúsculos sobre os campos lavradios”. O restaurante, no entanto, foi desativado há décadas. Desde 1984, uma agência bancária ocupa o espaço que guarda ainda lembranças do seu passado.',
-            'featured' => false
+            'featured' => false,
         ]);
 
         $article->attachTags([
             'curiosidades',
             'Palácio Tiradentes',
-            'história'
+            'história',
         ]);
 
         ArticleAuthor::create([
             'article_id' => $article->id,
-            'name' => 'Camilla Pontes'
+            'name' => 'Camilla Pontes',
         ]);
 
         ArticlePhoto::create([
@@ -546,7 +546,7 @@ As telas são descritas pelos artistas como a “visão bucólica das paisagens 
             'url_highres' => '/images/photos/antigo-restaurante.jpg',
             'url_lowres' => '/images/photos/antigo-restaurante-1200x800.jpg',
             'author' => '',
-            'notes' => ''
+            'notes' => '',
         ]);
     }
 
