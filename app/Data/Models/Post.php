@@ -26,7 +26,7 @@ class Post
                             '/images/photos/gabriel-sorriso1_rafael-wallace-1200x800.jpg',
                         'author' => 'Rafael Wallace',
                         'notes' =>
-                            'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
+                            'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.',
                     ],
                     [
                         'main' => false,
@@ -36,7 +36,7 @@ class Post
                             '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra-1200x900.jpg',
                         'author' => 'Thiago Lontra',
                         'notes' =>
-                            'O serralheiro Antonio Conceição atua como compositor e interprete'
+                            'O serralheiro Antonio Conceição atua como compositor e interprete',
                     ],
                     [
                         'main' => false,
@@ -44,7 +44,7 @@ class Post
                         'url_lowres' => '/images/photos/daisa-conceicao.jpg',
                         'author' => '',
                         'notes' =>
-                            'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança'
+                            'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança',
                     ],
                     [
                         'main' => false,
@@ -52,8 +52,8 @@ class Post
                         'url_lowres' => '/images/photos/gabriel-sorriso.jpg',
                         'author' => '',
                         'notes' =>
-                            'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D'
-                    ]
+                            'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D',
+                    ],
                 ],
             'lead' =>
                 'Entre os dias 9 e 13 de fevereiro, o Rio de Janeiro será tomado por plumas, paetês e muito samba no pé. Para muitos funcionários da Assembleia Legislativa do Estado do Rio de Janeiro (Alerj) esta é a época do ano mais esperada. É o momento de vestir a fantasia e defender na Marques de Sapucaí as cores das suas escolas de samba do coração.',
@@ -69,7 +69,7 @@ Recentemente o time de compositores da Alerj ganhou mais um nome, o serralheiro 
 Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na Sapucaí, foram 15 anos em cima do carro de som de agremiações como a Inocentes de Belford Roxo e a União de Jacarepaguá. "Desde garoto sempre gostei de brincar Carnaval. Depois passei a compor e a cantar, e não consigo imaginar a minha vida sem o Carnaval", disse Nick, que este ano estará defendendo o samba da Império da Uva, agremiação de Nova Iguaçu, na Baixada Fluminense.
 ',
             'featured' => true,
-            'tags' => ['cidade', 'carnaval']
+            'tags' => ['cidade', 'carnaval'],
         ],
         [
             'title' => 'A-la-la-ô mas que calor... Cuide-se no verão',
@@ -90,8 +90,8 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
                             '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
                         'author' => 'Rafael Wallace',
                         'notes' =>
-                            'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
-                    ]
+                            'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação',
+                    ],
                 ],
             'lead' =>
                 'Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano será do dia 9 a 13 de fevereiro. Mas no auge do verão carioca, muitos esquecem de cuidar da saúde antes de aproveitar a festa de Momo. A Riotur informou que espera seis milhões de foliões no Rio, 400 mil turistas a mais que em 2017.',
@@ -110,7 +110,7 @@ nos dias de festa. Procure um posto e garanta a sua.
 - O que levar: fique atento aos itens que precisam acompanhar o folião. O álcool gel é importante para fazer uma higienização rápida e evitar a contaminação. Já o repelente evita que os mosquitos transmissores da dengue, chikungunya, zika e febre amarela tenham contato com a pele do Carnavalesco. E, por fim, tenha sempre um documento de identificação.
 ',
             'featured' => false,
-            'tags' => ['saúde', 'carnaval']
+            'tags' => ['saúde', 'carnaval'],
         ],
         [
             'title' => "Cultura africana no Centro do Rio",
@@ -131,7 +131,7 @@ nos dias de festa. Procure um posto e garanta a sua.
                             '/images/photos/ex-africa-foto-alexandre-macieira-riotur-1200x800.jpg',
                         'author' => 'Alexandre Macieira',
                         'notes' =>
-                            'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos'
+                            'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos',
                     ],
                     [
                         'main' => false,
@@ -141,7 +141,7 @@ nos dias de festa. Procure um posto e garanta a sua.
                             '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur-1200x800.jpg',
                         'author' => 'Alexandre Macieira',
                         'notes' =>
-                            'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou'
+                            'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou',
                     ],
                     [
                         'main' => false,
@@ -151,8 +151,8 @@ nos dias de festa. Procure um posto e garanta a sua.
                             '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
                         'author' => 'Alexandre Macieira',
                         'notes' =>
-                            'A entrada é franca e a exposição está aberta de quarta a segunda'
-                    ]
+                            'A entrada é franca e a exposição está aberta de quarta a segunda',
+                    ],
                 ],
             'lead' =>
                 'A representatividade dos povos africanos e a divulgação de suas identidades culturais são os temas centrais da exposição “Ex África”, que está em cartaz no Centro Cultural Banco do Brasil (CCBB) até o dia 26 de março. A mostra conta com vídeos, músicas, esculturas, fotografias e pinturas que remetem à cultura africana contemporânea. A entrada é franca e a exposição está aberta de quarta a segunda, das 9h às 21h. A poucos metros da Assembleia Legislativa do Estado do Rio de Janeiro (Alerj), o CCBB é uma ótima opção cultural para quem trabalha no Centro e está localizado na Rua Primeiro de Março, número 66.',
@@ -173,7 +173,7 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
 “A escravidão é o fato histórico mais relevante da história do Brasil. Seus efeitos sociais, culturais e econômicos estão em toda parte. A violência da escravidão durou mais de 300 anos, consumiu a vida de 3 milhões de africanos e de incontáveis descendentes, e deu ao país a fisionomia mestiça, injusta e desigual que ele tem até hoje”, argumentou o autor da lei.
 ',
             'featured' => false,
-            'tags' => ['exposição', 'arte', 'áfrica', 'ccbb']
+            'tags' => ['exposição', 'arte', 'áfrica', 'ccbb'],
         ],
         [
             'title' => "Curiosidades do Palácio Tiradentes",
@@ -193,8 +193,8 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
                             '/images/photos/antigo-restaurante-1200x800.jpg',
                         'author' => '',
                         'notes' =>
-                            'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes'
-                    ]
+                            'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes',
+                    ],
                 ],
             'lead' =>
                 'Todos que circulam diariamente pelo Palácio Tiradentes sabem que há muita história a contar nesses 92 anos de existência. O prédio chama a atenção por sua beleza arquitetônica e também pela imponência. A atual sede da Assembleia Legislativa do Estado do Rio de Janeiro já foi cadeia no Brasil Colônia - onde inclusive o mártir da Inconfidência Mineira, Tiradentes, ficou preso e, já na República, foi Câmara dos Deputados.',
@@ -205,7 +205,7 @@ Um local de tantas histórias tem alguns detalhes que podem passar despercebidos
 O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozinha e mobiliário para comportar até 150 pessoas. Os artistas Augusto José Marques Júnior e Genesco Murta pintaram seis painéis para decorar as paredes. Os tamanhos das pinturas variam entre 1,58m de altura por 1,54m e 2,6m de largura e representam cenas do campo e da pecuária. As telas são descritas pelos artistas como a “visão bucólica das paisagens nativas, representando poéticos cenários dos nossos crepúsculos sobre os campos lavradios”. O restaurante, no entanto, foi desativado há décadas. Desde 1984, o atual banco ocupa o espaço que guarda ainda lembranças do seu passado.
 ',
             'featured' => false,
-            'tags' => ['palácio tiradentes']
+            'tags' => ['palácio tiradentes'],
         ],
         [
             'title' => "Onde solucionar seu problema",
@@ -224,8 +224,8 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
                         'url_lowres' =>
                             '/images/photos/humano-papel-e-caneta.jpg',
                         'author' => 'Parla - Alerj',
-                        'notes' => ''
-                    ]
+                        'notes' => '',
+                    ],
                 ],
             'lead' =>
                 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
@@ -244,8 +244,8 @@ Servidores **requisitados**, 1368;
 Para os **estagiários**, o ramal de atendimento é 1369.
 ',
             'featured' => false,
-            'tags' => ['rh', 'administrativo']
-        ]
+            'tags' => ['rh', 'administrativo'],
+        ],
     ];
 
     private static function allPosts()
@@ -295,7 +295,7 @@ Para os **estagiários**, o ramal de atendimento é 1369.
             'year' => $date->year,
             'month' => $date->month,
             'day' => $date->day,
-            'slug' => $slug
+            'slug' => $slug,
         ]);
 
         $post['authors_string'] = static::makeAuthorsString($post['authors']);
