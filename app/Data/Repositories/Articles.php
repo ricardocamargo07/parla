@@ -3,14 +3,15 @@ namespace App\Data\Repositories;
 
 use App\Data\Models\Article;
 use App\Data\Models\Edition;
-use App\Services\Markdown\Service;
 use Jenssegers\Date\Date as Carbon;
 
 class Articles
 {
-    public function all($number)
+    public function all($number, $excludeUnpublished = true)
     {
-        return $this->fillArticlesData($this->getBaseQuery($number)->get());
+        return $this->fillArticlesData(
+            $this->getBaseQuery($number, $excludeUnpublished)->get()
+        );
     }
 
     public function featured($number)
@@ -25,6 +26,11 @@ class Articles
         });
     }
 
+    private function findArticleById($article_id)
+    {
+        return Article::find($article_id);
+    }
+
     public function findEditionByNumber($number)
     {
         return Edition
@@ -37,12 +43,54 @@ class Articles
             ->first();
     }
 
-    protected function getBaseQuery($number)
+    private function moveArticle($article_id, $direction)
     {
-        return Article
+        $article1 = $this->findArticleById($article_id);
+        $order1 = $article1->order;
+
+        $lastOrder = $this->getBaseQuery($article1->edition->number)
+            ->where('edition_id', $article1->edition_id)
+            ->orderBy('order', 'desc')
+            ->first();
+
+        if (
+            ($article1->order == 1 && $direction == -1) ||
+            ($article1->order == $lastOrder->order && $direction == +1)
+        ) {
+            return;
+        }
+
+        $article2 = $this->getBaseQuery($article1->edition->number)
+            ->where('edition_id', $article1->edition_id)
+            ->where('order', $order1 + ($direction * -1))
+            ->first();
+
+        $article1->order = $article2->order;
+        $article1->save();
+
+        $article2->order = $order1;
+        $article2->save();
+    }
+
+    private function normalizeArticleColumns($article)
+    {
+        $article->featured = $article->featured ?: false;
+
+        return $article;
+    }
+
+    protected function getBaseQuery($number, $excludeUnpublished = true)
+    {
+        $query = Article
             ::with(['edition', 'photos', 'authors'])
             ->where('edition_id', $this->findEditionByNumber($number)->id)
-            ->whereNotNull('published_at');
+            ->orderBy('order');
+
+        if ($excludeUnpublished) {
+            $query->whereNotNull('published_at');
+        }
+
+        return $query;
     }
 
     protected function getLastEdition()
@@ -74,8 +122,6 @@ class Articles
 
     protected function fillArticleData($article)
     {
-        $markdown = new Service();
-
         $article['featured'] = isset($article['featured'])
             ? $article['featured']
             : false;
@@ -175,5 +221,43 @@ class Articles
     public function edittions()
     {
         return Edition::all();
+    }
+
+    public function publish($article_id, $publish = true)
+    {
+        $article = $this->findArticleById($article_id);
+
+        info($article->published_at);
+
+        $article->published_at = $publish ? now() : null;
+
+        info($article->published_at);
+
+        info($article_id);
+
+        $article->save();
+    }
+
+    public function createOrUpdate($newArticle)
+    {
+        $article = isset($newArticle['new'])
+            ? new Article()
+            : $this->findArticleById($newArticle['id']);
+
+        $this->normalizeArticleColumns($article->fill($newArticle));
+
+        $article->inferAuthors($newArticle);
+
+        $article->save();
+    }
+
+    public function moveUp($article_id)
+    {
+        $this->moveArticle($article_id, +1);
+    }
+
+    public function moveDown($article_id)
+    {
+        $this->moveArticle($article_id, -1);
     }
 }

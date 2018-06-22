@@ -75145,7 +75145,7 @@ if (jQuery("#" + appName).length > 0) {
                 me = this;
 
                 this.timeout = setTimeout(function () {
-                    me.__refresh();
+                    me.__refreshMarkdown();
                 }, 700);
             },
             __clearFilter: function __clearFilter() {
@@ -75157,11 +75157,13 @@ if (jQuery("#" + appName).length > 0) {
 
                 me.loading.articles = true;
 
+                edition = edition ? edition : me.currentEdition;
+
                 if (edition) {
                     axios.get('/api/posts/' + edition.number + '/all').then(function (response) {
                         me.tables.articles = response.data;
 
-                        me.__selectArticle(me.tables.articles[0]);
+                        me.__selectArticle(me.currentArticle && me.currentArticle != undefined ? me.currentArticle : me.tables.articles[0]);
 
                         me.loading.articles = false;
                     });
@@ -75190,11 +75192,15 @@ if (jQuery("#" + appName).length > 0) {
 
             this.__loadArticles(edition);
         }), _defineProperty(_methods, '__selectArticle', function __selectArticle(article) {
-            this.currentArticle = article;
+            this.currentArticle = this.tables.articles.find(function (item) {
+                return article.id === item.id;
+            });
 
-            this.currentArticleCopy = JSON.parse(JSON.stringify(article));
+            this.currentArticle = this.currentArticle === undefined ? this.tables.articles[0] : this.currentArticle;
+
+            this.currentArticleCopy = JSON.parse(JSON.stringify(this.currentArticle));
         }), _defineProperty(_methods, '__isCurrentArticle', function __isCurrentArticle(article) {
-            return article.id === this.currentArticle.id;
+            return article && this.currentArticle && article.id === this.currentArticle.id;
         }), _defineProperty(_methods, '__unchanged', function __unchanged() {
             return JSON.stringify(this.currentArticle) === JSON.stringify(this.currentArticleCopy);
         }), _defineProperty(_methods, '__updateLead', function __updateLead(article, lead) {
@@ -75205,7 +75211,7 @@ if (jQuery("#" + appName).length > 0) {
             article.body = body;
 
             this.__typeKeyUp();
-        }), _defineProperty(_methods, '__refresh', function __refresh() {
+        }), _defineProperty(_methods, '__refreshMarkdown', function __refreshMarkdown() {
             article = this.currentArticle;
 
             axios.post('/api/markdown/to/html', { lead: article.lead, body: article.body }).then(function (response) {
@@ -75218,21 +75224,55 @@ if (jQuery("#" + appName).length > 0) {
 
             for (var prop in article) {
                 if (article.hasOwnProperty(prop)) {
-                    article[prop] = '';
+                    article[prop] = null;
                 }
             }
 
             article['new'] = true;
 
-            article['order'] = this.tables.articles.reduce(function (a, b) {
-                dd('------------------------');
-                dd(a, b, a.order, b.order);
-                return a.order >= b.order ? a : b;
-            }).order + 1;
+            article['edition_id'] = this.currentEdition.id;
+
+            article['order'] = this.__getLastArticleOrder() + 1;
 
             this.tables.articles.push(article);
 
             this.currentArticle = article;
+        }), _defineProperty(_methods, '__toggleCurrentPublished', function __toggleCurrentPublished() {
+            var command = this.currentArticle.published_at ? 'unpublish' : 'publish';
+
+            this.__get('/api/posts/' + this.currentArticle.edition.number + '/' + this.currentArticle.id + '/' + command).then(function () {
+                me.__loadArticles();
+            });
+        }), _defineProperty(_methods, '__get', function __get(url) {
+            me = this;
+
+            me.loading.articles = true;
+
+            return axios.get(url).then(function () {
+                me.loading.articles = false;
+            });
+        }), _defineProperty(_methods, '__saveCurrent', function __saveCurrent() {
+            me = this;
+
+            axios.post('/api/posts/', { article: this.currentArticle }).then(function () {
+                me.__loadArticles();
+            });
+        }), _defineProperty(_methods, '__moveUp', function __moveUp(article) {
+            this.__get('/api/posts/' + this.currentArticle.id + '/move-up').then(function () {
+                me.__loadArticles();
+            });
+        }), _defineProperty(_methods, '__moveDown', function __moveDown(article) {
+            this.__get('/api/posts/' + this.currentArticle.id + '/move-down').then(function () {
+                me.__loadArticles();
+            });
+        }), _defineProperty(_methods, '__canMoveUp', function __canMoveUp(article) {
+            return article.order > 1;
+        }), _defineProperty(_methods, '__canMoveDown', function __canMoveDown(article) {
+            return article.order < this.__getLastArticleOrder();
+        }), _defineProperty(_methods, '__getLastArticleOrder', function __getLastArticleOrder() {
+            return this.tables.articles.reduce(function (a, b) {
+                return a.order >= b.order ? a : b;
+            }).order;
         }), _methods),
 
         mounted: function mounted() {

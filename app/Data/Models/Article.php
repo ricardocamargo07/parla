@@ -25,6 +25,7 @@ class Article extends Model
     protected $appends = [
         'link',
         'authors_string',
+        'authors_inline',
         'date',
         'main_photo',
         'other_photos',
@@ -115,6 +116,11 @@ class Article extends Model
         return $this->getMarkdown()->convert($this->lead);
     }
 
+    public function getAuthorsInlineAttribute()
+    {
+        return $this->authors->pluck('name')->implode(',');
+    }
+
     protected function makeAuthorsString($authors)
     {
         $authors = $authors->pluck('name')->toArray();
@@ -153,5 +159,25 @@ class Article extends Model
     public function getDateAttribute()
     {
         return Carbon::parse($this->created_at)->format('F Y');
+    }
+
+    public function inferAuthors($newArticle)
+    {
+        $names = coollect(explode(',', $newArticle['authors_inline']));
+
+        $this->authors->each(function ($author) use ($names) {
+            if (!$names->contains($author->name)) {
+                $author->delete();
+            }
+        });
+
+        $names->each(function ($name) {
+            if ($this->authors->where('name', $name)->count() === 0) {
+                ArticleAuthor::create([
+                    'article_id' => $this->id,
+                    'name' => $name,
+                ]);
+            }
+        });
     }
 }

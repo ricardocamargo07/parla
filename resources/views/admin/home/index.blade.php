@@ -120,7 +120,14 @@
                                                 </div>
                                             </td>
 
-                                            <td>@{{ article.order }}</td>
+                                            <td>
+                                                <span :class="'fa fa-arrow-up ' + (__canMoveUp(article) ? 'order-arrow cursor-pointer' : 'order-arrow-disabled')" @click="__moveUp(article)"></span>
+
+                                                @{{ article.order }}
+
+                                                <span :class="'fa fa-arrow-down ' + (__canMoveDown(article) ? 'order-arrow cursor-pointer' : 'order-arrow-disabled')" @click="__moveDown(article)"></span>
+                                            </td>
+
                                             <td>@{{ article.title ? article.title : 'NOVO POST' }}</td>
                                             <td>@{{ article.category }}</td>
                                             <td>@{{ article.published_at ? 'sim' : 'não' }}</td>
@@ -146,12 +153,12 @@
 
                             <div class="col-md-4">
                                 <div class="text-right">
-                                    <button type="text" class="btn" :class="currentArticle.is_published ? 'btn-success' : 'btn-default'" @click="__publishCurrent()">
+                                    <button :class="'btn ' + (currentArticle.published_at ? 'btn-success' : 'btn-default')" @click="__toggleCurrentPublished()">
                                         <span v-if="currentArticle.published_at">Publicado</span>
                                         <span v-if="! currentArticle.published_at">Publicar</span>
                                     </button>
 
-                                    <button type="text" class="btn btn-primary" @click="__saveCurrent()" :disabled="__unchanged()">
+                                    <button class="btn btn-primary" @click="__saveCurrent()" :disabled="__unchanged()">
                                         Salvar
                                     </button>
                                 </div>
@@ -184,6 +191,13 @@
                                                     <div class="form-group">
                                                         <label>Categoria</label>
                                                         <input type="text" class="form-control" v-model="currentArticle.category">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Autores</label>
+                                                        <input type="text" class="form-control" v-model="currentArticle.authors_inline">
                                                     </div>
                                                 </div>
                                             </div>

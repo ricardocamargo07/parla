@@ -12298,3 +12298,11 @@ a.readmore {
   }
 }
 
+.order-arrow {
+  color: #d3d3d3;
+}
+
+.order-arrow-disabled {
+  opacity: 0;
+}
+
