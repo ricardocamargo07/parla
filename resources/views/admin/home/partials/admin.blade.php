@@ -173,6 +173,11 @@
 
                     <div class="col-md-4">
                         <div class="text-right">
+                            <button :class="'btn ' + (__currentArticle().featured ? 'btn-success' : 'btn-default')" @click="__toggleCurrentFeatured()">
+                                <span v-if="!__currentArticle().featured">Destacar</span>
+                                <span v-if="__currentArticle().featured">Destacado</span>
+                            </button>
+
                             <button :class="'btn ' + (__currentArticle().published_at ? 'btn-success' : 'btn-default')" @click="__toggleCurrentPublished()">
                                 <span v-if="__currentArticle().published_at">Publicado</span>
                                 <span v-if="! __currentArticle().published_at">Publicar</span>
@@ -194,32 +199,15 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-8">
-                                                    <div class="form-group">
-                                                        <label>Título</label>
-                                                        <input
-                                                            type="text"
-                                                            class="form-control"
-                                                            :value="__currentArticle().title"
-                                                            @input="__updateField('title', $event.target.value)"
-                                                        >
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Destaque</label>
-                                                        <input
-                                                            type="text"
-                                                            class="form-control"
-                                                            :value="__currentArticle().featured"
-                                                            @input="__updateField('featured', $event.target.value)"
-                                                        >
-                                                    </div>
-                                                </div>
+                                            <div class="form-group">
+                                                <label>Título</label>
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    :value="__currentArticle().title"
+                                                    @input="__updateField('title', $event.target.value)"
+                                                >
                                             </div>
-
                                         </div>
 
                                         <div class="col-md-12">

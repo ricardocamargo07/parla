@@ -236,6 +236,13 @@ if (jQuery('#' + appName).length > 0) {
                 })
             },
 
+            __toggleCurrentFeatured() {
+                this.__currentArticle().featured = !this.__currentArticle()
+                    .featured
+
+                this.__saveCurrent()
+            },
+
             __get(url) {
                 me = this
 
