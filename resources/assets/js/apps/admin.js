@@ -375,7 +375,8 @@ if (jQuery('#' + appName).length > 0) {
             },
 
             __selectPreviewPane() {
-                this.iframeUrl = 'http://parla.test'
+                this.iframeUrl =
+                    'http://parla.test/editions/' + this.current.edition.number
             },
 
             __updateField(field, value) {

@@ -36,6 +36,18 @@ class Articles
         return Edition::find($edition_id);
     }
 
+    public function findEditionByNumber($number)
+    {
+        return Edition
+            ::where(
+                'number',
+                $number === 'last' ? $this->getLastEdition()->number : $number
+            )
+            ->take(1)
+            ->get()
+            ->first();
+    }
+
     private function moveArticle($article_id, $direction)
     {
         $article1 = $this->findArticleById($article_id);
