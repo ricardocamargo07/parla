@@ -75088,14 +75088,12 @@ __webpack_require__("./resources/assets/js/apps/admin.js");
 /***/ "./resources/assets/js/apps/admin.js":
 /***/ (function(module, exports) {
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var appName = 'vue-admin';
 
-if (jQuery("#" + appName).length > 0) {
-    var _methods;
+var thisVariableDoesNotExists = { a: '' };
 
-    var app = new Vue({
+if (jQuery('#' + appName).length > 0) {
+    var adminApp = new Vue({
         el: '#' + appName,
 
         data: {
@@ -75105,16 +75103,10 @@ if (jQuery("#" + appName).length > 0) {
             },
 
             tables: {
-                editions: [],
-
-                articles: []
+                editions: []
             },
 
-            loading: {
-                editions: false,
-
-                articles: false
-            },
+            busy: false,
 
             filler: false,
 
@@ -75125,20 +75117,32 @@ if (jQuery("#" + appName).length > 0) {
                 imported: null
             },
 
-            search: '',
+            filter: '',
 
             orderBy: '',
 
-            currentArticle: false,
+            current: {
+                edition: null,
 
-            currentEdition: false,
+                article: {},
 
-            laravel: Laravel
+                articles: [],
+
+                articlesCopies: []
+            },
+
+            newEdition: {
+                number: null,
+                year: null,
+                month: null
+            },
+
+            laravel: Laravel,
+
+            iframeUrl: null
         },
 
-        computed: {},
-
-        methods: (_methods = {
+        methods: {
             __typeKeyUp: function __typeKeyUp() {
                 clearTimeout(this.timeout);
 
@@ -75146,136 +75150,273 @@ if (jQuery("#" + appName).length > 0) {
 
                 this.timeout = setTimeout(function () {
                     me.__refreshMarkdown();
-                }, 700);
+                }, 1500);
             },
             __clearFilter: function __clearFilter() {
                 this.filter = '';
             },
-            __loadEditions: function __loadEditions() {},
-            __loadArticles: function __loadArticles(edition) {
+
+
+            __findFirstArticle: function __findFirstArticle() {
+                if (!empty(this.__currentArticle())) {
+                    return this.__findArticleById(this.__currentArticle().id);
+                }
+
+                return !empty(this.current.articles) && !empty(this.current.articles[this.current.edition.id]) && !empty(this.current.articles[this.current.edition.id][0]) ? this.current.articles[this.current.edition.id][0] : null;
+            },
+
+            __loadArticles: function __loadArticles() {
                 var me = this;
 
-                me.loading.articles = true;
+                me.busy = true;
 
-                edition = edition ? edition : me.currentEdition;
+                if (!empty(me.current.edition)) {
+                    axios.get('/api/posts/' + me.current.edition.id + '/all').then(function (response) {
+                        me.current.articles[me.current.edition.id] = response.data;
 
-                if (edition) {
-                    axios.get('/api/posts/' + edition.number + '/all').then(function (response) {
-                        me.tables.articles = response.data;
+                        me.current.articlesCopies[me.current.edition.id] = clone(response.data);
 
-                        me.__selectArticle(me.currentArticle && me.currentArticle != undefined ? me.currentArticle : me.tables.articles[0]);
+                        me.__selectArticle(me.__findFirstArticle());
 
-                        me.loading.articles = false;
+                        me.busy = false;
                     });
                 }
-            }
-        }, _defineProperty(_methods, '__loadEditions', function __loadEditions() {
-            var me = this;
+            },
+            __loadEditions: function __loadEditions() {
+                var me = this;
 
-            me.loading.articles = true;
+                me.busy = true;
 
-            axios.get('/api/editions').then(function (response) {
-                me.tables.editions = response.data;
+                axios.get('/api/editions').then(function (response) {
+                    me.tables.editions = response.data;
 
-                me.__selectEdition(me.tables.editions[0]);
-
-                me.loading.articles = false;
-            });
-        }), _defineProperty(_methods, '__getArrowClass', function __getArrowClass() {
-            if (this.orderType == 'asc') {
-                return 'fa-arrow-down';
-            }
-
-            return 'fa-arrow-up';
-        }), _defineProperty(_methods, '__selectEdition', function __selectEdition(edition) {
-            this.currentEdition = edition;
-
-            this.__loadArticles(edition);
-        }), _defineProperty(_methods, '__selectArticle', function __selectArticle(article) {
-            this.currentArticle = this.tables.articles.find(function (item) {
-                return article.id === item.id;
-            });
-
-            this.currentArticle = this.currentArticle === undefined ? this.tables.articles[0] : this.currentArticle;
-
-            this.currentArticleCopy = JSON.parse(JSON.stringify(this.currentArticle));
-        }), _defineProperty(_methods, '__isCurrentArticle', function __isCurrentArticle(article) {
-            return article && this.currentArticle && article.id === this.currentArticle.id;
-        }), _defineProperty(_methods, '__unchanged', function __unchanged() {
-            return JSON.stringify(this.currentArticle) === JSON.stringify(this.currentArticleCopy);
-        }), _defineProperty(_methods, '__updateLead', function __updateLead(article, lead) {
-            article.lead = lead;
-
-            this.__typeKeyUp();
-        }), _defineProperty(_methods, '__updateBody', function __updateBody(article, body) {
-            article.body = body;
-
-            this.__typeKeyUp();
-        }), _defineProperty(_methods, '__refreshMarkdown', function __refreshMarkdown() {
-            article = this.currentArticle;
-
-            axios.post('/api/markdown/to/html', { lead: article.lead, body: article.body }).then(function (response) {
-                article.lead_html = response.data.lead_html;
-
-                article.body_html = response.data.body_html;
-            });
-        }), _defineProperty(_methods, '__createArticle', function __createArticle() {
-            var article = clone(this.currentArticle);
-
-            for (var prop in article) {
-                if (article.hasOwnProperty(prop)) {
-                    article[prop] = null;
+                    me.__selectEdition(me.tables.editions[0]);
+                });
+            },
+            __getArrowClass: function __getArrowClass() {
+                if (this.orderType == 'asc') {
+                    return 'fa-arrow-down';
                 }
+
+                return 'fa-arrow-up';
+            },
+            __selectEdition: function __selectEdition(edition, force) {
+                if (!empty(force) && force || empty(this.current.edition)) {
+                    this.current.edition = edition;
+                }
+
+                this.__loadArticles();
+            },
+            __selectArticle: function __selectArticle(article) {
+                if (!article) {
+                    return;
+                }
+
+                this.current.article[article.edition.id] = this.__findArticleById(article.id);
+
+                adminApp.$forceUpdate();
+            },
+            __isCurrentArticle: function __isCurrentArticle(article) {
+                return article && this.__currentArticle() && article.id === this.__currentArticle().id;
+            },
+            __unchanged: function __unchanged() {
+                return JSON.stringify(this.__currentArticle()) === JSON.stringify(this.__findArticleById(this.__currentArticle().id, this.current.articlesCopies[this.__currentArticle().edition.id]));
+            },
+            __updateLead: function __updateLead(article, lead) {
+                article.lead = lead;
+
+                adminApp.$forceUpdate();
+
+                this.__typeKeyUp();
+            },
+            __updateBody: function __updateBody(article, body) {
+                article.body = body;
+
+                adminApp.$forceUpdate();
+
+                this.__typeKeyUp();
+            },
+            __refreshMarkdown: function __refreshMarkdown() {
+                article = this.__currentArticle();
+
+                var me = this;
+
+                axios.post('/api/markdown/to/html', {
+                    lead: article.lead,
+                    body: article.body
+                }).then(function (response) {
+                    article.lead_html = response.data.lead_html;
+
+                    article.body_html = response.data.body_html;
+
+                    adminApp.$forceUpdate();
+                });
+            },
+            __createArticle: function __createArticle() {
+                var article = clone(this.__currentArticle());
+
+                for (var prop in article) {
+                    if (article.hasOwnProperty(prop)) {
+                        article[prop] = null;
+                    }
+                }
+
+                article['new'] = true;
+
+                article['edition_id'] = this.current.edition.id;
+
+                article['order'] = this.__getLastArticleOrder() + 1;
+
+                this.__currentArticles().push(article);
+
+                this.__selectArticle(article);
+            },
+            __toggleCurrentPublished: function __toggleCurrentPublished() {
+                var command = this.__currentArticle().published_at ? 'unpublish' : 'publish';
+
+                this.__get('/api/posts/' + this.__currentArticle().edition.id + '/' + this.__currentArticle().id + '/' + command).then(function () {
+                    me.__loadEditions();
+                });
+            },
+            __get: function __get(url) {
+                me = this;
+
+                me.busy = true;
+
+                return axios.get(url).then(function () {
+                    me.busy = false;
+                });
+            },
+            __saveCurrent: function __saveCurrent() {
+                me = this;
+
+                axios.post('/api/posts/', { article: this.__currentArticle() }).then(function () {
+                    me.__loadArticles();
+                });
+            },
+            __moveUp: function __moveUp(article) {
+                this.__get('/api/posts/' + article.id + '/move-up').then(function () {
+                    me.__loadArticles();
+                });
+            },
+            __moveDown: function __moveDown(article) {
+                this.__get('/api/posts/' + article.id + '/move-down').then(function () {
+                    me.__loadArticles();
+                });
+            },
+            __canMoveUp: function __canMoveUp(article) {
+                return article.order > 1;
+            },
+            __canMoveDown: function __canMoveDown(article) {
+                return article.order < this.__getLastArticleOrder();
+            },
+            __getLastArticleOrder: function __getLastArticleOrder() {
+                var articles = this.__currentArticles();
+
+                if (empty(articles)) {
+                    return 0;
+                }
+
+                return articles.reduce(function (a, b) {
+                    return a.order >= b.order ? a : b;
+                }).order;
+            },
+            __findArticleById: function __findArticleById(id, articles) {
+                if (!articles || typeof articles === 'undefined') {
+                    if (!this.current.edition) {
+                        return null;
+                    }
+
+                    articles = this.__currentArticles();
+                }
+
+                if (!articles || typeof articles === 'undefined') {
+                    return null;
+                }
+
+                for (var i = 0; i < articles.length; i++) {
+                    if (articles[i].id == id) {
+                        return articles[i];
+                    }
+                }
+
+                return null;
+            },
+            __filteredArticles: function __filteredArticles() {
+                var filter = unaccent(this.filter.trim());
+
+                var split = filter.split(' ');
+
+                if (split.length > 1) {
+                    filter = '^(?=.*\\b' + split.join('\\b)(?=.*\\b') + '\\b).+';
+                    filter = '(?=.*' + split.join(')(?=.*') + ')';
+                }
+
+                var filtered = _.filter(this.__currentArticles(), function (item) {
+                    for (var key in item) {
+                        found = false;
+
+                        if (unaccent(String(item[key])).match(new RegExp(filter, 'i'))) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                });
+
+                var orderBy = this.orderBy;
+
+                var orderType = this.orderType;
+
+                var ordered = _.orderBy(filtered, function (item) {
+                    return item[orderBy] || '';
+                }, orderType);
+
+                return ordered;
+            },
+            __filteredEditions: function __filteredEditions() {
+                return _.orderBy(this.tables.editions, 'number', 'desc');
+            },
+            __selectAdminPane: function __selectAdminPane() {
+                this.iframeUrl = null;
+            },
+            __selectPreviewPane: function __selectPreviewPane() {
+                this.iframeUrl = 'http://parla.test';
+            },
+            __updateField: function __updateField(field, value) {
+                this.current.article[this.current.edition.id][field] = value;
+
+                adminApp.$forceUpdate();
+            },
+            __createNewEdition: function __createNewEdition() {
+                me = this;
+
+                axios.post('/api/editions', this.newEdition).then(function (response) {
+                    me.tables.editions = response.data;
+
+                    me.__selectEdition(me.tables.editions[0]);
+
+                    me.__clearNewEdition();
+                });
+            },
+            __clearNewEdition: function __clearNewEdition() {
+                this.newEdition = {
+                    number: null,
+                    year: null,
+                    month: null
+                };
+            },
+            __currentArticle: function __currentArticle() {
+                return empty(this.current.article) || empty(this.current.edition) || empty(this.current.article[this.current.edition.id]) ? null : this.current.article[this.current.edition.id];
+            },
+            __currentArticles: function __currentArticles() {
+                return empty(this.current.articles) || empty(this.current.edition) || empty(this.current.articles[this.current.edition.id]) ? [] : this.current.articles[this.current.edition.id];
             }
-
-            article['new'] = true;
-
-            article['edition_id'] = this.currentEdition.id;
-
-            article['order'] = this.__getLastArticleOrder() + 1;
-
-            this.tables.articles.push(article);
-
-            this.currentArticle = article;
-        }), _defineProperty(_methods, '__toggleCurrentPublished', function __toggleCurrentPublished() {
-            var command = this.currentArticle.published_at ? 'unpublish' : 'publish';
-
-            this.__get('/api/posts/' + this.currentArticle.edition.number + '/' + this.currentArticle.id + '/' + command).then(function () {
-                me.__loadArticles();
-            });
-        }), _defineProperty(_methods, '__get', function __get(url) {
-            me = this;
-
-            me.loading.articles = true;
-
-            return axios.get(url).then(function () {
-                me.loading.articles = false;
-            });
-        }), _defineProperty(_methods, '__saveCurrent', function __saveCurrent() {
-            me = this;
-
-            axios.post('/api/posts/', { article: this.currentArticle }).then(function () {
-                me.__loadArticles();
-            });
-        }), _defineProperty(_methods, '__moveUp', function __moveUp(article) {
-            this.__get('/api/posts/' + this.currentArticle.id + '/move-up').then(function () {
-                me.__loadArticles();
-            });
-        }), _defineProperty(_methods, '__moveDown', function __moveDown(article) {
-            this.__get('/api/posts/' + this.currentArticle.id + '/move-down').then(function () {
-                me.__loadArticles();
-            });
-        }), _defineProperty(_methods, '__canMoveUp', function __canMoveUp(article) {
-            return article.order > 1;
-        }), _defineProperty(_methods, '__canMoveDown', function __canMoveDown(article) {
-            return article.order < this.__getLastArticleOrder();
-        }), _defineProperty(_methods, '__getLastArticleOrder', function __getLastArticleOrder() {
-            return this.tables.articles.reduce(function (a, b) {
-                return a.order >= b.order ? a : b;
-            }).order;
-        }), _methods),
+        },
 
         mounted: function mounted() {
+            this.__clearNewEdition();
+
             this.__loadEditions();
 
             this.__loadArticles();
@@ -75543,6 +75684,8 @@ if (token) {
 /***/ "./resources/assets/js/helpers.js":
 /***/ (function(module, exports) {
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 window.dd = function () {
     for (i = 0; i < arguments.length; i++) {
         console.log(arguments[i]);
@@ -75569,6 +75712,25 @@ window.uuid = function () {
 
 window.clone = function (obj) {
     return JSON.parse(JSON.stringify(obj));
+};
+
+// --------------------------- empty()
+// dd(empty(false))
+// dd(empty(''))
+// dd(empty(' '))
+// dd(empty(null))
+// dd(empty(thisVariableDoesNotExists.a))
+// dd(empty(thisVariableDoesNotExists.b))
+// dd(empty([]))
+// dd(empty({}))
+// dd(empty(thisVariableDoesNotExists))
+
+window.empty = function (variable) {
+    if (variable === false || variable === null || variable === '' || typeof variable === 'undefined' || typeof variable === 'string' && variable.trim().length === 0 || variable instanceof Array && variable.length === 0 || (typeof variable === 'undefined' ? 'undefined' : _typeof(variable)) === 'object' && Object.keys(variable).length === 0 && variable.constructor === Object) {
+        return true;
+    }
+
+    return false;
 };
 
 /***/ }),

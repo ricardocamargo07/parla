@@ -2,8 +2,16 @@
 use Illuminate\Http\Request;
 use App\Data\Repositories\Articles as ArticlesRepository;
 
-Route::get('/editions', function () {
-    return app(ArticlesRepository::class)->edittions();
+Route::group(['prefix' => '/editions'], function () {
+    Route::get('/', function () {
+        return app(ArticlesRepository::class)->edittions();
+    });
+
+    Route::post('/', function (Request $request) {
+        return app(ArticlesRepository::class)->createNewEdition(
+            $request->all()
+        );
+    });
 });
 
 Route::group(['prefix' => '/posts/{edition_id}'], function () {

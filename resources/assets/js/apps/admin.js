@@ -1,8 +1,10 @@
 const appName = 'vue-admin'
 
-if (jQuery("#" + appName).length > 0) {
-    const app = new Vue({
-        el: '#'+appName,
+const thisVariableDoesNotExists = { a: '' }
+
+if (jQuery('#' + appName).length > 0) {
+    let adminApp = new Vue({
+        el: '#' + appName,
 
         data: {
             edition: {
@@ -12,15 +14,9 @@ if (jQuery("#" + appName).length > 0) {
 
             tables: {
                 editions: [],
-
-                articles: [],
             },
 
-            loading: {
-                editions: false,
-
-                articles: false,
-            },
+            busy: false,
 
             filler: false,
 
@@ -31,18 +27,29 @@ if (jQuery("#" + appName).length > 0) {
                 imported: null,
             },
 
-            search: '',
+            filter: '',
 
             orderBy: '',
 
-            currentArticle: false,
+            current: {
+                edition: null,
 
-            currentEdition: false,
+                article: {},
+
+                articles: [],
+
+                articlesCopies: [],
+            },
+
+            newEdition: {
+                number: null,
+                year: null,
+                month: null,
+            },
 
             laravel: Laravel,
-        },
 
-        computed: {
+            iframeUrl: null,
         },
 
         methods: {
@@ -51,34 +58,46 @@ if (jQuery("#" + appName).length > 0) {
 
                 me = this
 
-                this.timeout = setTimeout(function () {
+                this.timeout = setTimeout(function() {
                     me.__refreshMarkdown()
-                }, 700)
+                }, 1500)
             },
 
             __clearFilter() {
                 this.filter = ''
             },
 
-            __loadEditions() {
+            __findFirstArticle: function() {
+                if (!empty(this.__currentArticle())) {
+                    return this.__findArticleById(this.__currentArticle().id)
+                }
 
+                return !empty(this.current.articles) &&
+                    !empty(this.current.articles[this.current.edition.id]) &&
+                    !empty(this.current.articles[this.current.edition.id][0])
+                    ? this.current.articles[this.current.edition.id][0]
+                    : null
             },
 
-            __loadArticles(edition) {
+            __loadArticles() {
                 var me = this
 
-                me.loading.articles = true
+                me.busy = true
 
-                edition = (edition ? edition : me.currentEdition)
+                if (!empty(me.current.edition)) {
+                    axios
+                        .get('/api/posts/' + me.current.edition.id + '/all')
+                        .then(function(response) {
+                            me.current.articles[me.current.edition.id] =
+                                response.data
 
-                if (edition) {
-                    axios.get('/api/posts/'+edition.number+'/all')
-                        .then(function (response) {
-                            me.tables.articles = response.data
+                            me.current.articlesCopies[
+                                me.current.edition.id
+                            ] = clone(response.data)
 
-                            me.__selectArticle((me.currentArticle && me.currentArticle != undefined) ? me.currentArticle : me.tables.articles[0])
+                            me.__selectArticle(me.__findFirstArticle())
 
-                            me.loading.articles = false
+                            me.busy = false
                         })
                 }
             },
@@ -86,16 +105,13 @@ if (jQuery("#" + appName).length > 0) {
             __loadEditions() {
                 var me = this
 
-                me.loading.articles = true
+                me.busy = true
 
-                axios.get('/api/editions')
-                    .then(function (response) {
-                        me.tables.editions = response.data
+                axios.get('/api/editions').then(function(response) {
+                    me.tables.editions = response.data
 
-                        me.__selectEdition(me.tables.editions[0])
-
-                        me.loading.articles = false
-                    })
+                    me.__selectEdition(me.tables.editions[0])
+                })
             },
 
             __getArrowClass() {
@@ -106,32 +122,52 @@ if (jQuery("#" + appName).length > 0) {
                 return 'fa-arrow-up'
             },
 
-            __selectEdition(edition) {
-                this.currentEdition = edition
+            __selectEdition(edition, force) {
+                if ((!empty(force) && force) || empty(this.current.edition)) {
+                    this.current.edition = edition
+                }
 
-                this.__loadArticles(edition)
+                this.__loadArticles()
             },
 
             __selectArticle(article) {
-                this.currentArticle = this.tables.articles.find(function (item) {
-                    return article.id === item.id
-                })
+                if (!article) {
+                    return
+                }
 
-                this.currentArticle = (this.currentArticle === undefined) ? this.tables.articles[0] : this.currentArticle
+                this.current.article[
+                    article.edition.id
+                ] = this.__findArticleById(article.id)
 
-                this.currentArticleCopy = JSON.parse(JSON.stringify(this.currentArticle))
+                adminApp.$forceUpdate()
             },
 
             __isCurrentArticle(article) {
-                return article && this.currentArticle && article.id === this.currentArticle.id
+                return (
+                    article &&
+                    this.__currentArticle() &&
+                    article.id === this.__currentArticle().id
+                )
             },
 
             __unchanged() {
-                return JSON.stringify(this.currentArticle) === JSON.stringify(this.currentArticleCopy);
+                return (
+                    JSON.stringify(this.__currentArticle()) ===
+                    JSON.stringify(
+                        this.__findArticleById(
+                            this.__currentArticle().id,
+                            this.current.articlesCopies[
+                                this.__currentArticle().edition.id
+                            ],
+                        ),
+                    )
+                )
             },
 
             __updateLead(article, lead) {
                 article.lead = lead
+
+                adminApp.$forceUpdate()
 
                 this.__typeKeyUp()
             },
@@ -139,78 +175,101 @@ if (jQuery("#" + appName).length > 0) {
             __updateBody(article, body) {
                 article.body = body
 
+                adminApp.$forceUpdate()
+
                 this.__typeKeyUp()
             },
 
             __refreshMarkdown() {
-                article = this.currentArticle;
+                article = this.__currentArticle()
 
-                axios.post('/api/markdown/to/html', {lead: article.lead, body: article.body})
-                    .then(function (response) {
+                let me = this
+
+                axios
+                    .post('/api/markdown/to/html', {
+                        lead: article.lead,
+                        body: article.body,
+                    })
+                    .then(function(response) {
                         article.lead_html = response.data.lead_html
 
                         article.body_html = response.data.body_html
+
+                        adminApp.$forceUpdate()
                     })
             },
 
             __createArticle() {
-                var article = clone(this.currentArticle);
+                var article = clone(this.__currentArticle())
 
                 for (var prop in article) {
                     if (article.hasOwnProperty(prop)) {
-                        article[prop] = null;
+                        article[prop] = null
                     }
                 }
 
-                article['new'] = true;
+                article['new'] = true
 
-                article['edition_id'] = this.currentEdition.id;
+                article['edition_id'] = this.current.edition.id
 
                 article['order'] = this.__getLastArticleOrder() + 1
 
-                this.tables.articles.push(article);
+                this.__currentArticles().push(article)
 
-                this.currentArticle = article;
+                this.__selectArticle(article)
             },
 
             __toggleCurrentPublished() {
-                const command = this.currentArticle.published_at ? 'unpublish' : 'publish'
+                const command = this.__currentArticle().published_at
+                    ? 'unpublish'
+                    : 'publish'
 
-                this.__get('/api/posts/'+this.currentArticle.edition.number+'/'+this.currentArticle.id+'/'+command).then(function () {
-                    me.__loadArticles()
-                });
+                this.__get(
+                    '/api/posts/' +
+                        this.__currentArticle().edition.id +
+                        '/' +
+                        this.__currentArticle().id +
+                        '/' +
+                        command,
+                ).then(function() {
+                    me.__loadEditions()
+                })
             },
 
             __get(url) {
                 me = this
 
-                me.loading.articles = true
+                me.busy = true
 
-                return axios.get(url)
-                    .then(function () {
-                        me.loading.articles = false
-                    })
+                return axios.get(url).then(function() {
+                    me.busy = false
+                })
             },
 
             __saveCurrent() {
                 me = this
 
-                axios.post('/api/posts/', {article: this.currentArticle})
-                    .then(function () {
+                axios
+                    .post('/api/posts/', { article: this.__currentArticle() })
+                    .then(function() {
                         me.__loadArticles()
                     })
             },
 
             __moveUp(article) {
-                this.__get('/api/posts/'+this.currentArticle.id+'/move-up').then(function () {
-                    me.__loadArticles()
-                });
+                this.__get('/api/posts/' + article.id + '/move-up').then(
+                    function() {
+                        me.__loadArticles()
+                    },
+                )
             },
 
             __moveDown(article) {
-                this.__get('/api/posts/'+this.currentArticle.id+'/move-down').then(function () {
-                    me.__loadArticles()
-                });
+                this.__get('/api/posts/' + article.id + '/move-down').then(
+                    function() {
+                        me.__loadArticles()
+                    },
+                )
             },
 
             __canMoveUp(article) {
@@ -222,13 +281,144 @@ if (jQuery("#" + appName).length > 0) {
             },
 
             __getLastArticleOrder() {
-                return this.tables.articles.reduce(function (a, b) {
+                const articles = this.__currentArticles()
+
+                if (empty(articles)) {
+                    return 0
+                }
+
+                return articles.reduce(function(a, b) {
                     return a.order >= b.order ? a : b
                 }).order
+            },
+
+            __findArticleById(id, articles) {
+                if (!articles || typeof articles === 'undefined') {
+                    if (!this.current.edition) {
+                        return null
+                    }
+
+                    articles = this.__currentArticles()
+                }
+
+                if (!articles || typeof articles === 'undefined') {
+                    return null
+                }
+
+                for (var i = 0; i < articles.length; i++) {
+                    if (articles[i].id == id) {
+                        return articles[i]
+                    }
+                }
+
+                return null
+            },
+
+            __filteredArticles() {
+                var filter = unaccent(this.filter.trim())
+
+                var split = filter.split(' ')
+
+                if (split.length > 1) {
+                    filter = '^(?=.*\\b' + split.join('\\b)(?=.*\\b') + '\\b).+'
+                    filter = '(?=.*' + split.join(')(?=.*') + ')'
+                }
+
+                var filtered = _.filter(this.__currentArticles(), function(
+                    item,
+                ) {
+                    for (var key in item) {
+                        found = false
+
+                        if (
+                            unaccent(String(item[key])).match(
+                                new RegExp(filter, 'i'),
+                            )
+                        ) {
+                            return true
+                        }
+                    }
+
+                    return false
+                })
+
+                var orderBy = this.orderBy
+
+                var orderType = this.orderType
+
+                var ordered = _.orderBy(
+                    filtered,
+
+                    function(item) {
+                        return item[orderBy] || ''
+                    },
+
+                    orderType,
+                )
+
+                return ordered
+            },
+
+            __filteredEditions() {
+                return _.orderBy(this.tables.editions, 'number', 'desc')
+            },
+
+            __selectAdminPane() {
+                this.iframeUrl = null
+            },
+
+            __selectPreviewPane() {
+                this.iframeUrl = 'http://parla.test'
+            },
+
+            __updateField(field, value) {
+                this.current.article[this.current.edition.id][field] = value
+
+                adminApp.$forceUpdate()
+            },
+
+            __createNewEdition() {
+                me = this
+
+                axios
+                    .post('/api/editions', this.newEdition)
+                    .then(function(response) {
+                        me.tables.editions = response.data
+
+                        me.__selectEdition(me.tables.editions[0])
+
+                        me.__clearNewEdition()
+                    })
+            },
+
+            __clearNewEdition() {
+                this.newEdition = {
+                    number: null,
+                    year: null,
+                    month: null,
+                }
+            },
+
+            __currentArticle() {
+                return empty(this.current.article) ||
+                    empty(this.current.edition) ||
+                    empty(this.current.article[this.current.edition.id])
+                    ? null
+                    : this.current.article[this.current.edition.id]
+            },
+
+            __currentArticles() {
+                return empty(this.current.articles) ||
+                    empty(this.current.edition) ||
+                    empty(this.current.articles[this.current.edition.id])
+                    ? []
+                    : this.current.articles[this.current.edition.id]
             },
         },
 
         mounted() {
+            this.__clearNewEdition()
+
             this.__loadEditions()
 
             this.__loadArticles()
