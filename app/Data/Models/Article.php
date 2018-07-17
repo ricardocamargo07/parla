@@ -25,11 +25,14 @@ class Article extends Model
     protected $appends = [
         'link',
         'authors_string',
+        'authors_inline',
         'date',
         'main_photo',
         'other_photos',
-        'lead_limited_featured',
-        'lead_limited'
+        'lead_limited_featured_html',
+        'lead_limited_html',
+        'lead_html',
+        'body_html'
     ];
 
     public function edition()
@@ -93,24 +96,29 @@ class Article extends Model
             ->values();
     }
 
-    public function getLeadLimitedFeaturedAttribute()
+    public function getLeadLimitedFeaturedHtmlAttribute()
     {
         return $this->getMarkdown()->convert(str_limit($this->lead, 450));
     }
 
-    public function getLeadLimitedAttribute()
+    public function getLeadLimitedHtmlAttribute()
     {
         return $this->getMarkdown()->convert(str_limit($this->lead, 200));
     }
 
-    public function getBodyAttribute($value)
+    public function getBodyHtmlAttribute()
     {
-        return $this->getMarkdown()->convert($value);
+        return $this->getMarkdown()->convert($this->body);
     }
 
-    public function getLeadAttribute($value)
+    public function getLeadHtmlAttribute()
     {
-        return $this->getMarkdown()->convert($value);
+        return $this->getMarkdown()->convert($this->lead);
+    }
+
+    public function getAuthorsInlineAttribute()
+    {
+        return $this->authors->pluck('name')->implode(',');
     }
 
     protected function makeAuthorsString($authors)
@@ -151,5 +159,25 @@ class Article extends Model
     public function getDateAttribute()
     {
         return Carbon::parse($this->created_at)->format('F Y');
+    }
+
+    public function inferAuthors($newArticle)
+    {
+        $names = coollect(explode(',', $newArticle['authors_inline']));
+
+        $this->authors->each(function ($author) use ($names) {
+            if (!$names->contains($author->name)) {
+                $author->delete();
+            }
+        });
+
+        $names->each(function ($name) {
+            if ($this->authors->where('name', $name)->count() === 0) {
+                ArticleAuthor::create([
+                    'article_id' => $this->id,
+                    'name' => $name
+                ]);
+            }
+        });
     }
 }

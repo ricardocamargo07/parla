@@ -3,19 +3,20 @@ namespace App\Data\Repositories;
 
 use App\Data\Models\Article;
 use App\Data\Models\Edition;
-use App\Services\Markdown\Service;
 use Jenssegers\Date\Date as Carbon;
 
 class Articles
 {
-    public function all($number)
+    public function all($edition_id, $excludeUnpublished = true)
     {
-        return $this->fillArticlesData($this->getBaseQuery($number)->get());
+        return $this->fillArticlesData(
+            $this->getBaseQuery($edition_id, $excludeUnpublished)->get()
+        );
     }
 
-    public function featured($number)
+    public function featured($edition_id)
     {
-        return $this->all($number)->where('featured', true);
+        return $this->all($edition_id)->where('featured', true);
     }
 
     protected function fillArticlesData($articles)
@@ -23,6 +24,16 @@ class Articles
         return $articles->map(function ($article) {
             return $this->fillArticleData($article);
         });
+    }
+
+    private function findArticleById($article_id)
+    {
+        return Article::find($article_id);
+    }
+
+    public function findEditionById($edition_id)
+    {
+        return Edition::find($edition_id);
     }
 
     public function findEditionByNumber($number)
@@ -37,12 +48,54 @@ class Articles
             ->first();
     }
 
-    protected function getBaseQuery($number)
+    private function moveArticle($article_id, $direction)
     {
-        return Article
+        $article1 = $this->findArticleById($article_id);
+        $order1 = $article1->order;
+
+        $lastOrder = $this->getBaseQuery($article1->edition->id)
+            ->where('edition_id', $article1->edition_id)
+            ->orderBy('order', 'desc')
+            ->first();
+
+        if (
+            ($article1->order == 1 && $direction == -1) ||
+            ($article1->order == $lastOrder->order && $direction == +1)
+        ) {
+            return;
+        }
+
+        $article2 = $this->getBaseQuery($article1->edition->id)
+            ->where('edition_id', $article1->edition_id)
+            ->where('order', $order1 + ($direction * -1))
+            ->first();
+
+        $article1->order = $article2->order;
+        $article1->save();
+
+        $article2->order = $order1;
+        $article2->save();
+    }
+
+    private function normalizeArticleColumns($article)
+    {
+        $article->featured = $article->featured ?: false;
+
+        return $article;
+    }
+
+    protected function getBaseQuery($edition_id, $excludeUnpublished = true)
+    {
+        $query = Article
             ::with(['edition', 'photos', 'authors'])
-            ->where('edition_id', $this->findEditionByNumber($number)->id)
-            ->whereNotNull('published_at');
+            ->where('edition_id', $edition_id)
+            ->orderBy('order');
+
+        if ($excludeUnpublished) {
+            $query->whereNotNull('published_at');
+        }
+
+        return $query;
     }
 
     protected function getLastEdition()
@@ -58,24 +111,22 @@ class Articles
      * @param $article
      * @return Article[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection
      */
-    protected function makeReadAlso($article, $number)
+    protected function makeReadAlso($article, $edition_id)
     {
-        return $this->getBaseQuery($number)
+        return $this->getBaseQuery($edition_id)
             ->get()
             ->reject(function ($item) use ($article) {
                 return $item->id === $article->id;
             });
     }
 
-    public function nonFeatured($number)
+    public function nonFeatured($edition_id)
     {
-        return $this->all($number)->where('featured', false);
+        return $this->all($edition_id)->where('featured', false);
     }
 
     protected function fillArticleData($article)
     {
-        $markdown = new Service();
-
         $article['featured'] = isset($article['featured'])
             ? $article['featured']
             : false;
@@ -104,18 +155,6 @@ class Articles
         )
             ->where('main', false)
             ->values();
-
-        $article['lead_limited_featured'] = $markdown->convert(
-            str_limit($article['lead'], 450)
-        );
-
-        $article['lead_limited'] = $markdown->convert(
-            str_limit($article['lead'], 200)
-        );
-
-        $article['lead'] = $markdown->convert($article['lead']);
-
-        $article['body'] = $markdown->convert($article['body']);
 
         $article['read_also'] = $this->makeReadAlso(
             $article,
@@ -182,5 +221,67 @@ class Articles
             ::all()
             ->where('slug', $slug)
             ->first();
+    }
+
+    public function edittions()
+    {
+        return Edition::all();
+    }
+
+    public function publish($article_id, $publish = true)
+    {
+        $article = $this->findArticleById($article_id);
+
+        $article->published_at = $publish ? now() : null;
+
+        $article->save();
+
+        $this->publishEdition($article->edition);
+    }
+
+    public function createOrUpdate($newArticle)
+    {
+        $article = isset($newArticle['new'])
+            ? new Article()
+            : $this->findArticleById($newArticle['id']);
+
+        $this->normalizeArticleColumns($article->fill($newArticle));
+
+        $article->inferAuthors($newArticle);
+
+        $article->save();
+    }
+
+    public function moveUp($article_id)
+    {
+        $this->moveArticle($article_id, +1);
+    }
+
+    public function moveDown($article_id)
+    {
+        $this->moveArticle($article_id, -1);
+    }
+
+    public function createNewEdition($data)
+    {
+        Edition::create($data);
+
+        return $this->edittions();
+    }
+
+    private function publishEdition($edition)
+    {
+        $isPublished =
+            $edition->articles->where('published_at', '!=', null)->count() > 0;
+
+        if (!is_null($edition->published_at) && !$isPublished) {
+            $edition->published_at = null;
+        }
+
+        if (is_null($edition->published_at) && $isPublished) {
+            $edition->published_at = now();
+        }
+
+        $edition->save();
     }
 }

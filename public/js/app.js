@@ -65,6 +65,161 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/autogrow/autogrow.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;;(function( window, factory ) {
+  // universal module definition
+  /*jshint strict: false */ /* globals define, module, require */
+  if ( true ) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__("./node_modules/jquery/dist/jquery.js") ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
+      return factory( window, jQuery );
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('jquery')
+    );
+  } else {
+    // browser global
+    factory(
+      window,
+      window.jQuery
+    );
+  }
+
+}( window, function factory( window, jQuery ) {
+
+  ;(function($){
+      //pass in just the context as a $(obj) or a settings JS object
+      $.fn.autogrow = function(opts) {
+          var that = $(this).css({overflow: 'hidden', resize: 'none'}) //prevent scrollies
+              , defaults = {
+                  context: $(document) //what to wire events to
+                  , selector: 'textarea' // el selector
+                  , animate: true //if you want the size change to animate
+                  , speed: 200 //speed of animation
+                  , fixMinHeight: true //if you don't want the box to shrink below its initial size
+                  , cloneClass: 'autogrowclone' //helper CSS class for clone if you need to add special rules
+                  , onInitialize: false //resizes the textareas when the plugin is initialized
+              }
+          ;
+          opts = $.isPlainObject(opts) ? opts : {context: opts ? opts : $(document)};
+          opts = $.extend({}, defaults, opts);
+          that.each(function(i, elem){
+              var min, clone;
+              elem = $(elem);
+              //if the element is "invisible", we get an incorrect height value
+              //to get correct value, clone and append to the body.
+              if (elem.is(':visible') || parseInt(elem.css('height'), 10) > 0) {
+                  min = parseInt(elem.css('height'), 10) || elem.innerHeight();
+              } else {
+                  clone = elem.clone()
+                      .addClass(opts.cloneClass)
+                      .val(elem.val())
+                      .css({
+                          position: 'absolute'
+                          , visibility: 'hidden'
+                          , display: 'block'
+                      })
+                  ;
+                  $('body').append(clone);
+                  min = clone.innerHeight();
+                  clone.remove();
+              }
+              if (opts.fixMinHeight) {
+                  elem.data('autogrow-start-height', min); //set min height
+              }
+              elem.css('height', min);
+
+              if (opts.onInitialize && elem.length) {
+                  resize.call(elem[0]);
+              }
+          });
+
+          opts.context
+              .on('keyup paste', opts.selector, resize)
+          ;
+
+          function resize (e){
+              var box = $(this)
+                  , oldHeight = box.innerHeight()
+                  , newHeight = this.scrollHeight
+                  , minHeight = box.data('autogrow-start-height') || 0
+                  , clone
+              ;
+              if (oldHeight < newHeight) { //user is typing
+                  this.scrollTop = 0; //try to reduce the top of the content hiding for a second
+                  if(opts.animate) {
+                      box.stop().animate({height: newHeight}, {duration: opts.speed, complete: notifyGrown});
+                  } else {
+                      box.innerHeight(newHeight);
+                      notifyGrown();
+                  }
+
+              } else if (!e || e.which == 8 || e.which == 46 || (e.ctrlKey && e.which == 88)) { //user is deleting, backspacing, or cutting
+                  if (oldHeight > minHeight) { //shrink!
+                      //this cloning part is not particularly necessary. however, it helps with animation
+                      //since the only way to cleanly calculate where to shrink the box to is to incrementally
+                      //reduce the height of the box until the $.innerHeight() and the scrollHeight differ.
+                      //doing this on an exact clone to figure out the height first and then applying it to the
+                      //actual box makes it look cleaner to the user
+                      clone = box.clone()
+                          //add clone class for extra css rules
+                          .addClass(opts.cloneClass)
+                          //make "invisible", remove height restriction potentially imposed by existing CSS
+                          .css({position: 'absolute', zIndex:-10, height: ''})
+                          //populate with content for consistent measuring
+                          .val(box.val())
+                      ;
+                      box.after(clone); //append as close to the box as possible for best CSS matching for clone
+                      do { //reduce height until they don't match
+                          newHeight = clone[0].scrollHeight - 1;
+                          clone.innerHeight(newHeight);
+                      } while (newHeight === clone[0].scrollHeight);
+                      newHeight++; //adding one back eliminates a wiggle on deletion
+                      clone.remove();
+                      box.focus(); // Fix issue with Chrome losing focus from the textarea.
+
+                      //if user selects all and deletes or holds down delete til beginning
+                      //user could get here and shrink whole box
+                      newHeight < minHeight && (newHeight = minHeight);
+                      if(oldHeight > newHeight) {
+                          if(opts.animate) {
+                              box.stop().animate({height: newHeight}, {duration: opts.speed, complete: notifyShrunk});
+                          } else {
+                              box.innerHeight(newHeight);
+                              notifyShrunk();
+                          }
+                      }
+
+                  } else { //just set to the minHeight
+                      box.innerHeight(minHeight);
+                  }
+              }
+          }
+
+          // Trigger event to indicate a textarea has grown.
+          function notifyGrown() {
+              opts.context.trigger('autogrow:grow');
+          }
+
+          // Trigger event to indicate a textarea has shrunk.
+          function notifyShrunk() {
+              opts.context.trigger('autogrow:shrink');
+          }
+
+          return that;
+      }
+  })(jQuery);
+
+}));
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -75312,6 +75467,362 @@ __webpack_require__("./resources/assets/js/bootstrap.js");
 
 __webpack_require__("./resources/assets/js/apps/parla.js");
 
+__webpack_require__("./resources/assets/js/apps/admin.js");
+
+/***/ }),
+
+/***/ "./resources/assets/js/apps/admin.js":
+/***/ (function(module, exports) {
+
+var appName = 'vue-admin';
+
+if (jQuery('#' + appName).length > 0) {
+    var adminApp = new Vue({
+        el: '#' + appName,
+
+        data: {
+            edition: {
+                columns: 3,
+                column_size: 4
+            },
+
+            tables: {
+                editions: []
+            },
+
+            busy: false,
+
+            filler: false,
+
+            modalMode: 'filter',
+
+            currentPost: {
+                laravel: Laravel.currentPost,
+                imported: null
+            },
+
+            filter: '',
+
+            orderBy: '',
+
+            current: {
+                edition: null,
+
+                article: {},
+
+                articles: [],
+
+                articlesCopies: []
+            },
+
+            newEdition: {
+                number: null,
+                year: null,
+                month: null
+            },
+
+            laravel: Laravel,
+
+            iframeUrl: null
+        },
+
+        methods: {
+            __typeKeyUp: function __typeKeyUp() {
+                clearTimeout(this.timeout);
+
+                me = this;
+
+                this.timeout = setTimeout(function () {
+                    me.__refreshMarkdown();
+                }, 1500);
+            },
+            __clearFilter: function __clearFilter() {
+                this.filter = '';
+            },
+
+
+            __findFirstArticle: function __findFirstArticle() {
+                if (!empty(this.__currentArticle())) {
+                    return this.__findArticleById(this.__currentArticle().id);
+                }
+
+                return !empty(this.current.articles) && !empty(this.current.articles[this.current.edition.id]) && !empty(this.current.articles[this.current.edition.id][0]) ? this.current.articles[this.current.edition.id][0] : null;
+            },
+
+            __loadArticles: function __loadArticles() {
+                var me = this;
+
+                me.busy = true;
+
+                if (!empty(me.current.edition)) {
+                    axios.get('/api/posts/' + me.current.edition.id + '/all').then(function (response) {
+                        me.current.articles[me.current.edition.id] = response.data;
+
+                        me.current.articlesCopies[me.current.edition.id] = clone(response.data);
+
+                        me.__selectArticle(me.__findFirstArticle());
+
+                        me.busy = false;
+                    });
+                }
+            },
+            __loadEditions: function __loadEditions() {
+                var me = this;
+
+                me.busy = true;
+
+                axios.get('/api/editions').then(function (response) {
+                    me.tables.editions = response.data;
+
+                    me.__selectEdition(me.tables.editions[0]);
+                });
+            },
+            __getArrowClass: function __getArrowClass() {
+                if (this.orderType == 'asc') {
+                    return 'fa-arrow-down';
+                }
+
+                return 'fa-arrow-up';
+            },
+            __selectEdition: function __selectEdition(edition, force) {
+                if (!empty(force) && force || empty(this.current.edition)) {
+                    this.current.edition = edition;
+                }
+
+                this.__loadArticles();
+            },
+            __selectArticle: function __selectArticle(article) {
+                if (!article) {
+                    return;
+                }
+
+                this.current.article[article.edition.id] = this.__findArticleById(article.id);
+
+                adminApp.$forceUpdate();
+            },
+            __isCurrentArticle: function __isCurrentArticle(article) {
+                return article && this.__currentArticle() && article.id === this.__currentArticle().id;
+            },
+            __unchanged: function __unchanged() {
+                return JSON.stringify(this.__currentArticle()) === JSON.stringify(this.__findArticleById(this.__currentArticle().id, this.current.articlesCopies[this.__currentArticle().edition.id]));
+            },
+            __updateLead: function __updateLead(lead) {
+                this.current.article[this.current.edition.id].lead = lead;
+
+                adminApp.$forceUpdate();
+
+                this.__typeKeyUp();
+            },
+            __updateBody: function __updateBody(body) {
+                this.current.article[this.current.edition.id].body = body;
+
+                adminApp.$forceUpdate();
+
+                this.__typeKeyUp();
+            },
+            __refreshMarkdown: function __refreshMarkdown() {
+                article = this.__currentArticle();
+
+                var me = this;
+
+                axios.post('/api/markdown/to/html', {
+                    lead: article.lead,
+                    body: article.body
+                }).then(function (response) {
+                    article.lead_html = response.data.lead_html;
+
+                    article.body_html = response.data.body_html;
+
+                    adminApp.$forceUpdate();
+                });
+            },
+            __createArticle: function __createArticle() {
+                var article = clone(this.__currentArticle());
+
+                for (var prop in article) {
+                    if (article.hasOwnProperty(prop)) {
+                        article[prop] = null;
+                    }
+                }
+
+                article['new'] = true;
+
+                article['edition_id'] = this.current.edition.id;
+
+                article['order'] = this.__getLastArticleOrder() + 1;
+
+                this.__currentArticles().push(article);
+
+                this.__selectArticle(article);
+            },
+            __toggleCurrentPublished: function __toggleCurrentPublished() {
+                var command = this.__currentArticle().published_at ? 'unpublish' : 'publish';
+
+                this.__get('/api/posts/' + this.__currentArticle().edition.id + '/' + this.__currentArticle().id + '/' + command).then(function () {
+                    me.__loadEditions();
+                });
+            },
+            __toggleCurrentFeatured: function __toggleCurrentFeatured() {
+                this.__currentArticle().featured = !this.__currentArticle().featured;
+
+                this.__saveCurrent();
+            },
+            __get: function __get(url) {
+                me = this;
+
+                me.busy = true;
+
+                return axios.get(url).then(function () {
+                    me.busy = false;
+                });
+            },
+            __saveCurrent: function __saveCurrent() {
+                me = this;
+
+                axios.post('/api/posts/', { article: this.__currentArticle() }).then(function () {
+                    me.__loadArticles();
+                });
+            },
+            __moveUp: function __moveUp(article) {
+                this.__get('/api/posts/' + article.id + '/move-up').then(function () {
+                    me.__loadArticles();
+                });
+            },
+            __moveDown: function __moveDown(article) {
+                this.__get('/api/posts/' + article.id + '/move-down').then(function () {
+                    me.__loadArticles();
+                });
+            },
+            __canMoveUp: function __canMoveUp(article) {
+                return article.order > 1;
+            },
+            __canMoveDown: function __canMoveDown(article) {
+                return article.order < this.__getLastArticleOrder();
+            },
+            __getLastArticleOrder: function __getLastArticleOrder() {
+                var articles = this.__currentArticles();
+
+                if (empty(articles)) {
+                    return 0;
+                }
+
+                return articles.reduce(function (a, b) {
+                    return a.order >= b.order ? a : b;
+                }).order;
+            },
+            __findArticleById: function __findArticleById(id, articles) {
+                if (!articles || typeof articles === 'undefined') {
+                    if (!this.current.edition) {
+                        return null;
+                    }
+
+                    articles = this.__currentArticles();
+                }
+
+                if (!articles || typeof articles === 'undefined') {
+                    return null;
+                }
+
+                for (var i = 0; i < articles.length; i++) {
+                    if (articles[i].id == id) {
+                        return articles[i];
+                    }
+                }
+
+                return null;
+            },
+            __filteredArticles: function __filteredArticles() {
+                var filter = unaccent(this.filter.trim());
+
+                var split = filter.split(' ');
+
+                if (split.length > 1) {
+                    filter = '^(?=.*\\b' + split.join('\\b)(?=.*\\b') + '\\b).+';
+                    filter = '(?=.*' + split.join(')(?=.*') + ')';
+                }
+
+                var filtered = _.filter(this.__currentArticles(), function (item) {
+                    for (var key in item) {
+                        found = false;
+
+                        if (unaccent(String(item[key])).match(new RegExp(filter, 'i'))) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                });
+
+                var orderBy = this.orderBy;
+
+                var orderType = this.orderType;
+
+                var ordered = _.orderBy(filtered, function (item) {
+                    return item[orderBy] || '';
+                }, orderType);
+
+                return ordered;
+            },
+            __filteredEditions: function __filteredEditions() {
+                return _.orderBy(this.tables.editions, 'number', 'desc');
+            },
+            __selectAdminPane: function __selectAdminPane() {
+                this.iframeUrl = null;
+            },
+            __selectPreviewPane: function __selectPreviewPane() {
+                this.iframeUrl = 'http://parla.test/editions/' + this.current.edition.number;
+            },
+            __updateField: function __updateField(field, value) {
+                this.current.article[this.current.edition.id][field] = value;
+
+                adminApp.$forceUpdate();
+            },
+            __createNewEdition: function __createNewEdition() {
+                me = this;
+
+                axios.post('/api/editions', this.newEdition).then(function (response) {
+                    me.tables.editions = response.data;
+
+                    me.__selectEdition(me.tables.editions[0]);
+
+                    me.__clearNewEdition();
+                });
+            },
+            __clearNewEdition: function __clearNewEdition() {
+                this.newEdition = {
+                    number: null,
+                    year: null,
+                    month: null
+                };
+            },
+            __currentArticle: function __currentArticle() {
+                article = empty(this.current.article) || empty(this.current.edition) || empty(this.current.article[this.current.edition.id]) ? null : this.current.article[this.current.edition.id];
+
+                if (article) {
+                    console.log('-----lead', article.lead);
+                }
+
+                return empty(this.current.article) || empty(this.current.edition) || empty(this.current.article[this.current.edition.id]) ? null : this.current.article[this.current.edition.id];
+            },
+            __currentArticles: function __currentArticles() {
+                return empty(this.current.articles) || empty(this.current.edition) || empty(this.current.articles[this.current.edition.id]) ? [] : this.current.articles[this.current.edition.id];
+            }
+        },
+
+        mounted: function mounted() {
+            this.__clearNewEdition();
+
+            this.__loadEditions();
+
+            this.__loadArticles();
+
+            this.__clearFilter();
+
+            jQuery('textarea').autogrow();
+        }
+    });
+}
+
 /***/ }),
 
 /***/ "./resources/assets/js/apps/parla.js":
@@ -75319,7 +75830,7 @@ __webpack_require__("./resources/assets/js/apps/parla.js");
 
 var appName = 'vue-parla';
 
-if (jQuery("#" + appName).length > 0) {
+if (jQuery('#' + appName).length > 0) {
     var app = new Vue({
         el: '#' + appName,
 
@@ -75402,7 +75913,7 @@ if (jQuery("#" + appName).length > 0) {
             refreshTable: function refreshTable(table) {
                 me = this;
 
-                axios.get('/api/posts/' + this.laravel.currentEdition.number + '/' + table).then(function (response) {
+                axios.get('/api/posts/' + this.laravel.currentEdition.id + '/' + table).then(function (response) {
                     me.tables[table] = response.data;
                 }).catch(function (error) {
                     console.log(error);
@@ -75461,7 +75972,7 @@ if (jQuery("#" + appName).length > 0) {
 
             configureLightbox: function configureLightbox() {
                 lightbox.option({
-                    albumLabel: "Foto %1 de %2"
+                    albumLabel: 'Foto %1 de %2'
                 });
             }
         },
@@ -75486,6 +75997,8 @@ if (jQuery("#" + appName).length > 0) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
+__webpack_require__("./resources/assets/js/helpers.js");
+
 window._ = __webpack_require__("./node_modules/lodash/lodash.js");
 
 /**
@@ -75496,6 +76009,8 @@ window._ = __webpack_require__("./node_modules/lodash/lodash.js");
 
 try {
   window.$ = window.jQuery = __webpack_require__("./node_modules/jquery/dist/jquery.js");
+
+  __webpack_require__("./node_modules/autogrow/autogrow.js");
 
   __webpack_require__("./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
 } catch (e) {}
@@ -75558,6 +76073,60 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/assets/js/helpers.js":
+/***/ (function(module, exports) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+window.dd = function () {
+    for (i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+    }
+};
+
+window.unaccent = function (inStr) {
+    if (typeof inStr == 'string') {
+        return inStr.replace(/([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])/g, function (str, a, c, e, i, n, o, s, u, y, ae) {
+            if (a) return 'a';else if (c) return 'c';else if (e) return 'e';else if (i) return 'i';else if (n) return 'n';else if (o) return 'o';else if (s) return 's';else if (u) return 'u';else if (y) return 'y';else if (ae) return 'ae';
+        });
+    }
+
+    return '';
+};
+
+window.uuid = function () {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+};
+
+window.clone = function (obj) {
+    return JSON.parse(JSON.stringify(obj));
+};
+
+// --------------------------- empty()
+// dd(empty(false))
+// dd(empty(''))
+// dd(empty(' '))
+// dd(empty(null))
+// dd(empty(thisVariableDoesNotExists.a))
+// dd(empty(thisVariableDoesNotExists.b))
+// dd(empty([]))
+// dd(empty({}))
+// dd(empty(thisVariableDoesNotExists))
+
+window.empty = function (variable) {
+    if (variable === false || variable === null || variable === '' || typeof variable === 'undefined' || typeof variable === 'string' && variable.trim().length === 0 || variable instanceof Array && variable.length === 0 || (typeof variable === 'undefined' ? 'undefined' : _typeof(variable)) === 'object' && Object.keys(variable).length === 0 && variable.constructor === Object) {
+        return true;
+    }
+
+    return false;
+};
 
 /***/ }),
 
