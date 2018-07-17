@@ -108,6 +108,8 @@ if (jQuery('#' + appName).length > 0) {
                 axios.get('/api/editions').then(function(response) {
                     me.tables.editions = response.data
 
+                    dd('__loadEditions', response.data)
+
                     me.__selectEdition(me.tables.editions[0])
                 })
             },
@@ -137,7 +139,7 @@ if (jQuery('#' + appName).length > 0) {
                     article.edition.id
                 ] = this.__findArticleById(article.id)
 
-                adminApp.$forceUpdate()
+                this.__forceUpdate()
             },
 
             __isCurrentArticle(article) {
@@ -165,7 +167,7 @@ if (jQuery('#' + appName).length > 0) {
             __updateLead(lead) {
                 this.current.article[this.current.edition.id].lead = lead
 
-                adminApp.$forceUpdate()
+                this.__forceUpdate()
 
                 this.__typeKeyUp()
             },
@@ -173,7 +175,7 @@ if (jQuery('#' + appName).length > 0) {
             __updateBody(body) {
                 this.current.article[this.current.edition.id].body = body
 
-                adminApp.$forceUpdate()
+                this.__forceUpdate()
 
                 this.__typeKeyUp()
             },
@@ -193,7 +195,7 @@ if (jQuery('#' + appName).length > 0) {
 
                         article.body_html = response.data.body_html
 
-                        adminApp.$forceUpdate()
+                        me.__forceUpdate()
                     })
             },
 
@@ -239,6 +241,29 @@ if (jQuery('#' + appName).length > 0) {
                     .featured
 
                 this.__saveCurrent()
+            },
+
+            __togglePublishedEdition() {
+                const me = this
+
+                const command = this.current.edition.published_at
+                    ? 'unpublish'
+                    : 'publish'
+
+                this.__get(
+                    '/api/editions/' + this.current.edition.id + '/' + command,
+                ).then(function(response) {
+                    console.log(response)
+
+                    this.tables.editions = response.data
+
+                    me.__forceUpdate()
+
+                    me.__selectEdition(
+                        me.__findEditionById(this.current.edition.id),
+                        true,
+                    )
+                })
             },
 
             __get(url) {
@@ -319,6 +344,14 @@ if (jQuery('#' + appName).length > 0) {
                 return null
             },
 
+            __findEditionById(id) {
+                for (var i = 0; i < this.tables.editions.length; i++) {
+                    if (this.tables.editions[i].id == id) {
+                        return this.tables.editions[i]
+                    }
+                }
+            },
+
             __filteredArticles() {
                 var filter = unaccent(this.filter.trim())
 
@@ -380,7 +413,7 @@ if (jQuery('#' + appName).length > 0) {
             __updateField(field, value) {
                 this.current.article[this.current.edition.id][field] = value
 
-                adminApp.$forceUpdate()
+                this.__forceUpdate()
             },
 
             __createNewEdition() {
@@ -429,6 +462,18 @@ if (jQuery('#' + appName).length > 0) {
                     empty(this.current.articles[this.current.edition.id])
                     ? []
                     : this.current.articles[this.current.edition.id]
+            },
+
+            __forceUpdate() {
+                adminApp.$forceUpdate()
+            },
+
+            __currentEditionIsPublished() {
+                if (empty(this.current.edition)) {
+                    return false
+                }
+
+                return this.current.edition.published_at
             },
         },
 

@@ -75574,6 +75574,8 @@ if (jQuery('#' + appName).length > 0) {
                 axios.get('/api/editions').then(function (response) {
                     me.tables.editions = response.data;
 
+                    dd('__loadEditions', response.data);
+
                     me.__selectEdition(me.tables.editions[0]);
                 });
             },
@@ -75598,7 +75600,7 @@ if (jQuery('#' + appName).length > 0) {
 
                 this.current.article[article.edition.id] = this.__findArticleById(article.id);
 
-                adminApp.$forceUpdate();
+                this.__forceUpdate();
             },
             __isCurrentArticle: function __isCurrentArticle(article) {
                 return article && this.__currentArticle() && article.id === this.__currentArticle().id;
@@ -75609,14 +75611,14 @@ if (jQuery('#' + appName).length > 0) {
             __updateLead: function __updateLead(lead) {
                 this.current.article[this.current.edition.id].lead = lead;
 
-                adminApp.$forceUpdate();
+                this.__forceUpdate();
 
                 this.__typeKeyUp();
             },
             __updateBody: function __updateBody(body) {
                 this.current.article[this.current.edition.id].body = body;
 
-                adminApp.$forceUpdate();
+                this.__forceUpdate();
 
                 this.__typeKeyUp();
             },
@@ -75633,7 +75635,7 @@ if (jQuery('#' + appName).length > 0) {
 
                     article.body_html = response.data.body_html;
 
-                    adminApp.$forceUpdate();
+                    me.__forceUpdate();
                 });
             },
             __createArticle: function __createArticle() {
@@ -75666,6 +75668,21 @@ if (jQuery('#' + appName).length > 0) {
                 this.__currentArticle().featured = !this.__currentArticle().featured;
 
                 this.__saveCurrent();
+            },
+            __togglePublishedEdition: function __togglePublishedEdition() {
+                var me = this;
+
+                var command = this.current.edition.published_at ? 'unpublish' : 'publish';
+
+                this.__get('/api/editions/' + this.current.edition.id + '/' + command).then(function (response) {
+                    console.log(response);
+
+                    this.tables.editions = response.data;
+
+                    me.__forceUpdate();
+
+                    me.__selectEdition(me.__findEditionById(this.current.edition.id), true);
+                });
             },
             __get: function __get(url) {
                 me = this;
@@ -75731,6 +75748,13 @@ if (jQuery('#' + appName).length > 0) {
 
                 return null;
             },
+            __findEditionById: function __findEditionById(id) {
+                for (var i = 0; i < this.tables.editions.length; i++) {
+                    if (this.tables.editions[i].id == id) {
+                        return this.tables.editions[i];
+                    }
+                }
+            },
             __filteredArticles: function __filteredArticles() {
                 var filter = unaccent(this.filter.trim());
 
@@ -75775,7 +75799,7 @@ if (jQuery('#' + appName).length > 0) {
             __updateField: function __updateField(field, value) {
                 this.current.article[this.current.edition.id][field] = value;
 
-                adminApp.$forceUpdate();
+                this.__forceUpdate();
             },
             __createNewEdition: function __createNewEdition() {
                 me = this;
@@ -75806,6 +75830,16 @@ if (jQuery('#' + appName).length > 0) {
             },
             __currentArticles: function __currentArticles() {
                 return empty(this.current.articles) || empty(this.current.edition) || empty(this.current.articles[this.current.edition.id]) ? [] : this.current.articles[this.current.edition.id];
+            },
+            __forceUpdate: function __forceUpdate() {
+                adminApp.$forceUpdate();
+            },
+            __currentEditionIsPublished: function __currentEditionIsPublished() {
+                if (empty(this.current.edition)) {
+                    return false;
+                }
+
+                return this.current.edition.published_at;
             }
         },
 

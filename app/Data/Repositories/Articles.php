@@ -235,8 +235,17 @@ class Articles
         $article->published_at = $publish ? now() : null;
 
         $article->save();
+    }
 
-        $this->publishEdition($article->edition);
+    public function publishEdition($edition_id, $publish = true)
+    {
+        $edition = $this->findEditionById($edition_id);
+
+        $edition->published_at = $publish ? now() : null;
+
+        $edition->save();
+
+        return $this->edittions();
     }
 
     public function createOrUpdate($newArticle)
@@ -267,21 +276,5 @@ class Articles
         Edition::create($data);
 
         return $this->edittions();
-    }
-
-    private function publishEdition($edition)
-    {
-        $isPublished =
-            $edition->articles->where('published_at', '!=', null)->count() > 0;
-
-        if (!is_null($edition->published_at) && !$isPublished) {
-            $edition->published_at = null;
-        }
-
-        if (is_null($edition->published_at) && $isPublished) {
-            $edition->published_at = now();
-        }
-
-        $edition->save();
     }
 }

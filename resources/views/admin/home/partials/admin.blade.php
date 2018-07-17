@@ -3,13 +3,18 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-md-8">
-                        @{{ tables.editions.length }} edições
-                    </div>
+                    <div class="col-md-12">
+                        <div class="btn-toolbar">
+                            @{{ tables.editions.length }} edições
 
-                    <div class="col-md-4">
-                        <div class="btn btn-danger btn-sm pull-right" data-toggle="modal" data-target="#add-edition-modal">
-                            <i class="fa fa-plus"></i>
+                            <div class="btn btn-danger btn-sm pull-right" data-toggle="modal" data-target="#add-edition-modal">
+                                <i class="fa fa-plus"></i>
+                            </div>
+
+                            <button :class="'pull-right btn btn-sm ' + (__currentEditionIsPublished() ? 'btn-success' : 'btn-default')" @click="__togglePublishedEdition()">
+                                <span v-if="!__currentEditionIsPublished()">Publicar</span>
+                                <span v-if="__currentEditionIsPublished()">Publicado</span>
+                            </button>
                         </div>
                     </div>
                 </div>
