@@ -45,6 +45,9 @@
 
         @include('layouts.partials.livereload')
 
+        <!-- ANALYTICS --------------------------------------- -->
+
+
         @include('layouts.partials.google-analytics')
     </body>
 </html>
