@@ -109,10 +109,10 @@ class Authentication
                     'memberof' =>
                         [
                             'CN=ProjEsp,OU=SDGI,OU=Departamentos,OU=ALERJ,DC=alerj,DC=gov,DC=br',
-                            'CN=SDGI,OU=SDGI,OU=Departamentos,OU=ALERJ,DC=alerj,DC=gov,DC=br'
+                            'CN=SDGI,OU=SDGI,OU=Departamentos,OU=ALERJ,DC=alerj,DC=gov,DC=br',
                         ],
-                    'description' => ['matricula: N/C']
-                ]
+                    'description' => ['matricula: N/C'],
+                ],
         ];
     }
 }

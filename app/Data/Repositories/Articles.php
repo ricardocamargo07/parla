@@ -136,7 +136,7 @@ class Articles
             'year' => $article->edition->year,
             'month' => $article->edition->month,
             'number' => $article->edition->number,
-            'slug' => $slug = $article->slug
+            'slug' => $slug = $article->slug,
         ]);
 
         $article['authors_string'] = $this->makeAuthorsString(
@@ -236,8 +236,19 @@ class Articles
         $article->published_at = $publish ? now() : null;
 
         $article->save();
+    }
+
+    public function publishEdition($edition_id, $publish = true)
+    {
+        $edition = $this->findEditionById($edition_id);
+
+        $edition->published_at = $publish ? now() : null;
 
         // $this->publishEdition($article->edition);
+
+        $edition->save();
+
+        return $this->edittions();
     }
 
     public function createOrUpdate($newArticle)
@@ -268,21 +279,5 @@ class Articles
         Edition::create($data);
 
         return $this->edittions();
-    }
-
-    private function publishEdition($edition)
-    {
-        $isPublished =
-            $edition->articles->where('published_at', '!=', null)->count() > 0;
-
-        if (!is_null($edition->published_at) && !$isPublished) {
-            $edition->published_at = null;
-        }
-
-        if (is_null($edition->published_at) && $isPublished) {
-            $edition->published_at = now();
-        }
-
-        $edition->save();
     }
 }

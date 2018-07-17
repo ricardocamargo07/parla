@@ -12,6 +12,20 @@ Route::group(['prefix' => '/editions'], function () {
             $request->all()
         );
     });
+
+    Route::get('/{id}/publish', function ($edition_id) {
+        return app(ArticlesRepository::class)->publishEdition(
+            $edition_id,
+            true
+        );
+    });
+
+    Route::get('/{id}/unpublish', function ($edition_id) {
+        return app(ArticlesRepository::class)->publishEdition(
+            $edition_id,
+            false
+        );
+    });
 });
 
 Route::group(['prefix' => '/posts/{edition_id}'], function () {
@@ -55,7 +69,7 @@ Route::post('/markdown/to/html', function (Request $request) {
         'body_html' =>
             app(App\Services\Markdown\Service::class)->convert(
                 $request->get('body')
-            )
+            ),
     ];
 });
 
