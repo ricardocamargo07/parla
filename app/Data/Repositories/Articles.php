@@ -102,6 +102,7 @@ class Articles
     {
         return Edition
             ::orderBy('number', 'desc')
+            ->whereNotNull('published_at')
             ->take(1)
             ->get()
             ->first();
@@ -236,7 +237,7 @@ class Articles
 
         $article->save();
 
-        $this->publishEdition($article->edition);
+        // $this->publishEdition($article->edition);
     }
 
     public function createOrUpdate($newArticle)

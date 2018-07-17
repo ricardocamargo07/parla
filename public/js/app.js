@@ -75637,7 +75637,9 @@ if (jQuery('#' + appName).length > 0) {
                 });
             },
             __createArticle: function __createArticle() {
-                var article = clone(this.__currentArticle());
+                var currentArticle = this.__currentArticle();
+
+                var article = clone(currentArticle ? currentArticle : {});
 
                 for (var prop in article) {
                     if (article.hasOwnProperty(prop)) {
@@ -75796,12 +75798,6 @@ if (jQuery('#' + appName).length > 0) {
                 };
             },
             __currentArticle: function __currentArticle() {
-                article = empty(this.current.article) || empty(this.current.edition) || empty(this.current.article[this.current.edition.id]) ? null : this.current.article[this.current.edition.id];
-
-                if (article) {
-                    console.log('-----lead', article.lead);
-                }
-
                 return empty(this.current.article) || empty(this.current.edition) || empty(this.current.article[this.current.edition.id]) ? null : this.current.article[this.current.edition.id];
             },
             __currentArticles: function __currentArticles() {
