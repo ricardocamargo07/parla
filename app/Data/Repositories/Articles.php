@@ -135,7 +135,7 @@ class Articles
             'year' => $article->edition->year,
             'month' => $article->edition->month,
             'number' => $article->edition->number,
-            'slug' => $slug = $article->slug,
+            'slug' => $slug = $article->slug
         ]);
 
         $article['authors_string'] = $this->makeAuthorsString(

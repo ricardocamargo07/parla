@@ -1,7 +1,5 @@
 const appName = 'vue-admin'
 
-const thisVariableDoesNotExists = { a: '' }
-
 if (jQuery('#' + appName).length > 0) {
     let adminApp = new Vue({
         el: '#' + appName,
@@ -164,16 +162,16 @@ if (jQuery('#' + appName).length > 0) {
                 )
             },
 
-            __updateLead(article, lead) {
-                article.lead = lead
+            __updateLead(lead) {
+                this.current.article[this.current.edition.id].lead = lead
 
                 adminApp.$forceUpdate()
 
                 this.__typeKeyUp()
             },
 
-            __updateBody(article, body) {
-                article.body = body
+            __updateBody(body) {
+                this.current.article[this.current.edition.id].body = body
 
                 adminApp.$forceUpdate()
 
@@ -408,6 +406,16 @@ if (jQuery('#' + appName).length > 0) {
             },
 
             __currentArticle() {
+                article = empty(this.current.article) ||
+                empty(this.current.edition) ||
+                empty(this.current.article[this.current.edition.id])
+                    ? null
+                    : this.current.article[this.current.edition.id]
+
+                if (article) {
+                    console.log('-----lead', article.lead)
+                }
+
                 return empty(this.current.article) ||
                     empty(this.current.edition) ||
                     empty(this.current.article[this.current.edition.id])

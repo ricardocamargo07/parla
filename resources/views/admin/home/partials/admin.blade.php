@@ -257,7 +257,7 @@
                                             rows="8"
                                             class="form-control"
                                             :value="__currentArticle().lead"
-                                            @input="__updateLead(current.article, $event.target.value)"
+                                            @input="__updateLead($event.target.value)"
                                             ref="input"
                                         >
                                         </textarea>
@@ -282,7 +282,7 @@
                                             rows="8"
                                             class="form-control"
                                             :value="__currentArticle().body"
-                                            @input="__updateBody(current.article, $event.target.value)"
+                                            @input="__updateBody($event.target.value)"
                                             ref="input"
                                         >
                                         </textarea>
