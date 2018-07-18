@@ -446,7 +446,7 @@ if (jQuery('#' + appName).length > 0) {
 
             __selectPreviewPane() {
                 this.setIFrameUrl(
-                    'http://parla.test/editions/' + this.currentEdition.number,
+                    '//parla.test/editions/' + this.currentEdition.number,
                 )
             },
 
