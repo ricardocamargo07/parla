@@ -22,8 +22,6 @@ if (jQuery('#' + appName).length > 0) {
 
             filler: false,
 
-            modalMode: 'filter',
-
             currentPost: {
                 laravel: Laravel.currentPost,
                 imported: null,

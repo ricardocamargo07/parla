@@ -49,8 +49,9 @@ window.uuid = function() {
     )
 }
 
-window.clone = function(obj) {
-    return JSON.parse(JSON.stringify(obj))
+window.clone = obj => {
+    // return JSON.parse(JSON.stringify(obj))
+    return Object.assign({}, obj)
 }
 
 // --------------------------- empty()

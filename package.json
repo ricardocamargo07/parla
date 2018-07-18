@@ -26,5 +26,8 @@
         "vue": "^2.5.16",
         "webpack-livereload-plugin": "^1.2.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "uuid": "^3.3.2",
+        "vuex": "^3.0.1"
+    }
 }

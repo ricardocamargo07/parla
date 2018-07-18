@@ -1,7 +1,7 @@
 <div class="previewWrapper">
     <iframe
-        v-if="iframeUrl"
-        :src="iframeUrl"
+        v-if="iFrameUrl"
+        :src="iFrameUrl"
         frameborder="0"
         allowfullscreen
     >

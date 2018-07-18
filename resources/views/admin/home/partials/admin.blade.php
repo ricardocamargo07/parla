@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="btn-toolbar">
-                            @{{ tables.editions.length }} edições
+                            @{{ editions.length }} edições
 
                             <div class="btn btn-danger btn-sm pull-right" data-toggle="modal" data-target="#add-edition-modal">
                                 <i class="fa fa-plus"></i>
@@ -25,7 +25,7 @@
                     <div class="col-md-12">
                         <div class="div">
                             <ul class="list-group">
-                                <li v-for="edition in __filteredEditions()" @click="__selectEdition(edition, true)" :class="'list-group-item cursor-pointer bg-info ' + (current.edition.id == edition.id ? 'active' : '')">
+                                <li v-for="edition in __filteredEditions()" @click="__selectEdition(edition, true)" :class="'list-group-item cursor-pointer bg-info ' + (currentEdition && currentEdition.id == edition.id ? 'active' : '')">
                                     <div class="row">
                                         <div class="col-xs-9">
                                             <span v-if="edition.published_at"><i class="fa fa-check"></i></span>
@@ -34,7 +34,7 @@
                                             Parla @{{ edition.number }} - @{{ edition.year }}/@{{ edition.month }}
                                         </div>
                                         <div class="col-xs-3 text-right">
-                                            <span v-if="current.edition.id === edition.id && busy">
+                                            <span v-if="currentEdition && currentEdition.id === edition.id && busy">
                                                 <i class="fa fa-cog fa-spin"></i>
                                             </span>
                                         </div>
@@ -67,18 +67,23 @@
                                             @{{ filter ? 'Filtrado' : 'Filtrar' }}
                                         </span>
 
-                                        <input type="text" name="filter" v-model="filter" class="form-control">
+                                        <input
+                                            type="text"
+                                            :value="filter"
+                                            @input="setFilter"
+                                            class="form-control"
+                                        >
 
                                         <span class="input-group-addon" :class="filter ? ' danger pointer' : ''" @click="__clearFilter()">
-                                                    <i :class="filter ? 'fa fa-times' : 'fa fa-search'"></i>
-                                                </span>
+                                            <i :class="filter ? 'fa fa-times' : 'fa fa-search'"></i>
+                                        </span>
                                     </div>
                                 </div>
 
                                 <div class="col-md-1">
-                                            <span v-if="busy" class="pull-right">
-                                                <i class="fa fa-cog fa-spin fa-2x text-info"></i>
-                                            </span>
+                                    <span v-if="busy" class="pull-right">
+                                        <i class="fa fa-cog fa-spin fa-2x text-info"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -166,26 +171,26 @@
     </div>
 </div>
 
-<div class="row" v-if="current.article">
-    <div class="col-md-12" v-if="__currentArticle()">
+<div class="row" v-if="currentArticle">
+    <div class="col-md-12" v-if="currentArticle">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
                     <h4 class="col-md-8">
-                        <span v-if="__currentArticle().title">@{{ __currentArticle().title }}</span>
-                        <span v-if="!__currentArticle().title && __currentArticle().new">NOVO POST</span>
+                        <span v-if="currentArticle.title">@{{ currentArticle.title }}</span>
+                        <span v-if="!currentArticle.title && currentArticle.new">NOVO POST</span>
                     </h4>
 
                     <div class="col-md-4">
                         <div class="text-right">
-                            <button :class="'btn ' + (__currentArticle().featured ? 'btn-success' : 'btn-default')" @click="__toggleCurrentFeatured()">
-                                <span v-if="!__currentArticle().featured">Destacar</span>
-                                <span v-if="__currentArticle().featured">Destacado</span>
+                            <button :class="'btn ' + (currentArticle.featured ? 'btn-success' : 'btn-default')" @click="__toggleCurrentFeatured()">
+                                <span v-if="!currentArticle.featured">Destacar</span>
+                                <span v-if="currentArticle.featured">Destacado</span>
                             </button>
 
-                            <button :class="'btn ' + (__currentArticle().published_at ? 'btn-success' : 'btn-default')" @click="__toggleCurrentPublished()">
-                                <span v-if="__currentArticle().published_at">Publicado</span>
-                                <span v-if="! __currentArticle().published_at">Publicar</span>
+                            <button :class="'btn ' + (currentArticle.published_at ? 'btn-success' : 'btn-default')" @click="__toggleCurrentPublished()">
+                                <span v-if="currentArticle.published_at">Publicado</span>
+                                <span v-if="! currentArticle.published_at">Publicar</span>
                             </button>
 
                             <button class="btn btn-success" @click="__saveCurrent()" :disabled="__unchanged()">
@@ -209,7 +214,7 @@
                                                 <input
                                                     type="text"
                                                     class="form-control"
-                                                    :value="__currentArticle().title"
+                                                    :value="currentArticle.title"
                                                     @input="__updateField('title', $event.target.value)"
                                                 >
                                             </div>
@@ -221,7 +226,7 @@
                                                 <input
                                                     type="text"
                                                     class="form-control"
-                                                    :value="__currentArticle().subtitle"
+                                                    :value="currentArticle.subtitle"
                                                     @input="__updateField('subtitle', $event.target.value)"
                                                 >
                                             </div>
@@ -233,7 +238,7 @@
                                                 <input
                                                     type="text"
                                                     class="form-control"
-                                                    :value="__currentArticle().category"
+                                                    :value="currentArticle.category"
                                                     @input="__updateField('category', $event.target.value)"
                                                 >
                                             </div>
@@ -245,7 +250,7 @@
                                                 <input
                                                     type="text"
                                                     class="form-control"
-                                                    :value="__currentArticle().authors_inline"
+                                                    :value="currentArticle.authors_inline"
                                                     @input="__updateField('authors_inline', $event.target.value)"
                                                 >
                                             </div>
@@ -261,7 +266,7 @@
                                         <textarea
                                             rows="8"
                                             class="form-control"
-                                            :value="__currentArticle().lead"
+                                            :value="currentArticle.lead"
                                             @input="__updateLead($event.target.value)"
                                             ref="input"
                                         >
@@ -273,7 +278,7 @@
                                     <div class="form-group">
                                         <label></label>
                                         <div class="article-body">
-                                            <p v-html="__currentArticle().lead_html"></p>
+                                            <p v-html="currentArticle.lead_html"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +291,7 @@
                                         <textarea
                                             rows="8"
                                             class="form-control"
-                                            :value="__currentArticle().body"
+                                            :value="currentArticle.body"
                                             @input="__updateBody($event.target.value)"
                                             ref="input"
                                         >
@@ -298,7 +303,7 @@
                                     <div class="form-group">
                                         <label></label>
                                         <div class="article-body">
-                                            <p v-html="__currentArticle().body_html"></p>
+                                            <p v-html="currentArticle.body_html"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -333,7 +338,8 @@
                             <div class="col-xs-6">
                                 <input
                                     type="text"
-                                    v-model="newEdition.number"
+                                    :value="newEdition.number"
+                                    @input="setNewEditionNumber"
                                 >
                             </div>
                         </div>
@@ -347,7 +353,8 @@
                             <div class="col-xs-6">
                                 <input
                                     type="text"
-                                    v-model="newEdition.year"
+                                    :value="newEdition.year"
+                                    @input="setNewEditionYear"
                                 >
                             </div>
                         </div>
@@ -361,7 +368,8 @@
                             <div class="col-xs-6">
                                 <input
                                     type="text"
-                                    v-model="newEdition.month"
+                                    :value="newEdition.month"
+                                    @input="setNewEditionMonth"
                                 >
                             </div>
                         </div>
