@@ -27,7 +27,7 @@ class Editions extends Seeder
             'year' => 2018,
             'month' => 6,
             'number' => 1,
-            'published_at' => null,
+            'published_at' => now(),
         ]);
 
         $this->createArticle6($edition); // materia 1
