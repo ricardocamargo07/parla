@@ -172,151 +172,25 @@
 </div>
 
 <div class="row" v-if="currentArticle">
-    <div class="col-md-12" v-if="currentArticle">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="row">
-                    <h4 class="col-md-8">
-                        <span v-if="currentArticle.title">@{{ currentArticle.title }}</span>
-                        <span v-if="!currentArticle.title && currentArticle.new">NOVO POST</span>
-                    </h4>
+    <div class="col-md-12">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#postPane" aria-controls="home" role="tab" data-toggle="tab">Post</a>
+            </li>
 
-                    <div class="col-md-4">
-                        <div class="text-right">
-                            <button :class="'btn ' + (currentArticle.featured ? 'btn-success' : 'btn-default')" @click="__toggleCurrentFeatured()">
-                                <span v-if="!currentArticle.featured">Destacar</span>
-                                <span v-if="currentArticle.featured">Destacado</span>
-                            </button>
+            <li role="presentation">
+                <a href="#photosPane" aria-controls="profile" role="tab" data-toggle="tab">Fotos</a>
+            </li>
+        </ul>
 
-                            <button :class="'btn ' + (currentArticle.published_at ? 'btn-success' : 'btn-default')" @click="__toggleCurrentPublished()">
-                                <span v-if="currentArticle.published_at">Publicado</span>
-                                <span v-if="! currentArticle.published_at">Publicar</span>
-                            </button>
-
-                            <button class="btn btn-success" @click="__saveCurrent()" :disabled="__unchanged()">
-                                Salvar
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="postPane">
+                @include('admin.home.partials.post')
             </div>
-
-            <div class="panel-body add-margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <form @submit.prevent>
-                            <div class="row row-form">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Título</label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    :value="currentArticle.title"
-                                                    @input="__updateField('title', $event.target.value)"
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Subtítulo</label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    :value="currentArticle.subtitle"
-                                                    @input="__updateField('subtitle', $event.target.value)"
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Categoria</label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    :value="currentArticle.category"
-                                                    @input="__updateField('category', $event.target.value)"
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Autores</label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    :value="currentArticle.authors_inline"
-                                                    @input="__updateField('authors_inline', $event.target.value)"
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row row-form">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <h2 class="text-center">Lead (em <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">markdown</a>)</h2>
-                                        <textarea
-                                            rows="8"
-                                            class="form-control"
-                                            :value="currentArticle.lead"
-                                            @input="__updateLead($event.target.value)"
-                                            ref="input"
-                                        >
-                                        </textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 bg-warning">
-                                    <div class="form-group">
-                                        <label></label>
-                                        <div class="article-body">
-                                            <p v-html="currentArticle.lead_html"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row row-form">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <h2 class="text-center">Corpo (em <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">markdown</a>)</h2>
-                                        <textarea
-                                            rows="8"
-                                            class="form-control"
-                                            :value="currentArticle.body"
-                                            @input="__updateBody($event.target.value)"
-                                            ref="input"
-                                        >
-                                        </textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 bg-warning">
-                                    <div class="form-group">
-                                        <label></label>
-                                        <div class="article-body">
-                                            <p v-html="currentArticle.body_html"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <button class="btn btn-success" @click="__saveCurrent()" :disabled="__unchanged()">
-                                Salvar
-                            </button>
-                        </form>
-                    </div>
-                </div>
+            <div role="tabpanel" class="tab-pane " id="photosPane">
+                @include('admin.home.partials.photos')
             </div>
         </div>
     </div>
@@ -339,7 +213,7 @@
                                 <input
                                     type="text"
                                     :value="newEdition.number"
-                                    @input="setNewEditionNumber"
+                                    @input="setNewEditionNumber($event.target.value)"
                                 >
                             </div>
                         </div>
@@ -354,7 +228,7 @@
                                 <input
                                     type="text"
                                     :value="newEdition.year"
-                                    @input="setNewEditionYear"
+                                    @input="setNewEditionYear($event.target.value)"
                                 >
                             </div>
                         </div>
@@ -369,7 +243,7 @@
                                 <input
                                     type="text"
                                     :value="newEdition.month"
-                                    @input="setNewEditionMonth"
+                                    @input="setNewEditionMonth($event.target.value)"
                                 >
                             </div>
                         </div>
@@ -378,6 +252,74 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" @click="__createNewEdition()">Gravar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="add-photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Nova foto</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="photo-author">Autor</label>
+                            <div class="col-sm-9">
+                                <input
+                                    class="form-control"
+                                    id="photo-author"
+                                    :value="newPhoto.author"
+                                    @input="setNewPhotoAuthor($event.target.value)"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="photo-high">Foto em alta</label>
+                            <div class="col-sm-9">
+                                <input
+                                    class="form-control"
+                                    id="photo-high"
+                                    :value="newPhoto.url_highres"
+                                    @input="setNewPhotoUrlHighres($event.target.value)"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="photo-low">Foto em baixa</label>
+                            <div class="col-sm-9">
+                                <input
+                                    class="form-control"
+                                    id="photo-low"
+                                    :value="newPhoto.url_lowres"
+                                    @input="setNewPhotoUrlLowres($event.target.value)"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="photo-notes">Legenda</label>
+                            <div class="col-sm-9">
+                                <input
+                                    class="form-control"
+                                    id="photo-notes"
+                                    :value="newPhoto.notes"
+                                    @input="setNewPhotoNotes($event.target.value)"
+                                />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" @click="__createNewPhoto()" :disabled="__newPhotoUnchanged()">Gravar</button>
                     <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

@@ -1,8 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container-fluid" id="vue-admin">
-        <div>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+
+    <div class="container-fluid" id="vue-admin" >
+        <div v-cloak>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li
@@ -27,6 +33,7 @@
                     <br>
                     @include('admin.home.partials.admin')
                 </div>
+
                 <div role="tabpanel" class="tab-pane" id="profile">
                     @include('admin.home.partials.preview')
                 </div>

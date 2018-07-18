@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Http\Request;
 use App\Data\Repositories\Articles as ArticlesRepository;
+use App\Data\Repositories\Photos as PhotosRepository;
 
 Route::group(['prefix' => '/editions'], function () {
     Route::get('/', function () {
@@ -86,5 +87,23 @@ Route::group(['prefix' => '/posts'], function () {
 
     Route::get('/{post_id}/move-down', function (Request $request, $post_id) {
         return app(ArticlesRepository::class)->moveDown($post_id);
+    });
+});
+
+Route::group(['prefix' => '/photos'], function () {
+    Route::post('/', function (Request $request) {
+        return app(PhotosRepository::class)->create($request->all());
+    });
+
+    Route::post('/{id}', function ($photo_id, Request $request) {
+        return app(PhotosRepository::class)->update($photo_id, $request->all());
+    });
+
+    Route::get('/{id}/setMain', function ($photo_id) {
+        return app(PhotosRepository::class)->setMain($photo_id, true);
+    });
+
+    Route::get('/{id}/unsetMain', function ($photo_id) {
+        return app(PhotosRepository::class)->setMain($photo_id, false);
     });
 });

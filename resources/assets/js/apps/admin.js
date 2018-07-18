@@ -15,15 +15,22 @@ if (jQuery('#' + appName).length > 0) {
                 'setBusy',
                 'setFilter',
                 'setOrderBy',
+                'setTimeout',
                 'setCurrentArticle',
                 'setIFrameUrl',
                 'setNewEditionNumber',
                 'setNewEditionYear',
                 'setNewEditionMonth',
+                'setCurrentPhotoId',
+                'setNewPhotoAuthor',
+                'setNewPhotoUrlHighres',
+                'setNewPhotoUrlLowres',
+                'setNewPhotoNotes',
             ]),
 
             ...mapMutations({
                 __updateCurrentArticleField: 'updateCurrentArticleField',
+                __updateCurrentPhotoField: 'updateCurrentPhotoField',
                 __updateLead: 'updateLead',
                 __updateLeadMutator: 'updateLead',
                 __updateBodyMutator: 'updateBody',
@@ -32,6 +39,7 @@ if (jQuery('#' + appName).length > 0) {
                 __pushArticle: 'pushArticle',
                 __setCurrentArticleFeatured: 'setCurrentArticleFeatured',
                 __clearNewEdition: 'clearNewEdition',
+                __clearNewPhoto: 'clearNewPhoto',
                 __setCurrentEdition: 'setCurrentEdition',
                 __setEditionArticles: 'setEditionArticles',
             }),
@@ -44,7 +52,7 @@ if (jQuery('#' + appName).length > 0) {
                 this.setTimeout(
                     setTimeout(function() {
                         me.__refreshMarkdown()
-                    }, 1500),
+                    }, 500),
                 )
             },
 
@@ -70,13 +78,15 @@ if (jQuery('#' + appName).length > 0) {
                 me.setBusy(true)
 
                 if (!empty(me.currentEdition)) {
-                    axios
+                    return axios
                         .get('/api/posts/' + me.currentEdition.id + '/all')
                         .then(function(response) {
                             me.__setEditionArticles({
                                 editionId: me.currentEdition.id,
                                 value: response.data,
                             })
+
+                            dd('__loadArticles ------', response.data)
 
                             me.__selectArticle(me.__findFirstArticle())
 
@@ -90,11 +100,20 @@ if (jQuery('#' + appName).length > 0) {
 
                 me.setBusy(true)
 
-                axios.get('/api/editions').then(function(response) {
+                return axios.get('/api/editions').then(function(response) {
                     me.setEditions(response.data)
 
-                    me.__selectEdition(me.editions[0])
+                    me.__selectCurrentOrLastEdition()
                 })
+            },
+
+            __selectCurrentOrLastEdition(forceLast) {
+                this.__selectEdition(
+                    this.currentEdition && !forceLast
+                        ? this.__findEditionById(this.currentEdition.id)
+                        : this.editions[this.editions.length - 1],
+                    true,
+                )
             },
 
             __getArrowClass() {
@@ -119,6 +138,15 @@ if (jQuery('#' + appName).length > 0) {
                 }
 
                 this.setCurrentArticle(this.__findArticleById(article.id))
+
+                if (this.currentPhotoId) {
+                    this.setCurrentPhotoId(this.currentPhotoId)
+                }
+
+                dd(
+                    'currentArticle ---------------------------',
+                    this.currentArticle,
+                )
             },
 
             __isCurrentArticle(article) {
@@ -147,6 +175,20 @@ if (jQuery('#' + appName).length > 0) {
                 )
             },
 
+            __photoUnchanged() {
+                return (
+                    JSON.stringify(this.currentPhoto) ===
+                    JSON.stringify(this.currentPhotoOriginal)
+                )
+            },
+
+            __newPhotoUnchanged() {
+                return (
+                    JSON.stringify(this.newPhoto) ===
+                    JSON.stringify(this.cleanNewPhoto)
+                )
+            },
+
             __updateLead(lead) {
                 this.__updateLeadMutator(lead)
 
@@ -160,7 +202,7 @@ if (jQuery('#' + appName).length > 0) {
             },
 
             __refreshMarkdown() {
-                article = this.currentArticle
+                const article = this.currentArticle
 
                 let me = this
 
@@ -222,6 +264,20 @@ if (jQuery('#' + appName).length > 0) {
                 })
             },
 
+            __toggleCurrentPhotoMain() {
+                const me = this
+
+                const command = !this.currentPhoto.main
+                    ? 'setMain'
+                    : 'unsetMain'
+
+                this.__get(
+                    '/api/photos/' + this.currentPhoto.id + '/' + command,
+                ).then(function() {
+                    me.__loadArticles()
+                })
+            },
+
             __toggleCurrentFeatured() {
                 this.__setCurrentArticleFeatured(!this.currentArticle.featured)
 
@@ -237,13 +293,8 @@ if (jQuery('#' + appName).length > 0) {
 
                 this.__get(
                     '/api/editions/' + this.currentEdition.id + '/' + command,
-                ).then(function(response) {
-                    this.setEditions(response.data)
-
-                    me.__selectEdition(
-                        me.__findEditionById(this.currentEdition.id),
-                        true,
-                    )
+                ).then(function() {
+                    me.__loadEditions()
                 })
             },
 
@@ -263,8 +314,16 @@ if (jQuery('#' + appName).length > 0) {
                 axios
                     .post('/api/posts/', { article: me.currentArticle })
                     .then(function() {
-                        dd('----------- 3')
+                        me.__loadArticles()
+                    })
+            },
 
+            __saveCurrentPhoto() {
+                const me = this
+
+                axios
+                    .post('/api/photos/' + me.currentPhoto.id, me.currentPhoto)
+                    .then(function() {
                         me.__loadArticles()
                     })
             },
@@ -305,7 +364,7 @@ if (jQuery('#' + appName).length > 0) {
                 }).order
             },
 
-            __findArticleById(id, articles) {
+            __findArticleById(id, articles, field) {
                 if (!articles || typeof articles === 'undefined') {
                     if (!this.currentEdition) {
                         return null
@@ -313,22 +372,7 @@ if (jQuery('#' + appName).length > 0) {
                     articles = this.__currentArticles()
                 }
 
-                if (!articles || typeof articles === 'undefined') {
-                    return null
-                }
-
-                dd(
-                    '__findArticleById ------------------------------------',
-                    articles,
-                )
-
-                for (var i = 0; i < articles.length; i++) {
-                    if (articles[i].id == id) {
-                        return articles[i]
-                    }
-                }
-
-                return null
+                return findItemByValue(id, articles, field)
             },
 
             __findEditionById(id) {
@@ -382,6 +426,16 @@ if (jQuery('#' + appName).length > 0) {
                 return ordered
             },
 
+            __orderedPhotos() {
+                return _.orderBy(
+                    this.currentArticle.photos,
+
+                    'id',
+
+                    'desc',
+                )
+            },
+
             __filteredEditions() {
                 return _.orderBy(this.editions, 'number', 'desc')
             },
@@ -400,6 +454,10 @@ if (jQuery('#' + appName).length > 0) {
                 this.__updateCurrentArticleField({ field: field, value: value })
             },
 
+            __updatePhotoField(field, value) {
+                this.__updateCurrentPhotoField({ field: field, value: value })
+            },
+
             __createNewEdition() {
                 const me = this
 
@@ -408,14 +466,34 @@ if (jQuery('#' + appName).length > 0) {
                     .then(function(response) {
                         me.setEditions(response.data)
 
-                        me.__selectEdition(me.editions[0])
+                        me.__selectCurrentOrLastEdition(true)
 
                         me.__clearNewEdition()
                     })
             },
 
+            __createNewPhoto() {
+                const me = this
+
+                let newPhoto = this.newPhoto
+
+                newPhoto.article_id = this.currentArticle.id
+
+                dd('__createNewPhoto ------------', newPhoto)
+
+                axios.post('/api/photos/', newPhoto).then(function() {
+                    me.__loadArticles()
+
+                    me.__clearNewPhoto()
+                })
+            },
+
             __currentArticles() {
                 return this.currentArticles
+            },
+
+            __selectPhoto(photo) {
+                this.setCurrentPhotoId(photo.id)
             },
 
             __currentEditionIsPublished() {
@@ -448,21 +526,33 @@ if (jQuery('#' + appName).length > 0) {
 
                 newEdition: state => state.newEdition,
 
+                newPhoto: state => state.newPhoto,
+
+                cleanNewPhoto: state => state.cleanNewPhoto,
+
                 iFrameUrl: state => state.iFrameUrl,
 
                 currentArticle: state => state.currentArticle,
+
+                timeout: state => state.timeout,
+
+                currentPhotoId: state => state.currentPhotoId,
+
+                currentPhoto: state => state.currentPhoto,
+
+                currentPhotoOriginal: state => state.currentPhotoOriginal,
             }),
         },
         mounted() {
             this.__clearNewEdition()
+
+            this.__clearNewPhoto()
 
             this.__loadEditions()
 
             this.__clearFilter()
 
             jQuery('textarea').autogrow()
-
-            dd('mounted 1.0')
         },
     })
 }

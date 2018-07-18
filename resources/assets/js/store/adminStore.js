@@ -16,13 +16,21 @@ window.vuexAdminStore = new Vuex.Store({
 
         orderBy: '',
 
+        timeout: null,
+
         currentEdition: null,
 
         currentArticle: null,
 
+        currentPhotoId: null,
+
+        currentPhoto: null,
+
+        currentPhotoOriginal: null,
+
         currentArticleOriginal: null,
 
-        currentArticles: [],
+        currentArticles: {},
 
         editionArticles: [],
 
@@ -35,6 +43,16 @@ window.vuexAdminStore = new Vuex.Store({
             year: null,
             month: null,
         },
+
+        cleanNewPhoto: {
+            article_id: null,
+            author: '',
+            url_highres: '',
+            url_lowres: '',
+            notes: '',
+        },
+
+        newPhoto: null,
     },
 
     mutations: {
@@ -58,20 +76,34 @@ window.vuexAdminStore = new Vuex.Store({
             state.iFrameUrl = payload
         },
 
+        setTimeout(state, payload) {
+            state.timeout = payload
+        },
+
+        setCurrentPhotoId(state, payload) {
+            state.currentPhotoId = payload
+
+            if (state.currentPhotoId && state.currentArticle) {
+                state.currentPhoto = findItemByValue(
+                    state.currentPhotoId,
+                    state.currentArticle.photos,
+                    'id',
+                )
+
+                state.currentPhotoOriginal = clone(state.currentPhoto)
+            }
+        },
+
         setCurrentArticle(state, payload) {
-            dd('setCurrentArticle ---------------- 1', payload)
             Vue.set(state.currentArticles, state.currentEdition.id, payload)
 
-            dd('setCurrentArticle ---------------- 2')
             state.currentArticle =
                 state.currentArticles[state.currentEdition.id]
 
-            dd('setCurrentArticle ---------------- 3')
             state.currentArticleOriginal =
                 state.editionArticlesOriginals[state.currentEdition.id][
                     payload.id
                 ]
-            dd('setCurrentArticle ---------------- 4')
         },
 
         updateCurrentArticleField(state, payload) {
@@ -82,9 +114,13 @@ window.vuexAdminStore = new Vuex.Store({
             )
         },
 
+        updateCurrentPhotoField(state, payload) {
+            Vue.set(state.currentPhoto, payload.field, payload.value)
+        },
+
         updateLead(state, payload) {
             Vue.set(
-                state.editionArticles[state.currentEdition.id],
+                state.currentArticles[state.currentEdition.id],
                 'lead',
                 payload,
             )
@@ -92,7 +128,7 @@ window.vuexAdminStore = new Vuex.Store({
 
         updateLeadHtml(state, payload) {
             Vue.set(
-                state.editionArticles[state.currentEdition.id],
+                state.currentArticles[state.currentEdition.id],
                 'lead_html',
                 payload,
             )
@@ -100,7 +136,7 @@ window.vuexAdminStore = new Vuex.Store({
 
         updateBodyHtml(state, payload) {
             Vue.set(
-                state.editionArticles[state.currentEdition.id],
+                state.currentArticles[state.currentEdition.id],
                 'body_html',
                 payload,
             )
@@ -108,7 +144,7 @@ window.vuexAdminStore = new Vuex.Store({
 
         updateBody(state, payload) {
             Vue.set(
-                state.editionArticles[state.currentEdition.id],
+                state.currentArticles[state.currentEdition.id],
                 'body',
                 payload,
             )
@@ -125,30 +161,14 @@ window.vuexAdminStore = new Vuex.Store({
         },
 
         pushArticle(state, payload) {
-            dd(
-                '-------------- pushArticle - BEFORE',
-                state.currentEdition.id,
-                clone(state.currentArticles),
-                payload,
-            )
+            state.editionArticles[state.currentEdition.id].push(payload)
 
-            state.currentArticles.splice(
+            Vue.set(state.currentArticles, state.currentEdition.id, payload)
+
+            Vue.set(
+                state.editionArticlesOriginals,
                 state.currentEdition.id,
-                1,
                 clone(payload),
-            )
-
-            state.editionArticlesOriginals.splice(
-                state.currentEdition.id,
-                1,
-                clone(payload),
-            )
-
-            dd(
-                '-------------- pushArticle - AFTER',
-                state.currentEdition.id,
-                state.currentArticles,
-                payload,
             )
         },
 
@@ -168,6 +188,15 @@ window.vuexAdminStore = new Vuex.Store({
             }
         },
 
+        clearNewPhoto(state) {
+            dd('clearNewPhoto -----------------')
+            state.newPhoto = clone(state.cleanNewPhoto)
+        },
+
+        fillNewPhotoArticle(state, payload) {
+            state.newEdition.article_id = state.currentArticle.id
+        },
+
         setCurrentEdition(state, payload) {
             state.currentEdition = payload
 
@@ -179,22 +208,37 @@ window.vuexAdminStore = new Vuex.Store({
         },
 
         setNewEditionNumber(state, payload) {
-            store.newEdition.number = payload
+            state.newEdition.number = payload
         },
 
         setNewEditionYear(state, payload) {
-            store.newEdition.year = payload
+            state.newEdition.year = payload
         },
 
         setNewEditionMonth(state, payload) {
-            store.newEdition.month = payload
+            state.newEdition.month = payload
+        },
+
+        setNewPhotoAuthor(state, payload) {
+            dd('setNewPhotoAuthor ------------', payload)
+            state.newPhoto.author = payload
+        },
+
+        setNewPhotoUrlLowres(state, payload) {
+            state.newPhoto.url_lowres = payload
+        },
+
+        setNewPhotoUrlHighres(state, payload) {
+            state.newPhoto.url_highres = payload
+        },
+
+        setNewPhotoNotes(state, payload) {
+            state.newPhoto.notes = payload
         },
     },
 
     getters: {
         currentArticles(state, getters) {
-            dd('getters - currentArticles')
-
             return empty(state.editionArticles) ||
                 empty(state.currentEdition) ||
                 empty(state.editionArticles[state.currentEdition.id])

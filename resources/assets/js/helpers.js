@@ -82,3 +82,19 @@ window.empty = function(variable) {
 
     return false
 }
+
+window.findItemByValue = (item, list, field) => {
+    field = !field ? 'id' : field
+
+    if (empty(list) || item === null) {
+        return null
+    }
+
+    for (var i = 0; i < list.length; i++) {
+        if (list[i][field] === item) {
+            return list[i]
+        }
+    }
+
+    return null
+}

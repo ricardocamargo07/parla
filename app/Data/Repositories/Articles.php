@@ -253,15 +253,17 @@ class Articles
 
     public function createOrUpdate($newArticle)
     {
+        info($newArticle);
+
         $article = isset($newArticle['new'])
             ? new Article()
             : $this->findArticleById($newArticle['id']);
 
         $this->normalizeArticleColumns($article->fill($newArticle));
 
-        $article->inferAuthors($newArticle);
-
         $article->save();
+
+        $article->updateAuthors($newArticle);
     }
 
     public function moveUp($article_id)

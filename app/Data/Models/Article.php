@@ -161,7 +161,7 @@ class Article extends Model
         return Carbon::parse($this->created_at)->format('F Y');
     }
 
-    public function inferAuthors($newArticle)
+    public function updateAuthors($newArticle)
     {
         $names = coollect(explode(',', $newArticle['authors_inline']));
 
