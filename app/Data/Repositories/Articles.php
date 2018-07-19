@@ -14,6 +14,27 @@ class Articles
         );
     }
 
+    private function articleOrdersWereFixed($article)
+    {
+        $lastOrder = null;
+
+        $wasFixed = false;
+
+        $article->edition->articles
+            ->sortBy('order')
+            ->each(function ($article) use (&$lastOrder, &$wasFixed) {
+                if ($article->order === $lastOrder) {
+                    $article->order++;
+                    $article->save();
+                    $wasFixed = true;
+                }
+
+                $lastOrder = $article->order;
+            });
+
+        return $wasFixed;
+    }
+
     public function featured($edition_id)
     {
         return $this->all($edition_id)->where('featured', true);
@@ -51,23 +72,28 @@ class Articles
     private function moveArticle($article_id, $direction)
     {
         $article1 = $this->findArticleById($article_id);
+
+        if ($this->articleOrdersWereFixed($article1)) {
+            return;
+        }
+
         $order1 = $article1->order;
 
-        $lastOrder = $this->getBaseQuery($article1->edition->id)
-            ->where('edition_id', $article1->edition_id)
+        $lastOrder = Article
+            ::where('edition_id', $article1->edition_id)
             ->orderBy('order', 'desc')
             ->first();
 
         if (
             ($article1->order == 1 && $direction == -1) ||
-            ($article1->order == $lastOrder->order && $direction == +1)
+            ($article1->order == $lastOrder->order && $direction == 1)
         ) {
             return;
         }
 
-        $article2 = $this->getBaseQuery($article1->edition->id)
+        $article2 = $this->getBaseQuery($article1->edition->id, false)
             ->where('edition_id', $article1->edition_id)
-            ->where('order', $order1 + ($direction * -1))
+            ->where('order', $order1 + $direction)
             ->first();
 
         $article1->order = $article2->order;
@@ -136,7 +162,7 @@ class Articles
             'year' => $article->edition->year,
             'month' => $article->edition->month,
             'number' => $article->edition->number,
-            'slug' => $slug = $article->slug,
+            'slug' => $slug = $article->slug
         ]);
 
         $article['authors_string'] = $this->makeAuthorsString(
@@ -253,8 +279,6 @@ class Articles
 
     public function createOrUpdate($newArticle)
     {
-        info($newArticle);
-
         $article = isset($newArticle['new'])
             ? new Article()
             : $this->findArticleById($newArticle['id']);
@@ -268,12 +292,12 @@ class Articles
 
     public function moveUp($article_id)
     {
-        $this->moveArticle($article_id, +1);
+        $this->moveArticle($article_id, -1);
     }
 
     public function moveDown($article_id)
     {
-        $this->moveArticle($article_id, -1);
+        $this->moveArticle($article_id, 1);
     }
 
     public function createNewEdition($data)

@@ -18,13 +18,13 @@ return [
         [
             'key' => env('SES_KEY'),
             'secret' => env('SES_SECRET'),
-            'region' => 'us-east-1',
+            'region' => 'us-east-1'
         ],
     'sparkpost' => ['secret' => env('SPARKPOST_SECRET')],
     'stripe' =>
         [
             'model' => App\Data\Models\User::class,
             'key' => env('STRIPE_KEY'),
-            'secret' => env('STRIPE_SECRET'),
-        ],
+            'secret' => env('STRIPE_SECRET')
+        ]
 ];

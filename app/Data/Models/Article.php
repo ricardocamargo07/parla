@@ -19,7 +19,7 @@ class Article extends Model
         'subtitle',
         'lead',
         'body',
-        'featured',
+        'featured'
     ];
 
     protected $appends = [
@@ -32,7 +32,7 @@ class Article extends Model
         'lead_limited_featured_html',
         'lead_limited_html',
         'lead_html',
-        'body_html',
+        'body_html'
     ];
 
     public function edition()
@@ -73,7 +73,7 @@ class Article extends Model
             'year' => $this->edition->year,
             'month' => $this->edition->month,
             'number' => $this->edition->number,
-            'slug' => $slug = $this->slug,
+            'slug' => $slug = $this->slug
         ]);
     }
 
@@ -175,7 +175,7 @@ class Article extends Model
             if ($this->authors->where('name', $name)->count() === 0) {
                 ArticleAuthor::create([
                     'article_id' => $this->id,
-                    'name' => $name,
+                    'name' => $name
                 ]);
             }
         });

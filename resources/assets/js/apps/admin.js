@@ -329,6 +329,8 @@ if (jQuery('#' + appName).length > 0) {
             },
 
             __moveUp(article) {
+                const me = this
+
                 this.__get('/api/posts/' + article.id + '/move-up').then(
                     function() {
                         me.__loadArticles()
@@ -337,6 +339,8 @@ if (jQuery('#' + appName).length > 0) {
             },
 
             __moveDown(article) {
+                const me = this
+
                 this.__get('/api/posts/' + article.id + '/move-down').then(
                     function() {
                         me.__loadArticles()
@@ -446,7 +450,7 @@ if (jQuery('#' + appName).length > 0) {
 
             __selectPreviewPane() {
                 this.setIFrameUrl(
-                    '//parla.test/editions/' + this.currentEdition.number,
+                    '/editions/' + this.currentEdition.number,
                 )
             },
 

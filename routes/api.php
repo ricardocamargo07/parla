@@ -70,12 +70,13 @@ Route::post('/markdown/to/html', function (Request $request) {
         'body_html' =>
             app(App\Services\Markdown\Service::class)->convert(
                 $request->get('body')
-            ),
+            )
     ];
 });
 
 Route::group(['prefix' => '/posts'], function () {
     Route::post('/', function (Request $request) {
+        info('posting');
         return app(ArticlesRepository::class)->createOrUpdate(
             $request->get('article')
         );
