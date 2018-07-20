@@ -187,10 +187,7 @@ class Articles
             ->where('main', false)
             ->values();
 
-        $article['read_also'] = $this->makeReadAlso(
-            $article,
-            $article->edition->number
-        );
+        $article['read_also'] = $this->makeReadAlso($article);
 
         return $article;
     }
