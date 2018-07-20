@@ -147,9 +147,9 @@ class Articles
      * @param $article
      * @return Article[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection
      */
-    protected function makeReadAlso($article, $edition_id)
+    protected function makeReadAlso($article)
     {
-        return $this->getBaseQuery($edition_id)
+        return $this->getBaseQuery($article->edition_id)
             ->get()
             ->reject(function ($item) use ($article) {
                 return $item->id === $article->id;
