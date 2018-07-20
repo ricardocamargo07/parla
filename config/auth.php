@@ -32,7 +32,7 @@ return [
     'guards' =>
         [
             'web' => ['driver' => 'session', 'provider' => 'users'],
-            'api' => ['driver' => 'token', 'provider' => 'users']
+            'api' => ['driver' => 'token', 'provider' => 'users'],
         ],
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,10 @@ return [
     'providers' =>
         [
             'users' =>
-                ['driver' => 'eloquent', 'model' => App\Data\Models\User::class]
+                [
+                    'driver' => 'eloquent',
+                    'model' => App\Data\Models\User::class,
+                ],
 
             // 'users' => [
             //     'driver' => 'database',
@@ -82,7 +85,7 @@ return [
                 [
                     'provider' => 'users',
                     'table' => 'password_resets',
-                    'expire' => 60
-                ]
-        ]
+                    'expire' => 60,
+                ],
+        ],
 ];

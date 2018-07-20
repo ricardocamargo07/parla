@@ -16,20 +16,24 @@ class Articles
 
     private function articleOrdersWereFixed($article)
     {
-        $lastOrder = null;
-
         $wasFixed = false;
+
+        $nextCode = 0;
 
         $article->edition->articles
             ->sortBy('order')
-            ->each(function ($article) use (&$lastOrder, &$wasFixed) {
-                if ($article->order === $lastOrder) {
-                    $article->order++;
+            ->each(function ($article) use (
+                &$lastOrder,
+                &$wasFixed,
+                &$nextCode
+            ) {
+                $nextCode++;
+
+                if ($article->order !== $nextCode) {
+                    $article->order = $nextCode;
                     $article->save();
                     $wasFixed = true;
                 }
-
-                $lastOrder = $article->order;
             });
 
         return $wasFixed;
@@ -38,6 +42,11 @@ class Articles
     public function featured($edition_id)
     {
         return $this->all($edition_id)->where('featured', true);
+    }
+
+    public function nonFeatured($edition_id)
+    {
+        return $this->all($edition_id)->where('featured', false);
     }
 
     protected function fillArticlesData($articles)
@@ -147,11 +156,6 @@ class Articles
             });
     }
 
-    public function nonFeatured($edition_id)
-    {
-        return $this->all($edition_id)->where('featured', false);
-    }
-
     protected function fillArticleData($article)
     {
         $article['featured'] = isset($article['featured'])
@@ -162,7 +166,7 @@ class Articles
             'year' => $article->edition->year,
             'month' => $article->edition->month,
             'number' => $article->edition->number,
-            'slug' => $slug = $article->slug
+            'slug' => $slug = $article->slug,
         ]);
 
         $article['authors_string'] = $this->makeAuthorsString(
@@ -288,6 +292,8 @@ class Articles
         $article->save();
 
         $article->updateAuthors($newArticle);
+
+        $this->articleOrdersWereFixed($article);
     }
 
     public function moveUp($article_id)

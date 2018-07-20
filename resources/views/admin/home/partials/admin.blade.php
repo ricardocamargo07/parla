@@ -25,7 +25,7 @@
                     <div class="col-md-12">
                         <div class="div">
                             <ul class="list-group">
-                                <li v-for="edition in __filteredEditions()" @click="__selectEdition(edition, true)" :class="'list-group-item cursor-pointer bg-info ' + (currentEdition && currentEdition.id == edition.id ? 'active' : '')">
+                                <li v-for="edition in __filteredEditions()" @click="busy ? false : __selectEdition(edition, true)" :class="'list-group-item cursor-pointer bg-info ' + (currentEdition && currentEdition.id == edition.id ? 'active' : '')">
                                     <div class="row">
                                         <div class="col-xs-9">
                                             <span v-if="edition.published_at"><i class="fa fa-check"></i></span>

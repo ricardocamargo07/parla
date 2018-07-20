@@ -12,7 +12,7 @@ class ArticlePhoto extends Model
         'author',
         'url_highres',
         'url_lowres',
-        'notes'
+        'notes',
     ];
 
     public function article()

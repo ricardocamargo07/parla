@@ -50,8 +50,7 @@ window.uuid = function() {
 }
 
 window.clone = obj => {
-    // return JSON.parse(JSON.stringify(obj))
-    return Object.assign({}, obj)
+    return JSON.parse(JSON.stringify(obj))
 }
 
 // --------------------------- empty()
@@ -90,9 +89,19 @@ window.findItemByValue = (item, list, field) => {
         return null
     }
 
-    for (var i = 0; i < list.length; i++) {
-        if (list[i][field] === item) {
-            return list[i]
+    if (typeof list === 'object') {
+        for (let key in list) {
+            if (list[key][field] === item) {
+                return list[key]
+            }
+        }
+    }
+
+    if (typeof list === 'array') {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i][field] === item) {
+                return list[i]
+            }
         }
     }
 

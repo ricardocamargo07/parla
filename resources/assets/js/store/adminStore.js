@@ -165,19 +165,13 @@ window.vuexAdminStore = new Vuex.Store({
 
             Vue.set(state.currentArticles, state.currentEdition.id, payload)
 
-            Vue.set(
-                state.editionArticlesOriginals,
-                state.currentEdition.id,
+            state.editionArticlesOriginals[state.currentEdition.id].push(
                 clone(payload),
             )
         },
 
         setCurrentArticleFeatured(state, payload) {
-            Vue.set(
-                state.editionArticles[state.currentEdition.id],
-                'featured',
-                payload,
-            )
+            state.currentArticle.featured = payload
         },
 
         clearNewEdition(state, payload) {
@@ -189,7 +183,6 @@ window.vuexAdminStore = new Vuex.Store({
         },
 
         clearNewPhoto(state) {
-            dd('clearNewPhoto -----------------')
             state.newPhoto = clone(state.cleanNewPhoto)
         },
 
@@ -220,7 +213,6 @@ window.vuexAdminStore = new Vuex.Store({
         },
 
         setNewPhotoAuthor(state, payload) {
-            dd('setNewPhotoAuthor ------------', payload)
             state.newPhoto.author = payload
         },
 

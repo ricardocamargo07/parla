@@ -62,6 +62,14 @@ if (jQuery('#' + appName).length > 0) {
 
             __findFirstArticle: function() {
                 if (!empty(this.currentArticle)) {
+                    if (this.currentArticle.new) {
+                        return findItemByValue(
+                            this.currentArticle.title,
+                            this.editionArticles[this.currentEdition.id],
+                            'title',
+                        )
+                    }
+
                     return this.__findArticleById(this.currentArticle.id)
                 }
 
@@ -85,8 +93,6 @@ if (jQuery('#' + appName).length > 0) {
                                 editionId: me.currentEdition.id,
                                 value: response.data,
                             })
-
-                            dd('__loadArticles ------', response.data)
 
                             me.__selectArticle(me.__findFirstArticle())
 
@@ -142,11 +148,6 @@ if (jQuery('#' + appName).length > 0) {
                 if (this.currentPhotoId) {
                     this.setCurrentPhotoId(this.currentPhotoId)
                 }
-
-                dd(
-                    'currentArticle ---------------------------',
-                    this.currentArticle,
-                )
             },
 
             __isCurrentArticle(article) {
@@ -239,15 +240,12 @@ if (jQuery('#' + appName).length > 0) {
 
                 this.__pushArticle(article)
 
-                console.log(
-                    '------------------------------ this.__currentArticles()',
-                    this.__currentArticles(),
-                )
-
                 this.__selectArticle(article)
             },
 
             __toggleCurrentPublished() {
+                const me = this
+
                 const command = this.currentArticle.published_at
                     ? 'unpublish'
                     : 'publish'
@@ -449,9 +447,7 @@ if (jQuery('#' + appName).length > 0) {
             },
 
             __selectPreviewPane() {
-                this.setIFrameUrl(
-                    '/editions/' + this.currentEdition.number,
-                )
+                this.setIFrameUrl('/editions/' + this.currentEdition.number)
             },
 
             __updateField(field, value) {
@@ -482,8 +478,6 @@ if (jQuery('#' + appName).length > 0) {
                 let newPhoto = this.newPhoto
 
                 newPhoto.article_id = this.currentArticle.id
-
-                dd('__createNewPhoto ------------', newPhoto)
 
                 axios.post('/api/photos/', newPhoto).then(function() {
                     me.__loadArticles()
