@@ -1927,16 +1927,16 @@
         },
         {
             "name": "pragmarx/version",
-            "version": "v0.2.7",
+            "version": "v0.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/version.git",
-                "reference": "e48e1d193f55b0e0b8cd2980825485f572ff728f"
+                "reference": "1d678d1b70a97eb6ceb49224159cf203a7493e46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/version/zipball/e48e1d193f55b0e0b8cd2980825485f572ff728f",
-                "reference": "e48e1d193f55b0e0b8cd2980825485f572ff728f",
+                "url": "https://api.github.com/repos/antonioribeiro/version/zipball/1d678d1b70a97eb6ceb49224159cf203a7493e46",
+                "reference": "1d678d1b70a97eb6ceb49224159cf203a7493e46",
                 "shasum": ""
             },
             "require": {
@@ -1984,7 +1984,7 @@
                 "version",
                 "versioning"
             ],
-            "time": "2018-03-17T00:01:54+00:00"
+            "time": "2018-07-20T03:00:43+00:00"
         },
         {
             "name": "pragmarx/yaml",
