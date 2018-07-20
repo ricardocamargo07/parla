@@ -1,18 +1,17 @@
 <?php
+use App\Data\Models\Article;
+use Ramsey\Uuid\Uuid;
 
-use Illuminate\Foundation\Inspiring;
+Artisan
+    ::command('parla:refresh-slugs', function () {
+        Article::all()->each(function ($article) {
+            $article->slug = Uuid::uuid4();
 
-/*
-|--------------------------------------------------------------------------
-| Console Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of your Closure based console
-| commands. Each Closure is bound to a command instance allowing a
-| simple approach to interacting with each command's IO methods.
-|
-*/
+            $article->save();
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->describe('Display an inspiring quote');
+            $this->info($article->title);
+        });
+
+        $this->info('All done.');
+    })
+    ->describe('Display an inspiring quote');

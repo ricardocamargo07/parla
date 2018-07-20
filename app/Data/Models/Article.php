@@ -1,6 +1,7 @@
 <?php
 namespace App\Data\Models;
 
+use Ramsey\Uuid\Uuid;
 use Spatie\Tags\HasTags;
 use Jenssegers\Date\Date as Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -19,7 +20,7 @@ class Article extends Model
         'subtitle',
         'lead',
         'body',
-        'featured',
+        'featured'
     ];
 
     protected $appends = [
@@ -32,7 +33,7 @@ class Article extends Model
         'lead_limited_featured_html',
         'lead_limited_html',
         'lead_html',
-        'body_html',
+        'body_html'
     ];
 
     public function edition()
@@ -61,7 +62,7 @@ class Article extends Model
     public function save(array $options = [])
     {
         if (empty($this->slug)) {
-            $this->slug = str_slug($this->title);
+            $this->slug = Uuid::uuid4();
         }
 
         parent::save($options);
@@ -73,7 +74,7 @@ class Article extends Model
             'year' => $this->edition->year,
             'month' => $this->edition->month,
             'number' => $this->edition->number,
-            'slug' => $slug = $this->slug,
+            'slug' => $slug = $this->slug
         ]);
     }
 
@@ -175,7 +176,7 @@ class Article extends Model
             if ($this->authors->where('name', $name)->count() === 0) {
                 ArticleAuthor::create([
                     'article_id' => $this->id,
-                    'name' => $name,
+                    'name' => $name
                 ]);
             }
         });

@@ -70,7 +70,7 @@ Route::post('/markdown/to/html', function (Request $request) {
         'body_html' =>
             app(App\Services\Markdown\Service::class)->convert(
                 $request->get('body')
-            ),
+            )
     ];
 });
 
