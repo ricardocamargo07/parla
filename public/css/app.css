@@ -11496,7 +11496,7 @@ button.close {
 
 .navbar-default .navbar-nav .active a:hover {
   color: #ffffff;
-  background-color: #b8c27a;
+  background-color: #8f9a47;
 }
 
 .navbar-default .navbar-nav .active a:focus {
@@ -11510,7 +11510,7 @@ button.close {
 }
 
 .navbar-default .navbar-nav .open a:hover {
-  background-color: #aab661;
+  background-color: #8f9a47;
   color: #ffffff;
 }
 
@@ -11542,7 +11542,7 @@ button.close {
 }
 
 .navbar-default .navbar-nav .dropdown-menu li:hover {
-  background: #96a53b !important;
+  background: #8f9a47 !important;
 }
 
 .navbar-default .navbar-nav .nav-search {
