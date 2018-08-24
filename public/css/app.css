@@ -11859,6 +11859,11 @@ h1,
   font-size: 90%;
 }
 
+.footer .expediente strong {
+  font-weight: bold;
+  color: #babd7b;
+}
+
 .footer .expediente-linha {
   margin-bottom: 7px;
   line-height: 18px;
