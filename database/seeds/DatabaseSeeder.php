@@ -10,6 +10,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /* $this->call(Editions::class);*/
+         $this->call(Editions::class);
     }
 }
