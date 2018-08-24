@@ -76544,7 +76544,7 @@ if (jQuery('#' + appName).length > 0) {
 
         store: window.vuexAdminStore,
 
-        methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])(['setEditions', 'setEditorial', 'setBusy', 'setFilter', 'setOrderBy', 'setTimeout', 'setCurrentArticle', 'setIFrameUrl', 'setNewEditionNumber', 'setNewEditionYear', 'setNewEditionMonth', 'setCurrentPhotoId', 'setNewPhotoAuthor', 'setNewPhotoUrlHighres', 'setNewPhotoUrlLowres', 'setNewPhotoNotes']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])({
+        methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])(['setEditions', 'setEditorial', 'setEditorialCopy', 'setBusy', 'setFilter', 'setOrderBy', 'setTimeout', 'setCurrentArticle', 'setIFrameUrl', 'setNewEditionNumber', 'setNewEditionYear', 'setNewEditionMonth', 'setCurrentPhotoId', 'setNewPhotoAuthor', 'setNewPhotoUrlHighres', 'setNewPhotoUrlLowres', 'setNewPhotoNotes']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])({
             __updateCurrentArticleField: 'updateCurrentArticleField',
             __updateCurrentPhotoField: 'updateCurrentPhotoField',
             __updateLead: 'updateLead',
@@ -76619,10 +76619,16 @@ if (jQuery('#' + appName).length > 0) {
 
                 return axios.get('/api/editorial').then(function (response) {
                     me.setEditorial(response.data.text);
+
+                    me.setEditorialCopy(response.data.text);
                 });
             },
             __saveEditorial: function __saveEditorial() {
-                return axios.post('/api/editorial', { editorial: this.editorial }).then(function (response) {});
+                var me = this;
+
+                return axios.post('/api/editorial', { editorial: this.editorial }).then(function (response) {
+                    me.__loadEditorial();
+                });
             },
             __selectCurrentOrLastEdition: function __selectCurrentOrLastEdition(forceLast) {
                 this.__selectEdition(this.currentEdition && !forceLast ? this.__findEditionById(this.currentEdition.id) : this.editions[this.editions.length - 1], true);
@@ -76971,6 +76977,10 @@ if (jQuery('#' + appName).length > 0) {
 
             currentPhotoOriginal: function currentPhotoOriginal(state) {
                 return state.currentPhotoOriginal;
+            },
+
+            editorialCopy: function editorialCopy(state) {
+                return state.editorialCopy;
             }
         }), {
 
@@ -77369,7 +77379,9 @@ window.vuexAdminStore = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */
     state: {
         editions: [],
 
-        editorial: 'asçjdlkaj lkjal ksjd lajsdlkajklsd',
+        editorial: '',
+
+        editorialCopy: '',
 
         busy: false,
 
@@ -77422,6 +77434,9 @@ window.vuexAdminStore = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */
         },
         setEditorial: function setEditorial(state, payload) {
             state.editorial = payload;
+        },
+        setEditorialCopy: function setEditorialCopy(state, payload) {
+            state.editorialCopy = payload;
         },
         setBusy: function setBusy(state, payload) {
             state.busy = payload;

@@ -8,8 +8,14 @@
         <div class="panel-body scrollable">
             <textarea v-model="editorial" cols="30" rows="20" class="form-control"></textarea>
 
-            <div @click="__saveEditorial()" class="pull-right btn btn-sm btn-primary" style="margin-top: 25px;">
-                Gravar
+            <div @click="__saveEditorial()" :class="'pull-right btn btn-sm ' + (editorial == editorialCopy ? 'btn-default' : 'btn-primary')" style="margin-top: 25px;">
+                <span v-if="editorial == editorialCopy">
+                    Gravado
+                </span>
+
+                <span v-else>
+                    Gravar
+                </span>
             </div>
         </div>
     </div>

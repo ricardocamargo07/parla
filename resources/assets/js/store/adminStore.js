@@ -10,7 +10,9 @@ window.vuexAdminStore = new Vuex.Store({
     state: {
         editions: [],
 
-        editorial: 'asçjdlkaj lkjal ksjd lajsdlkajklsd',
+        editorial: '',
+
+        editorialCopy: '',
 
         busy: false,
 
@@ -64,6 +66,10 @@ window.vuexAdminStore = new Vuex.Store({
 
         setEditorial(state, payload) {
             state.editorial = payload
+        },
+
+        setEditorialCopy(state, payload) {
+            state.editorialCopy = payload
         },
 
         setBusy(state, payload) {
