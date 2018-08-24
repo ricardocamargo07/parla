@@ -13,6 +13,7 @@ if (jQuery('#' + appName).length > 0) {
             ...mapMutations([
                 'setEditions',
                 'setEditorial',
+                'setEditorialCopy',
                 'setBusy',
                 'setFilter',
                 'setOrderBy',
@@ -119,12 +120,16 @@ if (jQuery('#' + appName).length > 0) {
 
                 return axios.get('/api/editorial').then(function(response) {
                     me.setEditorial(response.data.text)
+
+                    me.setEditorialCopy(response.data.text)
                 })
             },
 
             __saveEditorial() {
-                return axios.post('/api/editorial', {editorial: this.editorial}).then(function(response) {
+                const me = this
 
+                return axios.post('/api/editorial', {editorial: this.editorial}).then(function(response) {
+                    me.__loadEditorial()
                 })
             },
 
@@ -558,6 +563,8 @@ if (jQuery('#' + appName).length > 0) {
                 currentPhoto: state => state.currentPhoto,
 
                 currentPhotoOriginal: state => state.currentPhotoOriginal,
+
+                editorialCopy: state => state.editorialCopy,
             }),
 
             editorial: {
