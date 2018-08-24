@@ -30,14 +30,6 @@ Publicação quinzenal da Subdiretoria-Geral de Comunicação Social da Assemble
 - Executar o comando `composer install` para instalar todas as dependências (atualizadas)
 - Executar o comando `php artisan migrate`
 
-#### Passos extras específicos desta aplicação
-
-- Enquanto a aplicação não possuir um módulo de administração, a migração do banco deverá ser feita através do comando:
-
-```
-php artisan migrate:fresh --seed
-```
-
 #### No ambiente de desenvolvimento
 
 - vendor/bin/cghooks add --ignore-lock (uma vez)
