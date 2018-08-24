@@ -7,13 +7,12 @@
                 </p>
             </div>
             <div class="col-md-9 expediente">
-                {!! $editorial !!}
+                {!! $editorial ?? '' !!}
             </div>
         </div>
 
         <p>2018 <a href="http://www.alerj.rj.gov.br/" target="_blank" rel="noopener">Alerj</a></p>
 
         <p class="version">@version</p>
-
     </div>
 </footer>
