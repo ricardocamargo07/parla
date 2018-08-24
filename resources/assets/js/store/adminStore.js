@@ -10,6 +10,8 @@ window.vuexAdminStore = new Vuex.Store({
     state: {
         editions: [],
 
+        editorial: 'asçjdlkaj lkjal ksjd lajsdlkajklsd',
+
         busy: false,
 
         filter: '',
@@ -58,6 +60,10 @@ window.vuexAdminStore = new Vuex.Store({
     mutations: {
         setEditions(state, payload) {
             state.editions = payload
+        },
+
+        setEditorial(state, payload) {
+            state.editorial = payload
         },
 
         setBusy(state, payload) {

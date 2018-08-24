@@ -2,10 +2,13 @@
 use Illuminate\Http\Request;
 use App\Data\Repositories\Articles as ArticlesRepository;
 use App\Data\Repositories\Photos as PhotosRepository;
+use App\Data\Repositories\Editorial as EditorialRepository;
 
 Route::group(['prefix' => '/editions'], function () {
     Route::get('/', function () {
-        return app(ArticlesRepository::class)->edittions();
+        return app(ArticlesRepository::class)->editions(
+            request()->get('allowUnpublished')
+        );
     });
 
     Route::post('/', function (Request $request) {
@@ -63,14 +66,12 @@ Route::post('/markdown/to/html', function (Request $request) {
     return [
         'lead' => $markdown = $request->get('lead'),
         'body' => $markdown = $request->get('body'),
-        'lead_html' =>
-            app(App\Services\Markdown\Service::class)->convert(
-                $request->get('lead')
-            ),
-        'body_html' =>
-            app(App\Services\Markdown\Service::class)->convert(
-                $request->get('body')
-            )
+        'lead_html' => app(App\Services\Markdown\Service::class)->convert(
+            $request->get('lead')
+        ),
+        'body_html' => app(App\Services\Markdown\Service::class)->convert(
+            $request->get('body')
+        )
     ];
 });
 
@@ -106,5 +107,15 @@ Route::group(['prefix' => '/photos'], function () {
 
     Route::get('/{id}/unsetMain', function ($photo_id) {
         return app(PhotosRepository::class)->setMain($photo_id, false);
+    });
+});
+
+Route::group(['prefix' => '/editorial'], function () {
+    Route::get('/', function () {
+        return app(EditorialRepository::class)->get();
+    });
+
+    Route::post('/', function (Request $request) {
+        return app(EditorialRepository::class)->post($request->all());
     });
 });

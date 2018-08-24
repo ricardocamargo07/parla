@@ -14,9 +14,9 @@ class Photos
     {
         $photo = $this->findById($photoId);
 
-        ArticlePhoto
-            ::where('article_id', $photo->article_id)
-            ->update(['main' => false]);
+        ArticlePhoto::where('article_id', $photo->article_id)->update([
+            'main' => false
+        ]);
 
         $photo->main = $isMain;
 

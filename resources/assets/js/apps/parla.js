@@ -16,6 +16,8 @@ if (jQuery('#' + appName).length > 0) {
                 featured: [],
 
                 nonFeatured: [],
+
+                editions: [],
             },
 
             refreshing: false,
@@ -46,6 +48,10 @@ if (jQuery('#' + appName).length > 0) {
                     return this.canShowItem(item)
                 })
             },
+
+            editions() {
+                return _.orderBy(this.tables.editions, ['number'], ['desc']);
+            }
         },
 
         methods: {
@@ -111,6 +117,18 @@ if (jQuery('#' + appName).length > 0) {
                         console.log(error)
 
                         me.tables[table] = []
+                    })
+            },
+
+            loadEditions() {
+                me = this
+
+                axios
+                    .get(
+                        '/api/editions',
+                    )
+                    .then(function(response) {
+                        me.tables.editions = response.data
                     })
             },
 
@@ -183,6 +201,8 @@ if (jQuery('#' + appName).length > 0) {
             this.refreshTable('nonFeatured')
 
             this.refreshTable('all')
+
+            this.loadEditions()
 
             this.refreshCurrentPost()
 

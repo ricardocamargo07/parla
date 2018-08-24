@@ -20,21 +20,17 @@ class Articles
 
         $nextCode = 0;
 
-        $article->edition->articles
-            ->sortBy('order')
-            ->each(function ($article) use (
-                &$lastOrder,
-                &$wasFixed,
-                &$nextCode
-            ) {
-                $nextCode++;
+        $article->edition->articles->sortBy('order')->each(function (
+            $article
+        ) use (&$lastOrder, &$wasFixed, &$nextCode) {
+            $nextCode++;
 
-                if ($article->order !== $nextCode) {
-                    $article->order = $nextCode;
-                    $article->save();
-                    $wasFixed = true;
-                }
-            });
+            if ($article->order !== $nextCode) {
+                $article->order = $nextCode;
+                $article->save();
+                $wasFixed = true;
+            }
+        });
 
         return $wasFixed;
     }
@@ -68,11 +64,10 @@ class Articles
 
     public function findEditionByNumber($number)
     {
-        return Edition
-            ::where(
-                'number',
-                $number === 'last' ? $this->getLastEdition()->number : $number
-            )
+        return Edition::where(
+            'number',
+            $number === 'last' ? $this->getLastEdition()->number : $number
+        )
             ->take(1)
             ->get()
             ->first();
@@ -88,8 +83,7 @@ class Articles
 
         $order1 = $article1->order;
 
-        $lastOrder = Article
-            ::where('edition_id', $article1->edition_id)
+        $lastOrder = Article::where('edition_id', $article1->edition_id)
             ->orderBy('order', 'desc')
             ->first();
 
@@ -121,8 +115,7 @@ class Articles
 
     protected function getBaseQuery($edition_id, $excludeUnpublished = true)
     {
-        $query = Article
-            ::with(['edition', 'photos', 'authors'])
+        $query = Article::with(['edition', 'photos', 'authors'])
             ->where('edition_id', $edition_id)
             ->orderBy('order');
 
@@ -135,8 +128,7 @@ class Articles
 
     protected function getLastEdition()
     {
-        return Edition
-            ::orderBy('number', 'desc')
+        return Edition::orderBy('number', 'desc')
             ->whereNotNull('published_at')
             ->take(1)
             ->get()
@@ -219,9 +211,9 @@ class Articles
                 $notes .
                 (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
 
-            $photo['author_credits'] = (
-                !empty($author) ? "(Foto: $author)" : ''
-            );
+            $photo['author_credits'] = (!empty($author)
+                ? "(Foto: $author)"
+                : '');
 
             return $photo;
         });
@@ -231,8 +223,7 @@ class Articles
     {
         return coollect(
             $this->fillArticleData(
-                Edition
-                    ::where('year', $year)
+                Edition::where('year', $year)
                     ->where('month', $month)
                     ->where('number', $number)
                     ->with('articles')
@@ -245,15 +236,18 @@ class Articles
 
     public function findBySlug($slug)
     {
-        return Article
-            ::all()
+        return Article::all()
             ->where('slug', $slug)
             ->first();
     }
 
-    public function edittions()
+    public function editions($allowUnpublished = true)
     {
-        return Edition::all();
+        if ($allowUnpublished) {
+            return Edition::all();
+        }
+
+        return Edition::whereNotNull('published_at')->get();
     }
 
     public function publish($article_id, $publish = true)
@@ -275,7 +269,7 @@ class Articles
 
         $edition->save();
 
-        return $this->edittions();
+        return $this->editions();
     }
 
     public function createOrUpdate($newArticle)
@@ -307,6 +301,6 @@ class Articles
     {
         Edition::create($data);
 
-        return $this->edittions();
+        return $this->editions();
     }
 }

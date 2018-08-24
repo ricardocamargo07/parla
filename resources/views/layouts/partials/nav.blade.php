@@ -27,13 +27,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outras Edições <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Edição nº0 -  Fevereiro de 2018</a></li>
-                        <li><a href="#">Edição nº1 - Junho de 2018</a></li>
-                        <li><a href="#">Edição nº2 - julho de 2018</a></li>
-                        {{--<li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>--}}
+                        <li v-for="edition in editions">
+                            <a :href="'/editions/'+edition.id">Edição nº@{{ edition.number }} - @{{ edition.month_name }} de @{{ edition.year }}</a>
+                        </li>
                     </ul>
                 </li>
                 {{--<li class="{{ Request::is('contact') ? 'active' : '' }}">

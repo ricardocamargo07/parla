@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Data\Models\Edition;
 use App\Data\Repositories\Articles;
 use App\Data\Repositories\Articles as ArticlesRepository;
+use App\Data\Repositories\Editorial;
 
 class Home extends Controller
 {
@@ -19,10 +20,12 @@ class Home extends Controller
 
     public function index($number = 'last')
     {
-        return view('home.index')->with(
-            'currentEdition',
-            $this->articlesRepository->findEditionByNumber($number)
-        );
+        return view('home.index')->with([
+            'currentEdition' => $this->articlesRepository->findEditionByNumber(
+                $number
+            ),
+            'editorial' => app(Editorial::class)->getMarkdown() ?? ''
+        ]);
     }
 
     public function post()

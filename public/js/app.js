@@ -76544,7 +76544,7 @@ if (jQuery('#' + appName).length > 0) {
 
         store: window.vuexAdminStore,
 
-        methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])(['setEditions', 'setBusy', 'setFilter', 'setOrderBy', 'setTimeout', 'setCurrentArticle', 'setIFrameUrl', 'setNewEditionNumber', 'setNewEditionYear', 'setNewEditionMonth', 'setCurrentPhotoId', 'setNewPhotoAuthor', 'setNewPhotoUrlHighres', 'setNewPhotoUrlLowres', 'setNewPhotoNotes']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])({
+        methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])(['setEditions', 'setEditorial', 'setBusy', 'setFilter', 'setOrderBy', 'setTimeout', 'setCurrentArticle', 'setIFrameUrl', 'setNewEditionNumber', 'setNewEditionYear', 'setNewEditionMonth', 'setCurrentPhotoId', 'setNewPhotoAuthor', 'setNewPhotoUrlHighres', 'setNewPhotoUrlLowres', 'setNewPhotoNotes']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])({
             __updateCurrentArticleField: 'updateCurrentArticleField',
             __updateCurrentPhotoField: 'updateCurrentPhotoField',
             __updateLead: 'updateLead',
@@ -76608,11 +76608,21 @@ if (jQuery('#' + appName).length > 0) {
 
                 me.setBusy(true);
 
-                return axios.get('/api/editions').then(function (response) {
+                return axios.get('/api/editions?allowUnpublished=1').then(function (response) {
                     me.setEditions(response.data);
 
                     me.__selectCurrentOrLastEdition();
                 });
+            },
+            __loadEditorial: function __loadEditorial() {
+                var me = this;
+
+                return axios.get('/api/editorial').then(function (response) {
+                    me.setEditorial(response.data.text);
+                });
+            },
+            __saveEditorial: function __saveEditorial() {
+                return axios.post('/api/editorial', { editorial: this.editorial }).then(function (response) {});
             },
             __selectCurrentOrLastEdition: function __selectCurrentOrLastEdition(forceLast) {
                 this.__selectEdition(this.currentEdition && !forceLast ? this.__findEditionById(this.currentEdition.id) : this.editions[this.editions.length - 1], true);
@@ -76850,6 +76860,9 @@ if (jQuery('#' + appName).length > 0) {
             __selectPreviewPane: function __selectPreviewPane() {
                 this.setIFrameUrl('/editions/' + this.currentEdition.number);
             },
+            __selectEditorialPane: function __selectEditorialPane() {
+                this.setIFrameUrl(null);
+            },
             __updateField: function __updateField(field, value) {
                 this.__updateCurrentArticleField({ field: field, value: value });
             },
@@ -76959,13 +76972,25 @@ if (jQuery('#' + appName).length > 0) {
             currentPhotoOriginal: function currentPhotoOriginal(state) {
                 return state.currentPhotoOriginal;
             }
-        })),
+        }), {
+
+            editorial: {
+                get: function get() {
+                    return this.$store.state.editorial;
+                },
+                set: function set(value) {
+                    this.$store.commit('setEditorial', value);
+                }
+            }
+        }),
         mounted: function mounted() {
             this.__clearNewEdition();
 
             this.__clearNewPhoto();
 
             this.__loadEditions();
+
+            this.__loadEditorial();
 
             this.__clearFilter();
 
@@ -76996,7 +77021,9 @@ if (jQuery('#' + appName).length > 0) {
 
                 featured: [],
 
-                nonFeatured: []
+                nonFeatured: [],
+
+                editions: []
             },
 
             refreshing: false,
@@ -77026,6 +77053,9 @@ if (jQuery('#' + appName).length > 0) {
                 return this.tables.all.filter(function (item) {
                     return _this.canShowItem(item);
                 });
+            },
+            editions: function editions() {
+                return _.orderBy(this.tables.editions, ['number'], ['desc']);
             }
         },
 
@@ -77068,6 +77098,13 @@ if (jQuery('#' + appName).length > 0) {
                     console.log(error);
 
                     me.tables[table] = [];
+                });
+            },
+            loadEditions: function loadEditions() {
+                me = this;
+
+                axios.get('/api/editions').then(function (response) {
+                    me.tables.editions = response.data;
                 });
             },
             openProcesso: function openProcesso(id) {
@@ -77132,6 +77169,8 @@ if (jQuery('#' + appName).length > 0) {
             this.refreshTable('nonFeatured');
 
             this.refreshTable('all');
+
+            this.loadEditions();
 
             this.refreshCurrentPost();
 
@@ -77330,6 +77369,8 @@ window.vuexAdminStore = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */
     state: {
         editions: [],
 
+        editorial: 'asçjdlkaj lkjal ksjd lajsdlkajklsd',
+
         busy: false,
 
         filter: '',
@@ -77378,6 +77419,9 @@ window.vuexAdminStore = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */
     mutations: {
         setEditions: function setEditions(state, payload) {
             state.editions = payload;
+        },
+        setEditorial: function setEditorial(state, payload) {
+            state.editorial = payload;
         },
         setBusy: function setBusy(state, payload) {
             state.busy = payload;

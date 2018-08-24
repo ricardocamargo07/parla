@@ -12,6 +12,7 @@ if (jQuery('#' + appName).length > 0) {
         methods: {
             ...mapMutations([
                 'setEditions',
+                'setEditorial',
                 'setBusy',
                 'setFilter',
                 'setOrderBy',
@@ -106,10 +107,24 @@ if (jQuery('#' + appName).length > 0) {
 
                 me.setBusy(true)
 
-                return axios.get('/api/editions').then(function(response) {
+                return axios.get('/api/editions?allowUnpublished=1').then(function(response) {
                     me.setEditions(response.data)
 
                     me.__selectCurrentOrLastEdition()
+                })
+            },
+
+            __loadEditorial() {
+                var me = this
+
+                return axios.get('/api/editorial').then(function(response) {
+                    me.setEditorial(response.data.text)
+                })
+            },
+
+            __saveEditorial() {
+                return axios.post('/api/editorial', {editorial: this.editorial}).then(function(response) {
+
                 })
             },
 
@@ -450,6 +465,10 @@ if (jQuery('#' + appName).length > 0) {
                 this.setIFrameUrl('/editions/' + this.currentEdition.number)
             },
 
+            __selectEditorialPane() {
+                this.setIFrameUrl(null)
+            },
+
             __updateField(field, value) {
                 this.__updateCurrentArticleField({ field: field, value: value })
             },
@@ -540,6 +559,15 @@ if (jQuery('#' + appName).length > 0) {
 
                 currentPhotoOriginal: state => state.currentPhotoOriginal,
             }),
+
+            editorial: {
+                get() {
+                    return this.$store.state.editorial
+                },
+                set(value) {
+                    this.$store.commit('setEditorial', value)
+                }
+            }
         },
         mounted() {
             this.__clearNewEdition()
@@ -547,6 +575,8 @@ if (jQuery('#' + appName).length > 0) {
             this.__clearNewPhoto()
 
             this.__loadEditions()
+
+            this.__loadEditorial()
 
             this.__clearFilter()
 

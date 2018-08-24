@@ -25,6 +25,13 @@
                 >
                     <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Preview</a>
                 </li>
+
+                <li
+                    role="presentation"
+                    @click="__selectEditorialPane()"
+                >
+                    <a href="#editorial" aria-controls="profile" role="tab" data-toggle="tab">Expediente</a>
+                </li>
             </ul>
 
             <!-- Tab panes -->
@@ -36,6 +43,10 @@
 
                 <div role="tabpanel" class="tab-pane" id="profile">
                     @include('admin.home.partials.preview')
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="editorial">
+                    @include('admin.home.partials.editorial')
                 </div>
             </div>
         </div>

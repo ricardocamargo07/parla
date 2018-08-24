@@ -51,7 +51,7 @@ abstract class BaseModel extends Model implements HasPresenter
         $decorated = AutoPresenter::decorate($this);
 
         foreach ($this->presenters as $key) {
-            $attributes[$key] = $decorated->{$key};
+            $attributes[$key] = $decorated->$key;
         }
 
         return $attributes;

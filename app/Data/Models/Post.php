@@ -16,45 +16,44 @@ class Post
             'created_at' => '2018-02-08',
             'subtitle' => 'Das escadarias do Palácio à Passarela do Samba',
             'authors' => ['Symone Munay', 'Vanessa Schumacker'],
-            'photos' =>
+            'photos' => [
                 [
-                    [
-                        'main' => true,
-                        'url_highres' =>
-                            '/images/photos/gabriel-sorriso1_rafael-wallace.jpg',
-                        'url_lowres' =>
-                            '/images/photos/gabriel-sorriso1_rafael-wallace-1200x800.jpg',
-                        'author' => 'Rafael Wallace',
-                        'notes' =>
-                            'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
-                    ],
-                    [
-                        'main' => false,
-                        'url_highres' =>
-                            '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra.jpg',
-                        'url_lowres' =>
-                            '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra-1200x900.jpg',
-                        'author' => 'Thiago Lontra',
-                        'notes' =>
-                            'O serralheiro Antonio Conceição atua como compositor e interprete'
-                    ],
-                    [
-                        'main' => false,
-                        'url_highres' => '/images/photos/daisa-conceicao.jpg',
-                        'url_lowres' => '/images/photos/daisa-conceicao.jpg',
-                        'author' => '',
-                        'notes' =>
-                            'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança'
-                    ],
-                    [
-                        'main' => false,
-                        'url_highres' => '/images/photos/gabriel-sorriso.jpg',
-                        'url_lowres' => '/images/photos/gabriel-sorriso.jpg',
-                        'author' => '',
-                        'notes' =>
-                            'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D'
-                    ]
+                    'main' => true,
+                    'url_highres' =>
+                        '/images/photos/gabriel-sorriso1_rafael-wallace.jpg',
+                    'url_lowres' =>
+                        '/images/photos/gabriel-sorriso1_rafael-wallace-1200x800.jpg',
+                    'author' => 'Rafael Wallace',
+                    'notes' =>
+                        'O operador e editor de áudio da Alerj, Gabriel Sorriso dedica todo o seu tempo livre à composição de sambas.  "É uma paixão antiga", assume.'
                 ],
+                [
+                    'main' => false,
+                    'url_highres' =>
+                        '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra.jpg',
+                    'url_lowres' =>
+                        '/images/photos/antonio-conceicao4_01_02_2018-thiago-lontra-1200x900.jpg',
+                    'author' => 'Thiago Lontra',
+                    'notes' =>
+                        'O serralheiro Antonio Conceição atua como compositor e interprete'
+                ],
+                [
+                    'main' => false,
+                    'url_highres' => '/images/photos/daisa-conceicao.jpg',
+                    'url_lowres' => '/images/photos/daisa-conceicao.jpg',
+                    'author' => '',
+                    'notes' =>
+                        'A auxiliar de serviços gerais, Daiza Maria, desfila pela Mangueira desde criança'
+                ],
+                [
+                    'main' => false,
+                    'url_highres' => '/images/photos/gabriel-sorriso.jpg',
+                    'url_lowres' => '/images/photos/gabriel-sorriso.jpg',
+                    'author' => '',
+                    'notes' =>
+                        'Sorriso já teve dois sambas-enredo escolhidos por escolas de samba dos grupos B e D'
+                ]
+            ],
             'lead' =>
                 'Entre os dias 9 e 13 de fevereiro, o Rio de Janeiro será tomado por plumas, paetês e muito samba no pé. Para muitos funcionários da Assembleia Legislativa do Estado do Rio de Janeiro (Alerj) esta é a época do ano mais esperada. É o momento de vestir a fantasia e defender na Marques de Sapucaí as cores das suas escolas de samba do coração.',
             'body' =>
@@ -80,19 +79,18 @@ Em 1992, Antônio Nick, como é conhecido, passou a interpretar sambas e só na 
             'subtitle' =>
                 'Saiba como curtir o Carnaval se protegendo do verão carioca',
             'authors' => ['Buanna Rosa', 'David Barbosa'],
-            'photos' =>
+            'photos' => [
                 [
-                    [
-                        'main' => true,
-                        'url_highres' =>
-                            '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
-                        'url_lowres' =>
-                            '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
-                        'author' => 'Rafael Wallace',
-                        'notes' =>
-                            'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
-                    ]
-                ],
+                    'main' => true,
+                    'url_highres' =>
+                        '/images/photos/1070-materia-saude-carnaval-rafael-wallace.jpg',
+                    'url_lowres' =>
+                        '/images/photos/1070-materia-saude-carnaval-rafael-wallace-1200x800.jpg',
+                    'author' => 'Rafael Wallace',
+                    'notes' =>
+                        'A diretora do departamento médico, Mônica Antun Maia, reforça a importância da aplicação frequente do protetor solar e do consumo de muito líquido para ajudar na hidratação'
+                ]
+            ],
             'lead' =>
                 'Fevereiro chegou e com ele os dias de folia. Fantasias prontas, agenda de blocos conferida e marchinhas na ponta da língua são primordiais para quem curte o  Carnaval no Rio de Janeiro, que esse ano será do dia 9 a 13 de fevereiro. Mas no auge do verão carioca, muitos esquecem de cuidar da saúde antes de aproveitar a festa de Momo. A Riotur informou que espera seis milhões de foliões no Rio, 400 mil turistas a mais que em 2017.',
             'body' =>
@@ -121,39 +119,38 @@ nos dias de festa. Procure um posto e garanta a sua.
             'subtitle' =>
                 'Mostra acontece no CCBB, a poucos metros da Alerj, e ficará em cartaz até o dia 26/03',
             'authors' => ['Gustavo Natario'],
-            'photos' =>
+            'photos' => [
                 [
-                    [
-                        'main' => true,
-                        'url_highres' =>
-                            '/images/photos/ex-africa-foto-alexandre-macieira-riotur.jpg',
-                        'url_lowres' =>
-                            '/images/photos/ex-africa-foto-alexandre-macieira-riotur-1200x800.jpg',
-                        'author' => 'Alexandre Macieira',
-                        'notes' =>
-                            'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos'
-                    ],
-                    [
-                        'main' => false,
-                        'url_highres' =>
-                            '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur.jpg',
-                        'url_lowres' =>
-                            '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur-1200x800.jpg',
-                        'author' => 'Alexandre Macieira',
-                        'notes' =>
-                            'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou'
-                    ],
-                    [
-                        'main' => false,
-                        'url_highres' =>
-                            '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur.jpg',
-                        'url_lowres' =>
-                            '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
-                        'author' => 'Alexandre Macieira',
-                        'notes' =>
-                            'A entrada é franca e a exposição está aberta de quarta a segunda'
-                    ]
+                    'main' => true,
+                    'url_highres' =>
+                        '/images/photos/ex-africa-foto-alexandre-macieira-riotur.jpg',
+                    'url_lowres' =>
+                        '/images/photos/ex-africa-foto-alexandre-macieira-riotur-1200x800.jpg',
+                    'author' => 'Alexandre Macieira',
+                    'notes' =>
+                        'A exposição "Ex Africa" ocupa o CCBB até o dia 26 de março com obras de 18 artistas sobre a  representatividade dos povos africanos'
                 ],
+                [
+                    'main' => false,
+                    'url_highres' =>
+                        '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur.jpg',
+                    'url_lowres' =>
+                        '/images/photos/ex-africa-2-foto-alexandre-macieira-riotur-1200x800.jpg',
+                    'author' => 'Alexandre Macieira',
+                    'notes' =>
+                        'Outro ponto alto da mostra é o ensaio fotográfico Code Noir (Código Negro), do fotógrafo Leonce Raphael Agbodjelou'
+                ],
+                [
+                    'main' => false,
+                    'url_highres' =>
+                        '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur.jpg',
+                    'url_lowres' =>
+                        '/images/photos/ex-africa-3-foto-alexandre-macieira-riotur-1200x800.jpg',
+                    'author' => 'Alexandre Macieira',
+                    'notes' =>
+                        'A entrada é franca e a exposição está aberta de quarta a segunda'
+                ]
+            ],
             'lead' =>
                 'A representatividade dos povos africanos e a divulgação de suas identidades culturais são os temas centrais da exposição “Ex África”, que está em cartaz no Centro Cultural Banco do Brasil (CCBB) até o dia 26 de março. A mostra conta com vídeos, músicas, esculturas, fotografias e pinturas que remetem à cultura africana contemporânea. A entrada é franca e a exposição está aberta de quarta a segunda, das 9h às 21h. A poucos metros da Assembleia Legislativa do Estado do Rio de Janeiro (Alerj), o CCBB é uma ótima opção cultural para quem trabalha no Centro e está localizado na Rua Primeiro de Março, número 66.',
             'body' =>
@@ -183,19 +180,17 @@ O acervo do futuro museu será composto por objetos que possam reconstituir a co
             'created_at' => '2018-02-08',
             'subtitle' => '',
             'authors' => ['Symone Munay', 'Leon Lucius'],
-            'photos' =>
+            'photos' => [
                 [
-                    [
-                        'main' => true,
-                        'url_highres' =>
-                            '/images/photos/antigo-restaurante.jpg',
-                        'url_lowres' =>
-                            '/images/photos/antigo-restaurante-1200x800.jpg',
-                        'author' => '',
-                        'notes' =>
-                            'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes'
-                    ]
-                ],
+                    'main' => true,
+                    'url_highres' => '/images/photos/antigo-restaurante.jpg',
+                    'url_lowres' =>
+                        '/images/photos/antigo-restaurante-1200x800.jpg',
+                    'author' => '',
+                    'notes' =>
+                        'O salão no térreo hoje ocupado por uma agência bancária já foi um restaurante com capacidade para atender até 150 clientes'
+                ]
+            ],
             'lead' =>
                 'Todos que circulam diariamente pelo Palácio Tiradentes sabem que há muita história a contar nesses 92 anos de existência. O prédio chama a atenção por sua beleza arquitetônica e também pela imponência. A atual sede da Assembleia Legislativa do Estado do Rio de Janeiro já foi cadeia no Brasil Colônia - onde inclusive o mártir da Inconfidência Mineira, Tiradentes, ficou preso e, já na República, foi Câmara dos Deputados.',
             'body' =>
@@ -215,18 +210,15 @@ O restaurante, com paredes e colunas decoradas com detalhes em gesso, tinha cozi
             'created_at' => '2018-02-08',
             'subtitle' => '',
             'authors' => ['Symone Munay', 'Leon Lucius'],
-            'photos' =>
+            'photos' => [
                 [
-                    [
-                        'main' => true,
-                        'url_highres' =>
-                            '/images/photos/humano-papel-e-caneta.jpg',
-                        'url_lowres' =>
-                            '/images/photos/humano-papel-e-caneta.jpg',
-                        'author' => 'Parla - Alerj',
-                        'notes' => ''
-                    ]
-                ],
+                    'main' => true,
+                    'url_highres' => '/images/photos/humano-papel-e-caneta.jpg',
+                    'url_lowres' => '/images/photos/humano-papel-e-caneta.jpg',
+                    'author' => 'Parla - Alerj',
+                    'notes' => ''
+                ]
+            ],
             'lead' =>
                 'Sabe aquela papelada de trabalho que você precisa agilizar, mas não sabe por onde começar?  A equipe da Subdiretoria de Recursos Humanos da Alerj (RH) está a postos para ajudar a resolver tudo isso.',
             'body' =>
@@ -339,9 +331,9 @@ Para os **estagiários**, o ramal de atendimento é 1369.
                 $notes .
                 (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
 
-            $photo['author_credits'] = (
-                !empty($author) ? "(Foto: $author)" : ''
-            );
+            $photo['author_credits'] = (!empty($author)
+                ? "(Foto: $author)"
+                : '');
 
             return $photo;
         });

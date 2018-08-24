@@ -149,9 +149,9 @@ class Article extends Model
                 $notes .
                 (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
 
-            $photo['author_credits'] = (
-                !empty($author) ? "(Foto: $author)" : ''
-            );
+            $photo['author_credits'] = (!empty($author)
+                ? "(Foto: $author)"
+                : '');
 
             return $photo;
         });
