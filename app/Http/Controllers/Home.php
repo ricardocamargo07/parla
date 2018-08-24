@@ -21,9 +21,10 @@ class Home extends Controller
     public function index($number = 'last')
     {
         return view('home.index')->with([
-            'currentEdition' => $this->articlesRepository->findEditionByNumber(
-                $number
-            ),
+            'currentEdition' =>
+                !$this->articlesRepository
+                    ? null
+                    : $this->articlesRepository->findEditionByNumber($number),
             'editorial' => app(Editorial::class)->getMarkdown() ?? ''
         ]);
     }

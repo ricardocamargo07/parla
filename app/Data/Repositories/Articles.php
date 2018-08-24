@@ -66,7 +66,9 @@ class Articles
     {
         return Edition::where(
             'number',
-            $number === 'last' ? $this->getLastEdition()->number : $number
+            $number === 'last'
+                ? ($this->getLastEdition()->number ?? null)
+                : $number
         )
             ->take(1)
             ->get()
