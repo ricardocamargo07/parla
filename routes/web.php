@@ -15,6 +15,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
-    Route::get('/', 'Admin\Home@index')->name('admin.home.index');
-});
+Route::group(
+    ['prefix' => '/admin', 'middleware' => ['auth', 'administrators']],
+    function () {
+        Route::get('/', 'Admin\Home@index')->name('admin.home.index');
+
+        Route::get(
+            '/administrator/add/{username}',
+            'Admin\Users@addAdmin'
+        )->name('admin.addAdmin');
+
+        Route::get(
+            '/administrator/remove/{username}',
+            'Admin\Users@removeAdmin'
+        )->name('admin.addAdmin');
+
+        Route::get('/users/list', 'Admin\Users@index')->name('admin.users');
+    }
+);
+
+Route::get('/not-an-administrator', 'Admin\Users@notAnAdministrator')->name(
+    'not.an.administrator'
+);

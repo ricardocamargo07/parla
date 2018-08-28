@@ -122,4 +122,41 @@ class Users extends Base
     {
         return User::where('all_notifications', true)->get();
     }
+
+    /**
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function findByUsername($username)
+    {
+        return User::where('username', $username)->first();
+    }
+
+    public function removeAdmin($username)
+    {
+        return $this->setAdminFlag($username, false);
+    }
+
+    public function addAdmin($username)
+    {
+        return $this->setAdminFlag($username, true);
+    }
+
+    /**
+     * @param $username
+     * @return null
+     */
+    protected function setAdminFlag($username, $flag)
+    {
+        if (is_null($user = $this->findByUsername($username))) {
+            return null;
+        }
+
+        $user->is_admin = $flag;
+
+        $user->save();
+
+        return $user;
+    }
 }

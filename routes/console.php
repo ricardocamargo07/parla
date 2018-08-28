@@ -1,5 +1,7 @@
 <?php
+
 use App\Data\Models\Article;
+use App\Data\Repositories\Users;
 use Ramsey\Uuid\Uuid;
 
 Artisan::command('parla:refresh-slugs', function () {
