@@ -28,7 +28,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Outras Edições <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li v-for="edition in editions">
-                            <a :href="'/editions/'+edition.id">Edição nº@{{ edition.number }} - @{{ edition.month_name }} de @{{ edition.year }}</a>
+                            <a :href="'/editions/'+edition.number">Edição nº@{{ edition.number }} - @{{ edition.month_name }} de @{{ edition.year }}</a>
                         </li>
                     </ul>
                 </li>
