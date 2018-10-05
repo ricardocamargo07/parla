@@ -1,4 +1,8 @@
 <?php
+
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
+
 Route::get('/', 'Home@index')->name('home');
 
 Route::get('/editions/{number}', 'Home@editions')->name('editions');
@@ -31,9 +35,15 @@ Route::group(
         )->name('admin.addAdmin');
 
         Route::get('/users/list', 'Admin\Users@index')->name('admin.users');
+
+        Route::get('/backup', 'Admin\Users@backup')->name('admin.backups');
     }
 );
 
 Route::get('/not-an-administrator', 'Admin\Users@notAnAdministrator')->name(
     'not.an.administrator'
 );
+
+
+
+
