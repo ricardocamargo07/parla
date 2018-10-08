@@ -112,10 +112,6 @@ return [
          */
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
-        'mail' => [
-            'to' => 'alexandreee@gmail.com',
-        ],
-
         'slack' => [
             'webhook_url' => '',
 
