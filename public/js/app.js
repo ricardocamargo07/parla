@@ -76911,6 +76911,9 @@ if (jQuery('#' + appName).length > 0) {
                 }
 
                 return this.currentEdition.published_at;
+            },
+            __backup: function __backup() {
+                window.location = '/admin/backup';
             }
         }),
 

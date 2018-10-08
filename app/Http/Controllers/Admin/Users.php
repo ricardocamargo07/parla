@@ -20,6 +20,11 @@ class Users extends Controller
         );
     }
 
+    protected function makeBackupFileName()
+    {
+        return 'parla-backup-' . now()->format('Y-m-d-H-i-s') . '.zip';
+    }
+
     public function removeAdmin($username)
     {
         $success = app(UsersRepository::class)->removeAdmin($username);
@@ -51,12 +56,15 @@ class Users extends Controller
     public function backup()
     {
         Artisan::call('backup:clean');
-        Artisan::call('backup:run', ['--only-db' => '--only-db']);
 
-        $lastBackup = collect(Storage::disk('local')->allFiles())->reject(function ($name){
-            return substr( $name, 0, 13 ) !== "Parla/backup_";
-        })->last();
+        Artisan::call('backup:run', ['--only-db' => true]);
 
-        return Storage::download($lastBackup);
+        $lastBackup = collect(Storage::disk('local')->allFiles())
+            ->reject(function ($name) {
+                return substr($name, 0, 13) !== "Parla/backup_";
+            })
+            ->last();
+
+        return Storage::download($lastBackup, $this->makeBackupFileName());
     }
 }
