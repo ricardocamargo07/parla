@@ -3,6 +3,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Data\Repositories\Users as UsersRepository;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 
 class Users extends Controller
 {
@@ -44,5 +46,17 @@ class Users extends Controller
             'users',
             app(UsersRepository::class)->all()
         );
+    }
+
+    public function backup()
+    {
+        Artisan::call('backup:clean');
+        Artisan::call('backup:run', ['--only-db' => '--only-db']);
+
+        $lastBackup = collect(Storage::disk('local')->allFiles())->reject(function ($name){
+            return substr( $name, 0, 13 ) !== "Parla/backup_";
+        })->last();
+
+        return Storage::download($lastBackup);
     }
 }
