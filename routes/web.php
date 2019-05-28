@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Storage;
+Auth::routes();
 
 Route::get('/', 'Home@index')->name('home');
 
@@ -14,8 +13,6 @@ Route::get('/posts/{year}/{month}/{number}/{slug}', 'Posts@show')->name(
 );
 
 Route::get('/contact', 'Contact@index')->name('contact.index');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -43,7 +40,3 @@ Route::group(
 Route::get('/not-an-administrator', 'Admin\Users@notAnAdministrator')->name(
     'not.an.administrator'
 );
-
-
-
-

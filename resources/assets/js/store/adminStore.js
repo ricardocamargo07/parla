@@ -43,6 +43,7 @@ window.vuexAdminStore = new Vuex.Store({
         iFrameUrl: null,
 
         newEdition: {
+            id: null,
             number: null,
             year: null,
             month: null,
@@ -188,9 +189,19 @@ window.vuexAdminStore = new Vuex.Store({
 
         clearNewEdition(state, payload) {
             state.newEdition = {
+                id: null,
                 number: null,
                 year: null,
                 month: null,
+            }
+        },
+
+        loadNewEditionData(state, payload) {
+            state.newEdition = {
+                id: payload.id,
+                number: payload.number,
+                year: payload.year,
+                month: payload.month,
             }
         },
 

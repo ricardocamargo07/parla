@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,6 +79,7 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
@@ -66,6 +87,10 @@
 /******/ ({
 
 /***/ "./node_modules/autogrow/autogrow.js":
+/*!*******************************************!*\
+  !*** ./node_modules/autogrow/autogrow.js ***!
+  \*******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;;(function( window, factory ) {
@@ -73,23 +98,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;;(function( wind
   /*jshint strict: false */ /* globals define, module, require */
   if ( true ) {
     // AMD
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__("./node_modules/jquery/dist/jquery.js") ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js") ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( jQuery ) {
       return factory( window, jQuery );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else if ( typeof module == 'object' && module.exports ) {
-    // CommonJS
-    module.exports = factory(
-      window,
-      require('jquery')
-    );
-  } else {
-    // browser global
-    factory(
-      window,
-      window.jQuery
-    );
-  }
+  } else {}
 
 }( window, function factory( window, jQuery ) {
 
@@ -221,25 +234,33 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;;(function( wind
 /***/ }),
 
 /***/ "./node_modules/axios/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/axios/index.js ***!
+  \*************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./node_modules/axios/lib/axios.js");
+module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/lib/axios.js");
 
 /***/ }),
 
 /***/ "./node_modules/axios/lib/adapters/xhr.js":
+/*!************************************************!*\
+  !*** ./node_modules/axios/lib/adapters/xhr.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
-var settle = __webpack_require__("./node_modules/axios/lib/core/settle.js");
-var buildURL = __webpack_require__("./node_modules/axios/lib/helpers/buildURL.js");
-var parseHeaders = __webpack_require__("./node_modules/axios/lib/helpers/parseHeaders.js");
-var isURLSameOrigin = __webpack_require__("./node_modules/axios/lib/helpers/isURLSameOrigin.js");
-var createError = __webpack_require__("./node_modules/axios/lib/core/createError.js");
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__("./node_modules/axios/lib/helpers/btoa.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
+var settle = __webpack_require__(/*! ./../core/settle */ "./node_modules/axios/lib/core/settle.js");
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/axios/lib/helpers/buildURL.js");
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/axios/lib/helpers/parseHeaders.js");
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./node_modules/axios/lib/helpers/isURLSameOrigin.js");
+var createError = __webpack_require__(/*! ../core/createError */ "./node_modules/axios/lib/core/createError.js");
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(/*! ./../helpers/btoa */ "./node_modules/axios/lib/helpers/btoa.js");
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -257,7 +278,7 @@ module.exports = function xhrAdapter(config) {
     // For IE 8/9 CORS support
     // Only supports POST and GET calls and doesn't returns the response headers.
     // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if ("development" !== 'test' &&
+    if ( true &&
         typeof window !== 'undefined' &&
         window.XDomainRequest && !('withCredentials' in request) &&
         !isURLSameOrigin(config.url)) {
@@ -336,7 +357,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__("./node_modules/axios/lib/helpers/cookies.js");
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "./node_modules/axios/lib/helpers/cookies.js");
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -416,15 +437,19 @@ module.exports = function xhrAdapter(config) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/axios.js":
+/*!*****************************************!*\
+  !*** ./node_modules/axios/lib/axios.js ***!
+  \*****************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
-var bind = __webpack_require__("./node_modules/axios/lib/helpers/bind.js");
-var Axios = __webpack_require__("./node_modules/axios/lib/core/Axios.js");
-var defaults = __webpack_require__("./node_modules/axios/lib/defaults.js");
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
+var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
+var Axios = __webpack_require__(/*! ./core/Axios */ "./node_modules/axios/lib/core/Axios.js");
+var defaults = __webpack_require__(/*! ./defaults */ "./node_modules/axios/lib/defaults.js");
 
 /**
  * Create an instance of Axios
@@ -457,15 +482,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__("./node_modules/axios/lib/cancel/Cancel.js");
-axios.CancelToken = __webpack_require__("./node_modules/axios/lib/cancel/CancelToken.js");
-axios.isCancel = __webpack_require__("./node_modules/axios/lib/cancel/isCancel.js");
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ "./node_modules/axios/lib/cancel/Cancel.js");
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ "./node_modules/axios/lib/cancel/CancelToken.js");
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ "./node_modules/axios/lib/cancel/isCancel.js");
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__("./node_modules/axios/lib/helpers/spread.js");
+axios.spread = __webpack_require__(/*! ./helpers/spread */ "./node_modules/axios/lib/helpers/spread.js");
 
 module.exports = axios;
 
@@ -476,6 +501,10 @@ module.exports.default = axios;
 /***/ }),
 
 /***/ "./node_modules/axios/lib/cancel/Cancel.js":
+/*!*************************************************!*\
+  !*** ./node_modules/axios/lib/cancel/Cancel.js ***!
+  \*************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -503,12 +532,16 @@ module.exports = Cancel;
 /***/ }),
 
 /***/ "./node_modules/axios/lib/cancel/CancelToken.js":
+/*!******************************************************!*\
+  !*** ./node_modules/axios/lib/cancel/CancelToken.js ***!
+  \******************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__("./node_modules/axios/lib/cancel/Cancel.js");
+var Cancel = __webpack_require__(/*! ./Cancel */ "./node_modules/axios/lib/cancel/Cancel.js");
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -568,6 +601,10 @@ module.exports = CancelToken;
 /***/ }),
 
 /***/ "./node_modules/axios/lib/cancel/isCancel.js":
+/*!***************************************************!*\
+  !*** ./node_modules/axios/lib/cancel/isCancel.js ***!
+  \***************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -581,15 +618,19 @@ module.exports = function isCancel(value) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/Axios.js":
+/*!**********************************************!*\
+  !*** ./node_modules/axios/lib/core/Axios.js ***!
+  \**********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__("./node_modules/axios/lib/defaults.js");
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
-var InterceptorManager = __webpack_require__("./node_modules/axios/lib/core/InterceptorManager.js");
-var dispatchRequest = __webpack_require__("./node_modules/axios/lib/core/dispatchRequest.js");
+var defaults = __webpack_require__(/*! ./../defaults */ "./node_modules/axios/lib/defaults.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ "./node_modules/axios/lib/core/InterceptorManager.js");
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ "./node_modules/axios/lib/core/dispatchRequest.js");
 
 /**
  * Create a new instance of Axios
@@ -668,12 +709,16 @@ module.exports = Axios;
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/InterceptorManager.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/axios/lib/core/InterceptorManager.js ***!
+  \***********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
 function InterceptorManager() {
   this.handlers = [];
@@ -728,12 +773,16 @@ module.exports = InterceptorManager;
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/createError.js":
+/*!****************************************************!*\
+  !*** ./node_modules/axios/lib/core/createError.js ***!
+  \****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__("./node_modules/axios/lib/core/enhanceError.js");
+var enhanceError = __webpack_require__(/*! ./enhanceError */ "./node_modules/axios/lib/core/enhanceError.js");
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -754,17 +803,21 @@ module.exports = function createError(message, config, code, request, response) 
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/dispatchRequest.js":
+/*!********************************************************!*\
+  !*** ./node_modules/axios/lib/core/dispatchRequest.js ***!
+  \********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
-var transformData = __webpack_require__("./node_modules/axios/lib/core/transformData.js");
-var isCancel = __webpack_require__("./node_modules/axios/lib/cancel/isCancel.js");
-var defaults = __webpack_require__("./node_modules/axios/lib/defaults.js");
-var isAbsoluteURL = __webpack_require__("./node_modules/axios/lib/helpers/isAbsoluteURL.js");
-var combineURLs = __webpack_require__("./node_modules/axios/lib/helpers/combineURLs.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
+var transformData = __webpack_require__(/*! ./transformData */ "./node_modules/axios/lib/core/transformData.js");
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ "./node_modules/axios/lib/cancel/isCancel.js");
+var defaults = __webpack_require__(/*! ../defaults */ "./node_modules/axios/lib/defaults.js");
+var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ "./node_modules/axios/lib/helpers/isAbsoluteURL.js");
+var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ "./node_modules/axios/lib/helpers/combineURLs.js");
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -848,6 +901,10 @@ module.exports = function dispatchRequest(config) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/enhanceError.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/axios/lib/core/enhanceError.js ***!
+  \*****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -877,12 +934,16 @@ module.exports = function enhanceError(error, config, code, request, response) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/settle.js":
+/*!***********************************************!*\
+  !*** ./node_modules/axios/lib/core/settle.js ***!
+  \***********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__("./node_modules/axios/lib/core/createError.js");
+var createError = __webpack_require__(/*! ./createError */ "./node_modules/axios/lib/core/createError.js");
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -911,12 +972,16 @@ module.exports = function settle(resolve, reject, response) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/core/transformData.js":
+/*!******************************************************!*\
+  !*** ./node_modules/axios/lib/core/transformData.js ***!
+  \******************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
 /**
  * Transform the data for a request or a response
@@ -939,13 +1004,17 @@ module.exports = function transformData(data, headers, fns) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/defaults.js":
+/*!********************************************!*\
+  !*** ./node_modules/axios/lib/defaults.js ***!
+  \********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
-var normalizeHeaderName = __webpack_require__("./node_modules/axios/lib/helpers/normalizeHeaderName.js");
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "./node_modules/axios/lib/helpers/normalizeHeaderName.js");
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -961,10 +1030,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__("./node_modules/axios/lib/adapters/xhr.js");
+    adapter = __webpack_require__(/*! ./adapters/xhr */ "./node_modules/axios/lib/adapters/xhr.js");
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__("./node_modules/axios/lib/adapters/xhr.js");
+    adapter = __webpack_require__(/*! ./adapters/http */ "./node_modules/axios/lib/adapters/xhr.js");
   }
   return adapter;
 }
@@ -1035,11 +1104,15 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/process/browser.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/bind.js":
+/*!************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/bind.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1059,6 +1132,10 @@ module.exports = function bind(fn, thisArg) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/btoa.js":
+/*!************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/btoa.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1103,12 +1180,16 @@ module.exports = btoa;
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/buildURL.js":
+/*!****************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/buildURL.js ***!
+  \****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -1179,6 +1260,10 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/combineURLs.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/combineURLs.js ***!
+  \*******************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1201,12 +1286,16 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/cookies.js":
+/*!***************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/cookies.js ***!
+  \***************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1262,6 +1351,10 @@ module.exports = (
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/isAbsoluteURL.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \*********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1284,12 +1377,16 @@ module.exports = function isAbsoluteURL(url) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/isURLSameOrigin.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \***********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -1360,12 +1457,16 @@ module.exports = (
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/normalizeHeaderName.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \***************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ../utils */ "./node_modules/axios/lib/utils.js");
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -1380,12 +1481,16 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/parseHeaders.js":
+/*!********************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__("./node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -1441,6 +1546,10 @@ module.exports = function parseHeaders(headers) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/helpers/spread.js":
+/*!**************************************************!*\
+  !*** ./node_modules/axios/lib/helpers/spread.js ***!
+  \**************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1476,13 +1585,17 @@ module.exports = function spread(callback) {
 /***/ }),
 
 /***/ "./node_modules/axios/lib/utils.js":
+/*!*****************************************!*\
+  !*** ./node_modules/axios/lib/utils.js ***!
+  \*****************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__("./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__("./node_modules/is-buffer/index.js");
+var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -1787,11 +1900,15 @@ module.exports = {
 /***/ }),
 
 /***/ "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js ***!
+  \*********************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under the MIT license
  */
 
@@ -1808,10 +1925,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.7
- * http://getbootstrap.com/javascript/#transitions
+ * Bootstrap: transition.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#transitions
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -1819,7 +1936,7 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
 
-  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // CSS TRANSITION SUPPORT (Shoutout: https://modernizr.com/)
   // ============================================================
 
   function transitionEnd() {
@@ -1841,7 +1958,7 @@ if (typeof jQuery === 'undefined') {
     return false // explicit for ie8 (  ._.)
   }
 
-  // http://blog.alexmaccaw.com/css-transitions
+  // https://blog.alexmaccaw.com/css-transitions
   $.fn.emulateTransitionEnd = function (duration) {
     var called = false
     var $el = this
@@ -1868,10 +1985,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.3.7
- * http://getbootstrap.com/javascript/#alerts
+ * Bootstrap: alert.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#alerts
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -1887,7 +2004,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.3.7'
+  Alert.VERSION = '3.4.1'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -1900,7 +2017,8 @@ if (typeof jQuery === 'undefined') {
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    var $parent = $(selector === '#' ? [] : selector)
+    selector    = selector === '#' ? [] : selector
+    var $parent = $(document).find(selector)
 
     if (e) e.preventDefault()
 
@@ -1963,10 +2081,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.3.7
- * http://getbootstrap.com/javascript/#buttons
+ * Bootstrap: button.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#buttons
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -1983,7 +2101,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.3.7'
+  Button.VERSION  = '3.4.1'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -2089,10 +2207,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.7
- * http://getbootstrap.com/javascript/#carousel
+ * Bootstrap: carousel.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#carousel
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2120,7 +2238,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.3.7'
+  Carousel.VERSION  = '3.4.1'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -2234,7 +2352,9 @@ if (typeof jQuery === 'undefined') {
     var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
     if ($.support.transition && this.$element.hasClass('slide')) {
       $next.addClass(type)
-      $next[0].offsetWidth // force reflow
+      if (typeof $next === 'object' && $next.length) {
+        $next[0].offsetWidth // force reflow
+      }
       $active.addClass(direction)
       $next.addClass(direction)
       $active
@@ -2296,10 +2416,17 @@ if (typeof jQuery === 'undefined') {
   // =================
 
   var clickHandler = function (e) {
-    var href
     var $this   = $(this)
-    var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
+    var href    = $this.attr('href')
+    if (href) {
+      href = href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+    }
+
+    var target  = $this.attr('data-target') || href
+    var $target = $(document).find(target)
+
     if (!$target.hasClass('carousel')) return
+
     var options = $.extend({}, $target.data(), $this.data())
     var slideIndex = $this.attr('data-slide-to')
     if (slideIndex) options.interval = false
@@ -2327,10 +2454,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.7
- * http://getbootstrap.com/javascript/#collapse
+ * Bootstrap: collapse.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#collapse
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2358,7 +2485,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.3.7'
+  Collapse.VERSION  = '3.4.1'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -2465,7 +2592,7 @@ if (typeof jQuery === 'undefined') {
   }
 
   Collapse.prototype.getParent = function () {
-    return $(this.options.parent)
+    return $(document).find(this.options.parent)
       .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
       .each($.proxy(function (i, element) {
         var $element = $(element)
@@ -2488,7 +2615,7 @@ if (typeof jQuery === 'undefined') {
     var target = $trigger.attr('data-target')
       || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
 
-    return $(target)
+    return $(document).find(target)
   }
 
 
@@ -2540,10 +2667,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.3.7
- * http://getbootstrap.com/javascript/#dropdowns
+ * Bootstrap: dropdown.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#dropdowns
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2560,7 +2687,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.7'
+  Dropdown.VERSION = '3.4.1'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -2570,7 +2697,7 @@ if (typeof jQuery === 'undefined') {
       selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    var $parent = selector && $(selector)
+    var $parent = selector !== '#' ? $(document).find(selector) : null
 
     return $parent && $parent.length ? $parent : $this.parent()
   }
@@ -2706,10 +2833,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.7
- * http://getbootstrap.com/javascript/#modals
+ * Bootstrap: modal.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#modals
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -2721,15 +2848,16 @@ if (typeof jQuery === 'undefined') {
   // ======================
 
   var Modal = function (element, options) {
-    this.options             = options
-    this.$body               = $(document.body)
-    this.$element            = $(element)
-    this.$dialog             = this.$element.find('.modal-dialog')
-    this.$backdrop           = null
-    this.isShown             = null
-    this.originalBodyPad     = null
-    this.scrollbarWidth      = 0
+    this.options = options
+    this.$body = $(document.body)
+    this.$element = $(element)
+    this.$dialog = this.$element.find('.modal-dialog')
+    this.$backdrop = null
+    this.isShown = null
+    this.originalBodyPad = null
+    this.scrollbarWidth = 0
     this.ignoreBackdropClick = false
+    this.fixedContent = '.navbar-fixed-top, .navbar-fixed-bottom'
 
     if (this.options.remote) {
       this.$element
@@ -2740,7 +2868,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.VERSION  = '3.3.7'
+  Modal.VERSION = '3.4.1'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -2757,7 +2885,7 @@ if (typeof jQuery === 'undefined') {
 
   Modal.prototype.show = function (_relatedTarget) {
     var that = this
-    var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
+    var e = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
 
     this.$element.trigger(e)
 
@@ -2848,8 +2976,8 @@ if (typeof jQuery === 'undefined') {
       .off('focusin.bs.modal') // guard against infinite focus loop
       .on('focusin.bs.modal', $.proxy(function (e) {
         if (document !== e.target &&
-            this.$element[0] !== e.target &&
-            !this.$element.has(e.target).length) {
+          this.$element[0] !== e.target &&
+          !this.$element.has(e.target).length) {
           this.$element.trigger('focus')
         }
       }, this))
@@ -2951,7 +3079,7 @@ if (typeof jQuery === 'undefined') {
     var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
 
     this.$element.css({
-      paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
+      paddingLeft: !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
       paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
     })
   }
@@ -2976,11 +3104,26 @@ if (typeof jQuery === 'undefined') {
   Modal.prototype.setScrollbar = function () {
     var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
     this.originalBodyPad = document.body.style.paddingRight || ''
-    if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
+    var scrollbarWidth = this.scrollbarWidth
+    if (this.bodyIsOverflowing) {
+      this.$body.css('padding-right', bodyPad + scrollbarWidth)
+      $(this.fixedContent).each(function (index, element) {
+        var actualPadding = element.style.paddingRight
+        var calculatedPadding = $(element).css('padding-right')
+        $(element)
+          .data('padding-right', actualPadding)
+          .css('padding-right', parseFloat(calculatedPadding) + scrollbarWidth + 'px')
+      })
+    }
   }
 
   Modal.prototype.resetScrollbar = function () {
     this.$body.css('padding-right', this.originalBodyPad)
+    $(this.fixedContent).each(function (index, element) {
+      var padding = $(element).data('padding-right')
+      $(element).removeData('padding-right')
+      element.style.paddingRight = padding ? padding : ''
+    })
   }
 
   Modal.prototype.measureScrollbar = function () { // thx walsh
@@ -2998,8 +3141,8 @@ if (typeof jQuery === 'undefined') {
 
   function Plugin(option, _relatedTarget) {
     return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.modal')
+      var $this = $(this)
+      var data = $this.data('bs.modal')
       var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
 
       if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
@@ -3010,7 +3153,7 @@ if (typeof jQuery === 'undefined') {
 
   var old = $.fn.modal
 
-  $.fn.modal             = Plugin
+  $.fn.modal = Plugin
   $.fn.modal.Constructor = Modal
 
 
@@ -3027,10 +3170,13 @@ if (typeof jQuery === 'undefined') {
   // ==============
 
   $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
-    var $this   = $(this)
-    var href    = $this.attr('href')
-    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
-    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+    var $this = $(this)
+    var href = $this.attr('href')
+    var target = $this.attr('data-target') ||
+      (href && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
+
+    var $target = $(document).find(target)
+    var option = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
 
     if ($this.is('a')) e.preventDefault()
 
@@ -3046,17 +3192,147 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.3.7
- * http://getbootstrap.com/javascript/#tooltip
+ * Bootstrap: tooltip.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
-
 +function ($) {
   'use strict';
+
+  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn']
+
+  var uriAttrs = [
+    'background',
+    'cite',
+    'href',
+    'itemtype',
+    'longdesc',
+    'poster',
+    'src',
+    'xlink:href'
+  ]
+
+  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
+
+  var DefaultWhitelist = {
+    // Global attributes allowed on any supplied element below.
+    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
+    a: ['target', 'href', 'title', 'rel'],
+    area: [],
+    b: [],
+    br: [],
+    col: [],
+    code: [],
+    div: [],
+    em: [],
+    hr: [],
+    h1: [],
+    h2: [],
+    h3: [],
+    h4: [],
+    h5: [],
+    h6: [],
+    i: [],
+    img: ['src', 'alt', 'title', 'width', 'height'],
+    li: [],
+    ol: [],
+    p: [],
+    pre: [],
+    s: [],
+    small: [],
+    span: [],
+    sub: [],
+    sup: [],
+    strong: [],
+    u: [],
+    ul: []
+  }
+
+  /**
+   * A pattern that recognizes a commonly useful subset of URLs that are safe.
+   *
+   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   */
+  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi
+
+  /**
+   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   *
+   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   */
+  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i
+
+  function allowedAttribute(attr, allowedAttributeList) {
+    var attrName = attr.nodeName.toLowerCase()
+
+    if ($.inArray(attrName, allowedAttributeList) !== -1) {
+      if ($.inArray(attrName, uriAttrs) !== -1) {
+        return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN))
+      }
+
+      return true
+    }
+
+    var regExp = $(allowedAttributeList).filter(function (index, value) {
+      return value instanceof RegExp
+    })
+
+    // Check if a regular expression validates the attribute.
+    for (var i = 0, l = regExp.length; i < l; i++) {
+      if (attrName.match(regExp[i])) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
+    if (unsafeHtml.length === 0) {
+      return unsafeHtml
+    }
+
+    if (sanitizeFn && typeof sanitizeFn === 'function') {
+      return sanitizeFn(unsafeHtml)
+    }
+
+    // IE 8 and below don't support createHTMLDocument
+    if (!document.implementation || !document.implementation.createHTMLDocument) {
+      return unsafeHtml
+    }
+
+    var createdDocument = document.implementation.createHTMLDocument('sanitization')
+    createdDocument.body.innerHTML = unsafeHtml
+
+    var whitelistKeys = $.map(whiteList, function (el, i) { return i })
+    var elements = $(createdDocument.body).find('*')
+
+    for (var i = 0, len = elements.length; i < len; i++) {
+      var el = elements[i]
+      var elName = el.nodeName.toLowerCase()
+
+      if ($.inArray(elName, whitelistKeys) === -1) {
+        el.parentNode.removeChild(el)
+
+        continue
+      }
+
+      var attributeList = $.map(el.attributes, function (el) { return el })
+      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
+
+      for (var j = 0, len2 = attributeList.length; j < len2; j++) {
+        if (!allowedAttribute(attributeList[j], whitelistedAttributes)) {
+          el.removeAttribute(attributeList[j].nodeName)
+        }
+      }
+    }
+
+    return createdDocument.body.innerHTML
+  }
 
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
@@ -3073,7 +3349,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.7'
+  Tooltip.VERSION  = '3.4.1'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -3090,7 +3366,10 @@ if (typeof jQuery === 'undefined') {
     viewport: {
       selector: 'body',
       padding: 0
-    }
+    },
+    sanitize : true,
+    sanitizeFn : null,
+    whiteList : DefaultWhitelist
   }
 
   Tooltip.prototype.init = function (type, element, options) {
@@ -3098,7 +3377,7 @@ if (typeof jQuery === 'undefined') {
     this.type      = type
     this.$element  = $(element)
     this.options   = this.getOptions(options)
-    this.$viewport = this.options.viewport && $($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
+    this.$viewport = this.options.viewport && $(document).find($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
     this.inState   = { click: false, hover: false, focus: false }
 
     if (this.$element[0] instanceof document.constructor && !this.options.selector) {
@@ -3131,13 +3410,25 @@ if (typeof jQuery === 'undefined') {
   }
 
   Tooltip.prototype.getOptions = function (options) {
-    options = $.extend({}, this.getDefaults(), this.$element.data(), options)
+    var dataAttributes = this.$element.data()
+
+    for (var dataAttr in dataAttributes) {
+      if (dataAttributes.hasOwnProperty(dataAttr) && $.inArray(dataAttr, DISALLOWED_ATTRIBUTES) !== -1) {
+        delete dataAttributes[dataAttr]
+      }
+    }
+
+    options = $.extend({}, this.getDefaults(), dataAttributes, options)
 
     if (options.delay && typeof options.delay == 'number') {
       options.delay = {
         show: options.delay,
         hide: options.delay
       }
+    }
+
+    if (options.sanitize) {
+      options.template = sanitizeHtml(options.template, options.whiteList, options.sanitizeFn)
     }
 
     return options
@@ -3251,7 +3542,7 @@ if (typeof jQuery === 'undefined') {
         .addClass(placement)
         .data('bs.' + this.type, this)
 
-      this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
+      this.options.container ? $tip.appendTo($(document).find(this.options.container)) : $tip.insertAfter(this.$element)
       this.$element.trigger('inserted.bs.' + this.type)
 
       var pos          = this.getPosition()
@@ -3353,7 +3644,16 @@ if (typeof jQuery === 'undefined') {
     var $tip  = this.tip()
     var title = this.getTitle()
 
-    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    if (this.options.html) {
+      if (this.options.sanitize) {
+        title = sanitizeHtml(title, this.options.whiteList, this.options.sanitizeFn)
+      }
+
+      $tip.find('.tooltip-inner').html(title)
+    } else {
+      $tip.find('.tooltip-inner').text(title)
+    }
+
     $tip.removeClass('fade in top bottom left right')
   }
 
@@ -3534,6 +3834,9 @@ if (typeof jQuery === 'undefined') {
     })
   }
 
+  Tooltip.prototype.sanitizeHtml = function (unsafeHtml) {
+    return sanitizeHtml(unsafeHtml, this.options.whiteList, this.options.sanitizeFn)
+  }
 
   // TOOLTIP PLUGIN DEFINITION
   // =========================
@@ -3567,10 +3870,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.3.7
- * http://getbootstrap.com/javascript/#popovers
+ * Bootstrap: popover.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#popovers
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -3587,7 +3890,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.3.7'
+  Popover.VERSION  = '3.4.1'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -3613,10 +3916,25 @@ if (typeof jQuery === 'undefined') {
     var title   = this.getTitle()
     var content = this.getContent()
 
-    $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-    $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
-      this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
-    ](content)
+    if (this.options.html) {
+      var typeContent = typeof content
+
+      if (this.options.sanitize) {
+        title = this.sanitizeHtml(title)
+
+        if (typeContent === 'string') {
+          content = this.sanitizeHtml(content)
+        }
+      }
+
+      $tip.find('.popover-title').html(title)
+      $tip.find('.popover-content').children().detach().end()[
+        typeContent === 'string' ? 'html' : 'append'
+      ](content)
+    } else {
+      $tip.find('.popover-title').text(title)
+      $tip.find('.popover-content').children().detach().end().text(content)
+    }
 
     $tip.removeClass('fade top bottom left right in')
 
@@ -3635,8 +3953,8 @@ if (typeof jQuery === 'undefined') {
 
     return $e.attr('data-content')
       || (typeof o.content == 'function' ?
-            o.content.call($e[0]) :
-            o.content)
+        o.content.call($e[0]) :
+        o.content)
   }
 
   Popover.prototype.arrow = function () {
@@ -3676,10 +3994,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.7
- * http://getbootstrap.com/javascript/#scrollspy
+ * Bootstrap: scrollspy.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#scrollspy
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -3705,7 +4023,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.7'
+  ScrollSpy.VERSION  = '3.4.1'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -3849,10 +4167,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.3.7
- * http://getbootstrap.com/javascript/#tabs
+ * Bootstrap: tab.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#tabs
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -3869,7 +4187,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.7'
+  Tab.VERSION = '3.4.1'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -3898,7 +4216,7 @@ if (typeof jQuery === 'undefined') {
 
     if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
 
-    var $target = $(selector)
+    var $target = $(document).find(selector)
 
     this.activate($this.closest('li'), $ul)
     this.activate($target, $target.parent(), function () {
@@ -3923,15 +4241,15 @@ if (typeof jQuery === 'undefined') {
       $active
         .removeClass('active')
         .find('> .dropdown-menu > .active')
-          .removeClass('active')
+        .removeClass('active')
         .end()
         .find('[data-toggle="tab"]')
-          .attr('aria-expanded', false)
+        .attr('aria-expanded', false)
 
       element
         .addClass('active')
         .find('[data-toggle="tab"]')
-          .attr('aria-expanded', true)
+        .attr('aria-expanded', true)
 
       if (transition) {
         element[0].offsetWidth // reflow for transition
@@ -3943,10 +4261,10 @@ if (typeof jQuery === 'undefined') {
       if (element.parent('.dropdown-menu').length) {
         element
           .closest('li.dropdown')
-            .addClass('active')
+          .addClass('active')
           .end()
           .find('[data-toggle="tab"]')
-            .attr('aria-expanded', true)
+          .attr('aria-expanded', true)
       }
 
       callback && callback()
@@ -4005,10 +4323,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.3.7
- * http://getbootstrap.com/javascript/#affix
+ * Bootstrap: affix.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#affix
  * ========================================================================
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -4022,7 +4340,9 @@ if (typeof jQuery === 'undefined') {
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
-    this.$target = $(this.options.target)
+    var target = this.options.target === Affix.DEFAULTS.target ? $(this.options.target) : $(document).find(this.options.target)
+
+    this.$target = target
       .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
       .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
 
@@ -4034,7 +4354,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.3.7'
+  Affix.VERSION  = '3.4.1'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -4171,22 +4491,21 @@ if (typeof jQuery === 'undefined') {
 /***/ }),
 
 /***/ "./node_modules/fullcalendar/dist/fullcalendar.js":
+/*!********************************************************!*\
+  !*** ./node_modules/fullcalendar/dist/fullcalendar.js ***!
+  \********************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
- * FullCalendar v3.9.0
+ * FullCalendar v3.10.0
  * Docs & License: https://fullcalendar.io/
  * (c) 2018 Adam Shaw
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__("./node_modules/moment/moment.js"), __webpack_require__("./node_modules/jquery/dist/jquery.js"));
-	else if(typeof define === 'function' && define.amd)
-		define(["moment", "jquery"], factory);
-	else if(typeof exports === 'object')
-		exports["FullCalendar"] = factory(require("moment"), require("jquery"));
-	else
-		root["FullCalendar"] = factory(root["moment"], root["jQuery"]);
+		module.exports = factory(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+	else {}
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -4250,7 +4569,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 236);
+/******/ 	return __webpack_require__(__webpack_require__.s = 256);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4375,7 +4694,7 @@ function distributeHeight(els, availableHeight, shouldRedistribute) {
         var naturalOffset = flexOffsets[i];
         var naturalHeight = flexHeights[i];
         var newHeight = minOffset - (naturalOffset - naturalHeight); // subtract the margin/padding
-        if (naturalOffset < minOffset) {
+        if (naturalOffset < minOffset) { // we check this again because redistribution might have changed things
             $(el).height(newHeight);
         }
     });
@@ -4489,7 +4808,7 @@ function getScrollbarWidths(el) {
     leftRightWidth = sanitizeScrollbarWidth(leftRightWidth);
     bottomWidth = sanitizeScrollbarWidth(bottomWidth);
     widths = { left: 0, right: 0, top: 0, bottom: bottomWidth };
-    if (getIsLeftRtlScrollbars() && el.css('direction') === 'rtl') {
+    if (getIsLeftRtlScrollbars() && el.css('direction') === 'rtl') { // is the scrollbar on the left side?
         widths.left = leftRightWidth;
     }
     else {
@@ -4752,13 +5071,13 @@ exports.computeDurationGreatestUnit = computeDurationGreatestUnit;
 // Results are based on Moment's .as() and .diff() methods, so results can depend on internal handling
 // of month-diffing logic (which tends to vary from version to version).
 function computeRangeAs(unit, start, end) {
-    if (end != null) {
+    if (end != null) { // given start, end
         return end.diff(start, unit, true);
     }
-    else if (moment.isDuration(start)) {
+    else if (moment.isDuration(start)) { // given duration
         return start.as(unit);
     }
-    else {
+    else { // given { start, end } range object
         return start.end.diff(start.start, unit, true);
     }
 }
@@ -4884,7 +5203,7 @@ function mergeProps(propObjs, complexProps) {
     for (i = propObjs.length - 1; i >= 0; i--) {
         props = propObjs[i];
         for (name in props) {
-            if (!(name in dest)) {
+            if (!(name in dest)) { // if already assigned by previous props or complex props, don't reassign
                 dest[name] = props[name];
             }
         }
@@ -4922,7 +5241,7 @@ function removeMatching(array, testFunc) {
     var removeCnt = 0;
     var i = 0;
     while (i < array.length) {
-        if (testFunc(array[i])) {
+        if (testFunc(array[i])) { // truthy value means *remove*
             array.splice(i, 1);
             removeCnt++;
         }
@@ -4951,7 +5270,7 @@ exports.removeExact = removeExact;
 function isArraysEqual(a0, a1) {
     var len = a0.length;
     var i;
-    if (len == null || len !== a1.length) {
+    if (len == null || len !== a1.length) { // not array? or not same length?
         return false;
     }
     for (i = 0; i < len; i++) {
@@ -5082,7 +5401,7 @@ exports.debounce = debounce;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment = __webpack_require__(0);
-var moment_ext_1 = __webpack_require__(10);
+var moment_ext_1 = __webpack_require__(11);
 var UnzonedRange = /** @class */ (function () {
     function UnzonedRange(startInput, endInput) {
         // TODO: move these into footprint.
@@ -5117,7 +5436,7 @@ var UnzonedRange = /** @class */ (function () {
         for (i = 0; i < ranges.length; i++) {
             dateRange = ranges[i];
             // add the span of time before the event (if there is any)
-            if (dateRange.startMs > startMs) {
+            if (dateRange.startMs > startMs) { // compare millisecond time (skip any ambig logic)
                 invertedRanges.push(new UnzonedRange(startMs, dateRange.startMs));
             }
             if (dateRange.endMs > startMs) {
@@ -5125,7 +5444,7 @@ var UnzonedRange = /** @class */ (function () {
             }
         }
         // add the span of time after the last event (if there is any)
-        if (startMs < constraintRange.endMs) {
+        if (startMs < constraintRange.endMs) { // compare millisecond time (skip any ambig logic)
             invertedRanges.push(new UnzonedRange(startMs, constraintRange.endMs));
         }
         return invertedRanges;
@@ -5233,9 +5552,9 @@ function compareUnzonedRanges(range1, range2) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var ParsableModelMixin_1 = __webpack_require__(208);
-var Class_1 = __webpack_require__(33);
-var EventDefParser_1 = __webpack_require__(49);
+var ParsableModelMixin_1 = __webpack_require__(52);
+var Class_1 = __webpack_require__(35);
+var EventDefParser_1 = __webpack_require__(36);
 var EventSource = /** @class */ (function (_super) {
     tslib_1.__extends(EventSource, _super);
     // can we do away with calendar? at least for the abstract?
@@ -5364,7 +5683,7 @@ after class:
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var Mixin_1 = __webpack_require__(14);
+var Mixin_1 = __webpack_require__(15);
 var guid = 0;
 var ListenerMixin = /** @class */ (function (_super) {
     tslib_1.__extends(ListenerMixin, _super);
@@ -5383,7 +5702,7 @@ var ListenerMixin = /** @class */ (function (_super) {
       })
     */
     ListenerMixin.prototype.listenTo = function (other, arg, callback) {
-        if (typeof arg === 'object') {
+        if (typeof arg === 'object') { // given dictionary of callbacks
             for (var eventName in arg) {
                 if (arg.hasOwnProperty(eventName)) {
                     this.listenTo(other, eventName, arg[eventName]);
@@ -5421,8 +5740,76 @@ exports.default = ListenerMixin;
 
 /***/ }),
 /* 8 */,
-/* 9 */,
-/* 10 */
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var EventDef_1 = __webpack_require__(37);
+var EventInstance_1 = __webpack_require__(53);
+var EventDateProfile_1 = __webpack_require__(16);
+var SingleEventDef = /** @class */ (function (_super) {
+    tslib_1.__extends(SingleEventDef, _super);
+    function SingleEventDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /*
+    Will receive start/end params, but will be ignored.
+    */
+    SingleEventDef.prototype.buildInstances = function () {
+        return [this.buildInstance()];
+    };
+    SingleEventDef.prototype.buildInstance = function () {
+        return new EventInstance_1.default(this, // definition
+        this.dateProfile);
+    };
+    SingleEventDef.prototype.isAllDay = function () {
+        return this.dateProfile.isAllDay();
+    };
+    SingleEventDef.prototype.clone = function () {
+        var def = _super.prototype.clone.call(this);
+        def.dateProfile = this.dateProfile;
+        return def;
+    };
+    SingleEventDef.prototype.rezone = function () {
+        var calendar = this.source.calendar;
+        var dateProfile = this.dateProfile;
+        this.dateProfile = new EventDateProfile_1.default(calendar.moment(dateProfile.start), dateProfile.end ? calendar.moment(dateProfile.end) : null, calendar);
+    };
+    /*
+    NOTE: if super-method fails, should still attempt to apply
+    */
+    SingleEventDef.prototype.applyManualStandardProps = function (rawProps) {
+        var superSuccess = _super.prototype.applyManualStandardProps.call(this, rawProps);
+        var dateProfile = EventDateProfile_1.default.parse(rawProps, this.source); // returns null on failure
+        if (dateProfile) {
+            this.dateProfile = dateProfile;
+            // make sure `date` shows up in the legacy event objects as-is
+            if (rawProps.date != null) {
+                this.miscProps.date = rawProps.date;
+            }
+            return superSuccess;
+        }
+        else {
+            return false;
+        }
+    };
+    return SingleEventDef;
+}(EventDef_1.default));
+exports.default = SingleEventDef;
+// Parsing
+// ---------------------------------------------------------------------------------------------------------------------
+SingleEventDef.defineStandardProps({
+    start: false,
+    date: false,
+    end: false,
+    allDay: false
+});
+
+
+/***/ }),
+/* 10 */,
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5462,7 +5849,7 @@ momentExt.utc = function () {
     var mom = makeMoment(arguments, true);
     // Force it into UTC because makeMoment doesn't guarantee it
     // (if given a pre-existing moment for example)
-    if (mom.hasTime()) {
+    if (mom.hasTime()) { // don't give ambiguously-timed moments a UTC zone
         mom.utc();
     }
     return mom;
@@ -5489,7 +5876,7 @@ function makeMoment(args, parseAsUTC, parseZone) {
     if (moment.isMoment(input) || util_1.isNativeDate(input) || input === undefined) {
         mom = moment.apply(null, args);
     }
-    else {
+    else { // "parsing" is required
         isAmbigTime = false;
         isAmbigZone = false;
         if (isSingleString) {
@@ -5520,7 +5907,7 @@ function makeMoment(args, parseAsUTC, parseZone) {
             mom._ambigTime = true;
             mom._ambigZone = true; // ambiguous time always means ambiguous zone
         }
-        else if (parseZone) {
+        else if (parseZone) { // let's record the inputted zone somehow
             if (isAmbigZone) {
                 mom._ambigZone = true;
             }
@@ -5538,7 +5925,7 @@ function makeMoment(args, parseAsUTC, parseZone) {
 // `weeks` is an alias for `week`
 newMomentProto.week = newMomentProto.weeks = function (input) {
     var weekCalc = this._locale._fullCalendar_weekCalc;
-    if (input == null && typeof weekCalc === 'function') {
+    if (input == null && typeof weekCalc === 'function') { // custom function only works for getter
         return weekCalc(this);
     }
     else if (weekCalc === 'ISO') {
@@ -5561,7 +5948,7 @@ newMomentProto.time = function (time) {
     if (!this._fullCalendar) {
         return oldMomentProto.time.apply(this, arguments);
     }
-    if (time == null) {
+    if (time == null) { // getter
         return moment.duration({
             hours: this.hours(),
             minutes: this.minutes(),
@@ -5569,7 +5956,7 @@ newMomentProto.time = function (time) {
             milliseconds: this.milliseconds()
         });
     }
-    else {
+    else { // setter
         this._ambigTime = false; // mark that the moment now has a time
         if (!moment.isDuration(time) && !moment.isMoment(time)) {
             time = moment.duration(time);
@@ -5656,7 +6043,7 @@ newMomentProto.utc = function (keepLocalTime) {
 };
 // implicitly marks a zone (will probably get called upon .utc() and .local())
 newMomentProto.utcOffset = function (tzo) {
-    if (tzo != null) {
+    if (tzo != null) { // setter
         // these assignments needs to happen before the original zone method is called.
         // I forget why, something to do with a browser crash.
         this._ambigTime = false;
@@ -5667,7 +6054,35 @@ newMomentProto.utcOffset = function (tzo) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+/*
+Meant to be immutable
+*/
+var ComponentFootprint = /** @class */ (function () {
+    function ComponentFootprint(unzonedRange, isAllDay) {
+        this.isAllDay = false; // component can choose to ignore this
+        this.unzonedRange = unzonedRange;
+        this.isAllDay = isAllDay;
+    }
+    /*
+    Only works for non-open-ended ranges.
+    */
+    ComponentFootprint.prototype.toLegacy = function (calendar) {
+        return {
+            start: calendar.msToMoment(this.unzonedRange.startMs, this.isAllDay),
+            end: calendar.msToMoment(this.unzonedRange.endMs, this.isAllDay)
+        };
+    };
+    return ComponentFootprint;
+}());
+exports.default = ComponentFootprint;
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -5686,7 +6101,7 @@ after class:
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var Mixin_1 = __webpack_require__(14);
+var Mixin_1 = __webpack_require__(15);
 var EmitterMixin = /** @class */ (function (_super) {
     tslib_1.__extends(EmitterMixin, _super);
     function EmitterMixin() {
@@ -5748,134 +6163,7 @@ exports.default = EmitterMixin;
 
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/*
-Meant to be immutable
-*/
-var ComponentFootprint = /** @class */ (function () {
-    function ComponentFootprint(unzonedRange, isAllDay) {
-        this.isAllDay = false; // component can choose to ignore this
-        this.unzonedRange = unzonedRange;
-        this.isAllDay = isAllDay;
-    }
-    /*
-    Only works for non-open-ended ranges.
-    */
-    ComponentFootprint.prototype.toLegacy = function (calendar) {
-        return {
-            start: calendar.msToMoment(this.unzonedRange.startMs, this.isAllDay),
-            end: calendar.msToMoment(this.unzonedRange.endMs, this.isAllDay)
-        };
-    };
-    return ComponentFootprint;
-}());
-exports.default = ComponentFootprint;
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var EventDef_1 = __webpack_require__(34);
-var EventInstance_1 = __webpack_require__(209);
-var EventDateProfile_1 = __webpack_require__(17);
-var SingleEventDef = /** @class */ (function (_super) {
-    tslib_1.__extends(SingleEventDef, _super);
-    function SingleEventDef() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    /*
-    Will receive start/end params, but will be ignored.
-    */
-    SingleEventDef.prototype.buildInstances = function () {
-        return [this.buildInstance()];
-    };
-    SingleEventDef.prototype.buildInstance = function () {
-        return new EventInstance_1.default(this, // definition
-        this.dateProfile);
-    };
-    SingleEventDef.prototype.isAllDay = function () {
-        return this.dateProfile.isAllDay();
-    };
-    SingleEventDef.prototype.clone = function () {
-        var def = _super.prototype.clone.call(this);
-        def.dateProfile = this.dateProfile;
-        return def;
-    };
-    SingleEventDef.prototype.rezone = function () {
-        var calendar = this.source.calendar;
-        var dateProfile = this.dateProfile;
-        this.dateProfile = new EventDateProfile_1.default(calendar.moment(dateProfile.start), dateProfile.end ? calendar.moment(dateProfile.end) : null, calendar);
-    };
-    /*
-    NOTE: if super-method fails, should still attempt to apply
-    */
-    SingleEventDef.prototype.applyManualStandardProps = function (rawProps) {
-        var superSuccess = _super.prototype.applyManualStandardProps.call(this, rawProps);
-        var dateProfile = EventDateProfile_1.default.parse(rawProps, this.source); // returns null on failure
-        if (dateProfile) {
-            this.dateProfile = dateProfile;
-            // make sure `date` shows up in the legacy event objects as-is
-            if (rawProps.date != null) {
-                this.miscProps.date = rawProps.date;
-            }
-            return superSuccess;
-        }
-        else {
-            return false;
-        }
-    };
-    return SingleEventDef;
-}(EventDef_1.default));
-exports.default = SingleEventDef;
-// Parsing
-// ---------------------------------------------------------------------------------------------------------------------
-SingleEventDef.defineStandardProps({
-    start: false,
-    date: false,
-    end: false,
-    allDay: false
-});
-
-
-/***/ }),
 /* 14 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Mixin = /** @class */ (function () {
-    function Mixin() {
-    }
-    Mixin.mixInto = function (destClass) {
-        var _this = this;
-        Object.getOwnPropertyNames(this.prototype).forEach(function (name) {
-            if (!destClass.prototype[name]) {
-                destClass.prototype[name] = _this.prototype[name];
-            }
-        });
-    };
-    /*
-    will override existing methods
-    TODO: remove! not used anymore
-    */
-    Mixin.mixOver = function (destClass) {
-        var _this = this;
-        Object.getOwnPropertyNames(this.prototype).forEach(function (name) {
-            destClass.prototype[name] = _this.prototype[name];
-        });
-    };
-    return Mixin;
-}());
-exports.default = Mixin;
-
-
-/***/ }),
-/* 15 */
 /***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5896,151 +6184,38 @@ exports.default = Interaction;
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 15 */
+/***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.version = '3.9.0';
-// When introducing internal API incompatibilities (where fullcalendar plugins would break),
-// the minor version of the calendar should be upped (ex: 2.7.2 -> 2.8.0)
-// and the below integer should be incremented.
-exports.internalApiVersion = 12;
-var util_1 = __webpack_require__(4);
-exports.applyAll = util_1.applyAll;
-exports.debounce = util_1.debounce;
-exports.isInt = util_1.isInt;
-exports.htmlEscape = util_1.htmlEscape;
-exports.cssToStr = util_1.cssToStr;
-exports.proxy = util_1.proxy;
-exports.capitaliseFirstLetter = util_1.capitaliseFirstLetter;
-exports.getOuterRect = util_1.getOuterRect;
-exports.getClientRect = util_1.getClientRect;
-exports.getContentRect = util_1.getContentRect;
-exports.getScrollbarWidths = util_1.getScrollbarWidths;
-exports.preventDefault = util_1.preventDefault;
-exports.parseFieldSpecs = util_1.parseFieldSpecs;
-exports.compareByFieldSpecs = util_1.compareByFieldSpecs;
-exports.compareByFieldSpec = util_1.compareByFieldSpec;
-exports.flexibleCompare = util_1.flexibleCompare;
-exports.computeGreatestUnit = util_1.computeGreatestUnit;
-exports.divideRangeByDuration = util_1.divideRangeByDuration;
-exports.divideDurationByDuration = util_1.divideDurationByDuration;
-exports.multiplyDuration = util_1.multiplyDuration;
-exports.durationHasTime = util_1.durationHasTime;
-exports.log = util_1.log;
-exports.warn = util_1.warn;
-exports.removeExact = util_1.removeExact;
-exports.intersectRects = util_1.intersectRects;
-var date_formatting_1 = __webpack_require__(47);
-exports.formatDate = date_formatting_1.formatDate;
-exports.formatRange = date_formatting_1.formatRange;
-exports.queryMostGranularFormatUnit = date_formatting_1.queryMostGranularFormatUnit;
-var locale_1 = __webpack_require__(31);
-exports.datepickerLocale = locale_1.datepickerLocale;
-exports.locale = locale_1.locale;
-var moment_ext_1 = __webpack_require__(10);
-exports.moment = moment_ext_1.default;
-var EmitterMixin_1 = __webpack_require__(11);
-exports.EmitterMixin = EmitterMixin_1.default;
-var ListenerMixin_1 = __webpack_require__(7);
-exports.ListenerMixin = ListenerMixin_1.default;
-var Model_1 = __webpack_require__(48);
-exports.Model = Model_1.default;
-var Constraints_1 = __webpack_require__(207);
-exports.Constraints = Constraints_1.default;
-var UnzonedRange_1 = __webpack_require__(5);
-exports.UnzonedRange = UnzonedRange_1.default;
-var ComponentFootprint_1 = __webpack_require__(12);
-exports.ComponentFootprint = ComponentFootprint_1.default;
-var BusinessHourGenerator_1 = __webpack_require__(212);
-exports.BusinessHourGenerator = BusinessHourGenerator_1.default;
-var EventDef_1 = __webpack_require__(34);
-exports.EventDef = EventDef_1.default;
-var EventDefMutation_1 = __webpack_require__(37);
-exports.EventDefMutation = EventDefMutation_1.default;
-var EventSourceParser_1 = __webpack_require__(38);
-exports.EventSourceParser = EventSourceParser_1.default;
-var EventSource_1 = __webpack_require__(6);
-exports.EventSource = EventSource_1.default;
-var ThemeRegistry_1 = __webpack_require__(51);
-exports.defineThemeSystem = ThemeRegistry_1.defineThemeSystem;
-var EventInstanceGroup_1 = __webpack_require__(18);
-exports.EventInstanceGroup = EventInstanceGroup_1.default;
-var ArrayEventSource_1 = __webpack_require__(52);
-exports.ArrayEventSource = ArrayEventSource_1.default;
-var FuncEventSource_1 = __webpack_require__(215);
-exports.FuncEventSource = FuncEventSource_1.default;
-var JsonFeedEventSource_1 = __webpack_require__(216);
-exports.JsonFeedEventSource = JsonFeedEventSource_1.default;
-var EventFootprint_1 = __webpack_require__(36);
-exports.EventFootprint = EventFootprint_1.default;
-var Class_1 = __webpack_require__(33);
-exports.Class = Class_1.default;
-var Mixin_1 = __webpack_require__(14);
-exports.Mixin = Mixin_1.default;
-var CoordCache_1 = __webpack_require__(53);
-exports.CoordCache = CoordCache_1.default;
-var DragListener_1 = __webpack_require__(54);
-exports.DragListener = DragListener_1.default;
-var Promise_1 = __webpack_require__(20);
-exports.Promise = Promise_1.default;
-var TaskQueue_1 = __webpack_require__(217);
-exports.TaskQueue = TaskQueue_1.default;
-var RenderQueue_1 = __webpack_require__(218);
-exports.RenderQueue = RenderQueue_1.default;
-var Scroller_1 = __webpack_require__(39);
-exports.Scroller = Scroller_1.default;
-var Theme_1 = __webpack_require__(19);
-exports.Theme = Theme_1.default;
-var DateComponent_1 = __webpack_require__(219);
-exports.DateComponent = DateComponent_1.default;
-var InteractiveDateComponent_1 = __webpack_require__(40);
-exports.InteractiveDateComponent = InteractiveDateComponent_1.default;
-var Calendar_1 = __webpack_require__(220);
-exports.Calendar = Calendar_1.default;
-var View_1 = __webpack_require__(41);
-exports.View = View_1.default;
-var ViewRegistry_1 = __webpack_require__(22);
-exports.defineView = ViewRegistry_1.defineView;
-exports.getViewConfig = ViewRegistry_1.getViewConfig;
-var DayTableMixin_1 = __webpack_require__(55);
-exports.DayTableMixin = DayTableMixin_1.default;
-var BusinessHourRenderer_1 = __webpack_require__(56);
-exports.BusinessHourRenderer = BusinessHourRenderer_1.default;
-var EventRenderer_1 = __webpack_require__(42);
-exports.EventRenderer = EventRenderer_1.default;
-var FillRenderer_1 = __webpack_require__(57);
-exports.FillRenderer = FillRenderer_1.default;
-var HelperRenderer_1 = __webpack_require__(58);
-exports.HelperRenderer = HelperRenderer_1.default;
-var ExternalDropping_1 = __webpack_require__(222);
-exports.ExternalDropping = ExternalDropping_1.default;
-var EventResizing_1 = __webpack_require__(223);
-exports.EventResizing = EventResizing_1.default;
-var EventPointing_1 = __webpack_require__(59);
-exports.EventPointing = EventPointing_1.default;
-var EventDragging_1 = __webpack_require__(224);
-exports.EventDragging = EventDragging_1.default;
-var DateSelecting_1 = __webpack_require__(225);
-exports.DateSelecting = DateSelecting_1.default;
-var StandardInteractionsMixin_1 = __webpack_require__(60);
-exports.StandardInteractionsMixin = StandardInteractionsMixin_1.default;
-var AgendaView_1 = __webpack_require__(226);
-exports.AgendaView = AgendaView_1.default;
-var TimeGrid_1 = __webpack_require__(227);
-exports.TimeGrid = TimeGrid_1.default;
-var DayGrid_1 = __webpack_require__(61);
-exports.DayGrid = DayGrid_1.default;
-var BasicView_1 = __webpack_require__(62);
-exports.BasicView = BasicView_1.default;
-var MonthView_1 = __webpack_require__(229);
-exports.MonthView = MonthView_1.default;
-var ListView_1 = __webpack_require__(230);
-exports.ListView = ListView_1.default;
+var Mixin = /** @class */ (function () {
+    function Mixin() {
+    }
+    Mixin.mixInto = function (destClass) {
+        var _this = this;
+        Object.getOwnPropertyNames(this.prototype).forEach(function (name) {
+            if (!destClass.prototype[name]) { // if destination class doesn't already define it
+                destClass.prototype[name] = _this.prototype[name];
+            }
+        });
+    };
+    /*
+    will override existing methods
+    TODO: remove! not used anymore
+    */
+    Mixin.mixOver = function (destClass) {
+        var _this = this;
+        Object.getOwnPropertyNames(this.prototype).forEach(function (name) {
+            destClass.prototype[name] = _this.prototype[name];
+        });
+    };
+    return Mixin;
+}());
+exports.default = Mixin;
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6071,9 +6246,6 @@ var EventDateProfile = /** @class */ (function () {
         if (!start.isValid()) {
             return false;
         }
-        if (end && (!end.isValid() || !end.isAfter(start))) {
-            end = null;
-        }
         if (forcedAllDay == null) {
             forcedAllDay = source.allDayDefault;
             if (forcedAllDay == null) {
@@ -6093,6 +6265,9 @@ var EventDateProfile = /** @class */ (function () {
             if (end && !end.hasTime()) {
                 end.time(0);
             }
+        }
+        if (end && (!end.isValid() || !end.isAfter(start))) {
+            end = null;
         }
         if (!end && forceEventDuration) {
             end = calendar.getDefaultEventEnd(!start.hasTime(), start);
@@ -6128,13 +6303,457 @@ exports.default = EventDateProfile;
 
 
 /***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var util_1 = __webpack_require__(4);
+var DragListener_1 = __webpack_require__(59);
+/* Tracks mouse movements over a component and raises events about which hit the mouse is over.
+------------------------------------------------------------------------------------------------------------------------
+options:
+- subjectEl
+- subjectCenter
+*/
+var HitDragListener = /** @class */ (function (_super) {
+    tslib_1.__extends(HitDragListener, _super);
+    function HitDragListener(component, options) {
+        var _this = _super.call(this, options) || this;
+        _this.component = component;
+        return _this;
+    }
+    // Called when drag listening starts (but a real drag has not necessarily began).
+    // ev might be undefined if dragging was started manually.
+    HitDragListener.prototype.handleInteractionStart = function (ev) {
+        var subjectEl = this.subjectEl;
+        var subjectRect;
+        var origPoint;
+        var point;
+        this.component.hitsNeeded();
+        this.computeScrollBounds(); // for autoscroll
+        if (ev) {
+            origPoint = { left: util_1.getEvX(ev), top: util_1.getEvY(ev) };
+            point = origPoint;
+            // constrain the point to bounds of the element being dragged
+            if (subjectEl) {
+                subjectRect = util_1.getOuterRect(subjectEl); // used for centering as well
+                point = util_1.constrainPoint(point, subjectRect);
+            }
+            this.origHit = this.queryHit(point.left, point.top);
+            // treat the center of the subject as the collision point?
+            if (subjectEl && this.options.subjectCenter) {
+                // only consider the area the subject overlaps the hit. best for large subjects.
+                // TODO: skip this if hit didn't supply left/right/top/bottom
+                if (this.origHit) {
+                    subjectRect = util_1.intersectRects(this.origHit, subjectRect) ||
+                        subjectRect; // in case there is no intersection
+                }
+                point = util_1.getRectCenter(subjectRect);
+            }
+            this.coordAdjust = util_1.diffPoints(point, origPoint); // point - origPoint
+        }
+        else {
+            this.origHit = null;
+            this.coordAdjust = null;
+        }
+        // call the super-method. do it after origHit has been computed
+        _super.prototype.handleInteractionStart.call(this, ev);
+    };
+    // Called when the actual drag has started
+    HitDragListener.prototype.handleDragStart = function (ev) {
+        var hit;
+        _super.prototype.handleDragStart.call(this, ev);
+        // might be different from this.origHit if the min-distance is large
+        hit = this.queryHit(util_1.getEvX(ev), util_1.getEvY(ev));
+        // report the initial hit the mouse is over
+        // especially important if no min-distance and drag starts immediately
+        if (hit) {
+            this.handleHitOver(hit);
+        }
+    };
+    // Called when the drag moves
+    HitDragListener.prototype.handleDrag = function (dx, dy, ev) {
+        var hit;
+        _super.prototype.handleDrag.call(this, dx, dy, ev);
+        hit = this.queryHit(util_1.getEvX(ev), util_1.getEvY(ev));
+        if (!isHitsEqual(hit, this.hit)) { // a different hit than before?
+            if (this.hit) {
+                this.handleHitOut();
+            }
+            if (hit) {
+                this.handleHitOver(hit);
+            }
+        }
+    };
+    // Called when dragging has been stopped
+    HitDragListener.prototype.handleDragEnd = function (ev) {
+        this.handleHitDone();
+        _super.prototype.handleDragEnd.call(this, ev);
+    };
+    // Called when a the mouse has just moved over a new hit
+    HitDragListener.prototype.handleHitOver = function (hit) {
+        var isOrig = isHitsEqual(hit, this.origHit);
+        this.hit = hit;
+        this.trigger('hitOver', this.hit, isOrig, this.origHit);
+    };
+    // Called when the mouse has just moved out of a hit
+    HitDragListener.prototype.handleHitOut = function () {
+        if (this.hit) {
+            this.trigger('hitOut', this.hit);
+            this.handleHitDone();
+            this.hit = null;
+        }
+    };
+    // Called after a hitOut. Also called before a dragStop
+    HitDragListener.prototype.handleHitDone = function () {
+        if (this.hit) {
+            this.trigger('hitDone', this.hit);
+        }
+    };
+    // Called when the interaction ends, whether there was a real drag or not
+    HitDragListener.prototype.handleInteractionEnd = function (ev, isCancelled) {
+        _super.prototype.handleInteractionEnd.call(this, ev, isCancelled);
+        this.origHit = null;
+        this.hit = null;
+        this.component.hitsNotNeeded();
+    };
+    // Called when scrolling has stopped, whether through auto scroll, or the user scrolling
+    HitDragListener.prototype.handleScrollEnd = function () {
+        _super.prototype.handleScrollEnd.call(this);
+        // hits' absolute positions will be in new places after a user's scroll.
+        // HACK for recomputing.
+        if (this.isDragging) {
+            this.component.releaseHits();
+            this.component.prepareHits();
+        }
+    };
+    // Gets the hit underneath the coordinates for the given mouse event
+    HitDragListener.prototype.queryHit = function (left, top) {
+        if (this.coordAdjust) {
+            left += this.coordAdjust.left;
+            top += this.coordAdjust.top;
+        }
+        return this.component.queryHit(left, top);
+    };
+    return HitDragListener;
+}(DragListener_1.default));
+exports.default = HitDragListener;
+// Returns `true` if the hits are identically equal. `false` otherwise. Must be from the same component.
+// Two null values will be considered equal, as two "out of the component" states are the same.
+function isHitsEqual(hit0, hit1) {
+    if (!hit0 && !hit1) {
+        return true;
+    }
+    if (hit0 && hit1) {
+        return hit0.component === hit1.component &&
+            isHitPropsWithin(hit0, hit1) &&
+            isHitPropsWithin(hit1, hit0); // ensures all props are identical
+    }
+    return false;
+}
+// Returns true if all of subHit's non-standard properties are within superHit
+function isHitPropsWithin(subHit, superHit) {
+    for (var propName in subHit) {
+        if (!/^(component|left|right|top|bottom)$/.test(propName)) {
+            if (subHit[propName] !== superHit[propName]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+/***/ }),
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.version = '3.10.0';
+// When introducing internal API incompatibilities (where fullcalendar plugins would break),
+// the minor version of the calendar should be upped (ex: 2.7.2 -> 2.8.0)
+// and the below integer should be incremented.
+exports.internalApiVersion = 12;
+var util_1 = __webpack_require__(4);
+exports.applyAll = util_1.applyAll;
+exports.debounce = util_1.debounce;
+exports.isInt = util_1.isInt;
+exports.htmlEscape = util_1.htmlEscape;
+exports.cssToStr = util_1.cssToStr;
+exports.proxy = util_1.proxy;
+exports.capitaliseFirstLetter = util_1.capitaliseFirstLetter;
+exports.getOuterRect = util_1.getOuterRect;
+exports.getClientRect = util_1.getClientRect;
+exports.getContentRect = util_1.getContentRect;
+exports.getScrollbarWidths = util_1.getScrollbarWidths;
+exports.preventDefault = util_1.preventDefault;
+exports.parseFieldSpecs = util_1.parseFieldSpecs;
+exports.compareByFieldSpecs = util_1.compareByFieldSpecs;
+exports.compareByFieldSpec = util_1.compareByFieldSpec;
+exports.flexibleCompare = util_1.flexibleCompare;
+exports.computeGreatestUnit = util_1.computeGreatestUnit;
+exports.divideRangeByDuration = util_1.divideRangeByDuration;
+exports.divideDurationByDuration = util_1.divideDurationByDuration;
+exports.multiplyDuration = util_1.multiplyDuration;
+exports.durationHasTime = util_1.durationHasTime;
+exports.log = util_1.log;
+exports.warn = util_1.warn;
+exports.removeExact = util_1.removeExact;
+exports.intersectRects = util_1.intersectRects;
+exports.allowSelection = util_1.allowSelection;
+exports.attrsToStr = util_1.attrsToStr;
+exports.compareNumbers = util_1.compareNumbers;
+exports.compensateScroll = util_1.compensateScroll;
+exports.computeDurationGreatestUnit = util_1.computeDurationGreatestUnit;
+exports.constrainPoint = util_1.constrainPoint;
+exports.copyOwnProps = util_1.copyOwnProps;
+exports.diffByUnit = util_1.diffByUnit;
+exports.diffDay = util_1.diffDay;
+exports.diffDayTime = util_1.diffDayTime;
+exports.diffPoints = util_1.diffPoints;
+exports.disableCursor = util_1.disableCursor;
+exports.distributeHeight = util_1.distributeHeight;
+exports.enableCursor = util_1.enableCursor;
+exports.firstDefined = util_1.firstDefined;
+exports.getEvIsTouch = util_1.getEvIsTouch;
+exports.getEvX = util_1.getEvX;
+exports.getEvY = util_1.getEvY;
+exports.getRectCenter = util_1.getRectCenter;
+exports.getScrollParent = util_1.getScrollParent;
+exports.hasOwnProp = util_1.hasOwnProp;
+exports.isArraysEqual = util_1.isArraysEqual;
+exports.isNativeDate = util_1.isNativeDate;
+exports.isPrimaryMouseButton = util_1.isPrimaryMouseButton;
+exports.isTimeString = util_1.isTimeString;
+exports.matchCellWidths = util_1.matchCellWidths;
+exports.mergeProps = util_1.mergeProps;
+exports.preventSelection = util_1.preventSelection;
+exports.removeMatching = util_1.removeMatching;
+exports.stripHtmlEntities = util_1.stripHtmlEntities;
+exports.subtractInnerElHeight = util_1.subtractInnerElHeight;
+exports.uncompensateScroll = util_1.uncompensateScroll;
+exports.undistributeHeight = util_1.undistributeHeight;
+exports.dayIDs = util_1.dayIDs;
+exports.unitsDesc = util_1.unitsDesc;
+var date_formatting_1 = __webpack_require__(49);
+exports.formatDate = date_formatting_1.formatDate;
+exports.formatRange = date_formatting_1.formatRange;
+exports.queryMostGranularFormatUnit = date_formatting_1.queryMostGranularFormatUnit;
+var locale_1 = __webpack_require__(32);
+exports.datepickerLocale = locale_1.datepickerLocale;
+exports.locale = locale_1.locale;
+exports.getMomentLocaleData = locale_1.getMomentLocaleData;
+exports.populateInstanceComputableOptions = locale_1.populateInstanceComputableOptions;
+var util_2 = __webpack_require__(19);
+exports.eventDefsToEventInstances = util_2.eventDefsToEventInstances;
+exports.eventFootprintToComponentFootprint = util_2.eventFootprintToComponentFootprint;
+exports.eventInstanceToEventRange = util_2.eventInstanceToEventRange;
+exports.eventInstanceToUnzonedRange = util_2.eventInstanceToUnzonedRange;
+exports.eventRangeToEventFootprint = util_2.eventRangeToEventFootprint;
+var moment_ext_1 = __webpack_require__(11);
+exports.moment = moment_ext_1.default;
+var EmitterMixin_1 = __webpack_require__(13);
+exports.EmitterMixin = EmitterMixin_1.default;
+var ListenerMixin_1 = __webpack_require__(7);
+exports.ListenerMixin = ListenerMixin_1.default;
+var Model_1 = __webpack_require__(51);
+exports.Model = Model_1.default;
+var Constraints_1 = __webpack_require__(217);
+exports.Constraints = Constraints_1.default;
+var DateProfileGenerator_1 = __webpack_require__(55);
+exports.DateProfileGenerator = DateProfileGenerator_1.default;
 var UnzonedRange_1 = __webpack_require__(5);
-var util_1 = __webpack_require__(35);
-var EventRange_1 = __webpack_require__(211);
+exports.UnzonedRange = UnzonedRange_1.default;
+var ComponentFootprint_1 = __webpack_require__(12);
+exports.ComponentFootprint = ComponentFootprint_1.default;
+var BusinessHourGenerator_1 = __webpack_require__(218);
+exports.BusinessHourGenerator = BusinessHourGenerator_1.default;
+var EventPeriod_1 = __webpack_require__(219);
+exports.EventPeriod = EventPeriod_1.default;
+var EventManager_1 = __webpack_require__(220);
+exports.EventManager = EventManager_1.default;
+var EventDef_1 = __webpack_require__(37);
+exports.EventDef = EventDef_1.default;
+var EventDefMutation_1 = __webpack_require__(39);
+exports.EventDefMutation = EventDefMutation_1.default;
+var EventDefParser_1 = __webpack_require__(36);
+exports.EventDefParser = EventDefParser_1.default;
+var EventInstance_1 = __webpack_require__(53);
+exports.EventInstance = EventInstance_1.default;
+var EventRange_1 = __webpack_require__(50);
+exports.EventRange = EventRange_1.default;
+var RecurringEventDef_1 = __webpack_require__(54);
+exports.RecurringEventDef = RecurringEventDef_1.default;
+var SingleEventDef_1 = __webpack_require__(9);
+exports.SingleEventDef = SingleEventDef_1.default;
+var EventDefDateMutation_1 = __webpack_require__(40);
+exports.EventDefDateMutation = EventDefDateMutation_1.default;
+var EventDateProfile_1 = __webpack_require__(16);
+exports.EventDateProfile = EventDateProfile_1.default;
+var EventSourceParser_1 = __webpack_require__(38);
+exports.EventSourceParser = EventSourceParser_1.default;
+var EventSource_1 = __webpack_require__(6);
+exports.EventSource = EventSource_1.default;
+var ThemeRegistry_1 = __webpack_require__(57);
+exports.defineThemeSystem = ThemeRegistry_1.defineThemeSystem;
+exports.getThemeSystemClass = ThemeRegistry_1.getThemeSystemClass;
+var EventInstanceGroup_1 = __webpack_require__(20);
+exports.EventInstanceGroup = EventInstanceGroup_1.default;
+var ArrayEventSource_1 = __webpack_require__(56);
+exports.ArrayEventSource = ArrayEventSource_1.default;
+var FuncEventSource_1 = __webpack_require__(223);
+exports.FuncEventSource = FuncEventSource_1.default;
+var JsonFeedEventSource_1 = __webpack_require__(224);
+exports.JsonFeedEventSource = JsonFeedEventSource_1.default;
+var EventFootprint_1 = __webpack_require__(34);
+exports.EventFootprint = EventFootprint_1.default;
+var Class_1 = __webpack_require__(35);
+exports.Class = Class_1.default;
+var Mixin_1 = __webpack_require__(15);
+exports.Mixin = Mixin_1.default;
+var CoordCache_1 = __webpack_require__(58);
+exports.CoordCache = CoordCache_1.default;
+var Iterator_1 = __webpack_require__(225);
+exports.Iterator = Iterator_1.default;
+var DragListener_1 = __webpack_require__(59);
+exports.DragListener = DragListener_1.default;
+var HitDragListener_1 = __webpack_require__(17);
+exports.HitDragListener = HitDragListener_1.default;
+var MouseFollower_1 = __webpack_require__(226);
+exports.MouseFollower = MouseFollower_1.default;
+var ParsableModelMixin_1 = __webpack_require__(52);
+exports.ParsableModelMixin = ParsableModelMixin_1.default;
+var Popover_1 = __webpack_require__(227);
+exports.Popover = Popover_1.default;
+var Promise_1 = __webpack_require__(21);
+exports.Promise = Promise_1.default;
+var TaskQueue_1 = __webpack_require__(228);
+exports.TaskQueue = TaskQueue_1.default;
+var RenderQueue_1 = __webpack_require__(229);
+exports.RenderQueue = RenderQueue_1.default;
+var Scroller_1 = __webpack_require__(41);
+exports.Scroller = Scroller_1.default;
+var Theme_1 = __webpack_require__(22);
+exports.Theme = Theme_1.default;
+var Component_1 = __webpack_require__(230);
+exports.Component = Component_1.default;
+var DateComponent_1 = __webpack_require__(231);
+exports.DateComponent = DateComponent_1.default;
+var InteractiveDateComponent_1 = __webpack_require__(42);
+exports.InteractiveDateComponent = InteractiveDateComponent_1.default;
+var Calendar_1 = __webpack_require__(232);
+exports.Calendar = Calendar_1.default;
+var View_1 = __webpack_require__(43);
+exports.View = View_1.default;
+var ViewRegistry_1 = __webpack_require__(24);
+exports.defineView = ViewRegistry_1.defineView;
+exports.getViewConfig = ViewRegistry_1.getViewConfig;
+var DayTableMixin_1 = __webpack_require__(60);
+exports.DayTableMixin = DayTableMixin_1.default;
+var BusinessHourRenderer_1 = __webpack_require__(61);
+exports.BusinessHourRenderer = BusinessHourRenderer_1.default;
+var EventRenderer_1 = __webpack_require__(44);
+exports.EventRenderer = EventRenderer_1.default;
+var FillRenderer_1 = __webpack_require__(62);
+exports.FillRenderer = FillRenderer_1.default;
+var HelperRenderer_1 = __webpack_require__(63);
+exports.HelperRenderer = HelperRenderer_1.default;
+var ExternalDropping_1 = __webpack_require__(233);
+exports.ExternalDropping = ExternalDropping_1.default;
+var EventResizing_1 = __webpack_require__(234);
+exports.EventResizing = EventResizing_1.default;
+var EventPointing_1 = __webpack_require__(64);
+exports.EventPointing = EventPointing_1.default;
+var EventDragging_1 = __webpack_require__(235);
+exports.EventDragging = EventDragging_1.default;
+var DateSelecting_1 = __webpack_require__(236);
+exports.DateSelecting = DateSelecting_1.default;
+var DateClicking_1 = __webpack_require__(237);
+exports.DateClicking = DateClicking_1.default;
+var Interaction_1 = __webpack_require__(14);
+exports.Interaction = Interaction_1.default;
+var StandardInteractionsMixin_1 = __webpack_require__(65);
+exports.StandardInteractionsMixin = StandardInteractionsMixin_1.default;
+var AgendaView_1 = __webpack_require__(238);
+exports.AgendaView = AgendaView_1.default;
+var TimeGrid_1 = __webpack_require__(239);
+exports.TimeGrid = TimeGrid_1.default;
+var TimeGridEventRenderer_1 = __webpack_require__(240);
+exports.TimeGridEventRenderer = TimeGridEventRenderer_1.default;
+var TimeGridFillRenderer_1 = __webpack_require__(242);
+exports.TimeGridFillRenderer = TimeGridFillRenderer_1.default;
+var TimeGridHelperRenderer_1 = __webpack_require__(241);
+exports.TimeGridHelperRenderer = TimeGridHelperRenderer_1.default;
+var DayGrid_1 = __webpack_require__(66);
+exports.DayGrid = DayGrid_1.default;
+var DayGridEventRenderer_1 = __webpack_require__(243);
+exports.DayGridEventRenderer = DayGridEventRenderer_1.default;
+var DayGridFillRenderer_1 = __webpack_require__(245);
+exports.DayGridFillRenderer = DayGridFillRenderer_1.default;
+var DayGridHelperRenderer_1 = __webpack_require__(244);
+exports.DayGridHelperRenderer = DayGridHelperRenderer_1.default;
+var BasicView_1 = __webpack_require__(67);
+exports.BasicView = BasicView_1.default;
+var BasicViewDateProfileGenerator_1 = __webpack_require__(68);
+exports.BasicViewDateProfileGenerator = BasicViewDateProfileGenerator_1.default;
+var MonthView_1 = __webpack_require__(246);
+exports.MonthView = MonthView_1.default;
+var MonthViewDateProfileGenerator_1 = __webpack_require__(247);
+exports.MonthViewDateProfileGenerator = MonthViewDateProfileGenerator_1.default;
+var ListView_1 = __webpack_require__(248);
+exports.ListView = ListView_1.default;
+var ListEventPointing_1 = __webpack_require__(250);
+exports.ListEventPointing = ListEventPointing_1.default;
+var ListEventRenderer_1 = __webpack_require__(249);
+exports.ListEventRenderer = ListEventRenderer_1.default;
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EventRange_1 = __webpack_require__(50);
+var EventFootprint_1 = __webpack_require__(34);
+var ComponentFootprint_1 = __webpack_require__(12);
+function eventDefsToEventInstances(eventDefs, unzonedRange) {
+    var eventInstances = [];
+    var i;
+    for (i = 0; i < eventDefs.length; i++) {
+        eventInstances.push.apply(eventInstances, // append
+        eventDefs[i].buildInstances(unzonedRange));
+    }
+    return eventInstances;
+}
+exports.eventDefsToEventInstances = eventDefsToEventInstances;
+function eventInstanceToEventRange(eventInstance) {
+    return new EventRange_1.default(eventInstance.dateProfile.unzonedRange, eventInstance.def, eventInstance);
+}
+exports.eventInstanceToEventRange = eventInstanceToEventRange;
+function eventRangeToEventFootprint(eventRange) {
+    return new EventFootprint_1.default(new ComponentFootprint_1.default(eventRange.unzonedRange, eventRange.eventDef.isAllDay()), eventRange.eventDef, eventRange.eventInstance // might not exist
+    );
+}
+exports.eventRangeToEventFootprint = eventRangeToEventFootprint;
+function eventInstanceToUnzonedRange(eventInstance) {
+    return eventInstance.dateProfile.unzonedRange;
+}
+exports.eventInstanceToUnzonedRange = eventInstanceToUnzonedRange;
+function eventFootprintToComponentFootprint(eventFootprint) {
+    return eventFootprint.componentFootprint;
+}
+exports.eventFootprintToComponentFootprint = eventFootprintToComponentFootprint;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var UnzonedRange_1 = __webpack_require__(5);
+var util_1 = __webpack_require__(19);
+var EventRange_1 = __webpack_require__(50);
 /*
 It's expected that there will be at least one EventInstance,
 OR that an explicitEventDef is assigned.
@@ -6194,73 +6813,7 @@ exports.default = EventInstanceGroup;
 
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var $ = __webpack_require__(3);
-var Theme = /** @class */ (function () {
-    function Theme(optionsManager) {
-        this.optionsManager = optionsManager;
-        this.processIconOverride();
-    }
-    Theme.prototype.processIconOverride = function () {
-        if (this.iconOverrideOption) {
-            this.setIconOverride(this.optionsManager.get(this.iconOverrideOption));
-        }
-    };
-    Theme.prototype.setIconOverride = function (iconOverrideHash) {
-        var iconClassesCopy;
-        var buttonName;
-        if ($.isPlainObject(iconOverrideHash)) {
-            iconClassesCopy = $.extend({}, this.iconClasses);
-            for (buttonName in iconOverrideHash) {
-                iconClassesCopy[buttonName] = this.applyIconOverridePrefix(iconOverrideHash[buttonName]);
-            }
-            this.iconClasses = iconClassesCopy;
-        }
-        else if (iconOverrideHash === false) {
-            this.iconClasses = {};
-        }
-    };
-    Theme.prototype.applyIconOverridePrefix = function (className) {
-        var prefix = this.iconOverridePrefix;
-        if (prefix && className.indexOf(prefix) !== 0) {
-            className = prefix + className;
-        }
-        return className;
-    };
-    Theme.prototype.getClass = function (key) {
-        return this.classes[key] || '';
-    };
-    Theme.prototype.getIconClass = function (buttonName) {
-        var className = this.iconClasses[buttonName];
-        if (className) {
-            return this.baseIconClass + ' ' + className;
-        }
-        return '';
-    };
-    Theme.prototype.getCustomButtonIconClass = function (customButtonProps) {
-        var className;
-        if (this.iconOverrideCustomButtonOption) {
-            className = customButtonProps[this.iconOverrideCustomButtonOption];
-            if (className) {
-                return this.baseIconClass + ' ' + this.applyIconOverridePrefix(className);
-            }
-        }
-        return '';
-    };
-    return Theme;
-}());
-exports.default = Theme;
-Theme.prototype.classes = {};
-Theme.prototype.iconClasses = {};
-Theme.prototype.baseIconClass = '';
-Theme.prototype.iconOverridePrefix = '';
-
-
-/***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6313,13 +6866,79 @@ function attachImmediatelyRejectingThen(promise) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = __webpack_require__(3);
-var exportHooks = __webpack_require__(16);
-var EmitterMixin_1 = __webpack_require__(11);
+var Theme = /** @class */ (function () {
+    function Theme(optionsManager) {
+        this.optionsManager = optionsManager;
+        this.processIconOverride();
+    }
+    Theme.prototype.processIconOverride = function () {
+        if (this.iconOverrideOption) {
+            this.setIconOverride(this.optionsManager.get(this.iconOverrideOption));
+        }
+    };
+    Theme.prototype.setIconOverride = function (iconOverrideHash) {
+        var iconClassesCopy;
+        var buttonName;
+        if ($.isPlainObject(iconOverrideHash)) {
+            iconClassesCopy = $.extend({}, this.iconClasses);
+            for (buttonName in iconOverrideHash) {
+                iconClassesCopy[buttonName] = this.applyIconOverridePrefix(iconOverrideHash[buttonName]);
+            }
+            this.iconClasses = iconClassesCopy;
+        }
+        else if (iconOverrideHash === false) {
+            this.iconClasses = {};
+        }
+    };
+    Theme.prototype.applyIconOverridePrefix = function (className) {
+        var prefix = this.iconOverridePrefix;
+        if (prefix && className.indexOf(prefix) !== 0) { // if not already present
+            className = prefix + className;
+        }
+        return className;
+    };
+    Theme.prototype.getClass = function (key) {
+        return this.classes[key] || '';
+    };
+    Theme.prototype.getIconClass = function (buttonName) {
+        var className = this.iconClasses[buttonName];
+        if (className) {
+            return this.baseIconClass + ' ' + className;
+        }
+        return '';
+    };
+    Theme.prototype.getCustomButtonIconClass = function (customButtonProps) {
+        var className;
+        if (this.iconOverrideCustomButtonOption) {
+            className = customButtonProps[this.iconOverrideCustomButtonOption];
+            if (className) {
+                return this.baseIconClass + ' ' + this.applyIconOverridePrefix(className);
+            }
+        }
+        return '';
+    };
+    return Theme;
+}());
+exports.default = Theme;
+Theme.prototype.classes = {};
+Theme.prototype.iconClasses = {};
+Theme.prototype.baseIconClass = '';
+Theme.prototype.iconOverridePrefix = '';
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var $ = __webpack_require__(3);
+var exportHooks = __webpack_require__(18);
+var EmitterMixin_1 = __webpack_require__(13);
 var ListenerMixin_1 = __webpack_require__(7);
 exportHooks.touchMouseIgnoreWait = 500;
 var globalEmitter = null;
@@ -6354,7 +6973,7 @@ var GlobalEmitter = /** @class */ (function () {
     // called when the object that originally called needed() doesn't need a GlobalEmitter anymore.
     GlobalEmitter.unneeded = function () {
         neededCount--;
-        if (!neededCount) {
+        if (!neededCount) { // nobody else needs it
             globalEmitter.unbind();
             globalEmitter = null;
         }
@@ -6389,7 +7008,8 @@ var GlobalEmitter = /** @class */ (function () {
     };
     GlobalEmitter.prototype.unbind = function () {
         this.stopListeningTo($(document));
-        window.removeEventListener('touchmove', this.handleTouchMoveProxy);
+        window.removeEventListener('touchmove', this.handleTouchMoveProxy, { passive: false } // use same options as addEventListener
+        );
         window.removeEventListener('scroll', this.handleScrollProxy, true // useCapture
         );
     };
@@ -6484,11 +7104,11 @@ EmitterMixin_1.default.mixInto(GlobalEmitter);
 
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var exportHooks = __webpack_require__(16);
+var exportHooks = __webpack_require__(18);
 exports.viewHash = {};
 exportHooks.views = exports.viewHash;
 function defineView(viewName, viewConfig) {
@@ -6502,184 +7122,21 @@ exports.getViewConfig = getViewConfig;
 
 
 /***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var util_1 = __webpack_require__(4);
-var DragListener_1 = __webpack_require__(54);
-/* Tracks mouse movements over a component and raises events about which hit the mouse is over.
-------------------------------------------------------------------------------------------------------------------------
-options:
-- subjectEl
-- subjectCenter
-*/
-var HitDragListener = /** @class */ (function (_super) {
-    tslib_1.__extends(HitDragListener, _super);
-    function HitDragListener(component, options) {
-        var _this = _super.call(this, options) || this;
-        _this.component = component;
-        return _this;
-    }
-    // Called when drag listening starts (but a real drag has not necessarily began).
-    // ev might be undefined if dragging was started manually.
-    HitDragListener.prototype.handleInteractionStart = function (ev) {
-        var subjectEl = this.subjectEl;
-        var subjectRect;
-        var origPoint;
-        var point;
-        this.component.hitsNeeded();
-        this.computeScrollBounds(); // for autoscroll
-        if (ev) {
-            origPoint = { left: util_1.getEvX(ev), top: util_1.getEvY(ev) };
-            point = origPoint;
-            // constrain the point to bounds of the element being dragged
-            if (subjectEl) {
-                subjectRect = util_1.getOuterRect(subjectEl); // used for centering as well
-                point = util_1.constrainPoint(point, subjectRect);
-            }
-            this.origHit = this.queryHit(point.left, point.top);
-            // treat the center of the subject as the collision point?
-            if (subjectEl && this.options.subjectCenter) {
-                // only consider the area the subject overlaps the hit. best for large subjects.
-                // TODO: skip this if hit didn't supply left/right/top/bottom
-                if (this.origHit) {
-                    subjectRect = util_1.intersectRects(this.origHit, subjectRect) ||
-                        subjectRect; // in case there is no intersection
-                }
-                point = util_1.getRectCenter(subjectRect);
-            }
-            this.coordAdjust = util_1.diffPoints(point, origPoint); // point - origPoint
-        }
-        else {
-            this.origHit = null;
-            this.coordAdjust = null;
-        }
-        // call the super-method. do it after origHit has been computed
-        _super.prototype.handleInteractionStart.call(this, ev);
-    };
-    // Called when the actual drag has started
-    HitDragListener.prototype.handleDragStart = function (ev) {
-        var hit;
-        _super.prototype.handleDragStart.call(this, ev);
-        // might be different from this.origHit if the min-distance is large
-        hit = this.queryHit(util_1.getEvX(ev), util_1.getEvY(ev));
-        // report the initial hit the mouse is over
-        // especially important if no min-distance and drag starts immediately
-        if (hit) {
-            this.handleHitOver(hit);
-        }
-    };
-    // Called when the drag moves
-    HitDragListener.prototype.handleDrag = function (dx, dy, ev) {
-        var hit;
-        _super.prototype.handleDrag.call(this, dx, dy, ev);
-        hit = this.queryHit(util_1.getEvX(ev), util_1.getEvY(ev));
-        if (!isHitsEqual(hit, this.hit)) {
-            if (this.hit) {
-                this.handleHitOut();
-            }
-            if (hit) {
-                this.handleHitOver(hit);
-            }
-        }
-    };
-    // Called when dragging has been stopped
-    HitDragListener.prototype.handleDragEnd = function (ev) {
-        this.handleHitDone();
-        _super.prototype.handleDragEnd.call(this, ev);
-    };
-    // Called when a the mouse has just moved over a new hit
-    HitDragListener.prototype.handleHitOver = function (hit) {
-        var isOrig = isHitsEqual(hit, this.origHit);
-        this.hit = hit;
-        this.trigger('hitOver', this.hit, isOrig, this.origHit);
-    };
-    // Called when the mouse has just moved out of a hit
-    HitDragListener.prototype.handleHitOut = function () {
-        if (this.hit) {
-            this.trigger('hitOut', this.hit);
-            this.handleHitDone();
-            this.hit = null;
-        }
-    };
-    // Called after a hitOut. Also called before a dragStop
-    HitDragListener.prototype.handleHitDone = function () {
-        if (this.hit) {
-            this.trigger('hitDone', this.hit);
-        }
-    };
-    // Called when the interaction ends, whether there was a real drag or not
-    HitDragListener.prototype.handleInteractionEnd = function (ev, isCancelled) {
-        _super.prototype.handleInteractionEnd.call(this, ev, isCancelled);
-        this.origHit = null;
-        this.hit = null;
-        this.component.hitsNotNeeded();
-    };
-    // Called when scrolling has stopped, whether through auto scroll, or the user scrolling
-    HitDragListener.prototype.handleScrollEnd = function () {
-        _super.prototype.handleScrollEnd.call(this);
-        // hits' absolute positions will be in new places after a user's scroll.
-        // HACK for recomputing.
-        if (this.isDragging) {
-            this.component.releaseHits();
-            this.component.prepareHits();
-        }
-    };
-    // Gets the hit underneath the coordinates for the given mouse event
-    HitDragListener.prototype.queryHit = function (left, top) {
-        if (this.coordAdjust) {
-            left += this.coordAdjust.left;
-            top += this.coordAdjust.top;
-        }
-        return this.component.queryHit(left, top);
-    };
-    return HitDragListener;
-}(DragListener_1.default));
-exports.default = HitDragListener;
-// Returns `true` if the hits are identically equal. `false` otherwise. Must be from the same component.
-// Two null values will be considered equal, as two "out of the component" states are the same.
-function isHitsEqual(hit0, hit1) {
-    if (!hit0 && !hit1) {
-        return true;
-    }
-    if (hit0 && hit1) {
-        return hit0.component === hit1.component &&
-            isHitPropsWithin(hit0, hit1) &&
-            isHitPropsWithin(hit1, hit0); // ensures all props are identical
-    }
-    return false;
-}
-// Returns true if all of subHit's non-standard properties are within superHit
-function isHitPropsWithin(subHit, superHit) {
-    for (var propName in subHit) {
-        if (!/^(component|left|right|top|bottom)$/.test(propName)) {
-            if (subHit[propName] !== superHit[propName]) {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
-
-/***/ }),
-/* 24 */,
 /* 25 */,
 /* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */
+/* 31 */,
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = __webpack_require__(3);
 var moment = __webpack_require__(0);
-var exportHooks = __webpack_require__(16);
-var options_1 = __webpack_require__(32);
+var exportHooks = __webpack_require__(18);
+var options_1 = __webpack_require__(33);
 var util_1 = __webpack_require__(4);
 exports.localeOptionHash = {};
 exportHooks.locales = exports.localeOptionHash;
@@ -6842,7 +7299,7 @@ locale('en', options_1.englishDefaults);
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6956,7 +7413,28 @@ exports.mergeOptions = mergeOptions;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EventFootprint = /** @class */ (function () {
+    function EventFootprint(componentFootprint, eventDef, eventInstance) {
+        this.componentFootprint = componentFootprint;
+        this.eventDef = eventDef;
+        if (eventInstance) {
+            this.eventInstance = eventInstance;
+        }
+    }
+    EventFootprint.prototype.getEventLegacy = function () {
+        return (this.eventInstance || this.eventDef).toLegacy();
+    };
+    return EventFootprint;
+}());
+exports.default = EventFootprint;
+
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6990,12 +7468,34 @@ exports.default = Class;
 
 
 /***/ }),
-/* 34 */
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var moment = __webpack_require__(0);
+var util_1 = __webpack_require__(4);
+var SingleEventDef_1 = __webpack_require__(9);
+var RecurringEventDef_1 = __webpack_require__(54);
+exports.default = {
+    parse: function (eventInput, source) {
+        if (util_1.isTimeString(eventInput.start) || moment.isDuration(eventInput.start) ||
+            util_1.isTimeString(eventInput.end) || moment.isDuration(eventInput.end)) {
+            return RecurringEventDef_1.default.parse(eventInput, source);
+        }
+        else {
+            return SingleEventDef_1.default.parse(eventInput, source);
+        }
+    }
+};
+
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = __webpack_require__(3);
-var ParsableModelMixin_1 = __webpack_require__(208);
+var ParsableModelMixin_1 = __webpack_require__(52);
 var EventDef = /** @class */ (function () {
     function EventDef(source) {
         this.source = source;
@@ -7093,7 +7593,7 @@ var EventDef = /** @class */ (function () {
         else {
             this.id = EventDef.generateId();
         }
-        if (rawProps._id != null) {
+        if (rawProps._id != null) { // accept this prop, even tho somewhat internal
             this.uid = String(rawProps._id);
         }
         else {
@@ -7141,73 +7641,39 @@ EventDef.defineStandardProps({
 
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var EventRange_1 = __webpack_require__(211);
-var EventFootprint_1 = __webpack_require__(36);
-var ComponentFootprint_1 = __webpack_require__(12);
-function eventDefsToEventInstances(eventDefs, unzonedRange) {
-    var eventInstances = [];
-    var i;
-    for (i = 0; i < eventDefs.length; i++) {
-        eventInstances.push.apply(eventInstances, // append
-        eventDefs[i].buildInstances(unzonedRange));
-    }
-    return eventInstances;
-}
-exports.eventDefsToEventInstances = eventDefsToEventInstances;
-function eventInstanceToEventRange(eventInstance) {
-    return new EventRange_1.default(eventInstance.dateProfile.unzonedRange, eventInstance.def, eventInstance);
-}
-exports.eventInstanceToEventRange = eventInstanceToEventRange;
-function eventRangeToEventFootprint(eventRange) {
-    return new EventFootprint_1.default(new ComponentFootprint_1.default(eventRange.unzonedRange, eventRange.eventDef.isAllDay()), eventRange.eventDef, eventRange.eventInstance // might not exist
-    );
-}
-exports.eventRangeToEventFootprint = eventRangeToEventFootprint;
-function eventInstanceToUnzonedRange(eventInstance) {
-    return eventInstance.dateProfile.unzonedRange;
-}
-exports.eventInstanceToUnzonedRange = eventInstanceToUnzonedRange;
-function eventFootprintToComponentFootprint(eventFootprint) {
-    return eventFootprint.componentFootprint;
-}
-exports.eventFootprintToComponentFootprint = eventFootprintToComponentFootprint;
-
-
-/***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var EventFootprint = /** @class */ (function () {
-    function EventFootprint(componentFootprint, eventDef, eventInstance) {
-        this.componentFootprint = componentFootprint;
-        this.eventDef = eventDef;
-        if (eventInstance) {
-            this.eventInstance = eventInstance;
+exports.default = {
+    sourceClasses: [],
+    registerClass: function (EventSourceClass) {
+        this.sourceClasses.unshift(EventSourceClass); // give highest priority
+    },
+    parse: function (rawInput, calendar) {
+        var sourceClasses = this.sourceClasses;
+        var i;
+        var eventSource;
+        for (i = 0; i < sourceClasses.length; i++) {
+            eventSource = sourceClasses[i].parse(rawInput, calendar);
+            if (eventSource) {
+                return eventSource;
+            }
         }
     }
-    EventFootprint.prototype.getEventLegacy = function () {
-        return (this.eventInstance || this.eventDef).toLegacy();
-    };
-    return EventFootprint;
-}());
-exports.default = EventFootprint;
+};
 
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(4);
-var EventDateProfile_1 = __webpack_require__(17);
-var EventDef_1 = __webpack_require__(34);
-var EventDefDateMutation_1 = __webpack_require__(50);
-var SingleEventDef_1 = __webpack_require__(13);
+var EventDateProfile_1 = __webpack_require__(16);
+var EventDef_1 = __webpack_require__(37);
+var EventDefDateMutation_1 = __webpack_require__(40);
+var SingleEventDef_1 = __webpack_require__(9);
 var EventDefMutation = /** @class */ (function () {
     function EventDefMutation() {
     }
@@ -7230,12 +7696,12 @@ var EventDefMutation = /** @class */ (function () {
             else if (eventDef.isStandardProp(propName)) {
                 standardProps[propName] = rawProps[propName];
             }
-            else if (eventDef.miscProps[propName] !== rawProps[propName]) {
+            else if (eventDef.miscProps[propName] !== rawProps[propName]) { // only if changed
                 miscProps[propName] = rawProps[propName];
             }
         }
         dateProfile = EventDateProfile_1.default.parse(dateProps, eventDef.source);
-        if (dateProfile) {
+        if (dateProfile) { // no failure?
             dateMutation = EventDefDateMutation_1.default.createFromDiff(eventInstance.dateProfile, dateProfile, largeUnit);
         }
         if (standardProps.id !== eventDef.id) {
@@ -7313,38 +7779,152 @@ exports.default = EventDefMutation;
 
 
 /***/ }),
-/* 38 */
-/***/ (function(module, exports) {
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
-    sourceClasses: [],
-    registerClass: function (EventSourceClass) {
-        this.sourceClasses.unshift(EventSourceClass); // give highest priority
-    },
-    parse: function (rawInput, calendar) {
-        var sourceClasses = this.sourceClasses;
-        var i;
-        var eventSource;
-        for (i = 0; i < sourceClasses.length; i++) {
-            eventSource = sourceClasses[i].parse(rawInput, calendar);
-            if (eventSource) {
-                return eventSource;
+var util_1 = __webpack_require__(4);
+var EventDateProfile_1 = __webpack_require__(16);
+var EventDefDateMutation = /** @class */ (function () {
+    function EventDefDateMutation() {
+        this.clearEnd = false;
+        this.forceTimed = false;
+        this.forceAllDay = false;
+    }
+    EventDefDateMutation.createFromDiff = function (dateProfile0, dateProfile1, largeUnit) {
+        var clearEnd = dateProfile0.end && !dateProfile1.end;
+        var forceTimed = dateProfile0.isAllDay() && !dateProfile1.isAllDay();
+        var forceAllDay = !dateProfile0.isAllDay() && dateProfile1.isAllDay();
+        var dateDelta;
+        var endDiff;
+        var endDelta;
+        var mutation;
+        // subtracts the dates in the appropriate way, returning a duration
+        function subtractDates(date1, date0) {
+            if (largeUnit) {
+                return util_1.diffByUnit(date1, date0, largeUnit); // poorly named
+            }
+            else if (dateProfile1.isAllDay()) {
+                return util_1.diffDay(date1, date0); // poorly named
+            }
+            else {
+                return util_1.diffDayTime(date1, date0); // poorly named
             }
         }
-    }
-};
+        dateDelta = subtractDates(dateProfile1.start, dateProfile0.start);
+        if (dateProfile1.end) {
+            // use unzonedRanges because dateProfile0.end might be null
+            endDiff = subtractDates(dateProfile1.unzonedRange.getEnd(), dateProfile0.unzonedRange.getEnd());
+            endDelta = endDiff.subtract(dateDelta);
+        }
+        mutation = new EventDefDateMutation();
+        mutation.clearEnd = clearEnd;
+        mutation.forceTimed = forceTimed;
+        mutation.forceAllDay = forceAllDay;
+        mutation.setDateDelta(dateDelta);
+        mutation.setEndDelta(endDelta);
+        return mutation;
+    };
+    /*
+    returns an undo function.
+    */
+    EventDefDateMutation.prototype.buildNewDateProfile = function (eventDateProfile, calendar) {
+        var start = eventDateProfile.start.clone();
+        var end = null;
+        var shouldRezone = false;
+        if (eventDateProfile.end && !this.clearEnd) {
+            end = eventDateProfile.end.clone();
+        }
+        else if (this.endDelta && !end) {
+            end = calendar.getDefaultEventEnd(eventDateProfile.isAllDay(), start);
+        }
+        if (this.forceTimed) {
+            shouldRezone = true;
+            if (!start.hasTime()) {
+                start.time(0);
+            }
+            if (end && !end.hasTime()) {
+                end.time(0);
+            }
+        }
+        else if (this.forceAllDay) {
+            if (start.hasTime()) {
+                start.stripTime();
+            }
+            if (end && end.hasTime()) {
+                end.stripTime();
+            }
+        }
+        if (this.dateDelta) {
+            shouldRezone = true;
+            start.add(this.dateDelta);
+            if (end) {
+                end.add(this.dateDelta);
+            }
+        }
+        // do this before adding startDelta to start, so we can work off of start
+        if (this.endDelta) {
+            shouldRezone = true;
+            end.add(this.endDelta);
+        }
+        if (this.startDelta) {
+            shouldRezone = true;
+            start.add(this.startDelta);
+        }
+        if (shouldRezone) {
+            start = calendar.applyTimezone(start);
+            if (end) {
+                end = calendar.applyTimezone(end);
+            }
+        }
+        // TODO: okay to access calendar option?
+        if (!end && calendar.opt('forceEventDuration')) {
+            end = calendar.getDefaultEventEnd(eventDateProfile.isAllDay(), start);
+        }
+        return new EventDateProfile_1.default(start, end, calendar);
+    };
+    EventDefDateMutation.prototype.setDateDelta = function (dateDelta) {
+        if (dateDelta && dateDelta.valueOf()) {
+            this.dateDelta = dateDelta;
+        }
+        else {
+            this.dateDelta = null;
+        }
+    };
+    EventDefDateMutation.prototype.setStartDelta = function (startDelta) {
+        if (startDelta && startDelta.valueOf()) {
+            this.startDelta = startDelta;
+        }
+        else {
+            this.startDelta = null;
+        }
+    };
+    EventDefDateMutation.prototype.setEndDelta = function (endDelta) {
+        if (endDelta && endDelta.valueOf()) {
+            this.endDelta = endDelta;
+        }
+        else {
+            this.endDelta = null;
+        }
+    };
+    EventDefDateMutation.prototype.isEmpty = function () {
+        return !this.clearEnd && !this.forceTimed && !this.forceAllDay &&
+            !this.dateDelta && !this.startDelta && !this.endDelta;
+    };
+    return EventDefDateMutation;
+}());
+exports.default = EventDefDateMutation;
 
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var Class_1 = __webpack_require__(33);
+var Class_1 = __webpack_require__(35);
 /*
 Embodies a div that has potential scrollbars
 */
@@ -7390,12 +7970,16 @@ var Scroller = /** @class */ (function (_super) {
         if (overflowX === 'auto') {
             overflowX = (scrollbarWidths.top || scrollbarWidths.bottom || // horizontal scrollbars?
                 // OR scrolling pane with massless scrollbars?
-                this.scrollEl[0].scrollWidth - 1 > this.scrollEl[0].clientWidth) ? 'scroll' : 'hidden';
+                this.scrollEl[0].scrollWidth - 1 > this.scrollEl[0].clientWidth
+            // subtract 1 because of IE off-by-one issue
+            ) ? 'scroll' : 'hidden';
         }
         if (overflowY === 'auto') {
             overflowY = (scrollbarWidths.left || scrollbarWidths.right || // vertical scrollbars?
                 // OR scrolling pane with massless scrollbars?
-                this.scrollEl[0].scrollHeight - 1 > this.scrollEl[0].clientHeight) ? 'scroll' : 'hidden';
+                this.scrollEl[0].scrollHeight - 1 > this.scrollEl[0].clientHeight
+            // subtract 1 because of IE off-by-one issue
+            ) ? 'scroll' : 'hidden';
         }
         this.scrollEl.css({ 'overflow-x': overflowX, 'overflow-y': overflowY });
     };
@@ -7425,15 +8009,15 @@ exports.default = Scroller;
 
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var DateComponent_1 = __webpack_require__(219);
-var GlobalEmitter_1 = __webpack_require__(21);
+var DateComponent_1 = __webpack_require__(231);
+var GlobalEmitter_1 = __webpack_require__(23);
 var InteractiveDateComponent = /** @class */ (function (_super) {
     tslib_1.__extends(InteractiveDateComponent, _super);
     function InteractiveDateComponent(_view, _options) {
@@ -7680,7 +8264,7 @@ exports.default = InteractiveDateComponent;
 
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7688,10 +8272,10 @@ var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var moment = __webpack_require__(0);
 var util_1 = __webpack_require__(4);
-var RenderQueue_1 = __webpack_require__(218);
-var DateProfileGenerator_1 = __webpack_require__(221);
-var InteractiveDateComponent_1 = __webpack_require__(40);
-var GlobalEmitter_1 = __webpack_require__(21);
+var RenderQueue_1 = __webpack_require__(229);
+var DateProfileGenerator_1 = __webpack_require__(55);
+var InteractiveDateComponent_1 = __webpack_require__(42);
+var GlobalEmitter_1 = __webpack_require__(23);
 var UnzonedRange_1 = __webpack_require__(5);
 /* An abstract class from which other views inherit from
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -7741,7 +8325,7 @@ var View = /** @class */ (function (_super) {
         this.addScroll(this.queryScroll());
     };
     View.prototype.onRenderQueueStop = function () {
-        if (this.calendar.updateViewSize()) {
+        if (this.calendar.updateViewSize()) { // success?
             this.popScroll();
         }
         this.calendar.thawContentHeight();
@@ -7777,7 +8361,7 @@ var View = /** @class */ (function (_super) {
         if (/^(year|month)$/.test(dateProfile.currentRangeUnit)) {
             unzonedRange = dateProfile.currentUnzonedRange;
         }
-        else {
+        else { // for day units or smaller, use the actual day range
             unzonedRange = dateProfile.activeUnzonedRange;
         }
         return this.formatRange({
@@ -8003,7 +8587,7 @@ var View = /** @class */ (function (_super) {
     /* Dimensions
     ------------------------------------------------------------------------------------------------------------------*/
     View.prototype.updateSize = function (totalHeight, isAuto, isResize) {
-        if (this['setHeight']) {
+        if (this['setHeight']) { // for legacy API
             this['setHeight'](totalHeight, isAuto);
         }
         else {
@@ -8120,15 +8704,16 @@ var View = /** @class */ (function (_super) {
         var undoFunc = eventManager.mutateEventsWithId(eventInstance.def.id, eventMutation);
         // update the EventInstance, for handlers
         eventInstance.dateProfile = eventMutation.dateMutation.buildNewDateProfile(eventInstance.dateProfile, this.calendar);
-        this.triggerEventResize(eventInstance, eventMutation.dateMutation.endDelta, undoFunc, el, ev);
+        var resizeDelta = eventMutation.dateMutation.endDelta || eventMutation.dateMutation.startDelta;
+        this.triggerEventResize(eventInstance, resizeDelta, undoFunc, el, ev);
     };
     // Triggers event-resize handlers that have subscribed via the API
-    View.prototype.triggerEventResize = function (eventInstance, durationDelta, undoFunc, el, ev) {
+    View.prototype.triggerEventResize = function (eventInstance, resizeDelta, undoFunc, el, ev) {
         this.publiclyTrigger('eventResize', {
             context: el[0],
             args: [
                 eventInstance.toLegacy(),
-                durationDelta,
+                resizeDelta,
                 undoFunc,
                 ev,
                 {},
@@ -8146,7 +8731,7 @@ var View = /** @class */ (function (_super) {
         this.reportSelection(footprint, ev);
     };
     View.prototype.renderSelectionFootprint = function (footprint) {
-        if (this['renderSelection']) {
+        if (this['renderSelection']) { // legacy method in custom view classes
             this['renderSelection'](footprint.toLegacy(this.calendar));
         }
         else {
@@ -8205,7 +8790,7 @@ var View = /** @class */ (function (_super) {
     View.prototype.unselectEventInstance = function () {
         if (this.selectedEventInstance) {
             this.getEventSegs().forEach(function (seg) {
-                if (seg.el) {
+                if (seg.el) { // necessary?
                     seg.el.removeClass('fc-selected');
                 }
             });
@@ -8393,7 +8978,7 @@ View.watch('legacyDateProps', ['dateProfile'], function (deps) {
 
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -8457,7 +9042,7 @@ var EventRenderer = /** @class */ (function () {
         // render an `.el` on each seg
         // returns a subset of the segs. segs that were actually rendered
         segs = this.renderFgSegEls(segs);
-        if (this.renderFgSegs(segs) !== false) {
+        if (this.renderFgSegs(segs) !== false) { // no failure?
             this.fgSegs = segs;
         }
     };
@@ -8468,7 +9053,7 @@ var EventRenderer = /** @class */ (function () {
     EventRenderer.prototype.renderBgRanges = function (eventRanges) {
         var eventFootprints = this.component.eventRangesToEventFootprints(eventRanges);
         var segs = this.component.eventFootprintsToSegs(eventFootprints);
-        if (this.renderBgSegs(segs) !== false) {
+        if (this.renderBgSegs(segs) !== false) { // no failure?
             this.bgSegs = segs;
         }
     };
@@ -8524,7 +9109,7 @@ var EventRenderer = /** @class */ (function () {
         var html = '';
         var renderedSegs = [];
         var i;
-        if (segs.length) {
+        if (segs.length) { // don't build an empty html string
             // build a large concatenation of event segment HTML
             for (i = 0; i < segs.length; i++) {
                 this.beforeFgSegHtml(segs[i]);
@@ -8535,7 +9120,7 @@ var EventRenderer = /** @class */ (function () {
             $(html).each(function (i, node) {
                 var seg = segs[i];
                 var el = $(node);
-                if (hasEventRenderHandlers) {
+                if (hasEventRenderHandlers) { // optimization
                     el = _this.filterEventRenderEl(seg.footprint, el);
                 }
                 if (el) {
@@ -8580,7 +9165,7 @@ var EventRenderer = /** @class */ (function () {
             context: legacy,
             args: [legacy, el, this.view]
         });
-        if (custom === false) {
+        if (custom === false) { // means don't render at all
             el = null;
         }
         else if (custom && custom !== true) {
@@ -8718,19 +9303,19 @@ exports.default = EventRenderer;
 
 
 /***/ }),
-/* 43 */,
-/* 44 */,
 /* 45 */,
 /* 46 */,
-/* 47 */
+/* 47 */,
+/* 48 */,
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var moment_ext_1 = __webpack_require__(10);
+var moment_ext_1 = __webpack_require__(11);
 // Plugin
 // -------------------------------------------------------------------------------------------------
 moment_ext_1.newMomentProto.format = function () {
-    if (this._fullCalendar && arguments[0]) {
+    if (this._fullCalendar && arguments[0]) { // an enhanced moment? and a format string provided?
         return formatDate(this, arguments[0]); // our extended formatting
     }
     if (this._ambigTime) {
@@ -8739,7 +9324,7 @@ moment_ext_1.newMomentProto.format = function () {
     if (this._ambigZone) {
         return moment_ext_1.oldMomentFormat(englishMoment(this), 'YYYY-MM-DD[T]HH:mm:ss');
     }
-    if (this._fullCalendar) {
+    if (this._fullCalendar) { // enhanced non-ambig moment?
         // moment.format() doesn't ensure english, but we want to.
         return moment_ext_1.oldMomentFormat(englishMoment(this));
     }
@@ -8752,7 +9337,7 @@ moment_ext_1.newMomentProto.toISOString = function () {
     if (this._ambigZone) {
         return moment_ext_1.oldMomentFormat(englishMoment(this), 'YYYY-MM-DD[T]HH:mm:ss');
     }
-    if (this._fullCalendar) {
+    if (this._fullCalendar) { // enhanced non-ambig moment?
         // depending on browser, moment might not output english. ensure english.
         // https://github.com/moment/moment/blob/2.18.1/src/lib/moment/format.js#L22
         return moment_ext_1.oldMomentProto.toISOString.apply(englishMoment(this), arguments);
@@ -8922,17 +9507,17 @@ function chunkFormatString(formatStr) {
     // \4 is a backreference to the first character of a multi-character set.
     var chunker = /\[([^\]]*)\]|\(([^\)]*)\)|(LTS|LT|(\w)\4*o?)|([^\w\[\(]+)/g;
     while ((match = chunker.exec(formatStr))) {
-        if (match[1]) {
+        if (match[1]) { // a literal string inside [ ... ]
             chunks.push.apply(chunks, // append
             splitStringLiteral(match[1]));
         }
-        else if (match[2]) {
+        else if (match[2]) { // non-zero formatting inside ( ... )
             chunks.push({ maybe: chunkFormatString(match[2]) });
         }
-        else if (match[3]) {
+        else if (match[3]) { // a formatting token
             chunks.push({ token: match[3] });
         }
-        else if (match[5]) {
+        else if (match[5]) { // an unenclosed literal string
             chunks.push.apply(chunks, // append
             splitStringLiteral(match[5]));
         }
@@ -9043,7 +9628,7 @@ Accepts an almost-finally-formatted string and processes the "maybe" control cha
 */
 function processMaybeMarkers(s) {
     return s.replace(MAYBE_REGEXP, function (m0, m1) {
-        if (m1.match(/[1-9]/)) {
+        if (m1.match(/[1-9]/)) { // any non-zero numeric characters?
             return m1;
         }
         else {
@@ -9082,13 +9667,31 @@ exports.queryMostGranularFormatUnit = queryMostGranularFormatUnit;
 
 
 /***/ }),
-/* 48 */
+/* 50 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EventRange = /** @class */ (function () {
+    function EventRange(unzonedRange, eventDef, eventInstance) {
+        this.unzonedRange = unzonedRange;
+        this.eventDef = eventDef;
+        if (eventInstance) {
+            this.eventInstance = eventInstance;
+        }
+    }
+    return EventRange;
+}());
+exports.default = EventRange;
+
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var Class_1 = __webpack_require__(33);
-var EmitterMixin_1 = __webpack_require__(11);
+var Class_1 = __webpack_require__(35);
+var EmitterMixin_1 = __webpack_require__(13);
 var ListenerMixin_1 = __webpack_require__(7);
 var Model = /** @class */ (function (_super) {
     tslib_1.__extends(Model, _super);
@@ -9244,8 +9847,8 @@ var Model = /** @class */ (function (_super) {
         var isCallingStop = false;
         var onBeforeDepChange = function (depName, val, isOptional) {
             queuedChangeCnt++;
-            if (queuedChangeCnt === 1) {
-                if (satisfyCnt === depCnt) {
+            if (queuedChangeCnt === 1) { // first change to cause a "stop" ?
+                if (satisfyCnt === depCnt) { // all deps previously satisfied?
                     isCallingStop = true;
                     stopFunc(values);
                     isCallingStop = false;
@@ -9253,14 +9856,14 @@ var Model = /** @class */ (function (_super) {
             }
         };
         var onDepChange = function (depName, val, isOptional) {
-            if (val === undefined) {
+            if (val === undefined) { // unsetting a value?
                 // required dependency that was previously set?
                 if (!isOptional && values[depName] !== undefined) {
                     satisfyCnt--;
                 }
                 delete values[depName];
             }
-            else {
+            else { // setting a value?
                 // required dependency that was previously unset?
                 if (!isOptional && values[depName] === undefined) {
                     satisfyCnt++;
@@ -9268,7 +9871,7 @@ var Model = /** @class */ (function (_super) {
                 values[depName] = val;
             }
             queuedChangeCnt--;
-            if (!queuedChangeCnt) {
+            if (!queuedChangeCnt) { // last change to cause a "start"?
                 // now finally satisfied or satisfied all along?
                 if (satisfyCnt === depCnt) {
                     // if the stopFunc initiated another value change, ignore it.
@@ -9287,7 +9890,7 @@ var Model = /** @class */ (function (_super) {
         // listen to dependency changes
         depList.forEach(function (depName) {
             var isOptional = false;
-            if (depName.charAt(0) === '?') {
+            if (depName.charAt(0) === '?') { // TODO: more DRY
                 depName = depName.substring(1);
                 isOptional = true;
             }
@@ -9301,7 +9904,7 @@ var Model = /** @class */ (function (_super) {
         // process current dependency values
         depList.forEach(function (depName) {
             var isOptional = false;
-            if (depName.charAt(0) === '?') {
+            if (depName.charAt(0) === '?') { // TODO: more DRY
                 depName = depName.substring(1);
                 isOptional = true;
             }
@@ -9352,202 +9955,509 @@ ListenerMixin_1.default.mixInto(Model);
 
 
 /***/ }),
-/* 49 */
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+USAGE:
+  import { default as ParsableModelMixin, ParsableModelInterface } from './ParsableModelMixin'
+in class:
+  applyProps: ParsableModelInterface['applyProps']
+  applyManualStandardProps: ParsableModelInterface['applyManualStandardProps']
+  applyMiscProps: ParsableModelInterface['applyMiscProps']
+  isStandardProp: ParsableModelInterface['isStandardProp']
+  static defineStandardProps = ParsableModelMixin.defineStandardProps
+  static copyVerbatimStandardProps = ParsableModelMixin.copyVerbatimStandardProps
+after class:
+  ParsableModelMixin.mixInto(TheClass)
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var util_1 = __webpack_require__(4);
+var Mixin_1 = __webpack_require__(15);
+var ParsableModelMixin = /** @class */ (function (_super) {
+    tslib_1.__extends(ParsableModelMixin, _super);
+    function ParsableModelMixin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ParsableModelMixin.defineStandardProps = function (propDefs) {
+        var proto = this.prototype;
+        if (!proto.hasOwnProperty('standardPropMap')) {
+            proto.standardPropMap = Object.create(proto.standardPropMap);
+        }
+        util_1.copyOwnProps(propDefs, proto.standardPropMap);
+    };
+    ParsableModelMixin.copyVerbatimStandardProps = function (src, dest) {
+        var map = this.prototype.standardPropMap;
+        var propName;
+        for (propName in map) {
+            if (src[propName] != null && // in the src object?
+                map[propName] === true // false means "copy verbatim"
+            ) {
+                dest[propName] = src[propName];
+            }
+        }
+    };
+    /*
+    Returns true/false for success.
+    Meant to be only called ONCE, at object creation.
+    */
+    ParsableModelMixin.prototype.applyProps = function (rawProps) {
+        var standardPropMap = this.standardPropMap;
+        var manualProps = {};
+        var miscProps = {};
+        var propName;
+        for (propName in rawProps) {
+            if (standardPropMap[propName] === true) { // copy verbatim
+                this[propName] = rawProps[propName];
+            }
+            else if (standardPropMap[propName] === false) {
+                manualProps[propName] = rawProps[propName];
+            }
+            else {
+                miscProps[propName] = rawProps[propName];
+            }
+        }
+        this.applyMiscProps(miscProps);
+        return this.applyManualStandardProps(manualProps);
+    };
+    /*
+    If subclasses override, they must call this supermethod and return the boolean response.
+    Meant to be only called ONCE, at object creation.
+    */
+    ParsableModelMixin.prototype.applyManualStandardProps = function (rawProps) {
+        return true;
+    };
+    /*
+    Can be called even after initial object creation.
+    */
+    ParsableModelMixin.prototype.applyMiscProps = function (rawProps) {
+        // subclasses can implement
+    };
+    /*
+    TODO: why is this a method when defineStandardProps is static
+    */
+    ParsableModelMixin.prototype.isStandardProp = function (propName) {
+        return propName in this.standardPropMap;
+    };
+    return ParsableModelMixin;
+}(Mixin_1.default));
+exports.default = ParsableModelMixin;
+ParsableModelMixin.prototype.standardPropMap = {}; // will be cloned by defineStandardProps
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EventInstance = /** @class */ (function () {
+    function EventInstance(def, dateProfile) {
+        this.def = def;
+        this.dateProfile = dateProfile;
+    }
+    EventInstance.prototype.toLegacy = function () {
+        var dateProfile = this.dateProfile;
+        var obj = this.def.toLegacy();
+        obj.start = dateProfile.start.clone();
+        obj.end = dateProfile.end ? dateProfile.end.clone() : null;
+        return obj;
+    };
+    return EventInstance;
+}());
+exports.default = EventInstance;
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var $ = __webpack_require__(3);
+var moment = __webpack_require__(0);
+var EventDef_1 = __webpack_require__(37);
+var EventInstance_1 = __webpack_require__(53);
+var EventDateProfile_1 = __webpack_require__(16);
+var RecurringEventDef = /** @class */ (function (_super) {
+    tslib_1.__extends(RecurringEventDef, _super);
+    function RecurringEventDef() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    RecurringEventDef.prototype.isAllDay = function () {
+        return !this.startTime && !this.endTime;
+    };
+    RecurringEventDef.prototype.buildInstances = function (unzonedRange) {
+        var calendar = this.source.calendar;
+        var unzonedDate = unzonedRange.getStart();
+        var unzonedEnd = unzonedRange.getEnd();
+        var zonedDayStart;
+        var instanceStart;
+        var instanceEnd;
+        var instances = [];
+        while (unzonedDate.isBefore(unzonedEnd)) {
+            // if everyday, or this particular day-of-week
+            if (!this.dowHash || this.dowHash[unzonedDate.day()]) {
+                zonedDayStart = calendar.applyTimezone(unzonedDate);
+                instanceStart = zonedDayStart.clone();
+                instanceEnd = null;
+                if (this.startTime) {
+                    instanceStart.time(this.startTime);
+                }
+                else {
+                    instanceStart.stripTime();
+                }
+                if (this.endTime) {
+                    instanceEnd = zonedDayStart.clone().time(this.endTime);
+                }
+                instances.push(new EventInstance_1.default(this, // definition
+                new EventDateProfile_1.default(instanceStart, instanceEnd, calendar)));
+            }
+            unzonedDate.add(1, 'days');
+        }
+        return instances;
+    };
+    RecurringEventDef.prototype.setDow = function (dowNumbers) {
+        if (!this.dowHash) {
+            this.dowHash = {};
+        }
+        for (var i = 0; i < dowNumbers.length; i++) {
+            this.dowHash[dowNumbers[i]] = true;
+        }
+    };
+    RecurringEventDef.prototype.clone = function () {
+        var def = _super.prototype.clone.call(this);
+        if (def.startTime) {
+            def.startTime = moment.duration(this.startTime);
+        }
+        if (def.endTime) {
+            def.endTime = moment.duration(this.endTime);
+        }
+        if (this.dowHash) {
+            def.dowHash = $.extend({}, this.dowHash);
+        }
+        return def;
+    };
+    return RecurringEventDef;
+}(EventDef_1.default));
+exports.default = RecurringEventDef;
+/*
+HACK to work with TypeScript mixins
+NOTE: if super-method fails, should still attempt to apply
+*/
+RecurringEventDef.prototype.applyProps = function (rawProps) {
+    var superSuccess = EventDef_1.default.prototype.applyProps.call(this, rawProps);
+    if (rawProps.start) {
+        this.startTime = moment.duration(rawProps.start);
+    }
+    if (rawProps.end) {
+        this.endTime = moment.duration(rawProps.end);
+    }
+    if (rawProps.dow) {
+        this.setDow(rawProps.dow);
+    }
+    return superSuccess;
+};
+// Parsing
+// ---------------------------------------------------------------------------------------------------------------------
+RecurringEventDef.defineStandardProps({
+    start: false,
+    end: false,
+    dow: false
+});
+
+
+/***/ }),
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment = __webpack_require__(0);
 var util_1 = __webpack_require__(4);
-var SingleEventDef_1 = __webpack_require__(13);
-var RecurringEventDef_1 = __webpack_require__(210);
-exports.default = {
-    parse: function (eventInput, source) {
-        if (util_1.isTimeString(eventInput.start) || moment.isDuration(eventInput.start) ||
-            util_1.isTimeString(eventInput.end) || moment.isDuration(eventInput.end)) {
-            return RecurringEventDef_1.default.parse(eventInput, source);
+var UnzonedRange_1 = __webpack_require__(5);
+var DateProfileGenerator = /** @class */ (function () {
+    function DateProfileGenerator(_view) {
+        this._view = _view;
+    }
+    DateProfileGenerator.prototype.opt = function (name) {
+        return this._view.opt(name);
+    };
+    DateProfileGenerator.prototype.trimHiddenDays = function (unzonedRange) {
+        return this._view.trimHiddenDays(unzonedRange);
+    };
+    DateProfileGenerator.prototype.msToUtcMoment = function (ms, forceAllDay) {
+        return this._view.calendar.msToUtcMoment(ms, forceAllDay);
+    };
+    /* Date Range Computation
+    ------------------------------------------------------------------------------------------------------------------*/
+    // Builds a structure with info about what the dates/ranges will be for the "prev" view.
+    DateProfileGenerator.prototype.buildPrev = function (currentDateProfile) {
+        var prevDate = currentDateProfile.date.clone()
+            .startOf(currentDateProfile.currentRangeUnit)
+            .subtract(currentDateProfile.dateIncrement);
+        return this.build(prevDate, -1);
+    };
+    // Builds a structure with info about what the dates/ranges will be for the "next" view.
+    DateProfileGenerator.prototype.buildNext = function (currentDateProfile) {
+        var nextDate = currentDateProfile.date.clone()
+            .startOf(currentDateProfile.currentRangeUnit)
+            .add(currentDateProfile.dateIncrement);
+        return this.build(nextDate, 1);
+    };
+    // Builds a structure holding dates/ranges for rendering around the given date.
+    // Optional direction param indicates whether the date is being incremented/decremented
+    // from its previous value. decremented = -1, incremented = 1 (default).
+    DateProfileGenerator.prototype.build = function (date, direction, forceToValid) {
+        if (forceToValid === void 0) { forceToValid = false; }
+        var isDateAllDay = !date.hasTime();
+        var validUnzonedRange;
+        var minTime = null;
+        var maxTime = null;
+        var currentInfo;
+        var isRangeAllDay;
+        var renderUnzonedRange;
+        var activeUnzonedRange;
+        var isValid;
+        validUnzonedRange = this.buildValidRange();
+        validUnzonedRange = this.trimHiddenDays(validUnzonedRange);
+        if (forceToValid) {
+            date = this.msToUtcMoment(validUnzonedRange.constrainDate(date), // returns MS
+            isDateAllDay);
+        }
+        currentInfo = this.buildCurrentRangeInfo(date, direction);
+        isRangeAllDay = /^(year|month|week|day)$/.test(currentInfo.unit);
+        renderUnzonedRange = this.buildRenderRange(this.trimHiddenDays(currentInfo.unzonedRange), currentInfo.unit, isRangeAllDay);
+        renderUnzonedRange = this.trimHiddenDays(renderUnzonedRange);
+        activeUnzonedRange = renderUnzonedRange.clone();
+        if (!this.opt('showNonCurrentDates')) {
+            activeUnzonedRange = activeUnzonedRange.intersect(currentInfo.unzonedRange);
+        }
+        minTime = moment.duration(this.opt('minTime'));
+        maxTime = moment.duration(this.opt('maxTime'));
+        activeUnzonedRange = this.adjustActiveRange(activeUnzonedRange, minTime, maxTime);
+        activeUnzonedRange = activeUnzonedRange.intersect(validUnzonedRange); // might return null
+        if (activeUnzonedRange) {
+            date = this.msToUtcMoment(activeUnzonedRange.constrainDate(date), // returns MS
+            isDateAllDay);
+        }
+        // it's invalid if the originally requested date is not contained,
+        // or if the range is completely outside of the valid range.
+        isValid = currentInfo.unzonedRange.intersectsWith(validUnzonedRange);
+        return {
+            // constraint for where prev/next operations can go and where events can be dragged/resized to.
+            // an object with optional start and end properties.
+            validUnzonedRange: validUnzonedRange,
+            // range the view is formally responsible for.
+            // for example, a month view might have 1st-31st, excluding padded dates
+            currentUnzonedRange: currentInfo.unzonedRange,
+            // name of largest unit being displayed, like "month" or "week"
+            currentRangeUnit: currentInfo.unit,
+            isRangeAllDay: isRangeAllDay,
+            // dates that display events and accept drag-n-drop
+            // will be `null` if no dates accept events
+            activeUnzonedRange: activeUnzonedRange,
+            // date range with a rendered skeleton
+            // includes not-active days that need some sort of DOM
+            renderUnzonedRange: renderUnzonedRange,
+            // Duration object that denotes the first visible time of any given day
+            minTime: minTime,
+            // Duration object that denotes the exclusive visible end time of any given day
+            maxTime: maxTime,
+            isValid: isValid,
+            date: date,
+            // how far the current date will move for a prev/next operation
+            dateIncrement: this.buildDateIncrement(currentInfo.duration)
+            // pass a fallback (might be null) ^
+        };
+    };
+    // Builds an object with optional start/end properties.
+    // Indicates the minimum/maximum dates to display.
+    // not responsible for trimming hidden days.
+    DateProfileGenerator.prototype.buildValidRange = function () {
+        return this._view.getUnzonedRangeOption('validRange', this._view.calendar.getNow()) ||
+            new UnzonedRange_1.default(); // completely open-ended
+    };
+    // Builds a structure with info about the "current" range, the range that is
+    // highlighted as being the current month for example.
+    // See build() for a description of `direction`.
+    // Guaranteed to have `range` and `unit` properties. `duration` is optional.
+    // TODO: accept a MS-time instead of a moment `date`?
+    DateProfileGenerator.prototype.buildCurrentRangeInfo = function (date, direction) {
+        var viewSpec = this._view.viewSpec;
+        var duration = null;
+        var unit = null;
+        var unzonedRange = null;
+        var dayCount;
+        if (viewSpec.duration) {
+            duration = viewSpec.duration;
+            unit = viewSpec.durationUnit;
+            unzonedRange = this.buildRangeFromDuration(date, direction, duration, unit);
+        }
+        else if ((dayCount = this.opt('dayCount'))) {
+            unit = 'day';
+            unzonedRange = this.buildRangeFromDayCount(date, direction, dayCount);
+        }
+        else if ((unzonedRange = this.buildCustomVisibleRange(date))) {
+            unit = util_1.computeGreatestUnit(unzonedRange.getStart(), unzonedRange.getEnd());
         }
         else {
-            return SingleEventDef_1.default.parse(eventInput, source);
+            duration = this.getFallbackDuration();
+            unit = util_1.computeGreatestUnit(duration);
+            unzonedRange = this.buildRangeFromDuration(date, direction, duration, unit);
         }
-    }
-};
-
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = __webpack_require__(4);
-var EventDateProfile_1 = __webpack_require__(17);
-var EventDefDateMutation = /** @class */ (function () {
-    function EventDefDateMutation() {
-        this.clearEnd = false;
-        this.forceTimed = false;
-        this.forceAllDay = false;
-    }
-    EventDefDateMutation.createFromDiff = function (dateProfile0, dateProfile1, largeUnit) {
-        var clearEnd = dateProfile0.end && !dateProfile1.end;
-        var forceTimed = dateProfile0.isAllDay() && !dateProfile1.isAllDay();
-        var forceAllDay = !dateProfile0.isAllDay() && dateProfile1.isAllDay();
-        var dateDelta;
-        var endDiff;
-        var endDelta;
-        var mutation;
-        // subtracts the dates in the appropriate way, returning a duration
-        function subtractDates(date1, date0) {
-            if (largeUnit) {
-                return util_1.diffByUnit(date1, date0, largeUnit); // poorly named
+        return { duration: duration, unit: unit, unzonedRange: unzonedRange };
+    };
+    DateProfileGenerator.prototype.getFallbackDuration = function () {
+        return moment.duration({ days: 1 });
+    };
+    // Returns a new activeUnzonedRange to have time values (un-ambiguate)
+    // minTime or maxTime causes the range to expand.
+    DateProfileGenerator.prototype.adjustActiveRange = function (unzonedRange, minTime, maxTime) {
+        var start = unzonedRange.getStart();
+        var end = unzonedRange.getEnd();
+        if (this._view.usesMinMaxTime) {
+            if (minTime < 0) {
+                start.time(0).add(minTime);
             }
-            else if (dateProfile1.isAllDay()) {
-                return util_1.diffDay(date1, date0); // poorly named
+            if (maxTime > 24 * 60 * 60 * 1000) { // beyond 24 hours?
+                end.time(maxTime - (24 * 60 * 60 * 1000));
+            }
+        }
+        return new UnzonedRange_1.default(start, end);
+    };
+    // Builds the "current" range when it is specified as an explicit duration.
+    // `unit` is the already-computed computeGreatestUnit value of duration.
+    // TODO: accept a MS-time instead of a moment `date`?
+    DateProfileGenerator.prototype.buildRangeFromDuration = function (date, direction, duration, unit) {
+        var alignment = this.opt('dateAlignment');
+        var dateIncrementInput;
+        var dateIncrementDuration;
+        var start;
+        var end;
+        var res;
+        // compute what the alignment should be
+        if (!alignment) {
+            dateIncrementInput = this.opt('dateIncrement');
+            if (dateIncrementInput) {
+                dateIncrementDuration = moment.duration(dateIncrementInput);
+                // use the smaller of the two units
+                if (dateIncrementDuration < duration) {
+                    alignment = util_1.computeDurationGreatestUnit(dateIncrementDuration, dateIncrementInput);
+                }
+                else {
+                    alignment = unit;
+                }
             }
             else {
-                return util_1.diffDayTime(date1, date0); // poorly named
+                alignment = unit;
             }
         }
-        dateDelta = subtractDates(dateProfile1.start, dateProfile0.start);
-        if (dateProfile1.end) {
-            // use unzonedRanges because dateProfile0.end might be null
-            endDiff = subtractDates(dateProfile1.unzonedRange.getEnd(), dateProfile0.unzonedRange.getEnd());
-            endDelta = endDiff.subtract(dateDelta);
+        // if the view displays a single day or smaller
+        if (duration.as('days') <= 1) {
+            if (this._view.isHiddenDay(start)) {
+                start = this._view.skipHiddenDays(start, direction);
+                start.startOf('day');
+            }
         }
-        mutation = new EventDefDateMutation();
-        mutation.clearEnd = clearEnd;
-        mutation.forceTimed = forceTimed;
-        mutation.forceAllDay = forceAllDay;
-        mutation.setDateDelta(dateDelta);
-        mutation.setEndDelta(endDelta);
-        return mutation;
+        function computeRes() {
+            start = date.clone().startOf(alignment);
+            end = start.clone().add(duration);
+            res = new UnzonedRange_1.default(start, end);
+        }
+        computeRes();
+        // if range is completely enveloped by hidden days, go past the hidden days
+        if (!this.trimHiddenDays(res)) {
+            date = this._view.skipHiddenDays(date, direction);
+            computeRes();
+        }
+        return res;
     };
-    /*
-    returns an undo function.
-    */
-    EventDefDateMutation.prototype.buildNewDateProfile = function (eventDateProfile, calendar) {
-        var start = eventDateProfile.start.clone();
-        var end = null;
-        var shouldRezone = false;
-        if (eventDateProfile.end && !this.clearEnd) {
-            end = eventDateProfile.end.clone();
-        }
-        else if (this.endDelta && !end) {
-            end = calendar.getDefaultEventEnd(eventDateProfile.isAllDay(), start);
-        }
-        if (this.forceTimed) {
-            shouldRezone = true;
-            if (!start.hasTime()) {
-                start.time(0);
+    // Builds the "current" range when a dayCount is specified.
+    // TODO: accept a MS-time instead of a moment `date`?
+    DateProfileGenerator.prototype.buildRangeFromDayCount = function (date, direction, dayCount) {
+        var customAlignment = this.opt('dateAlignment');
+        var runningCount = 0;
+        var start;
+        var end;
+        if (customAlignment || direction !== -1) {
+            start = date.clone();
+            if (customAlignment) {
+                start.startOf(customAlignment);
             }
-            if (end && !end.hasTime()) {
-                end.time(0);
-            }
-        }
-        else if (this.forceAllDay) {
-            if (start.hasTime()) {
-                start.stripTime();
-            }
-            if (end && end.hasTime()) {
-                end.stripTime();
-            }
-        }
-        if (this.dateDelta) {
-            shouldRezone = true;
-            start.add(this.dateDelta);
-            if (end) {
-                end.add(this.dateDelta);
-            }
-        }
-        // do this before adding startDelta to start, so we can work off of start
-        if (this.endDelta) {
-            shouldRezone = true;
-            end.add(this.endDelta);
-        }
-        if (this.startDelta) {
-            shouldRezone = true;
-            start.add(this.startDelta);
-        }
-        if (shouldRezone) {
-            start = calendar.applyTimezone(start);
-            if (end) {
-                end = calendar.applyTimezone(end);
-            }
-        }
-        // TODO: okay to access calendar option?
-        if (!end && calendar.opt('forceEventDuration')) {
-            end = calendar.getDefaultEventEnd(eventDateProfile.isAllDay(), start);
-        }
-        return new EventDateProfile_1.default(start, end, calendar);
-    };
-    EventDefDateMutation.prototype.setDateDelta = function (dateDelta) {
-        if (dateDelta && dateDelta.valueOf()) {
-            this.dateDelta = dateDelta;
+            start.startOf('day');
+            start = this._view.skipHiddenDays(start);
+            end = start.clone();
+            do {
+                end.add(1, 'day');
+                if (!this._view.isHiddenDay(end)) {
+                    runningCount++;
+                }
+            } while (runningCount < dayCount);
         }
         else {
-            this.dateDelta = null;
+            end = date.clone().startOf('day').add(1, 'day');
+            end = this._view.skipHiddenDays(end, -1, true);
+            start = end.clone();
+            do {
+                start.add(-1, 'day');
+                if (!this._view.isHiddenDay(start)) {
+                    runningCount++;
+                }
+            } while (runningCount < dayCount);
         }
+        return new UnzonedRange_1.default(start, end);
     };
-    EventDefDateMutation.prototype.setStartDelta = function (startDelta) {
-        if (startDelta && startDelta.valueOf()) {
-            this.startDelta = startDelta;
+    // Builds a normalized range object for the "visible" range,
+    // which is a way to define the currentUnzonedRange and activeUnzonedRange at the same time.
+    // TODO: accept a MS-time instead of a moment `date`?
+    DateProfileGenerator.prototype.buildCustomVisibleRange = function (date) {
+        var visibleUnzonedRange = this._view.getUnzonedRangeOption('visibleRange', this._view.calendar.applyTimezone(date) // correct zone. also generates new obj that avoids mutations
+        );
+        if (visibleUnzonedRange && (visibleUnzonedRange.startMs == null || visibleUnzonedRange.endMs == null)) {
+            return null;
+        }
+        return visibleUnzonedRange;
+    };
+    // Computes the range that will represent the element/cells for *rendering*,
+    // but which may have voided days/times.
+    // not responsible for trimming hidden days.
+    DateProfileGenerator.prototype.buildRenderRange = function (currentUnzonedRange, currentRangeUnit, isRangeAllDay) {
+        return currentUnzonedRange.clone();
+    };
+    // Compute the duration value that should be added/substracted to the current date
+    // when a prev/next operation happens.
+    DateProfileGenerator.prototype.buildDateIncrement = function (fallback) {
+        var dateIncrementInput = this.opt('dateIncrement');
+        var customAlignment;
+        if (dateIncrementInput) {
+            return moment.duration(dateIncrementInput);
+        }
+        else if ((customAlignment = this.opt('dateAlignment'))) {
+            return moment.duration(1, customAlignment);
+        }
+        else if (fallback) {
+            return fallback;
         }
         else {
-            this.startDelta = null;
+            return moment.duration({ days: 1 });
         }
     };
-    EventDefDateMutation.prototype.setEndDelta = function (endDelta) {
-        if (endDelta && endDelta.valueOf()) {
-            this.endDelta = endDelta;
-        }
-        else {
-            this.endDelta = null;
-        }
-    };
-    EventDefDateMutation.prototype.isEmpty = function () {
-        return !this.clearEnd && !this.forceTimed && !this.forceAllDay &&
-            !this.dateDelta && !this.startDelta && !this.endDelta;
-    };
-    return EventDefDateMutation;
+    return DateProfileGenerator;
 }());
-exports.default = EventDefDateMutation;
+exports.default = DateProfileGenerator;
 
 
 /***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var StandardTheme_1 = __webpack_require__(213);
-var JqueryUiTheme_1 = __webpack_require__(214);
-var themeClassHash = {};
-function defineThemeSystem(themeName, themeClass) {
-    themeClassHash[themeName] = themeClass;
-}
-exports.defineThemeSystem = defineThemeSystem;
-function getThemeSystemClass(themeSetting) {
-    if (!themeSetting) {
-        return StandardTheme_1.default;
-    }
-    else if (themeSetting === true) {
-        return JqueryUiTheme_1.default;
-    }
-    else {
-        return themeClassHash[themeSetting];
-    }
-}
-exports.getThemeSystemClass = getThemeSystemClass;
-
-
-/***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var Promise_1 = __webpack_require__(20);
+var Promise_1 = __webpack_require__(21);
 var EventSource_1 = __webpack_require__(6);
-var SingleEventDef_1 = __webpack_require__(13);
+var SingleEventDef_1 = __webpack_require__(9);
 var ArrayEventSource = /** @class */ (function (_super) {
     tslib_1.__extends(ArrayEventSource, _super);
     function ArrayEventSource(calendar) {
@@ -9558,10 +10468,10 @@ var ArrayEventSource = /** @class */ (function (_super) {
     ArrayEventSource.parse = function (rawInput, calendar) {
         var rawProps;
         // normalize raw input
-        if ($.isArray(rawInput.events)) {
+        if ($.isArray(rawInput.events)) { // extended form
             rawProps = rawInput;
         }
-        else if ($.isArray(rawInput)) {
+        else if ($.isArray(rawInput)) { // short form
             rawProps = { events: rawInput };
         }
         if (rawProps) {
@@ -9618,7 +10528,33 @@ ArrayEventSource.defineStandardProps({
 
 
 /***/ }),
-/* 53 */
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var StandardTheme_1 = __webpack_require__(221);
+var JqueryUiTheme_1 = __webpack_require__(222);
+var themeClassHash = {};
+function defineThemeSystem(themeName, themeClass) {
+    themeClassHash[themeName] = themeClass;
+}
+exports.defineThemeSystem = defineThemeSystem;
+function getThemeSystemClass(themeSetting) {
+    if (!themeSetting) {
+        return StandardTheme_1.default;
+    }
+    else if (themeSetting === true) {
+        return JqueryUiTheme_1.default;
+    }
+    else {
+        return themeClassHash[themeSetting];
+    }
+}
+exports.getThemeSystemClass = getThemeSystemClass;
+
+
+/***/ }),
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -9794,7 +10730,9 @@ var CoordCache = /** @class */ (function () {
         var scrollParentEl;
         if (this.els.length > 0) {
             scrollParentEl = util_1.getScrollParent(this.els.eq(0));
-            if (!scrollParentEl.is(document)) {
+            if (!scrollParentEl.is(document) &&
+                !scrollParentEl.is('html,body') // don't consider these bounding rects. solves issue 3615
+            ) {
                 return util_1.getClientRect(scrollParentEl);
             }
         }
@@ -9815,14 +10753,14 @@ exports.default = CoordCache;
 
 
 /***/ }),
-/* 54 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
 var ListenerMixin_1 = __webpack_require__(7);
-var GlobalEmitter_1 = __webpack_require__(21);
+var GlobalEmitter_1 = __webpack_require__(23);
 /* Tracks a drag's mouse movement, firing various handlers
 ----------------------------------------------------------------------------------------------------------------------*/
 // TODO: use Emitter
@@ -9955,7 +10893,7 @@ var DragListener = /** @class */ (function () {
         var distanceSq; // current distance from the origin, squared
         if (!this.isDistanceSurpassed) {
             distanceSq = dx * dx + dy * dy;
-            if (distanceSq >= minDistance * minDistance) {
+            if (distanceSq >= minDistance * minDistance) { // use pythagorean theorem
                 this.handleDistanceSurpassed(ev);
             }
         }
@@ -10080,7 +11018,7 @@ var DragListener = /** @class */ (function () {
         var rightCloseness;
         var topVel = 0;
         var leftVel = 0;
-        if (bounds) {
+        if (bounds) { // only scroll if scrollEl exists
             // compute closeness to edges. valid range is from 0.0 - 1.0
             topCloseness = (sensitivity - (util_1.getEvY(ev) - bounds.top)) / sensitivity;
             bottomCloseness = (sensitivity - (bounds.bottom - util_1.getEvY(ev))) / sensitivity;
@@ -10118,23 +11056,23 @@ var DragListener = /** @class */ (function () {
     // Forces scrollTopVel and scrollLeftVel to be zero if scrolling has already gone all the way
     DragListener.prototype.constrainScrollVel = function () {
         var el = this.scrollEl;
-        if (this.scrollTopVel < 0) {
-            if (el.scrollTop() <= 0) {
+        if (this.scrollTopVel < 0) { // scrolling up?
+            if (el.scrollTop() <= 0) { // already scrolled all the way up?
                 this.scrollTopVel = 0;
             }
         }
-        else if (this.scrollTopVel > 0) {
-            if (el.scrollTop() + el[0].clientHeight >= el[0].scrollHeight) {
+        else if (this.scrollTopVel > 0) { // scrolling down?
+            if (el.scrollTop() + el[0].clientHeight >= el[0].scrollHeight) { // already scrolled all the way down?
                 this.scrollTopVel = 0;
             }
         }
-        if (this.scrollLeftVel < 0) {
-            if (el.scrollLeft() <= 0) {
+        if (this.scrollLeftVel < 0) { // scrolling left?
+            if (el.scrollLeft() <= 0) { // already scrolled all the left?
                 this.scrollLeftVel = 0;
             }
         }
-        else if (this.scrollLeftVel > 0) {
-            if (el.scrollLeft() + el[0].clientWidth >= el[0].scrollWidth) {
+        else if (this.scrollLeftVel > 0) { // scrolling right?
+            if (el.scrollLeft() + el[0].clientWidth >= el[0].scrollWidth) { // already scrolled all the way right?
                 this.scrollLeftVel = 0;
             }
         }
@@ -10181,13 +11119,13 @@ ListenerMixin_1.default.mixInto(DragListener);
 
 
 /***/ }),
-/* 55 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(4);
-var Mixin_1 = __webpack_require__(14);
+var Mixin_1 = __webpack_require__(15);
 /*
 A set of rendering and date-related methods for a visual component comprised of one or more rows of day columns.
 Prerequisite: the object being mixed into needs to be a *Grid*
@@ -10210,7 +11148,7 @@ var DayTableMixin = /** @class */ (function (_super) {
         var daysPerRow;
         var firstDay;
         var rowCnt;
-        while (date.isBefore(end)) {
+        while (date.isBefore(end)) { // loop each day from start to end
             if (view.isHiddenDay(date)) {
                 dayIndices.push(dayIndex + 0.5); // mark that it's between indices
             }
@@ -10333,7 +11271,7 @@ var DayTableMixin = /** @class */ (function (_super) {
             // deal with in-between indices
             segFirst = Math.ceil(segFirst); // in-between starts round to next cell
             segLast = Math.floor(segLast); // in-between ends round to prev cell
-            if (segFirst <= segLast) {
+            if (segFirst <= segLast) { // was there any intersection with the current row?
                 segs.push({
                     row: row,
                     // normalize to start of row
@@ -10371,7 +11309,7 @@ var DayTableMixin = /** @class */ (function (_super) {
                 // deal with in-between indices
                 segFirst = Math.ceil(segFirst); // in-between starts round to next cell
                 segLast = Math.floor(segLast); // in-between ends round to prev cell
-                if (segFirst <= segLast) {
+                if (segFirst <= segLast) { // was there any intersection with the current row?
                     segs.push({
                         row: row,
                         // normalize to start of row
@@ -10536,7 +11474,7 @@ exports.default = DayTableMixin;
 
 
 /***/ }),
-/* 56 */
+/* 61 */
 /***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -10588,7 +11526,7 @@ exports.default = BusinessHourRenderer;
 
 
 /***/ }),
-/* 57 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -10641,7 +11579,7 @@ var FillRenderer = /** @class */ (function () {
                 if (props.filterEl) {
                     el = props.filterEl(seg, el);
                 }
-                if (el) {
+                if (el) { // custom filters did not cancel the render
                     el = $(el); // allow custom filter to return raw DOM node
                     // correct element type? (would be bad if a non-TD were inserted into a table for example)
                     if (el.is(_this.fillSegTag)) {
@@ -10681,12 +11619,12 @@ exports.default = FillRenderer;
 
 
 /***/ }),
-/* 58 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var SingleEventDef_1 = __webpack_require__(13);
-var EventFootprint_1 = __webpack_require__(36);
+var SingleEventDef_1 = __webpack_require__(9);
+var EventFootprint_1 = __webpack_require__(34);
 var EventSource_1 = __webpack_require__(6);
 var HelperRenderer = /** @class */ (function () {
     function HelperRenderer(component, eventRenderer) {
@@ -10748,13 +11686,13 @@ exports.default = HelperRenderer;
 
 
 /***/ }),
-/* 59 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var GlobalEmitter_1 = __webpack_require__(21);
-var Interaction_1 = __webpack_require__(15);
+var GlobalEmitter_1 = __webpack_require__(23);
+var Interaction_1 = __webpack_require__(14);
 var EventPointing = /** @class */ (function (_super) {
     tslib_1.__extends(EventPointing, _super);
     function EventPointing() {
@@ -10824,18 +11762,18 @@ exports.default = EventPointing;
 
 
 /***/ }),
-/* 60 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var Mixin_1 = __webpack_require__(14);
-var DateClicking_1 = __webpack_require__(245);
-var DateSelecting_1 = __webpack_require__(225);
-var EventPointing_1 = __webpack_require__(59);
-var EventDragging_1 = __webpack_require__(224);
-var EventResizing_1 = __webpack_require__(223);
-var ExternalDropping_1 = __webpack_require__(222);
+var Mixin_1 = __webpack_require__(15);
+var DateClicking_1 = __webpack_require__(237);
+var DateSelecting_1 = __webpack_require__(236);
+var EventPointing_1 = __webpack_require__(64);
+var EventDragging_1 = __webpack_require__(235);
+var EventResizing_1 = __webpack_require__(234);
+var ExternalDropping_1 = __webpack_require__(233);
 var StandardInteractionsMixin = /** @class */ (function (_super) {
     tslib_1.__extends(StandardInteractionsMixin, _super);
     function StandardInteractionsMixin() {
@@ -10853,25 +11791,25 @@ StandardInteractionsMixin.prototype.externalDroppingClass = ExternalDropping_1.d
 
 
 /***/ }),
-/* 61 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var CoordCache_1 = __webpack_require__(53);
-var Popover_1 = __webpack_require__(249);
+var CoordCache_1 = __webpack_require__(58);
+var Popover_1 = __webpack_require__(227);
 var UnzonedRange_1 = __webpack_require__(5);
 var ComponentFootprint_1 = __webpack_require__(12);
-var EventFootprint_1 = __webpack_require__(36);
-var BusinessHourRenderer_1 = __webpack_require__(56);
-var StandardInteractionsMixin_1 = __webpack_require__(60);
-var InteractiveDateComponent_1 = __webpack_require__(40);
-var DayTableMixin_1 = __webpack_require__(55);
-var DayGridEventRenderer_1 = __webpack_require__(250);
-var DayGridHelperRenderer_1 = __webpack_require__(251);
-var DayGridFillRenderer_1 = __webpack_require__(252);
+var EventFootprint_1 = __webpack_require__(34);
+var BusinessHourRenderer_1 = __webpack_require__(61);
+var StandardInteractionsMixin_1 = __webpack_require__(65);
+var InteractiveDateComponent_1 = __webpack_require__(42);
+var DayTableMixin_1 = __webpack_require__(60);
+var DayGridEventRenderer_1 = __webpack_require__(243);
+var DayGridHelperRenderer_1 = __webpack_require__(244);
+var DayGridFillRenderer_1 = __webpack_require__(245);
 /* A component that renders a grid of whole-days that runs horizontally. There can be multiple rows, one per week.
 ----------------------------------------------------------------------------------------------------------------------*/
 var DayGrid = /** @class */ (function (_super) {
@@ -11236,7 +12174,7 @@ var DayGrid = /** @class */ (function (_super) {
                 col++;
             }
         };
-        if (levelLimit && levelLimit < rowStruct.segLevels.length) {
+        if (levelLimit && levelLimit < rowStruct.segLevels.length) { // is it actually over the limit?
             levelSegs = rowStruct.segLevels[levelLimit - 1];
             cellMatrix = rowStruct.cellMatrix;
             limitedNodes = rowStruct.tbodyEl.children().slice(levelLimit) // get level <tr> elements past the limit
@@ -11254,7 +12192,7 @@ var DayGrid = /** @class */ (function (_super) {
                     totalSegsBelow += segsBelow.length;
                     col++;
                 }
-                if (totalSegsBelow) {
+                if (totalSegsBelow) { // do we need to replace this segment with one or many "more" links?
                     td = cellMatrix[levelLimit - 1][seg.leftCol]; // the segment's parent cell
                     rowspan = td.attr('rowspan') || 1;
                     segMoreNodes = [];
@@ -11327,7 +12265,7 @@ var DayGrid = /** @class */ (function (_super) {
             if (clickOption === 'popover') {
                 _this.showSegPopover(row, col, moreEl, reslicedAllSegs);
             }
-            else if (typeof clickOption === 'string') {
+            else if (typeof clickOption === 'string') { // a view name
                 view.calendar.zoomTo(date, clickOption);
             }
         });
@@ -11471,17 +12409,17 @@ DayTableMixin_1.default.mixInto(DayGrid);
 
 
 /***/ }),
-/* 62 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var Scroller_1 = __webpack_require__(39);
-var View_1 = __webpack_require__(41);
-var BasicViewDateProfileGenerator_1 = __webpack_require__(228);
-var DayGrid_1 = __webpack_require__(61);
+var Scroller_1 = __webpack_require__(41);
+var View_1 = __webpack_require__(43);
+var BasicViewDateProfileGenerator_1 = __webpack_require__(68);
+var DayGrid_1 = __webpack_require__(66);
 /* An abstract class for the "basic" views, as well as month view. Renders one or more rows of day cells.
 ----------------------------------------------------------------------------------------------------------------------*/
 // It is a manager for a DayGrid subcomponent, which does most of the heavy lifting.
@@ -11606,10 +12544,10 @@ var BasicView = /** @class */ (function (_super) {
         if (eventLimit && typeof eventLimit !== 'number') {
             this.dayGrid.limitRows(eventLimit); // limit the levels after the grid's row heights have been set
         }
-        if (!isAuto) {
+        if (!isAuto) { // should we force dimensions of the scroll container?
             this.scroller.setHeight(scrollerHeight);
             scrollbarWidths = this.scroller.getScrollbarWidths();
-            if (scrollbarWidths.left || scrollbarWidths.right) {
+            if (scrollbarWidths.left || scrollbarWidths.right) { // using scrollbars?
                 util_1.compensateScroll(headRowEl, scrollbarWidths);
                 // doing the scrollbar compensation might have created text overflow which created more height. redo
                 scrollerHeight = this.computeScrollerHeight(totalHeight);
@@ -11714,12 +12652,39 @@ function makeDayGridSubclass(SuperClass) {
 
 
 /***/ }),
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var UnzonedRange_1 = __webpack_require__(5);
+var DateProfileGenerator_1 = __webpack_require__(55);
+var BasicViewDateProfileGenerator = /** @class */ (function (_super) {
+    tslib_1.__extends(BasicViewDateProfileGenerator, _super);
+    function BasicViewDateProfileGenerator() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    // Computes the date range that will be rendered.
+    BasicViewDateProfileGenerator.prototype.buildRenderRange = function (currentUnzonedRange, currentRangeUnit, isRangeAllDay) {
+        var renderUnzonedRange = _super.prototype.buildRenderRange.call(this, currentUnzonedRange, currentRangeUnit, isRangeAllDay); // an UnzonedRange
+        var start = this.msToUtcMoment(renderUnzonedRange.startMs, isRangeAllDay);
+        var end = this.msToUtcMoment(renderUnzonedRange.endMs, isRangeAllDay);
+        // year and month views should be aligned with weeks. this is already done for week
+        if (/^(year|month)$/.test(currentRangeUnit)) {
+            start.startOf('week');
+            // make end-of-week if not already
+            if (end.weekday()) {
+                end.add(1, 'week').startOf('week'); // exclusively move backwards
+            }
+        }
+        return new UnzonedRange_1.default(start, end);
+    };
+    return BasicViewDateProfileGenerator;
+}(DateProfileGenerator_1.default));
+exports.default = BasicViewDateProfileGenerator;
+
+
+/***/ }),
 /* 69 */,
 /* 70 */,
 /* 71 */,
@@ -11858,15 +12823,25 @@ function makeDayGridSubclass(SuperClass) {
 /* 204 */,
 /* 205 */,
 /* 206 */,
-/* 207 */
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var UnzonedRange_1 = __webpack_require__(5);
 var ComponentFootprint_1 = __webpack_require__(12);
-var EventDefParser_1 = __webpack_require__(49);
+var EventDefParser_1 = __webpack_require__(36);
 var EventSource_1 = __webpack_require__(6);
-var util_1 = __webpack_require__(35);
+var util_1 = __webpack_require__(19);
 var Constraints = /** @class */ (function () {
     function Constraints(eventManager, _calendar) {
         this.eventManager = eventManager;
@@ -11968,14 +12943,14 @@ var Constraints = /** @class */ (function () {
         }
         else if (typeof constraintVal === 'object') {
             eventInstances = this.parseEventDefToInstances(constraintVal); // handles recurring events
-            if (!eventInstances) {
+            if (!eventInstances) { // invalid input. fallback to parsing footprint directly
                 return this.parseFootprints(constraintVal);
             }
             else {
                 return this.eventInstancesToFootprints(eventInstances);
             }
         }
-        else if (constraintVal != null) {
+        else if (constraintVal != null) { // an ID
             eventInstances = this.eventManager.getEventInstancesWithId(constraintVal);
             return this.eventInstancesToFootprints(eventInstances);
         }
@@ -12024,7 +12999,7 @@ var Constraints = /** @class */ (function () {
     Constraints.prototype.parseEventDefToInstances = function (eventInput) {
         var eventManager = this.eventManager;
         var eventDef = EventDefParser_1.default.parse(eventInput, new EventSource_1.default(this._calendar));
-        if (!eventDef) {
+        if (!eventDef) { // invalid
             return false;
         }
         return eventDef.buildInstances(eventManager.currentPeriod.unzonedRange);
@@ -12112,245 +13087,14 @@ function isOverlapEventInstancesAllowed(overlapEventFootprints, subjectEventInst
 
 
 /***/ }),
-/* 208 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-USAGE:
-  import { default as ParsableModelMixin, ParsableModelInterface } from './ParsableModelMixin'
-in class:
-  applyProps: ParsableModelInterface['applyProps']
-  applyManualStandardProps: ParsableModelInterface['applyManualStandardProps']
-  applyMiscProps: ParsableModelInterface['applyMiscProps']
-  isStandardProp: ParsableModelInterface['isStandardProp']
-  static defineStandardProps = ParsableModelMixin.defineStandardProps
-  static copyVerbatimStandardProps = ParsableModelMixin.copyVerbatimStandardProps
-after class:
-  ParsableModelMixin.mixInto(TheClass)
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var util_1 = __webpack_require__(4);
-var Mixin_1 = __webpack_require__(14);
-var ParsableModelMixin = /** @class */ (function (_super) {
-    tslib_1.__extends(ParsableModelMixin, _super);
-    function ParsableModelMixin() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ParsableModelMixin.defineStandardProps = function (propDefs) {
-        var proto = this.prototype;
-        if (!proto.hasOwnProperty('standardPropMap')) {
-            proto.standardPropMap = Object.create(proto.standardPropMap);
-        }
-        util_1.copyOwnProps(propDefs, proto.standardPropMap);
-    };
-    ParsableModelMixin.copyVerbatimStandardProps = function (src, dest) {
-        var map = this.prototype.standardPropMap;
-        var propName;
-        for (propName in map) {
-            if (src[propName] != null && // in the src object?
-                map[propName] === true // false means "copy verbatim"
-            ) {
-                dest[propName] = src[propName];
-            }
-        }
-    };
-    /*
-    Returns true/false for success.
-    Meant to be only called ONCE, at object creation.
-    */
-    ParsableModelMixin.prototype.applyProps = function (rawProps) {
-        var standardPropMap = this.standardPropMap;
-        var manualProps = {};
-        var miscProps = {};
-        var propName;
-        for (propName in rawProps) {
-            if (standardPropMap[propName] === true) {
-                this[propName] = rawProps[propName];
-            }
-            else if (standardPropMap[propName] === false) {
-                manualProps[propName] = rawProps[propName];
-            }
-            else {
-                miscProps[propName] = rawProps[propName];
-            }
-        }
-        this.applyMiscProps(miscProps);
-        return this.applyManualStandardProps(manualProps);
-    };
-    /*
-    If subclasses override, they must call this supermethod and return the boolean response.
-    Meant to be only called ONCE, at object creation.
-    */
-    ParsableModelMixin.prototype.applyManualStandardProps = function (rawProps) {
-        return true;
-    };
-    /*
-    Can be called even after initial object creation.
-    */
-    ParsableModelMixin.prototype.applyMiscProps = function (rawProps) {
-        // subclasses can implement
-    };
-    /*
-    TODO: why is this a method when defineStandardProps is static
-    */
-    ParsableModelMixin.prototype.isStandardProp = function (propName) {
-        return propName in this.standardPropMap;
-    };
-    return ParsableModelMixin;
-}(Mixin_1.default));
-exports.default = ParsableModelMixin;
-ParsableModelMixin.prototype.standardPropMap = {}; // will be cloned by defineStandardProps
-
-
-/***/ }),
-/* 209 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var EventInstance = /** @class */ (function () {
-    function EventInstance(def, dateProfile) {
-        this.def = def;
-        this.dateProfile = dateProfile;
-    }
-    EventInstance.prototype.toLegacy = function () {
-        var dateProfile = this.dateProfile;
-        var obj = this.def.toLegacy();
-        obj.start = dateProfile.start.clone();
-        obj.end = dateProfile.end ? dateProfile.end.clone() : null;
-        return obj;
-    };
-    return EventInstance;
-}());
-exports.default = EventInstance;
-
-
-/***/ }),
-/* 210 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var $ = __webpack_require__(3);
-var moment = __webpack_require__(0);
-var EventDef_1 = __webpack_require__(34);
-var EventInstance_1 = __webpack_require__(209);
-var EventDateProfile_1 = __webpack_require__(17);
-var RecurringEventDef = /** @class */ (function (_super) {
-    tslib_1.__extends(RecurringEventDef, _super);
-    function RecurringEventDef() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    RecurringEventDef.prototype.isAllDay = function () {
-        return !this.startTime && !this.endTime;
-    };
-    RecurringEventDef.prototype.buildInstances = function (unzonedRange) {
-        var calendar = this.source.calendar;
-        var unzonedDate = unzonedRange.getStart();
-        var unzonedEnd = unzonedRange.getEnd();
-        var zonedDayStart;
-        var instanceStart;
-        var instanceEnd;
-        var instances = [];
-        while (unzonedDate.isBefore(unzonedEnd)) {
-            // if everyday, or this particular day-of-week
-            if (!this.dowHash || this.dowHash[unzonedDate.day()]) {
-                zonedDayStart = calendar.applyTimezone(unzonedDate);
-                instanceStart = zonedDayStart.clone();
-                instanceEnd = null;
-                if (this.startTime) {
-                    instanceStart.time(this.startTime);
-                }
-                else {
-                    instanceStart.stripTime();
-                }
-                if (this.endTime) {
-                    instanceEnd = zonedDayStart.clone().time(this.endTime);
-                }
-                instances.push(new EventInstance_1.default(this, // definition
-                new EventDateProfile_1.default(instanceStart, instanceEnd, calendar)));
-            }
-            unzonedDate.add(1, 'days');
-        }
-        return instances;
-    };
-    RecurringEventDef.prototype.setDow = function (dowNumbers) {
-        if (!this.dowHash) {
-            this.dowHash = {};
-        }
-        for (var i = 0; i < dowNumbers.length; i++) {
-            this.dowHash[dowNumbers[i]] = true;
-        }
-    };
-    RecurringEventDef.prototype.clone = function () {
-        var def = _super.prototype.clone.call(this);
-        if (def.startTime) {
-            def.startTime = moment.duration(this.startTime);
-        }
-        if (def.endTime) {
-            def.endTime = moment.duration(this.endTime);
-        }
-        if (this.dowHash) {
-            def.dowHash = $.extend({}, this.dowHash);
-        }
-        return def;
-    };
-    return RecurringEventDef;
-}(EventDef_1.default));
-exports.default = RecurringEventDef;
-/*
-HACK to work with TypeScript mixins
-NOTE: if super-method fails, should still attempt to apply
-*/
-RecurringEventDef.prototype.applyProps = function (rawProps) {
-    var superSuccess = EventDef_1.default.prototype.applyProps.call(this, rawProps);
-    if (rawProps.start) {
-        this.startTime = moment.duration(rawProps.start);
-    }
-    if (rawProps.end) {
-        this.endTime = moment.duration(rawProps.end);
-    }
-    if (rawProps.dow) {
-        this.setDow(rawProps.dow);
-    }
-    return superSuccess;
-};
-// Parsing
-// ---------------------------------------------------------------------------------------------------------------------
-RecurringEventDef.defineStandardProps({
-    start: false,
-    end: false,
-    dow: false
-});
-
-
-/***/ }),
-/* 211 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var EventRange = /** @class */ (function () {
-    function EventRange(unzonedRange, eventDef, eventInstance) {
-        this.unzonedRange = unzonedRange;
-        this.eventDef = eventDef;
-        if (eventInstance) {
-            this.eventInstance = eventInstance;
-        }
-    }
-    return EventRange;
-}());
-exports.default = EventRange;
-
-
-/***/ }),
-/* 212 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(35);
-var EventInstanceGroup_1 = __webpack_require__(18);
-var RecurringEventDef_1 = __webpack_require__(210);
+var util_1 = __webpack_require__(19);
+var EventInstanceGroup_1 = __webpack_require__(20);
+var RecurringEventDef_1 = __webpack_require__(54);
 var EventSource_1 = __webpack_require__(6);
 var BUSINESS_HOUR_EVENT_DEFAULTS = {
     start: '09:00',
@@ -12412,12 +13156,521 @@ exports.default = BusinessHourGenerator;
 
 
 /***/ }),
-/* 213 */
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+var Promise_1 = __webpack_require__(21);
+var EmitterMixin_1 = __webpack_require__(13);
+var UnzonedRange_1 = __webpack_require__(5);
+var EventInstanceGroup_1 = __webpack_require__(20);
+var EventPeriod = /** @class */ (function () {
+    function EventPeriod(start, end, timezone) {
+        this.pendingCnt = 0;
+        this.freezeDepth = 0;
+        this.stuntedReleaseCnt = 0;
+        this.releaseCnt = 0;
+        this.start = start;
+        this.end = end;
+        this.timezone = timezone;
+        this.unzonedRange = new UnzonedRange_1.default(start.clone().stripZone(), end.clone().stripZone());
+        this.requestsByUid = {};
+        this.eventDefsByUid = {};
+        this.eventDefsById = {};
+        this.eventInstanceGroupsById = {};
+    }
+    EventPeriod.prototype.isWithinRange = function (start, end) {
+        // TODO: use a range util function?
+        return !start.isBefore(this.start) && !end.isAfter(this.end);
+    };
+    // Requesting and Purging
+    // -----------------------------------------------------------------------------------------------------------------
+    EventPeriod.prototype.requestSources = function (sources) {
+        this.freeze();
+        for (var i = 0; i < sources.length; i++) {
+            this.requestSource(sources[i]);
+        }
+        this.thaw();
+    };
+    EventPeriod.prototype.requestSource = function (source) {
+        var _this = this;
+        var request = { source: source, status: 'pending', eventDefs: null };
+        this.requestsByUid[source.uid] = request;
+        this.pendingCnt += 1;
+        source.fetch(this.start, this.end, this.timezone).then(function (eventDefs) {
+            if (request.status !== 'cancelled') {
+                request.status = 'completed';
+                request.eventDefs = eventDefs;
+                _this.addEventDefs(eventDefs);
+                _this.pendingCnt--;
+                _this.tryRelease();
+            }
+        }, function () {
+            if (request.status !== 'cancelled') {
+                request.status = 'failed';
+                _this.pendingCnt--;
+                _this.tryRelease();
+            }
+        });
+    };
+    EventPeriod.prototype.purgeSource = function (source) {
+        var request = this.requestsByUid[source.uid];
+        if (request) {
+            delete this.requestsByUid[source.uid];
+            if (request.status === 'pending') {
+                request.status = 'cancelled';
+                this.pendingCnt--;
+                this.tryRelease();
+            }
+            else if (request.status === 'completed') {
+                request.eventDefs.forEach(this.removeEventDef.bind(this));
+            }
+        }
+    };
+    EventPeriod.prototype.purgeAllSources = function () {
+        var requestsByUid = this.requestsByUid;
+        var uid;
+        var request;
+        var completedCnt = 0;
+        for (uid in requestsByUid) {
+            request = requestsByUid[uid];
+            if (request.status === 'pending') {
+                request.status = 'cancelled';
+            }
+            else if (request.status === 'completed') {
+                completedCnt++;
+            }
+        }
+        this.requestsByUid = {};
+        this.pendingCnt = 0;
+        if (completedCnt) {
+            this.removeAllEventDefs(); // might release
+        }
+    };
+    // Event Definitions
+    // -----------------------------------------------------------------------------------------------------------------
+    EventPeriod.prototype.getEventDefByUid = function (eventDefUid) {
+        return this.eventDefsByUid[eventDefUid];
+    };
+    EventPeriod.prototype.getEventDefsById = function (eventDefId) {
+        var a = this.eventDefsById[eventDefId];
+        if (a) {
+            return a.slice(); // clone
+        }
+        return [];
+    };
+    EventPeriod.prototype.addEventDefs = function (eventDefs) {
+        for (var i = 0; i < eventDefs.length; i++) {
+            this.addEventDef(eventDefs[i]);
+        }
+    };
+    EventPeriod.prototype.addEventDef = function (eventDef) {
+        var eventDefsById = this.eventDefsById;
+        var eventDefId = eventDef.id;
+        var eventDefs = eventDefsById[eventDefId] || (eventDefsById[eventDefId] = []);
+        var eventInstances = eventDef.buildInstances(this.unzonedRange);
+        var i;
+        eventDefs.push(eventDef);
+        this.eventDefsByUid[eventDef.uid] = eventDef;
+        for (i = 0; i < eventInstances.length; i++) {
+            this.addEventInstance(eventInstances[i], eventDefId);
+        }
+    };
+    EventPeriod.prototype.removeEventDefsById = function (eventDefId) {
+        var _this = this;
+        this.getEventDefsById(eventDefId).forEach(function (eventDef) {
+            _this.removeEventDef(eventDef);
+        });
+    };
+    EventPeriod.prototype.removeAllEventDefs = function () {
+        var isEmpty = $.isEmptyObject(this.eventDefsByUid);
+        this.eventDefsByUid = {};
+        this.eventDefsById = {};
+        this.eventInstanceGroupsById = {};
+        if (!isEmpty) {
+            this.tryRelease();
+        }
+    };
+    EventPeriod.prototype.removeEventDef = function (eventDef) {
+        var eventDefsById = this.eventDefsById;
+        var eventDefs = eventDefsById[eventDef.id];
+        delete this.eventDefsByUid[eventDef.uid];
+        if (eventDefs) {
+            util_1.removeExact(eventDefs, eventDef);
+            if (!eventDefs.length) {
+                delete eventDefsById[eventDef.id];
+            }
+            this.removeEventInstancesForDef(eventDef);
+        }
+    };
+    // Event Instances
+    // -----------------------------------------------------------------------------------------------------------------
+    EventPeriod.prototype.getEventInstances = function () {
+        var eventInstanceGroupsById = this.eventInstanceGroupsById;
+        var eventInstances = [];
+        var id;
+        for (id in eventInstanceGroupsById) {
+            eventInstances.push.apply(eventInstances, // append
+            eventInstanceGroupsById[id].eventInstances);
+        }
+        return eventInstances;
+    };
+    EventPeriod.prototype.getEventInstancesWithId = function (eventDefId) {
+        var eventInstanceGroup = this.eventInstanceGroupsById[eventDefId];
+        if (eventInstanceGroup) {
+            return eventInstanceGroup.eventInstances.slice(); // clone
+        }
+        return [];
+    };
+    EventPeriod.prototype.getEventInstancesWithoutId = function (eventDefId) {
+        var eventInstanceGroupsById = this.eventInstanceGroupsById;
+        var matchingInstances = [];
+        var id;
+        for (id in eventInstanceGroupsById) {
+            if (id !== eventDefId) {
+                matchingInstances.push.apply(matchingInstances, // append
+                eventInstanceGroupsById[id].eventInstances);
+            }
+        }
+        return matchingInstances;
+    };
+    EventPeriod.prototype.addEventInstance = function (eventInstance, eventDefId) {
+        var eventInstanceGroupsById = this.eventInstanceGroupsById;
+        var eventInstanceGroup = eventInstanceGroupsById[eventDefId] ||
+            (eventInstanceGroupsById[eventDefId] = new EventInstanceGroup_1.default());
+        eventInstanceGroup.eventInstances.push(eventInstance);
+        this.tryRelease();
+    };
+    EventPeriod.prototype.removeEventInstancesForDef = function (eventDef) {
+        var eventInstanceGroupsById = this.eventInstanceGroupsById;
+        var eventInstanceGroup = eventInstanceGroupsById[eventDef.id];
+        var removeCnt;
+        if (eventInstanceGroup) {
+            removeCnt = util_1.removeMatching(eventInstanceGroup.eventInstances, function (currentEventInstance) {
+                return currentEventInstance.def === eventDef;
+            });
+            if (!eventInstanceGroup.eventInstances.length) {
+                delete eventInstanceGroupsById[eventDef.id];
+            }
+            if (removeCnt) {
+                this.tryRelease();
+            }
+        }
+    };
+    // Releasing and Freezing
+    // -----------------------------------------------------------------------------------------------------------------
+    EventPeriod.prototype.tryRelease = function () {
+        if (!this.pendingCnt) {
+            if (!this.freezeDepth) {
+                this.release();
+            }
+            else {
+                this.stuntedReleaseCnt++;
+            }
+        }
+    };
+    EventPeriod.prototype.release = function () {
+        this.releaseCnt++;
+        this.trigger('release', this.eventInstanceGroupsById);
+    };
+    EventPeriod.prototype.whenReleased = function () {
+        var _this = this;
+        if (this.releaseCnt) {
+            return Promise_1.default.resolve(this.eventInstanceGroupsById);
+        }
+        else {
+            return Promise_1.default.construct(function (onResolve) {
+                _this.one('release', onResolve);
+            });
+        }
+    };
+    EventPeriod.prototype.freeze = function () {
+        if (!(this.freezeDepth++)) {
+            this.stuntedReleaseCnt = 0;
+        }
+    };
+    EventPeriod.prototype.thaw = function () {
+        if (!(--this.freezeDepth) && this.stuntedReleaseCnt && !this.pendingCnt) {
+            this.release();
+        }
+    };
+    return EventPeriod;
+}());
+exports.default = EventPeriod;
+EmitterMixin_1.default.mixInto(EventPeriod);
+
+
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+var EventPeriod_1 = __webpack_require__(219);
+var ArrayEventSource_1 = __webpack_require__(56);
+var EventSource_1 = __webpack_require__(6);
+var EventSourceParser_1 = __webpack_require__(38);
+var SingleEventDef_1 = __webpack_require__(9);
+var EventInstanceGroup_1 = __webpack_require__(20);
+var EmitterMixin_1 = __webpack_require__(13);
+var ListenerMixin_1 = __webpack_require__(7);
+var EventManager = /** @class */ (function () {
+    function EventManager(calendar) {
+        this.calendar = calendar;
+        this.stickySource = new ArrayEventSource_1.default(calendar);
+        this.otherSources = [];
+    }
+    EventManager.prototype.requestEvents = function (start, end, timezone, force) {
+        if (force ||
+            !this.currentPeriod ||
+            !this.currentPeriod.isWithinRange(start, end) ||
+            timezone !== this.currentPeriod.timezone) {
+            this.setPeriod(// will change this.currentPeriod
+            new EventPeriod_1.default(start, end, timezone));
+        }
+        return this.currentPeriod.whenReleased();
+    };
+    // Source Adding/Removing
+    // -----------------------------------------------------------------------------------------------------------------
+    EventManager.prototype.addSource = function (eventSource) {
+        this.otherSources.push(eventSource);
+        if (this.currentPeriod) {
+            this.currentPeriod.requestSource(eventSource); // might release
+        }
+    };
+    EventManager.prototype.removeSource = function (doomedSource) {
+        util_1.removeExact(this.otherSources, doomedSource);
+        if (this.currentPeriod) {
+            this.currentPeriod.purgeSource(doomedSource); // might release
+        }
+    };
+    EventManager.prototype.removeAllSources = function () {
+        this.otherSources = [];
+        if (this.currentPeriod) {
+            this.currentPeriod.purgeAllSources(); // might release
+        }
+    };
+    // Source Refetching
+    // -----------------------------------------------------------------------------------------------------------------
+    EventManager.prototype.refetchSource = function (eventSource) {
+        var currentPeriod = this.currentPeriod;
+        if (currentPeriod) {
+            currentPeriod.freeze();
+            currentPeriod.purgeSource(eventSource);
+            currentPeriod.requestSource(eventSource);
+            currentPeriod.thaw();
+        }
+    };
+    EventManager.prototype.refetchAllSources = function () {
+        var currentPeriod = this.currentPeriod;
+        if (currentPeriod) {
+            currentPeriod.freeze();
+            currentPeriod.purgeAllSources();
+            currentPeriod.requestSources(this.getSources());
+            currentPeriod.thaw();
+        }
+    };
+    // Source Querying
+    // -----------------------------------------------------------------------------------------------------------------
+    EventManager.prototype.getSources = function () {
+        return [this.stickySource].concat(this.otherSources);
+    };
+    // like querySources, but accepts multple match criteria (like multiple IDs)
+    EventManager.prototype.multiQuerySources = function (matchInputs) {
+        // coerce into an array
+        if (!matchInputs) {
+            matchInputs = [];
+        }
+        else if (!$.isArray(matchInputs)) {
+            matchInputs = [matchInputs];
+        }
+        var matchingSources = [];
+        var i;
+        // resolve raw inputs to real event source objects
+        for (i = 0; i < matchInputs.length; i++) {
+            matchingSources.push.apply(// append
+            matchingSources, this.querySources(matchInputs[i]));
+        }
+        return matchingSources;
+    };
+    // matchInput can either by a real event source object, an ID, or the function/URL for the source.
+    // returns an array of matching source objects.
+    EventManager.prototype.querySources = function (matchInput) {
+        var sources = this.otherSources;
+        var i;
+        var source;
+        // given a proper event source object
+        for (i = 0; i < sources.length; i++) {
+            source = sources[i];
+            if (source === matchInput) {
+                return [source];
+            }
+        }
+        // an ID match
+        source = this.getSourceById(EventSource_1.default.normalizeId(matchInput));
+        if (source) {
+            return [source];
+        }
+        // parse as an event source
+        matchInput = EventSourceParser_1.default.parse(matchInput, this.calendar);
+        if (matchInput) {
+            return $.grep(sources, function (source) {
+                return isSourcesEquivalent(matchInput, source);
+            });
+        }
+    };
+    /*
+    ID assumed to already be normalized
+    */
+    EventManager.prototype.getSourceById = function (id) {
+        return $.grep(this.otherSources, function (source) {
+            return source.id && source.id === id;
+        })[0];
+    };
+    // Event-Period
+    // -----------------------------------------------------------------------------------------------------------------
+    EventManager.prototype.setPeriod = function (eventPeriod) {
+        if (this.currentPeriod) {
+            this.unbindPeriod(this.currentPeriod);
+            this.currentPeriod = null;
+        }
+        this.currentPeriod = eventPeriod;
+        this.bindPeriod(eventPeriod);
+        eventPeriod.requestSources(this.getSources());
+    };
+    EventManager.prototype.bindPeriod = function (eventPeriod) {
+        this.listenTo(eventPeriod, 'release', function (eventsPayload) {
+            this.trigger('release', eventsPayload);
+        });
+    };
+    EventManager.prototype.unbindPeriod = function (eventPeriod) {
+        this.stopListeningTo(eventPeriod);
+    };
+    // Event Getting/Adding/Removing
+    // -----------------------------------------------------------------------------------------------------------------
+    EventManager.prototype.getEventDefByUid = function (uid) {
+        if (this.currentPeriod) {
+            return this.currentPeriod.getEventDefByUid(uid);
+        }
+    };
+    EventManager.prototype.addEventDef = function (eventDef, isSticky) {
+        if (isSticky) {
+            this.stickySource.addEventDef(eventDef);
+        }
+        if (this.currentPeriod) {
+            this.currentPeriod.addEventDef(eventDef); // might release
+        }
+    };
+    EventManager.prototype.removeEventDefsById = function (eventId) {
+        this.getSources().forEach(function (eventSource) {
+            eventSource.removeEventDefsById(eventId);
+        });
+        if (this.currentPeriod) {
+            this.currentPeriod.removeEventDefsById(eventId); // might release
+        }
+    };
+    EventManager.prototype.removeAllEventDefs = function () {
+        this.getSources().forEach(function (eventSource) {
+            eventSource.removeAllEventDefs();
+        });
+        if (this.currentPeriod) {
+            this.currentPeriod.removeAllEventDefs();
+        }
+    };
+    // Event Mutating
+    // -----------------------------------------------------------------------------------------------------------------
+    /*
+    Returns an undo function.
+    */
+    EventManager.prototype.mutateEventsWithId = function (eventDefId, eventDefMutation) {
+        var currentPeriod = this.currentPeriod;
+        var eventDefs;
+        var undoFuncs = [];
+        if (currentPeriod) {
+            currentPeriod.freeze();
+            eventDefs = currentPeriod.getEventDefsById(eventDefId);
+            eventDefs.forEach(function (eventDef) {
+                // add/remove esp because id might change
+                currentPeriod.removeEventDef(eventDef);
+                undoFuncs.push(eventDefMutation.mutateSingle(eventDef));
+                currentPeriod.addEventDef(eventDef);
+            });
+            currentPeriod.thaw();
+            return function () {
+                currentPeriod.freeze();
+                for (var i = 0; i < eventDefs.length; i++) {
+                    currentPeriod.removeEventDef(eventDefs[i]);
+                    undoFuncs[i]();
+                    currentPeriod.addEventDef(eventDefs[i]);
+                }
+                currentPeriod.thaw();
+            };
+        }
+        return function () { };
+    };
+    /*
+    copies and then mutates
+    */
+    EventManager.prototype.buildMutatedEventInstanceGroup = function (eventDefId, eventDefMutation) {
+        var eventDefs = this.getEventDefsById(eventDefId);
+        var i;
+        var defCopy;
+        var allInstances = [];
+        for (i = 0; i < eventDefs.length; i++) {
+            defCopy = eventDefs[i].clone();
+            if (defCopy instanceof SingleEventDef_1.default) {
+                eventDefMutation.mutateSingle(defCopy);
+                allInstances.push.apply(allInstances, // append
+                defCopy.buildInstances());
+            }
+        }
+        return new EventInstanceGroup_1.default(allInstances);
+    };
+    // Freezing
+    // -----------------------------------------------------------------------------------------------------------------
+    EventManager.prototype.freeze = function () {
+        if (this.currentPeriod) {
+            this.currentPeriod.freeze();
+        }
+    };
+    EventManager.prototype.thaw = function () {
+        if (this.currentPeriod) {
+            this.currentPeriod.thaw();
+        }
+    };
+    // methods that simply forward to EventPeriod
+    EventManager.prototype.getEventDefsById = function (eventDefId) {
+        return this.currentPeriod.getEventDefsById(eventDefId);
+    };
+    EventManager.prototype.getEventInstances = function () {
+        return this.currentPeriod.getEventInstances();
+    };
+    EventManager.prototype.getEventInstancesWithId = function (eventDefId) {
+        return this.currentPeriod.getEventInstancesWithId(eventDefId);
+    };
+    EventManager.prototype.getEventInstancesWithoutId = function (eventDefId) {
+        return this.currentPeriod.getEventInstancesWithoutId(eventDefId);
+    };
+    return EventManager;
+}());
+exports.default = EventManager;
+EmitterMixin_1.default.mixInto(EventManager);
+ListenerMixin_1.default.mixInto(EventManager);
+function isSourcesEquivalent(source0, source1) {
+    return source0.getPrimitive() === source1.getPrimitive();
+}
+
+
+/***/ }),
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var Theme_1 = __webpack_require__(19);
+var Theme_1 = __webpack_require__(22);
 var StandardTheme = /** @class */ (function (_super) {
     tslib_1.__extends(StandardTheme, _super);
     function StandardTheme() {
@@ -12461,12 +13714,12 @@ StandardTheme.prototype.iconOverridePrefix = 'fc-icon-';
 
 
 /***/ }),
-/* 214 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var Theme_1 = __webpack_require__(19);
+var Theme_1 = __webpack_require__(22);
 var JqueryUiTheme = /** @class */ (function (_super) {
     tslib_1.__extends(JqueryUiTheme, _super);
     function JqueryUiTheme() {
@@ -12511,13 +13764,13 @@ JqueryUiTheme.prototype.iconOverridePrefix = 'ui-icon-';
 
 
 /***/ }),
-/* 215 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var Promise_1 = __webpack_require__(20);
+var Promise_1 = __webpack_require__(21);
 var EventSource_1 = __webpack_require__(6);
 var FuncEventSource = /** @class */ (function (_super) {
     tslib_1.__extends(FuncEventSource, _super);
@@ -12527,10 +13780,10 @@ var FuncEventSource = /** @class */ (function (_super) {
     FuncEventSource.parse = function (rawInput, calendar) {
         var rawProps;
         // normalize raw input
-        if ($.isFunction(rawInput.events)) {
+        if ($.isFunction(rawInput.events)) { // extended form
             rawProps = rawInput;
         }
-        else if ($.isFunction(rawInput)) {
+        else if ($.isFunction(rawInput)) { // short form
             rawProps = { events: rawInput };
         }
         if (rawProps) {
@@ -12565,14 +13818,14 @@ FuncEventSource.defineStandardProps({
 
 
 /***/ }),
-/* 216 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var Promise_1 = __webpack_require__(20);
+var Promise_1 = __webpack_require__(21);
 var EventSource_1 = __webpack_require__(6);
 var JsonFeedEventSource = /** @class */ (function (_super) {
     tslib_1.__extends(JsonFeedEventSource, _super);
@@ -12582,10 +13835,10 @@ var JsonFeedEventSource = /** @class */ (function (_super) {
     JsonFeedEventSource.parse = function (rawInput, calendar) {
         var rawProps;
         // normalize raw input
-        if (typeof rawInput.url === 'string') {
+        if (typeof rawInput.url === 'string') { // extended form
             rawProps = rawInput;
         }
-        else if (typeof rawInput === 'string') {
+        else if (typeof rawInput === 'string') { // short form
             rawProps = { url: rawInput };
         }
         if (rawProps) {
@@ -12690,11 +13943,333 @@ JsonFeedEventSource.defineStandardProps({
 
 
 /***/ }),
-/* 217 */
+/* 225 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Iterator = /** @class */ (function () {
+    function Iterator(items) {
+        this.items = items || [];
+    }
+    /* Calls a method on every item passing the arguments through */
+    Iterator.prototype.proxyCall = function (methodName) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var results = [];
+        this.items.forEach(function (item) {
+            results.push(item[methodName].apply(item, args));
+        });
+        return results;
+    };
+    return Iterator;
+}());
+exports.default = Iterator;
+
+
+/***/ }),
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var EmitterMixin_1 = __webpack_require__(11);
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+var ListenerMixin_1 = __webpack_require__(7);
+/* Creates a clone of an element and lets it track the mouse as it moves
+----------------------------------------------------------------------------------------------------------------------*/
+var MouseFollower = /** @class */ (function () {
+    function MouseFollower(sourceEl, options) {
+        this.isFollowing = false;
+        this.isHidden = false;
+        this.isAnimating = false; // doing the revert animation?
+        this.options = options = options || {};
+        this.sourceEl = sourceEl;
+        this.parentEl = options.parentEl ? $(options.parentEl) : sourceEl.parent(); // default to sourceEl's parent
+    }
+    // Causes the element to start following the mouse
+    MouseFollower.prototype.start = function (ev) {
+        if (!this.isFollowing) {
+            this.isFollowing = true;
+            this.y0 = util_1.getEvY(ev);
+            this.x0 = util_1.getEvX(ev);
+            this.topDelta = 0;
+            this.leftDelta = 0;
+            if (!this.isHidden) {
+                this.updatePosition();
+            }
+            if (util_1.getEvIsTouch(ev)) {
+                this.listenTo($(document), 'touchmove', this.handleMove);
+            }
+            else {
+                this.listenTo($(document), 'mousemove', this.handleMove);
+            }
+        }
+    };
+    // Causes the element to stop following the mouse. If shouldRevert is true, will animate back to original position.
+    // `callback` gets invoked when the animation is complete. If no animation, it is invoked immediately.
+    MouseFollower.prototype.stop = function (shouldRevert, callback) {
+        var _this = this;
+        var revertDuration = this.options.revertDuration;
+        var complete = function () {
+            _this.isAnimating = false;
+            _this.removeElement();
+            _this.top0 = _this.left0 = null; // reset state for future updatePosition calls
+            if (callback) {
+                callback();
+            }
+        };
+        if (this.isFollowing && !this.isAnimating) { // disallow more than one stop animation at a time
+            this.isFollowing = false;
+            this.stopListeningTo($(document));
+            if (shouldRevert && revertDuration && !this.isHidden) { // do a revert animation?
+                this.isAnimating = true;
+                this.el.animate({
+                    top: this.top0,
+                    left: this.left0
+                }, {
+                    duration: revertDuration,
+                    complete: complete
+                });
+            }
+            else {
+                complete();
+            }
+        }
+    };
+    // Gets the tracking element. Create it if necessary
+    MouseFollower.prototype.getEl = function () {
+        var el = this.el;
+        if (!el) {
+            el = this.el = this.sourceEl.clone()
+                .addClass(this.options.additionalClass || '')
+                .css({
+                position: 'absolute',
+                visibility: '',
+                display: this.isHidden ? 'none' : '',
+                margin: 0,
+                right: 'auto',
+                bottom: 'auto',
+                width: this.sourceEl.width(),
+                height: this.sourceEl.height(),
+                opacity: this.options.opacity || '',
+                zIndex: this.options.zIndex
+            });
+            // we don't want long taps or any mouse interaction causing selection/menus.
+            // would use preventSelection(), but that prevents selectstart, causing problems.
+            el.addClass('fc-unselectable');
+            el.appendTo(this.parentEl);
+        }
+        return el;
+    };
+    // Removes the tracking element if it has already been created
+    MouseFollower.prototype.removeElement = function () {
+        if (this.el) {
+            this.el.remove();
+            this.el = null;
+        }
+    };
+    // Update the CSS position of the tracking element
+    MouseFollower.prototype.updatePosition = function () {
+        var sourceOffset;
+        var origin;
+        this.getEl(); // ensure this.el
+        // make sure origin info was computed
+        if (this.top0 == null) {
+            sourceOffset = this.sourceEl.offset();
+            origin = this.el.offsetParent().offset();
+            this.top0 = sourceOffset.top - origin.top;
+            this.left0 = sourceOffset.left - origin.left;
+        }
+        this.el.css({
+            top: this.top0 + this.topDelta,
+            left: this.left0 + this.leftDelta
+        });
+    };
+    // Gets called when the user moves the mouse
+    MouseFollower.prototype.handleMove = function (ev) {
+        this.topDelta = util_1.getEvY(ev) - this.y0;
+        this.leftDelta = util_1.getEvX(ev) - this.x0;
+        if (!this.isHidden) {
+            this.updatePosition();
+        }
+    };
+    // Temporarily makes the tracking element invisible. Can be called before following starts
+    MouseFollower.prototype.hide = function () {
+        if (!this.isHidden) {
+            this.isHidden = true;
+            if (this.el) {
+                this.el.hide();
+            }
+        }
+    };
+    // Show the tracking element after it has been temporarily hidden
+    MouseFollower.prototype.show = function () {
+        if (this.isHidden) {
+            this.isHidden = false;
+            this.updatePosition();
+            this.getEl().show();
+        }
+    };
+    return MouseFollower;
+}());
+exports.default = MouseFollower;
+ListenerMixin_1.default.mixInto(MouseFollower);
+
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* A rectangular panel that is absolutely positioned over other content
+------------------------------------------------------------------------------------------------------------------------
+Options:
+  - className (string)
+  - content (HTML string or jQuery element set)
+  - parentEl
+  - top
+  - left
+  - right (the x coord of where the right edge should be. not a "CSS" right)
+  - autoHide (boolean)
+  - show (callback)
+  - hide (callback)
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+var ListenerMixin_1 = __webpack_require__(7);
+var Popover = /** @class */ (function () {
+    function Popover(options) {
+        this.isHidden = true;
+        this.margin = 10; // the space required between the popover and the edges of the scroll container
+        this.options = options || {};
+    }
+    // Shows the popover on the specified position. Renders it if not already
+    Popover.prototype.show = function () {
+        if (this.isHidden) {
+            if (!this.el) {
+                this.render();
+            }
+            this.el.show();
+            this.position();
+            this.isHidden = false;
+            this.trigger('show');
+        }
+    };
+    // Hides the popover, through CSS, but does not remove it from the DOM
+    Popover.prototype.hide = function () {
+        if (!this.isHidden) {
+            this.el.hide();
+            this.isHidden = true;
+            this.trigger('hide');
+        }
+    };
+    // Creates `this.el` and renders content inside of it
+    Popover.prototype.render = function () {
+        var _this = this;
+        var options = this.options;
+        this.el = $('<div class="fc-popover"/>')
+            .addClass(options.className || '')
+            .css({
+            // position initially to the top left to avoid creating scrollbars
+            top: 0,
+            left: 0
+        })
+            .append(options.content)
+            .appendTo(options.parentEl);
+        // when a click happens on anything inside with a 'fc-close' className, hide the popover
+        this.el.on('click', '.fc-close', function () {
+            _this.hide();
+        });
+        if (options.autoHide) {
+            this.listenTo($(document), 'mousedown', this.documentMousedown);
+        }
+    };
+    // Triggered when the user clicks *anywhere* in the document, for the autoHide feature
+    Popover.prototype.documentMousedown = function (ev) {
+        // only hide the popover if the click happened outside the popover
+        if (this.el && !$(ev.target).closest(this.el).length) {
+            this.hide();
+        }
+    };
+    // Hides and unregisters any handlers
+    Popover.prototype.removeElement = function () {
+        this.hide();
+        if (this.el) {
+            this.el.remove();
+            this.el = null;
+        }
+        this.stopListeningTo($(document), 'mousedown');
+    };
+    // Positions the popover optimally, using the top/left/right options
+    Popover.prototype.position = function () {
+        var options = this.options;
+        var origin = this.el.offsetParent().offset();
+        var width = this.el.outerWidth();
+        var height = this.el.outerHeight();
+        var windowEl = $(window);
+        var viewportEl = util_1.getScrollParent(this.el);
+        var viewportTop;
+        var viewportLeft;
+        var viewportOffset;
+        var top; // the "position" (not "offset") values for the popover
+        var left; //
+        // compute top and left
+        top = options.top || 0;
+        if (options.left !== undefined) {
+            left = options.left;
+        }
+        else if (options.right !== undefined) {
+            left = options.right - width; // derive the left value from the right value
+        }
+        else {
+            left = 0;
+        }
+        if (viewportEl.is(window) || viewportEl.is(document)) { // normalize getScrollParent's result
+            viewportEl = windowEl;
+            viewportTop = 0; // the window is always at the top left
+            viewportLeft = 0; // (and .offset() won't work if called here)
+        }
+        else {
+            viewportOffset = viewportEl.offset();
+            viewportTop = viewportOffset.top;
+            viewportLeft = viewportOffset.left;
+        }
+        // if the window is scrolled, it causes the visible area to be further down
+        viewportTop += windowEl.scrollTop();
+        viewportLeft += windowEl.scrollLeft();
+        // constrain to the view port. if constrained by two edges, give precedence to top/left
+        if (options.viewportConstrain !== false) {
+            top = Math.min(top, viewportTop + viewportEl.outerHeight() - height - this.margin);
+            top = Math.max(top, viewportTop + this.margin);
+            left = Math.min(left, viewportLeft + viewportEl.outerWidth() - width - this.margin);
+            left = Math.max(left, viewportLeft + this.margin);
+        }
+        this.el.css({
+            top: top - origin.top,
+            left: left - origin.left
+        });
+    };
+    // Triggers a callback. Calls a function in the option hash of the same name.
+    // Arguments beyond the first `name` are forwarded on.
+    // TODO: better code reuse for this. Repeat code
+    Popover.prototype.trigger = function (name) {
+        if (this.options[name]) {
+            this.options[name].apply(this, Array.prototype.slice.call(arguments, 1));
+        }
+    };
+    return Popover;
+}());
+exports.default = Popover;
+ListenerMixin_1.default.mixInto(Popover);
+
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EmitterMixin_1 = __webpack_require__(13);
 var TaskQueue = /** @class */ (function () {
     function TaskQueue() {
         this.q = [];
@@ -12760,12 +14335,12 @@ EmitterMixin_1.default.mixInto(TaskQueue);
 
 
 /***/ }),
-/* 218 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var TaskQueue_1 = __webpack_require__(217);
+var TaskQueue_1 = __webpack_require__(228);
 var RenderQueue = /** @class */ (function (_super) {
     tslib_1.__extends(RenderQueue, _super);
     function RenderQueue(waitsByNamespace) {
@@ -12792,7 +14367,7 @@ var RenderQueue = /** @class */ (function (_super) {
                 this.tryStart();
             }
         }
-        if (this.compoundTask(task)) {
+        if (this.compoundTask(task)) { // appended to queue?
             if (!this.waitNamespace && waitMs != null) {
                 this.startWait(namespace, waitMs);
             }
@@ -12854,15 +14429,17 @@ var RenderQueue = /** @class */ (function (_super) {
             // remove all init/add/remove ops with same namespace, regardless of order
             for (i = q.length - 1; i >= 0; i--) {
                 task = q[i];
-                switch (task.type) {
-                    case 'init':
-                        shouldAppend = false;
-                    // the latest destroy is cancelled out by not doing the init
-                    /* falls through */
-                    case 'add':
-                    /* falls through */
-                    case 'remove':
-                        q.splice(i, 1); // remove task
+                if (task.namespace === newTask.namespace) {
+                    switch (task.type) {
+                        case 'init':
+                            shouldAppend = false;
+                        // the latest destroy is cancelled out by not doing the init
+                        /* falls through */
+                        case 'add':
+                        /* falls through */
+                        case 'remove':
+                            q.splice(i, 1); // remove task
+                    }
                 }
             }
         }
@@ -12877,7 +14454,56 @@ exports.default = RenderQueue;
 
 
 /***/ }),
-/* 219 */
+/* 230 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var Model_1 = __webpack_require__(51);
+var Component = /** @class */ (function (_super) {
+    tslib_1.__extends(Component, _super);
+    function Component() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Component.prototype.setElement = function (el) {
+        this.el = el;
+        this.bindGlobalHandlers();
+        this.renderSkeleton();
+        this.set('isInDom', true);
+    };
+    Component.prototype.removeElement = function () {
+        this.unset('isInDom');
+        this.unrenderSkeleton();
+        this.unbindGlobalHandlers();
+        this.el.remove();
+        // NOTE: don't null-out this.el in case the View was destroyed within an API callback.
+        // We don't null-out the View's other jQuery element references upon destroy,
+        //  so we shouldn't kill this.el either.
+    };
+    Component.prototype.bindGlobalHandlers = function () {
+        // subclasses can override
+    };
+    Component.prototype.unbindGlobalHandlers = function () {
+        // subclasses can override
+    };
+    /*
+    NOTE: Can't have a `render` method. Read the deprecation notice in View::executeDateRender
+    */
+    // Renders the basic structure of the view before any content is rendered
+    Component.prototype.renderSkeleton = function () {
+        // subclasses should implement
+    };
+    // Unrenders the basic structure of the view
+    Component.prototype.unrenderSkeleton = function () {
+        // subclasses should implement
+    };
+    return Component;
+}(Model_1.default));
+exports.default = Component;
+
+
+/***/ }),
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -12885,10 +14511,10 @@ var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var moment = __webpack_require__(0);
 var util_1 = __webpack_require__(4);
-var moment_ext_1 = __webpack_require__(10);
-var date_formatting_1 = __webpack_require__(47);
-var Component_1 = __webpack_require__(237);
-var util_2 = __webpack_require__(35);
+var moment_ext_1 = __webpack_require__(11);
+var date_formatting_1 = __webpack_require__(49);
+var Component_1 = __webpack_require__(230);
+var util_2 = __webpack_require__(19);
 var DateComponent = /** @class */ (function (_super) {
     tslib_1.__extends(DateComponent, _super);
     function DateComponent(_view, _options) {
@@ -12911,7 +14537,7 @@ var DateComponent = /** @class */ (function (_super) {
         if (_this.fillRendererClass) {
             _this.fillRenderer = new _this.fillRendererClass(_this);
         }
-        if (_this.eventRendererClass) {
+        if (_this.eventRendererClass) { // fillRenderer is optional -----v
             _this.eventRenderer = new _this.eventRendererClass(_this, _this.fillRenderer);
         }
         if (_this.helperRendererClass && _this.eventRenderer) {
@@ -13021,7 +14647,7 @@ var DateComponent = /** @class */ (function (_super) {
             this.eventRenderer.rangeUpdated(); // poorly named now
             this.eventRenderer.render(eventsPayload);
         }
-        else if (this['renderEvents']) {
+        else if (this['renderEvents']) { // legacy
             this['renderEvents'](convertEventsPayloadToLegacyArray(eventsPayload));
         }
         this.callChildren('executeEventRender', arguments);
@@ -13031,7 +14657,7 @@ var DateComponent = /** @class */ (function (_super) {
         if (this.eventRenderer) {
             this.eventRenderer.unrender();
         }
-        else if (this['destroyEvents']) {
+        else if (this['destroyEvents']) { // legacy
             this['destroyEvents']();
         }
     };
@@ -13076,7 +14702,7 @@ var DateComponent = /** @class */ (function (_super) {
         if (this.hasPublicHandlers('eventAfterRender')) {
             segs.forEach(function (seg) {
                 var legacy;
-                if (seg.el) {
+                if (seg.el) { // necessary?
                     legacy = seg.footprint.getEventLegacy();
                     _this.publiclyTrigger('eventAfterRender', {
                         context: legacy,
@@ -13094,7 +14720,7 @@ var DateComponent = /** @class */ (function (_super) {
         if (this.hasPublicHandlers('eventDestroy')) {
             segs.forEach(function (seg) {
                 var legacy;
-                if (seg.el) {
+                if (seg.el) { // necessary?
                     legacy = seg.footprint.getEventLegacy();
                     _this.publiclyTrigger('eventDestroy', {
                         context: legacy,
@@ -13372,7 +14998,7 @@ var DateComponent = /** @class */ (function (_super) {
         }
         else {
             classes.push('fc-' + util_1.dayIDs[date.day()]);
-            if (view.isDateInOtherMonth(date, this.dateProfile)) {
+            if (view.isDateInOtherMonth(date, this.dateProfile)) { // TODO: use DateComponent subclass somehow
                 classes.push('fc-other-month');
             }
             today = view.calendar.getNow();
@@ -13452,35 +15078,35 @@ function convertEventsPayloadToLegacyArray(eventsPayload) {
 
 
 /***/ }),
-/* 220 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var $ = __webpack_require__(3);
 var moment = __webpack_require__(0);
 var util_1 = __webpack_require__(4);
-var options_1 = __webpack_require__(32);
-var Iterator_1 = __webpack_require__(238);
-var GlobalEmitter_1 = __webpack_require__(21);
-var EmitterMixin_1 = __webpack_require__(11);
+var options_1 = __webpack_require__(33);
+var Iterator_1 = __webpack_require__(225);
+var GlobalEmitter_1 = __webpack_require__(23);
+var EmitterMixin_1 = __webpack_require__(13);
 var ListenerMixin_1 = __webpack_require__(7);
-var Toolbar_1 = __webpack_require__(239);
-var OptionsManager_1 = __webpack_require__(240);
-var ViewSpecManager_1 = __webpack_require__(241);
-var Constraints_1 = __webpack_require__(207);
-var locale_1 = __webpack_require__(31);
-var moment_ext_1 = __webpack_require__(10);
+var Toolbar_1 = __webpack_require__(257);
+var OptionsManager_1 = __webpack_require__(258);
+var ViewSpecManager_1 = __webpack_require__(259);
+var Constraints_1 = __webpack_require__(217);
+var locale_1 = __webpack_require__(32);
+var moment_ext_1 = __webpack_require__(11);
 var UnzonedRange_1 = __webpack_require__(5);
 var ComponentFootprint_1 = __webpack_require__(12);
-var EventDateProfile_1 = __webpack_require__(17);
-var EventManager_1 = __webpack_require__(242);
-var BusinessHourGenerator_1 = __webpack_require__(212);
+var EventDateProfile_1 = __webpack_require__(16);
+var EventManager_1 = __webpack_require__(220);
+var BusinessHourGenerator_1 = __webpack_require__(218);
 var EventSourceParser_1 = __webpack_require__(38);
-var EventDefParser_1 = __webpack_require__(49);
-var SingleEventDef_1 = __webpack_require__(13);
-var EventDefMutation_1 = __webpack_require__(37);
+var EventDefParser_1 = __webpack_require__(36);
+var SingleEventDef_1 = __webpack_require__(9);
+var EventDefMutation_1 = __webpack_require__(39);
 var EventSource_1 = __webpack_require__(6);
-var ThemeRegistry_1 = __webpack_require__(51);
+var ThemeRegistry_1 = __webpack_require__(57);
 var Calendar = /** @class */ (function () {
     function Calendar(el, overrides) {
         this.loadingLevel = 0; // number of simultaneous loading tasks
@@ -13537,16 +15163,16 @@ var Calendar = /** @class */ (function () {
     Calendar.prototype.option = function (name, value) {
         var newOptionHash;
         if (typeof name === 'string') {
-            if (value === undefined) {
+            if (value === undefined) { // getter
                 return this.optionsManager.get(name);
             }
-            else {
+            else { // setter for individual option
                 newOptionHash = {};
                 newOptionHash[name] = value;
                 this.optionsManager.add(newOptionHash);
             }
         }
-        else if (typeof name === 'object') {
+        else if (typeof name === 'object') { // compound setter with object input
             this.optionsManager.add(name);
         }
     };
@@ -13570,12 +15196,12 @@ var Calendar = /** @class */ (function () {
     };
     Calendar.prototype.changeView = function (viewName, dateOrRange) {
         if (dateOrRange) {
-            if (dateOrRange.start && dateOrRange.end) {
+            if (dateOrRange.start && dateOrRange.end) { // a range
                 this.optionsManager.recordOverrides({
                     visibleRange: dateOrRange
                 });
             }
-            else {
+            else { // a date
                 this.currentDate = this.moment(dateOrRange).stripZone(); // just like gotoDate
             }
         }
@@ -13756,12 +15382,12 @@ var Calendar = /** @class */ (function () {
     Calendar.prototype.bindViewHandlers = function (view) {
         var _this = this;
         view.watch('titleForCalendar', ['title'], function (deps) {
-            if (view === _this.view) {
+            if (view === _this.view) { // hack
                 _this.setToolbarsTitle(deps.title);
             }
         });
         view.watch('dateProfileForCalendar', ['dateProfile'], function (deps) {
-            if (view === _this.view) {
+            if (view === _this.view) { // hack
                 _this.currentDate = deps.dateProfile.date; // might have been constrained by view dates
                 _this.updateToolbarButtons(deps.dateProfile);
             }
@@ -13865,19 +15491,19 @@ var Calendar = /** @class */ (function () {
     Calendar.prototype._calcSize = function () {
         var contentHeightInput = this.opt('contentHeight');
         var heightInput = this.opt('height');
-        if (typeof contentHeightInput === 'number') {
+        if (typeof contentHeightInput === 'number') { // exists and not 'auto'
             this.suggestedViewHeight = contentHeightInput;
         }
-        else if (typeof contentHeightInput === 'function') {
+        else if (typeof contentHeightInput === 'function') { // exists and is a function
             this.suggestedViewHeight = contentHeightInput();
         }
-        else if (typeof heightInput === 'number') {
+        else if (typeof heightInput === 'number') { // exists and not 'auto'
             this.suggestedViewHeight = heightInput - this.queryToolbarsHeight();
         }
-        else if (typeof heightInput === 'function') {
+        else if (typeof heightInput === 'function') { // exists and is a function
             this.suggestedViewHeight = heightInput() - this.queryToolbarsHeight();
         }
-        else if (heightInput === 'parent') {
+        else if (heightInput === 'parent') { // set to height of parent element
             this.suggestedViewHeight = this.el.parent().height() - this.queryToolbarsHeight();
         }
         else {
@@ -13892,7 +15518,7 @@ var Calendar = /** @class */ (function () {
         ev.target === window &&
             this.view &&
             this.view.isDatesRendered) {
-            if (this.updateViewSize(true)) {
+            if (this.updateViewSize(true)) { // isResize=true, returns true on success
                 this.publiclyTrigger('windowResize', [this.view]);
             }
         }
@@ -14054,7 +15680,8 @@ var Calendar = /** @class */ (function () {
                 _week.dow = firstDay;
                 localeData._week = _week;
             }
-            if (weekNumberCalculation === 'ISO' ||
+            if ( // whitelist certain kinds of input
+            weekNumberCalculation === 'ISO' ||
                 weekNumberCalculation === 'local' ||
                 typeof weekNumberCalculation === 'function') {
                 localeData._fullCalendar_weekCalc = weekNumberCalculation; // moment-ext will know what to do with it
@@ -14078,7 +15705,7 @@ var Calendar = /** @class */ (function () {
         if (this.opt('timezone') === 'local') {
             mom = moment_ext_1.default.apply(null, args);
             // Force the moment to be local, because momentExt doesn't guarantee it.
-            if (mom.hasTime()) {
+            if (mom.hasTime()) { // don't give ambiguously-timed moments a local zone
                 mom.local();
             }
         }
@@ -14128,9 +15755,9 @@ var Calendar = /** @class */ (function () {
         var timeAdjust = date.time().asMilliseconds() - zonedDate.time().asMilliseconds();
         var adjustedZonedDate;
         // Safari sometimes has problems with this coersion when near DST. Adjust if necessary. (bug #2396)
-        if (timeAdjust) {
+        if (timeAdjust) { // is the time result different than expected?
             adjustedZonedDate = zonedDate.clone().add(timeAdjust); // add milliseconds
-            if (date.time().asMilliseconds() - adjustedZonedDate.time().asMilliseconds() === 0) {
+            if (date.time().asMilliseconds() - adjustedZonedDate.time().asMilliseconds() === 0) { // does it match perfectly now?
                 zonedDate = adjustedZonedDate;
             }
         }
@@ -14157,6 +15784,10 @@ var Calendar = /** @class */ (function () {
             if (end) {
                 end = this.applyTimezone(end);
             }
+        }
+        this.localizeMoment(start);
+        if (end) {
+            this.localizeMoment(end);
         }
         return new EventDateProfile_1.default(start, end, this);
     };
@@ -14272,7 +15903,7 @@ var Calendar = /** @class */ (function () {
         var idMap = {};
         var eventDef;
         var i;
-        if (legacyQuery == null) {
+        if (legacyQuery == null) { // shortcut for removing all
             eventManager.removeAllEventDefs(); // persist=true
         }
         else {
@@ -14286,7 +15917,7 @@ var Calendar = /** @class */ (function () {
                 idMap[eventDef.id] = true;
             }
             eventManager.freeze();
-            for (i in idMap) {
+            for (i in idMap) { // reuse `i` as an "id"
                 eventManager.removeEventDefsById(i); // persist=true
             }
             eventManager.thaw();
@@ -14385,7 +16016,7 @@ function filterLegacyEventInstances(legacyEventInstances, legacyQuery) {
     else if ($.isFunction(legacyQuery)) {
         return legacyEventInstances.filter(legacyQuery);
     }
-    else {
+    else { // an event ID
         legacyQuery += ''; // normalize to string
         return legacyEventInstances.filter(function (legacyEventInstance) {
             // soft comparison because id not be normalized to string
@@ -14398,288 +16029,22 @@ function filterLegacyEventInstances(legacyEventInstances, legacyQuery) {
 
 
 /***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var moment = __webpack_require__(0);
-var util_1 = __webpack_require__(4);
-var UnzonedRange_1 = __webpack_require__(5);
-var DateProfileGenerator = /** @class */ (function () {
-    function DateProfileGenerator(_view) {
-        this._view = _view;
-    }
-    DateProfileGenerator.prototype.opt = function (name) {
-        return this._view.opt(name);
-    };
-    DateProfileGenerator.prototype.trimHiddenDays = function (unzonedRange) {
-        return this._view.trimHiddenDays(unzonedRange);
-    };
-    DateProfileGenerator.prototype.msToUtcMoment = function (ms, forceAllDay) {
-        return this._view.calendar.msToUtcMoment(ms, forceAllDay);
-    };
-    /* Date Range Computation
-    ------------------------------------------------------------------------------------------------------------------*/
-    // Builds a structure with info about what the dates/ranges will be for the "prev" view.
-    DateProfileGenerator.prototype.buildPrev = function (currentDateProfile) {
-        var prevDate = currentDateProfile.date.clone()
-            .startOf(currentDateProfile.currentRangeUnit)
-            .subtract(currentDateProfile.dateIncrement);
-        return this.build(prevDate, -1);
-    };
-    // Builds a structure with info about what the dates/ranges will be for the "next" view.
-    DateProfileGenerator.prototype.buildNext = function (currentDateProfile) {
-        var nextDate = currentDateProfile.date.clone()
-            .startOf(currentDateProfile.currentRangeUnit)
-            .add(currentDateProfile.dateIncrement);
-        return this.build(nextDate, 1);
-    };
-    // Builds a structure holding dates/ranges for rendering around the given date.
-    // Optional direction param indicates whether the date is being incremented/decremented
-    // from its previous value. decremented = -1, incremented = 1 (default).
-    DateProfileGenerator.prototype.build = function (date, direction, forceToValid) {
-        if (forceToValid === void 0) { forceToValid = false; }
-        var isDateAllDay = !date.hasTime();
-        var validUnzonedRange;
-        var minTime = null;
-        var maxTime = null;
-        var currentInfo;
-        var isRangeAllDay;
-        var renderUnzonedRange;
-        var activeUnzonedRange;
-        var isValid;
-        validUnzonedRange = this.buildValidRange();
-        validUnzonedRange = this.trimHiddenDays(validUnzonedRange);
-        if (forceToValid) {
-            date = this.msToUtcMoment(validUnzonedRange.constrainDate(date), // returns MS
-            isDateAllDay);
-        }
-        currentInfo = this.buildCurrentRangeInfo(date, direction);
-        isRangeAllDay = /^(year|month|week|day)$/.test(currentInfo.unit);
-        renderUnzonedRange = this.buildRenderRange(this.trimHiddenDays(currentInfo.unzonedRange), currentInfo.unit, isRangeAllDay);
-        renderUnzonedRange = this.trimHiddenDays(renderUnzonedRange);
-        activeUnzonedRange = renderUnzonedRange.clone();
-        if (!this.opt('showNonCurrentDates')) {
-            activeUnzonedRange = activeUnzonedRange.intersect(currentInfo.unzonedRange);
-        }
-        minTime = moment.duration(this.opt('minTime'));
-        maxTime = moment.duration(this.opt('maxTime'));
-        activeUnzonedRange = this.adjustActiveRange(activeUnzonedRange, minTime, maxTime);
-        activeUnzonedRange = activeUnzonedRange.intersect(validUnzonedRange); // might return null
-        if (activeUnzonedRange) {
-            date = this.msToUtcMoment(activeUnzonedRange.constrainDate(date), // returns MS
-            isDateAllDay);
-        }
-        // it's invalid if the originally requested date is not contained,
-        // or if the range is completely outside of the valid range.
-        isValid = currentInfo.unzonedRange.intersectsWith(validUnzonedRange);
-        return {
-            // constraint for where prev/next operations can go and where events can be dragged/resized to.
-            // an object with optional start and end properties.
-            validUnzonedRange: validUnzonedRange,
-            // range the view is formally responsible for.
-            // for example, a month view might have 1st-31st, excluding padded dates
-            currentUnzonedRange: currentInfo.unzonedRange,
-            // name of largest unit being displayed, like "month" or "week"
-            currentRangeUnit: currentInfo.unit,
-            isRangeAllDay: isRangeAllDay,
-            // dates that display events and accept drag-n-drop
-            // will be `null` if no dates accept events
-            activeUnzonedRange: activeUnzonedRange,
-            // date range with a rendered skeleton
-            // includes not-active days that need some sort of DOM
-            renderUnzonedRange: renderUnzonedRange,
-            // Duration object that denotes the first visible time of any given day
-            minTime: minTime,
-            // Duration object that denotes the exclusive visible end time of any given day
-            maxTime: maxTime,
-            isValid: isValid,
-            date: date,
-            // how far the current date will move for a prev/next operation
-            dateIncrement: this.buildDateIncrement(currentInfo.duration)
-            // pass a fallback (might be null) ^
-        };
-    };
-    // Builds an object with optional start/end properties.
-    // Indicates the minimum/maximum dates to display.
-    // not responsible for trimming hidden days.
-    DateProfileGenerator.prototype.buildValidRange = function () {
-        return this._view.getUnzonedRangeOption('validRange', this._view.calendar.getNow()) ||
-            new UnzonedRange_1.default(); // completely open-ended
-    };
-    // Builds a structure with info about the "current" range, the range that is
-    // highlighted as being the current month for example.
-    // See build() for a description of `direction`.
-    // Guaranteed to have `range` and `unit` properties. `duration` is optional.
-    // TODO: accept a MS-time instead of a moment `date`?
-    DateProfileGenerator.prototype.buildCurrentRangeInfo = function (date, direction) {
-        var viewSpec = this._view.viewSpec;
-        var duration = null;
-        var unit = null;
-        var unzonedRange = null;
-        var dayCount;
-        if (viewSpec.duration) {
-            duration = viewSpec.duration;
-            unit = viewSpec.durationUnit;
-            unzonedRange = this.buildRangeFromDuration(date, direction, duration, unit);
-        }
-        else if ((dayCount = this.opt('dayCount'))) {
-            unit = 'day';
-            unzonedRange = this.buildRangeFromDayCount(date, direction, dayCount);
-        }
-        else if ((unzonedRange = this.buildCustomVisibleRange(date))) {
-            unit = util_1.computeGreatestUnit(unzonedRange.getStart(), unzonedRange.getEnd());
-        }
-        else {
-            duration = this.getFallbackDuration();
-            unit = util_1.computeGreatestUnit(duration);
-            unzonedRange = this.buildRangeFromDuration(date, direction, duration, unit);
-        }
-        return { duration: duration, unit: unit, unzonedRange: unzonedRange };
-    };
-    DateProfileGenerator.prototype.getFallbackDuration = function () {
-        return moment.duration({ days: 1 });
-    };
-    // Returns a new activeUnzonedRange to have time values (un-ambiguate)
-    // minTime or maxTime causes the range to expand.
-    DateProfileGenerator.prototype.adjustActiveRange = function (unzonedRange, minTime, maxTime) {
-        var start = unzonedRange.getStart();
-        var end = unzonedRange.getEnd();
-        if (this._view.usesMinMaxTime) {
-            if (minTime < 0) {
-                start.time(0).add(minTime);
-            }
-            if (maxTime > 24 * 60 * 60 * 1000) {
-                end.time(maxTime - (24 * 60 * 60 * 1000));
-            }
-        }
-        return new UnzonedRange_1.default(start, end);
-    };
-    // Builds the "current" range when it is specified as an explicit duration.
-    // `unit` is the already-computed computeGreatestUnit value of duration.
-    // TODO: accept a MS-time instead of a moment `date`?
-    DateProfileGenerator.prototype.buildRangeFromDuration = function (date, direction, duration, unit) {
-        var alignment = this.opt('dateAlignment');
-        var dateIncrementInput;
-        var dateIncrementDuration;
-        var start;
-        var end;
-        var res;
-        // compute what the alignment should be
-        if (!alignment) {
-            dateIncrementInput = this.opt('dateIncrement');
-            if (dateIncrementInput) {
-                dateIncrementDuration = moment.duration(dateIncrementInput);
-                // use the smaller of the two units
-                if (dateIncrementDuration < duration) {
-                    alignment = util_1.computeDurationGreatestUnit(dateIncrementDuration, dateIncrementInput);
-                }
-                else {
-                    alignment = unit;
-                }
-            }
-            else {
-                alignment = unit;
-            }
-        }
-        // if the view displays a single day or smaller
-        if (duration.as('days') <= 1) {
-            if (this._view.isHiddenDay(start)) {
-                start = this._view.skipHiddenDays(start, direction);
-                start.startOf('day');
-            }
-        }
-        function computeRes() {
-            start = date.clone().startOf(alignment);
-            end = start.clone().add(duration);
-            res = new UnzonedRange_1.default(start, end);
-        }
-        computeRes();
-        // if range is completely enveloped by hidden days, go past the hidden days
-        if (!this.trimHiddenDays(res)) {
-            date = this._view.skipHiddenDays(date, direction);
-            computeRes();
-        }
-        return res;
-    };
-    // Builds the "current" range when a dayCount is specified.
-    // TODO: accept a MS-time instead of a moment `date`?
-    DateProfileGenerator.prototype.buildRangeFromDayCount = function (date, direction, dayCount) {
-        var customAlignment = this.opt('dateAlignment');
-        var runningCount = 0;
-        var start = date.clone();
-        var end;
-        if (customAlignment) {
-            start.startOf(customAlignment);
-        }
-        start.startOf('day');
-        start = this._view.skipHiddenDays(start, direction);
-        end = start.clone();
-        do {
-            end.add(1, 'day');
-            if (!this._view.isHiddenDay(end)) {
-                runningCount++;
-            }
-        } while (runningCount < dayCount);
-        return new UnzonedRange_1.default(start, end);
-    };
-    // Builds a normalized range object for the "visible" range,
-    // which is a way to define the currentUnzonedRange and activeUnzonedRange at the same time.
-    // TODO: accept a MS-time instead of a moment `date`?
-    DateProfileGenerator.prototype.buildCustomVisibleRange = function (date) {
-        var visibleUnzonedRange = this._view.getUnzonedRangeOption('visibleRange', this._view.calendar.applyTimezone(date) // correct zone. also generates new obj that avoids mutations
-        );
-        if (visibleUnzonedRange && (visibleUnzonedRange.startMs == null || visibleUnzonedRange.endMs == null)) {
-            return null;
-        }
-        return visibleUnzonedRange;
-    };
-    // Computes the range that will represent the element/cells for *rendering*,
-    // but which may have voided days/times.
-    // not responsible for trimming hidden days.
-    DateProfileGenerator.prototype.buildRenderRange = function (currentUnzonedRange, currentRangeUnit, isRangeAllDay) {
-        return currentUnzonedRange.clone();
-    };
-    // Compute the duration value that should be added/substracted to the current date
-    // when a prev/next operation happens.
-    DateProfileGenerator.prototype.buildDateIncrement = function (fallback) {
-        var dateIncrementInput = this.opt('dateIncrement');
-        var customAlignment;
-        if (dateIncrementInput) {
-            return moment.duration(dateIncrementInput);
-        }
-        else if ((customAlignment = this.opt('dateAlignment'))) {
-            return moment.duration(1, customAlignment);
-        }
-        else if (fallback) {
-            return fallback;
-        }
-        else {
-            return moment.duration({ days: 1 });
-        }
-    };
-    return DateProfileGenerator;
-}());
-exports.default = DateProfileGenerator;
-
-
-/***/ }),
-/* 222 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var moment = __webpack_require__(0);
-var exportHooks = __webpack_require__(16);
+var exportHooks = __webpack_require__(18);
 var util_1 = __webpack_require__(4);
-var moment_ext_1 = __webpack_require__(10);
+var moment_ext_1 = __webpack_require__(11);
 var ListenerMixin_1 = __webpack_require__(7);
-var HitDragListener_1 = __webpack_require__(23);
-var SingleEventDef_1 = __webpack_require__(13);
-var EventInstanceGroup_1 = __webpack_require__(18);
+var HitDragListener_1 = __webpack_require__(17);
+var SingleEventDef_1 = __webpack_require__(9);
+var EventInstanceGroup_1 = __webpack_require__(20);
 var EventSource_1 = __webpack_require__(6);
-var Interaction_1 = __webpack_require__(15);
+var Interaction_1 = __webpack_require__(14);
 var ExternalDropping = /** @class */ (function (_super) {
     tslib_1.__extends(ExternalDropping, _super);
     function ExternalDropping() {
@@ -14713,13 +16078,13 @@ var ExternalDropping = /** @class */ (function (_super) {
     ExternalDropping.prototype.handleDragStart = function (ev, ui) {
         var el;
         var accept;
-        if (this.opt('droppable')) {
+        if (this.opt('droppable')) { // only listen if this setting is on
             el = $((ui ? ui.item : null) || ev.target);
             // Test that the dragged element passes the dropAccept selector or filter function.
             // FYI, the default is "*" (matches all)
             accept = this.opt('dropAccept');
             if ($.isFunction(accept) ? accept.call(el[0], el) : el.is(accept)) {
-                if (!this.isDragging) {
+                if (!this.isDragging) { // prevent double-listening if fired twice
                     this.listenToExternalDrag(el, ev, ui);
                 }
             }
@@ -14773,7 +16138,7 @@ var ExternalDropping = /** @class */ (function (_super) {
                 component.unrenderDrag();
             },
             interactionEnd: function (ev) {
-                if (singleEventDef) {
+                if (singleEventDef) { // element was dropped on a valid hit
                     view.reportExternalDrop(singleEventDef, Boolean(meta.eventProps), // isEvent
                     Boolean(meta.stick), // isSticky
                     el, ev, ui);
@@ -14842,7 +16207,7 @@ function getDraggedElMeta(el) {
         if (typeof eventProps === 'object') {
             eventProps = $.extend({}, eventProps); // make a copy
         }
-        else {
+        else { // something like 1 or true. still signal event creation
             eventProps = {};
         }
         // pluck special-cased date/time properties
@@ -14879,17 +16244,17 @@ function getDraggedElMeta(el) {
 
 
 /***/ }),
-/* 223 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var EventDefMutation_1 = __webpack_require__(37);
-var EventDefDateMutation_1 = __webpack_require__(50);
-var HitDragListener_1 = __webpack_require__(23);
-var Interaction_1 = __webpack_require__(15);
+var EventDefMutation_1 = __webpack_require__(39);
+var EventDefDateMutation_1 = __webpack_require__(40);
+var HitDragListener_1 = __webpack_require__(17);
+var Interaction_1 = __webpack_require__(14);
 var EventResizing = /** @class */ (function (_super) {
     tslib_1.__extends(EventResizing, _super);
     /*
@@ -15000,7 +16365,7 @@ var EventResizing = /** @class */ (function (_super) {
                 if (isDragging) {
                     _this.segResizeStop(seg, ev);
                 }
-                if (resizeMutation) {
+                if (resizeMutation) { // valid date to resize to?
                     // no need to re-show original, will rerender all anyways. esp important if eventRenderWait
                     view.reportEventResize(eventInstance, resizeMutation, el, ev);
                 }
@@ -15071,18 +16436,18 @@ exports.default = EventResizing;
 
 
 /***/ }),
-/* 224 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(4);
-var EventDefMutation_1 = __webpack_require__(37);
-var EventDefDateMutation_1 = __webpack_require__(50);
-var DragListener_1 = __webpack_require__(54);
-var HitDragListener_1 = __webpack_require__(23);
-var MouseFollower_1 = __webpack_require__(244);
-var Interaction_1 = __webpack_require__(15);
+var EventDefMutation_1 = __webpack_require__(39);
+var EventDefDateMutation_1 = __webpack_require__(40);
+var DragListener_1 = __webpack_require__(59);
+var HitDragListener_1 = __webpack_require__(17);
+var MouseFollower_1 = __webpack_require__(226);
+var Interaction_1 = __webpack_require__(14);
 var EventDragging = /** @class */ (function (_super) {
     tslib_1.__extends(EventDragging, _super);
     /*
@@ -15345,16 +16710,16 @@ exports.default = EventDragging;
 
 
 /***/ }),
-/* 225 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(4);
-var HitDragListener_1 = __webpack_require__(23);
+var HitDragListener_1 = __webpack_require__(17);
 var ComponentFootprint_1 = __webpack_require__(12);
 var UnzonedRange_1 = __webpack_require__(5);
-var Interaction_1 = __webpack_require__(15);
+var Interaction_1 = __webpack_require__(14);
 var DateSelecting = /** @class */ (function (_super) {
     tslib_1.__extends(DateSelecting, _super);
     /*
@@ -15415,7 +16780,7 @@ var DateSelecting = /** @class */ (function (_super) {
             hitOver: function (hit, isOrig, origHit) {
                 var origHitFootprint;
                 var hitFootprint;
-                if (origHit) {
+                if (origHit) { // click needs to have started on a hit
                     origHitFootprint = component.getSafeHitFootprint(origHit);
                     hitFootprint = component.getSafeHitFootprint(hit);
                     if (origHitFootprint && hitFootprint) {
@@ -15482,7 +16847,85 @@ exports.default = DateSelecting;
 
 
 /***/ }),
-/* 226 */
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var HitDragListener_1 = __webpack_require__(17);
+var Interaction_1 = __webpack_require__(14);
+var DateClicking = /** @class */ (function (_super) {
+    tslib_1.__extends(DateClicking, _super);
+    /*
+    component must implement:
+      - bindDateHandlerToEl
+      - getSafeHitFootprint
+      - getHitEl
+    */
+    function DateClicking(component) {
+        var _this = _super.call(this, component) || this;
+        _this.dragListener = _this.buildDragListener();
+        return _this;
+    }
+    DateClicking.prototype.end = function () {
+        this.dragListener.endInteraction();
+    };
+    DateClicking.prototype.bindToEl = function (el) {
+        var component = this.component;
+        var dragListener = this.dragListener;
+        component.bindDateHandlerToEl(el, 'mousedown', function (ev) {
+            if (!component.shouldIgnoreMouse()) {
+                dragListener.startInteraction(ev);
+            }
+        });
+        component.bindDateHandlerToEl(el, 'touchstart', function (ev) {
+            if (!component.shouldIgnoreTouch()) {
+                dragListener.startInteraction(ev);
+            }
+        });
+    };
+    // Creates a listener that tracks the user's drag across day elements, for day clicking.
+    DateClicking.prototype.buildDragListener = function () {
+        var _this = this;
+        var component = this.component;
+        var dayClickHit; // null if invalid dayClick
+        var dragListener = new HitDragListener_1.default(component, {
+            scroll: this.opt('dragScroll'),
+            interactionStart: function () {
+                dayClickHit = dragListener.origHit;
+            },
+            hitOver: function (hit, isOrig, origHit) {
+                // if user dragged to another cell at any point, it can no longer be a dayClick
+                if (!isOrig) {
+                    dayClickHit = null;
+                }
+            },
+            hitOut: function () {
+                dayClickHit = null;
+            },
+            interactionEnd: function (ev, isCancelled) {
+                var componentFootprint;
+                if (!isCancelled && dayClickHit) {
+                    componentFootprint = component.getSafeHitFootprint(dayClickHit);
+                    if (componentFootprint) {
+                        _this.view.triggerDayClick(componentFootprint, component.getHitEl(dayClickHit), ev);
+                    }
+                }
+            }
+        });
+        // because dragListener won't be called with any time delay, "dragging" will begin immediately,
+        // which will kill any touchmoving/scrolling. Prevent this.
+        dragListener.shouldCancelTouchScroll = false;
+        dragListener.scrollAlwaysKills = true;
+        return dragListener;
+    };
+    return DateClicking;
+}(Interaction_1.default));
+exports.default = DateClicking;
+
+
+/***/ }),
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -15490,10 +16933,10 @@ var tslib_1 = __webpack_require__(2);
 var moment = __webpack_require__(0);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var Scroller_1 = __webpack_require__(39);
-var View_1 = __webpack_require__(41);
-var TimeGrid_1 = __webpack_require__(227);
-var DayGrid_1 = __webpack_require__(61);
+var Scroller_1 = __webpack_require__(41);
+var View_1 = __webpack_require__(43);
+var TimeGrid_1 = __webpack_require__(239);
+var DayGrid_1 = __webpack_require__(66);
 var AGENDA_ALL_DAY_EVENT_LIMIT = 5;
 var agendaTimeGridMethods;
 var agendaDayGridMethods;
@@ -15508,7 +16951,7 @@ var AgendaView = /** @class */ (function (_super) {
         _this.usesMinMaxTime = true; // indicates that minTime/maxTime affects rendering
         _this.timeGrid = _this.instantiateTimeGrid();
         _this.addChild(_this.timeGrid);
-        if (_this.opt('allDaySlot')) {
+        if (_this.opt('allDaySlot')) { // should we display the "all-day" area?
             _this.dayGrid = _this.instantiateDayGrid(); // the all-day subcomponent of this view
             _this.addChild(_this.dayGrid);
         }
@@ -15628,11 +17071,11 @@ var AgendaView = /** @class */ (function (_super) {
                 this.dayGrid.limitRows(eventLimit);
             }
         }
-        if (!isAuto) {
+        if (!isAuto) { // should we force dimensions of the scroll container?
             scrollerHeight = this.computeScrollerHeight(totalHeight);
             this.scroller.setHeight(scrollerHeight);
             scrollbarWidths = this.scroller.getScrollbarWidths();
-            if (scrollbarWidths.left || scrollbarWidths.right) {
+            if (scrollbarWidths.left || scrollbarWidths.right) { // using scrollbars?
                 // make the all-day and header rows lines up
                 util_1.compensateScroll(noScrollRowEls, scrollbarWidths);
                 // the scrollbar compensation might have changed text flow, which might affect height, so recalculate
@@ -15812,7 +17255,7 @@ function groupEventFootprintsByAllDay(eventFootprints) {
 
 
 /***/ }),
-/* 227 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -15820,16 +17263,16 @@ var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var moment = __webpack_require__(0);
 var util_1 = __webpack_require__(4);
-var InteractiveDateComponent_1 = __webpack_require__(40);
-var BusinessHourRenderer_1 = __webpack_require__(56);
-var StandardInteractionsMixin_1 = __webpack_require__(60);
-var DayTableMixin_1 = __webpack_require__(55);
-var CoordCache_1 = __webpack_require__(53);
+var InteractiveDateComponent_1 = __webpack_require__(42);
+var BusinessHourRenderer_1 = __webpack_require__(61);
+var StandardInteractionsMixin_1 = __webpack_require__(65);
+var DayTableMixin_1 = __webpack_require__(60);
+var CoordCache_1 = __webpack_require__(58);
 var UnzonedRange_1 = __webpack_require__(5);
 var ComponentFootprint_1 = __webpack_require__(12);
-var TimeGridEventRenderer_1 = __webpack_require__(246);
-var TimeGridHelperRenderer_1 = __webpack_require__(247);
-var TimeGridFillRenderer_1 = __webpack_require__(248);
+var TimeGridEventRenderer_1 = __webpack_require__(240);
+var TimeGridHelperRenderer_1 = __webpack_require__(241);
+var TimeGridFillRenderer_1 = __webpack_require__(242);
 /* A component that renders one or more columns of vertical time slots
 ----------------------------------------------------------------------------------------------------------------------*/
 // We mixin DayTable, even though there is only a single row of days
@@ -16049,7 +17492,7 @@ var TimeGrid = /** @class */ (function (_super) {
         this.el.append(skeletonEl);
     };
     TimeGrid.prototype.unrenderContentSkeleton = function () {
-        if (this.contentSkeletonEl) {
+        if (this.contentSkeletonEl) { // defensive :(
             this.contentSkeletonEl.remove();
             this.contentSkeletonEl = null;
             this.colContainerEls = null;
@@ -16078,7 +17521,7 @@ var TimeGrid = /** @class */ (function (_super) {
         var col;
         var segs;
         var i;
-        for (col = 0; col < this.colCnt; col++) {
+        for (col = 0; col < this.colCnt; col++) { // iterate each column grouping
             segs = segsByCol[col];
             for (i = 0; i < segs.length; i++) {
                 containerEls.eq(col).append(segs[i].el);
@@ -16110,7 +17553,7 @@ var TimeGrid = /** @class */ (function (_super) {
                 .appendTo(this.colContainerEls.eq(segs[i].col))[0]);
         }
         // render an arrow over the axis
-        if (segs.length > 0) {
+        if (segs.length > 0) { // is the current time in view?
             nodes.push($('<div class="fc-now-indicator fc-now-indicator-arrow"></div>')
                 .css('top', top)
                 .appendTo(this.el.find('.fc-content-skeleton'))[0]);
@@ -16258,14 +17701,14 @@ var TimeGrid = /** @class */ (function (_super) {
     // A returned value of `true` signals that a mock "helper" event has been rendered.
     TimeGrid.prototype.renderDrag = function (eventFootprints, seg, isTouch) {
         var i;
-        if (seg) {
+        if (seg) { // if there is event information for this drag, render a helper event
             if (eventFootprints.length) {
                 this.helperRenderer.renderEventDraggingFootprints(eventFootprints, seg, isTouch);
                 // signal that a helper has been rendered
                 return true;
             }
         }
-        else {
+        else { // otherwise, just render a highlight
             for (i = 0; i < eventFootprints.length; i++) {
                 this.renderHighlight(eventFootprints[i].componentFootprint);
             }
@@ -16290,7 +17733,7 @@ var TimeGrid = /** @class */ (function (_super) {
     ------------------------------------------------------------------------------------------------------------------*/
     // Renders a visual indication of a selection. Overrides the default, which was to simply render a highlight.
     TimeGrid.prototype.renderSelectionFootprint = function (componentFootprint) {
-        if (this.opt('selectHelper')) {
+        if (this.opt('selectHelper')) { // this setting signals that a mock helper event should be rendered
             this.helperRenderer.renderComponentFootprint(componentFootprint);
         }
         else {
@@ -16314,1600 +17757,13 @@ DayTableMixin_1.default.mixInto(TimeGrid);
 
 
 /***/ }),
-/* 228 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var UnzonedRange_1 = __webpack_require__(5);
-var DateProfileGenerator_1 = __webpack_require__(221);
-var BasicViewDateProfileGenerator = /** @class */ (function (_super) {
-    tslib_1.__extends(BasicViewDateProfileGenerator, _super);
-    function BasicViewDateProfileGenerator() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    // Computes the date range that will be rendered.
-    BasicViewDateProfileGenerator.prototype.buildRenderRange = function (currentUnzonedRange, currentRangeUnit, isRangeAllDay) {
-        var renderUnzonedRange = _super.prototype.buildRenderRange.call(this, currentUnzonedRange, currentRangeUnit, isRangeAllDay); // an UnzonedRange
-        var start = this.msToUtcMoment(renderUnzonedRange.startMs, isRangeAllDay);
-        var end = this.msToUtcMoment(renderUnzonedRange.endMs, isRangeAllDay);
-        // year and month views should be aligned with weeks. this is already done for week
-        if (/^(year|month)$/.test(currentRangeUnit)) {
-            start.startOf('week');
-            // make end-of-week if not already
-            if (end.weekday()) {
-                end.add(1, 'week').startOf('week'); // exclusively move backwards
-            }
-        }
-        return new UnzonedRange_1.default(start, end);
-    };
-    return BasicViewDateProfileGenerator;
-}(DateProfileGenerator_1.default));
-exports.default = BasicViewDateProfileGenerator;
-
-
-/***/ }),
-/* 229 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var moment = __webpack_require__(0);
-var util_1 = __webpack_require__(4);
-var BasicView_1 = __webpack_require__(62);
-var MonthViewDateProfileGenerator_1 = __webpack_require__(253);
-/* A month view with day cells running in rows (one-per-week) and columns
-----------------------------------------------------------------------------------------------------------------------*/
-var MonthView = /** @class */ (function (_super) {
-    tslib_1.__extends(MonthView, _super);
-    function MonthView() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    // Overrides the default BasicView behavior to have special multi-week auto-height logic
-    MonthView.prototype.setGridHeight = function (height, isAuto) {
-        // if auto, make the height of each row the height that it would be if there were 6 weeks
-        if (isAuto) {
-            height *= this.dayGrid.rowCnt / 6;
-        }
-        util_1.distributeHeight(this.dayGrid.rowEls, height, !isAuto); // if auto, don't compensate for height-hogging rows
-    };
-    MonthView.prototype.isDateInOtherMonth = function (date, dateProfile) {
-        return date.month() !== moment.utc(dateProfile.currentUnzonedRange.startMs).month(); // TODO: optimize
-    };
-    return MonthView;
-}(BasicView_1.default));
-exports.default = MonthView;
-MonthView.prototype.dateProfileGeneratorClass = MonthViewDateProfileGenerator_1.default;
-
-
-/***/ }),
-/* 230 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(4);
-var UnzonedRange_1 = __webpack_require__(5);
-var View_1 = __webpack_require__(41);
-var Scroller_1 = __webpack_require__(39);
-var ListEventRenderer_1 = __webpack_require__(254);
-var ListEventPointing_1 = __webpack_require__(255);
-/*
-Responsible for the scroller, and forwarding event-related actions into the "grid".
-*/
-var ListView = /** @class */ (function (_super) {
-    tslib_1.__extends(ListView, _super);
-    function ListView(calendar, viewSpec) {
-        var _this = _super.call(this, calendar, viewSpec) || this;
-        _this.segSelector = '.fc-list-item'; // which elements accept event actions
-        _this.scroller = new Scroller_1.default({
-            overflowX: 'hidden',
-            overflowY: 'auto'
-        });
-        return _this;
-    }
-    ListView.prototype.renderSkeleton = function () {
-        this.el.addClass('fc-list-view ' +
-            this.calendar.theme.getClass('listView'));
-        this.scroller.render();
-        this.scroller.el.appendTo(this.el);
-        this.contentEl = this.scroller.scrollEl; // shortcut
-    };
-    ListView.prototype.unrenderSkeleton = function () {
-        this.scroller.destroy(); // will remove the Grid too
-    };
-    ListView.prototype.updateSize = function (totalHeight, isAuto, isResize) {
-        _super.prototype.updateSize.call(this, totalHeight, isAuto, isResize);
-        this.scroller.clear(); // sets height to 'auto' and clears overflow
-        if (!isAuto) {
-            this.scroller.setHeight(this.computeScrollerHeight(totalHeight));
-        }
-    };
-    ListView.prototype.computeScrollerHeight = function (totalHeight) {
-        return totalHeight -
-            util_1.subtractInnerElHeight(this.el, this.scroller.el); // everything that's NOT the scroller
-    };
-    ListView.prototype.renderDates = function (dateProfile) {
-        var calendar = this.calendar;
-        var dayStart = calendar.msToUtcMoment(dateProfile.renderUnzonedRange.startMs, true);
-        var viewEnd = calendar.msToUtcMoment(dateProfile.renderUnzonedRange.endMs, true);
-        var dayDates = [];
-        var dayRanges = [];
-        while (dayStart < viewEnd) {
-            dayDates.push(dayStart.clone());
-            dayRanges.push(new UnzonedRange_1.default(dayStart, dayStart.clone().add(1, 'day')));
-            dayStart.add(1, 'day');
-        }
-        this.dayDates = dayDates;
-        this.dayRanges = dayRanges;
-        // all real rendering happens in EventRenderer
-    };
-    // slices by day
-    ListView.prototype.componentFootprintToSegs = function (footprint) {
-        var dayRanges = this.dayRanges;
-        var dayIndex;
-        var segRange;
-        var seg;
-        var segs = [];
-        for (dayIndex = 0; dayIndex < dayRanges.length; dayIndex++) {
-            segRange = footprint.unzonedRange.intersect(dayRanges[dayIndex]);
-            if (segRange) {
-                seg = {
-                    startMs: segRange.startMs,
-                    endMs: segRange.endMs,
-                    isStart: segRange.isStart,
-                    isEnd: segRange.isEnd,
-                    dayIndex: dayIndex
-                };
-                segs.push(seg);
-                // detect when footprint won't go fully into the next day,
-                // and mutate the latest seg to the be the end.
-                if (!seg.isEnd && !footprint.isAllDay &&
-                    dayIndex + 1 < dayRanges.length &&
-                    footprint.unzonedRange.endMs < dayRanges[dayIndex + 1].startMs + this.nextDayThreshold) {
-                    seg.endMs = footprint.unzonedRange.endMs;
-                    seg.isEnd = true;
-                    break;
-                }
-            }
-        }
-        return segs;
-    };
-    ListView.prototype.renderEmptyMessage = function () {
-        this.contentEl.html('<div class="fc-list-empty-wrap2">' + // TODO: try less wraps
-            '<div class="fc-list-empty-wrap1">' +
-            '<div class="fc-list-empty">' +
-            util_1.htmlEscape(this.opt('noEventsMessage')) +
-            '</div>' +
-            '</div>' +
-            '</div>');
-    };
-    // render the event segments in the view
-    ListView.prototype.renderSegList = function (allSegs) {
-        var segsByDay = this.groupSegsByDay(allSegs); // sparse array
-        var dayIndex;
-        var daySegs;
-        var i;
-        var tableEl = $('<table class="fc-list-table ' + this.calendar.theme.getClass('tableList') + '"><tbody/></table>');
-        var tbodyEl = tableEl.find('tbody');
-        for (dayIndex = 0; dayIndex < segsByDay.length; dayIndex++) {
-            daySegs = segsByDay[dayIndex];
-            if (daySegs) {
-                // append a day header
-                tbodyEl.append(this.dayHeaderHtml(this.dayDates[dayIndex]));
-                this.eventRenderer.sortEventSegs(daySegs);
-                for (i = 0; i < daySegs.length; i++) {
-                    tbodyEl.append(daySegs[i].el); // append event row
-                }
-            }
-        }
-        this.contentEl.empty().append(tableEl);
-    };
-    // Returns a sparse array of arrays, segs grouped by their dayIndex
-    ListView.prototype.groupSegsByDay = function (segs) {
-        var segsByDay = []; // sparse array
-        var i;
-        var seg;
-        for (i = 0; i < segs.length; i++) {
-            seg = segs[i];
-            (segsByDay[seg.dayIndex] || (segsByDay[seg.dayIndex] = []))
-                .push(seg);
-        }
-        return segsByDay;
-    };
-    // generates the HTML for the day headers that live amongst the event rows
-    ListView.prototype.dayHeaderHtml = function (dayDate) {
-        var mainFormat = this.opt('listDayFormat');
-        var altFormat = this.opt('listDayAltFormat');
-        return '<tr class="fc-list-heading" data-date="' + dayDate.format('YYYY-MM-DD') + '">' +
-            '<td class="' + (this.calendar.theme.getClass('tableListHeading') ||
-            this.calendar.theme.getClass('widgetHeader')) + '" colspan="3">' +
-            (mainFormat ?
-                this.buildGotoAnchorHtml(dayDate, { 'class': 'fc-list-heading-main' }, util_1.htmlEscape(dayDate.format(mainFormat)) // inner HTML
-                ) :
-                '') +
-            (altFormat ?
-                this.buildGotoAnchorHtml(dayDate, { 'class': 'fc-list-heading-alt' }, util_1.htmlEscape(dayDate.format(altFormat)) // inner HTML
-                ) :
-                '') +
-            '</td>' +
-            '</tr>';
-    };
-    return ListView;
-}(View_1.default));
-exports.default = ListView;
-ListView.prototype.eventRendererClass = ListEventRenderer_1.default;
-ListView.prototype.eventPointingClass = ListEventPointing_1.default;
-
-
-/***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(3);
-var exportHooks = __webpack_require__(16);
-var util_1 = __webpack_require__(4);
-var Calendar_1 = __webpack_require__(220);
-// for intentional side-effects
-__webpack_require__(10);
-__webpack_require__(47);
-__webpack_require__(256);
-__webpack_require__(257);
-__webpack_require__(260);
-__webpack_require__(261);
-__webpack_require__(262);
-__webpack_require__(263);
-$.fullCalendar = exportHooks;
-$.fn.fullCalendar = function (options) {
-    var args = Array.prototype.slice.call(arguments, 1); // for a possible method call
-    var res = this; // what this function will return (this jQuery object by default)
-    this.each(function (i, _element) {
-        var element = $(_element);
-        var calendar = element.data('fullCalendar'); // get the existing calendar object (if any)
-        var singleRes; // the returned value of this single method call
-        // a method call
-        if (typeof options === 'string') {
-            if (options === 'getCalendar') {
-                if (!i) {
-                    res = calendar;
-                }
-            }
-            else if (options === 'destroy') {
-                if (calendar) {
-                    calendar.destroy();
-                    element.removeData('fullCalendar');
-                }
-            }
-            else if (!calendar) {
-                util_1.warn('Attempting to call a FullCalendar method on an element with no calendar.');
-            }
-            else if ($.isFunction(calendar[options])) {
-                singleRes = calendar[options].apply(calendar, args);
-                if (!i) {
-                    res = singleRes; // record the first method call result
-                }
-                if (options === 'destroy') {
-                    element.removeData('fullCalendar');
-                }
-            }
-            else {
-                util_1.warn("'" + options + "' is an unknown FullCalendar method.");
-            }
-        }
-        else if (!calendar) {
-            calendar = new Calendar_1.default(element, options);
-            element.data('fullCalendar', calendar);
-            calendar.render();
-        }
-    });
-    return res;
-};
-module.exports = exportHooks;
-
-
-/***/ }),
-/* 237 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var Model_1 = __webpack_require__(48);
-var Component = /** @class */ (function (_super) {
-    tslib_1.__extends(Component, _super);
-    function Component() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Component.prototype.setElement = function (el) {
-        this.el = el;
-        this.bindGlobalHandlers();
-        this.renderSkeleton();
-        this.set('isInDom', true);
-    };
-    Component.prototype.removeElement = function () {
-        this.unset('isInDom');
-        this.unrenderSkeleton();
-        this.unbindGlobalHandlers();
-        this.el.remove();
-        // NOTE: don't null-out this.el in case the View was destroyed within an API callback.
-        // We don't null-out the View's other jQuery element references upon destroy,
-        //  so we shouldn't kill this.el either.
-    };
-    Component.prototype.bindGlobalHandlers = function () {
-        // subclasses can override
-    };
-    Component.prototype.unbindGlobalHandlers = function () {
-        // subclasses can override
-    };
-    /*
-    NOTE: Can't have a `render` method. Read the deprecation notice in View::executeDateRender
-    */
-    // Renders the basic structure of the view before any content is rendered
-    Component.prototype.renderSkeleton = function () {
-        // subclasses should implement
-    };
-    // Unrenders the basic structure of the view
-    Component.prototype.unrenderSkeleton = function () {
-        // subclasses should implement
-    };
-    return Component;
-}(Model_1.default));
-exports.default = Component;
-
-
-/***/ }),
-/* 238 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Iterator = /** @class */ (function () {
-    function Iterator(items) {
-        this.items = items || [];
-    }
-    /* Calls a method on every item passing the arguments through */
-    Iterator.prototype.proxyCall = function (methodName) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-        var results = [];
-        this.items.forEach(function (item) {
-            results.push(item[methodName].apply(item, args));
-        });
-        return results;
-    };
-    return Iterator;
-}());
-exports.default = Iterator;
-
-
-/***/ }),
-/* 239 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(4);
-/* Toolbar with buttons and title
-----------------------------------------------------------------------------------------------------------------------*/
-var Toolbar = /** @class */ (function () {
-    function Toolbar(calendar, toolbarOptions) {
-        this.el = null; // mirrors local `el`
-        this.viewsWithButtons = [];
-        this.calendar = calendar;
-        this.toolbarOptions = toolbarOptions;
-    }
-    // method to update toolbar-specific options, not calendar-wide options
-    Toolbar.prototype.setToolbarOptions = function (newToolbarOptions) {
-        this.toolbarOptions = newToolbarOptions;
-    };
-    // can be called repeatedly and will rerender
-    Toolbar.prototype.render = function () {
-        var sections = this.toolbarOptions.layout;
-        var el = this.el;
-        if (sections) {
-            if (!el) {
-                el = this.el = $("<div class='fc-toolbar " + this.toolbarOptions.extraClasses + "'/>");
-            }
-            else {
-                el.empty();
-            }
-            el.append(this.renderSection('left'))
-                .append(this.renderSection('right'))
-                .append(this.renderSection('center'))
-                .append('<div class="fc-clear"/>');
-        }
-        else {
-            this.removeElement();
-        }
-    };
-    Toolbar.prototype.removeElement = function () {
-        if (this.el) {
-            this.el.remove();
-            this.el = null;
-        }
-    };
-    Toolbar.prototype.renderSection = function (position) {
-        var _this = this;
-        var calendar = this.calendar;
-        var theme = calendar.theme;
-        var optionsManager = calendar.optionsManager;
-        var viewSpecManager = calendar.viewSpecManager;
-        var sectionEl = $('<div class="fc-' + position + '"/>');
-        var buttonStr = this.toolbarOptions.layout[position];
-        var calendarCustomButtons = optionsManager.get('customButtons') || {};
-        var calendarButtonTextOverrides = optionsManager.overrides.buttonText || {};
-        var calendarButtonText = optionsManager.get('buttonText') || {};
-        if (buttonStr) {
-            $.each(buttonStr.split(' '), function (i, buttonGroupStr) {
-                var groupChildren = $();
-                var isOnlyButtons = true;
-                var groupEl;
-                $.each(buttonGroupStr.split(','), function (j, buttonName) {
-                    var customButtonProps;
-                    var viewSpec;
-                    var buttonClick;
-                    var buttonIcon; // only one of these will be set
-                    var buttonText; // "
-                    var buttonInnerHtml;
-                    var buttonClasses;
-                    var buttonEl;
-                    var buttonAriaAttr;
-                    if (buttonName === 'title') {
-                        groupChildren = groupChildren.add($('<h2>&nbsp;</h2>')); // we always want it to take up height
-                        isOnlyButtons = false;
-                    }
-                    else {
-                        if ((customButtonProps = calendarCustomButtons[buttonName])) {
-                            buttonClick = function (ev) {
-                                if (customButtonProps.click) {
-                                    customButtonProps.click.call(buttonEl[0], ev);
-                                }
-                            };
-                            (buttonIcon = theme.getCustomButtonIconClass(customButtonProps)) ||
-                                (buttonIcon = theme.getIconClass(buttonName)) ||
-                                (buttonText = customButtonProps.text);
-                        }
-                        else if ((viewSpec = viewSpecManager.getViewSpec(buttonName))) {
-                            _this.viewsWithButtons.push(buttonName);
-                            buttonClick = function () {
-                                calendar.changeView(buttonName);
-                            };
-                            (buttonText = viewSpec.buttonTextOverride) ||
-                                (buttonIcon = theme.getIconClass(buttonName)) ||
-                                (buttonText = viewSpec.buttonTextDefault);
-                        }
-                        else if (calendar[buttonName]) {
-                            buttonClick = function () {
-                                calendar[buttonName]();
-                            };
-                            (buttonText = calendarButtonTextOverrides[buttonName]) ||
-                                (buttonIcon = theme.getIconClass(buttonName)) ||
-                                (buttonText = calendarButtonText[buttonName]);
-                            //            ^ everything else is considered default
-                        }
-                        if (buttonClick) {
-                            buttonClasses = [
-                                'fc-' + buttonName + '-button',
-                                theme.getClass('button'),
-                                theme.getClass('stateDefault')
-                            ];
-                            if (buttonText) {
-                                buttonInnerHtml = util_1.htmlEscape(buttonText);
-                                buttonAriaAttr = '';
-                            }
-                            else if (buttonIcon) {
-                                buttonInnerHtml = "<span class='" + buttonIcon + "'></span>";
-                                buttonAriaAttr = ' aria-label="' + buttonName + '"';
-                            }
-                            buttonEl = $(// type="button" so that it doesn't submit a form
-                            '<button type="button" class="' + buttonClasses.join(' ') + '"' +
-                                buttonAriaAttr +
-                                '>' + buttonInnerHtml + '</button>')
-                                .click(function (ev) {
-                                // don't process clicks for disabled buttons
-                                if (!buttonEl.hasClass(theme.getClass('stateDisabled'))) {
-                                    buttonClick(ev);
-                                    // after the click action, if the button becomes the "active" tab, or disabled,
-                                    // it should never have a hover class, so remove it now.
-                                    if (buttonEl.hasClass(theme.getClass('stateActive')) ||
-                                        buttonEl.hasClass(theme.getClass('stateDisabled'))) {
-                                        buttonEl.removeClass(theme.getClass('stateHover'));
-                                    }
-                                }
-                            })
-                                .mousedown(function () {
-                                // the *down* effect (mouse pressed in).
-                                // only on buttons that are not the "active" tab, or disabled
-                                buttonEl
-                                    .not('.' + theme.getClass('stateActive'))
-                                    .not('.' + theme.getClass('stateDisabled'))
-                                    .addClass(theme.getClass('stateDown'));
-                            })
-                                .mouseup(function () {
-                                // undo the *down* effect
-                                buttonEl.removeClass(theme.getClass('stateDown'));
-                            })
-                                .hover(function () {
-                                // the *hover* effect.
-                                // only on buttons that are not the "active" tab, or disabled
-                                buttonEl
-                                    .not('.' + theme.getClass('stateActive'))
-                                    .not('.' + theme.getClass('stateDisabled'))
-                                    .addClass(theme.getClass('stateHover'));
-                            }, function () {
-                                // undo the *hover* effect
-                                buttonEl
-                                    .removeClass(theme.getClass('stateHover'))
-                                    .removeClass(theme.getClass('stateDown')); // if mouseleave happens before mouseup
-                            });
-                            groupChildren = groupChildren.add(buttonEl);
-                        }
-                    }
-                });
-                if (isOnlyButtons) {
-                    groupChildren
-                        .first().addClass(theme.getClass('cornerLeft')).end()
-                        .last().addClass(theme.getClass('cornerRight')).end();
-                }
-                if (groupChildren.length > 1) {
-                    groupEl = $('<div/>');
-                    if (isOnlyButtons) {
-                        groupEl.addClass(theme.getClass('buttonGroup'));
-                    }
-                    groupEl.append(groupChildren);
-                    sectionEl.append(groupEl);
-                }
-                else {
-                    sectionEl.append(groupChildren); // 1 or 0 children
-                }
-            });
-        }
-        return sectionEl;
-    };
-    Toolbar.prototype.updateTitle = function (text) {
-        if (this.el) {
-            this.el.find('h2').text(text);
-        }
-    };
-    Toolbar.prototype.activateButton = function (buttonName) {
-        if (this.el) {
-            this.el.find('.fc-' + buttonName + '-button')
-                .addClass(this.calendar.theme.getClass('stateActive'));
-        }
-    };
-    Toolbar.prototype.deactivateButton = function (buttonName) {
-        if (this.el) {
-            this.el.find('.fc-' + buttonName + '-button')
-                .removeClass(this.calendar.theme.getClass('stateActive'));
-        }
-    };
-    Toolbar.prototype.disableButton = function (buttonName) {
-        if (this.el) {
-            this.el.find('.fc-' + buttonName + '-button')
-                .prop('disabled', true)
-                .addClass(this.calendar.theme.getClass('stateDisabled'));
-        }
-    };
-    Toolbar.prototype.enableButton = function (buttonName) {
-        if (this.el) {
-            this.el.find('.fc-' + buttonName + '-button')
-                .prop('disabled', false)
-                .removeClass(this.calendar.theme.getClass('stateDisabled'));
-        }
-    };
-    Toolbar.prototype.getViewsWithButtons = function () {
-        return this.viewsWithButtons;
-    };
-    return Toolbar;
-}());
-exports.default = Toolbar;
-
-
-/***/ }),
 /* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var options_1 = __webpack_require__(32);
-var locale_1 = __webpack_require__(31);
-var Model_1 = __webpack_require__(48);
-var OptionsManager = /** @class */ (function (_super) {
-    tslib_1.__extends(OptionsManager, _super);
-    function OptionsManager(_calendar, overrides) {
-        var _this = _super.call(this) || this;
-        _this._calendar = _calendar;
-        _this.overrides = $.extend({}, overrides); // make a copy
-        _this.dynamicOverrides = {};
-        _this.compute();
-        return _this;
-    }
-    OptionsManager.prototype.add = function (newOptionHash) {
-        var optionCnt = 0;
-        var optionName;
-        this.recordOverrides(newOptionHash); // will trigger this model's watchers
-        for (optionName in newOptionHash) {
-            optionCnt++;
-        }
-        // special-case handling of single option change.
-        // if only one option change, `optionName` will be its name.
-        if (optionCnt === 1) {
-            if (optionName === 'height' || optionName === 'contentHeight' || optionName === 'aspectRatio') {
-                this._calendar.updateViewSize(true); // isResize=true
-                return;
-            }
-            else if (optionName === 'defaultDate') {
-                return; // can't change date this way. use gotoDate instead
-            }
-            else if (optionName === 'businessHours') {
-                return; // this model already reacts to this
-            }
-            else if (/^(event|select)(Overlap|Constraint|Allow)$/.test(optionName)) {
-                return; // doesn't affect rendering. only interactions.
-            }
-            else if (optionName === 'timezone') {
-                this._calendar.view.flash('initialEvents');
-                return;
-            }
-        }
-        // catch-all. rerender the header and footer and rebuild/rerender the current view
-        this._calendar.renderHeader();
-        this._calendar.renderFooter();
-        // even non-current views will be affected by this option change. do before rerender
-        // TODO: detangle
-        this._calendar.viewsByType = {};
-        this._calendar.reinitView();
-    };
-    // Computes the flattened options hash for the calendar and assigns to `this.options`.
-    // Assumes this.overrides and this.dynamicOverrides have already been initialized.
-    OptionsManager.prototype.compute = function () {
-        var locale;
-        var localeDefaults;
-        var isRTL;
-        var dirDefaults;
-        var rawOptions;
-        locale = util_1.firstDefined(// explicit locale option given?
-        this.dynamicOverrides.locale, this.overrides.locale);
-        localeDefaults = locale_1.localeOptionHash[locale];
-        if (!localeDefaults) {
-            locale = options_1.globalDefaults.locale;
-            localeDefaults = locale_1.localeOptionHash[locale] || {};
-        }
-        isRTL = util_1.firstDefined(// based on options computed so far, is direction RTL?
-        this.dynamicOverrides.isRTL, this.overrides.isRTL, localeDefaults.isRTL, options_1.globalDefaults.isRTL);
-        dirDefaults = isRTL ? options_1.rtlDefaults : {};
-        this.dirDefaults = dirDefaults;
-        this.localeDefaults = localeDefaults;
-        rawOptions = options_1.mergeOptions([
-            options_1.globalDefaults,
-            dirDefaults,
-            localeDefaults,
-            this.overrides,
-            this.dynamicOverrides
-        ]);
-        locale_1.populateInstanceComputableOptions(rawOptions); // fill in gaps with computed options
-        this.reset(rawOptions);
-    };
-    // stores the new options internally, but does not rerender anything.
-    OptionsManager.prototype.recordOverrides = function (newOptionHash) {
-        var optionName;
-        for (optionName in newOptionHash) {
-            this.dynamicOverrides[optionName] = newOptionHash[optionName];
-        }
-        this._calendar.viewSpecManager.clearCache(); // the dynamic override invalidates the options in this cache, so just clear it
-        this.compute(); // this.options needs to be recomputed after the dynamic override
-    };
-    return OptionsManager;
-}(Model_1.default));
-exports.default = OptionsManager;
-
-
-/***/ }),
-/* 241 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var moment = __webpack_require__(0);
-var $ = __webpack_require__(3);
-var ViewRegistry_1 = __webpack_require__(22);
-var util_1 = __webpack_require__(4);
-var options_1 = __webpack_require__(32);
-var locale_1 = __webpack_require__(31);
-var ViewSpecManager = /** @class */ (function () {
-    function ViewSpecManager(optionsManager, _calendar) {
-        this.optionsManager = optionsManager;
-        this._calendar = _calendar;
-        this.clearCache();
-    }
-    ViewSpecManager.prototype.clearCache = function () {
-        this.viewSpecCache = {};
-    };
-    // Gets information about how to create a view. Will use a cache.
-    ViewSpecManager.prototype.getViewSpec = function (viewType) {
-        var cache = this.viewSpecCache;
-        return cache[viewType] || (cache[viewType] = this.buildViewSpec(viewType));
-    };
-    // Given a duration singular unit, like "week" or "day", finds a matching view spec.
-    // Preference is given to views that have corresponding buttons.
-    ViewSpecManager.prototype.getUnitViewSpec = function (unit) {
-        var viewTypes;
-        var i;
-        var spec;
-        if ($.inArray(unit, util_1.unitsDesc) !== -1) {
-            // put views that have buttons first. there will be duplicates, but oh well
-            viewTypes = this._calendar.header.getViewsWithButtons(); // TODO: include footer as well?
-            $.each(ViewRegistry_1.viewHash, function (viewType) {
-                viewTypes.push(viewType);
-            });
-            for (i = 0; i < viewTypes.length; i++) {
-                spec = this.getViewSpec(viewTypes[i]);
-                if (spec) {
-                    if (spec.singleUnit === unit) {
-                        return spec;
-                    }
-                }
-            }
-        }
-    };
-    // Builds an object with information on how to create a given view
-    ViewSpecManager.prototype.buildViewSpec = function (requestedViewType) {
-        var viewOverrides = this.optionsManager.overrides.views || {};
-        var specChain = []; // for the view. lowest to highest priority
-        var defaultsChain = []; // for the view. lowest to highest priority
-        var overridesChain = []; // for the view. lowest to highest priority
-        var viewType = requestedViewType;
-        var spec; // for the view
-        var overrides; // for the view
-        var durationInput;
-        var duration;
-        var unit;
-        // iterate from the specific view definition to a more general one until we hit an actual View class
-        while (viewType) {
-            spec = ViewRegistry_1.viewHash[viewType];
-            overrides = viewOverrides[viewType];
-            viewType = null; // clear. might repopulate for another iteration
-            if (typeof spec === 'function') {
-                spec = { 'class': spec };
-            }
-            if (spec) {
-                specChain.unshift(spec);
-                defaultsChain.unshift(spec.defaults || {});
-                durationInput = durationInput || spec.duration;
-                viewType = viewType || spec.type;
-            }
-            if (overrides) {
-                overridesChain.unshift(overrides); // view-specific option hashes have options at zero-level
-                durationInput = durationInput || overrides.duration;
-                viewType = viewType || overrides.type;
-            }
-        }
-        spec = util_1.mergeProps(specChain);
-        spec.type = requestedViewType;
-        if (!spec['class']) {
-            return false;
-        }
-        // fall back to top-level `duration` option
-        durationInput = durationInput ||
-            this.optionsManager.dynamicOverrides.duration ||
-            this.optionsManager.overrides.duration;
-        if (durationInput) {
-            duration = moment.duration(durationInput);
-            if (duration.valueOf()) {
-                unit = util_1.computeDurationGreatestUnit(duration, durationInput);
-                spec.duration = duration;
-                spec.durationUnit = unit;
-                // view is a single-unit duration, like "week" or "day"
-                // incorporate options for this. lowest priority
-                if (duration.as(unit) === 1) {
-                    spec.singleUnit = unit;
-                    overridesChain.unshift(viewOverrides[unit] || {});
-                }
-            }
-        }
-        spec.defaults = options_1.mergeOptions(defaultsChain);
-        spec.overrides = options_1.mergeOptions(overridesChain);
-        this.buildViewSpecOptions(spec);
-        this.buildViewSpecButtonText(spec, requestedViewType);
-        return spec;
-    };
-    // Builds and assigns a view spec's options object from its already-assigned defaults and overrides
-    ViewSpecManager.prototype.buildViewSpecOptions = function (spec) {
-        var optionsManager = this.optionsManager;
-        spec.options = options_1.mergeOptions([
-            options_1.globalDefaults,
-            spec.defaults,
-            optionsManager.dirDefaults,
-            optionsManager.localeDefaults,
-            optionsManager.overrides,
-            spec.overrides,
-            optionsManager.dynamicOverrides // dynamically set via setter. highest precedence
-        ]);
-        locale_1.populateInstanceComputableOptions(spec.options);
-    };
-    // Computes and assigns a view spec's buttonText-related options
-    ViewSpecManager.prototype.buildViewSpecButtonText = function (spec, requestedViewType) {
-        var optionsManager = this.optionsManager;
-        // given an options object with a possible `buttonText` hash, lookup the buttonText for the
-        // requested view, falling back to a generic unit entry like "week" or "day"
-        function queryButtonText(options) {
-            var buttonText = options.buttonText || {};
-            return buttonText[requestedViewType] ||
-                // view can decide to look up a certain key
-                (spec.buttonTextKey ? buttonText[spec.buttonTextKey] : null) ||
-                // a key like "month"
-                (spec.singleUnit ? buttonText[spec.singleUnit] : null);
-        }
-        // highest to lowest priority
-        spec.buttonTextOverride =
-            queryButtonText(optionsManager.dynamicOverrides) ||
-                queryButtonText(optionsManager.overrides) || // constructor-specified buttonText lookup hash takes precedence
-                spec.overrides.buttonText; // `buttonText` for view-specific options is a string
-        // highest to lowest priority. mirrors buildViewSpecOptions
-        spec.buttonTextDefault =
-            queryButtonText(optionsManager.localeDefaults) ||
-                queryButtonText(optionsManager.dirDefaults) ||
-                spec.defaults.buttonText || // a single string. from ViewSubclass.defaults
-                queryButtonText(options_1.globalDefaults) ||
-                (spec.duration ? this._calendar.humanizeDuration(spec.duration) : null) || // like "3 days"
-                requestedViewType; // fall back to given view name
-    };
-    return ViewSpecManager;
-}());
-exports.default = ViewSpecManager;
-
-
-/***/ }),
-/* 242 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(4);
-var EventPeriod_1 = __webpack_require__(243);
-var ArrayEventSource_1 = __webpack_require__(52);
-var EventSource_1 = __webpack_require__(6);
-var EventSourceParser_1 = __webpack_require__(38);
-var SingleEventDef_1 = __webpack_require__(13);
-var EventInstanceGroup_1 = __webpack_require__(18);
-var EmitterMixin_1 = __webpack_require__(11);
-var ListenerMixin_1 = __webpack_require__(7);
-var EventManager = /** @class */ (function () {
-    function EventManager(calendar) {
-        this.calendar = calendar;
-        this.stickySource = new ArrayEventSource_1.default(calendar);
-        this.otherSources = [];
-    }
-    EventManager.prototype.requestEvents = function (start, end, timezone, force) {
-        if (force ||
-            !this.currentPeriod ||
-            !this.currentPeriod.isWithinRange(start, end) ||
-            timezone !== this.currentPeriod.timezone) {
-            this.setPeriod(// will change this.currentPeriod
-            new EventPeriod_1.default(start, end, timezone));
-        }
-        return this.currentPeriod.whenReleased();
-    };
-    // Source Adding/Removing
-    // -----------------------------------------------------------------------------------------------------------------
-    EventManager.prototype.addSource = function (eventSource) {
-        this.otherSources.push(eventSource);
-        if (this.currentPeriod) {
-            this.currentPeriod.requestSource(eventSource); // might release
-        }
-    };
-    EventManager.prototype.removeSource = function (doomedSource) {
-        util_1.removeExact(this.otherSources, doomedSource);
-        if (this.currentPeriod) {
-            this.currentPeriod.purgeSource(doomedSource); // might release
-        }
-    };
-    EventManager.prototype.removeAllSources = function () {
-        this.otherSources = [];
-        if (this.currentPeriod) {
-            this.currentPeriod.purgeAllSources(); // might release
-        }
-    };
-    // Source Refetching
-    // -----------------------------------------------------------------------------------------------------------------
-    EventManager.prototype.refetchSource = function (eventSource) {
-        var currentPeriod = this.currentPeriod;
-        if (currentPeriod) {
-            currentPeriod.freeze();
-            currentPeriod.purgeSource(eventSource);
-            currentPeriod.requestSource(eventSource);
-            currentPeriod.thaw();
-        }
-    };
-    EventManager.prototype.refetchAllSources = function () {
-        var currentPeriod = this.currentPeriod;
-        if (currentPeriod) {
-            currentPeriod.freeze();
-            currentPeriod.purgeAllSources();
-            currentPeriod.requestSources(this.getSources());
-            currentPeriod.thaw();
-        }
-    };
-    // Source Querying
-    // -----------------------------------------------------------------------------------------------------------------
-    EventManager.prototype.getSources = function () {
-        return [this.stickySource].concat(this.otherSources);
-    };
-    // like querySources, but accepts multple match criteria (like multiple IDs)
-    EventManager.prototype.multiQuerySources = function (matchInputs) {
-        // coerce into an array
-        if (!matchInputs) {
-            matchInputs = [];
-        }
-        else if (!$.isArray(matchInputs)) {
-            matchInputs = [matchInputs];
-        }
-        var matchingSources = [];
-        var i;
-        // resolve raw inputs to real event source objects
-        for (i = 0; i < matchInputs.length; i++) {
-            matchingSources.push.apply(// append
-            matchingSources, this.querySources(matchInputs[i]));
-        }
-        return matchingSources;
-    };
-    // matchInput can either by a real event source object, an ID, or the function/URL for the source.
-    // returns an array of matching source objects.
-    EventManager.prototype.querySources = function (matchInput) {
-        var sources = this.otherSources;
-        var i;
-        var source;
-        // given a proper event source object
-        for (i = 0; i < sources.length; i++) {
-            source = sources[i];
-            if (source === matchInput) {
-                return [source];
-            }
-        }
-        // an ID match
-        source = this.getSourceById(EventSource_1.default.normalizeId(matchInput));
-        if (source) {
-            return [source];
-        }
-        // parse as an event source
-        matchInput = EventSourceParser_1.default.parse(matchInput, this.calendar);
-        if (matchInput) {
-            return $.grep(sources, function (source) {
-                return isSourcesEquivalent(matchInput, source);
-            });
-        }
-    };
-    /*
-    ID assumed to already be normalized
-    */
-    EventManager.prototype.getSourceById = function (id) {
-        return $.grep(this.otherSources, function (source) {
-            return source.id && source.id === id;
-        })[0];
-    };
-    // Event-Period
-    // -----------------------------------------------------------------------------------------------------------------
-    EventManager.prototype.setPeriod = function (eventPeriod) {
-        if (this.currentPeriod) {
-            this.unbindPeriod(this.currentPeriod);
-            this.currentPeriod = null;
-        }
-        this.currentPeriod = eventPeriod;
-        this.bindPeriod(eventPeriod);
-        eventPeriod.requestSources(this.getSources());
-    };
-    EventManager.prototype.bindPeriod = function (eventPeriod) {
-        this.listenTo(eventPeriod, 'release', function (eventsPayload) {
-            this.trigger('release', eventsPayload);
-        });
-    };
-    EventManager.prototype.unbindPeriod = function (eventPeriod) {
-        this.stopListeningTo(eventPeriod);
-    };
-    // Event Getting/Adding/Removing
-    // -----------------------------------------------------------------------------------------------------------------
-    EventManager.prototype.getEventDefByUid = function (uid) {
-        if (this.currentPeriod) {
-            return this.currentPeriod.getEventDefByUid(uid);
-        }
-    };
-    EventManager.prototype.addEventDef = function (eventDef, isSticky) {
-        if (isSticky) {
-            this.stickySource.addEventDef(eventDef);
-        }
-        if (this.currentPeriod) {
-            this.currentPeriod.addEventDef(eventDef); // might release
-        }
-    };
-    EventManager.prototype.removeEventDefsById = function (eventId) {
-        this.getSources().forEach(function (eventSource) {
-            eventSource.removeEventDefsById(eventId);
-        });
-        if (this.currentPeriod) {
-            this.currentPeriod.removeEventDefsById(eventId); // might release
-        }
-    };
-    EventManager.prototype.removeAllEventDefs = function () {
-        this.getSources().forEach(function (eventSource) {
-            eventSource.removeAllEventDefs();
-        });
-        if (this.currentPeriod) {
-            this.currentPeriod.removeAllEventDefs();
-        }
-    };
-    // Event Mutating
-    // -----------------------------------------------------------------------------------------------------------------
-    /*
-    Returns an undo function.
-    */
-    EventManager.prototype.mutateEventsWithId = function (eventDefId, eventDefMutation) {
-        var currentPeriod = this.currentPeriod;
-        var eventDefs;
-        var undoFuncs = [];
-        if (currentPeriod) {
-            currentPeriod.freeze();
-            eventDefs = currentPeriod.getEventDefsById(eventDefId);
-            eventDefs.forEach(function (eventDef) {
-                // add/remove esp because id might change
-                currentPeriod.removeEventDef(eventDef);
-                undoFuncs.push(eventDefMutation.mutateSingle(eventDef));
-                currentPeriod.addEventDef(eventDef);
-            });
-            currentPeriod.thaw();
-            return function () {
-                currentPeriod.freeze();
-                for (var i = 0; i < eventDefs.length; i++) {
-                    currentPeriod.removeEventDef(eventDefs[i]);
-                    undoFuncs[i]();
-                    currentPeriod.addEventDef(eventDefs[i]);
-                }
-                currentPeriod.thaw();
-            };
-        }
-        return function () { };
-    };
-    /*
-    copies and then mutates
-    */
-    EventManager.prototype.buildMutatedEventInstanceGroup = function (eventDefId, eventDefMutation) {
-        var eventDefs = this.getEventDefsById(eventDefId);
-        var i;
-        var defCopy;
-        var allInstances = [];
-        for (i = 0; i < eventDefs.length; i++) {
-            defCopy = eventDefs[i].clone();
-            if (defCopy instanceof SingleEventDef_1.default) {
-                eventDefMutation.mutateSingle(defCopy);
-                allInstances.push.apply(allInstances, // append
-                defCopy.buildInstances());
-            }
-        }
-        return new EventInstanceGroup_1.default(allInstances);
-    };
-    // Freezing
-    // -----------------------------------------------------------------------------------------------------------------
-    EventManager.prototype.freeze = function () {
-        if (this.currentPeriod) {
-            this.currentPeriod.freeze();
-        }
-    };
-    EventManager.prototype.thaw = function () {
-        if (this.currentPeriod) {
-            this.currentPeriod.thaw();
-        }
-    };
-    // methods that simply forward to EventPeriod
-    EventManager.prototype.getEventDefsById = function (eventDefId) {
-        return this.currentPeriod.getEventDefsById(eventDefId);
-    };
-    EventManager.prototype.getEventInstances = function () {
-        return this.currentPeriod.getEventInstances();
-    };
-    EventManager.prototype.getEventInstancesWithId = function (eventDefId) {
-        return this.currentPeriod.getEventInstancesWithId(eventDefId);
-    };
-    EventManager.prototype.getEventInstancesWithoutId = function (eventDefId) {
-        return this.currentPeriod.getEventInstancesWithoutId(eventDefId);
-    };
-    return EventManager;
-}());
-exports.default = EventManager;
-EmitterMixin_1.default.mixInto(EventManager);
-ListenerMixin_1.default.mixInto(EventManager);
-function isSourcesEquivalent(source0, source1) {
-    return source0.getPrimitive() === source1.getPrimitive();
-}
-
-
-/***/ }),
-/* 243 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(4);
-var Promise_1 = __webpack_require__(20);
-var EmitterMixin_1 = __webpack_require__(11);
-var UnzonedRange_1 = __webpack_require__(5);
-var EventInstanceGroup_1 = __webpack_require__(18);
-var EventPeriod = /** @class */ (function () {
-    function EventPeriod(start, end, timezone) {
-        this.pendingCnt = 0;
-        this.freezeDepth = 0;
-        this.stuntedReleaseCnt = 0;
-        this.releaseCnt = 0;
-        this.start = start;
-        this.end = end;
-        this.timezone = timezone;
-        this.unzonedRange = new UnzonedRange_1.default(start.clone().stripZone(), end.clone().stripZone());
-        this.requestsByUid = {};
-        this.eventDefsByUid = {};
-        this.eventDefsById = {};
-        this.eventInstanceGroupsById = {};
-    }
-    EventPeriod.prototype.isWithinRange = function (start, end) {
-        // TODO: use a range util function?
-        return !start.isBefore(this.start) && !end.isAfter(this.end);
-    };
-    // Requesting and Purging
-    // -----------------------------------------------------------------------------------------------------------------
-    EventPeriod.prototype.requestSources = function (sources) {
-        this.freeze();
-        for (var i = 0; i < sources.length; i++) {
-            this.requestSource(sources[i]);
-        }
-        this.thaw();
-    };
-    EventPeriod.prototype.requestSource = function (source) {
-        var _this = this;
-        var request = { source: source, status: 'pending', eventDefs: null };
-        this.requestsByUid[source.uid] = request;
-        this.pendingCnt += 1;
-        source.fetch(this.start, this.end, this.timezone).then(function (eventDefs) {
-            if (request.status !== 'cancelled') {
-                request.status = 'completed';
-                request.eventDefs = eventDefs;
-                _this.addEventDefs(eventDefs);
-                _this.pendingCnt--;
-                _this.tryRelease();
-            }
-        }, function () {
-            if (request.status !== 'cancelled') {
-                request.status = 'failed';
-                _this.pendingCnt--;
-                _this.tryRelease();
-            }
-        });
-    };
-    EventPeriod.prototype.purgeSource = function (source) {
-        var request = this.requestsByUid[source.uid];
-        if (request) {
-            delete this.requestsByUid[source.uid];
-            if (request.status === 'pending') {
-                request.status = 'cancelled';
-                this.pendingCnt--;
-                this.tryRelease();
-            }
-            else if (request.status === 'completed') {
-                request.eventDefs.forEach(this.removeEventDef.bind(this));
-            }
-        }
-    };
-    EventPeriod.prototype.purgeAllSources = function () {
-        var requestsByUid = this.requestsByUid;
-        var uid;
-        var request;
-        var completedCnt = 0;
-        for (uid in requestsByUid) {
-            request = requestsByUid[uid];
-            if (request.status === 'pending') {
-                request.status = 'cancelled';
-            }
-            else if (request.status === 'completed') {
-                completedCnt++;
-            }
-        }
-        this.requestsByUid = {};
-        this.pendingCnt = 0;
-        if (completedCnt) {
-            this.removeAllEventDefs(); // might release
-        }
-    };
-    // Event Definitions
-    // -----------------------------------------------------------------------------------------------------------------
-    EventPeriod.prototype.getEventDefByUid = function (eventDefUid) {
-        return this.eventDefsByUid[eventDefUid];
-    };
-    EventPeriod.prototype.getEventDefsById = function (eventDefId) {
-        var a = this.eventDefsById[eventDefId];
-        if (a) {
-            return a.slice(); // clone
-        }
-        return [];
-    };
-    EventPeriod.prototype.addEventDefs = function (eventDefs) {
-        for (var i = 0; i < eventDefs.length; i++) {
-            this.addEventDef(eventDefs[i]);
-        }
-    };
-    EventPeriod.prototype.addEventDef = function (eventDef) {
-        var eventDefsById = this.eventDefsById;
-        var eventDefId = eventDef.id;
-        var eventDefs = eventDefsById[eventDefId] || (eventDefsById[eventDefId] = []);
-        var eventInstances = eventDef.buildInstances(this.unzonedRange);
-        var i;
-        eventDefs.push(eventDef);
-        this.eventDefsByUid[eventDef.uid] = eventDef;
-        for (i = 0; i < eventInstances.length; i++) {
-            this.addEventInstance(eventInstances[i], eventDefId);
-        }
-    };
-    EventPeriod.prototype.removeEventDefsById = function (eventDefId) {
-        var _this = this;
-        this.getEventDefsById(eventDefId).forEach(function (eventDef) {
-            _this.removeEventDef(eventDef);
-        });
-    };
-    EventPeriod.prototype.removeAllEventDefs = function () {
-        var isEmpty = $.isEmptyObject(this.eventDefsByUid);
-        this.eventDefsByUid = {};
-        this.eventDefsById = {};
-        this.eventInstanceGroupsById = {};
-        if (!isEmpty) {
-            this.tryRelease();
-        }
-    };
-    EventPeriod.prototype.removeEventDef = function (eventDef) {
-        var eventDefsById = this.eventDefsById;
-        var eventDefs = eventDefsById[eventDef.id];
-        delete this.eventDefsByUid[eventDef.uid];
-        if (eventDefs) {
-            util_1.removeExact(eventDefs, eventDef);
-            if (!eventDefs.length) {
-                delete eventDefsById[eventDef.id];
-            }
-            this.removeEventInstancesForDef(eventDef);
-        }
-    };
-    // Event Instances
-    // -----------------------------------------------------------------------------------------------------------------
-    EventPeriod.prototype.getEventInstances = function () {
-        var eventInstanceGroupsById = this.eventInstanceGroupsById;
-        var eventInstances = [];
-        var id;
-        for (id in eventInstanceGroupsById) {
-            eventInstances.push.apply(eventInstances, // append
-            eventInstanceGroupsById[id].eventInstances);
-        }
-        return eventInstances;
-    };
-    EventPeriod.prototype.getEventInstancesWithId = function (eventDefId) {
-        var eventInstanceGroup = this.eventInstanceGroupsById[eventDefId];
-        if (eventInstanceGroup) {
-            return eventInstanceGroup.eventInstances.slice(); // clone
-        }
-        return [];
-    };
-    EventPeriod.prototype.getEventInstancesWithoutId = function (eventDefId) {
-        var eventInstanceGroupsById = this.eventInstanceGroupsById;
-        var matchingInstances = [];
-        var id;
-        for (id in eventInstanceGroupsById) {
-            if (id !== eventDefId) {
-                matchingInstances.push.apply(matchingInstances, // append
-                eventInstanceGroupsById[id].eventInstances);
-            }
-        }
-        return matchingInstances;
-    };
-    EventPeriod.prototype.addEventInstance = function (eventInstance, eventDefId) {
-        var eventInstanceGroupsById = this.eventInstanceGroupsById;
-        var eventInstanceGroup = eventInstanceGroupsById[eventDefId] ||
-            (eventInstanceGroupsById[eventDefId] = new EventInstanceGroup_1.default());
-        eventInstanceGroup.eventInstances.push(eventInstance);
-        this.tryRelease();
-    };
-    EventPeriod.prototype.removeEventInstancesForDef = function (eventDef) {
-        var eventInstanceGroupsById = this.eventInstanceGroupsById;
-        var eventInstanceGroup = eventInstanceGroupsById[eventDef.id];
-        var removeCnt;
-        if (eventInstanceGroup) {
-            removeCnt = util_1.removeMatching(eventInstanceGroup.eventInstances, function (currentEventInstance) {
-                return currentEventInstance.def === eventDef;
-            });
-            if (!eventInstanceGroup.eventInstances.length) {
-                delete eventInstanceGroupsById[eventDef.id];
-            }
-            if (removeCnt) {
-                this.tryRelease();
-            }
-        }
-    };
-    // Releasing and Freezing
-    // -----------------------------------------------------------------------------------------------------------------
-    EventPeriod.prototype.tryRelease = function () {
-        if (!this.pendingCnt) {
-            if (!this.freezeDepth) {
-                this.release();
-            }
-            else {
-                this.stuntedReleaseCnt++;
-            }
-        }
-    };
-    EventPeriod.prototype.release = function () {
-        this.releaseCnt++;
-        this.trigger('release', this.eventInstanceGroupsById);
-    };
-    EventPeriod.prototype.whenReleased = function () {
-        var _this = this;
-        if (this.releaseCnt) {
-            return Promise_1.default.resolve(this.eventInstanceGroupsById);
-        }
-        else {
-            return Promise_1.default.construct(function (onResolve) {
-                _this.one('release', onResolve);
-            });
-        }
-    };
-    EventPeriod.prototype.freeze = function () {
-        if (!(this.freezeDepth++)) {
-            this.stuntedReleaseCnt = 0;
-        }
-    };
-    EventPeriod.prototype.thaw = function () {
-        if (!(--this.freezeDepth) && this.stuntedReleaseCnt && !this.pendingCnt) {
-            this.release();
-        }
-    };
-    return EventPeriod;
-}());
-exports.default = EventPeriod;
-EmitterMixin_1.default.mixInto(EventPeriod);
-
-
-/***/ }),
-/* 244 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(4);
-var ListenerMixin_1 = __webpack_require__(7);
-/* Creates a clone of an element and lets it track the mouse as it moves
-----------------------------------------------------------------------------------------------------------------------*/
-var MouseFollower = /** @class */ (function () {
-    function MouseFollower(sourceEl, options) {
-        this.isFollowing = false;
-        this.isHidden = false;
-        this.isAnimating = false; // doing the revert animation?
-        this.options = options = options || {};
-        this.sourceEl = sourceEl;
-        this.parentEl = options.parentEl ? $(options.parentEl) : sourceEl.parent(); // default to sourceEl's parent
-    }
-    // Causes the element to start following the mouse
-    MouseFollower.prototype.start = function (ev) {
-        if (!this.isFollowing) {
-            this.isFollowing = true;
-            this.y0 = util_1.getEvY(ev);
-            this.x0 = util_1.getEvX(ev);
-            this.topDelta = 0;
-            this.leftDelta = 0;
-            if (!this.isHidden) {
-                this.updatePosition();
-            }
-            if (util_1.getEvIsTouch(ev)) {
-                this.listenTo($(document), 'touchmove', this.handleMove);
-            }
-            else {
-                this.listenTo($(document), 'mousemove', this.handleMove);
-            }
-        }
-    };
-    // Causes the element to stop following the mouse. If shouldRevert is true, will animate back to original position.
-    // `callback` gets invoked when the animation is complete. If no animation, it is invoked immediately.
-    MouseFollower.prototype.stop = function (shouldRevert, callback) {
-        var _this = this;
-        var revertDuration = this.options.revertDuration;
-        var complete = function () {
-            _this.isAnimating = false;
-            _this.removeElement();
-            _this.top0 = _this.left0 = null; // reset state for future updatePosition calls
-            if (callback) {
-                callback();
-            }
-        };
-        if (this.isFollowing && !this.isAnimating) {
-            this.isFollowing = false;
-            this.stopListeningTo($(document));
-            if (shouldRevert && revertDuration && !this.isHidden) {
-                this.isAnimating = true;
-                this.el.animate({
-                    top: this.top0,
-                    left: this.left0
-                }, {
-                    duration: revertDuration,
-                    complete: complete
-                });
-            }
-            else {
-                complete();
-            }
-        }
-    };
-    // Gets the tracking element. Create it if necessary
-    MouseFollower.prototype.getEl = function () {
-        var el = this.el;
-        if (!el) {
-            el = this.el = this.sourceEl.clone()
-                .addClass(this.options.additionalClass || '')
-                .css({
-                position: 'absolute',
-                visibility: '',
-                display: this.isHidden ? 'none' : '',
-                margin: 0,
-                right: 'auto',
-                bottom: 'auto',
-                width: this.sourceEl.width(),
-                height: this.sourceEl.height(),
-                opacity: this.options.opacity || '',
-                zIndex: this.options.zIndex
-            });
-            // we don't want long taps or any mouse interaction causing selection/menus.
-            // would use preventSelection(), but that prevents selectstart, causing problems.
-            el.addClass('fc-unselectable');
-            el.appendTo(this.parentEl);
-        }
-        return el;
-    };
-    // Removes the tracking element if it has already been created
-    MouseFollower.prototype.removeElement = function () {
-        if (this.el) {
-            this.el.remove();
-            this.el = null;
-        }
-    };
-    // Update the CSS position of the tracking element
-    MouseFollower.prototype.updatePosition = function () {
-        var sourceOffset;
-        var origin;
-        this.getEl(); // ensure this.el
-        // make sure origin info was computed
-        if (this.top0 == null) {
-            sourceOffset = this.sourceEl.offset();
-            origin = this.el.offsetParent().offset();
-            this.top0 = sourceOffset.top - origin.top;
-            this.left0 = sourceOffset.left - origin.left;
-        }
-        this.el.css({
-            top: this.top0 + this.topDelta,
-            left: this.left0 + this.leftDelta
-        });
-    };
-    // Gets called when the user moves the mouse
-    MouseFollower.prototype.handleMove = function (ev) {
-        this.topDelta = util_1.getEvY(ev) - this.y0;
-        this.leftDelta = util_1.getEvX(ev) - this.x0;
-        if (!this.isHidden) {
-            this.updatePosition();
-        }
-    };
-    // Temporarily makes the tracking element invisible. Can be called before following starts
-    MouseFollower.prototype.hide = function () {
-        if (!this.isHidden) {
-            this.isHidden = true;
-            if (this.el) {
-                this.el.hide();
-            }
-        }
-    };
-    // Show the tracking element after it has been temporarily hidden
-    MouseFollower.prototype.show = function () {
-        if (this.isHidden) {
-            this.isHidden = false;
-            this.updatePosition();
-            this.getEl().show();
-        }
-    };
-    return MouseFollower;
-}());
-exports.default = MouseFollower;
-ListenerMixin_1.default.mixInto(MouseFollower);
-
-
-/***/ }),
-/* 245 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var HitDragListener_1 = __webpack_require__(23);
-var Interaction_1 = __webpack_require__(15);
-var DateClicking = /** @class */ (function (_super) {
-    tslib_1.__extends(DateClicking, _super);
-    /*
-    component must implement:
-      - bindDateHandlerToEl
-      - getSafeHitFootprint
-      - getHitEl
-    */
-    function DateClicking(component) {
-        var _this = _super.call(this, component) || this;
-        _this.dragListener = _this.buildDragListener();
-        return _this;
-    }
-    DateClicking.prototype.end = function () {
-        this.dragListener.endInteraction();
-    };
-    DateClicking.prototype.bindToEl = function (el) {
-        var component = this.component;
-        var dragListener = this.dragListener;
-        component.bindDateHandlerToEl(el, 'mousedown', function (ev) {
-            if (!component.shouldIgnoreMouse()) {
-                dragListener.startInteraction(ev);
-            }
-        });
-        component.bindDateHandlerToEl(el, 'touchstart', function (ev) {
-            if (!component.shouldIgnoreTouch()) {
-                dragListener.startInteraction(ev);
-            }
-        });
-    };
-    // Creates a listener that tracks the user's drag across day elements, for day clicking.
-    DateClicking.prototype.buildDragListener = function () {
-        var _this = this;
-        var component = this.component;
-        var dayClickHit; // null if invalid dayClick
-        var dragListener = new HitDragListener_1.default(component, {
-            scroll: this.opt('dragScroll'),
-            interactionStart: function () {
-                dayClickHit = dragListener.origHit;
-            },
-            hitOver: function (hit, isOrig, origHit) {
-                // if user dragged to another cell at any point, it can no longer be a dayClick
-                if (!isOrig) {
-                    dayClickHit = null;
-                }
-            },
-            hitOut: function () {
-                dayClickHit = null;
-            },
-            interactionEnd: function (ev, isCancelled) {
-                var componentFootprint;
-                if (!isCancelled && dayClickHit) {
-                    componentFootprint = component.getSafeHitFootprint(dayClickHit);
-                    if (componentFootprint) {
-                        _this.view.triggerDayClick(componentFootprint, component.getHitEl(dayClickHit), ev);
-                    }
-                }
-            }
-        });
-        // because dragListener won't be called with any time delay, "dragging" will begin immediately,
-        // which will kill any touchmoving/scrolling. Prevent this.
-        dragListener.shouldCancelTouchScroll = false;
-        dragListener.scrollAlwaysKills = true;
-        return dragListener;
-    };
-    return DateClicking;
-}(Interaction_1.default));
-exports.default = DateClicking;
-
-
-/***/ }),
-/* 246 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(2);
-var util_1 = __webpack_require__(4);
-var EventRenderer_1 = __webpack_require__(42);
+var EventRenderer_1 = __webpack_require__(44);
 /*
 Only handles foreground segs.
 Does not own rendering. Use for low-level util methods by TimeGrid.
@@ -17934,7 +17790,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
         this.timeGrid.attachSegsByCol(segsByCol, containerEls);
     };
     TimeGridEventRenderer.prototype.unrenderFgSegs = function () {
-        if (this.fgSegs) {
+        if (this.fgSegs) { // hack
             this.fgSegs.forEach(function (seg) {
                 seg.el.remove();
             });
@@ -18055,7 +17911,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
     TimeGridEventRenderer.prototype.computeFgSegForwardBack = function (seg, seriesBackwardPressure, seriesBackwardCoord) {
         var forwardSegs = seg.forwardSegs;
         var i;
-        if (seg.forwardCoord === undefined) {
+        if (seg.forwardCoord === undefined) { // not already computed
             if (!forwardSegs.length) {
                 // if there are no forward segments, this segment should butt up against the edge
                 seg.forwardCoord = 1;
@@ -18099,9 +17955,10 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
         for (i = 0; i < segs.length; i++) {
             seg = segs[i];
             seg.el.css(this.generateFgSegHorizontalCss(seg));
-            // if the height is short, add a className for alternate styling
-            if (seg.bottom - seg.top < 30) {
-                seg.el.addClass('fc-short');
+            // if the event is short that the title will be cut off,
+            // attach a className that condenses the title into the time area.
+            if (seg.footprint.eventDef.title && seg.bottom - seg.top < 30) {
+                seg.el.addClass('fc-short'); // TODO: "condensed" is a better name
             }
         }
     };
@@ -18185,7 +18042,7 @@ function computeSlotSegPressures(seg) {
     var forwardPressure = 0;
     var i;
     var forwardSeg;
-    if (seg.forwardPressure === undefined) {
+    if (seg.forwardPressure === undefined) { // not already computed
         for (i = 0; i < forwardSegs.length; i++) {
             forwardSeg = forwardSegs[i];
             // figure out the child's maximum forward path
@@ -18215,13 +18072,13 @@ function isSlotSegCollision(seg1, seg2) {
 
 
 /***/ }),
-/* 247 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var HelperRenderer_1 = __webpack_require__(58);
+var HelperRenderer_1 = __webpack_require__(63);
 var TimeGridHelperRenderer = /** @class */ (function (_super) {
     tslib_1.__extends(TimeGridHelperRenderer, _super);
     function TimeGridHelperRenderer() {
@@ -18256,12 +18113,12 @@ exports.default = TimeGridHelperRenderer;
 
 
 /***/ }),
-/* 248 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var FillRenderer_1 = __webpack_require__(57);
+var FillRenderer_1 = __webpack_require__(62);
 var TimeGridFillRenderer = /** @class */ (function (_super) {
     tslib_1.__extends(TimeGridFillRenderer, _super);
     function TimeGridFillRenderer() {
@@ -18292,161 +18149,14 @@ exports.default = TimeGridFillRenderer;
 
 
 /***/ }),
-/* 249 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* A rectangular panel that is absolutely positioned over other content
-------------------------------------------------------------------------------------------------------------------------
-Options:
-  - className (string)
-  - content (HTML string or jQuery element set)
-  - parentEl
-  - top
-  - left
-  - right (the x coord of where the right edge should be. not a "CSS" right)
-  - autoHide (boolean)
-  - show (callback)
-  - hide (callback)
-*/
-Object.defineProperty(exports, "__esModule", { value: true });
-var $ = __webpack_require__(3);
-var util_1 = __webpack_require__(4);
-var ListenerMixin_1 = __webpack_require__(7);
-var Popover = /** @class */ (function () {
-    function Popover(options) {
-        this.isHidden = true;
-        this.margin = 10; // the space required between the popover and the edges of the scroll container
-        this.options = options || {};
-    }
-    // Shows the popover on the specified position. Renders it if not already
-    Popover.prototype.show = function () {
-        if (this.isHidden) {
-            if (!this.el) {
-                this.render();
-            }
-            this.el.show();
-            this.position();
-            this.isHidden = false;
-            this.trigger('show');
-        }
-    };
-    // Hides the popover, through CSS, but does not remove it from the DOM
-    Popover.prototype.hide = function () {
-        if (!this.isHidden) {
-            this.el.hide();
-            this.isHidden = true;
-            this.trigger('hide');
-        }
-    };
-    // Creates `this.el` and renders content inside of it
-    Popover.prototype.render = function () {
-        var _this = this;
-        var options = this.options;
-        this.el = $('<div class="fc-popover"/>')
-            .addClass(options.className || '')
-            .css({
-            // position initially to the top left to avoid creating scrollbars
-            top: 0,
-            left: 0
-        })
-            .append(options.content)
-            .appendTo(options.parentEl);
-        // when a click happens on anything inside with a 'fc-close' className, hide the popover
-        this.el.on('click', '.fc-close', function () {
-            _this.hide();
-        });
-        if (options.autoHide) {
-            this.listenTo($(document), 'mousedown', this.documentMousedown);
-        }
-    };
-    // Triggered when the user clicks *anywhere* in the document, for the autoHide feature
-    Popover.prototype.documentMousedown = function (ev) {
-        // only hide the popover if the click happened outside the popover
-        if (this.el && !$(ev.target).closest(this.el).length) {
-            this.hide();
-        }
-    };
-    // Hides and unregisters any handlers
-    Popover.prototype.removeElement = function () {
-        this.hide();
-        if (this.el) {
-            this.el.remove();
-            this.el = null;
-        }
-        this.stopListeningTo($(document), 'mousedown');
-    };
-    // Positions the popover optimally, using the top/left/right options
-    Popover.prototype.position = function () {
-        var options = this.options;
-        var origin = this.el.offsetParent().offset();
-        var width = this.el.outerWidth();
-        var height = this.el.outerHeight();
-        var windowEl = $(window);
-        var viewportEl = util_1.getScrollParent(this.el);
-        var viewportTop;
-        var viewportLeft;
-        var viewportOffset;
-        var top; // the "position" (not "offset") values for the popover
-        var left; //
-        // compute top and left
-        top = options.top || 0;
-        if (options.left !== undefined) {
-            left = options.left;
-        }
-        else if (options.right !== undefined) {
-            left = options.right - width; // derive the left value from the right value
-        }
-        else {
-            left = 0;
-        }
-        if (viewportEl.is(window) || viewportEl.is(document)) {
-            viewportEl = windowEl;
-            viewportTop = 0; // the window is always at the top left
-            viewportLeft = 0; // (and .offset() won't work if called here)
-        }
-        else {
-            viewportOffset = viewportEl.offset();
-            viewportTop = viewportOffset.top;
-            viewportLeft = viewportOffset.left;
-        }
-        // if the window is scrolled, it causes the visible area to be further down
-        viewportTop += windowEl.scrollTop();
-        viewportLeft += windowEl.scrollLeft();
-        // constrain to the view port. if constrained by two edges, give precedence to top/left
-        if (options.viewportConstrain !== false) {
-            top = Math.min(top, viewportTop + viewportEl.outerHeight() - height - this.margin);
-            top = Math.max(top, viewportTop + this.margin);
-            left = Math.min(left, viewportLeft + viewportEl.outerWidth() - width - this.margin);
-            left = Math.max(left, viewportLeft + this.margin);
-        }
-        this.el.css({
-            top: top - origin.top,
-            left: left - origin.left
-        });
-    };
-    // Triggers a callback. Calls a function in the option hash of the same name.
-    // Arguments beyond the first `name` are forwarded on.
-    // TODO: better code reuse for this. Repeat code
-    Popover.prototype.trigger = function (name) {
-        if (this.options[name]) {
-            this.options[name].apply(this, Array.prototype.slice.call(arguments, 1));
-        }
-    };
-    return Popover;
-}());
-exports.default = Popover;
-ListenerMixin_1.default.mixInto(Popover);
-
-
-/***/ }),
-/* 250 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
 var util_1 = __webpack_require__(4);
-var EventRenderer_1 = __webpack_require__(42);
+var EventRenderer_1 = __webpack_require__(44);
 /* Event-rendering methods for the DayGrid class
 ----------------------------------------------------------------------------------------------------------------------*/
 var DayGridEventRenderer = /** @class */ (function (_super) {
@@ -18529,7 +18239,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
                 col++;
             }
         }
-        for (i = 0; i < levelCnt; i++) {
+        for (i = 0; i < levelCnt; i++) { // iterate through all levels
             levelSegs = segLevels[i];
             col = 0;
             tr = $('<tr/>');
@@ -18539,7 +18249,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
             // levelCnt might be 1 even though there are no actual levels. protect against this.
             // this single empty row is useful for styling.
             if (levelSegs) {
-                for (j = 0; j < levelSegs.length; j++) {
+                for (j = 0; j < levelSegs.length; j++) { // iterate through segments in level
                     seg = levelSegs[j];
                     emptyCellsUntil(seg.leftCol);
                     // create a container that occupies or more columns. append the event element.
@@ -18547,7 +18257,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
                     if (seg.leftCol !== seg.rightCol) {
                         td.attr('colspan', seg.rightCol - seg.leftCol + 1);
                     }
-                    else {
+                    else { // a single-column segment
                         loneCellMatrix[i][col] = td;
                     }
                     while (col <= seg.rightCol) {
@@ -18692,13 +18402,13 @@ function compareDaySegCols(a, b) {
 
 
 /***/ }),
-/* 251 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var HelperRenderer_1 = __webpack_require__(58);
+var HelperRenderer_1 = __webpack_require__(63);
 var DayGridHelperRenderer = /** @class */ (function (_super) {
     tslib_1.__extends(DayGridHelperRenderer, _super);
     function DayGridHelperRenderer() {
@@ -18722,7 +18432,7 @@ var DayGridHelperRenderer = /** @class */ (function (_super) {
             }
             else {
                 skeletonTopEl = rowEl.find('.fc-content-skeleton tbody');
-                if (!skeletonTopEl.length) {
+                if (!skeletonTopEl.length) { // when no events
                     skeletonTopEl = rowEl.find('.fc-content-skeleton table');
                 }
                 skeletonTop = skeletonTopEl.position().top;
@@ -18741,13 +18451,13 @@ exports.default = DayGridHelperRenderer;
 
 
 /***/ }),
-/* 252 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var FillRenderer_1 = __webpack_require__(57);
+var FillRenderer_1 = __webpack_require__(62);
 var DayGridFillRenderer = /** @class */ (function (_super) {
     tslib_1.__extends(DayGridFillRenderer, _super);
     function DayGridFillRenderer() {
@@ -18787,11 +18497,15 @@ var DayGridFillRenderer = /** @class */ (function (_super) {
             '</div>');
         trEl = skeletonEl.find('tr');
         if (startCol > 0) {
-            trEl.append('<td colspan="' + startCol + '"/>');
+            trEl.append(
+            // will create (startCol + 1) td's
+            new Array(startCol + 1).join('<td/>'));
         }
         trEl.append(seg.el.attr('colspan', endCol - startCol));
         if (endCol < colCnt) {
-            trEl.append('<td colspan="' + (colCnt - endCol) + '"/>');
+            trEl.append(
+            // will create (colCnt - endCol) td's
+            new Array(colCnt - endCol + 1).join('<td/>'));
         }
         this.component.bookendCells(trEl);
         return skeletonEl;
@@ -18802,12 +18516,46 @@ exports.default = DayGridFillRenderer;
 
 
 /***/ }),
-/* 253 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var BasicViewDateProfileGenerator_1 = __webpack_require__(228);
+var moment = __webpack_require__(0);
+var util_1 = __webpack_require__(4);
+var BasicView_1 = __webpack_require__(67);
+var MonthViewDateProfileGenerator_1 = __webpack_require__(247);
+/* A month view with day cells running in rows (one-per-week) and columns
+----------------------------------------------------------------------------------------------------------------------*/
+var MonthView = /** @class */ (function (_super) {
+    tslib_1.__extends(MonthView, _super);
+    function MonthView() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    // Overrides the default BasicView behavior to have special multi-week auto-height logic
+    MonthView.prototype.setGridHeight = function (height, isAuto) {
+        // if auto, make the height of each row the height that it would be if there were 6 weeks
+        if (isAuto) {
+            height *= this.dayGrid.rowCnt / 6;
+        }
+        util_1.distributeHeight(this.dayGrid.rowEls, height, !isAuto); // if auto, don't compensate for height-hogging rows
+    };
+    MonthView.prototype.isDateInOtherMonth = function (date, dateProfile) {
+        return date.month() !== moment.utc(dateProfile.currentUnzonedRange.startMs).month(); // TODO: optimize
+    };
+    return MonthView;
+}(BasicView_1.default));
+exports.default = MonthView;
+MonthView.prototype.dateProfileGeneratorClass = MonthViewDateProfileGenerator_1.default;
+
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var BasicViewDateProfileGenerator_1 = __webpack_require__(68);
 var UnzonedRange_1 = __webpack_require__(5);
 var MonthViewDateProfileGenerator = /** @class */ (function (_super) {
     tslib_1.__extends(MonthViewDateProfileGenerator, _super);
@@ -18835,13 +18583,174 @@ exports.default = MonthViewDateProfileGenerator;
 
 
 /***/ }),
-/* 254 */
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+var UnzonedRange_1 = __webpack_require__(5);
+var View_1 = __webpack_require__(43);
+var Scroller_1 = __webpack_require__(41);
+var ListEventRenderer_1 = __webpack_require__(249);
+var ListEventPointing_1 = __webpack_require__(250);
+/*
+Responsible for the scroller, and forwarding event-related actions into the "grid".
+*/
+var ListView = /** @class */ (function (_super) {
+    tslib_1.__extends(ListView, _super);
+    function ListView(calendar, viewSpec) {
+        var _this = _super.call(this, calendar, viewSpec) || this;
+        _this.segSelector = '.fc-list-item'; // which elements accept event actions
+        _this.scroller = new Scroller_1.default({
+            overflowX: 'hidden',
+            overflowY: 'auto'
+        });
+        return _this;
+    }
+    ListView.prototype.renderSkeleton = function () {
+        this.el.addClass('fc-list-view ' +
+            this.calendar.theme.getClass('listView'));
+        this.scroller.render();
+        this.scroller.el.appendTo(this.el);
+        this.contentEl = this.scroller.scrollEl; // shortcut
+    };
+    ListView.prototype.unrenderSkeleton = function () {
+        this.scroller.destroy(); // will remove the Grid too
+    };
+    ListView.prototype.updateSize = function (totalHeight, isAuto, isResize) {
+        _super.prototype.updateSize.call(this, totalHeight, isAuto, isResize);
+        this.scroller.clear(); // sets height to 'auto' and clears overflow
+        if (!isAuto) {
+            this.scroller.setHeight(this.computeScrollerHeight(totalHeight));
+        }
+    };
+    ListView.prototype.computeScrollerHeight = function (totalHeight) {
+        return totalHeight -
+            util_1.subtractInnerElHeight(this.el, this.scroller.el); // everything that's NOT the scroller
+    };
+    ListView.prototype.renderDates = function (dateProfile) {
+        var calendar = this.calendar;
+        var dayStart = calendar.msToUtcMoment(dateProfile.renderUnzonedRange.startMs, true);
+        var viewEnd = calendar.msToUtcMoment(dateProfile.renderUnzonedRange.endMs, true);
+        var dayDates = [];
+        var dayRanges = [];
+        while (dayStart < viewEnd) {
+            dayDates.push(dayStart.clone());
+            dayRanges.push(new UnzonedRange_1.default(dayStart, dayStart.clone().add(1, 'day')));
+            dayStart.add(1, 'day');
+        }
+        this.dayDates = dayDates;
+        this.dayRanges = dayRanges;
+        // all real rendering happens in EventRenderer
+    };
+    // slices by day
+    ListView.prototype.componentFootprintToSegs = function (footprint) {
+        var dayRanges = this.dayRanges;
+        var dayIndex;
+        var segRange;
+        var seg;
+        var segs = [];
+        for (dayIndex = 0; dayIndex < dayRanges.length; dayIndex++) {
+            segRange = footprint.unzonedRange.intersect(dayRanges[dayIndex]);
+            if (segRange) {
+                seg = {
+                    startMs: segRange.startMs,
+                    endMs: segRange.endMs,
+                    isStart: segRange.isStart,
+                    isEnd: segRange.isEnd,
+                    dayIndex: dayIndex
+                };
+                segs.push(seg);
+                // detect when footprint won't go fully into the next day,
+                // and mutate the latest seg to the be the end.
+                if (!seg.isEnd && !footprint.isAllDay &&
+                    dayIndex + 1 < dayRanges.length &&
+                    footprint.unzonedRange.endMs < dayRanges[dayIndex + 1].startMs + this.nextDayThreshold) {
+                    seg.endMs = footprint.unzonedRange.endMs;
+                    seg.isEnd = true;
+                    break;
+                }
+            }
+        }
+        return segs;
+    };
+    ListView.prototype.renderEmptyMessage = function () {
+        this.contentEl.html('<div class="fc-list-empty-wrap2">' + // TODO: try less wraps
+            '<div class="fc-list-empty-wrap1">' +
+            '<div class="fc-list-empty">' +
+            util_1.htmlEscape(this.opt('noEventsMessage')) +
+            '</div>' +
+            '</div>' +
+            '</div>');
+    };
+    // render the event segments in the view
+    ListView.prototype.renderSegList = function (allSegs) {
+        var segsByDay = this.groupSegsByDay(allSegs); // sparse array
+        var dayIndex;
+        var daySegs;
+        var i;
+        var tableEl = $('<table class="fc-list-table ' + this.calendar.theme.getClass('tableList') + '"><tbody/></table>');
+        var tbodyEl = tableEl.find('tbody');
+        for (dayIndex = 0; dayIndex < segsByDay.length; dayIndex++) {
+            daySegs = segsByDay[dayIndex];
+            if (daySegs) { // sparse array, so might be undefined
+                // append a day header
+                tbodyEl.append(this.dayHeaderHtml(this.dayDates[dayIndex]));
+                this.eventRenderer.sortEventSegs(daySegs);
+                for (i = 0; i < daySegs.length; i++) {
+                    tbodyEl.append(daySegs[i].el); // append event row
+                }
+            }
+        }
+        this.contentEl.empty().append(tableEl);
+    };
+    // Returns a sparse array of arrays, segs grouped by their dayIndex
+    ListView.prototype.groupSegsByDay = function (segs) {
+        var segsByDay = []; // sparse array
+        var i;
+        var seg;
+        for (i = 0; i < segs.length; i++) {
+            seg = segs[i];
+            (segsByDay[seg.dayIndex] || (segsByDay[seg.dayIndex] = []))
+                .push(seg);
+        }
+        return segsByDay;
+    };
+    // generates the HTML for the day headers that live amongst the event rows
+    ListView.prototype.dayHeaderHtml = function (dayDate) {
+        var mainFormat = this.opt('listDayFormat');
+        var altFormat = this.opt('listDayAltFormat');
+        return '<tr class="fc-list-heading" data-date="' + dayDate.format('YYYY-MM-DD') + '">' +
+            '<td class="' + (this.calendar.theme.getClass('tableListHeading') ||
+            this.calendar.theme.getClass('widgetHeader')) + '" colspan="3">' +
+            (mainFormat ?
+                this.buildGotoAnchorHtml(dayDate, { 'class': 'fc-list-heading-main' }, util_1.htmlEscape(dayDate.format(mainFormat)) // inner HTML
+                ) :
+                '') +
+            (altFormat ?
+                this.buildGotoAnchorHtml(dayDate, { 'class': 'fc-list-heading-alt' }, util_1.htmlEscape(dayDate.format(altFormat)) // inner HTML
+                ) :
+                '') +
+            '</td>' +
+            '</tr>';
+    };
+    return ListView;
+}(View_1.default));
+exports.default = ListView;
+ListView.prototype.eventRendererClass = ListEventRenderer_1.default;
+ListView.prototype.eventPointingClass = ListEventPointing_1.default;
+
+
+/***/ }),
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(4);
-var EventRenderer_1 = __webpack_require__(42);
+var EventRenderer_1 = __webpack_require__(44);
 var ListEventRenderer = /** @class */ (function (_super) {
     tslib_1.__extends(ListEventRenderer, _super);
     function ListEventRenderer() {
@@ -18871,10 +18780,10 @@ var ListEventRenderer = /** @class */ (function (_super) {
             timeHtml = view.getAllDayHtml();
         }
         else if (view.isMultiDayRange(componentFootprint.unzonedRange)) {
-            if (seg.isStart || seg.isEnd) {
+            if (seg.isStart || seg.isEnd) { // outer segment that probably lasts part of the day
                 timeHtml = util_1.htmlEscape(this._getTimeText(calendar.msToMoment(seg.startMs), calendar.msToMoment(seg.endMs), componentFootprint.isAllDay));
             }
-            else {
+            else { // inner segment that lasts the whole day
                 timeHtml = view.getAllDayHtml();
             }
         }
@@ -18915,13 +18824,13 @@ exports.default = ListEventRenderer;
 
 
 /***/ }),
-/* 255 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
 var $ = __webpack_require__(3);
-var EventPointing_1 = __webpack_require__(59);
+var EventPointing_1 = __webpack_require__(64);
 var ListEventPointing = /** @class */ (function (_super) {
     tslib_1.__extends(ListEventPointing, _super);
     function ListEventPointing() {
@@ -18935,7 +18844,7 @@ var ListEventPointing = /** @class */ (function (_super) {
         // not clicking on or within an <a> with an href
         if (!$(ev.target).closest('a[href]').length) {
             url = seg.footprint.eventDef.url;
-            if (url && !ev.isDefaultPrevented()) {
+            if (url && !ev.isDefaultPrevented()) { // jsEvent not cancelled in handler
                 window.location.href = url; // simulate link click
             }
         }
@@ -18946,17 +18855,73 @@ exports.default = ListEventPointing;
 
 
 /***/ }),
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
 /* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var EventSourceParser_1 = __webpack_require__(38);
-var ArrayEventSource_1 = __webpack_require__(52);
-var FuncEventSource_1 = __webpack_require__(215);
-var JsonFeedEventSource_1 = __webpack_require__(216);
-EventSourceParser_1.default.registerClass(ArrayEventSource_1.default);
-EventSourceParser_1.default.registerClass(FuncEventSource_1.default);
-EventSourceParser_1.default.registerClass(JsonFeedEventSource_1.default);
+var $ = __webpack_require__(3);
+var exportHooks = __webpack_require__(18);
+var util_1 = __webpack_require__(4);
+var Calendar_1 = __webpack_require__(232);
+// for intentional side-effects
+__webpack_require__(11);
+__webpack_require__(49);
+__webpack_require__(260);
+__webpack_require__(261);
+__webpack_require__(264);
+__webpack_require__(265);
+__webpack_require__(266);
+__webpack_require__(267);
+$.fullCalendar = exportHooks;
+$.fn.fullCalendar = function (options) {
+    var args = Array.prototype.slice.call(arguments, 1); // for a possible method call
+    var res = this; // what this function will return (this jQuery object by default)
+    this.each(function (i, _element) {
+        var element = $(_element);
+        var calendar = element.data('fullCalendar'); // get the existing calendar object (if any)
+        var singleRes; // the returned value of this single method call
+        // a method call
+        if (typeof options === 'string') {
+            if (options === 'getCalendar') {
+                if (!i) { // first element only
+                    res = calendar;
+                }
+            }
+            else if (options === 'destroy') { // don't warn if no calendar object
+                if (calendar) {
+                    calendar.destroy();
+                    element.removeData('fullCalendar');
+                }
+            }
+            else if (!calendar) {
+                util_1.warn('Attempting to call a FullCalendar method on an element with no calendar.');
+            }
+            else if ($.isFunction(calendar[options])) {
+                singleRes = calendar[options].apply(calendar, args);
+                if (!i) {
+                    res = singleRes; // record the first method call result
+                }
+                if (options === 'destroy') { // for the destroy method, must remove Calendar object data
+                    element.removeData('fullCalendar');
+                }
+            }
+            else {
+                util_1.warn("'" + options + "' is an unknown FullCalendar method.");
+            }
+        }
+        else if (!calendar) { // don't initialize twice
+            calendar = new Calendar_1.default(element, options);
+            element.data('fullCalendar', calendar);
+            calendar.render();
+        }
+    });
+    return res;
+};
+module.exports = exportHooks;
 
 
 /***/ }),
@@ -18964,15 +18929,222 @@ EventSourceParser_1.default.registerClass(JsonFeedEventSource_1.default);
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ThemeRegistry_1 = __webpack_require__(51);
-var StandardTheme_1 = __webpack_require__(213);
-var JqueryUiTheme_1 = __webpack_require__(214);
-var Bootstrap3Theme_1 = __webpack_require__(258);
-var Bootstrap4Theme_1 = __webpack_require__(259);
-ThemeRegistry_1.defineThemeSystem('standard', StandardTheme_1.default);
-ThemeRegistry_1.defineThemeSystem('jquery-ui', JqueryUiTheme_1.default);
-ThemeRegistry_1.defineThemeSystem('bootstrap3', Bootstrap3Theme_1.default);
-ThemeRegistry_1.defineThemeSystem('bootstrap4', Bootstrap4Theme_1.default);
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+/* Toolbar with buttons and title
+----------------------------------------------------------------------------------------------------------------------*/
+var Toolbar = /** @class */ (function () {
+    function Toolbar(calendar, toolbarOptions) {
+        this.el = null; // mirrors local `el`
+        this.viewsWithButtons = [];
+        this.calendar = calendar;
+        this.toolbarOptions = toolbarOptions;
+    }
+    // method to update toolbar-specific options, not calendar-wide options
+    Toolbar.prototype.setToolbarOptions = function (newToolbarOptions) {
+        this.toolbarOptions = newToolbarOptions;
+    };
+    // can be called repeatedly and will rerender
+    Toolbar.prototype.render = function () {
+        var sections = this.toolbarOptions.layout;
+        var el = this.el;
+        if (sections) {
+            if (!el) {
+                el = this.el = $("<div class='fc-toolbar " + this.toolbarOptions.extraClasses + "'/>");
+            }
+            else {
+                el.empty();
+            }
+            el.append(this.renderSection('left'))
+                .append(this.renderSection('right'))
+                .append(this.renderSection('center'))
+                .append('<div class="fc-clear"/>');
+        }
+        else {
+            this.removeElement();
+        }
+    };
+    Toolbar.prototype.removeElement = function () {
+        if (this.el) {
+            this.el.remove();
+            this.el = null;
+        }
+    };
+    Toolbar.prototype.renderSection = function (position) {
+        var _this = this;
+        var calendar = this.calendar;
+        var theme = calendar.theme;
+        var optionsManager = calendar.optionsManager;
+        var viewSpecManager = calendar.viewSpecManager;
+        var sectionEl = $('<div class="fc-' + position + '"/>');
+        var buttonStr = this.toolbarOptions.layout[position];
+        var calendarCustomButtons = optionsManager.get('customButtons') || {};
+        var calendarButtonTextOverrides = optionsManager.overrides.buttonText || {};
+        var calendarButtonText = optionsManager.get('buttonText') || {};
+        if (buttonStr) {
+            $.each(buttonStr.split(' '), function (i, buttonGroupStr) {
+                var groupChildren = $();
+                var isOnlyButtons = true;
+                var groupEl;
+                $.each(buttonGroupStr.split(','), function (j, buttonName) {
+                    var customButtonProps;
+                    var viewSpec;
+                    var buttonClick;
+                    var buttonIcon; // only one of these will be set
+                    var buttonText; // "
+                    var buttonInnerHtml;
+                    var buttonClasses;
+                    var buttonEl;
+                    var buttonAriaAttr;
+                    if (buttonName === 'title') {
+                        groupChildren = groupChildren.add($('<h2>&nbsp;</h2>')); // we always want it to take up height
+                        isOnlyButtons = false;
+                    }
+                    else {
+                        if ((customButtonProps = calendarCustomButtons[buttonName])) {
+                            buttonClick = function (ev) {
+                                if (customButtonProps.click) {
+                                    customButtonProps.click.call(buttonEl[0], ev);
+                                }
+                            };
+                            (buttonIcon = theme.getCustomButtonIconClass(customButtonProps)) ||
+                                (buttonIcon = theme.getIconClass(buttonName)) ||
+                                (buttonText = customButtonProps.text);
+                        }
+                        else if ((viewSpec = viewSpecManager.getViewSpec(buttonName))) {
+                            _this.viewsWithButtons.push(buttonName);
+                            buttonClick = function () {
+                                calendar.changeView(buttonName);
+                            };
+                            (buttonText = viewSpec.buttonTextOverride) ||
+                                (buttonIcon = theme.getIconClass(buttonName)) ||
+                                (buttonText = viewSpec.buttonTextDefault);
+                        }
+                        else if (calendar[buttonName]) { // a calendar method
+                            buttonClick = function () {
+                                calendar[buttonName]();
+                            };
+                            (buttonText = calendarButtonTextOverrides[buttonName]) ||
+                                (buttonIcon = theme.getIconClass(buttonName)) ||
+                                (buttonText = calendarButtonText[buttonName]);
+                            //            ^ everything else is considered default
+                        }
+                        if (buttonClick) {
+                            buttonClasses = [
+                                'fc-' + buttonName + '-button',
+                                theme.getClass('button'),
+                                theme.getClass('stateDefault')
+                            ];
+                            if (buttonText) {
+                                buttonInnerHtml = util_1.htmlEscape(buttonText);
+                                buttonAriaAttr = '';
+                            }
+                            else if (buttonIcon) {
+                                buttonInnerHtml = "<span class='" + buttonIcon + "'></span>";
+                                buttonAriaAttr = ' aria-label="' + buttonName + '"';
+                            }
+                            buttonEl = $(// type="button" so that it doesn't submit a form
+                            '<button type="button" class="' + buttonClasses.join(' ') + '"' +
+                                buttonAriaAttr +
+                                '>' + buttonInnerHtml + '</button>')
+                                .click(function (ev) {
+                                // don't process clicks for disabled buttons
+                                if (!buttonEl.hasClass(theme.getClass('stateDisabled'))) {
+                                    buttonClick(ev);
+                                    // after the click action, if the button becomes the "active" tab, or disabled,
+                                    // it should never have a hover class, so remove it now.
+                                    if (buttonEl.hasClass(theme.getClass('stateActive')) ||
+                                        buttonEl.hasClass(theme.getClass('stateDisabled'))) {
+                                        buttonEl.removeClass(theme.getClass('stateHover'));
+                                    }
+                                }
+                            })
+                                .mousedown(function () {
+                                // the *down* effect (mouse pressed in).
+                                // only on buttons that are not the "active" tab, or disabled
+                                buttonEl
+                                    .not('.' + theme.getClass('stateActive'))
+                                    .not('.' + theme.getClass('stateDisabled'))
+                                    .addClass(theme.getClass('stateDown'));
+                            })
+                                .mouseup(function () {
+                                // undo the *down* effect
+                                buttonEl.removeClass(theme.getClass('stateDown'));
+                            })
+                                .hover(function () {
+                                // the *hover* effect.
+                                // only on buttons that are not the "active" tab, or disabled
+                                buttonEl
+                                    .not('.' + theme.getClass('stateActive'))
+                                    .not('.' + theme.getClass('stateDisabled'))
+                                    .addClass(theme.getClass('stateHover'));
+                            }, function () {
+                                // undo the *hover* effect
+                                buttonEl
+                                    .removeClass(theme.getClass('stateHover'))
+                                    .removeClass(theme.getClass('stateDown')); // if mouseleave happens before mouseup
+                            });
+                            groupChildren = groupChildren.add(buttonEl);
+                        }
+                    }
+                });
+                if (isOnlyButtons) {
+                    groupChildren
+                        .first().addClass(theme.getClass('cornerLeft')).end()
+                        .last().addClass(theme.getClass('cornerRight')).end();
+                }
+                if (groupChildren.length > 1) {
+                    groupEl = $('<div/>');
+                    if (isOnlyButtons) {
+                        groupEl.addClass(theme.getClass('buttonGroup'));
+                    }
+                    groupEl.append(groupChildren);
+                    sectionEl.append(groupEl);
+                }
+                else {
+                    sectionEl.append(groupChildren); // 1 or 0 children
+                }
+            });
+        }
+        return sectionEl;
+    };
+    Toolbar.prototype.updateTitle = function (text) {
+        if (this.el) {
+            this.el.find('h2').text(text);
+        }
+    };
+    Toolbar.prototype.activateButton = function (buttonName) {
+        if (this.el) {
+            this.el.find('.fc-' + buttonName + '-button')
+                .addClass(this.calendar.theme.getClass('stateActive'));
+        }
+    };
+    Toolbar.prototype.deactivateButton = function (buttonName) {
+        if (this.el) {
+            this.el.find('.fc-' + buttonName + '-button')
+                .removeClass(this.calendar.theme.getClass('stateActive'));
+        }
+    };
+    Toolbar.prototype.disableButton = function (buttonName) {
+        if (this.el) {
+            this.el.find('.fc-' + buttonName + '-button')
+                .prop('disabled', true)
+                .addClass(this.calendar.theme.getClass('stateDisabled'));
+        }
+    };
+    Toolbar.prototype.enableButton = function (buttonName) {
+        if (this.el) {
+            this.el.find('.fc-' + buttonName + '-button')
+                .prop('disabled', false)
+                .removeClass(this.calendar.theme.getClass('stateDisabled'));
+        }
+    };
+    Toolbar.prototype.getViewsWithButtons = function () {
+        return this.viewsWithButtons;
+    };
+    return Toolbar;
+}());
+exports.default = Toolbar;
 
 
 /***/ }),
@@ -18981,7 +19153,292 @@ ThemeRegistry_1.defineThemeSystem('bootstrap4', Bootstrap4Theme_1.default);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var Theme_1 = __webpack_require__(19);
+var $ = __webpack_require__(3);
+var util_1 = __webpack_require__(4);
+var options_1 = __webpack_require__(33);
+var locale_1 = __webpack_require__(32);
+var Model_1 = __webpack_require__(51);
+var OptionsManager = /** @class */ (function (_super) {
+    tslib_1.__extends(OptionsManager, _super);
+    function OptionsManager(_calendar, overrides) {
+        var _this = _super.call(this) || this;
+        _this._calendar = _calendar;
+        _this.overrides = $.extend({}, overrides); // make a copy
+        _this.dynamicOverrides = {};
+        _this.compute();
+        return _this;
+    }
+    OptionsManager.prototype.add = function (newOptionHash) {
+        var optionCnt = 0;
+        var optionName;
+        this.recordOverrides(newOptionHash); // will trigger this model's watchers
+        for (optionName in newOptionHash) {
+            optionCnt++;
+        }
+        // special-case handling of single option change.
+        // if only one option change, `optionName` will be its name.
+        if (optionCnt === 1) {
+            if (optionName === 'height' || optionName === 'contentHeight' || optionName === 'aspectRatio') {
+                this._calendar.updateViewSize(true); // isResize=true
+                return;
+            }
+            else if (optionName === 'defaultDate') {
+                return; // can't change date this way. use gotoDate instead
+            }
+            else if (optionName === 'businessHours') {
+                return; // this model already reacts to this
+            }
+            else if (/^(event|select)(Overlap|Constraint|Allow)$/.test(optionName)) {
+                return; // doesn't affect rendering. only interactions.
+            }
+            else if (optionName === 'timezone') {
+                this._calendar.view.flash('initialEvents');
+                return;
+            }
+        }
+        // catch-all. rerender the header and footer and rebuild/rerender the current view
+        this._calendar.renderHeader();
+        this._calendar.renderFooter();
+        // even non-current views will be affected by this option change. do before rerender
+        // TODO: detangle
+        this._calendar.viewsByType = {};
+        this._calendar.reinitView();
+    };
+    // Computes the flattened options hash for the calendar and assigns to `this.options`.
+    // Assumes this.overrides and this.dynamicOverrides have already been initialized.
+    OptionsManager.prototype.compute = function () {
+        var locale;
+        var localeDefaults;
+        var isRTL;
+        var dirDefaults;
+        var rawOptions;
+        locale = util_1.firstDefined(// explicit locale option given?
+        this.dynamicOverrides.locale, this.overrides.locale);
+        localeDefaults = locale_1.localeOptionHash[locale];
+        if (!localeDefaults) { // explicit locale option not given or invalid?
+            locale = options_1.globalDefaults.locale;
+            localeDefaults = locale_1.localeOptionHash[locale] || {};
+        }
+        isRTL = util_1.firstDefined(// based on options computed so far, is direction RTL?
+        this.dynamicOverrides.isRTL, this.overrides.isRTL, localeDefaults.isRTL, options_1.globalDefaults.isRTL);
+        dirDefaults = isRTL ? options_1.rtlDefaults : {};
+        this.dirDefaults = dirDefaults;
+        this.localeDefaults = localeDefaults;
+        rawOptions = options_1.mergeOptions([
+            options_1.globalDefaults,
+            dirDefaults,
+            localeDefaults,
+            this.overrides,
+            this.dynamicOverrides
+        ]);
+        locale_1.populateInstanceComputableOptions(rawOptions); // fill in gaps with computed options
+        this.reset(rawOptions);
+    };
+    // stores the new options internally, but does not rerender anything.
+    OptionsManager.prototype.recordOverrides = function (newOptionHash) {
+        var optionName;
+        for (optionName in newOptionHash) {
+            this.dynamicOverrides[optionName] = newOptionHash[optionName];
+        }
+        this._calendar.viewSpecManager.clearCache(); // the dynamic override invalidates the options in this cache, so just clear it
+        this.compute(); // this.options needs to be recomputed after the dynamic override
+    };
+    return OptionsManager;
+}(Model_1.default));
+exports.default = OptionsManager;
+
+
+/***/ }),
+/* 259 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var moment = __webpack_require__(0);
+var $ = __webpack_require__(3);
+var ViewRegistry_1 = __webpack_require__(24);
+var util_1 = __webpack_require__(4);
+var options_1 = __webpack_require__(33);
+var locale_1 = __webpack_require__(32);
+var ViewSpecManager = /** @class */ (function () {
+    function ViewSpecManager(optionsManager, _calendar) {
+        this.optionsManager = optionsManager;
+        this._calendar = _calendar;
+        this.clearCache();
+    }
+    ViewSpecManager.prototype.clearCache = function () {
+        this.viewSpecCache = {};
+    };
+    // Gets information about how to create a view. Will use a cache.
+    ViewSpecManager.prototype.getViewSpec = function (viewType) {
+        var cache = this.viewSpecCache;
+        return cache[viewType] || (cache[viewType] = this.buildViewSpec(viewType));
+    };
+    // Given a duration singular unit, like "week" or "day", finds a matching view spec.
+    // Preference is given to views that have corresponding buttons.
+    ViewSpecManager.prototype.getUnitViewSpec = function (unit) {
+        var viewTypes;
+        var i;
+        var spec;
+        if ($.inArray(unit, util_1.unitsDesc) !== -1) {
+            // put views that have buttons first. there will be duplicates, but oh well
+            viewTypes = this._calendar.header.getViewsWithButtons(); // TODO: include footer as well?
+            $.each(ViewRegistry_1.viewHash, function (viewType) {
+                viewTypes.push(viewType);
+            });
+            for (i = 0; i < viewTypes.length; i++) {
+                spec = this.getViewSpec(viewTypes[i]);
+                if (spec) {
+                    if (spec.singleUnit === unit) {
+                        return spec;
+                    }
+                }
+            }
+        }
+    };
+    // Builds an object with information on how to create a given view
+    ViewSpecManager.prototype.buildViewSpec = function (requestedViewType) {
+        var viewOverrides = this.optionsManager.overrides.views || {};
+        var specChain = []; // for the view. lowest to highest priority
+        var defaultsChain = []; // for the view. lowest to highest priority
+        var overridesChain = []; // for the view. lowest to highest priority
+        var viewType = requestedViewType;
+        var spec; // for the view
+        var overrides; // for the view
+        var durationInput;
+        var duration;
+        var unit;
+        // iterate from the specific view definition to a more general one until we hit an actual View class
+        while (viewType) {
+            spec = ViewRegistry_1.viewHash[viewType];
+            overrides = viewOverrides[viewType];
+            viewType = null; // clear. might repopulate for another iteration
+            if (typeof spec === 'function') { // TODO: deprecate
+                spec = { 'class': spec };
+            }
+            if (spec) {
+                specChain.unshift(spec);
+                defaultsChain.unshift(spec.defaults || {});
+                durationInput = durationInput || spec.duration;
+                viewType = viewType || spec.type;
+            }
+            if (overrides) {
+                overridesChain.unshift(overrides); // view-specific option hashes have options at zero-level
+                durationInput = durationInput || overrides.duration;
+                viewType = viewType || overrides.type;
+            }
+        }
+        spec = util_1.mergeProps(specChain);
+        spec.type = requestedViewType;
+        if (!spec['class']) {
+            return false;
+        }
+        // fall back to top-level `duration` option
+        durationInput = durationInput ||
+            this.optionsManager.dynamicOverrides.duration ||
+            this.optionsManager.overrides.duration;
+        if (durationInput) {
+            duration = moment.duration(durationInput);
+            if (duration.valueOf()) { // valid?
+                unit = util_1.computeDurationGreatestUnit(duration, durationInput);
+                spec.duration = duration;
+                spec.durationUnit = unit;
+                // view is a single-unit duration, like "week" or "day"
+                // incorporate options for this. lowest priority
+                if (duration.as(unit) === 1) {
+                    spec.singleUnit = unit;
+                    overridesChain.unshift(viewOverrides[unit] || {});
+                }
+            }
+        }
+        spec.defaults = options_1.mergeOptions(defaultsChain);
+        spec.overrides = options_1.mergeOptions(overridesChain);
+        this.buildViewSpecOptions(spec);
+        this.buildViewSpecButtonText(spec, requestedViewType);
+        return spec;
+    };
+    // Builds and assigns a view spec's options object from its already-assigned defaults and overrides
+    ViewSpecManager.prototype.buildViewSpecOptions = function (spec) {
+        var optionsManager = this.optionsManager;
+        spec.options = options_1.mergeOptions([
+            options_1.globalDefaults,
+            spec.defaults,
+            optionsManager.dirDefaults,
+            optionsManager.localeDefaults,
+            optionsManager.overrides,
+            spec.overrides,
+            optionsManager.dynamicOverrides // dynamically set via setter. highest precedence
+        ]);
+        locale_1.populateInstanceComputableOptions(spec.options);
+    };
+    // Computes and assigns a view spec's buttonText-related options
+    ViewSpecManager.prototype.buildViewSpecButtonText = function (spec, requestedViewType) {
+        var optionsManager = this.optionsManager;
+        // given an options object with a possible `buttonText` hash, lookup the buttonText for the
+        // requested view, falling back to a generic unit entry like "week" or "day"
+        function queryButtonText(options) {
+            var buttonText = options.buttonText || {};
+            return buttonText[requestedViewType] ||
+                // view can decide to look up a certain key
+                (spec.buttonTextKey ? buttonText[spec.buttonTextKey] : null) ||
+                // a key like "month"
+                (spec.singleUnit ? buttonText[spec.singleUnit] : null);
+        }
+        // highest to lowest priority
+        spec.buttonTextOverride =
+            queryButtonText(optionsManager.dynamicOverrides) ||
+                queryButtonText(optionsManager.overrides) || // constructor-specified buttonText lookup hash takes precedence
+                spec.overrides.buttonText; // `buttonText` for view-specific options is a string
+        // highest to lowest priority. mirrors buildViewSpecOptions
+        spec.buttonTextDefault =
+            queryButtonText(optionsManager.localeDefaults) ||
+                queryButtonText(optionsManager.dirDefaults) ||
+                spec.defaults.buttonText || // a single string. from ViewSubclass.defaults
+                queryButtonText(options_1.globalDefaults) ||
+                (spec.duration ? this._calendar.humanizeDuration(spec.duration) : null) || // like "3 days"
+                requestedViewType; // fall back to given view name
+    };
+    return ViewSpecManager;
+}());
+exports.default = ViewSpecManager;
+
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var EventSourceParser_1 = __webpack_require__(38);
+var ArrayEventSource_1 = __webpack_require__(56);
+var FuncEventSource_1 = __webpack_require__(223);
+var JsonFeedEventSource_1 = __webpack_require__(224);
+EventSourceParser_1.default.registerClass(ArrayEventSource_1.default);
+EventSourceParser_1.default.registerClass(FuncEventSource_1.default);
+EventSourceParser_1.default.registerClass(JsonFeedEventSource_1.default);
+
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ThemeRegistry_1 = __webpack_require__(57);
+var StandardTheme_1 = __webpack_require__(221);
+var JqueryUiTheme_1 = __webpack_require__(222);
+var Bootstrap3Theme_1 = __webpack_require__(262);
+var Bootstrap4Theme_1 = __webpack_require__(263);
+ThemeRegistry_1.defineThemeSystem('standard', StandardTheme_1.default);
+ThemeRegistry_1.defineThemeSystem('jquery-ui', JqueryUiTheme_1.default);
+ThemeRegistry_1.defineThemeSystem('bootstrap3', Bootstrap3Theme_1.default);
+ThemeRegistry_1.defineThemeSystem('bootstrap4', Bootstrap4Theme_1.default);
+
+
+/***/ }),
+/* 262 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(2);
+var Theme_1 = __webpack_require__(22);
 var Bootstrap3Theme = /** @class */ (function (_super) {
     tslib_1.__extends(Bootstrap3Theme, _super);
     function Bootstrap3Theme() {
@@ -19025,12 +19482,12 @@ Bootstrap3Theme.prototype.iconOverridePrefix = 'glyphicon-';
 
 
 /***/ }),
-/* 259 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(2);
-var Theme_1 = __webpack_require__(19);
+var Theme_1 = __webpack_require__(22);
 var Bootstrap4Theme = /** @class */ (function (_super) {
     tslib_1.__extends(Bootstrap4Theme, _super);
     function Bootstrap4Theme() {
@@ -19074,13 +19531,13 @@ Bootstrap4Theme.prototype.iconOverridePrefix = 'fa-';
 
 
 /***/ }),
-/* 260 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ViewRegistry_1 = __webpack_require__(22);
-var BasicView_1 = __webpack_require__(62);
-var MonthView_1 = __webpack_require__(229);
+var ViewRegistry_1 = __webpack_require__(24);
+var BasicView_1 = __webpack_require__(67);
+var MonthView_1 = __webpack_require__(246);
 ViewRegistry_1.defineView('basic', {
     'class': BasicView_1.default
 });
@@ -19102,12 +19559,12 @@ ViewRegistry_1.defineView('month', {
 
 
 /***/ }),
-/* 261 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ViewRegistry_1 = __webpack_require__(22);
-var AgendaView_1 = __webpack_require__(226);
+var ViewRegistry_1 = __webpack_require__(24);
+var AgendaView_1 = __webpack_require__(238);
 ViewRegistry_1.defineView('agenda', {
     'class': AgendaView_1.default,
     defaults: {
@@ -19127,12 +19584,12 @@ ViewRegistry_1.defineView('agendaWeek', {
 
 
 /***/ }),
-/* 262 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ViewRegistry_1 = __webpack_require__(22);
-var ListView_1 = __webpack_require__(230);
+var ViewRegistry_1 = __webpack_require__(24);
+var ListView_1 = __webpack_require__(248);
 ViewRegistry_1.defineView('list', {
     'class': ListView_1.default,
     buttonTextKey: 'list',
@@ -19174,7 +19631,7 @@ ViewRegistry_1.defineView('listYear', {
 
 
 /***/ }),
-/* 263 */
+/* 267 */
 /***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -19187,6 +19644,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /***/ }),
 
 /***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 /*!
@@ -19215,10 +19676,14 @@ function isSlowBuffer (obj) {
 /***/ }),
 
 /***/ "./node_modules/jquery/dist/jquery.js":
+/*!********************************************!*\
+  !*** ./node_modules/jquery/dist/jquery.js ***!
+  \********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.3.1
+ * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -19228,13 +19693,13 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2018-01-20T17:24Z
+ * Date: 2019-05-01T21:04Z
  */
 ( function( global, factory ) {
 
 	"use strict";
 
-	if ( typeof module === "object" && typeof module.exports === "object" ) {
+	if (  true && typeof module.exports === "object" ) {
 
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
@@ -19310,20 +19775,33 @@ var isWindow = function isWindow( obj ) {
 	var preservedScriptAttributes = {
 		type: true,
 		src: true,
+		nonce: true,
 		noModule: true
 	};
 
-	function DOMEval( code, doc, node ) {
+	function DOMEval( code, node, doc ) {
 		doc = doc || document;
 
-		var i,
+		var i, val,
 			script = doc.createElement( "script" );
 
 		script.text = code;
 		if ( node ) {
 			for ( i in preservedScriptAttributes ) {
-				if ( node[ i ] ) {
-					script[ i ] = node[ i ];
+
+				// Support: Firefox 64+, Edge 18+
+				// Some browsers don't support the "nonce" property on scripts.
+				// On the other hand, just using `getAttribute` is not enough as
+				// the `nonce` attribute is reset to an empty string whenever it
+				// becomes browsing-context connected.
+				// See https://github.com/whatwg/html/issues/2369
+				// See https://html.spec.whatwg.org/#nonce-attributes
+				// The `node.getAttribute` check was added for the sake of
+				// `jQuery.globalEval` so that it can fake a nonce-containing node
+				// via an object.
+				val = node[ i ] || node.getAttribute && node.getAttribute( i );
+				if ( val ) {
+					script.setAttribute( i, val );
 				}
 			}
 		}
@@ -19348,7 +19826,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.3.1",
+	version = "3.4.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -19477,25 +19955,28 @@ jQuery.extend = jQuery.fn.extend = function() {
 
 			// Extend the base object
 			for ( name in options ) {
-				src = target[ name ];
 				copy = options[ name ];
 
+				// Prevent Object.prototype pollution
 				// Prevent never-ending loop
-				if ( target === copy ) {
+				if ( name === "__proto__" || target === copy ) {
 					continue;
 				}
 
 				// Recurse if we're merging plain objects or arrays
 				if ( deep && copy && ( jQuery.isPlainObject( copy ) ||
 					( copyIsArray = Array.isArray( copy ) ) ) ) {
+					src = target[ name ];
 
-					if ( copyIsArray ) {
-						copyIsArray = false;
-						clone = src && Array.isArray( src ) ? src : [];
-
+					// Ensure proper type for the source value
+					if ( copyIsArray && !Array.isArray( src ) ) {
+						clone = [];
+					} else if ( !copyIsArray && !jQuery.isPlainObject( src ) ) {
+						clone = {};
 					} else {
-						clone = src && jQuery.isPlainObject( src ) ? src : {};
+						clone = src;
 					}
+					copyIsArray = false;
 
 					// Never move original objects, clone them
 					target[ name ] = jQuery.extend( deep, clone, copy );
@@ -19548,9 +20029,6 @@ jQuery.extend( {
 	},
 
 	isEmptyObject: function( obj ) {
-
-		/* eslint-disable no-unused-vars */
-		// See https://github.com/eslint/eslint/issues/6125
 		var name;
 
 		for ( name in obj ) {
@@ -19560,8 +20038,8 @@ jQuery.extend( {
 	},
 
 	// Evaluates a script in a global context
-	globalEval: function( code ) {
-		DOMEval( code );
+	globalEval: function( code, options ) {
+		DOMEval( code, { nonce: options && options.nonce } );
 	},
 
 	each: function( obj, callback ) {
@@ -19717,14 +20195,14 @@ function isArrayLike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v2.3.3
+ * Sizzle CSS Selector Engine v2.3.4
  * https://sizzlejs.com/
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright JS Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://js.foundation/
  *
- * Date: 2016-08-08
+ * Date: 2019-04-08
  */
 (function( window ) {
 
@@ -19758,6 +20236,7 @@ var i,
 	classCache = createCache(),
 	tokenCache = createCache(),
 	compilerCache = createCache(),
+	nonnativeSelectorCache = createCache(),
 	sortOrder = function( a, b ) {
 		if ( a === b ) {
 			hasDuplicate = true;
@@ -19819,8 +20298,7 @@ var i,
 
 	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
 	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
-
-	rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+	rdescend = new RegExp( whitespace + "|>" ),
 
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
@@ -19841,6 +20319,7 @@ var i,
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
+	rhtml = /HTML$/i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
 
@@ -19895,9 +20374,9 @@ var i,
 		setDocument();
 	},
 
-	disabledAncestor = addCombinator(
+	inDisabledFieldset = addCombinator(
 		function( elem ) {
-			return elem.disabled === true && ("form" in elem || "label" in elem);
+			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
 		},
 		{ dir: "parentNode", next: "legend" }
 	);
@@ -20010,18 +20489,22 @@ function Sizzle( selector, context, results, seed ) {
 
 			// Take advantage of querySelectorAll
 			if ( support.qsa &&
-				!compilerCache[ selector + " " ] &&
-				(!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
+				!nonnativeSelectorCache[ selector + " " ] &&
+				(!rbuggyQSA || !rbuggyQSA.test( selector )) &&
 
-				if ( nodeType !== 1 ) {
-					newContext = context;
-					newSelector = selector;
-
-				// qSA looks outside Element context, which is not what we want
-				// Thanks to Andrew Dupont for this workaround technique
-				// Support: IE <=8
+				// Support: IE 8 only
 				// Exclude object elements
-				} else if ( context.nodeName.toLowerCase() !== "object" ) {
+				(nodeType !== 1 || context.nodeName.toLowerCase() !== "object") ) {
+
+				newSelector = selector;
+				newContext = context;
+
+				// qSA considers elements outside a scoping root when evaluating child or
+				// descendant combinators, which is not what we want.
+				// In such cases, we work around the behavior by prefixing every selector in the
+				// list with an ID selector referencing the scope context.
+				// Thanks to Andrew Dupont for this technique.
+				if ( nodeType === 1 && rdescend.test( selector ) ) {
 
 					// Capture the context ID, setting it first if necessary
 					if ( (nid = context.getAttribute( "id" )) ) {
@@ -20043,17 +20526,16 @@ function Sizzle( selector, context, results, seed ) {
 						context;
 				}
 
-				if ( newSelector ) {
-					try {
-						push.apply( results,
-							newContext.querySelectorAll( newSelector )
-						);
-						return results;
-					} catch ( qsaError ) {
-					} finally {
-						if ( nid === expando ) {
-							context.removeAttribute( "id" );
-						}
+				try {
+					push.apply( results,
+						newContext.querySelectorAll( newSelector )
+					);
+					return results;
+				} catch ( qsaError ) {
+					nonnativeSelectorCache( selector, true );
+				} finally {
+					if ( nid === expando ) {
+						context.removeAttribute( "id" );
 					}
 				}
 			}
@@ -20217,7 +20699,7 @@ function createDisabledPseudo( disabled ) {
 					// Where there is no isDisabled, check manually
 					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
-						disabledAncestor( elem ) === disabled;
+						inDisabledFieldset( elem ) === disabled;
 			}
 
 			return elem.disabled === disabled;
@@ -20274,10 +20756,13 @@ support = Sizzle.support = {};
  * @returns {Boolean} True iff elem is a non-HTML XML node
  */
 isXML = Sizzle.isXML = function( elem ) {
-	// documentElement is verified for cases where it doesn't yet exist
-	// (such as loading iframes in IE - #4833)
-	var documentElement = elem && (elem.ownerDocument || elem).documentElement;
-	return documentElement ? documentElement.nodeName !== "HTML" : false;
+	var namespace = elem.namespaceURI,
+		docElem = (elem.ownerDocument || elem).documentElement;
+
+	// Support: IE <=8
+	// Assume HTML when documentElement doesn't yet exist, such as inside loading iframes
+	// https://bugs.jquery.com/ticket/4833
+	return !rhtml.test( namespace || docElem && docElem.nodeName || "HTML" );
 };
 
 /**
@@ -20699,11 +21184,8 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		setDocument( elem );
 	}
 
-	// Make sure that attribute selectors are quoted
-	expr = expr.replace( rattributeQuotes, "='$1']" );
-
 	if ( support.matchesSelector && documentIsHTML &&
-		!compilerCache[ expr + " " ] &&
+		!nonnativeSelectorCache[ expr + " " ] &&
 		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
 		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
 
@@ -20717,7 +21199,9 @@ Sizzle.matchesSelector = function( elem, expr ) {
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
 			}
-		} catch (e) {}
+		} catch (e) {
+			nonnativeSelectorCache( expr, true );
+		}
 	}
 
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
@@ -21176,7 +21660,7 @@ Expr = Sizzle.selectors = {
 		"contains": markFunction(function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
-				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+				return ( elem.textContent || getText( elem ) ).indexOf( text ) > -1;
 			};
 		}),
 
@@ -21315,7 +21799,11 @@ Expr = Sizzle.selectors = {
 		}),
 
 		"lt": createPositionalPseudo(function( matchIndexes, length, argument ) {
-			var i = argument < 0 ? argument + length : argument;
+			var i = argument < 0 ?
+				argument + length :
+				argument > length ?
+					length :
+					argument;
 			for ( ; --i >= 0; ) {
 				matchIndexes.push( i );
 			}
@@ -22365,18 +22853,18 @@ jQuery.each( {
 		return siblings( elem.firstChild );
 	},
 	contents: function( elem ) {
-        if ( nodeName( elem, "iframe" ) ) {
-            return elem.contentDocument;
-        }
+		if ( typeof elem.contentDocument !== "undefined" ) {
+			return elem.contentDocument;
+		}
 
-        // Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-        // Treat the template element as a regular one in browsers that
-        // don't support it.
-        if ( nodeName( elem, "template" ) ) {
-            elem = elem.content || elem;
-        }
+		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
+		// Treat the template element as a regular one in browsers that
+		// don't support it.
+		if ( nodeName( elem, "template" ) ) {
+			elem = elem.content || elem;
+		}
 
-        return jQuery.merge( [], elem.childNodes );
+		return jQuery.merge( [], elem.childNodes );
 	}
 }, function( name, fn ) {
 	jQuery.fn[ name ] = function( until, selector ) {
@@ -23685,6 +24173,26 @@ var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
 
 var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
+var documentElement = document.documentElement;
+
+
+
+	var isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem );
+		},
+		composed = { composed: true };
+
+	// Support: IE 9 - 11+, Edge 12 - 18+, iOS 10.0 - 10.2 only
+	// Check attachment across shadow DOM boundaries when possible (gh-3504)
+	// Support: iOS 10.0-10.2 only
+	// Early iOS 10 versions support `attachShadow` but not `getRootNode`,
+	// leading to errors. We need to check for `getRootNode`.
+	if ( documentElement.getRootNode ) {
+		isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem ) ||
+				elem.getRootNode( composed ) === elem.ownerDocument;
+		};
+	}
 var isHiddenWithinTree = function( elem, el ) {
 
 		// isHiddenWithinTree might be called from jQuery#filter function;
@@ -23699,7 +24207,7 @@ var isHiddenWithinTree = function( elem, el ) {
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
-			jQuery.contains( elem.ownerDocument, elem ) &&
+			isAttached( elem ) &&
 
 			jQuery.css( elem, "display" ) === "none";
 	};
@@ -23741,7 +24249,8 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
 
 		// Starting value computation is required for potential unit mismatches
-		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
+		initialInUnit = elem.nodeType &&
+			( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
@@ -23888,7 +24397,7 @@ jQuery.fn.extend( {
 } );
 var rcheckableType = ( /^(?:checkbox|radio)$/i );
 
-var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]+)/i );
+var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]*)/i );
 
 var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 
@@ -23960,7 +24469,7 @@ function setGlobalEval( elems, refElements ) {
 var rhtml = /<|&#?\w+;/;
 
 function buildFragment( elems, context, scripts, selection, ignored ) {
-	var elem, tmp, tag, wrap, contains, j,
+	var elem, tmp, tag, wrap, attached, j,
 		fragment = context.createDocumentFragment(),
 		nodes = [],
 		i = 0,
@@ -24024,13 +24533,13 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			continue;
 		}
 
-		contains = jQuery.contains( elem.ownerDocument, elem );
+		attached = isAttached( elem );
 
 		// Append to fragment
 		tmp = getAll( fragment.appendChild( elem ), "script" );
 
 		// Preserve script evaluation history
-		if ( contains ) {
+		if ( attached ) {
 			setGlobalEval( tmp );
 		}
 
@@ -24073,8 +24582,6 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 	div.innerHTML = "<textarea>x</textarea>";
 	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
 } )();
-var documentElement = document.documentElement;
-
 
 
 var
@@ -24090,8 +24597,19 @@ function returnFalse() {
 	return false;
 }
 
+// Support: IE <=9 - 11+
+// focus() and blur() are asynchronous, except when they are no-op.
+// So expect focus to be synchronous when the element is already active,
+// and blur to be synchronous when the element is not already active.
+// (focus and blur are always synchronous in other supported browsers,
+// this just defines when we can count on it).
+function expectSync( elem, type ) {
+	return ( elem === safeActiveElement() ) === ( type === "focus" );
+}
+
 // Support: IE <=9 only
-// See #13393 for more info
+// Accessing document.activeElement can throw unexpectedly
+// https://bugs.jquery.com/ticket/13393
 function safeActiveElement() {
 	try {
 		return document.activeElement;
@@ -24391,9 +24909,10 @@ jQuery.event = {
 			while ( ( handleObj = matched.handlers[ j++ ] ) &&
 				!event.isImmediatePropagationStopped() ) {
 
-				// Triggered event must either 1) have no namespace, or 2) have namespace(s)
-				// a subset or equal to those in the bound event (both can have no namespace).
-				if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
+				// If the event is namespaced, then each handler is only invoked if it is
+				// specially universal or its namespaces are a superset of the event's.
+				if ( !event.rnamespace || handleObj.namespace === false ||
+					event.rnamespace.test( handleObj.namespace ) ) {
 
 					event.handleObj = handleObj;
 					event.data = handleObj.data;
@@ -24517,39 +25036,51 @@ jQuery.event = {
 			// Prevent triggered image.load events from bubbling to window.load
 			noBubble: true
 		},
-		focus: {
-
-			// Fire native event if possible so blur/focus sequence is correct
-			trigger: function() {
-				if ( this !== safeActiveElement() && this.focus ) {
-					this.focus();
-					return false;
-				}
-			},
-			delegateType: "focusin"
-		},
-		blur: {
-			trigger: function() {
-				if ( this === safeActiveElement() && this.blur ) {
-					this.blur();
-					return false;
-				}
-			},
-			delegateType: "focusout"
-		},
 		click: {
 
-			// For checkbox, fire native event so checked state will be right
-			trigger: function() {
-				if ( this.type === "checkbox" && this.click && nodeName( this, "input" ) ) {
-					this.click();
-					return false;
+			// Utilize native event to ensure correct state for checkable inputs
+			setup: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Claim the first handler
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					// dataPriv.set( el, "click", ... )
+					leverageNative( el, "click", returnTrue );
 				}
+
+				// Return false to allow normal processing in the caller
+				return false;
+			},
+			trigger: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Force setup before triggering a click
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					leverageNative( el, "click" );
+				}
+
+				// Return non-false to allow normal event-path propagation
+				return true;
 			},
 
-			// For cross-browser consistency, don't fire native .click() on links
+			// For cross-browser consistency, suppress native .click() on links
+			// Also prevent it if we're currently inside a leveraged native-event stack
 			_default: function( event ) {
-				return nodeName( event.target, "a" );
+				var target = event.target;
+				return rcheckableType.test( target.type ) &&
+					target.click && nodeName( target, "input" ) &&
+					dataPriv.get( target, "click" ) ||
+					nodeName( target, "a" );
 			}
 		},
 
@@ -24565,6 +25096,93 @@ jQuery.event = {
 		}
 	}
 };
+
+// Ensure the presence of an event listener that handles manually-triggered
+// synthetic events by interrupting progress until reinvoked in response to
+// *native* events that it fires directly, ensuring that state changes have
+// already occurred before other listeners are invoked.
+function leverageNative( el, type, expectSync ) {
+
+	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
+	if ( !expectSync ) {
+		if ( dataPriv.get( el, type ) === undefined ) {
+			jQuery.event.add( el, type, returnTrue );
+		}
+		return;
+	}
+
+	// Register the controller as a special universal handler for all event namespaces
+	dataPriv.set( el, type, false );
+	jQuery.event.add( el, type, {
+		namespace: false,
+		handler: function( event ) {
+			var notAsync, result,
+				saved = dataPriv.get( this, type );
+
+			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
+
+				// Interrupt processing of the outer synthetic .trigger()ed event
+				// Saved data should be false in such cases, but might be a leftover capture object
+				// from an async native handler (gh-4350)
+				if ( !saved.length ) {
+
+					// Store arguments for use when handling the inner native event
+					// There will always be at least one argument (an event object), so this array
+					// will not be confused with a leftover capture object.
+					saved = slice.call( arguments );
+					dataPriv.set( this, type, saved );
+
+					// Trigger the native event and capture its result
+					// Support: IE <=9 - 11+
+					// focus() and blur() are asynchronous
+					notAsync = expectSync( this, type );
+					this[ type ]();
+					result = dataPriv.get( this, type );
+					if ( saved !== result || notAsync ) {
+						dataPriv.set( this, type, false );
+					} else {
+						result = {};
+					}
+					if ( saved !== result ) {
+
+						// Cancel the outer synthetic event
+						event.stopImmediatePropagation();
+						event.preventDefault();
+						return result.value;
+					}
+
+				// If this is an inner synthetic event for an event with a bubbling surrogate
+				// (focus or blur), assume that the surrogate already propagated from triggering the
+				// native event and prevent that from happening again here.
+				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
+				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
+				// less bad than duplication.
+				} else if ( ( jQuery.event.special[ type ] || {} ).delegateType ) {
+					event.stopPropagation();
+				}
+
+			// If this is a native event triggered above, everything is now in order
+			// Fire an inner synthetic event with the original arguments
+			} else if ( saved.length ) {
+
+				// ...and capture the result
+				dataPriv.set( this, type, {
+					value: jQuery.event.trigger(
+
+						// Support: IE <=9 - 11+
+						// Extend with the prototype to reset the above stopImmediatePropagation()
+						jQuery.extend( saved[ 0 ], jQuery.Event.prototype ),
+						saved.slice( 1 ),
+						this
+					)
+				} );
+
+				// Abort handling of the native event
+				event.stopImmediatePropagation();
+			}
+		}
+	} );
+}
 
 jQuery.removeEvent = function( elem, type, handle ) {
 
@@ -24678,6 +25296,7 @@ jQuery.each( {
 	shiftKey: true,
 	view: true,
 	"char": true,
+	code: true,
 	charCode: true,
 	key: true,
 	keyCode: true,
@@ -24723,6 +25342,33 @@ jQuery.each( {
 		return event.which;
 	}
 }, jQuery.event.addProp );
+
+jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateType ) {
+	jQuery.event.special[ type ] = {
+
+		// Utilize native event if possible so blur/focus sequence is correct
+		setup: function() {
+
+			// Claim the first handler
+			// dataPriv.set( this, "focus", ... )
+			// dataPriv.set( this, "blur", ... )
+			leverageNative( this, type, expectSync );
+
+			// Return false to allow normal processing in the caller
+			return false;
+		},
+		trigger: function() {
+
+			// Force setup before trigger
+			leverageNative( this, type );
+
+			// Return non-false to allow normal event-path propagation
+			return true;
+		},
+
+		delegateType: delegateType
+	};
+} );
 
 // Create mouseenter/leave events using mouseover/out and event-time checks
 // so that event delegation works in jQuery.
@@ -24974,11 +25620,13 @@ function domManip( collection, args, callback, ignored ) {
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl ) {
-								jQuery._evalUrl( node.src );
+							if ( jQuery._evalUrl && !node.noModule ) {
+								jQuery._evalUrl( node.src, {
+									nonce: node.nonce || node.getAttribute( "nonce" )
+								} );
 							}
 						} else {
-							DOMEval( node.textContent.replace( rcleanScript, "" ), doc, node );
+							DOMEval( node.textContent.replace( rcleanScript, "" ), node, doc );
 						}
 					}
 				}
@@ -25000,7 +25648,7 @@ function remove( elem, selector, keepData ) {
 		}
 
 		if ( node.parentNode ) {
-			if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
+			if ( keepData && isAttached( node ) ) {
 				setGlobalEval( getAll( node, "script" ) );
 			}
 			node.parentNode.removeChild( node );
@@ -25018,7 +25666,7 @@ jQuery.extend( {
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
 		var i, l, srcElements, destElements,
 			clone = elem.cloneNode( true ),
-			inPage = jQuery.contains( elem.ownerDocument, elem );
+			inPage = isAttached( elem );
 
 		// Fix IE cloning issues
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
@@ -25314,8 +25962,10 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
 		// Support: IE 9 only
 		// Detect overflow:scroll screwiness (gh-3699)
+		// Support: Chrome <=64
+		// Don't get tricked when zoom affects offsetWidth (gh-4029)
 		div.style.position = "absolute";
-		scrollboxSizeVal = div.offsetWidth === 36 || "absolute";
+		scrollboxSizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
 
 		documentElement.removeChild( container );
 
@@ -25386,7 +26036,7 @@ function curCSS( elem, name, computed ) {
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+		if ( ret === "" && !isAttached( elem ) ) {
 			ret = jQuery.style( elem, name );
 		}
 
@@ -25442,29 +26092,12 @@ function addGetHookIf( conditionFn, hookFn ) {
 }
 
 
-var
+var cssPrefixes = [ "Webkit", "Moz", "ms" ],
+	emptyStyle = document.createElement( "div" ).style,
+	vendorProps = {};
 
-	// Swappable if display is none or starts with table
-	// except "table", "table-cell", or "table-caption"
-	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
-	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
-	rcustomProp = /^--/,
-	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
-	cssNormalTransform = {
-		letterSpacing: "0",
-		fontWeight: "400"
-	},
-
-	cssPrefixes = [ "Webkit", "Moz", "ms" ],
-	emptyStyle = document.createElement( "div" ).style;
-
-// Return a css property mapped to a potentially vendor prefixed property
+// Return a vendor-prefixed property or undefined
 function vendorPropName( name ) {
-
-	// Shortcut for names that are not vendor prefixed
-	if ( name in emptyStyle ) {
-		return name;
-	}
 
 	// Check for vendor prefixed names
 	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),
@@ -25478,15 +26111,32 @@ function vendorPropName( name ) {
 	}
 }
 
-// Return a property mapped along what jQuery.cssProps suggests or to
-// a vendor prefixed property.
+// Return a potentially-mapped jQuery.cssProps or vendor prefixed property
 function finalPropName( name ) {
-	var ret = jQuery.cssProps[ name ];
-	if ( !ret ) {
-		ret = jQuery.cssProps[ name ] = vendorPropName( name ) || name;
+	var final = jQuery.cssProps[ name ] || vendorProps[ name ];
+
+	if ( final ) {
+		return final;
 	}
-	return ret;
+	if ( name in emptyStyle ) {
+		return name;
+	}
+	return vendorProps[ name ] = vendorPropName( name ) || name;
 }
+
+
+var
+
+	// Swappable if display is none or starts with table
+	// except "table", "table-cell", or "table-caption"
+	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
+	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
+	rcustomProp = /^--/,
+	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
+	cssNormalTransform = {
+		letterSpacing: "0",
+		fontWeight: "400"
+	};
 
 function setPositiveNumber( elem, value, subtract ) {
 
@@ -25559,7 +26209,10 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 			delta -
 			extra -
 			0.5
-		) );
+
+		// If offsetWidth/offsetHeight is unknown, then we can't determine content-box scroll gutter
+		// Use an explicit zero to avoid NaN (gh-3964)
+		) ) || 0;
 	}
 
 	return delta;
@@ -25569,9 +26222,16 @@ function getWidthOrHeight( elem, dimension, extra ) {
 
 	// Start with computed style
 	var styles = getStyles( elem ),
+
+		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
+		// Fake content-box until we know it's needed to know the true value.
+		boxSizingNeeded = !support.boxSizingReliable() || extra,
+		isBorderBox = boxSizingNeeded &&
+			jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+		valueIsBorderBox = isBorderBox,
+
 		val = curCSS( elem, dimension, styles ),
-		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-		valueIsBorderBox = isBorderBox;
+		offsetProp = "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 );
 
 	// Support: Firefox <=54
 	// Return a confounding non-pixel value or feign ignorance, as appropriate.
@@ -25582,22 +26242,29 @@ function getWidthOrHeight( elem, dimension, extra ) {
 		val = "auto";
 	}
 
-	// Check for style in case a browser which returns unreliable values
-	// for getComputedStyle silently falls back to the reliable elem.style
-	valueIsBorderBox = valueIsBorderBox &&
-		( support.boxSizingReliable() || val === elem.style[ dimension ] );
 
 	// Fall back to offsetWidth/offsetHeight when value is "auto"
 	// This happens for inline elements with no explicit setting (gh-3571)
 	// Support: Android <=4.1 - 4.3 only
 	// Also use offsetWidth/offsetHeight for misreported inline dimensions (gh-3602)
-	if ( val === "auto" ||
-		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) {
+	// Support: IE 9-11 only
+	// Also use offsetWidth/offsetHeight for when box sizing is unreliable
+	// We use getClientRects() to check for hidden/disconnected.
+	// In those cases, the computed value can be trusted to be border-box
+	if ( ( !support.boxSizingReliable() && isBorderBox ||
+		val === "auto" ||
+		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) &&
+		elem.getClientRects().length ) {
 
-		val = elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ];
+		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
-		// offsetWidth/offsetHeight provide border-box values
-		valueIsBorderBox = true;
+		// Where available, offsetWidth/offsetHeight approximate border box dimensions.
+		// Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
+		// retrieved value as a content box dimension.
+		valueIsBorderBox = offsetProp in elem;
+		if ( valueIsBorderBox ) {
+			val = elem[ offsetProp ];
+		}
 	}
 
 	// Normalize "" and auto
@@ -25643,6 +26310,13 @@ jQuery.extend( {
 		"flexGrow": true,
 		"flexShrink": true,
 		"fontWeight": true,
+		"gridArea": true,
+		"gridColumn": true,
+		"gridColumnEnd": true,
+		"gridColumnStart": true,
+		"gridRow": true,
+		"gridRowEnd": true,
+		"gridRowStart": true,
 		"lineHeight": true,
 		"opacity": true,
 		"order": true,
@@ -25698,7 +26372,9 @@ jQuery.extend( {
 			}
 
 			// If a number was passed in, add the unit (except for certain CSS properties)
-			if ( type === "number" ) {
+			// The isCustomProp check can be removed in jQuery 4.0 when we only auto-append
+			// "px" to a few hardcoded values.
+			if ( type === "number" && !isCustomProp ) {
 				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 			}
 
@@ -25798,18 +26474,29 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 		set: function( elem, value, extra ) {
 			var matches,
 				styles = getStyles( elem ),
-				isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-				subtract = extra && boxModelAdjustment(
-					elem,
-					dimension,
-					extra,
-					isBorderBox,
-					styles
-				);
+
+				// Only read styles.position if the test has a chance to fail
+				// to avoid forcing a reflow.
+				scrollboxSizeBuggy = !support.scrollboxSize() &&
+					styles.position === "absolute",
+
+				// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-3991)
+				boxSizingNeeded = scrollboxSizeBuggy || extra,
+				isBorderBox = boxSizingNeeded &&
+					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+				subtract = extra ?
+					boxModelAdjustment(
+						elem,
+						dimension,
+						extra,
+						isBorderBox,
+						styles
+					) :
+					0;
 
 			// Account for unreliable border-box dimensions by comparing offset* to computed and
 			// faking a content-box to get border and padding (gh-3699)
-			if ( isBorderBox && support.scrollboxSize() === styles.position ) {
+			if ( isBorderBox && scrollboxSizeBuggy ) {
 				subtract -= Math.ceil(
 					elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
 					parseFloat( styles[ dimension ] ) -
@@ -25977,9 +26664,9 @@ Tween.propHooks = {
 			// Use .style if available and use plain properties where available.
 			if ( jQuery.fx.step[ tween.prop ] ) {
 				jQuery.fx.step[ tween.prop ]( tween );
-			} else if ( tween.elem.nodeType === 1 &&
-				( tween.elem.style[ jQuery.cssProps[ tween.prop ] ] != null ||
-					jQuery.cssHooks[ tween.prop ] ) ) {
+			} else if ( tween.elem.nodeType === 1 && (
+					jQuery.cssHooks[ tween.prop ] ||
+					tween.elem.style[ finalPropName( tween.prop ) ] != null ) ) {
 				jQuery.style( tween.elem, tween.prop, tween.now + tween.unit );
 			} else {
 				tween.elem[ tween.prop ] = tween.now;
@@ -27686,6 +28373,10 @@ jQuery.param = function( a, traditional ) {
 				encodeURIComponent( value == null ? "" : value );
 		};
 
+	if ( a == null ) {
+		return "";
+	}
+
 	// If an array was passed in, assume that it is an array of form elements.
 	if ( Array.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
 
@@ -28188,12 +28879,14 @@ jQuery.extend( {
 						if ( !responseHeaders ) {
 							responseHeaders = {};
 							while ( ( match = rheaders.exec( responseHeadersString ) ) ) {
-								responseHeaders[ match[ 1 ].toLowerCase() ] = match[ 2 ];
+								responseHeaders[ match[ 1 ].toLowerCase() + " " ] =
+									( responseHeaders[ match[ 1 ].toLowerCase() + " " ] || [] )
+										.concat( match[ 2 ] );
 							}
 						}
-						match = responseHeaders[ key.toLowerCase() ];
+						match = responseHeaders[ key.toLowerCase() + " " ];
 					}
-					return match == null ? null : match;
+					return match == null ? null : match.join( ", " );
 				},
 
 				// Raw string
@@ -28582,7 +29275,7 @@ jQuery.each( [ "get", "post" ], function( i, method ) {
 } );
 
 
-jQuery._evalUrl = function( url ) {
+jQuery._evalUrl = function( url, options ) {
 	return jQuery.ajax( {
 		url: url,
 
@@ -28592,7 +29285,16 @@ jQuery._evalUrl = function( url ) {
 		cache: true,
 		async: false,
 		global: false,
-		"throws": true
+
+		// Only evaluate the response if it is successful (gh-4126)
+		// dataFilter is not invoked for failure responses, so using it instead
+		// of the default converter is kludgy but it works.
+		converters: {
+			"text script": function() {}
+		},
+		dataFilter: function( response ) {
+			jQuery.globalEval( response, options );
+		}
 	} );
 };
 
@@ -28875,24 +29577,21 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function( s ) {
 
-	// This transport only deals with cross domain requests
-	if ( s.crossDomain ) {
+	// This transport only deals with cross domain or forced-by-attrs requests
+	if ( s.crossDomain || s.scriptAttrs ) {
 		var script, callback;
 		return {
 			send: function( _, complete ) {
-				script = jQuery( "<script>" ).prop( {
-					charset: s.scriptCharset,
-					src: s.url
-				} ).on(
-					"load error",
-					callback = function( evt ) {
+				script = jQuery( "<script>" )
+					.attr( s.scriptAttrs || {} )
+					.prop( { charset: s.scriptCharset, src: s.url } )
+					.on( "load error", callback = function( evt ) {
 						script.remove();
 						callback = null;
 						if ( evt ) {
 							complete( evt.type === "error" ? 404 : 200, evt.type );
 						}
-					}
-				);
+					} );
 
 				// Use native DOM manipulation to avoid our domManip AJAX trickery
 				document.head.appendChild( script[ 0 ] );
@@ -29587,16 +30286,20 @@ return jQuery;
 /***/ }),
 
 /***/ "./node_modules/lightbox2/dist/js/lightbox.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lightbox2/dist/js/lightbox.js ***!
+  \****************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * Lightbox v2.10.0
+ * Lightbox v2.11.0
  * by Lokesh Dhakar
  *
  * More info:
  * http://lokeshdhakar.com/projects/lightbox2/
  *
- * Copyright 2007, 2018 Lokesh Dhakar
+ * Copyright Lokesh Dhakar
  * Released under the MIT license
  * https://github.com/lokesh/lightbox2/blob/master/LICENSE
  *
@@ -29607,19 +30310,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 (function (root, factory) {
     if (true) {
         // AMD. Register as an anonymous module.
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__("./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else if (typeof exports === 'object') {
-        // Node. Does not work with strict CommonJS, but
-        // only CommonJS-like environments that support module.exports,
-        // like Node.
-        module.exports = factory(require('jquery'));
-    } else {
-        // Browser globals (root is window)
-        root.lightbox = factory(root.jQuery);
-    }
+    } else {}
 }(this, function ($) {
 
   function Lightbox(options) {
@@ -29693,7 +30388,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
 
     var self = this;
-    $('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" /><div class="lb-nav"><a class="lb-prev" href="" ></a><a class="lb-next" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>').appendTo($('body'));
+    $('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""/><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href="" ></a><a class="lb-next" aria-label="Next image" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>').appendTo($('body'));
 
     // Cache jQuery objects
     this.$lightbox       = $('#lightbox');
@@ -29728,7 +30423,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       if ($(event.target).attr('id') === 'lightbox') {
         self.end();
       }
-      return false;
     });
 
     this.$outerContainer.on('click', function(event) {
@@ -29795,10 +30489,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     $window.on('resize', $.proxy(this.sizeOverlay, this));
 
-    $('select, object, embed').css({
-      visibility: 'hidden'
-    });
-
     this.sizeOverlay();
 
     this.album = [];
@@ -29850,7 +30540,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
     // Disable scrolling of the page while open
     if (this.options.disableScrolling) {
-      $('html').addClass('lb-disable-scrolling');
+      $('body').addClass('lb-disable-scrolling');
     }
 
     this.changeImage(imageNumber);
@@ -29859,15 +30549,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   // Hide most UI elements in preparation for the animated resizing of the lightbox.
   Lightbox.prototype.changeImage = function(imageNumber) {
     var self = this;
-
-    this.disableKeyboardNav();
+    var filename = this.album[imageNumber].link;
+    var filetype = filename.split('.').slice(-1)[0];
     var $image = this.$lightbox.find('.lb-image');
 
-    this.$overlay.fadeIn(this.options.fadeDuration);
+    // Disable keyboard nav during transitions
+    this.disableKeyboardNav();
 
+    // Show loading state
+    this.$overlay.fadeIn(this.options.fadeDuration);
     $('.lb-loader').fadeIn('slow');
     this.$lightbox.find('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
-
     this.$outerContainer.addClass('animating');
 
     // When image to show is preloaded, we send the width and height to sizeContainer()
@@ -29883,22 +30575,38 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
       $image.attr({
         'alt': self.album[imageNumber].alt,
-        'src': self.album[imageNumber].link
+        'src': filename
       });
 
       $preloader = $(preloader);
 
       $image.width(preloader.width);
       $image.height(preloader.height);
+      windowWidth = $(window).width();
+      windowHeight = $(window).height();
 
+      // Calculate the max image dimensions for the current viewport.
+      // Take into account the border around the image and an additional 10px gutter on each side.
+      maxImageWidth  = windowWidth - self.containerPadding.left - self.containerPadding.right - self.imageBorderWidth.left - self.imageBorderWidth.right - 20;
+      maxImageHeight = windowHeight - self.containerPadding.top - self.containerPadding.bottom - self.imageBorderWidth.top - self.imageBorderWidth.bottom - self.options.positionFromTop - 70;
+
+      /*
+      SVGs that don't have width and height attributes specified are reporting width and height
+      values of 0 in Firefox 47 and IE11 on Windows. To fix, we set the width and height to the max
+      dimensions for the viewport rather than 0 x 0.
+
+      https://github.com/lokesh/lightbox2/issues/552
+      */
+
+      if (filetype === 'svg') {
+        if ((preloader.width === 0) || preloader.height === 0) {
+          $image.width(maxImageWidth);
+          $image.height(maxImageHeight);
+        }
+      }
+
+      // Fit image inside the viewport.
       if (self.options.fitImagesInViewport) {
-        // Fit image inside the viewport.
-        // Take into account the border around the image and an additional 10px gutter on each side.
-
-        windowWidth    = $(window).width();
-        windowHeight   = $(window).height();
-        maxImageWidth  = windowWidth - self.containerPadding.left - self.containerPadding.right - self.imageBorderWidth.left - self.imageBorderWidth.right - 20;
-        maxImageHeight = windowHeight - self.containerPadding.top - self.containerPadding.bottom - self.imageBorderWidth.top - self.imageBorderWidth.bottom - 120;
 
         // Check if image size is larger then maxWidth|maxHeight in settings
         if (self.options.maxWidth && self.options.maxWidth < maxImageWidth) {
@@ -29927,18 +30635,31 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       self.sizeContainer($image.width(), $image.height());
     };
 
-    preloader.src          = this.album[imageNumber].link;
+    // Preload image before showing
+    preloader.src = this.album[imageNumber].link;
     this.currentImageIndex = imageNumber;
   };
 
   // Stretch overlay to fit the viewport
   Lightbox.prototype.sizeOverlay = function() {
-    this.$overlay
-      .width($(document).width())
-      .height($(document).height());
+    var self = this;
+    /*
+    We use a setTimeout 0 to pause JS execution and let the rendering catch-up.
+    Why do this? If the `disableScrolling` option is set to true, a class is added to the body
+    tag that disables scrolling and hides the scrollbar. We want to make sure the scrollbar is
+    hidden before we measure the document width, as the presence of the scrollbar will affect the
+    number.
+    */
+    setTimeout(function() {
+      self.$overlay
+        .width($(document).width())
+        .height($(document).height());
+
+    }, 0);
   };
 
   // Animate the size of the lightbox to fit the image we are showing
+  // This method also shows the the image.
   Lightbox.prototype.sizeContainer = function(imageWidth, imageHeight) {
     var self = this;
 
@@ -30027,14 +30748,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       } else {
         $caption.html(this.album[this.currentImageIndex].title);
       }
-      $caption.fadeIn('fast')
-        .find('a').on('click', function(event) {
-          if ($(this).attr('target') !== undefined) {
-            window.open($(this).attr('href'), $(this).attr('target'));
-          } else {
-            location.href = $(this).attr('href');
-          }
-        });
+      $caption.fadeIn('fast');
     }
 
     if (this.album.length > 1 && this.options.showImageNumberLabel) {
@@ -30077,16 +30791,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var KEYCODE_RIGHTARROW = 39;
 
     var keycode = event.keyCode;
-    var key     = String.fromCharCode(keycode).toLowerCase();
-    if (keycode === KEYCODE_ESC || key.match(/x|o|c/)) {
+    if (keycode === KEYCODE_ESC) {
       this.end();
-    } else if (key === 'p' || keycode === KEYCODE_LEFTARROW) {
+    } else if (keycode === KEYCODE_LEFTARROW) {
       if (this.currentImageIndex !== 0) {
         this.changeImage(this.currentImageIndex - 1);
       } else if (this.options.wrapAround && this.album.length > 1) {
         this.changeImage(this.album.length - 1);
       }
-    } else if (key === 'n' || keycode === KEYCODE_RIGHTARROW) {
+    } else if (keycode === KEYCODE_RIGHTARROW) {
       if (this.currentImageIndex !== this.album.length - 1) {
         this.changeImage(this.currentImageIndex + 1);
       } else if (this.options.wrapAround && this.album.length > 1) {
@@ -30101,11 +30814,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     $(window).off('resize', this.sizeOverlay);
     this.$lightbox.fadeOut(this.options.fadeDuration);
     this.$overlay.fadeOut(this.options.fadeDuration);
-    $('select, object, embed').css({
-      visibility: 'visible'
-    });
+
     if (this.options.disableScrolling) {
-      $('html').removeClass('lb-disable-scrolling');
+      $('body').removeClass('lb-disable-scrolling');
     }
   };
 
@@ -30116,6 +30827,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ }),
 
 /***/ "./node_modules/lodash/lodash.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/lodash.js ***!
+  \***************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -30132,7 +30847,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.10';
+  var VERSION = '4.17.11';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -30396,7 +31111,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
 
   /** Used to detect strings that need a more robust regexp to match words. */
-  var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
+  var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
 
   /** Used to assign default `context` object properties. */
   var contextProps = [
@@ -30542,7 +31257,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var root = freeGlobal || freeSelf || Function('return this')();
 
   /** Detect free variable `exports`. */
-  var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+  var freeExports =  true && exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
   var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
@@ -31342,20 +32057,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }
     return result;
-  }
-
-  /**
-   * Gets the value at `key`, unless `key` is "__proto__".
-   *
-   * @private
-   * @param {Object} object The object to query.
-   * @param {string} key The key of the property to get.
-   * @returns {*} Returns the property value.
-   */
-  function safeGet(object, key) {
-    return key == '__proto__'
-      ? undefined
-      : object[key];
   }
 
   /**
@@ -33815,7 +34516,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           if (isArguments(objValue)) {
             newValue = toPlainObject(objValue);
           }
-          else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
+          else if (!isObject(objValue) || isFunction(objValue)) {
             newValue = initCloneObject(srcValue);
           }
         }
@@ -36736,6 +37437,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         array[length] = isIndex(index, arrLength) ? oldArray[index] : undefined;
       }
       return array;
+    }
+
+    /**
+     * Gets the value at `key`, unless `key` is "__proto__".
+     *
+     * @private
+     * @param {Object} object The object to query.
+     * @param {string} key The key of the property to get.
+     * @returns {*} Returns the property value.
+     */
+    function safeGet(object, key) {
+      if (key == '__proto__') {
+        return;
+      }
+
+      return object[key];
     }
 
     /**
@@ -47213,23 +47930,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
-  else if (freeModule) {
-    // Export for Node.js.
-    (freeModule.exports = _)._ = _;
-    // Export for CommonJS support.
-    freeExports._ = _;
-  }
-  else {
-    // Export to the global object.
-    root._ = _;
-  }
+  else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js"), __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale recursive ^\\.\\/.*$":
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -47285,6 +47997,8 @@ var map = {
 	"./dv.js": "./node_modules/moment/locale/dv.js",
 	"./el": "./node_modules/moment/locale/el.js",
 	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-SG": "./node_modules/moment/locale/en-SG.js",
+	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
 	"./en-au": "./node_modules/moment/locale/en-au.js",
 	"./en-au.js": "./node_modules/moment/locale/en-au.js",
 	"./en-ca": "./node_modules/moment/locale/en-ca.js",
@@ -47323,6 +48037,8 @@ var map = {
 	"./fr.js": "./node_modules/moment/locale/fr.js",
 	"./fy": "./node_modules/moment/locale/fy.js",
 	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
 	"./gd": "./node_modules/moment/locale/gd.js",
 	"./gd.js": "./node_modules/moment/locale/gd.js",
 	"./gl": "./node_modules/moment/locale/gl.js",
@@ -47346,6 +48062,8 @@ var map = {
 	"./is": "./node_modules/moment/locale/is.js",
 	"./is.js": "./node_modules/moment/locale/is.js",
 	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
 	"./it.js": "./node_modules/moment/locale/it.js",
 	"./ja": "./node_modules/moment/locale/ja.js",
 	"./ja.js": "./node_modules/moment/locale/ja.js",
@@ -47361,6 +48079,8 @@ var map = {
 	"./kn.js": "./node_modules/moment/locale/kn.js",
 	"./ko": "./node_modules/moment/locale/ko.js",
 	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
 	"./ky": "./node_modules/moment/locale/ky.js",
 	"./ky.js": "./node_modules/moment/locale/ky.js",
 	"./lb": "./node_modules/moment/locale/lb.js",
@@ -47480,33 +48200,41 @@ var map = {
 	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
 	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
 };
+
+
 function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
 function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
 webpackContext.keys = function webpackContextKeys() {
 	return Object.keys(map);
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
 /***/ "./node_modules/moment/locale/af.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/af.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -47577,14 +48305,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar-dz.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-dz.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -47629,7 +48360,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 4  // The week that contains Jan 1st is the first week of the year.
+            doy : 4  // The week that contains Jan 4th is the first week of the year.
         }
     });
 
@@ -47641,14 +48372,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar-kw.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-kw.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -47693,7 +48427,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -47705,14 +48439,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar-ly.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-ly.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -47820,7 +48557,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 6, // Saturday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -47832,14 +48569,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar-ma.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-ma.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -47884,7 +48624,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 6, // Saturday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -47896,14 +48636,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar-sa.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-sa.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -47993,7 +48736,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -48005,14 +48748,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar-tn.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ar-tn.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48069,14 +48815,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ar.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ar.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48197,7 +48946,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 6, // Saturday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -48209,14 +48958,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/az.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/az.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48307,7 +49059,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -48319,14 +49071,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/be.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/be.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48444,7 +49199,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -48456,14 +49211,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/bg.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bg.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48539,7 +49297,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -48551,14 +49309,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/bm.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bm.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48614,14 +49375,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/bn.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bn.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48726,7 +49490,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -48738,14 +49502,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/bo.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bo.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48850,7 +49617,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -48862,14 +49629,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/br.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/br.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -48975,14 +49745,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/bs.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/bs.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49119,7 +49892,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -49131,14 +49904,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ca.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ca.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49224,19 +50000,28 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/cs.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/cs.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
     var months = 'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split('_'),
         monthsShort = 'led_úno_bře_dub_kvě_čvn_čvc_srp_zář_říj_lis_pro'.split('_');
+
+    var monthsParse = [/^led/i, /^úno/i, /^bře/i, /^dub/i, /^kvě/i, /^(čvn|červen$|června)/i, /^(čvc|červenec|července)/i, /^srp/i, /^zář/i, /^říj/i, /^lis/i, /^pro/i];
+    // NOTE: 'červen' is substring of 'červenec'; therefore 'červenec' must precede 'červen' in the regex to be fully matched.
+    // Otherwise parser matches '1. červenec' as '1. červen' + 'ec'.
+    var monthsRegex = /^(leden|únor|březen|duben|květen|červenec|července|červen|června|srpen|září|říjen|listopad|prosinec|led|úno|bře|dub|kvě|čvn|čvc|srp|zář|říj|lis|pro)/i;
+
     function plural(n) {
         return (n > 1) && (n < 5) && (~~(n / 10) !== 1);
     }
@@ -49303,28 +50088,15 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     var cs = moment.defineLocale('cs', {
         months : months,
         monthsShort : monthsShort,
-        monthsParse : (function (months, monthsShort) {
-            var i, _monthsParse = [];
-            for (i = 0; i < 12; i++) {
-                // use custom parser to solve problem with July (červenec)
-                _monthsParse[i] = new RegExp('^' + months[i] + '$|^' + monthsShort[i] + '$', 'i');
-            }
-            return _monthsParse;
-        }(months, monthsShort)),
-        shortMonthsParse : (function (monthsShort) {
-            var i, _shortMonthsParse = [];
-            for (i = 0; i < 12; i++) {
-                _shortMonthsParse[i] = new RegExp('^' + monthsShort[i] + '$', 'i');
-            }
-            return _shortMonthsParse;
-        }(monthsShort)),
-        longMonthsParse : (function (months) {
-            var i, _longMonthsParse = [];
-            for (i = 0; i < 12; i++) {
-                _longMonthsParse[i] = new RegExp('^' + months[i] + '$', 'i');
-            }
-            return _longMonthsParse;
-        }(months)),
+        monthsRegex : monthsRegex,
+        monthsShortRegex : monthsRegex,
+        // NOTE: 'červen' is substring of 'červenec'; therefore 'červenec' must precede 'červen' in the regex to be fully matched.
+        // Otherwise parser matches '1. červenec' as '1. červen' + 'ec'.
+        monthsStrictRegex : /^(leden|ledna|února|únor|březen|března|duben|dubna|květen|května|červenec|července|červen|června|srpen|srpna|září|říjen|října|listopadu|listopad|prosinec|prosince)/i,
+        monthsShortStrictRegex : /^(led|úno|bře|dub|kvě|čvn|čvc|srp|zář|říj|lis|pro)/i,
+        monthsParse : monthsParse,
+        longMonthsParse : monthsParse,
+        shortMonthsParse : monthsParse,
         weekdays : 'neděle_pondělí_úterý_středa_čtvrtek_pátek_sobota'.split('_'),
         weekdaysShort : 'ne_po_út_st_čt_pá_so'.split('_'),
         weekdaysMin : 'ne_po_út_st_čt_pá_so'.split('_'),
@@ -49408,14 +50180,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/cv.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/cv.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49464,7 +50239,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d-мӗш',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -49476,14 +50251,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/cy.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/cy.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49561,14 +50339,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/da.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/da.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49626,14 +50407,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/de-at.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/de-at.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49707,14 +50491,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/de-ch.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/de-ch.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49788,14 +50575,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/de.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/de.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49869,14 +50659,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/dv.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/dv.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -49961,7 +50754,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 7,  // Sunday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -49973,14 +50766,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/el.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/el.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
     function isFunction(input) {
@@ -50077,15 +50873,93 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/en-au.js":
+/***/ "./node_modules/moment/locale/en-SG.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-SG.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
+}(this, (function (moment) { 'use strict';
+
+
+    var enSG = moment.defineLocale('en-SG', {
+        months : 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_'),
+        monthsShort : 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_'),
+        weekdays : 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_'),
+        weekdaysShort : 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
+        weekdaysMin : 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_'),
+        longDateFormat : {
+            LT : 'HH:mm',
+            LTS : 'HH:mm:ss',
+            L : 'DD/MM/YYYY',
+            LL : 'D MMMM YYYY',
+            LLL : 'D MMMM YYYY HH:mm',
+            LLLL : 'dddd, D MMMM YYYY HH:mm'
+        },
+        calendar : {
+            sameDay : '[Today at] LT',
+            nextDay : '[Tomorrow at] LT',
+            nextWeek : 'dddd [at] LT',
+            lastDay : '[Yesterday at] LT',
+            lastWeek : '[Last] dddd [at] LT',
+            sameElse : 'L'
+        },
+        relativeTime : {
+            future : 'in %s',
+            past : '%s ago',
+            s : 'a few seconds',
+            ss : '%d seconds',
+            m : 'a minute',
+            mm : '%d minutes',
+            h : 'an hour',
+            hh : '%d hours',
+            d : 'a day',
+            dd : '%d days',
+            M : 'a month',
+            MM : '%d months',
+            y : 'a year',
+            yy : '%d years'
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(st|nd|rd|th)/,
+        ordinal : function (number) {
+            var b = number % 10,
+                output = (~~(number % 100 / 10) === 1) ? 'th' :
+                (b === 1) ? 'st' :
+                (b === 2) ? 'nd' :
+                (b === 3) ? 'rd' : 'th';
+            return number + output;
+        },
+        week : {
+            dow : 1, // Monday is the first day of the week.
+            doy : 4  // The week that contains Jan 4th is the first week of the year.
+        }
+    });
+
+    return enSG;
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale/en-au.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-au.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+//! moment.js locale configuration
+
+;(function (global, factory) {
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50150,14 +51024,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/en-ca.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-ca.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50218,14 +51095,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/en-gb.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-gb.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50290,14 +51170,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/en-ie.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-ie.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50310,7 +51193,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',
-            L : 'DD-MM-YYYY',
+            L : 'DD/MM/YYYY',
             LL : 'D MMMM YYYY',
             LLL : 'D MMMM YYYY HH:mm',
             LLLL : 'dddd D MMMM YYYY HH:mm'
@@ -50362,14 +51245,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/en-il.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-il.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50429,14 +51315,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/en-nz.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/en-nz.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50501,14 +51390,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/eo.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/eo.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50565,7 +51457,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%da',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -50577,14 +51469,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/es-do.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/es-do.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50674,19 +51569,25 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/es-us.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/es-us.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
     var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split('_'),
         monthsShort = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_');
+
+    var monthsParse = [/^ene/i, /^feb/i, /^mar/i, /^abr/i, /^may/i, /^jun/i, /^jul/i, /^ago/i, /^sep/i, /^oct/i, /^nov/i, /^dic/i];
+    var monthsRegex = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i;
 
     var esUs = moment.defineLocale('es-us', {
         months : 'enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre'.split('_'),
@@ -50699,7 +51600,13 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
                 return monthsShortDot[m.month()];
             }
         },
-        monthsParseExact : true,
+        monthsRegex: monthsRegex,
+        monthsShortRegex: monthsRegex,
+        monthsStrictRegex: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i,
+        monthsShortStrictRegex: /^(ene\.?|feb\.?|mar\.?|abr\.?|may\.?|jun\.?|jul\.?|ago\.?|sep\.?|oct\.?|nov\.?|dic\.?)/i,
+        monthsParse: monthsParse,
+        longMonthsParse: monthsParse,
+        shortMonthsParse: monthsParse,
         weekdays : 'domingo_lunes_martes_miércoles_jueves_viernes_sábado'.split('_'),
         weekdaysShort : 'dom._lun._mar._mié._jue._vie._sáb.'.split('_'),
         weekdaysMin : 'do_lu_ma_mi_ju_vi_sá'.split('_'),
@@ -50708,9 +51615,9 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             LT : 'h:mm A',
             LTS : 'h:mm:ss A',
             L : 'MM/DD/YYYY',
-            LL : 'MMMM [de] D [de] YYYY',
-            LLL : 'MMMM [de] D [de] YYYY h:mm A',
-            LLLL : 'dddd, MMMM [de] D [de] YYYY h:mm A'
+            LL : 'D [de] MMMM [de] YYYY',
+            LLL : 'D [de] MMMM [de] YYYY h:mm A',
+            LLLL : 'dddd, D [de] MMMM [de] YYYY h:mm A'
         },
         calendar : {
             sameDay : function () {
@@ -50750,7 +51657,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%dº',
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -50762,14 +51669,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/es.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/es.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50859,14 +51769,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/et.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/et.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -50944,14 +51857,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/eu.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/eu.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51003,7 +51919,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -51015,14 +51931,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fa.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fa.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51114,7 +52033,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%dم',
         week : {
             dow : 6, // Saturday is the first day of the week.
-            doy : 12 // The week that contains Jan 1st is the first week of the year.
+            doy : 12 // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -51126,14 +52045,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fi.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fi.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51240,14 +52162,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fo.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fo.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51278,13 +52203,13 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             past : '%s síðani',
             s : 'fá sekund',
             ss : '%d sekundir',
-            m : 'ein minutt',
+            m : 'ein minuttur',
             mm : '%d minuttir',
             h : 'ein tími',
             hh : '%d tímar',
             d : 'ein dagur',
             dd : '%d dagar',
-            M : 'ein mánaði',
+            M : 'ein mánaður',
             MM : '%d mánaðir',
             y : 'eitt ár',
             yy : '%d ár'
@@ -51305,14 +52230,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fr-ca.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/fr-ca.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51384,14 +52312,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fr-ch.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/fr-ch.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51467,14 +52398,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fr.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fr.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51555,14 +52489,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/fy.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/fy.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51634,15 +52571,103 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/gd.js":
+/***/ "./node_modules/moment/locale/ga.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ga.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
+}(this, (function (moment) { 'use strict';
+
+
+
+    var months = [
+        'Eanáir', 'Feabhra', 'Márta', 'Aibreán', 'Bealtaine', 'Méitheamh', 'Iúil', 'Lúnasa', 'Meán Fómhair', 'Deaireadh Fómhair', 'Samhain', 'Nollaig'
+    ];
+
+    var monthsShort = ['Eaná', 'Feab', 'Márt', 'Aibr', 'Beal', 'Méit', 'Iúil', 'Lúna', 'Meán', 'Deai', 'Samh', 'Noll'];
+
+    var weekdays = ['Dé Domhnaigh', 'Dé Luain', 'Dé Máirt', 'Dé Céadaoin', 'Déardaoin', 'Dé hAoine', 'Dé Satharn'];
+
+    var weekdaysShort = ['Dom', 'Lua', 'Mái', 'Céa', 'Déa', 'hAo', 'Sat'];
+
+    var weekdaysMin = ['Do', 'Lu', 'Má', 'Ce', 'Dé', 'hA', 'Sa'];
+
+    var ga = moment.defineLocale('ga', {
+        months: months,
+        monthsShort: monthsShort,
+        monthsParseExact: true,
+        weekdays: weekdays,
+        weekdaysShort: weekdaysShort,
+        weekdaysMin: weekdaysMin,
+        longDateFormat: {
+            LT: 'HH:mm',
+            LTS: 'HH:mm:ss',
+            L: 'DD/MM/YYYY',
+            LL: 'D MMMM YYYY',
+            LLL: 'D MMMM YYYY HH:mm',
+            LLLL: 'dddd, D MMMM YYYY HH:mm'
+        },
+        calendar: {
+            sameDay: '[Inniu ag] LT',
+            nextDay: '[Amárach ag] LT',
+            nextWeek: 'dddd [ag] LT',
+            lastDay: '[Inné aig] LT',
+            lastWeek: 'dddd [seo caite] [ag] LT',
+            sameElse: 'L'
+        },
+        relativeTime: {
+            future: 'i %s',
+            past: '%s ó shin',
+            s: 'cúpla soicind',
+            ss: '%d soicind',
+            m: 'nóiméad',
+            mm: '%d nóiméad',
+            h: 'uair an chloig',
+            hh: '%d uair an chloig',
+            d: 'lá',
+            dd: '%d lá',
+            M: 'mí',
+            MM: '%d mí',
+            y: 'bliain',
+            yy: '%d bliain'
+        },
+        dayOfMonthOrdinalParse: /\d{1,2}(d|na|mh)/,
+        ordinal: function (number) {
+            var output = number === 1 ? 'd' : number % 10 === 2 ? 'na' : 'mh';
+            return number + output;
+        },
+        week: {
+            dow: 1, // Monday is the first day of the week.
+            doy: 4  // The week that contains Jan 4th is the first week of the year.
+        }
+    });
+
+    return ga;
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale/gd.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/gd.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+//! moment.js locale configuration
+
+;(function (global, factory) {
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51716,14 +52741,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/gl.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/gl.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51798,14 +52826,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/gom-latn.js":
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/gom-latn.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -51815,8 +52846,8 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             'ss': [number + ' secondanim', number + ' second'],
             'm': ['eka mintan', 'ek minute'],
             'mm': [number + ' mintanim', number + ' mintam'],
-            'h': ['eka horan', 'ek hor'],
-            'hh': [number + ' horanim', number + ' horam'],
+            'h': ['eka voran', 'ek vor'],
+            'hh': [number + ' voranim', number + ' voram'],
             'd': ['eka disan', 'ek dis'],
             'dd': [number + ' disanim', number + ' dis'],
             'M': ['eka mhoinean', 'ek mhoino'],
@@ -51926,14 +52957,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/gu.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/gu.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52043,7 +53077,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week: {
             dow: 0, // Sunday is the first day of the week.
-            doy: 6 // The week that contains Jan 1st is the first week of the year.
+            doy: 6 // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -52055,14 +53089,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/he.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/he.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52157,14 +53194,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/hi.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/hi.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52274,7 +53314,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -52286,14 +53326,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/hr.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/hr.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52433,7 +53476,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -52445,14 +53488,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/hu.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/hu.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52560,14 +53606,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/hy-am.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/hy-am.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52648,7 +53697,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -52660,14 +53709,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/id.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/id.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52735,7 +53787,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -52747,14 +53799,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/is.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/is.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52883,15 +53938,95 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/it.js":
+/***/ "./node_modules/moment/locale/it-ch.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/it-ch.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
+}(this, (function (moment) { 'use strict';
+
+
+    var itCh = moment.defineLocale('it-ch', {
+        months : 'gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre'.split('_'),
+        monthsShort : 'gen_feb_mar_apr_mag_giu_lug_ago_set_ott_nov_dic'.split('_'),
+        weekdays : 'domenica_lunedì_martedì_mercoledì_giovedì_venerdì_sabato'.split('_'),
+        weekdaysShort : 'dom_lun_mar_mer_gio_ven_sab'.split('_'),
+        weekdaysMin : 'do_lu_ma_me_gi_ve_sa'.split('_'),
+        longDateFormat : {
+            LT : 'HH:mm',
+            LTS : 'HH:mm:ss',
+            L : 'DD.MM.YYYY',
+            LL : 'D MMMM YYYY',
+            LLL : 'D MMMM YYYY HH:mm',
+            LLLL : 'dddd D MMMM YYYY HH:mm'
+        },
+        calendar : {
+            sameDay: '[Oggi alle] LT',
+            nextDay: '[Domani alle] LT',
+            nextWeek: 'dddd [alle] LT',
+            lastDay: '[Ieri alle] LT',
+            lastWeek: function () {
+                switch (this.day()) {
+                    case 0:
+                        return '[la scorsa] dddd [alle] LT';
+                    default:
+                        return '[lo scorso] dddd [alle] LT';
+                }
+            },
+            sameElse: 'L'
+        },
+        relativeTime : {
+            future : function (s) {
+                return ((/^[0-9].+$/).test(s) ? 'tra' : 'in') + ' ' + s;
+            },
+            past : '%s fa',
+            s : 'alcuni secondi',
+            ss : '%d secondi',
+            m : 'un minuto',
+            mm : '%d minuti',
+            h : 'un\'ora',
+            hh : '%d ore',
+            d : 'un giorno',
+            dd : '%d giorni',
+            M : 'un mese',
+            MM : '%d mesi',
+            y : 'un anno',
+            yy : '%d anni'
+        },
+        dayOfMonthOrdinalParse : /\d{1,2}º/,
+        ordinal: '%dº',
+        week : {
+            dow : 1, // Monday is the first day of the week.
+            doy : 4  // The week that contains Jan 4th is the first week of the year.
+        }
+    });
+
+    return itCh;
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale/it.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/it.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+//! moment.js locale configuration
+
+;(function (global, factory) {
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -52958,19 +54093,22 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ja.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ja.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
     var ja = moment.defineLocale('ja', {
-        months : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+        months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
         monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
         weekdays : '日曜日_月曜日_火曜日_水曜日_木曜日_金曜日_土曜日'.split('_'),
         weekdaysShort : '日_月_火_水_木_金_土'.split('_'),
@@ -53055,14 +54193,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/jv.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/jv.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53130,7 +54271,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -53142,14 +54283,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ka.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ka.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53236,14 +54380,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/kk.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/kk.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53316,7 +54463,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -53328,14 +54475,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/km.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/km.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53443,14 +54593,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/kn.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/kn.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53562,7 +54715,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -53574,14 +54727,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ko.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ko.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53659,15 +54815,145 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
 /***/ }),
 
-/***/ "./node_modules/moment/locale/ky.js":
+/***/ "./node_modules/moment/locale/ku.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ku.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
+}(this, (function (moment) { 'use strict';
+
+
+    var symbolMap = {
+        '1': '١',
+        '2': '٢',
+        '3': '٣',
+        '4': '٤',
+        '5': '٥',
+        '6': '٦',
+        '7': '٧',
+        '8': '٨',
+        '9': '٩',
+        '0': '٠'
+    }, numberMap = {
+        '١': '1',
+        '٢': '2',
+        '٣': '3',
+        '٤': '4',
+        '٥': '5',
+        '٦': '6',
+        '٧': '7',
+        '٨': '8',
+        '٩': '9',
+        '٠': '0'
+    },
+    months = [
+        'کانونی دووەم',
+        'شوبات',
+        'ئازار',
+        'نیسان',
+        'ئایار',
+        'حوزەیران',
+        'تەمموز',
+        'ئاب',
+        'ئەیلوول',
+        'تشرینی یەكەم',
+        'تشرینی دووەم',
+        'كانونی یەکەم'
+    ];
+
+
+    var ku = moment.defineLocale('ku', {
+        months : months,
+        monthsShort : months,
+        weekdays : 'یه‌كشه‌ممه‌_دووشه‌ممه‌_سێشه‌ممه‌_چوارشه‌ممه‌_پێنجشه‌ممه‌_هه‌ینی_شه‌ممه‌'.split('_'),
+        weekdaysShort : 'یه‌كشه‌م_دووشه‌م_سێشه‌م_چوارشه‌م_پێنجشه‌م_هه‌ینی_شه‌ممه‌'.split('_'),
+        weekdaysMin : 'ی_د_س_چ_پ_ه_ش'.split('_'),
+        weekdaysParseExact : true,
+        longDateFormat : {
+            LT : 'HH:mm',
+            LTS : 'HH:mm:ss',
+            L : 'DD/MM/YYYY',
+            LL : 'D MMMM YYYY',
+            LLL : 'D MMMM YYYY HH:mm',
+            LLLL : 'dddd, D MMMM YYYY HH:mm'
+        },
+        meridiemParse: /ئێواره‌|به‌یانی/,
+        isPM: function (input) {
+            return /ئێواره‌/.test(input);
+        },
+        meridiem : function (hour, minute, isLower) {
+            if (hour < 12) {
+                return 'به‌یانی';
+            } else {
+                return 'ئێواره‌';
+            }
+        },
+        calendar : {
+            sameDay : '[ئه‌مرۆ كاتژمێر] LT',
+            nextDay : '[به‌یانی كاتژمێر] LT',
+            nextWeek : 'dddd [كاتژمێر] LT',
+            lastDay : '[دوێنێ كاتژمێر] LT',
+            lastWeek : 'dddd [كاتژمێر] LT',
+            sameElse : 'L'
+        },
+        relativeTime : {
+            future : 'له‌ %s',
+            past : '%s',
+            s : 'چه‌ند چركه‌یه‌ك',
+            ss : 'چركه‌ %d',
+            m : 'یه‌ك خوله‌ك',
+            mm : '%d خوله‌ك',
+            h : 'یه‌ك كاتژمێر',
+            hh : '%d كاتژمێر',
+            d : 'یه‌ك ڕۆژ',
+            dd : '%d ڕۆژ',
+            M : 'یه‌ك مانگ',
+            MM : '%d مانگ',
+            y : 'یه‌ك ساڵ',
+            yy : '%d ساڵ'
+        },
+        preparse: function (string) {
+            return string.replace(/[١٢٣٤٥٦٧٨٩٠]/g, function (match) {
+                return numberMap[match];
+            }).replace(/،/g, ',');
+        },
+        postformat: function (string) {
+            return string.replace(/\d/g, function (match) {
+                return symbolMap[match];
+            }).replace(/,/g, '،');
+        },
+        week : {
+            dow : 6, // Saturday is the first day of the week.
+            doy : 12 // The week that contains Jan 12th is the first week of the year.
+        }
+    });
+
+    return ku;
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale/ky.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ky.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+//! moment.js locale configuration
+
+;(function (global, factory) {
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53712,8 +54998,8 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             sameDay : '[Бүгүн саат] LT',
             nextDay : '[Эртең саат] LT',
             nextWeek : 'dddd [саат] LT',
-            lastDay : '[Кече саат] LT',
-            lastWeek : '[Өткен аптанын] dddd [күнү] [саат] LT',
+            lastDay : '[Кечээ саат] LT',
+            lastWeek : '[Өткөн аптанын] dddd [күнү] [саат] LT',
             sameElse : 'L'
         },
         relativeTime : {
@@ -53740,7 +55026,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -53752,14 +55038,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/lb.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lb.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53893,14 +55182,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/lo.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lo.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -53968,14 +55260,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/lt.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lt.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54091,14 +55386,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/lv.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/lv.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54193,14 +55491,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/me.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/me.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54298,7 +55599,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -54310,14 +55611,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/mi.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mi.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54379,14 +55683,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/mk.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mk.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54462,7 +55769,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -54474,14 +55781,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ml.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ml.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54560,14 +55870,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/mn.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mn.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54669,14 +55982,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/mr.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mr.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54822,7 +56138,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -54834,14 +56150,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ms-my.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ms-my.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54909,7 +56228,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -54921,14 +56240,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ms.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ms.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -54996,7 +56318,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -55008,14 +56330,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/mt.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/mt.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55073,14 +56398,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/my.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/my.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55159,7 +56487,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week: {
             dow: 1, // Monday is the first day of the week.
-            doy: 4 // The week that contains Jan 1st is the first week of the year.
+            doy: 4 // The week that contains Jan 4th is the first week of the year.
         }
     });
 
@@ -55171,14 +56499,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/nb.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/nb.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55238,14 +56569,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ne.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ne.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55354,7 +56688,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -55366,14 +56700,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/nl-be.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/nl-be.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55381,7 +56718,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         monthsShortWithoutDots = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split('_');
 
     var monthsParse = [/^jan/i, /^feb/i, /^maart|mrt.?$/i, /^apr/i, /^mei$/i, /^jun[i.]?$/i, /^jul[i.]?$/i, /^aug/i, /^sep/i, /^okt/i, /^nov/i, /^dec/i];
-    var monthsRegex = /^(januari|februari|maart|april|mei|april|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
+    var monthsRegex = /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
 
     var nlBe = moment.defineLocale('nl-be', {
         months : 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split('_'),
@@ -55397,7 +56734,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(januari|februari|maart|mei|ju[nl]i|april|augustus|september|oktober|november|december)/i,
+        monthsStrictRegex: /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
         monthsShortStrictRegex: /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
 
         monthsParse : monthsParse,
@@ -55458,14 +56795,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/nl.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/nl.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55473,7 +56813,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         monthsShortWithoutDots = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split('_');
 
     var monthsParse = [/^jan/i, /^feb/i, /^maart|mrt.?$/i, /^apr/i, /^mei$/i, /^jun[i.]?$/i, /^jul[i.]?$/i, /^aug/i, /^sep/i, /^okt/i, /^nov/i, /^dec/i];
-    var monthsRegex = /^(januari|februari|maart|april|mei|april|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
+    var monthsRegex = /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december|jan\.?|feb\.?|mrt\.?|apr\.?|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i;
 
     var nl = moment.defineLocale('nl', {
         months : 'januari_februari_maart_april_mei_juni_juli_augustus_september_oktober_november_december'.split('_'),
@@ -55489,7 +56829,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
         monthsRegex: monthsRegex,
         monthsShortRegex: monthsRegex,
-        monthsStrictRegex: /^(januari|februari|maart|mei|ju[nl]i|april|augustus|september|oktober|november|december)/i,
+        monthsStrictRegex: /^(januari|februari|maart|april|mei|ju[nl]i|augustus|september|oktober|november|december)/i,
         monthsShortStrictRegex: /^(jan\.?|feb\.?|mrt\.?|apr\.?|mei|ju[nl]\.?|aug\.?|sep\.?|okt\.?|nov\.?|dec\.?)/i,
 
         monthsParse : monthsParse,
@@ -55550,14 +56890,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/nn.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/nn.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55615,14 +56958,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/pa-in.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/pa-in.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55652,7 +56998,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     };
 
     var paIn = moment.defineLocale('pa-in', {
-        // There are months name as per Nanakshahi Calender but they are not used as rigidly in modern Punjabi.
+        // There are months name as per Nanakshahi Calendar but they are not used as rigidly in modern Punjabi.
         months : 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split('_'),
         monthsShort : 'ਜਨਵਰੀ_ਫ਼ਰਵਰੀ_ਮਾਰਚ_ਅਪ੍ਰੈਲ_ਮਈ_ਜੂਨ_ਜੁਲਾਈ_ਅਗਸਤ_ਸਤੰਬਰ_ਅਕਤੂਬਰ_ਨਵੰਬਰ_ਦਸੰਬਰ'.split('_'),
         weekdays : 'ਐਤਵਾਰ_ਸੋਮਵਾਰ_ਮੰਗਲਵਾਰ_ਬੁਧਵਾਰ_ਵੀਰਵਾਰ_ਸ਼ੁੱਕਰਵਾਰ_ਸ਼ਨੀਚਰਵਾਰ'.split('_'),
@@ -55732,7 +57078,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -55744,14 +57090,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/pl.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/pl.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -55875,20 +57224,23 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/pt-br.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/pt-br.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
     var ptBr = moment.defineLocale('pt-br', {
-        months : 'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split('_'),
-        monthsShort : 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split('_'),
+        months : 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_'),
+        monthsShort : 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_'),
         weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
         weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
         weekdaysMin : 'Do_2ª_3ª_4ª_5ª_6ª_Sá'.split('_'),
@@ -55941,20 +57293,23 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/pt.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/pt.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
     var pt = moment.defineLocale('pt', {
-        months : 'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split('_'),
-        monthsShort : 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split('_'),
+        months : 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_'),
+        monthsShort : 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_'),
         weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
         weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
         weekdaysMin : 'Do_2ª_3ª_4ª_5ª_6ª_Sá'.split('_'),
@@ -56011,14 +57366,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ro.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ro.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56079,7 +57437,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -56091,14 +57449,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ru.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ru.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56278,14 +57639,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sd.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sd.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56381,14 +57745,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/se.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/se.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56446,14 +57813,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/si.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/si.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56522,14 +57892,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sk.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sk.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56683,14 +58056,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sl.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sl.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56707,7 +58083,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
                 } else if (number < 5) {
                     result += withoutSuffix || isFuture ? 'sekunde' : 'sekundah';
                 } else {
-                    result += withoutSuffix || isFuture ? 'sekund' : 'sekund';
+                    result += 'sekund';
                 }
                 return result;
             case 'm':
@@ -56849,7 +58225,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -56861,14 +58237,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sq.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sq.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -56934,14 +58313,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sr-cyrl.js":
+/*!***********************************************!*\
+  !*** ./node_modules/moment/locale/sr-cyrl.js ***!
+  \***********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57038,7 +58420,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -57050,14 +58432,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sr.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sr.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57154,7 +58539,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         ordinal : '%d.',
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -57166,14 +58551,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ss.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ss.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57259,14 +58647,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sv.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sv.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57333,14 +58724,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/sw.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/sw.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57385,7 +58779,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -57397,14 +58791,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ta.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ta.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57519,7 +58916,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -57531,20 +58928,23 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/te.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/te.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
     var te = moment.defineLocale('te', {
-        months : 'జనవరి_ఫిబ్రవరి_మార్చి_ఏప్రిల్_మే_జూన్_జూలై_ఆగస్టు_సెప్టెంబర్_అక్టోబర్_నవంబర్_డిసెంబర్'.split('_'),
-        monthsShort : 'జన._ఫిబ్ర._మార్చి_ఏప్రి._మే_జూన్_జూలై_ఆగ._సెప్._అక్టో._నవ._డిసె.'.split('_'),
+        months : 'జనవరి_ఫిబ్రవరి_మార్చి_ఏప్రిల్_మే_జూన్_జులై_ఆగస్టు_సెప్టెంబర్_అక్టోబర్_నవంబర్_డిసెంబర్'.split('_'),
+        monthsShort : 'జన._ఫిబ్ర._మార్చి_ఏప్రి._మే_జూన్_జులై_ఆగ._సెప్._అక్టో._నవ._డిసె.'.split('_'),
         monthsParseExact : true,
         weekdays : 'ఆదివారం_సోమవారం_మంగళవారం_బుధవారం_గురువారం_శుక్రవారం_శనివారం'.split('_'),
         weekdaysShort : 'ఆది_సోమ_మంగళ_బుధ_గురు_శుక్ర_శని'.split('_'),
@@ -57613,7 +59013,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 0, // Sunday is the first day of the week.
-            doy : 6  // The week that contains Jan 1st is the first week of the year.
+            doy : 6  // The week that contains Jan 6th is the first week of the year.
         }
     });
 
@@ -57625,14 +59025,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tet.js":
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tet.js ***!
+  \*******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57697,14 +59100,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tg.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/tg.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57818,14 +59224,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/th.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/th.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57890,14 +59299,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tl-ph.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/tl-ph.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -57957,14 +59369,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tlh.js":
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tlh.js ***!
+  \*******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58084,13 +59499,16 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tr.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/tr.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
     var suffixes = {
@@ -58171,7 +59589,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -58183,14 +59601,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tzl.js":
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tzl.js ***!
+  \*******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58279,14 +59700,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tzm-latn.js":
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/tzm-latn.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58330,7 +59754,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 6, // Saturday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -58342,14 +59766,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/tzm.js":
+/*!*******************************************!*\
+  !*** ./node_modules/moment/locale/tzm.js ***!
+  \*******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58393,7 +59820,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 6, // Saturday is the first day of the week.
-            doy : 12  // The week that contains Jan 1st is the first week of the year.
+            doy : 12  // The week that contains Jan 12th is the first week of the year.
         }
     });
 
@@ -58405,14 +59832,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ug-cn.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/ug-cn.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js language configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58529,14 +59959,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/uk.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/uk.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58570,6 +60003,9 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             'genitive': 'неділі_понеділка_вівторка_середи_четверга_п’ятниці_суботи'.split('_')
         };
 
+        if (m === true) {
+            return weekdays['nominative'].slice(1, 7).concat(weekdays['nominative'].slice(0, 1));
+        }
         if (!m) {
             return weekdays['nominative'];
         }
@@ -58673,7 +60109,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -58685,14 +60121,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/ur.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/ur.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58788,14 +60227,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/uz-latn.js":
+/*!***********************************************!*\
+  !*** ./node_modules/moment/locale/uz-latn.js ***!
+  \***********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58839,7 +60281,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         },
         week : {
             dow : 1, // Monday is the first day of the week.
-            doy : 7  // The week that contains Jan 1st is the first week of the year.
+            doy : 7  // The week that contains Jan 7th is the first week of the year.
         }
     });
 
@@ -58851,14 +60293,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/uz.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/uz.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58914,14 +60359,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/vi.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/vi.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -58998,14 +60446,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/x-pseudo.js":
+/*!************************************************!*\
+  !*** ./node_modules/moment/locale/x-pseudo.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -59071,14 +60522,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/yo.js":
+/*!******************************************!*\
+  !*** ./node_modules/moment/locale/yo.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -59136,14 +60590,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/zh-cn.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-cn.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -59251,14 +60708,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/zh-hk.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-hk.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -59359,14 +60819,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/locale/zh-tw.js":
+/*!*********************************************!*\
+  !*** ./node_modules/moment/locale/zh-tw.js ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
 
 ;(function (global, factory) {
-    true ? factory(__webpack_require__("./node_modules/moment/moment.js")) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    true ? factory(__webpack_require__(/*! ../moment */ "./node_modules/moment/moment.js")) :
+   undefined
 }(this, (function (moment) { 'use strict';
 
 
@@ -59467,14 +60930,17 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 /***/ }),
 
 /***/ "./node_modules/moment/moment.js":
+/*!***************************************!*\
+  !*** ./node_modules/moment/moment.js ***!
+  \***************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var require;//! moment.js
 
 ;(function (global, factory) {
      true ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    global.moment = factory()
+    undefined
 }(this, (function () { 'use strict';
 
     var hookCallback;
@@ -60613,22 +62079,36 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     function createDate (y, m, d, h, M, s, ms) {
         // can't just apply() to create a date:
         // https://stackoverflow.com/q/181348
-        var date = new Date(y, m, d, h, M, s, ms);
-
+        var date;
         // the date constructor remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
-            date.setFullYear(y);
+        if (y < 100 && y >= 0) {
+            // preserve leap years using a full 400 year cycle, then reset
+            date = new Date(y + 400, m, d, h, M, s, ms);
+            if (isFinite(date.getFullYear())) {
+                date.setFullYear(y);
+            }
+        } else {
+            date = new Date(y, m, d, h, M, s, ms);
         }
+
         return date;
     }
 
     function createUTCDate (y) {
-        var date = new Date(Date.UTC.apply(null, arguments));
-
+        var date;
         // the Date.UTC function remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
-            date.setUTCFullYear(y);
+        if (y < 100 && y >= 0) {
+            var args = Array.prototype.slice.call(arguments);
+            // preserve leap years using a full 400 year cycle, then reset
+            args[0] = y + 400;
+            date = new Date(Date.UTC.apply(null, args));
+            if (isFinite(date.getUTCFullYear())) {
+                date.setUTCFullYear(y);
+            }
+        } else {
+            date = new Date(Date.UTC.apply(null, arguments));
         }
+
         return date;
     }
 
@@ -60730,7 +62210,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
     var defaultLocaleWeek = {
         dow : 0, // Sunday is the first day of the week.
-        doy : 6  // The week that contains Jan 1st is the first week of the year.
+        doy : 6  // The week that contains Jan 6th is the first week of the year.
     };
 
     function localeFirstDayOfWeek () {
@@ -60839,25 +62319,28 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     }
 
     // LOCALES
+    function shiftWeekdays (ws, n) {
+        return ws.slice(n, 7).concat(ws.slice(0, n));
+    }
 
     var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
     function localeWeekdays (m, format) {
-        if (!m) {
-            return isArray(this._weekdays) ? this._weekdays :
-                this._weekdays['standalone'];
-        }
-        return isArray(this._weekdays) ? this._weekdays[m.day()] :
-            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+        var weekdays = isArray(this._weekdays) ? this._weekdays :
+            this._weekdays[(m && m !== true && this._weekdays.isFormat.test(format)) ? 'format' : 'standalone'];
+        return (m === true) ? shiftWeekdays(weekdays, this._week.dow)
+            : (m) ? weekdays[m.day()] : weekdays;
     }
 
     var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
     function localeWeekdaysShort (m) {
-        return (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
+        return (m === true) ? shiftWeekdays(this._weekdaysShort, this._week.dow)
+            : (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
     }
 
     var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
     function localeWeekdaysMin (m) {
-        return (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
+        return (m === true) ? shiftWeekdays(this._weekdaysMin, this._week.dow)
+            : (m) ? this._weekdaysMin[m.day()] : this._weekdaysMin;
     }
 
     function handleStrictParse$1(weekdayName, format, strict) {
@@ -61304,7 +62787,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__("./node_modules/moment/locale recursive ^\\.\\/.*$")("./" + name);
+                __webpack_require__("./node_modules/moment/locale sync recursive ^\\.\\/.*$")("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -61606,13 +63089,13 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
                     weekdayOverflow = true;
                 }
             } else if (w.e != null) {
-                // local weekday -- counting starts from begining of week
+                // local weekday -- counting starts from beginning of week
                 weekday = w.e + dow;
                 if (w.e < 0 || w.e > 6) {
                     weekdayOverflow = true;
                 }
             } else {
-                // default to begining of week
+                // default to beginning of week
                 weekday = dow;
             }
         }
@@ -62206,7 +63689,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
             years = normalizedInput.year || 0,
             quarters = normalizedInput.quarter || 0,
             months = normalizedInput.month || 0,
-            weeks = normalizedInput.week || 0,
+            weeks = normalizedInput.week || normalizedInput.isoWeek || 0,
             days = normalizedInput.day || 0,
             hours = normalizedInput.hour || 0,
             minutes = normalizedInput.minute || 0,
@@ -62510,7 +63993,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
                 ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
             };
         } else if (!!(match = isoRegex.exec(input))) {
-            sign = (match[1] === '-') ? -1 : (match[1] === '+') ? 1 : 1;
+            sign = (match[1] === '-') ? -1 : 1;
             duration = {
                 y : parseIso(match[2], sign),
                 M : parseIso(match[3], sign),
@@ -62552,7 +64035,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     }
 
     function positiveMomentsDifference(base, other) {
-        var res = {milliseconds: 0, months: 0};
+        var res = {};
 
         res.months = other.month() - base.month() +
             (other.year() - base.year()) * 12;
@@ -62661,7 +64144,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         if (!(this.isValid() && localInput.isValid())) {
             return false;
         }
-        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        units = normalizeUnits(units) || 'millisecond';
         if (units === 'millisecond') {
             return this.valueOf() > localInput.valueOf();
         } else {
@@ -62674,7 +64157,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         if (!(this.isValid() && localInput.isValid())) {
             return false;
         }
-        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        units = normalizeUnits(units) || 'millisecond';
         if (units === 'millisecond') {
             return this.valueOf() < localInput.valueOf();
         } else {
@@ -62683,9 +64166,14 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     }
 
     function isBetween (from, to, units, inclusivity) {
+        var localFrom = isMoment(from) ? from : createLocal(from),
+            localTo = isMoment(to) ? to : createLocal(to);
+        if (!(this.isValid() && localFrom.isValid() && localTo.isValid())) {
+            return false;
+        }
         inclusivity = inclusivity || '()';
-        return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &&
-            (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+        return (inclusivity[0] === '(' ? this.isAfter(localFrom, units) : !this.isBefore(localFrom, units)) &&
+            (inclusivity[1] === ')' ? this.isBefore(localTo, units) : !this.isAfter(localTo, units));
     }
 
     function isSame (input, units) {
@@ -62694,7 +64182,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         if (!(this.isValid() && localInput.isValid())) {
             return false;
         }
-        units = normalizeUnits(units || 'millisecond');
+        units = normalizeUnits(units) || 'millisecond';
         if (units === 'millisecond') {
             return this.valueOf() === localInput.valueOf();
         } else {
@@ -62704,11 +64192,11 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     }
 
     function isSameOrAfter (input, units) {
-        return this.isSame(input, units) || this.isAfter(input,units);
+        return this.isSame(input, units) || this.isAfter(input, units);
     }
 
     function isSameOrBefore (input, units) {
-        return this.isSame(input, units) || this.isBefore(input,units);
+        return this.isSame(input, units) || this.isBefore(input, units);
     }
 
     function diff (input, units, asFloat) {
@@ -62885,62 +64373,130 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         return this._locale;
     }
 
+    var MS_PER_SECOND = 1000;
+    var MS_PER_MINUTE = 60 * MS_PER_SECOND;
+    var MS_PER_HOUR = 60 * MS_PER_MINUTE;
+    var MS_PER_400_YEARS = (365 * 400 + 97) * 24 * MS_PER_HOUR;
+
+    // actual modulo - handles negative numbers (for dates before 1970):
+    function mod$1(dividend, divisor) {
+        return (dividend % divisor + divisor) % divisor;
+    }
+
+    function localStartOfDate(y, m, d) {
+        // the date constructor remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0) {
+            // preserve leap years using a full 400 year cycle, then reset
+            return new Date(y + 400, m, d) - MS_PER_400_YEARS;
+        } else {
+            return new Date(y, m, d).valueOf();
+        }
+    }
+
+    function utcStartOfDate(y, m, d) {
+        // Date.UTC remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0) {
+            // preserve leap years using a full 400 year cycle, then reset
+            return Date.UTC(y + 400, m, d) - MS_PER_400_YEARS;
+        } else {
+            return Date.UTC(y, m, d);
+        }
+    }
+
     function startOf (units) {
+        var time;
         units = normalizeUnits(units);
-        // the following switch intentionally omits break keywords
-        // to utilize falling through the cases.
+        if (units === undefined || units === 'millisecond' || !this.isValid()) {
+            return this;
+        }
+
+        var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+
         switch (units) {
             case 'year':
-                this.month(0);
-                /* falls through */
+                time = startOfDate(this.year(), 0, 1);
+                break;
             case 'quarter':
+                time = startOfDate(this.year(), this.month() - this.month() % 3, 1);
+                break;
             case 'month':
-                this.date(1);
-                /* falls through */
+                time = startOfDate(this.year(), this.month(), 1);
+                break;
             case 'week':
+                time = startOfDate(this.year(), this.month(), this.date() - this.weekday());
+                break;
             case 'isoWeek':
+                time = startOfDate(this.year(), this.month(), this.date() - (this.isoWeekday() - 1));
+                break;
             case 'day':
             case 'date':
-                this.hours(0);
-                /* falls through */
+                time = startOfDate(this.year(), this.month(), this.date());
+                break;
             case 'hour':
-                this.minutes(0);
-                /* falls through */
+                time = this._d.valueOf();
+                time -= mod$1(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR);
+                break;
             case 'minute':
-                this.seconds(0);
-                /* falls through */
+                time = this._d.valueOf();
+                time -= mod$1(time, MS_PER_MINUTE);
+                break;
             case 'second':
-                this.milliseconds(0);
+                time = this._d.valueOf();
+                time -= mod$1(time, MS_PER_SECOND);
+                break;
         }
 
-        // weeks are a special case
-        if (units === 'week') {
-            this.weekday(0);
-        }
-        if (units === 'isoWeek') {
-            this.isoWeekday(1);
-        }
-
-        // quarters are also special
-        if (units === 'quarter') {
-            this.month(Math.floor(this.month() / 3) * 3);
-        }
-
+        this._d.setTime(time);
+        hooks.updateOffset(this, true);
         return this;
     }
 
     function endOf (units) {
+        var time;
         units = normalizeUnits(units);
-        if (units === undefined || units === 'millisecond') {
+        if (units === undefined || units === 'millisecond' || !this.isValid()) {
             return this;
         }
 
-        // 'date' is an alias for 'day', so it should be considered as such.
-        if (units === 'date') {
-            units = 'day';
+        var startOfDate = this._isUTC ? utcStartOfDate : localStartOfDate;
+
+        switch (units) {
+            case 'year':
+                time = startOfDate(this.year() + 1, 0, 1) - 1;
+                break;
+            case 'quarter':
+                time = startOfDate(this.year(), this.month() - this.month() % 3 + 3, 1) - 1;
+                break;
+            case 'month':
+                time = startOfDate(this.year(), this.month() + 1, 1) - 1;
+                break;
+            case 'week':
+                time = startOfDate(this.year(), this.month(), this.date() - this.weekday() + 7) - 1;
+                break;
+            case 'isoWeek':
+                time = startOfDate(this.year(), this.month(), this.date() - (this.isoWeekday() - 1) + 7) - 1;
+                break;
+            case 'day':
+            case 'date':
+                time = startOfDate(this.year(), this.month(), this.date() + 1) - 1;
+                break;
+            case 'hour':
+                time = this._d.valueOf();
+                time += MS_PER_HOUR - mod$1(time + (this._isUTC ? 0 : this.utcOffset() * MS_PER_MINUTE), MS_PER_HOUR) - 1;
+                break;
+            case 'minute':
+                time = this._d.valueOf();
+                time += MS_PER_MINUTE - mod$1(time, MS_PER_MINUTE) - 1;
+                break;
+            case 'second':
+                time = this._d.valueOf();
+                time += MS_PER_SECOND - mod$1(time, MS_PER_SECOND) - 1;
+                break;
         }
 
-        return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
+        this._d.setTime(time);
+        hooks.updateOffset(this, true);
+        return this;
     }
 
     function valueOf () {
@@ -63646,10 +65202,14 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
         units = normalizeUnits(units);
 
-        if (units === 'month' || units === 'year') {
-            days   = this._days   + milliseconds / 864e5;
+        if (units === 'month' || units === 'quarter' || units === 'year') {
+            days = this._days + milliseconds / 864e5;
             months = this._months + daysToMonths(days);
-            return units === 'month' ? months : months / 12;
+            switch (units) {
+                case 'month':   return months;
+                case 'quarter': return months / 3;
+                case 'year':    return months / 12;
+            }
         } else {
             // handle milliseconds separately because of floating point math errors (issue #1867)
             days = this._days + Math.round(monthsToDays(this._months));
@@ -63692,6 +65252,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     var asDays         = makeAs('d');
     var asWeeks        = makeAs('w');
     var asMonths       = makeAs('M');
+    var asQuarters     = makeAs('Q');
     var asYears        = makeAs('y');
 
     function clone$1 () {
@@ -63883,6 +65444,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     proto$2.asDays         = asDays;
     proto$2.asWeeks        = asWeeks;
     proto$2.asMonths       = asMonths;
+    proto$2.asQuarters     = asQuarters;
     proto$2.asYears        = asYears;
     proto$2.valueOf        = valueOf$1;
     proto$2._bubble        = bubble;
@@ -63927,7 +65489,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
     // Side effect imports
 
 
-    hooks.version = '2.22.2';
+    hooks.version = '2.24.0';
 
     setHookCallback(createLocal);
 
@@ -63968,7 +65530,7 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
         TIME: 'HH:mm',                                  // <input type="time" />
         TIME_SECONDS: 'HH:mm:ss',                       // <input type="time" step="1" />
         TIME_MS: 'HH:mm:ss.SSS',                        // <input type="time" step="0.001" />
-        WEEK: 'YYYY-[W]WW',                             // <input type="week" />
+        WEEK: 'GGGG-[W]WW',                             // <input type="week" />
         MONTH: 'YYYY-MM'                                // <input type="month" />
     };
 
@@ -63976,11 +65538,15 @@ webpackContext.id = "./node_modules/moment/locale recursive ^\\.\\/.*$";
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
 /***/ "./node_modules/process/browser.js":
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -64172,6 +65738,10 @@ process.umask = function() { return 0; };
 /***/ }),
 
 /***/ "./node_modules/setimmediate/setImmediate.js":
+/*!***************************************************!*\
+  !*** ./node_modules/setimmediate/setImmediate.js ***!
+  \***************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -64361,25 +65931,26 @@ process.umask = function() { return 0; };
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js"), __webpack_require__("./node_modules/process/browser.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
 /***/ "./node_modules/timers-browserify/main.js":
+/*!************************************************!*\
+  !*** ./node_modules/timers-browserify/main.js ***!
+  \************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
-            (typeof self !== "undefined" && self) ||
-            window;
-var apply = Function.prototype.apply;
+/* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
 
 // DOM APIs, for completeness
 
 exports.setTimeout = function() {
-  return new Timeout(apply.call(setTimeout, scope, arguments), clearTimeout);
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
 };
 exports.setInterval = function() {
-  return new Timeout(apply.call(setInterval, scope, arguments), clearInterval);
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
 };
 exports.clearTimeout =
 exports.clearInterval = function(timeout) {
@@ -64394,7 +65965,7 @@ function Timeout(id, clearFn) {
 }
 Timeout.prototype.unref = Timeout.prototype.ref = function() {};
 Timeout.prototype.close = function() {
-  this._clearFn.call(scope, this._id);
+  this._clearFn.call(window, this._id);
 };
 
 // Does not start the time, just sets up the members needed.
@@ -64421,8 +65992,8 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__("./node_modules/setimmediate/setImmediate.js");
-// On some exotic environments, it's not clear which object `setimmediate` was
+__webpack_require__(/*! setimmediate */ "./node_modules/setimmediate/setImmediate.js");
+// On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
 exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
@@ -64432,11 +66003,15 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
 /***/ "./node_modules/uuid/lib/bytesToUuid.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/bytesToUuid.js ***!
+  \**********************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 /**
@@ -64468,6 +66043,10 @@ module.exports = bytesToUuid;
 /***/ }),
 
 /***/ "./node_modules/uuid/lib/rng-browser.js":
+/*!**********************************************!*\
+  !*** ./node_modules/uuid/lib/rng-browser.js ***!
+  \**********************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 // Unique ID creation requires a high quality random # generator.  In the
@@ -64509,10 +66088,14 @@ if (getRandomValues) {
 /***/ }),
 
 /***/ "./node_modules/uuid/v4.js":
+/*!*********************************!*\
+  !*** ./node_modules/uuid/v4.js ***!
+  \*********************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__("./node_modules/uuid/lib/rng-browser.js");
-var bytesToUuid = __webpack_require__("./node_modules/uuid/lib/bytesToUuid.js");
+var rng = __webpack_require__(/*! ./lib/rng */ "./node_modules/uuid/lib/rng-browser.js");
+var bytesToUuid = __webpack_require__(/*! ./lib/bytesToUuid */ "./node_modules/uuid/lib/bytesToUuid.js");
 
 function v4(options, buf, offset) {
   var i = buf && offset || 0;
@@ -64544,13 +66127,17 @@ module.exports = v4;
 
 /***/ }),
 
-/***/ "./node_modules/vue/dist/vue.common.js":
+/***/ "./node_modules/vue/dist/vue.common.dev.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vue/dist/vue.common.dev.js ***!
+  \*************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.5.16
- * (c) 2014-2018 Evan You
+ * Vue.js v2.6.10
+ * (c) 2014-2019 Evan You
  * Released under the MIT License.
  */
 
@@ -64559,8 +66146,8 @@ module.exports = v4;
 
 var emptyObject = Object.freeze({});
 
-// these helpers produces better vm code in JS engines due to their
-// explicitness and function inlining
+// These helpers produce better VM code in JS engines due to their
+// explicitness and function inlining.
 function isUndef (v) {
   return v === undefined || v === null
 }
@@ -64578,7 +66165,7 @@ function isFalse (v) {
 }
 
 /**
- * Check if value is primitive
+ * Check if value is primitive.
  */
 function isPrimitive (value) {
   return (
@@ -64600,7 +66187,7 @@ function isObject (obj) {
 }
 
 /**
- * Get the raw type string of a value e.g. [object Object]
+ * Get the raw type string of a value, e.g., [object Object].
  */
 var _toString = Object.prototype.toString;
 
@@ -64628,19 +66215,27 @@ function isValidArrayIndex (val) {
   return n >= 0 && Math.floor(n) === n && isFinite(val)
 }
 
+function isPromise (val) {
+  return (
+    isDef(val) &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function'
+  )
+}
+
 /**
  * Convert a value to a string that is actually rendered.
  */
 function toString (val) {
   return val == null
     ? ''
-    : typeof val === 'object'
+    : Array.isArray(val) || (isPlainObject(val) && val.toString === _toString)
       ? JSON.stringify(val, null, 2)
       : String(val)
 }
 
 /**
- * Convert a input value to a number for persistence.
+ * Convert an input value to a number for persistence.
  * If the conversion fails, return original string.
  */
 function toNumber (val) {
@@ -64672,12 +66267,12 @@ function makeMap (
 var isBuiltInTag = makeMap('slot,component', true);
 
 /**
- * Check if a attribute is a reserved attribute.
+ * Check if an attribute is a reserved attribute.
  */
 var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
 
 /**
- * Remove an item from an array
+ * Remove an item from an array.
  */
 function remove (arr, item) {
   if (arr.length) {
@@ -64689,7 +66284,7 @@ function remove (arr, item) {
 }
 
 /**
- * Check whether the object has the property.
+ * Check whether an object has the property.
  */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 function hasOwn (obj, key) {
@@ -64731,11 +66326,11 @@ var hyphenate = cached(function (str) {
 });
 
 /**
- * Simple bind polyfill for environments that do not support it... e.g.
- * PhantomJS 1.x. Technically we don't need this anymore since native bind is
- * now more performant in most browsers, but removing it would be breaking for
- * code that was able to run in PhantomJS 1.x, so this must be kept for
- * backwards compatibility.
+ * Simple bind polyfill for environments that do not support it,
+ * e.g., PhantomJS 1.x. Technically, we don't need this anymore
+ * since native bind is now performant enough in most browsers.
+ * But removing it would mean breaking code that was able to run in
+ * PhantomJS 1.x, so this must be kept for backward compatibility.
  */
 
 /* istanbul ignore next */
@@ -64797,10 +66392,12 @@ function toObject (arr) {
   return res
 }
 
+/* eslint-disable no-unused-vars */
+
 /**
  * Perform no operation.
  * Stubbing args to make Flow happy without leaving useless transpiled code
- * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/)
+ * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/).
  */
 function noop (a, b, c) {}
 
@@ -64809,13 +66406,15 @@ function noop (a, b, c) {}
  */
 var no = function (a, b, c) { return false; };
 
+/* eslint-enable no-unused-vars */
+
 /**
- * Return same value
+ * Return the same value.
  */
 var identity = function (_) { return _; };
 
 /**
- * Generate a static keys string from compiler modules.
+ * Generate a string containing static keys from compiler modules.
  */
 function genStaticKeys (modules) {
   return modules.reduce(function (keys, m) {
@@ -64839,6 +66438,8 @@ function looseEqual (a, b) {
         return a.length === b.length && a.every(function (e, i) {
           return looseEqual(e, b[i])
         })
+      } else if (a instanceof Date && b instanceof Date) {
+        return a.getTime() === b.getTime()
       } else if (!isArrayA && !isArrayB) {
         var keysA = Object.keys(a);
         var keysB = Object.keys(b);
@@ -64860,6 +66461,11 @@ function looseEqual (a, b) {
   }
 }
 
+/**
+ * Return the first index at which a loosely equal value can be
+ * found in the array (if value is a plain object, the array must
+ * contain an object of the same shape), or -1 if it is not present.
+ */
 function looseIndexOf (arr, val) {
   for (var i = 0; i < arr.length; i++) {
     if (looseEqual(arr[i], val)) { return i }
@@ -64899,10 +66505,13 @@ var LIFECYCLE_HOOKS = [
   'destroyed',
   'activated',
   'deactivated',
-  'errorCaptured'
+  'errorCaptured',
+  'serverPrefetch'
 ];
 
 /*  */
+
+
 
 var config = ({
   /**
@@ -64987,12 +66596,25 @@ var config = ({
   mustUseProp: no,
 
   /**
+   * Perform updates asynchronously. Intended to be used by Vue Test Utils
+   * This will significantly reduce performance if set to false.
+   */
+  async: true,
+
+  /**
    * Exposed for legacy reasons
    */
   _lifecycleHooks: LIFECYCLE_HOOKS
-})
+});
 
 /*  */
+
+/**
+ * unicode letters used for parsing html tags, component names and property paths.
+ * using https://www.w3.org/TR/html53/semantics-scripting.html#potentialcustomelementname
+ * skipping \u10000-\uEFFFF due to it freezing up PhantomJS
+ */
+var unicodeRegExp = /a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;
 
 /**
  * Check if a string starts with $ or _
@@ -65017,7 +66639,7 @@ function def (obj, key, val, enumerable) {
 /**
  * Parse simple path.
  */
-var bailRE = /[^\w.$]/;
+var bailRE = new RegExp(("[^" + (unicodeRegExp.source) + ".$_\\d]"));
 function parsePath (path) {
   if (bailRE.test(path)) {
     return
@@ -65048,6 +66670,8 @@ var isEdge = UA && UA.indexOf('edge/') > 0;
 var isAndroid = (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android');
 var isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios');
 var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+var isPhantomJS = UA && /phantomjs/.test(UA);
+var isFF = UA && UA.match(/firefox\/(\d+)/);
 
 // Firefox has a "watch" function on Object.prototype...
 var nativeWatch = ({}).watch;
@@ -65075,7 +66699,7 @@ var isServerRendering = function () {
     if (!inBrowser && !inWeex && typeof global !== 'undefined') {
       // detect presence of vue-server-renderer and avoid
       // Webpack shimming the process
-      _isServer = global['process'].env.VUE_ENV === 'server';
+      _isServer = global['process'] && global['process'].env.VUE_ENV === 'server';
     } else {
       _isServer = false;
     }
@@ -65102,7 +66726,7 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
   _Set = Set;
 } else {
   // a non-standard Set polyfill that only works with primitive keys.
-  _Set = (function () {
+  _Set = /*@__PURE__*/(function () {
     function Set () {
       this.set = Object.create(null);
     }
@@ -65127,7 +66751,7 @@ var tip = noop;
 var generateComponentTrace = (noop); // work around flow check
 var formatComponentName = (noop);
 
-if (true) {
+{
   var hasConsole = typeof console !== 'undefined';
   var classifyRE = /(?:^|[-_])(\w)/g;
   var classify = function (str) { return str
@@ -65160,7 +66784,7 @@ if (true) {
       ? vm.options
       : vm._isVue
         ? vm.$options || vm.constructor.options
-        : vm || {};
+        : vm;
     var name = options.name || options._componentTag;
     var file = options.__file;
     if (!name && file) {
@@ -65216,7 +66840,6 @@ if (true) {
 
 /*  */
 
-
 var uid = 0;
 
 /**
@@ -65245,24 +66868,31 @@ Dep.prototype.depend = function depend () {
 Dep.prototype.notify = function notify () {
   // stabilize the subscriber list first
   var subs = this.subs.slice();
+  if (!config.async) {
+    // subs aren't sorted in scheduler if not running async
+    // we need to sort them now to make sure they fire in correct
+    // order
+    subs.sort(function (a, b) { return a.id - b.id; });
+  }
   for (var i = 0, l = subs.length; i < l; i++) {
     subs[i].update();
   }
 };
 
-// the current target watcher being evaluated.
-// this is globally unique because there could be only one
-// watcher being evaluated at any time.
+// The current target watcher being evaluated.
+// This is globally unique because only one watcher
+// can be evaluated at a time.
 Dep.target = null;
 var targetStack = [];
 
-function pushTarget (_target) {
-  if (Dep.target) { targetStack.push(Dep.target); }
-  Dep.target = _target;
+function pushTarget (target) {
+  targetStack.push(target);
+  Dep.target = target;
 }
 
 function popTarget () {
-  Dep.target = targetStack.pop();
+  targetStack.pop();
+  Dep.target = targetStack[targetStack.length - 1];
 }
 
 /*  */
@@ -65333,7 +66963,10 @@ function cloneVNode (vnode) {
   var cloned = new VNode(
     vnode.tag,
     vnode.data,
-    vnode.children,
+    // #7975
+    // clone children array to avoid mutating original in case of cloning
+    // a child.
+    vnode.children && vnode.children.slice(),
     vnode.text,
     vnode.elm,
     vnode.context,
@@ -65347,6 +66980,7 @@ function cloneVNode (vnode) {
   cloned.fnContext = vnode.fnContext;
   cloned.fnOptions = vnode.fnOptions;
   cloned.fnScopeId = vnode.fnScopeId;
+  cloned.asyncMeta = vnode.asyncMeta;
   cloned.isCloned = true;
   return cloned
 }
@@ -65424,10 +67058,11 @@ var Observer = function Observer (value) {
   this.vmCount = 0;
   def(value, '__ob__', this);
   if (Array.isArray(value)) {
-    var augment = hasProto
-      ? protoAugment
-      : copyAugment;
-    augment(value, arrayMethods, arrayKeys);
+    if (hasProto) {
+      protoAugment(value, arrayMethods);
+    } else {
+      copyAugment(value, arrayMethods, arrayKeys);
+    }
     this.observeArray(value);
   } else {
     this.walk(value);
@@ -65435,14 +67070,14 @@ var Observer = function Observer (value) {
 };
 
 /**
- * Walk through each property and convert them into
+ * Walk through all properties and convert them into
  * getter/setters. This method should only be called when
  * value type is Object.
  */
 Observer.prototype.walk = function walk (obj) {
   var keys = Object.keys(obj);
   for (var i = 0; i < keys.length; i++) {
-    defineReactive(obj, keys[i]);
+    defineReactive$$1(obj, keys[i]);
   }
 };
 
@@ -65458,17 +67093,17 @@ Observer.prototype.observeArray = function observeArray (items) {
 // helpers
 
 /**
- * Augment an target Object or Array by intercepting
+ * Augment a target Object or Array by intercepting
  * the prototype chain using __proto__
  */
-function protoAugment (target, src, keys) {
+function protoAugment (target, src) {
   /* eslint-disable no-proto */
   target.__proto__ = src;
   /* eslint-enable no-proto */
 }
 
 /**
- * Augment an target Object or Array by defining
+ * Augment a target Object or Array by defining
  * hidden properties.
  */
 /* istanbul ignore next */
@@ -65509,7 +67144,7 @@ function observe (value, asRootData) {
 /**
  * Define a reactive property on an Object.
  */
-function defineReactive (
+function defineReactive$$1 (
   obj,
   key,
   val,
@@ -65525,10 +67160,10 @@ function defineReactive (
 
   // cater for pre-defined getter/setters
   var getter = property && property.get;
-  if (!getter && arguments.length === 2) {
+  var setter = property && property.set;
+  if ((!getter || setter) && arguments.length === 2) {
     val = obj[key];
   }
-  var setter = property && property.set;
 
   var childOb = !shallow && observe(val);
   Object.defineProperty(obj, key, {
@@ -65554,9 +67189,11 @@ function defineReactive (
         return
       }
       /* eslint-enable no-self-compare */
-      if ("development" !== 'production' && customSetter) {
+      if (customSetter) {
         customSetter();
       }
+      // #7981: for accessor properties without setter
+      if (getter && !setter) { return }
       if (setter) {
         setter.call(obj, newVal);
       } else {
@@ -65574,8 +67211,7 @@ function defineReactive (
  * already exist.
  */
 function set (target, key, val) {
-  if ("development" !== 'production' &&
-    (isUndef(target) || isPrimitive(target))
+  if (isUndef(target) || isPrimitive(target)
   ) {
     warn(("Cannot set reactive property on undefined, null, or primitive value: " + ((target))));
   }
@@ -65590,7 +67226,7 @@ function set (target, key, val) {
   }
   var ob = (target).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
-    "development" !== 'production' && warn(
+    warn(
       'Avoid adding reactive properties to a Vue instance or its root $data ' +
       'at runtime - declare it upfront in the data option.'
     );
@@ -65600,7 +67236,7 @@ function set (target, key, val) {
     target[key] = val;
     return val
   }
-  defineReactive(ob.value, key, val);
+  defineReactive$$1(ob.value, key, val);
   ob.dep.notify();
   return val
 }
@@ -65609,8 +67245,7 @@ function set (target, key, val) {
  * Delete a property and trigger change if necessary.
  */
 function del (target, key) {
-  if ("development" !== 'production' &&
-    (isUndef(target) || isPrimitive(target))
+  if (isUndef(target) || isPrimitive(target)
   ) {
     warn(("Cannot delete reactive property on undefined, null, or primitive value: " + ((target))));
   }
@@ -65620,7 +67255,7 @@ function del (target, key) {
   }
   var ob = (target).__ob__;
   if (target._isVue || (ob && ob.vmCount)) {
-    "development" !== 'production' && warn(
+    warn(
       'Avoid deleting properties on a Vue instance or its root $data ' +
       '- just set it to null.'
     );
@@ -65662,7 +67297,7 @@ var strats = config.optionMergeStrategies;
 /**
  * Options with restrictions
  */
-if (true) {
+{
   strats.el = strats.propsData = function (parent, child, vm, key) {
     if (!vm) {
       warn(
@@ -65680,14 +67315,24 @@ if (true) {
 function mergeData (to, from) {
   if (!from) { return to }
   var key, toVal, fromVal;
-  var keys = Object.keys(from);
+
+  var keys = hasSymbol
+    ? Reflect.ownKeys(from)
+    : Object.keys(from);
+
   for (var i = 0; i < keys.length; i++) {
     key = keys[i];
+    // in case the object is already observed...
+    if (key === '__ob__') { continue }
     toVal = to[key];
     fromVal = from[key];
     if (!hasOwn(to, key)) {
       set(to, key, fromVal);
-    } else if (isPlainObject(toVal) && isPlainObject(fromVal)) {
+    } else if (
+      toVal !== fromVal &&
+      isPlainObject(toVal) &&
+      isPlainObject(fromVal)
+    ) {
       mergeData(toVal, fromVal);
     }
   }
@@ -65746,7 +67391,7 @@ strats.data = function (
 ) {
   if (!vm) {
     if (childVal && typeof childVal !== 'function') {
-      "development" !== 'production' && warn(
+      warn(
         'The "data" option should be a function ' +
         'that returns a per-instance value in component ' +
         'definitions.',
@@ -65768,13 +67413,26 @@ function mergeHook (
   parentVal,
   childVal
 ) {
-  return childVal
+  var res = childVal
     ? parentVal
       ? parentVal.concat(childVal)
       : Array.isArray(childVal)
         ? childVal
         : [childVal]
-    : parentVal
+    : parentVal;
+  return res
+    ? dedupeHooks(res)
+    : res
+}
+
+function dedupeHooks (hooks) {
+  var res = [];
+  for (var i = 0; i < hooks.length; i++) {
+    if (res.indexOf(hooks[i]) === -1) {
+      res.push(hooks[i]);
+    }
+  }
+  return res
 }
 
 LIFECYCLE_HOOKS.forEach(function (hook) {
@@ -65796,7 +67454,7 @@ function mergeAssets (
 ) {
   var res = Object.create(parentVal || null);
   if (childVal) {
-    "development" !== 'production' && assertObjectType(key, childVal, vm);
+    assertObjectType(key, childVal, vm);
     return extend(res, childVal)
   } else {
     return res
@@ -65824,7 +67482,7 @@ strats.watch = function (
   if (childVal === nativeWatch) { childVal = undefined; }
   /* istanbul ignore if */
   if (!childVal) { return Object.create(parentVal || null) }
-  if (true) {
+  {
     assertObjectType(key, childVal, vm);
   }
   if (!parentVal) { return childVal }
@@ -65885,11 +67543,10 @@ function checkComponents (options) {
 }
 
 function validateComponentName (name) {
-  if (!/^[a-zA-Z][\w-]*$/.test(name)) {
+  if (!new RegExp(("^[a-zA-Z][\\-\\.0-9_" + (unicodeRegExp.source) + "]*$")).test(name)) {
     warn(
       'Invalid component name: "' + name + '". Component names ' +
-      'can only contain alphanumeric characters and the hyphen, ' +
-      'and must start with a letter.'
+      'should conform to valid custom element name in html5 specification.'
     );
   }
   if (isBuiltInTag(name) || config.isReservedTag(name)) {
@@ -65916,7 +67573,7 @@ function normalizeProps (options, vm) {
       if (typeof val === 'string') {
         name = camelize(val);
         res[name] = { type: null };
-      } else if (true) {
+      } else {
         warn('props must be strings when using array syntax.');
       }
     }
@@ -65928,7 +67585,7 @@ function normalizeProps (options, vm) {
         ? val
         : { type: val };
     }
-  } else if (true) {
+  } else {
     warn(
       "Invalid value for option \"props\": expected an Array or an Object, " +
       "but got " + (toRawType(props)) + ".",
@@ -65956,7 +67613,7 @@ function normalizeInject (options, vm) {
         ? extend({ from: key }, val)
         : { from: val };
     }
-  } else if (true) {
+  } else {
     warn(
       "Invalid value for option \"inject\": expected an Array or an Object, " +
       "but got " + (toRawType(inject)) + ".",
@@ -65972,9 +67629,9 @@ function normalizeDirectives (options) {
   var dirs = options.directives;
   if (dirs) {
     for (var key in dirs) {
-      var def = dirs[key];
-      if (typeof def === 'function') {
-        dirs[key] = { bind: def, update: def };
+      var def$$1 = dirs[key];
+      if (typeof def$$1 === 'function') {
+        dirs[key] = { bind: def$$1, update: def$$1 };
       }
     }
   }
@@ -65999,7 +67656,7 @@ function mergeOptions (
   child,
   vm
 ) {
-  if (true) {
+  {
     checkComponents(child);
   }
 
@@ -66010,15 +67667,22 @@ function mergeOptions (
   normalizeProps(child, vm);
   normalizeInject(child, vm);
   normalizeDirectives(child);
-  var extendsFrom = child.extends;
-  if (extendsFrom) {
-    parent = mergeOptions(parent, extendsFrom, vm);
-  }
-  if (child.mixins) {
-    for (var i = 0, l = child.mixins.length; i < l; i++) {
-      parent = mergeOptions(parent, child.mixins[i], vm);
+
+  // Apply extends and mixins on the child options,
+  // but only if it is a raw options object that isn't
+  // the result of another mergeOptions call.
+  // Only merged options has the _base property.
+  if (!child._base) {
+    if (child.extends) {
+      parent = mergeOptions(parent, child.extends, vm);
+    }
+    if (child.mixins) {
+      for (var i = 0, l = child.mixins.length; i < l; i++) {
+        parent = mergeOptions(parent, child.mixins[i], vm);
+      }
     }
   }
+
   var options = {};
   var key;
   for (key in parent) {
@@ -66060,7 +67724,7 @@ function resolveAsset (
   if (hasOwn(assets, PascalCaseId)) { return assets[PascalCaseId] }
   // fallback to prototype chain
   var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
-  if ("development" !== 'production' && warnMissing && !res) {
+  if (warnMissing && !res) {
     warn(
       'Failed to resolve ' + type.slice(0, -1) + ': ' + id,
       options
@@ -66070,6 +67734,8 @@ function resolveAsset (
 }
 
 /*  */
+
+
 
 function validateProp (
   key,
@@ -66104,9 +67770,7 @@ function validateProp (
     observe(value);
     toggleObserving(prevShouldObserve);
   }
-  if (
-    true
-  ) {
+  {
     assertProp(prop, key, value, vm, absent);
   }
   return value
@@ -66122,7 +67786,7 @@ function getPropDefaultValue (vm, prop, key) {
   }
   var def = prop.default;
   // warn against non-factory defaults for Object & Array
-  if ("development" !== 'production' && isObject(def)) {
+  if (isObject(def)) {
     warn(
       'Invalid default value for prop "' + key + '": ' +
       'Props with type Object/Array must use a factory function ' +
@@ -66178,11 +67842,10 @@ function assertProp (
       valid = assertedType.valid;
     }
   }
+
   if (!valid) {
     warn(
-      "Invalid prop: type check failed for prop \"" + name + "\"." +
-      " Expected " + (expectedTypes.map(capitalize).join(', ')) +
-      ", got " + (toRawType(value)) + ".",
+      getInvalidTypeMessage(name, value, expectedTypes),
       vm
     );
     return
@@ -66249,26 +67912,98 @@ function getTypeIndex (type, expectedTypes) {
   return -1
 }
 
+function getInvalidTypeMessage (name, value, expectedTypes) {
+  var message = "Invalid prop: type check failed for prop \"" + name + "\"." +
+    " Expected " + (expectedTypes.map(capitalize).join(', '));
+  var expectedType = expectedTypes[0];
+  var receivedType = toRawType(value);
+  var expectedValue = styleValue(value, expectedType);
+  var receivedValue = styleValue(value, receivedType);
+  // check if we need to specify expected value
+  if (expectedTypes.length === 1 &&
+      isExplicable(expectedType) &&
+      !isBoolean(expectedType, receivedType)) {
+    message += " with value " + expectedValue;
+  }
+  message += ", got " + receivedType + " ";
+  // check if we need to specify received value
+  if (isExplicable(receivedType)) {
+    message += "with value " + receivedValue + ".";
+  }
+  return message
+}
+
+function styleValue (value, type) {
+  if (type === 'String') {
+    return ("\"" + value + "\"")
+  } else if (type === 'Number') {
+    return ("" + (Number(value)))
+  } else {
+    return ("" + value)
+  }
+}
+
+function isExplicable (value) {
+  var explicitTypes = ['string', 'number', 'boolean'];
+  return explicitTypes.some(function (elem) { return value.toLowerCase() === elem; })
+}
+
+function isBoolean () {
+  var args = [], len = arguments.length;
+  while ( len-- ) args[ len ] = arguments[ len ];
+
+  return args.some(function (elem) { return elem.toLowerCase() === 'boolean'; })
+}
+
 /*  */
 
 function handleError (err, vm, info) {
-  if (vm) {
-    var cur = vm;
-    while ((cur = cur.$parent)) {
-      var hooks = cur.$options.errorCaptured;
-      if (hooks) {
-        for (var i = 0; i < hooks.length; i++) {
-          try {
-            var capture = hooks[i].call(cur, err, vm, info) === false;
-            if (capture) { return }
-          } catch (e) {
-            globalHandleError(e, cur, 'errorCaptured hook');
+  // Deactivate deps tracking while processing error handler to avoid possible infinite rendering.
+  // See: https://github.com/vuejs/vuex/issues/1505
+  pushTarget();
+  try {
+    if (vm) {
+      var cur = vm;
+      while ((cur = cur.$parent)) {
+        var hooks = cur.$options.errorCaptured;
+        if (hooks) {
+          for (var i = 0; i < hooks.length; i++) {
+            try {
+              var capture = hooks[i].call(cur, err, vm, info) === false;
+              if (capture) { return }
+            } catch (e) {
+              globalHandleError(e, cur, 'errorCaptured hook');
+            }
           }
         }
       }
     }
+    globalHandleError(err, vm, info);
+  } finally {
+    popTarget();
   }
-  globalHandleError(err, vm, info);
+}
+
+function invokeWithErrorHandling (
+  handler,
+  context,
+  args,
+  vm,
+  info
+) {
+  var res;
+  try {
+    res = args ? handler.apply(context, args) : handler.call(context);
+    if (res && !res._isVue && isPromise(res) && !res._handled) {
+      res.catch(function (e) { return handleError(e, vm, info + " (Promise/async)"); });
+      // issue #9511
+      // avoid catch triggering multiple times when nested calls
+      res._handled = true;
+    }
+  } catch (e) {
+    handleError(e, vm, info);
+  }
+  return res
 }
 
 function globalHandleError (err, vm, info) {
@@ -66276,14 +68011,18 @@ function globalHandleError (err, vm, info) {
     try {
       return config.errorHandler.call(null, err, vm, info)
     } catch (e) {
-      logError(e, null, 'config.errorHandler');
+      // if the user intentionally throws the original error in the handler,
+      // do not log it twice
+      if (e !== err) {
+        logError(e, null, 'config.errorHandler');
+      }
     }
   }
   logError(err, vm, info);
 }
 
 function logError (err, vm, info) {
-  if (true) {
+  {
     warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
   }
   /* istanbul ignore else */
@@ -66295,7 +68034,8 @@ function logError (err, vm, info) {
 }
 
 /*  */
-/* globals MessageChannel */
+
+var isUsingMicroTask = false;
 
 var callbacks = [];
 var pending = false;
@@ -66309,74 +68049,69 @@ function flushCallbacks () {
   }
 }
 
-// Here we have async deferring wrappers using both microtasks and (macro) tasks.
-// In < 2.4 we used microtasks everywhere, but there are some scenarios where
-// microtasks have too high a priority and fire in between supposedly
-// sequential events (e.g. #4521, #6690) or even between bubbling of the same
-// event (#6566). However, using (macro) tasks everywhere also has subtle problems
-// when state is changed right before repaint (e.g. #6813, out-in transitions).
-// Here we use microtask by default, but expose a way to force (macro) task when
-// needed (e.g. in event handlers attached by v-on).
-var microTimerFunc;
-var macroTimerFunc;
-var useMacroTask = false;
+// Here we have async deferring wrappers using microtasks.
+// In 2.5 we used (macro) tasks (in combination with microtasks).
+// However, it has subtle problems when state is changed right before repaint
+// (e.g. #6813, out-in transitions).
+// Also, using (macro) tasks in event handler would cause some weird behaviors
+// that cannot be circumvented (e.g. #7109, #7153, #7546, #7834, #8109).
+// So we now use microtasks everywhere, again.
+// A major drawback of this tradeoff is that there are some scenarios
+// where microtasks have too high a priority and fire in between supposedly
+// sequential events (e.g. #4521, #6690, which have workarounds)
+// or even between bubbling of the same event (#6566).
+var timerFunc;
 
-// Determine (macro) task defer implementation.
-// Technically setImmediate should be the ideal choice, but it's only available
-// in IE. The only polyfill that consistently queues the callback after all DOM
-// events triggered in the same loop is by using MessageChannel.
-/* istanbul ignore if */
-if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
-  macroTimerFunc = function () {
-    setImmediate(flushCallbacks);
-  };
-} else if (typeof MessageChannel !== 'undefined' && (
-  isNative(MessageChannel) ||
-  // PhantomJS
-  MessageChannel.toString() === '[object MessageChannelConstructor]'
-)) {
-  var channel = new MessageChannel();
-  var port = channel.port2;
-  channel.port1.onmessage = flushCallbacks;
-  macroTimerFunc = function () {
-    port.postMessage(1);
-  };
-} else {
-  /* istanbul ignore next */
-  macroTimerFunc = function () {
-    setTimeout(flushCallbacks, 0);
-  };
-}
-
-// Determine microtask defer implementation.
+// The nextTick behavior leverages the microtask queue, which can be accessed
+// via either native Promise.then or MutationObserver.
+// MutationObserver has wider support, however it is seriously bugged in
+// UIWebView in iOS >= 9.3.3 when triggered in touch event handlers. It
+// completely stops working after triggering a few times... so, if native
+// Promise is available, we will use it:
 /* istanbul ignore next, $flow-disable-line */
 if (typeof Promise !== 'undefined' && isNative(Promise)) {
   var p = Promise.resolve();
-  microTimerFunc = function () {
+  timerFunc = function () {
     p.then(flushCallbacks);
-    // in problematic UIWebViews, Promise.then doesn't completely break, but
+    // In problematic UIWebViews, Promise.then doesn't completely break, but
     // it can get stuck in a weird state where callbacks are pushed into the
     // microtask queue but the queue isn't being flushed, until the browser
     // needs to do some other work, e.g. handle a timer. Therefore we can
     // "force" the microtask queue to be flushed by adding an empty timer.
     if (isIOS) { setTimeout(noop); }
   };
+  isUsingMicroTask = true;
+} else if (!isIE && typeof MutationObserver !== 'undefined' && (
+  isNative(MutationObserver) ||
+  // PhantomJS and iOS 7.x
+  MutationObserver.toString() === '[object MutationObserverConstructor]'
+)) {
+  // Use MutationObserver where native Promise is not available,
+  // e.g. PhantomJS, iOS7, Android 4.4
+  // (#6466 MutationObserver is unreliable in IE11)
+  var counter = 1;
+  var observer = new MutationObserver(flushCallbacks);
+  var textNode = document.createTextNode(String(counter));
+  observer.observe(textNode, {
+    characterData: true
+  });
+  timerFunc = function () {
+    counter = (counter + 1) % 2;
+    textNode.data = String(counter);
+  };
+  isUsingMicroTask = true;
+} else if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+  // Fallback to setImmediate.
+  // Techinically it leverages the (macro) task queue,
+  // but it is still a better choice than setTimeout.
+  timerFunc = function () {
+    setImmediate(flushCallbacks);
+  };
 } else {
-  // fallback to macro
-  microTimerFunc = macroTimerFunc;
-}
-
-/**
- * Wrap a function so that if any code inside triggers state change,
- * the changes are queued using a (macro) task instead of a microtask.
- */
-function withMacroTask (fn) {
-  return fn._withTask || (fn._withTask = function () {
-    useMacroTask = true;
-    var res = fn.apply(null, arguments);
-    useMacroTask = false;
-    return res
-  })
+  // Fallback to setTimeout.
+  timerFunc = function () {
+    setTimeout(flushCallbacks, 0);
+  };
 }
 
 function nextTick (cb, ctx) {
@@ -66394,11 +68129,7 @@ function nextTick (cb, ctx) {
   });
   if (!pending) {
     pending = true;
-    if (useMacroTask) {
-      macroTimerFunc();
-    } else {
-      microTimerFunc();
-    }
+    timerFunc();
   }
   // $flow-disable-line
   if (!cb && typeof Promise !== 'undefined') {
@@ -66413,7 +68144,7 @@ function nextTick (cb, ctx) {
 var mark;
 var measure;
 
-if (true) {
+{
   var perf = inBrowser && window.performance;
   /* istanbul ignore if */
   if (
@@ -66428,7 +68159,7 @@ if (true) {
       perf.measure(name, startTag, endTag);
       perf.clearMarks(startTag);
       perf.clearMarks(endTag);
-      perf.clearMeasures(name);
+      // perf.clearMeasures(name)
     };
   }
 }
@@ -66437,7 +68168,7 @@ if (true) {
 
 var initProxy;
 
-if (true) {
+{
   var allowedGlobals = makeMap(
     'Infinity,undefined,NaN,isFinite,isNaN,' +
     'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
@@ -66452,6 +68183,16 @@ if (true) {
       'either in the data option, or for class-based components, by ' +
       'initializing the property. ' +
       'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',
+      target
+    );
+  };
+
+  var warnReservedPrefix = function (target, key) {
+    warn(
+      "Property \"" + key + "\" must be accessed with \"$data." + key + "\" because " +
+      'properties starting with "$" or "_" are not proxied in the Vue instance to ' +
+      'prevent conflicts with Vue internals' +
+      'See: https://vuejs.org/v2/api/#data',
       target
     );
   };
@@ -66477,9 +68218,11 @@ if (true) {
   var hasHandler = {
     has: function has (target, key) {
       var has = key in target;
-      var isAllowed = allowedGlobals(key) || key.charAt(0) === '_';
+      var isAllowed = allowedGlobals(key) ||
+        (typeof key === 'string' && key.charAt(0) === '_' && !(key in target.$data));
       if (!has && !isAllowed) {
-        warnNonPresent(target, key);
+        if (key in target.$data) { warnReservedPrefix(target, key); }
+        else { warnNonPresent(target, key); }
       }
       return has || !isAllowed
     }
@@ -66488,7 +68231,8 @@ if (true) {
   var getHandler = {
     get: function get (target, key) {
       if (typeof key === 'string' && !(key in target)) {
-        warnNonPresent(target, key);
+        if (key in target.$data) { warnReservedPrefix(target, key); }
+        else { warnNonPresent(target, key); }
       }
       return target[key]
     }
@@ -66562,7 +68306,7 @@ var normalizeEvent = cached(function (name) {
   }
 });
 
-function createFnInvoker (fns) {
+function createFnInvoker (fns, vm) {
   function invoker () {
     var arguments$1 = arguments;
 
@@ -66570,11 +68314,11 @@ function createFnInvoker (fns) {
     if (Array.isArray(fns)) {
       var cloned = fns.slice();
       for (var i = 0; i < cloned.length; i++) {
-        cloned[i].apply(null, arguments$1);
+        invokeWithErrorHandling(cloned[i], null, arguments$1, vm, "v-on handler");
       }
     } else {
       // return handler return value for single handlers
-      return fns.apply(null, arguments)
+      return invokeWithErrorHandling(fns, null, arguments, vm, "v-on handler")
     }
   }
   invoker.fns = fns;
@@ -66586,24 +68330,27 @@ function updateListeners (
   oldOn,
   add,
   remove$$1,
+  createOnceHandler,
   vm
 ) {
-  var name, def, cur, old, event;
+  var name, def$$1, cur, old, event;
   for (name in on) {
-    def = cur = on[name];
+    def$$1 = cur = on[name];
     old = oldOn[name];
     event = normalizeEvent(name);
-    /* istanbul ignore if */
     if (isUndef(cur)) {
-      "development" !== 'production' && warn(
+      warn(
         "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
         vm
       );
     } else if (isUndef(old)) {
       if (isUndef(cur.fns)) {
-        cur = on[name] = createFnInvoker(cur);
+        cur = on[name] = createFnInvoker(cur, vm);
       }
-      add(event.name, cur, event.once, event.capture, event.passive, event.params);
+      if (isTrue(event.once)) {
+        cur = on[name] = createOnceHandler(event.name, cur, event.capture);
+      }
+      add(event.name, cur, event.capture, event.passive, event.params);
     } else if (cur !== old) {
       old.fns = cur;
       on[name] = old;
@@ -66672,7 +68419,7 @@ function extractPropsFromVNodeData (
   if (isDef(attrs) || isDef(props)) {
     for (var key in propOptions) {
       var altKey = hyphenate(key);
-      if (true) {
+      {
         var keyInLowerCase = key.toLowerCase();
         if (
           key !== keyInLowerCase &&
@@ -66809,290 +68556,70 @@ function normalizeArrayChildren (children, nestedIndex) {
 
 /*  */
 
-function ensureCtor (comp, base) {
-  if (
-    comp.__esModule ||
-    (hasSymbol && comp[Symbol.toStringTag] === 'Module')
-  ) {
-    comp = comp.default;
+function initProvide (vm) {
+  var provide = vm.$options.provide;
+  if (provide) {
+    vm._provided = typeof provide === 'function'
+      ? provide.call(vm)
+      : provide;
   }
-  return isObject(comp)
-    ? base.extend(comp)
-    : comp
 }
 
-function createAsyncPlaceholder (
-  factory,
-  data,
-  context,
-  children,
-  tag
-) {
-  var node = createEmptyVNode();
-  node.asyncFactory = factory;
-  node.asyncMeta = { data: data, context: context, children: children, tag: tag };
-  return node
-}
-
-function resolveAsyncComponent (
-  factory,
-  baseCtor,
-  context
-) {
-  if (isTrue(factory.error) && isDef(factory.errorComp)) {
-    return factory.errorComp
-  }
-
-  if (isDef(factory.resolved)) {
-    return factory.resolved
-  }
-
-  if (isTrue(factory.loading) && isDef(factory.loadingComp)) {
-    return factory.loadingComp
-  }
-
-  if (isDef(factory.contexts)) {
-    // already pending
-    factory.contexts.push(context);
-  } else {
-    var contexts = factory.contexts = [context];
-    var sync = true;
-
-    var forceRender = function () {
-      for (var i = 0, l = contexts.length; i < l; i++) {
-        contexts[i].$forceUpdate();
-      }
-    };
-
-    var resolve = once(function (res) {
-      // cache resolved
-      factory.resolved = ensureCtor(res, baseCtor);
-      // invoke callbacks only if this is not a synchronous resolve
-      // (async resolves are shimmed as synchronous during SSR)
-      if (!sync) {
-        forceRender();
+function initInjections (vm) {
+  var result = resolveInject(vm.$options.inject, vm);
+  if (result) {
+    toggleObserving(false);
+    Object.keys(result).forEach(function (key) {
+      /* istanbul ignore else */
+      {
+        defineReactive$$1(vm, key, result[key], function () {
+          warn(
+            "Avoid mutating an injected value directly since the changes will be " +
+            "overwritten whenever the provided component re-renders. " +
+            "injection being mutated: \"" + key + "\"",
+            vm
+          );
+        });
       }
     });
-
-    var reject = once(function (reason) {
-      "development" !== 'production' && warn(
-        "Failed to resolve async component: " + (String(factory)) +
-        (reason ? ("\nReason: " + reason) : '')
-      );
-      if (isDef(factory.errorComp)) {
-        factory.error = true;
-        forceRender();
-      }
-    });
-
-    var res = factory(resolve, reject);
-
-    if (isObject(res)) {
-      if (typeof res.then === 'function') {
-        // () => Promise
-        if (isUndef(factory.resolved)) {
-          res.then(resolve, reject);
-        }
-      } else if (isDef(res.component) && typeof res.component.then === 'function') {
-        res.component.then(resolve, reject);
-
-        if (isDef(res.error)) {
-          factory.errorComp = ensureCtor(res.error, baseCtor);
-        }
-
-        if (isDef(res.loading)) {
-          factory.loadingComp = ensureCtor(res.loading, baseCtor);
-          if (res.delay === 0) {
-            factory.loading = true;
-          } else {
-            setTimeout(function () {
-              if (isUndef(factory.resolved) && isUndef(factory.error)) {
-                factory.loading = true;
-                forceRender();
-              }
-            }, res.delay || 200);
-          }
-        }
-
-        if (isDef(res.timeout)) {
-          setTimeout(function () {
-            if (isUndef(factory.resolved)) {
-              reject(
-                 true
-                  ? ("timeout (" + (res.timeout) + "ms)")
-                  : null
-              );
-            }
-          }, res.timeout);
-        }
-      }
-    }
-
-    sync = false;
-    // return in case resolved synchronously
-    return factory.loading
-      ? factory.loadingComp
-      : factory.resolved
+    toggleObserving(true);
   }
 }
 
-/*  */
+function resolveInject (inject, vm) {
+  if (inject) {
+    // inject is :any because flow is not smart enough to figure out cached
+    var result = Object.create(null);
+    var keys = hasSymbol
+      ? Reflect.ownKeys(inject)
+      : Object.keys(inject);
 
-function isAsyncPlaceholder (node) {
-  return node.isComment && node.asyncFactory
-}
-
-/*  */
-
-function getFirstComponentChild (children) {
-  if (Array.isArray(children)) {
-    for (var i = 0; i < children.length; i++) {
-      var c = children[i];
-      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
-        return c
-      }
-    }
-  }
-}
-
-/*  */
-
-/*  */
-
-function initEvents (vm) {
-  vm._events = Object.create(null);
-  vm._hasHookEvent = false;
-  // init parent attached events
-  var listeners = vm.$options._parentListeners;
-  if (listeners) {
-    updateComponentListeners(vm, listeners);
-  }
-}
-
-var target;
-
-function add (event, fn, once) {
-  if (once) {
-    target.$once(event, fn);
-  } else {
-    target.$on(event, fn);
-  }
-}
-
-function remove$1 (event, fn) {
-  target.$off(event, fn);
-}
-
-function updateComponentListeners (
-  vm,
-  listeners,
-  oldListeners
-) {
-  target = vm;
-  updateListeners(listeners, oldListeners || {}, add, remove$1, vm);
-  target = undefined;
-}
-
-function eventsMixin (Vue) {
-  var hookRE = /^hook:/;
-  Vue.prototype.$on = function (event, fn) {
-    var this$1 = this;
-
-    var vm = this;
-    if (Array.isArray(event)) {
-      for (var i = 0, l = event.length; i < l; i++) {
-        this$1.$on(event[i], fn);
-      }
-    } else {
-      (vm._events[event] || (vm._events[event] = [])).push(fn);
-      // optimize hook:event cost by using a boolean flag marked at registration
-      // instead of a hash lookup
-      if (hookRE.test(event)) {
-        vm._hasHookEvent = true;
-      }
-    }
-    return vm
-  };
-
-  Vue.prototype.$once = function (event, fn) {
-    var vm = this;
-    function on () {
-      vm.$off(event, on);
-      fn.apply(vm, arguments);
-    }
-    on.fn = fn;
-    vm.$on(event, on);
-    return vm
-  };
-
-  Vue.prototype.$off = function (event, fn) {
-    var this$1 = this;
-
-    var vm = this;
-    // all
-    if (!arguments.length) {
-      vm._events = Object.create(null);
-      return vm
-    }
-    // array of events
-    if (Array.isArray(event)) {
-      for (var i = 0, l = event.length; i < l; i++) {
-        this$1.$off(event[i], fn);
-      }
-      return vm
-    }
-    // specific event
-    var cbs = vm._events[event];
-    if (!cbs) {
-      return vm
-    }
-    if (!fn) {
-      vm._events[event] = null;
-      return vm
-    }
-    if (fn) {
-      // specific handler
-      var cb;
-      var i$1 = cbs.length;
-      while (i$1--) {
-        cb = cbs[i$1];
-        if (cb === fn || cb.fn === fn) {
-          cbs.splice(i$1, 1);
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      // #6574 in case the inject object is observed...
+      if (key === '__ob__') { continue }
+      var provideKey = inject[key].from;
+      var source = vm;
+      while (source) {
+        if (source._provided && hasOwn(source._provided, provideKey)) {
+          result[key] = source._provided[provideKey];
           break
         }
+        source = source.$parent;
       }
-    }
-    return vm
-  };
-
-  Vue.prototype.$emit = function (event) {
-    var vm = this;
-    if (true) {
-      var lowerCaseEvent = event.toLowerCase();
-      if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
-        tip(
-          "Event \"" + lowerCaseEvent + "\" is emitted in component " +
-          (formatComponentName(vm)) + " but the handler is registered for \"" + event + "\". " +
-          "Note that HTML attributes are case-insensitive and you cannot use " +
-          "v-on to listen to camelCase events when using in-DOM templates. " +
-          "You should probably use \"" + (hyphenate(event)) + "\" instead of \"" + event + "\"."
-        );
-      }
-    }
-    var cbs = vm._events[event];
-    if (cbs) {
-      cbs = cbs.length > 1 ? toArray(cbs) : cbs;
-      var args = toArray(arguments, 1);
-      for (var i = 0, l = cbs.length; i < l; i++) {
-        try {
-          cbs[i].apply(vm, args);
-        } catch (e) {
-          handleError(e, vm, ("event handler for \"" + event + "\""));
+      if (!source) {
+        if ('default' in inject[key]) {
+          var provideDefault = inject[key].default;
+          result[key] = typeof provideDefault === 'function'
+            ? provideDefault.call(vm)
+            : provideDefault;
+        } else {
+          warn(("Injection \"" + key + "\" not found"), vm);
         }
       }
     }
-    return vm
-  };
+    return result
+  }
 }
 
 /*  */
@@ -67106,10 +68633,10 @@ function resolveSlots (
   children,
   context
 ) {
-  var slots = {};
-  if (!children) {
-    return slots
+  if (!children || !children.length) {
+    return {}
   }
+  var slots = {};
   for (var i = 0, l = children.length; i < l; i++) {
     var child = children[i];
     var data = child.data;
@@ -67146,1097 +68673,85 @@ function isWhitespace (node) {
   return (node.isComment && !node.asyncFactory) || node.text === ' '
 }
 
-function resolveScopedSlots (
-  fns, // see flow/vnode
-  res
+/*  */
+
+function normalizeScopedSlots (
+  slots,
+  normalSlots,
+  prevSlots
 ) {
-  res = res || {};
-  for (var i = 0; i < fns.length; i++) {
-    if (Array.isArray(fns[i])) {
-      resolveScopedSlots(fns[i], res);
-    } else {
-      res[fns[i].key] = fns[i].fn;
+  var res;
+  var hasNormalSlots = Object.keys(normalSlots).length > 0;
+  var isStable = slots ? !!slots.$stable : !hasNormalSlots;
+  var key = slots && slots.$key;
+  if (!slots) {
+    res = {};
+  } else if (slots._normalized) {
+    // fast path 1: child component re-render only, parent did not change
+    return slots._normalized
+  } else if (
+    isStable &&
+    prevSlots &&
+    prevSlots !== emptyObject &&
+    key === prevSlots.$key &&
+    !hasNormalSlots &&
+    !prevSlots.$hasNormal
+  ) {
+    // fast path 2: stable scoped slots w/ no normal slots to proxy,
+    // only need to normalize once
+    return prevSlots
+  } else {
+    res = {};
+    for (var key$1 in slots) {
+      if (slots[key$1] && key$1[0] !== '$') {
+        res[key$1] = normalizeScopedSlot(normalSlots, key$1, slots[key$1]);
+      }
     }
   }
+  // expose normal slots on scopedSlots
+  for (var key$2 in normalSlots) {
+    if (!(key$2 in res)) {
+      res[key$2] = proxyNormalSlot(normalSlots, key$2);
+    }
+  }
+  // avoriaz seems to mock a non-extensible $scopedSlots object
+  // and when that is passed down this would cause an error
+  if (slots && Object.isExtensible(slots)) {
+    (slots)._normalized = res;
+  }
+  def(res, '$stable', isStable);
+  def(res, '$key', key);
+  def(res, '$hasNormal', hasNormalSlots);
   return res
 }
 
-/*  */
-
-var activeInstance = null;
-var isUpdatingChildComponent = false;
-
-function initLifecycle (vm) {
-  var options = vm.$options;
-
-  // locate first non-abstract parent
-  var parent = options.parent;
-  if (parent && !options.abstract) {
-    while (parent.$options.abstract && parent.$parent) {
-      parent = parent.$parent;
-    }
-    parent.$children.push(vm);
-  }
-
-  vm.$parent = parent;
-  vm.$root = parent ? parent.$root : vm;
-
-  vm.$children = [];
-  vm.$refs = {};
-
-  vm._watcher = null;
-  vm._inactive = null;
-  vm._directInactive = false;
-  vm._isMounted = false;
-  vm._isDestroyed = false;
-  vm._isBeingDestroyed = false;
-}
-
-function lifecycleMixin (Vue) {
-  Vue.prototype._update = function (vnode, hydrating) {
-    var vm = this;
-    if (vm._isMounted) {
-      callHook(vm, 'beforeUpdate');
-    }
-    var prevEl = vm.$el;
-    var prevVnode = vm._vnode;
-    var prevActiveInstance = activeInstance;
-    activeInstance = vm;
-    vm._vnode = vnode;
-    // Vue.prototype.__patch__ is injected in entry points
-    // based on the rendering backend used.
-    if (!prevVnode) {
-      // initial render
-      vm.$el = vm.__patch__(
-        vm.$el, vnode, hydrating, false /* removeOnly */,
-        vm.$options._parentElm,
-        vm.$options._refElm
-      );
-      // no need for the ref nodes after initial patch
-      // this prevents keeping a detached DOM tree in memory (#5851)
-      vm.$options._parentElm = vm.$options._refElm = null;
-    } else {
-      // updates
-      vm.$el = vm.__patch__(prevVnode, vnode);
-    }
-    activeInstance = prevActiveInstance;
-    // update __vue__ reference
-    if (prevEl) {
-      prevEl.__vue__ = null;
-    }
-    if (vm.$el) {
-      vm.$el.__vue__ = vm;
-    }
-    // if parent is an HOC, update its $el as well
-    if (vm.$vnode && vm.$parent && vm.$vnode === vm.$parent._vnode) {
-      vm.$parent.$el = vm.$el;
-    }
-    // updated hook is called by the scheduler to ensure that children are
-    // updated in a parent's updated hook.
+function normalizeScopedSlot(normalSlots, key, fn) {
+  var normalized = function () {
+    var res = arguments.length ? fn.apply(null, arguments) : fn({});
+    res = res && typeof res === 'object' && !Array.isArray(res)
+      ? [res] // single vnode
+      : normalizeChildren(res);
+    return res && (
+      res.length === 0 ||
+      (res.length === 1 && res[0].isComment) // #9658
+    ) ? undefined
+      : res
   };
-
-  Vue.prototype.$forceUpdate = function () {
-    var vm = this;
-    if (vm._watcher) {
-      vm._watcher.update();
-    }
-  };
-
-  Vue.prototype.$destroy = function () {
-    var vm = this;
-    if (vm._isBeingDestroyed) {
-      return
-    }
-    callHook(vm, 'beforeDestroy');
-    vm._isBeingDestroyed = true;
-    // remove self from parent
-    var parent = vm.$parent;
-    if (parent && !parent._isBeingDestroyed && !vm.$options.abstract) {
-      remove(parent.$children, vm);
-    }
-    // teardown watchers
-    if (vm._watcher) {
-      vm._watcher.teardown();
-    }
-    var i = vm._watchers.length;
-    while (i--) {
-      vm._watchers[i].teardown();
-    }
-    // remove reference from data ob
-    // frozen object may not have observer.
-    if (vm._data.__ob__) {
-      vm._data.__ob__.vmCount--;
-    }
-    // call the last hook...
-    vm._isDestroyed = true;
-    // invoke destroy hooks on current rendered tree
-    vm.__patch__(vm._vnode, null);
-    // fire destroyed hook
-    callHook(vm, 'destroyed');
-    // turn off all instance listeners.
-    vm.$off();
-    // remove __vue__ reference
-    if (vm.$el) {
-      vm.$el.__vue__ = null;
-    }
-    // release circular reference (#6759)
-    if (vm.$vnode) {
-      vm.$vnode.parent = null;
-    }
-  };
-}
-
-function mountComponent (
-  vm,
-  el,
-  hydrating
-) {
-  vm.$el = el;
-  if (!vm.$options.render) {
-    vm.$options.render = createEmptyVNode;
-    if (true) {
-      /* istanbul ignore if */
-      if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
-        vm.$options.el || el) {
-        warn(
-          'You are using the runtime-only build of Vue where the template ' +
-          'compiler is not available. Either pre-compile the templates into ' +
-          'render functions, or use the compiler-included build.',
-          vm
-        );
-      } else {
-        warn(
-          'Failed to mount component: template or render function not defined.',
-          vm
-        );
-      }
-    }
-  }
-  callHook(vm, 'beforeMount');
-
-  var updateComponent;
-  /* istanbul ignore if */
-  if ("development" !== 'production' && config.performance && mark) {
-    updateComponent = function () {
-      var name = vm._name;
-      var id = vm._uid;
-      var startTag = "vue-perf-start:" + id;
-      var endTag = "vue-perf-end:" + id;
-
-      mark(startTag);
-      var vnode = vm._render();
-      mark(endTag);
-      measure(("vue " + name + " render"), startTag, endTag);
-
-      mark(startTag);
-      vm._update(vnode, hydrating);
-      mark(endTag);
-      measure(("vue " + name + " patch"), startTag, endTag);
-    };
-  } else {
-    updateComponent = function () {
-      vm._update(vm._render(), hydrating);
-    };
-  }
-
-  // we set this to vm._watcher inside the watcher's constructor
-  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
-  // component's mounted hook), which relies on vm._watcher being already defined
-  new Watcher(vm, updateComponent, noop, null, true /* isRenderWatcher */);
-  hydrating = false;
-
-  // manually mounted instance, call mounted on self
-  // mounted is called for render-created child components in its inserted hook
-  if (vm.$vnode == null) {
-    vm._isMounted = true;
-    callHook(vm, 'mounted');
-  }
-  return vm
-}
-
-function updateChildComponent (
-  vm,
-  propsData,
-  listeners,
-  parentVnode,
-  renderChildren
-) {
-  if (true) {
-    isUpdatingChildComponent = true;
-  }
-
-  // determine whether component has slot children
-  // we need to do this before overwriting $options._renderChildren
-  var hasChildren = !!(
-    renderChildren ||               // has new static slots
-    vm.$options._renderChildren ||  // has old static slots
-    parentVnode.data.scopedSlots || // has new scoped slots
-    vm.$scopedSlots !== emptyObject // has old scoped slots
-  );
-
-  vm.$options._parentVnode = parentVnode;
-  vm.$vnode = parentVnode; // update vm's placeholder node without re-render
-
-  if (vm._vnode) { // update child tree's parent
-    vm._vnode.parent = parentVnode;
-  }
-  vm.$options._renderChildren = renderChildren;
-
-  // update $attrs and $listeners hash
-  // these are also reactive so they may trigger child update if the child
-  // used them during render
-  vm.$attrs = parentVnode.data.attrs || emptyObject;
-  vm.$listeners = listeners || emptyObject;
-
-  // update props
-  if (propsData && vm.$options.props) {
-    toggleObserving(false);
-    var props = vm._props;
-    var propKeys = vm.$options._propKeys || [];
-    for (var i = 0; i < propKeys.length; i++) {
-      var key = propKeys[i];
-      var propOptions = vm.$options.props; // wtf flow?
-      props[key] = validateProp(key, propOptions, propsData, vm);
-    }
-    toggleObserving(true);
-    // keep a copy of raw propsData
-    vm.$options.propsData = propsData;
-  }
-
-  // update listeners
-  listeners = listeners || emptyObject;
-  var oldListeners = vm.$options._parentListeners;
-  vm.$options._parentListeners = listeners;
-  updateComponentListeners(vm, listeners, oldListeners);
-
-  // resolve slots + force update if has children
-  if (hasChildren) {
-    vm.$slots = resolveSlots(renderChildren, parentVnode.context);
-    vm.$forceUpdate();
-  }
-
-  if (true) {
-    isUpdatingChildComponent = false;
-  }
-}
-
-function isInInactiveTree (vm) {
-  while (vm && (vm = vm.$parent)) {
-    if (vm._inactive) { return true }
-  }
-  return false
-}
-
-function activateChildComponent (vm, direct) {
-  if (direct) {
-    vm._directInactive = false;
-    if (isInInactiveTree(vm)) {
-      return
-    }
-  } else if (vm._directInactive) {
-    return
-  }
-  if (vm._inactive || vm._inactive === null) {
-    vm._inactive = false;
-    for (var i = 0; i < vm.$children.length; i++) {
-      activateChildComponent(vm.$children[i]);
-    }
-    callHook(vm, 'activated');
-  }
-}
-
-function deactivateChildComponent (vm, direct) {
-  if (direct) {
-    vm._directInactive = true;
-    if (isInInactiveTree(vm)) {
-      return
-    }
-  }
-  if (!vm._inactive) {
-    vm._inactive = true;
-    for (var i = 0; i < vm.$children.length; i++) {
-      deactivateChildComponent(vm.$children[i]);
-    }
-    callHook(vm, 'deactivated');
-  }
-}
-
-function callHook (vm, hook) {
-  // #7573 disable dep collection when invoking lifecycle hooks
-  pushTarget();
-  var handlers = vm.$options[hook];
-  if (handlers) {
-    for (var i = 0, j = handlers.length; i < j; i++) {
-      try {
-        handlers[i].call(vm);
-      } catch (e) {
-        handleError(e, vm, (hook + " hook"));
-      }
-    }
-  }
-  if (vm._hasHookEvent) {
-    vm.$emit('hook:' + hook);
-  }
-  popTarget();
-}
-
-/*  */
-
-
-var MAX_UPDATE_COUNT = 100;
-
-var queue = [];
-var activatedChildren = [];
-var has = {};
-var circular = {};
-var waiting = false;
-var flushing = false;
-var index = 0;
-
-/**
- * Reset the scheduler's state.
- */
-function resetSchedulerState () {
-  index = queue.length = activatedChildren.length = 0;
-  has = {};
-  if (true) {
-    circular = {};
-  }
-  waiting = flushing = false;
-}
-
-/**
- * Flush both queues and run the watchers.
- */
-function flushSchedulerQueue () {
-  flushing = true;
-  var watcher, id;
-
-  // Sort queue before flush.
-  // This ensures that:
-  // 1. Components are updated from parent to child. (because parent is always
-  //    created before the child)
-  // 2. A component's user watchers are run before its render watcher (because
-  //    user watchers are created before the render watcher)
-  // 3. If a component is destroyed during a parent component's watcher run,
-  //    its watchers can be skipped.
-  queue.sort(function (a, b) { return a.id - b.id; });
-
-  // do not cache length because more watchers might be pushed
-  // as we run existing watchers
-  for (index = 0; index < queue.length; index++) {
-    watcher = queue[index];
-    id = watcher.id;
-    has[id] = null;
-    watcher.run();
-    // in dev build, check and stop circular updates.
-    if ("development" !== 'production' && has[id] != null) {
-      circular[id] = (circular[id] || 0) + 1;
-      if (circular[id] > MAX_UPDATE_COUNT) {
-        warn(
-          'You may have an infinite update loop ' + (
-            watcher.user
-              ? ("in watcher with expression \"" + (watcher.expression) + "\"")
-              : "in a component render function."
-          ),
-          watcher.vm
-        );
-        break
-      }
-    }
-  }
-
-  // keep copies of post queues before resetting state
-  var activatedQueue = activatedChildren.slice();
-  var updatedQueue = queue.slice();
-
-  resetSchedulerState();
-
-  // call component updated and activated hooks
-  callActivatedHooks(activatedQueue);
-  callUpdatedHooks(updatedQueue);
-
-  // devtool hook
-  /* istanbul ignore if */
-  if (devtools && config.devtools) {
-    devtools.emit('flush');
-  }
-}
-
-function callUpdatedHooks (queue) {
-  var i = queue.length;
-  while (i--) {
-    var watcher = queue[i];
-    var vm = watcher.vm;
-    if (vm._watcher === watcher && vm._isMounted) {
-      callHook(vm, 'updated');
-    }
-  }
-}
-
-/**
- * Queue a kept-alive component that was activated during patch.
- * The queue will be processed after the entire tree has been patched.
- */
-function queueActivatedComponent (vm) {
-  // setting _inactive to false here so that a render function can
-  // rely on checking whether it's in an inactive tree (e.g. router-view)
-  vm._inactive = false;
-  activatedChildren.push(vm);
-}
-
-function callActivatedHooks (queue) {
-  for (var i = 0; i < queue.length; i++) {
-    queue[i]._inactive = true;
-    activateChildComponent(queue[i], true /* true */);
-  }
-}
-
-/**
- * Push a watcher into the watcher queue.
- * Jobs with duplicate IDs will be skipped unless it's
- * pushed when the queue is being flushed.
- */
-function queueWatcher (watcher) {
-  var id = watcher.id;
-  if (has[id] == null) {
-    has[id] = true;
-    if (!flushing) {
-      queue.push(watcher);
-    } else {
-      // if already flushing, splice the watcher based on its id
-      // if already past its id, it will be run next immediately.
-      var i = queue.length - 1;
-      while (i > index && queue[i].id > watcher.id) {
-        i--;
-      }
-      queue.splice(i + 1, 0, watcher);
-    }
-    // queue the flush
-    if (!waiting) {
-      waiting = true;
-      nextTick(flushSchedulerQueue);
-    }
-  }
-}
-
-/*  */
-
-var uid$1 = 0;
-
-/**
- * A watcher parses an expression, collects dependencies,
- * and fires callback when the expression value changes.
- * This is used for both the $watch() api and directives.
- */
-var Watcher = function Watcher (
-  vm,
-  expOrFn,
-  cb,
-  options,
-  isRenderWatcher
-) {
-  this.vm = vm;
-  if (isRenderWatcher) {
-    vm._watcher = this;
-  }
-  vm._watchers.push(this);
-  // options
-  if (options) {
-    this.deep = !!options.deep;
-    this.user = !!options.user;
-    this.lazy = !!options.lazy;
-    this.sync = !!options.sync;
-  } else {
-    this.deep = this.user = this.lazy = this.sync = false;
-  }
-  this.cb = cb;
-  this.id = ++uid$1; // uid for batching
-  this.active = true;
-  this.dirty = this.lazy; // for lazy watchers
-  this.deps = [];
-  this.newDeps = [];
-  this.depIds = new _Set();
-  this.newDepIds = new _Set();
-  this.expression =  true
-    ? expOrFn.toString()
-    : '';
-  // parse expression for getter
-  if (typeof expOrFn === 'function') {
-    this.getter = expOrFn;
-  } else {
-    this.getter = parsePath(expOrFn);
-    if (!this.getter) {
-      this.getter = function () {};
-      "development" !== 'production' && warn(
-        "Failed watching path: \"" + expOrFn + "\" " +
-        'Watcher only accepts simple dot-delimited paths. ' +
-        'For full control, use a function instead.',
-        vm
-      );
-    }
-  }
-  this.value = this.lazy
-    ? undefined
-    : this.get();
-};
-
-/**
- * Evaluate the getter, and re-collect dependencies.
- */
-Watcher.prototype.get = function get () {
-  pushTarget(this);
-  var value;
-  var vm = this.vm;
-  try {
-    value = this.getter.call(vm, vm);
-  } catch (e) {
-    if (this.user) {
-      handleError(e, vm, ("getter for watcher \"" + (this.expression) + "\""));
-    } else {
-      throw e
-    }
-  } finally {
-    // "touch" every property so they are all tracked as
-    // dependencies for deep watching
-    if (this.deep) {
-      traverse(value);
-    }
-    popTarget();
-    this.cleanupDeps();
-  }
-  return value
-};
-
-/**
- * Add a dependency to this directive.
- */
-Watcher.prototype.addDep = function addDep (dep) {
-  var id = dep.id;
-  if (!this.newDepIds.has(id)) {
-    this.newDepIds.add(id);
-    this.newDeps.push(dep);
-    if (!this.depIds.has(id)) {
-      dep.addSub(this);
-    }
-  }
-};
-
-/**
- * Clean up for dependency collection.
- */
-Watcher.prototype.cleanupDeps = function cleanupDeps () {
-    var this$1 = this;
-
-  var i = this.deps.length;
-  while (i--) {
-    var dep = this$1.deps[i];
-    if (!this$1.newDepIds.has(dep.id)) {
-      dep.removeSub(this$1);
-    }
-  }
-  var tmp = this.depIds;
-  this.depIds = this.newDepIds;
-  this.newDepIds = tmp;
-  this.newDepIds.clear();
-  tmp = this.deps;
-  this.deps = this.newDeps;
-  this.newDeps = tmp;
-  this.newDeps.length = 0;
-};
-
-/**
- * Subscriber interface.
- * Will be called when a dependency changes.
- */
-Watcher.prototype.update = function update () {
-  /* istanbul ignore else */
-  if (this.lazy) {
-    this.dirty = true;
-  } else if (this.sync) {
-    this.run();
-  } else {
-    queueWatcher(this);
-  }
-};
-
-/**
- * Scheduler job interface.
- * Will be called by the scheduler.
- */
-Watcher.prototype.run = function run () {
-  if (this.active) {
-    var value = this.get();
-    if (
-      value !== this.value ||
-      // Deep watchers and watchers on Object/Arrays should fire even
-      // when the value is the same, because the value may
-      // have mutated.
-      isObject(value) ||
-      this.deep
-    ) {
-      // set new value
-      var oldValue = this.value;
-      this.value = value;
-      if (this.user) {
-        try {
-          this.cb.call(this.vm, value, oldValue);
-        } catch (e) {
-          handleError(e, this.vm, ("callback for watcher \"" + (this.expression) + "\""));
-        }
-      } else {
-        this.cb.call(this.vm, value, oldValue);
-      }
-    }
-  }
-};
-
-/**
- * Evaluate the value of the watcher.
- * This only gets called for lazy watchers.
- */
-Watcher.prototype.evaluate = function evaluate () {
-  this.value = this.get();
-  this.dirty = false;
-};
-
-/**
- * Depend on all deps collected by this watcher.
- */
-Watcher.prototype.depend = function depend () {
-    var this$1 = this;
-
-  var i = this.deps.length;
-  while (i--) {
-    this$1.deps[i].depend();
-  }
-};
-
-/**
- * Remove self from all dependencies' subscriber list.
- */
-Watcher.prototype.teardown = function teardown () {
-    var this$1 = this;
-
-  if (this.active) {
-    // remove self from vm's watcher list
-    // this is a somewhat expensive operation so we skip it
-    // if the vm is being destroyed.
-    if (!this.vm._isBeingDestroyed) {
-      remove(this.vm._watchers, this);
-    }
-    var i = this.deps.length;
-    while (i--) {
-      this$1.deps[i].removeSub(this$1);
-    }
-    this.active = false;
-  }
-};
-
-/*  */
-
-var sharedPropertyDefinition = {
-  enumerable: true,
-  configurable: true,
-  get: noop,
-  set: noop
-};
-
-function proxy (target, sourceKey, key) {
-  sharedPropertyDefinition.get = function proxyGetter () {
-    return this[sourceKey][key]
-  };
-  sharedPropertyDefinition.set = function proxySetter (val) {
-    this[sourceKey][key] = val;
-  };
-  Object.defineProperty(target, key, sharedPropertyDefinition);
-}
-
-function initState (vm) {
-  vm._watchers = [];
-  var opts = vm.$options;
-  if (opts.props) { initProps(vm, opts.props); }
-  if (opts.methods) { initMethods(vm, opts.methods); }
-  if (opts.data) {
-    initData(vm);
-  } else {
-    observe(vm._data = {}, true /* asRootData */);
-  }
-  if (opts.computed) { initComputed(vm, opts.computed); }
-  if (opts.watch && opts.watch !== nativeWatch) {
-    initWatch(vm, opts.watch);
-  }
-}
-
-function initProps (vm, propsOptions) {
-  var propsData = vm.$options.propsData || {};
-  var props = vm._props = {};
-  // cache prop keys so that future props updates can iterate using Array
-  // instead of dynamic object key enumeration.
-  var keys = vm.$options._propKeys = [];
-  var isRoot = !vm.$parent;
-  // root instance props should be converted
-  if (!isRoot) {
-    toggleObserving(false);
-  }
-  var loop = function ( key ) {
-    keys.push(key);
-    var value = validateProp(key, propsOptions, propsData, vm);
-    /* istanbul ignore else */
-    if (true) {
-      var hyphenatedKey = hyphenate(key);
-      if (isReservedAttribute(hyphenatedKey) ||
-          config.isReservedAttr(hyphenatedKey)) {
-        warn(
-          ("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop."),
-          vm
-        );
-      }
-      defineReactive(props, key, value, function () {
-        if (vm.$parent && !isUpdatingChildComponent) {
-          warn(
-            "Avoid mutating a prop directly since the value will be " +
-            "overwritten whenever the parent component re-renders. " +
-            "Instead, use a data or computed property based on the prop's " +
-            "value. Prop being mutated: \"" + key + "\"",
-            vm
-          );
-        }
-      });
-    } else {
-      defineReactive(props, key, value);
-    }
-    // static props are already proxied on the component's prototype
-    // during Vue.extend(). We only need to proxy props defined at
-    // instantiation here.
-    if (!(key in vm)) {
-      proxy(vm, "_props", key);
-    }
-  };
-
-  for (var key in propsOptions) loop( key );
-  toggleObserving(true);
-}
-
-function initData (vm) {
-  var data = vm.$options.data;
-  data = vm._data = typeof data === 'function'
-    ? getData(data, vm)
-    : data || {};
-  if (!isPlainObject(data)) {
-    data = {};
-    "development" !== 'production' && warn(
-      'data functions should return an object:\n' +
-      'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
-      vm
-    );
-  }
-  // proxy data on instance
-  var keys = Object.keys(data);
-  var props = vm.$options.props;
-  var methods = vm.$options.methods;
-  var i = keys.length;
-  while (i--) {
-    var key = keys[i];
-    if (true) {
-      if (methods && hasOwn(methods, key)) {
-        warn(
-          ("Method \"" + key + "\" has already been defined as a data property."),
-          vm
-        );
-      }
-    }
-    if (props && hasOwn(props, key)) {
-      "development" !== 'production' && warn(
-        "The data property \"" + key + "\" is already declared as a prop. " +
-        "Use prop default value instead.",
-        vm
-      );
-    } else if (!isReserved(key)) {
-      proxy(vm, "_data", key);
-    }
-  }
-  // observe data
-  observe(data, true /* asRootData */);
-}
-
-function getData (data, vm) {
-  // #7573 disable dep collection when invoking data getters
-  pushTarget();
-  try {
-    return data.call(vm, vm)
-  } catch (e) {
-    handleError(e, vm, "data()");
-    return {}
-  } finally {
-    popTarget();
-  }
-}
-
-var computedWatcherOptions = { lazy: true };
-
-function initComputed (vm, computed) {
-  // $flow-disable-line
-  var watchers = vm._computedWatchers = Object.create(null);
-  // computed properties are just getters during SSR
-  var isSSR = isServerRendering();
-
-  for (var key in computed) {
-    var userDef = computed[key];
-    var getter = typeof userDef === 'function' ? userDef : userDef.get;
-    if ("development" !== 'production' && getter == null) {
-      warn(
-        ("Getter is missing for computed property \"" + key + "\"."),
-        vm
-      );
-    }
-
-    if (!isSSR) {
-      // create internal watcher for the computed property.
-      watchers[key] = new Watcher(
-        vm,
-        getter || noop,
-        noop,
-        computedWatcherOptions
-      );
-    }
-
-    // component-defined computed properties are already defined on the
-    // component prototype. We only need to define computed properties defined
-    // at instantiation here.
-    if (!(key in vm)) {
-      defineComputed(vm, key, userDef);
-    } else if (true) {
-      if (key in vm.$data) {
-        warn(("The computed property \"" + key + "\" is already defined in data."), vm);
-      } else if (vm.$options.props && key in vm.$options.props) {
-        warn(("The computed property \"" + key + "\" is already defined as a prop."), vm);
-      }
-    }
-  }
-}
-
-function defineComputed (
-  target,
-  key,
-  userDef
-) {
-  var shouldCache = !isServerRendering();
-  if (typeof userDef === 'function') {
-    sharedPropertyDefinition.get = shouldCache
-      ? createComputedGetter(key)
-      : userDef;
-    sharedPropertyDefinition.set = noop;
-  } else {
-    sharedPropertyDefinition.get = userDef.get
-      ? shouldCache && userDef.cache !== false
-        ? createComputedGetter(key)
-        : userDef.get
-      : noop;
-    sharedPropertyDefinition.set = userDef.set
-      ? userDef.set
-      : noop;
-  }
-  if ("development" !== 'production' &&
-      sharedPropertyDefinition.set === noop) {
-    sharedPropertyDefinition.set = function () {
-      warn(
-        ("Computed property \"" + key + "\" was assigned to but it has no setter."),
-        this
-      );
-    };
-  }
-  Object.defineProperty(target, key, sharedPropertyDefinition);
-}
-
-function createComputedGetter (key) {
-  return function computedGetter () {
-    var watcher = this._computedWatchers && this._computedWatchers[key];
-    if (watcher) {
-      if (watcher.dirty) {
-        watcher.evaluate();
-      }
-      if (Dep.target) {
-        watcher.depend();
-      }
-      return watcher.value
-    }
-  }
-}
-
-function initMethods (vm, methods) {
-  var props = vm.$options.props;
-  for (var key in methods) {
-    if (true) {
-      if (methods[key] == null) {
-        warn(
-          "Method \"" + key + "\" has an undefined value in the component definition. " +
-          "Did you reference the function correctly?",
-          vm
-        );
-      }
-      if (props && hasOwn(props, key)) {
-        warn(
-          ("Method \"" + key + "\" has already been defined as a prop."),
-          vm
-        );
-      }
-      if ((key in vm) && isReserved(key)) {
-        warn(
-          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
-          "Avoid defining component methods that start with _ or $."
-        );
-      }
-    }
-    vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
-  }
-}
-
-function initWatch (vm, watch) {
-  for (var key in watch) {
-    var handler = watch[key];
-    if (Array.isArray(handler)) {
-      for (var i = 0; i < handler.length; i++) {
-        createWatcher(vm, key, handler[i]);
-      }
-    } else {
-      createWatcher(vm, key, handler);
-    }
-  }
-}
-
-function createWatcher (
-  vm,
-  expOrFn,
-  handler,
-  options
-) {
-  if (isPlainObject(handler)) {
-    options = handler;
-    handler = handler.handler;
-  }
-  if (typeof handler === 'string') {
-    handler = vm[handler];
-  }
-  return vm.$watch(expOrFn, handler, options)
-}
-
-function stateMixin (Vue) {
-  // flow somehow has problems with directly declared definition object
-  // when using Object.defineProperty, so we have to procedurally build up
-  // the object here.
-  var dataDef = {};
-  dataDef.get = function () { return this._data };
-  var propsDef = {};
-  propsDef.get = function () { return this._props };
-  if (true) {
-    dataDef.set = function (newData) {
-      warn(
-        'Avoid replacing instance root $data. ' +
-        'Use nested data properties instead.',
-        this
-      );
-    };
-    propsDef.set = function () {
-      warn("$props is readonly.", this);
-    };
-  }
-  Object.defineProperty(Vue.prototype, '$data', dataDef);
-  Object.defineProperty(Vue.prototype, '$props', propsDef);
-
-  Vue.prototype.$set = set;
-  Vue.prototype.$delete = del;
-
-  Vue.prototype.$watch = function (
-    expOrFn,
-    cb,
-    options
-  ) {
-    var vm = this;
-    if (isPlainObject(cb)) {
-      return createWatcher(vm, expOrFn, cb, options)
-    }
-    options = options || {};
-    options.user = true;
-    var watcher = new Watcher(vm, expOrFn, cb, options);
-    if (options.immediate) {
-      cb.call(vm, watcher.value);
-    }
-    return function unwatchFn () {
-      watcher.teardown();
-    }
-  };
-}
-
-/*  */
-
-function initProvide (vm) {
-  var provide = vm.$options.provide;
-  if (provide) {
-    vm._provided = typeof provide === 'function'
-      ? provide.call(vm)
-      : provide;
-  }
-}
-
-function initInjections (vm) {
-  var result = resolveInject(vm.$options.inject, vm);
-  if (result) {
-    toggleObserving(false);
-    Object.keys(result).forEach(function (key) {
-      /* istanbul ignore else */
-      if (true) {
-        defineReactive(vm, key, result[key], function () {
-          warn(
-            "Avoid mutating an injected value directly since the changes will be " +
-            "overwritten whenever the provided component re-renders. " +
-            "injection being mutated: \"" + key + "\"",
-            vm
-          );
-        });
-      } else {
-        defineReactive(vm, key, result[key]);
-      }
+  // this is a slot using the new v-slot syntax without scope. although it is
+  // compiled as a scoped slot, render fn users would expect it to be present
+  // on this.$slots because the usage is semantically a normal slot.
+  if (fn.proxy) {
+    Object.defineProperty(normalSlots, key, {
+      get: normalized,
+      enumerable: true,
+      configurable: true
     });
-    toggleObserving(true);
   }
+  return normalized
 }
 
-function resolveInject (inject, vm) {
-  if (inject) {
-    // inject is :any because flow is not smart enough to figure out cached
-    var result = Object.create(null);
-    var keys = hasSymbol
-      ? Reflect.ownKeys(inject).filter(function (key) {
-        /* istanbul ignore next */
-        return Object.getOwnPropertyDescriptor(inject, key).enumerable
-      })
-      : Object.keys(inject);
-
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i];
-      var provideKey = inject[key].from;
-      var source = vm;
-      while (source) {
-        if (source._provided && hasOwn(source._provided, provideKey)) {
-          result[key] = source._provided[provideKey];
-          break
-        }
-        source = source.$parent;
-      }
-      if (!source) {
-        if ('default' in inject[key]) {
-          var provideDefault = inject[key].default;
-          result[key] = typeof provideDefault === 'function'
-            ? provideDefault.call(vm)
-            : provideDefault;
-        } else if (true) {
-          warn(("Injection \"" + key + "\" not found"), vm);
-        }
-      }
-    }
-    return result
-  }
+function proxyNormalSlot(slots, key) {
+  return function () { return slots[key]; }
 }
 
 /*  */
@@ -68260,16 +68775,27 @@ function renderList (
       ret[i] = render(i + 1, i);
     }
   } else if (isObject(val)) {
-    keys = Object.keys(val);
-    ret = new Array(keys.length);
-    for (i = 0, l = keys.length; i < l; i++) {
-      key = keys[i];
-      ret[i] = render(val[key], key, i);
+    if (hasSymbol && val[Symbol.iterator]) {
+      ret = [];
+      var iterator = val[Symbol.iterator]();
+      var result = iterator.next();
+      while (!result.done) {
+        ret.push(render(result.value, ret.length));
+        result = iterator.next();
+      }
+    } else {
+      keys = Object.keys(val);
+      ret = new Array(keys.length);
+      for (i = 0, l = keys.length; i < l; i++) {
+        key = keys[i];
+        ret[i] = render(val[key], key, i);
+      }
     }
   }
-  if (isDef(ret)) {
-    (ret)._isVList = true;
+  if (!isDef(ret)) {
+    ret = [];
   }
+  (ret)._isVList = true;
   return ret
 }
 
@@ -68289,7 +68815,7 @@ function renderSlot (
   if (scopedSlotFn) { // scoped slot
     props = props || {};
     if (bindObject) {
-      if ("development" !== 'production' && !isObject(bindObject)) {
+      if (!isObject(bindObject)) {
         warn(
           'slot v-bind without argument expects an Object',
           this
@@ -68299,19 +68825,7 @@ function renderSlot (
     }
     nodes = scopedSlotFn(props) || fallback;
   } else {
-    var slotNodes = this.$slots[name];
-    // warn duplicate slot usage
-    if (slotNodes) {
-      if ("development" !== 'production' && slotNodes._rendered) {
-        warn(
-          "Duplicate presence of slot \"" + name + "\" found in the same render tree " +
-          "- this will likely cause render errors.",
-          this
-        );
-      }
-      slotNodes._rendered = true;
-    }
-    nodes = slotNodes || fallback;
+    nodes = this.$slots[name] || fallback;
   }
 
   var target = props && props.slot;
@@ -68377,7 +68891,7 @@ function bindObjectProps (
 ) {
   if (value) {
     if (!isObject(value)) {
-      "development" !== 'production' && warn(
+      warn(
         'v-bind without argument expects an Object or Array value',
         this
       );
@@ -68399,7 +68913,9 @@ function bindObjectProps (
             ? data.domProps || (data.domProps = {})
             : data.attrs || (data.attrs = {});
         }
-        if (!(key in hash)) {
+        var camelizedKey = camelize(key);
+        var hyphenatedKey = hyphenate(key);
+        if (!(camelizedKey in hash) && !(hyphenatedKey in hash)) {
           hash[key] = value[key];
 
           if (isSync) {
@@ -68483,7 +68999,7 @@ function markStaticNode (node, key, isOnce) {
 function bindObjectListeners (data, value) {
   if (value) {
     if (!isPlainObject(value)) {
-      "development" !== 'production' && warn(
+      warn(
         'v-on without argument expects an Object value',
         this
       );
@@ -68497,6 +69013,59 @@ function bindObjectListeners (data, value) {
     }
   }
   return data
+}
+
+/*  */
+
+function resolveScopedSlots (
+  fns, // see flow/vnode
+  res,
+  // the following are added in 2.6
+  hasDynamicKeys,
+  contentHashKey
+) {
+  res = res || { $stable: !hasDynamicKeys };
+  for (var i = 0; i < fns.length; i++) {
+    var slot = fns[i];
+    if (Array.isArray(slot)) {
+      resolveScopedSlots(slot, res, hasDynamicKeys);
+    } else if (slot) {
+      // marker for reverse proxying v-slot without scope on this.$slots
+      if (slot.proxy) {
+        slot.fn.proxy = true;
+      }
+      res[slot.key] = slot.fn;
+    }
+  }
+  if (contentHashKey) {
+    (res).$key = contentHashKey;
+  }
+  return res
+}
+
+/*  */
+
+function bindDynamicKeys (baseObj, values) {
+  for (var i = 0; i < values.length; i += 2) {
+    var key = values[i];
+    if (typeof key === 'string' && key) {
+      baseObj[values[i]] = values[i + 1];
+    } else if (key !== '' && key !== null) {
+      // null is a speical value for explicitly removing a binding
+      warn(
+        ("Invalid value for dynamic directive argument (expected string or null): " + key),
+        this
+      );
+    }
+  }
+  return baseObj
+}
+
+// helper to dynamically append modifier runtime markers to event names.
+// ensure only append when value is already string, otherwise it will be cast
+// to string and cause the type check to miss.
+function prependModifier (value, symbol) {
+  return typeof value === 'string' ? symbol + value : value
 }
 
 /*  */
@@ -68517,6 +69086,8 @@ function installRenderHelpers (target) {
   target._e = createEmptyVNode;
   target._u = resolveScopedSlots;
   target._g = bindObjectListeners;
+  target._d = bindDynamicKeys;
+  target._p = prependModifier;
 }
 
 /*  */
@@ -68528,6 +69099,8 @@ function FunctionalRenderContext (
   parent,
   Ctor
 ) {
+  var this$1 = this;
+
   var options = Ctor.options;
   // ensure the createElement function in functional components
   // gets a unique context - this is necessary for correct named slot check
@@ -68553,7 +69126,22 @@ function FunctionalRenderContext (
   this.parent = parent;
   this.listeners = data.on || emptyObject;
   this.injections = resolveInject(options.inject, parent);
-  this.slots = function () { return resolveSlots(children, parent); };
+  this.slots = function () {
+    if (!this$1.$slots) {
+      normalizeScopedSlots(
+        data.scopedSlots,
+        this$1.$slots = resolveSlots(children, parent)
+      );
+    }
+    return this$1.$slots
+  };
+
+  Object.defineProperty(this, 'scopedSlots', ({
+    enumerable: true,
+    get: function get () {
+      return normalizeScopedSlots(data.scopedSlots, this.slots())
+    }
+  }));
 
   // support for compiled functional template
   if (isCompiled) {
@@ -68561,7 +69149,7 @@ function FunctionalRenderContext (
     this.$options = options;
     // pre-resolve slots for renderSlot()
     this.$slots = this.slots();
-    this.$scopedSlots = data.scopedSlots || emptyObject;
+    this.$scopedSlots = normalizeScopedSlots(data.scopedSlots, this.$slots);
   }
 
   if (options._scopeId) {
@@ -68610,24 +69198,27 @@ function createFunctionalComponent (
   var vnode = options.render.call(null, renderContext._c, renderContext);
 
   if (vnode instanceof VNode) {
-    return cloneAndMarkFunctionalResult(vnode, data, renderContext.parent, options)
+    return cloneAndMarkFunctionalResult(vnode, data, renderContext.parent, options, renderContext)
   } else if (Array.isArray(vnode)) {
     var vnodes = normalizeChildren(vnode) || [];
     var res = new Array(vnodes.length);
     for (var i = 0; i < vnodes.length; i++) {
-      res[i] = cloneAndMarkFunctionalResult(vnodes[i], data, renderContext.parent, options);
+      res[i] = cloneAndMarkFunctionalResult(vnodes[i], data, renderContext.parent, options, renderContext);
     }
     return res
   }
 }
 
-function cloneAndMarkFunctionalResult (vnode, data, contextVm, options) {
+function cloneAndMarkFunctionalResult (vnode, data, contextVm, options, renderContext) {
   // #7817 clone node before setting fnContext, otherwise if the node is reused
   // (e.g. it was from a cached normal slot) the fnContext causes named slots
   // that should not be matched to match.
   var clone = cloneVNode(vnode);
   clone.fnContext = contextVm;
   clone.fnOptions = options;
+  {
+    (clone.devtoolsMeta = clone.devtoolsMeta || {}).renderContext = renderContext;
+  }
   if (data.slot) {
     (clone.data || (clone.data = {})).slot = data.slot;
   }
@@ -68642,20 +69233,7 @@ function mergeProps (to, from) {
 
 /*  */
 
-
-
-
-// Register the component hook to weex native render engine.
-// The hook will be triggered by native, not javascript.
-
-
-// Updates the state of the component to weex native render engine.
-
 /*  */
-
-// https://github.com/Hanks10100/weex-native-directive/tree/master/component
-
-// listening on native callback
 
 /*  */
 
@@ -68663,12 +69241,7 @@ function mergeProps (to, from) {
 
 // inline hooks to be invoked on component VNodes during patch
 var componentVNodeHooks = {
-  init: function init (
-    vnode,
-    hydrating,
-    parentElm,
-    refElm
-  ) {
+  init: function init (vnode, hydrating) {
     if (
       vnode.componentInstance &&
       !vnode.componentInstance._isDestroyed &&
@@ -68680,9 +69253,7 @@ var componentVNodeHooks = {
     } else {
       var child = vnode.componentInstance = createComponentInstanceForVnode(
         vnode,
-        activeInstance,
-        parentElm,
-        refElm
+        activeInstance
       );
       child.$mount(hydrating ? vnode.elm : undefined, hydrating);
     }
@@ -68756,7 +69327,7 @@ function createComponent (
   // if at this stage it's not a constructor or an async component factory,
   // reject.
   if (typeof Ctor !== 'function') {
-    if (true) {
+    {
       warn(("Invalid Component definition: " + (String(Ctor))), context);
     }
     return
@@ -68766,7 +69337,7 @@ function createComponent (
   var asyncFactory;
   if (isUndef(Ctor.cid)) {
     asyncFactory = Ctor;
-    Ctor = resolveAsyncComponent(asyncFactory, baseCtor, context);
+    Ctor = resolveAsyncComponent(asyncFactory, baseCtor);
     if (Ctor === undefined) {
       // return a placeholder node for async component, which is rendered
       // as a comment node but preserves all the raw information for the node.
@@ -68831,25 +69402,17 @@ function createComponent (
     asyncFactory
   );
 
-  // Weex specific: invoke recycle-list optimized @render function for
-  // extracting cell-slot template.
-  // https://github.com/Hanks10100/weex-native-directive/tree/master/component
-  /* istanbul ignore if */
   return vnode
 }
 
 function createComponentInstanceForVnode (
   vnode, // we know it's MountedComponentVNode but flow doesn't
-  parent, // activeInstance in lifecycle state
-  parentElm,
-  refElm
+  parent // activeInstance in lifecycle state
 ) {
   var options = {
     _isComponent: true,
-    parent: parent,
     _parentVnode: vnode,
-    _parentElm: parentElm || null,
-    _refElm: refElm || null
+    parent: parent
   };
   // check inline-template render functions
   var inlineTemplate = vnode.data.inlineTemplate;
@@ -68864,20 +69427,43 @@ function installComponentHooks (data) {
   var hooks = data.hook || (data.hook = {});
   for (var i = 0; i < hooksToMerge.length; i++) {
     var key = hooksToMerge[i];
-    hooks[key] = componentVNodeHooks[key];
+    var existing = hooks[key];
+    var toMerge = componentVNodeHooks[key];
+    if (existing !== toMerge && !(existing && existing._merged)) {
+      hooks[key] = existing ? mergeHook$1(toMerge, existing) : toMerge;
+    }
   }
+}
+
+function mergeHook$1 (f1, f2) {
+  var merged = function (a, b) {
+    // flow complains about extra args which is why we use any
+    f1(a, b);
+    f2(a, b);
+  };
+  merged._merged = true;
+  return merged
 }
 
 // transform component v-model info (value and callback) into
 // prop and event handler respectively.
 function transformModel (options, data) {
   var prop = (options.model && options.model.prop) || 'value';
-  var event = (options.model && options.model.event) || 'input';(data.props || (data.props = {}))[prop] = data.model.value;
+  var event = (options.model && options.model.event) || 'input'
+  ;(data.attrs || (data.attrs = {}))[prop] = data.model.value;
   var on = data.on || (data.on = {});
-  if (isDef(on[event])) {
-    on[event] = [data.model.callback].concat(on[event]);
+  var existing = on[event];
+  var callback = data.model.callback;
+  if (isDef(existing)) {
+    if (
+      Array.isArray(existing)
+        ? existing.indexOf(callback) === -1
+        : existing !== callback
+    ) {
+      on[event] = [callback].concat(existing);
+    }
   } else {
-    on[event] = data.model.callback;
+    on[event] = callback;
   }
 }
 
@@ -68915,7 +69501,7 @@ function _createElement (
   normalizationType
 ) {
   if (isDef(data) && isDef((data).__ob__)) {
-    "development" !== 'production' && warn(
+    warn(
       "Avoid using observed data object as vnode data: " + (JSON.stringify(data)) + "\n" +
       'Always create fresh vnode data objects in each render!',
       context
@@ -68931,8 +69517,7 @@ function _createElement (
     return createEmptyVNode()
   }
   // warn against non-primitive key
-  if ("development" !== 'production' &&
-    isDef(data) && isDef(data.key) && !isPrimitive(data.key)
+  if (isDef(data) && isDef(data.key) && !isPrimitive(data.key)
   ) {
     {
       warn(
@@ -68965,7 +69550,7 @@ function _createElement (
         config.parsePlatformTagName(tag), data, children,
         undefined, undefined, context
       );
-    } else if (isDef(Ctor = resolveAsset(context.$options, 'components', tag))) {
+    } else if ((!data || !data.pre) && isDef(Ctor = resolveAsset(context.$options, 'components', tag))) {
       // component
       vnode = createComponent(Ctor, data, context, children, tag);
     } else {
@@ -69046,18 +69631,17 @@ function initRender (vm) {
   var parentData = parentVnode && parentVnode.data;
 
   /* istanbul ignore else */
-  if (true) {
-    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+  {
+    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
       !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
     }, true);
-    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, function () {
+    defineReactive$$1(vm, '$listeners', options._parentListeners || emptyObject, function () {
       !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
     }, true);
-  } else {
-    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
-    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, null, true);
   }
 }
+
+var currentRenderingInstance = null;
 
 function renderMixin (Vue) {
   // install runtime convenience helpers
@@ -69073,16 +69657,12 @@ function renderMixin (Vue) {
     var render = ref.render;
     var _parentVnode = ref._parentVnode;
 
-    // reset _rendered flag on slots for duplicate slot check
-    if (true) {
-      for (var key in vm.$slots) {
-        // $flow-disable-line
-        vm.$slots[key]._rendered = false;
-      }
-    }
-
     if (_parentVnode) {
-      vm.$scopedSlots = _parentVnode.data.scopedSlots || emptyObject;
+      vm.$scopedSlots = normalizeScopedSlots(
+        _parentVnode.data.scopedSlots,
+        vm.$slots,
+        vm.$scopedSlots
+      );
     }
 
     // set parent vnode. this allows render functions to have access
@@ -69091,30 +69671,36 @@ function renderMixin (Vue) {
     // render self
     var vnode;
     try {
+      // There's no need to maintain a stack becaues all render fns are called
+      // separately from one another. Nested component's render fns are called
+      // when parent component is patched.
+      currentRenderingInstance = vm;
       vnode = render.call(vm._renderProxy, vm.$createElement);
     } catch (e) {
       handleError(e, vm, "render");
       // return error render result,
       // or previous vnode to prevent render error causing blank component
       /* istanbul ignore else */
-      if (true) {
-        if (vm.$options.renderError) {
-          try {
-            vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
-          } catch (e) {
-            handleError(e, vm, "renderError");
-            vnode = vm._vnode;
-          }
-        } else {
+      if (vm.$options.renderError) {
+        try {
+          vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
+        } catch (e) {
+          handleError(e, vm, "renderError");
           vnode = vm._vnode;
         }
       } else {
         vnode = vm._vnode;
       }
+    } finally {
+      currentRenderingInstance = null;
+    }
+    // if the returned array contains only a single node, allow it
+    if (Array.isArray(vnode) && vnode.length === 1) {
+      vnode = vnode[0];
     }
     // return empty vnode in case the render function errored out
     if (!(vnode instanceof VNode)) {
-      if ("development" !== 'production' && Array.isArray(vnode)) {
+      if (Array.isArray(vnode)) {
         warn(
           'Multiple root nodes returned from render function. Render function ' +
           'should return a single root node.',
@@ -69131,6 +69717,1371 @@ function renderMixin (Vue) {
 
 /*  */
 
+function ensureCtor (comp, base) {
+  if (
+    comp.__esModule ||
+    (hasSymbol && comp[Symbol.toStringTag] === 'Module')
+  ) {
+    comp = comp.default;
+  }
+  return isObject(comp)
+    ? base.extend(comp)
+    : comp
+}
+
+function createAsyncPlaceholder (
+  factory,
+  data,
+  context,
+  children,
+  tag
+) {
+  var node = createEmptyVNode();
+  node.asyncFactory = factory;
+  node.asyncMeta = { data: data, context: context, children: children, tag: tag };
+  return node
+}
+
+function resolveAsyncComponent (
+  factory,
+  baseCtor
+) {
+  if (isTrue(factory.error) && isDef(factory.errorComp)) {
+    return factory.errorComp
+  }
+
+  if (isDef(factory.resolved)) {
+    return factory.resolved
+  }
+
+  var owner = currentRenderingInstance;
+  if (owner && isDef(factory.owners) && factory.owners.indexOf(owner) === -1) {
+    // already pending
+    factory.owners.push(owner);
+  }
+
+  if (isTrue(factory.loading) && isDef(factory.loadingComp)) {
+    return factory.loadingComp
+  }
+
+  if (owner && !isDef(factory.owners)) {
+    var owners = factory.owners = [owner];
+    var sync = true;
+    var timerLoading = null;
+    var timerTimeout = null
+
+    ;(owner).$on('hook:destroyed', function () { return remove(owners, owner); });
+
+    var forceRender = function (renderCompleted) {
+      for (var i = 0, l = owners.length; i < l; i++) {
+        (owners[i]).$forceUpdate();
+      }
+
+      if (renderCompleted) {
+        owners.length = 0;
+        if (timerLoading !== null) {
+          clearTimeout(timerLoading);
+          timerLoading = null;
+        }
+        if (timerTimeout !== null) {
+          clearTimeout(timerTimeout);
+          timerTimeout = null;
+        }
+      }
+    };
+
+    var resolve = once(function (res) {
+      // cache resolved
+      factory.resolved = ensureCtor(res, baseCtor);
+      // invoke callbacks only if this is not a synchronous resolve
+      // (async resolves are shimmed as synchronous during SSR)
+      if (!sync) {
+        forceRender(true);
+      } else {
+        owners.length = 0;
+      }
+    });
+
+    var reject = once(function (reason) {
+      warn(
+        "Failed to resolve async component: " + (String(factory)) +
+        (reason ? ("\nReason: " + reason) : '')
+      );
+      if (isDef(factory.errorComp)) {
+        factory.error = true;
+        forceRender(true);
+      }
+    });
+
+    var res = factory(resolve, reject);
+
+    if (isObject(res)) {
+      if (isPromise(res)) {
+        // () => Promise
+        if (isUndef(factory.resolved)) {
+          res.then(resolve, reject);
+        }
+      } else if (isPromise(res.component)) {
+        res.component.then(resolve, reject);
+
+        if (isDef(res.error)) {
+          factory.errorComp = ensureCtor(res.error, baseCtor);
+        }
+
+        if (isDef(res.loading)) {
+          factory.loadingComp = ensureCtor(res.loading, baseCtor);
+          if (res.delay === 0) {
+            factory.loading = true;
+          } else {
+            timerLoading = setTimeout(function () {
+              timerLoading = null;
+              if (isUndef(factory.resolved) && isUndef(factory.error)) {
+                factory.loading = true;
+                forceRender(false);
+              }
+            }, res.delay || 200);
+          }
+        }
+
+        if (isDef(res.timeout)) {
+          timerTimeout = setTimeout(function () {
+            timerTimeout = null;
+            if (isUndef(factory.resolved)) {
+              reject(
+                "timeout (" + (res.timeout) + "ms)"
+              );
+            }
+          }, res.timeout);
+        }
+      }
+    }
+
+    sync = false;
+    // return in case resolved synchronously
+    return factory.loading
+      ? factory.loadingComp
+      : factory.resolved
+  }
+}
+
+/*  */
+
+function isAsyncPlaceholder (node) {
+  return node.isComment && node.asyncFactory
+}
+
+/*  */
+
+function getFirstComponentChild (children) {
+  if (Array.isArray(children)) {
+    for (var i = 0; i < children.length; i++) {
+      var c = children[i];
+      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
+        return c
+      }
+    }
+  }
+}
+
+/*  */
+
+/*  */
+
+function initEvents (vm) {
+  vm._events = Object.create(null);
+  vm._hasHookEvent = false;
+  // init parent attached events
+  var listeners = vm.$options._parentListeners;
+  if (listeners) {
+    updateComponentListeners(vm, listeners);
+  }
+}
+
+var target;
+
+function add (event, fn) {
+  target.$on(event, fn);
+}
+
+function remove$1 (event, fn) {
+  target.$off(event, fn);
+}
+
+function createOnceHandler (event, fn) {
+  var _target = target;
+  return function onceHandler () {
+    var res = fn.apply(null, arguments);
+    if (res !== null) {
+      _target.$off(event, onceHandler);
+    }
+  }
+}
+
+function updateComponentListeners (
+  vm,
+  listeners,
+  oldListeners
+) {
+  target = vm;
+  updateListeners(listeners, oldListeners || {}, add, remove$1, createOnceHandler, vm);
+  target = undefined;
+}
+
+function eventsMixin (Vue) {
+  var hookRE = /^hook:/;
+  Vue.prototype.$on = function (event, fn) {
+    var vm = this;
+    if (Array.isArray(event)) {
+      for (var i = 0, l = event.length; i < l; i++) {
+        vm.$on(event[i], fn);
+      }
+    } else {
+      (vm._events[event] || (vm._events[event] = [])).push(fn);
+      // optimize hook:event cost by using a boolean flag marked at registration
+      // instead of a hash lookup
+      if (hookRE.test(event)) {
+        vm._hasHookEvent = true;
+      }
+    }
+    return vm
+  };
+
+  Vue.prototype.$once = function (event, fn) {
+    var vm = this;
+    function on () {
+      vm.$off(event, on);
+      fn.apply(vm, arguments);
+    }
+    on.fn = fn;
+    vm.$on(event, on);
+    return vm
+  };
+
+  Vue.prototype.$off = function (event, fn) {
+    var vm = this;
+    // all
+    if (!arguments.length) {
+      vm._events = Object.create(null);
+      return vm
+    }
+    // array of events
+    if (Array.isArray(event)) {
+      for (var i$1 = 0, l = event.length; i$1 < l; i$1++) {
+        vm.$off(event[i$1], fn);
+      }
+      return vm
+    }
+    // specific event
+    var cbs = vm._events[event];
+    if (!cbs) {
+      return vm
+    }
+    if (!fn) {
+      vm._events[event] = null;
+      return vm
+    }
+    // specific handler
+    var cb;
+    var i = cbs.length;
+    while (i--) {
+      cb = cbs[i];
+      if (cb === fn || cb.fn === fn) {
+        cbs.splice(i, 1);
+        break
+      }
+    }
+    return vm
+  };
+
+  Vue.prototype.$emit = function (event) {
+    var vm = this;
+    {
+      var lowerCaseEvent = event.toLowerCase();
+      if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
+        tip(
+          "Event \"" + lowerCaseEvent + "\" is emitted in component " +
+          (formatComponentName(vm)) + " but the handler is registered for \"" + event + "\". " +
+          "Note that HTML attributes are case-insensitive and you cannot use " +
+          "v-on to listen to camelCase events when using in-DOM templates. " +
+          "You should probably use \"" + (hyphenate(event)) + "\" instead of \"" + event + "\"."
+        );
+      }
+    }
+    var cbs = vm._events[event];
+    if (cbs) {
+      cbs = cbs.length > 1 ? toArray(cbs) : cbs;
+      var args = toArray(arguments, 1);
+      var info = "event handler for \"" + event + "\"";
+      for (var i = 0, l = cbs.length; i < l; i++) {
+        invokeWithErrorHandling(cbs[i], vm, args, vm, info);
+      }
+    }
+    return vm
+  };
+}
+
+/*  */
+
+var activeInstance = null;
+var isUpdatingChildComponent = false;
+
+function setActiveInstance(vm) {
+  var prevActiveInstance = activeInstance;
+  activeInstance = vm;
+  return function () {
+    activeInstance = prevActiveInstance;
+  }
+}
+
+function initLifecycle (vm) {
+  var options = vm.$options;
+
+  // locate first non-abstract parent
+  var parent = options.parent;
+  if (parent && !options.abstract) {
+    while (parent.$options.abstract && parent.$parent) {
+      parent = parent.$parent;
+    }
+    parent.$children.push(vm);
+  }
+
+  vm.$parent = parent;
+  vm.$root = parent ? parent.$root : vm;
+
+  vm.$children = [];
+  vm.$refs = {};
+
+  vm._watcher = null;
+  vm._inactive = null;
+  vm._directInactive = false;
+  vm._isMounted = false;
+  vm._isDestroyed = false;
+  vm._isBeingDestroyed = false;
+}
+
+function lifecycleMixin (Vue) {
+  Vue.prototype._update = function (vnode, hydrating) {
+    var vm = this;
+    var prevEl = vm.$el;
+    var prevVnode = vm._vnode;
+    var restoreActiveInstance = setActiveInstance(vm);
+    vm._vnode = vnode;
+    // Vue.prototype.__patch__ is injected in entry points
+    // based on the rendering backend used.
+    if (!prevVnode) {
+      // initial render
+      vm.$el = vm.__patch__(vm.$el, vnode, hydrating, false /* removeOnly */);
+    } else {
+      // updates
+      vm.$el = vm.__patch__(prevVnode, vnode);
+    }
+    restoreActiveInstance();
+    // update __vue__ reference
+    if (prevEl) {
+      prevEl.__vue__ = null;
+    }
+    if (vm.$el) {
+      vm.$el.__vue__ = vm;
+    }
+    // if parent is an HOC, update its $el as well
+    if (vm.$vnode && vm.$parent && vm.$vnode === vm.$parent._vnode) {
+      vm.$parent.$el = vm.$el;
+    }
+    // updated hook is called by the scheduler to ensure that children are
+    // updated in a parent's updated hook.
+  };
+
+  Vue.prototype.$forceUpdate = function () {
+    var vm = this;
+    if (vm._watcher) {
+      vm._watcher.update();
+    }
+  };
+
+  Vue.prototype.$destroy = function () {
+    var vm = this;
+    if (vm._isBeingDestroyed) {
+      return
+    }
+    callHook(vm, 'beforeDestroy');
+    vm._isBeingDestroyed = true;
+    // remove self from parent
+    var parent = vm.$parent;
+    if (parent && !parent._isBeingDestroyed && !vm.$options.abstract) {
+      remove(parent.$children, vm);
+    }
+    // teardown watchers
+    if (vm._watcher) {
+      vm._watcher.teardown();
+    }
+    var i = vm._watchers.length;
+    while (i--) {
+      vm._watchers[i].teardown();
+    }
+    // remove reference from data ob
+    // frozen object may not have observer.
+    if (vm._data.__ob__) {
+      vm._data.__ob__.vmCount--;
+    }
+    // call the last hook...
+    vm._isDestroyed = true;
+    // invoke destroy hooks on current rendered tree
+    vm.__patch__(vm._vnode, null);
+    // fire destroyed hook
+    callHook(vm, 'destroyed');
+    // turn off all instance listeners.
+    vm.$off();
+    // remove __vue__ reference
+    if (vm.$el) {
+      vm.$el.__vue__ = null;
+    }
+    // release circular reference (#6759)
+    if (vm.$vnode) {
+      vm.$vnode.parent = null;
+    }
+  };
+}
+
+function mountComponent (
+  vm,
+  el,
+  hydrating
+) {
+  vm.$el = el;
+  if (!vm.$options.render) {
+    vm.$options.render = createEmptyVNode;
+    {
+      /* istanbul ignore if */
+      if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
+        vm.$options.el || el) {
+        warn(
+          'You are using the runtime-only build of Vue where the template ' +
+          'compiler is not available. Either pre-compile the templates into ' +
+          'render functions, or use the compiler-included build.',
+          vm
+        );
+      } else {
+        warn(
+          'Failed to mount component: template or render function not defined.',
+          vm
+        );
+      }
+    }
+  }
+  callHook(vm, 'beforeMount');
+
+  var updateComponent;
+  /* istanbul ignore if */
+  if (config.performance && mark) {
+    updateComponent = function () {
+      var name = vm._name;
+      var id = vm._uid;
+      var startTag = "vue-perf-start:" + id;
+      var endTag = "vue-perf-end:" + id;
+
+      mark(startTag);
+      var vnode = vm._render();
+      mark(endTag);
+      measure(("vue " + name + " render"), startTag, endTag);
+
+      mark(startTag);
+      vm._update(vnode, hydrating);
+      mark(endTag);
+      measure(("vue " + name + " patch"), startTag, endTag);
+    };
+  } else {
+    updateComponent = function () {
+      vm._update(vm._render(), hydrating);
+    };
+  }
+
+  // we set this to vm._watcher inside the watcher's constructor
+  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
+  // component's mounted hook), which relies on vm._watcher being already defined
+  new Watcher(vm, updateComponent, noop, {
+    before: function before () {
+      if (vm._isMounted && !vm._isDestroyed) {
+        callHook(vm, 'beforeUpdate');
+      }
+    }
+  }, true /* isRenderWatcher */);
+  hydrating = false;
+
+  // manually mounted instance, call mounted on self
+  // mounted is called for render-created child components in its inserted hook
+  if (vm.$vnode == null) {
+    vm._isMounted = true;
+    callHook(vm, 'mounted');
+  }
+  return vm
+}
+
+function updateChildComponent (
+  vm,
+  propsData,
+  listeners,
+  parentVnode,
+  renderChildren
+) {
+  {
+    isUpdatingChildComponent = true;
+  }
+
+  // determine whether component has slot children
+  // we need to do this before overwriting $options._renderChildren.
+
+  // check if there are dynamic scopedSlots (hand-written or compiled but with
+  // dynamic slot names). Static scoped slots compiled from template has the
+  // "$stable" marker.
+  var newScopedSlots = parentVnode.data.scopedSlots;
+  var oldScopedSlots = vm.$scopedSlots;
+  var hasDynamicScopedSlot = !!(
+    (newScopedSlots && !newScopedSlots.$stable) ||
+    (oldScopedSlots !== emptyObject && !oldScopedSlots.$stable) ||
+    (newScopedSlots && vm.$scopedSlots.$key !== newScopedSlots.$key)
+  );
+
+  // Any static slot children from the parent may have changed during parent's
+  // update. Dynamic scoped slots may also have changed. In such cases, a forced
+  // update is necessary to ensure correctness.
+  var needsForceUpdate = !!(
+    renderChildren ||               // has new static slots
+    vm.$options._renderChildren ||  // has old static slots
+    hasDynamicScopedSlot
+  );
+
+  vm.$options._parentVnode = parentVnode;
+  vm.$vnode = parentVnode; // update vm's placeholder node without re-render
+
+  if (vm._vnode) { // update child tree's parent
+    vm._vnode.parent = parentVnode;
+  }
+  vm.$options._renderChildren = renderChildren;
+
+  // update $attrs and $listeners hash
+  // these are also reactive so they may trigger child update if the child
+  // used them during render
+  vm.$attrs = parentVnode.data.attrs || emptyObject;
+  vm.$listeners = listeners || emptyObject;
+
+  // update props
+  if (propsData && vm.$options.props) {
+    toggleObserving(false);
+    var props = vm._props;
+    var propKeys = vm.$options._propKeys || [];
+    for (var i = 0; i < propKeys.length; i++) {
+      var key = propKeys[i];
+      var propOptions = vm.$options.props; // wtf flow?
+      props[key] = validateProp(key, propOptions, propsData, vm);
+    }
+    toggleObserving(true);
+    // keep a copy of raw propsData
+    vm.$options.propsData = propsData;
+  }
+
+  // update listeners
+  listeners = listeners || emptyObject;
+  var oldListeners = vm.$options._parentListeners;
+  vm.$options._parentListeners = listeners;
+  updateComponentListeners(vm, listeners, oldListeners);
+
+  // resolve slots + force update if has children
+  if (needsForceUpdate) {
+    vm.$slots = resolveSlots(renderChildren, parentVnode.context);
+    vm.$forceUpdate();
+  }
+
+  {
+    isUpdatingChildComponent = false;
+  }
+}
+
+function isInInactiveTree (vm) {
+  while (vm && (vm = vm.$parent)) {
+    if (vm._inactive) { return true }
+  }
+  return false
+}
+
+function activateChildComponent (vm, direct) {
+  if (direct) {
+    vm._directInactive = false;
+    if (isInInactiveTree(vm)) {
+      return
+    }
+  } else if (vm._directInactive) {
+    return
+  }
+  if (vm._inactive || vm._inactive === null) {
+    vm._inactive = false;
+    for (var i = 0; i < vm.$children.length; i++) {
+      activateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'activated');
+  }
+}
+
+function deactivateChildComponent (vm, direct) {
+  if (direct) {
+    vm._directInactive = true;
+    if (isInInactiveTree(vm)) {
+      return
+    }
+  }
+  if (!vm._inactive) {
+    vm._inactive = true;
+    for (var i = 0; i < vm.$children.length; i++) {
+      deactivateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'deactivated');
+  }
+}
+
+function callHook (vm, hook) {
+  // #7573 disable dep collection when invoking lifecycle hooks
+  pushTarget();
+  var handlers = vm.$options[hook];
+  var info = hook + " hook";
+  if (handlers) {
+    for (var i = 0, j = handlers.length; i < j; i++) {
+      invokeWithErrorHandling(handlers[i], vm, null, vm, info);
+    }
+  }
+  if (vm._hasHookEvent) {
+    vm.$emit('hook:' + hook);
+  }
+  popTarget();
+}
+
+/*  */
+
+var MAX_UPDATE_COUNT = 100;
+
+var queue = [];
+var activatedChildren = [];
+var has = {};
+var circular = {};
+var waiting = false;
+var flushing = false;
+var index = 0;
+
+/**
+ * Reset the scheduler's state.
+ */
+function resetSchedulerState () {
+  index = queue.length = activatedChildren.length = 0;
+  has = {};
+  {
+    circular = {};
+  }
+  waiting = flushing = false;
+}
+
+// Async edge case #6566 requires saving the timestamp when event listeners are
+// attached. However, calling performance.now() has a perf overhead especially
+// if the page has thousands of event listeners. Instead, we take a timestamp
+// every time the scheduler flushes and use that for all event listeners
+// attached during that flush.
+var currentFlushTimestamp = 0;
+
+// Async edge case fix requires storing an event listener's attach timestamp.
+var getNow = Date.now;
+
+// Determine what event timestamp the browser is using. Annoyingly, the
+// timestamp can either be hi-res (relative to page load) or low-res
+// (relative to UNIX epoch), so in order to compare time we have to use the
+// same timestamp type when saving the flush timestamp.
+// All IE versions use low-res event timestamps, and have problematic clock
+// implementations (#9632)
+if (inBrowser && !isIE) {
+  var performance = window.performance;
+  if (
+    performance &&
+    typeof performance.now === 'function' &&
+    getNow() > document.createEvent('Event').timeStamp
+  ) {
+    // if the event timestamp, although evaluated AFTER the Date.now(), is
+    // smaller than it, it means the event is using a hi-res timestamp,
+    // and we need to use the hi-res version for event listener timestamps as
+    // well.
+    getNow = function () { return performance.now(); };
+  }
+}
+
+/**
+ * Flush both queues and run the watchers.
+ */
+function flushSchedulerQueue () {
+  currentFlushTimestamp = getNow();
+  flushing = true;
+  var watcher, id;
+
+  // Sort queue before flush.
+  // This ensures that:
+  // 1. Components are updated from parent to child. (because parent is always
+  //    created before the child)
+  // 2. A component's user watchers are run before its render watcher (because
+  //    user watchers are created before the render watcher)
+  // 3. If a component is destroyed during a parent component's watcher run,
+  //    its watchers can be skipped.
+  queue.sort(function (a, b) { return a.id - b.id; });
+
+  // do not cache length because more watchers might be pushed
+  // as we run existing watchers
+  for (index = 0; index < queue.length; index++) {
+    watcher = queue[index];
+    if (watcher.before) {
+      watcher.before();
+    }
+    id = watcher.id;
+    has[id] = null;
+    watcher.run();
+    // in dev build, check and stop circular updates.
+    if (has[id] != null) {
+      circular[id] = (circular[id] || 0) + 1;
+      if (circular[id] > MAX_UPDATE_COUNT) {
+        warn(
+          'You may have an infinite update loop ' + (
+            watcher.user
+              ? ("in watcher with expression \"" + (watcher.expression) + "\"")
+              : "in a component render function."
+          ),
+          watcher.vm
+        );
+        break
+      }
+    }
+  }
+
+  // keep copies of post queues before resetting state
+  var activatedQueue = activatedChildren.slice();
+  var updatedQueue = queue.slice();
+
+  resetSchedulerState();
+
+  // call component updated and activated hooks
+  callActivatedHooks(activatedQueue);
+  callUpdatedHooks(updatedQueue);
+
+  // devtool hook
+  /* istanbul ignore if */
+  if (devtools && config.devtools) {
+    devtools.emit('flush');
+  }
+}
+
+function callUpdatedHooks (queue) {
+  var i = queue.length;
+  while (i--) {
+    var watcher = queue[i];
+    var vm = watcher.vm;
+    if (vm._watcher === watcher && vm._isMounted && !vm._isDestroyed) {
+      callHook(vm, 'updated');
+    }
+  }
+}
+
+/**
+ * Queue a kept-alive component that was activated during patch.
+ * The queue will be processed after the entire tree has been patched.
+ */
+function queueActivatedComponent (vm) {
+  // setting _inactive to false here so that a render function can
+  // rely on checking whether it's in an inactive tree (e.g. router-view)
+  vm._inactive = false;
+  activatedChildren.push(vm);
+}
+
+function callActivatedHooks (queue) {
+  for (var i = 0; i < queue.length; i++) {
+    queue[i]._inactive = true;
+    activateChildComponent(queue[i], true /* true */);
+  }
+}
+
+/**
+ * Push a watcher into the watcher queue.
+ * Jobs with duplicate IDs will be skipped unless it's
+ * pushed when the queue is being flushed.
+ */
+function queueWatcher (watcher) {
+  var id = watcher.id;
+  if (has[id] == null) {
+    has[id] = true;
+    if (!flushing) {
+      queue.push(watcher);
+    } else {
+      // if already flushing, splice the watcher based on its id
+      // if already past its id, it will be run next immediately.
+      var i = queue.length - 1;
+      while (i > index && queue[i].id > watcher.id) {
+        i--;
+      }
+      queue.splice(i + 1, 0, watcher);
+    }
+    // queue the flush
+    if (!waiting) {
+      waiting = true;
+
+      if (!config.async) {
+        flushSchedulerQueue();
+        return
+      }
+      nextTick(flushSchedulerQueue);
+    }
+  }
+}
+
+/*  */
+
+
+
+var uid$2 = 0;
+
+/**
+ * A watcher parses an expression, collects dependencies,
+ * and fires callback when the expression value changes.
+ * This is used for both the $watch() api and directives.
+ */
+var Watcher = function Watcher (
+  vm,
+  expOrFn,
+  cb,
+  options,
+  isRenderWatcher
+) {
+  this.vm = vm;
+  if (isRenderWatcher) {
+    vm._watcher = this;
+  }
+  vm._watchers.push(this);
+  // options
+  if (options) {
+    this.deep = !!options.deep;
+    this.user = !!options.user;
+    this.lazy = !!options.lazy;
+    this.sync = !!options.sync;
+    this.before = options.before;
+  } else {
+    this.deep = this.user = this.lazy = this.sync = false;
+  }
+  this.cb = cb;
+  this.id = ++uid$2; // uid for batching
+  this.active = true;
+  this.dirty = this.lazy; // for lazy watchers
+  this.deps = [];
+  this.newDeps = [];
+  this.depIds = new _Set();
+  this.newDepIds = new _Set();
+  this.expression = expOrFn.toString();
+  // parse expression for getter
+  if (typeof expOrFn === 'function') {
+    this.getter = expOrFn;
+  } else {
+    this.getter = parsePath(expOrFn);
+    if (!this.getter) {
+      this.getter = noop;
+      warn(
+        "Failed watching path: \"" + expOrFn + "\" " +
+        'Watcher only accepts simple dot-delimited paths. ' +
+        'For full control, use a function instead.',
+        vm
+      );
+    }
+  }
+  this.value = this.lazy
+    ? undefined
+    : this.get();
+};
+
+/**
+ * Evaluate the getter, and re-collect dependencies.
+ */
+Watcher.prototype.get = function get () {
+  pushTarget(this);
+  var value;
+  var vm = this.vm;
+  try {
+    value = this.getter.call(vm, vm);
+  } catch (e) {
+    if (this.user) {
+      handleError(e, vm, ("getter for watcher \"" + (this.expression) + "\""));
+    } else {
+      throw e
+    }
+  } finally {
+    // "touch" every property so they are all tracked as
+    // dependencies for deep watching
+    if (this.deep) {
+      traverse(value);
+    }
+    popTarget();
+    this.cleanupDeps();
+  }
+  return value
+};
+
+/**
+ * Add a dependency to this directive.
+ */
+Watcher.prototype.addDep = function addDep (dep) {
+  var id = dep.id;
+  if (!this.newDepIds.has(id)) {
+    this.newDepIds.add(id);
+    this.newDeps.push(dep);
+    if (!this.depIds.has(id)) {
+      dep.addSub(this);
+    }
+  }
+};
+
+/**
+ * Clean up for dependency collection.
+ */
+Watcher.prototype.cleanupDeps = function cleanupDeps () {
+  var i = this.deps.length;
+  while (i--) {
+    var dep = this.deps[i];
+    if (!this.newDepIds.has(dep.id)) {
+      dep.removeSub(this);
+    }
+  }
+  var tmp = this.depIds;
+  this.depIds = this.newDepIds;
+  this.newDepIds = tmp;
+  this.newDepIds.clear();
+  tmp = this.deps;
+  this.deps = this.newDeps;
+  this.newDeps = tmp;
+  this.newDeps.length = 0;
+};
+
+/**
+ * Subscriber interface.
+ * Will be called when a dependency changes.
+ */
+Watcher.prototype.update = function update () {
+  /* istanbul ignore else */
+  if (this.lazy) {
+    this.dirty = true;
+  } else if (this.sync) {
+    this.run();
+  } else {
+    queueWatcher(this);
+  }
+};
+
+/**
+ * Scheduler job interface.
+ * Will be called by the scheduler.
+ */
+Watcher.prototype.run = function run () {
+  if (this.active) {
+    var value = this.get();
+    if (
+      value !== this.value ||
+      // Deep watchers and watchers on Object/Arrays should fire even
+      // when the value is the same, because the value may
+      // have mutated.
+      isObject(value) ||
+      this.deep
+    ) {
+      // set new value
+      var oldValue = this.value;
+      this.value = value;
+      if (this.user) {
+        try {
+          this.cb.call(this.vm, value, oldValue);
+        } catch (e) {
+          handleError(e, this.vm, ("callback for watcher \"" + (this.expression) + "\""));
+        }
+      } else {
+        this.cb.call(this.vm, value, oldValue);
+      }
+    }
+  }
+};
+
+/**
+ * Evaluate the value of the watcher.
+ * This only gets called for lazy watchers.
+ */
+Watcher.prototype.evaluate = function evaluate () {
+  this.value = this.get();
+  this.dirty = false;
+};
+
+/**
+ * Depend on all deps collected by this watcher.
+ */
+Watcher.prototype.depend = function depend () {
+  var i = this.deps.length;
+  while (i--) {
+    this.deps[i].depend();
+  }
+};
+
+/**
+ * Remove self from all dependencies' subscriber list.
+ */
+Watcher.prototype.teardown = function teardown () {
+  if (this.active) {
+    // remove self from vm's watcher list
+    // this is a somewhat expensive operation so we skip it
+    // if the vm is being destroyed.
+    if (!this.vm._isBeingDestroyed) {
+      remove(this.vm._watchers, this);
+    }
+    var i = this.deps.length;
+    while (i--) {
+      this.deps[i].removeSub(this);
+    }
+    this.active = false;
+  }
+};
+
+/*  */
+
+var sharedPropertyDefinition = {
+  enumerable: true,
+  configurable: true,
+  get: noop,
+  set: noop
+};
+
+function proxy (target, sourceKey, key) {
+  sharedPropertyDefinition.get = function proxyGetter () {
+    return this[sourceKey][key]
+  };
+  sharedPropertyDefinition.set = function proxySetter (val) {
+    this[sourceKey][key] = val;
+  };
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function initState (vm) {
+  vm._watchers = [];
+  var opts = vm.$options;
+  if (opts.props) { initProps(vm, opts.props); }
+  if (opts.methods) { initMethods(vm, opts.methods); }
+  if (opts.data) {
+    initData(vm);
+  } else {
+    observe(vm._data = {}, true /* asRootData */);
+  }
+  if (opts.computed) { initComputed(vm, opts.computed); }
+  if (opts.watch && opts.watch !== nativeWatch) {
+    initWatch(vm, opts.watch);
+  }
+}
+
+function initProps (vm, propsOptions) {
+  var propsData = vm.$options.propsData || {};
+  var props = vm._props = {};
+  // cache prop keys so that future props updates can iterate using Array
+  // instead of dynamic object key enumeration.
+  var keys = vm.$options._propKeys = [];
+  var isRoot = !vm.$parent;
+  // root instance props should be converted
+  if (!isRoot) {
+    toggleObserving(false);
+  }
+  var loop = function ( key ) {
+    keys.push(key);
+    var value = validateProp(key, propsOptions, propsData, vm);
+    /* istanbul ignore else */
+    {
+      var hyphenatedKey = hyphenate(key);
+      if (isReservedAttribute(hyphenatedKey) ||
+          config.isReservedAttr(hyphenatedKey)) {
+        warn(
+          ("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop."),
+          vm
+        );
+      }
+      defineReactive$$1(props, key, value, function () {
+        if (!isRoot && !isUpdatingChildComponent) {
+          warn(
+            "Avoid mutating a prop directly since the value will be " +
+            "overwritten whenever the parent component re-renders. " +
+            "Instead, use a data or computed property based on the prop's " +
+            "value. Prop being mutated: \"" + key + "\"",
+            vm
+          );
+        }
+      });
+    }
+    // static props are already proxied on the component's prototype
+    // during Vue.extend(). We only need to proxy props defined at
+    // instantiation here.
+    if (!(key in vm)) {
+      proxy(vm, "_props", key);
+    }
+  };
+
+  for (var key in propsOptions) loop( key );
+  toggleObserving(true);
+}
+
+function initData (vm) {
+  var data = vm.$options.data;
+  data = vm._data = typeof data === 'function'
+    ? getData(data, vm)
+    : data || {};
+  if (!isPlainObject(data)) {
+    data = {};
+    warn(
+      'data functions should return an object:\n' +
+      'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
+      vm
+    );
+  }
+  // proxy data on instance
+  var keys = Object.keys(data);
+  var props = vm.$options.props;
+  var methods = vm.$options.methods;
+  var i = keys.length;
+  while (i--) {
+    var key = keys[i];
+    {
+      if (methods && hasOwn(methods, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a data property."),
+          vm
+        );
+      }
+    }
+    if (props && hasOwn(props, key)) {
+      warn(
+        "The data property \"" + key + "\" is already declared as a prop. " +
+        "Use prop default value instead.",
+        vm
+      );
+    } else if (!isReserved(key)) {
+      proxy(vm, "_data", key);
+    }
+  }
+  // observe data
+  observe(data, true /* asRootData */);
+}
+
+function getData (data, vm) {
+  // #7573 disable dep collection when invoking data getters
+  pushTarget();
+  try {
+    return data.call(vm, vm)
+  } catch (e) {
+    handleError(e, vm, "data()");
+    return {}
+  } finally {
+    popTarget();
+  }
+}
+
+var computedWatcherOptions = { lazy: true };
+
+function initComputed (vm, computed) {
+  // $flow-disable-line
+  var watchers = vm._computedWatchers = Object.create(null);
+  // computed properties are just getters during SSR
+  var isSSR = isServerRendering();
+
+  for (var key in computed) {
+    var userDef = computed[key];
+    var getter = typeof userDef === 'function' ? userDef : userDef.get;
+    if (getter == null) {
+      warn(
+        ("Getter is missing for computed property \"" + key + "\"."),
+        vm
+      );
+    }
+
+    if (!isSSR) {
+      // create internal watcher for the computed property.
+      watchers[key] = new Watcher(
+        vm,
+        getter || noop,
+        noop,
+        computedWatcherOptions
+      );
+    }
+
+    // component-defined computed properties are already defined on the
+    // component prototype. We only need to define computed properties defined
+    // at instantiation here.
+    if (!(key in vm)) {
+      defineComputed(vm, key, userDef);
+    } else {
+      if (key in vm.$data) {
+        warn(("The computed property \"" + key + "\" is already defined in data."), vm);
+      } else if (vm.$options.props && key in vm.$options.props) {
+        warn(("The computed property \"" + key + "\" is already defined as a prop."), vm);
+      }
+    }
+  }
+}
+
+function defineComputed (
+  target,
+  key,
+  userDef
+) {
+  var shouldCache = !isServerRendering();
+  if (typeof userDef === 'function') {
+    sharedPropertyDefinition.get = shouldCache
+      ? createComputedGetter(key)
+      : createGetterInvoker(userDef);
+    sharedPropertyDefinition.set = noop;
+  } else {
+    sharedPropertyDefinition.get = userDef.get
+      ? shouldCache && userDef.cache !== false
+        ? createComputedGetter(key)
+        : createGetterInvoker(userDef.get)
+      : noop;
+    sharedPropertyDefinition.set = userDef.set || noop;
+  }
+  if (sharedPropertyDefinition.set === noop) {
+    sharedPropertyDefinition.set = function () {
+      warn(
+        ("Computed property \"" + key + "\" was assigned to but it has no setter."),
+        this
+      );
+    };
+  }
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function createComputedGetter (key) {
+  return function computedGetter () {
+    var watcher = this._computedWatchers && this._computedWatchers[key];
+    if (watcher) {
+      if (watcher.dirty) {
+        watcher.evaluate();
+      }
+      if (Dep.target) {
+        watcher.depend();
+      }
+      return watcher.value
+    }
+  }
+}
+
+function createGetterInvoker(fn) {
+  return function computedGetter () {
+    return fn.call(this, this)
+  }
+}
+
+function initMethods (vm, methods) {
+  var props = vm.$options.props;
+  for (var key in methods) {
+    {
+      if (typeof methods[key] !== 'function') {
+        warn(
+          "Method \"" + key + "\" has type \"" + (typeof methods[key]) + "\" in the component definition. " +
+          "Did you reference the function correctly?",
+          vm
+        );
+      }
+      if (props && hasOwn(props, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a prop."),
+          vm
+        );
+      }
+      if ((key in vm) && isReserved(key)) {
+        warn(
+          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
+          "Avoid defining component methods that start with _ or $."
+        );
+      }
+    }
+    vm[key] = typeof methods[key] !== 'function' ? noop : bind(methods[key], vm);
+  }
+}
+
+function initWatch (vm, watch) {
+  for (var key in watch) {
+    var handler = watch[key];
+    if (Array.isArray(handler)) {
+      for (var i = 0; i < handler.length; i++) {
+        createWatcher(vm, key, handler[i]);
+      }
+    } else {
+      createWatcher(vm, key, handler);
+    }
+  }
+}
+
+function createWatcher (
+  vm,
+  expOrFn,
+  handler,
+  options
+) {
+  if (isPlainObject(handler)) {
+    options = handler;
+    handler = handler.handler;
+  }
+  if (typeof handler === 'string') {
+    handler = vm[handler];
+  }
+  return vm.$watch(expOrFn, handler, options)
+}
+
+function stateMixin (Vue) {
+  // flow somehow has problems with directly declared definition object
+  // when using Object.defineProperty, so we have to procedurally build up
+  // the object here.
+  var dataDef = {};
+  dataDef.get = function () { return this._data };
+  var propsDef = {};
+  propsDef.get = function () { return this._props };
+  {
+    dataDef.set = function () {
+      warn(
+        'Avoid replacing instance root $data. ' +
+        'Use nested data properties instead.',
+        this
+      );
+    };
+    propsDef.set = function () {
+      warn("$props is readonly.", this);
+    };
+  }
+  Object.defineProperty(Vue.prototype, '$data', dataDef);
+  Object.defineProperty(Vue.prototype, '$props', propsDef);
+
+  Vue.prototype.$set = set;
+  Vue.prototype.$delete = del;
+
+  Vue.prototype.$watch = function (
+    expOrFn,
+    cb,
+    options
+  ) {
+    var vm = this;
+    if (isPlainObject(cb)) {
+      return createWatcher(vm, expOrFn, cb, options)
+    }
+    options = options || {};
+    options.user = true;
+    var watcher = new Watcher(vm, expOrFn, cb, options);
+    if (options.immediate) {
+      try {
+        cb.call(vm, watcher.value);
+      } catch (error) {
+        handleError(error, vm, ("callback for immediate watcher \"" + (watcher.expression) + "\""));
+      }
+    }
+    return function unwatchFn () {
+      watcher.teardown();
+    }
+  };
+}
+
+/*  */
+
 var uid$3 = 0;
 
 function initMixin (Vue) {
@@ -69141,7 +71092,7 @@ function initMixin (Vue) {
 
     var startTag, endTag;
     /* istanbul ignore if */
-    if ("development" !== 'production' && config.performance && mark) {
+    if (config.performance && mark) {
       startTag = "vue-perf-start:" + (vm._uid);
       endTag = "vue-perf-end:" + (vm._uid);
       mark(startTag);
@@ -69163,10 +71114,8 @@ function initMixin (Vue) {
       );
     }
     /* istanbul ignore else */
-    if (true) {
+    {
       initProxy(vm);
-    } else {
-      vm._renderProxy = vm;
     }
     // expose real self
     vm._self = vm;
@@ -69180,7 +71129,7 @@ function initMixin (Vue) {
     callHook(vm, 'created');
 
     /* istanbul ignore if */
-    if ("development" !== 'production' && config.performance && mark) {
+    if (config.performance && mark) {
       vm._name = formatComponentName(vm, false);
       mark(endTag);
       measure(("vue " + (vm._name) + " init"), startTag, endTag);
@@ -69198,8 +71147,6 @@ function initInternalComponent (vm, options) {
   var parentVnode = options._parentVnode;
   opts.parent = options.parent;
   opts._parentVnode = parentVnode;
-  opts._parentElm = options._parentElm;
-  opts._refElm = options._refElm;
 
   var vnodeComponentOptions = parentVnode.componentOptions;
   opts.propsData = vnodeComponentOptions.propsData;
@@ -69240,39 +71187,18 @@ function resolveConstructorOptions (Ctor) {
 function resolveModifiedOptions (Ctor) {
   var modified;
   var latest = Ctor.options;
-  var extended = Ctor.extendOptions;
   var sealed = Ctor.sealedOptions;
   for (var key in latest) {
     if (latest[key] !== sealed[key]) {
       if (!modified) { modified = {}; }
-      modified[key] = dedupe(latest[key], extended[key], sealed[key]);
+      modified[key] = latest[key];
     }
   }
   return modified
 }
 
-function dedupe (latest, extended, sealed) {
-  // compare latest and sealed to ensure lifecycle hooks won't be duplicated
-  // between merges
-  if (Array.isArray(latest)) {
-    var res = [];
-    sealed = Array.isArray(sealed) ? sealed : [sealed];
-    extended = Array.isArray(extended) ? extended : [extended];
-    for (var i = 0; i < latest.length; i++) {
-      // push original options and not sealed options to exclude duplicated options
-      if (extended.indexOf(latest[i]) >= 0 || sealed.indexOf(latest[i]) < 0) {
-        res.push(latest[i]);
-      }
-    }
-    return res
-  } else {
-    return latest
-  }
-}
-
 function Vue (options) {
-  if ("development" !== 'production' &&
-    !(this instanceof Vue)
+  if (!(this instanceof Vue)
   ) {
     warn('Vue is a constructor and should be called with the `new` keyword');
   }
@@ -69340,7 +71266,7 @@ function initExtend (Vue) {
     }
 
     var name = extendOptions.name || Super.options.name;
-    if ("development" !== 'production' && name) {
+    if (name) {
       validateComponentName(name);
     }
 
@@ -69423,7 +71349,7 @@ function initAssetRegisters (Vue) {
         return this.options[type + 's'][id]
       } else {
         /* istanbul ignore if */
-        if ("development" !== 'production' && type === 'component') {
+        if (type === 'component') {
           validateComponentName(id);
         }
         if (type === 'component' && isPlainObject(definition)) {
@@ -69441,6 +71367,8 @@ function initAssetRegisters (Vue) {
 }
 
 /*  */
+
+
 
 function getComponentName (opts) {
   return opts && (opts.Ctor.options.name || opts.tag)
@@ -69505,10 +71433,8 @@ var KeepAlive = {
   },
 
   destroyed: function destroyed () {
-    var this$1 = this;
-
-    for (var key in this$1.cache) {
-      pruneCacheEntry(this$1.cache, key, this$1.keys);
+    for (var key in this.cache) {
+      pruneCacheEntry(this.cache, key, this.keys);
     }
   },
 
@@ -69568,11 +71494,11 @@ var KeepAlive = {
     }
     return vnode || (slot && slot[0])
   }
-}
+};
 
 var builtInComponents = {
   KeepAlive: KeepAlive
-}
+};
 
 /*  */
 
@@ -69580,7 +71506,7 @@ function initGlobalAPI (Vue) {
   // config
   var configDef = {};
   configDef.get = function () { return config; };
-  if (true) {
+  {
     configDef.set = function () {
       warn(
         'Do not replace the Vue.config object, set individual fields instead.'
@@ -69596,12 +71522,18 @@ function initGlobalAPI (Vue) {
     warn: warn,
     extend: extend,
     mergeOptions: mergeOptions,
-    defineReactive: defineReactive
+    defineReactive: defineReactive$$1
   };
 
   Vue.set = set;
   Vue.delete = del;
   Vue.nextTick = nextTick;
+
+  // 2.6 explicit observable API
+  Vue.observable = function (obj) {
+    observe(obj);
+    return obj
+  };
 
   Vue.options = Object.create(null);
   ASSET_TYPES.forEach(function (type) {
@@ -69638,7 +71570,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.5.16';
+Vue.version = '2.6.10';
 
 /*  */
 
@@ -69658,6 +71590,17 @@ var mustUseProp = function (tag, type, attr) {
 };
 
 var isEnumeratedAttr = makeMap('contenteditable,draggable,spellcheck');
+
+var isValidContentEditableValue = makeMap('events,caret,typing,plaintext-only');
+
+var convertEnumeratedValue = function (key, value) {
+  return isFalsyAttrValue(value) || value === 'false'
+    ? 'false'
+    // allow arbitrary string value for contenteditable
+    : key === 'contenteditable' && isValidContentEditableValue(value)
+      ? value
+      : 'true'
+};
 
 var isBooleanAttr = makeMap(
   'allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,' +
@@ -69847,7 +71790,7 @@ function query (el) {
   if (typeof el === 'string') {
     var selected = document.querySelector(el);
     if (!selected) {
-      "development" !== 'production' && warn(
+      warn(
         'Cannot find element: ' + el
       );
       return document.createElement('div')
@@ -69916,20 +71859,19 @@ function setStyleScope (node, scopeId) {
   node.setAttribute(scopeId, '');
 }
 
-
-var nodeOps = Object.freeze({
-	createElement: createElement$1,
-	createElementNS: createElementNS,
-	createTextNode: createTextNode,
-	createComment: createComment,
-	insertBefore: insertBefore,
-	removeChild: removeChild,
-	appendChild: appendChild,
-	parentNode: parentNode,
-	nextSibling: nextSibling,
-	tagName: tagName,
-	setTextContent: setTextContent,
-	setStyleScope: setStyleScope
+var nodeOps = /*#__PURE__*/Object.freeze({
+  createElement: createElement$1,
+  createElementNS: createElementNS,
+  createTextNode: createTextNode,
+  createComment: createComment,
+  insertBefore: insertBefore,
+  removeChild: removeChild,
+  appendChild: appendChild,
+  parentNode: parentNode,
+  nextSibling: nextSibling,
+  tagName: tagName,
+  setTextContent: setTextContent,
+  setStyleScope: setStyleScope
 });
 
 /*  */
@@ -69947,7 +71889,7 @@ var ref = {
   destroy: function destroy (vnode) {
     registerRef(vnode, true);
   }
-}
+};
 
 function registerRef (vnode, isRemoval) {
   var key = vnode.data.ref;
@@ -70048,13 +71990,13 @@ function createPatchFunction (backend) {
   }
 
   function createRmCb (childElm, listeners) {
-    function remove () {
-      if (--remove.listeners === 0) {
+    function remove$$1 () {
+      if (--remove$$1.listeners === 0) {
         removeNode(childElm);
       }
     }
-    remove.listeners = listeners;
-    return remove
+    remove$$1.listeners = listeners;
+    return remove$$1
   }
 
   function removeNode (el) {
@@ -70110,7 +72052,7 @@ function createPatchFunction (backend) {
     var children = vnode.children;
     var tag = vnode.tag;
     if (isDef(tag)) {
-      if (true) {
+      {
         if (data && data.pre) {
           creatingElmInVPre++;
         }
@@ -70138,7 +72080,7 @@ function createPatchFunction (backend) {
         insert(parentElm, vnode.elm, refElm);
       }
 
-      if ("development" !== 'production' && data && data.pre) {
+      if (data && data.pre) {
         creatingElmInVPre--;
       }
     } else if (isTrue(vnode.isComment)) {
@@ -70155,7 +72097,7 @@ function createPatchFunction (backend) {
     if (isDef(i)) {
       var isReactivated = isDef(vnode.componentInstance) && i.keepAlive;
       if (isDef(i = i.hook) && isDef(i = i.init)) {
-        i(vnode, false /* hydrating */, parentElm, refElm);
+        i(vnode, false /* hydrating */);
       }
       // after calling the init hook, if the vnode is a child component
       // it should've created a child instance and mounted it. the child
@@ -70163,6 +72105,7 @@ function createPatchFunction (backend) {
       // in that case we can just return the element and be done.
       if (isDef(vnode.componentInstance)) {
         initComponent(vnode, insertedVnodeQueue);
+        insert(parentElm, vnode.elm, refElm);
         if (isTrue(isReactivated)) {
           reactivateComponent(vnode, insertedVnodeQueue, parentElm, refElm);
         }
@@ -70214,7 +72157,7 @@ function createPatchFunction (backend) {
   function insert (parent, elm, ref$$1) {
     if (isDef(parent)) {
       if (isDef(ref$$1)) {
-        if (ref$$1.parentNode === parent) {
+        if (nodeOps.parentNode(ref$$1) === parent) {
           nodeOps.insertBefore(parent, elm, ref$$1);
         }
       } else {
@@ -70225,7 +72168,7 @@ function createPatchFunction (backend) {
 
   function createChildren (vnode, children, insertedVnodeQueue) {
     if (Array.isArray(children)) {
-      if (true) {
+      {
         checkDuplicateKeys(children);
       }
       for (var i = 0; i < children.length; ++i) {
@@ -70359,7 +72302,7 @@ function createPatchFunction (backend) {
     // during leaving transitions
     var canMove = !removeOnly;
 
-    if (true) {
+    {
       checkDuplicateKeys(newCh);
     }
 
@@ -70369,20 +72312,20 @@ function createPatchFunction (backend) {
       } else if (isUndef(oldEndVnode)) {
         oldEndVnode = oldCh[--oldEndIdx];
       } else if (sameVnode(oldStartVnode, newStartVnode)) {
-        patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue);
+        patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
         oldStartVnode = oldCh[++oldStartIdx];
         newStartVnode = newCh[++newStartIdx];
       } else if (sameVnode(oldEndVnode, newEndVnode)) {
-        patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue);
+        patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
         oldEndVnode = oldCh[--oldEndIdx];
         newEndVnode = newCh[--newEndIdx];
       } else if (sameVnode(oldStartVnode, newEndVnode)) { // Vnode moved right
-        patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue);
+        patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
         canMove && nodeOps.insertBefore(parentElm, oldStartVnode.elm, nodeOps.nextSibling(oldEndVnode.elm));
         oldStartVnode = oldCh[++oldStartIdx];
         newEndVnode = newCh[--newEndIdx];
       } else if (sameVnode(oldEndVnode, newStartVnode)) { // Vnode moved left
-        patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue);
+        patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
         canMove && nodeOps.insertBefore(parentElm, oldEndVnode.elm, oldStartVnode.elm);
         oldEndVnode = oldCh[--oldEndIdx];
         newStartVnode = newCh[++newStartIdx];
@@ -70396,7 +72339,7 @@ function createPatchFunction (backend) {
         } else {
           vnodeToMove = oldCh[idxInOld];
           if (sameVnode(vnodeToMove, newStartVnode)) {
-            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue);
+            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
             oldCh[idxInOld] = undefined;
             canMove && nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm);
           } else {
@@ -70440,9 +72383,21 @@ function createPatchFunction (backend) {
     }
   }
 
-  function patchVnode (oldVnode, vnode, insertedVnodeQueue, removeOnly) {
+  function patchVnode (
+    oldVnode,
+    vnode,
+    insertedVnodeQueue,
+    ownerArray,
+    index,
+    removeOnly
+  ) {
     if (oldVnode === vnode) {
       return
+    }
+
+    if (isDef(vnode.elm) && isDef(ownerArray)) {
+      // clone reused vnode
+      vnode = ownerArray[index] = cloneVNode(vnode);
     }
 
     var elm = vnode.elm = oldVnode.elm;
@@ -70485,6 +72440,9 @@ function createPatchFunction (backend) {
       if (isDef(oldCh) && isDef(ch)) {
         if (oldCh !== ch) { updateChildren(elm, oldCh, ch, insertedVnodeQueue, removeOnly); }
       } else if (isDef(ch)) {
+        {
+          checkDuplicateKeys(ch);
+        }
         if (isDef(oldVnode.text)) { nodeOps.setTextContent(elm, ''); }
         addVnodes(elm, null, ch, 0, ch.length - 1, insertedVnodeQueue);
       } else if (isDef(oldCh)) {
@@ -70533,7 +72491,7 @@ function createPatchFunction (backend) {
       return true
     }
     // assert node match
-    if (true) {
+    {
       if (!assertNodeMatch(elm, vnode, inVPre)) {
         return false
       }
@@ -70556,8 +72514,7 @@ function createPatchFunction (backend) {
           if (isDef(i = data) && isDef(i = i.domProps) && isDef(i = i.innerHTML)) {
             if (i !== elm.innerHTML) {
               /* istanbul ignore if */
-              if ("development" !== 'production' &&
-                typeof console !== 'undefined' &&
+              if (typeof console !== 'undefined' &&
                 !hydrationBailed
               ) {
                 hydrationBailed = true;
@@ -70582,8 +72539,7 @@ function createPatchFunction (backend) {
             // longer than the virtual children list.
             if (!childrenMatch || childNode) {
               /* istanbul ignore if */
-              if ("development" !== 'production' &&
-                typeof console !== 'undefined' &&
+              if (typeof console !== 'undefined' &&
                 !hydrationBailed
               ) {
                 hydrationBailed = true;
@@ -70626,7 +72582,7 @@ function createPatchFunction (backend) {
     }
   }
 
-  return function patch (oldVnode, vnode, hydrating, removeOnly, parentElm, refElm) {
+  return function patch (oldVnode, vnode, hydrating, removeOnly) {
     if (isUndef(vnode)) {
       if (isDef(oldVnode)) { invokeDestroyHook(oldVnode); }
       return
@@ -70638,12 +72594,12 @@ function createPatchFunction (backend) {
     if (isUndef(oldVnode)) {
       // empty mount (likely as component), create new root element
       isInitialPatch = true;
-      createElm(vnode, insertedVnodeQueue, parentElm, refElm);
+      createElm(vnode, insertedVnodeQueue);
     } else {
       var isRealElement = isDef(oldVnode.nodeType);
       if (!isRealElement && sameVnode(oldVnode, vnode)) {
         // patch existing root node
-        patchVnode(oldVnode, vnode, insertedVnodeQueue, removeOnly);
+        patchVnode(oldVnode, vnode, insertedVnodeQueue, null, null, removeOnly);
       } else {
         if (isRealElement) {
           // mounting to a real element
@@ -70657,7 +72613,7 @@ function createPatchFunction (backend) {
             if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
               invokeInsertHook(vnode, insertedVnodeQueue, true);
               return oldVnode
-            } else if (true) {
+            } else {
               warn(
                 'The client-side rendered virtual DOM tree is not matching ' +
                 'server-rendered content. This is likely caused by incorrect ' +
@@ -70674,7 +72630,7 @@ function createPatchFunction (backend) {
 
         // replacing existing element
         var oldElm = oldVnode.elm;
-        var parentElm$1 = nodeOps.parentNode(oldElm);
+        var parentElm = nodeOps.parentNode(oldElm);
 
         // create new node
         createElm(
@@ -70683,7 +72639,7 @@ function createPatchFunction (backend) {
           // extremely rare edge case: do not insert if old element is in a
           // leaving transition. Only happens when combining transition +
           // keep-alive + HOCs. (#4590)
-          oldElm._leaveCb ? null : parentElm$1,
+          oldElm._leaveCb ? null : parentElm,
           nodeOps.nextSibling(oldElm)
         );
 
@@ -70718,8 +72674,8 @@ function createPatchFunction (backend) {
         }
 
         // destroy old node
-        if (isDef(parentElm$1)) {
-          removeVnodes(parentElm$1, [oldVnode], 0, 0);
+        if (isDef(parentElm)) {
+          removeVnodes(parentElm, [oldVnode], 0, 0);
         } else if (isDef(oldVnode.tag)) {
           invokeDestroyHook(oldVnode);
         }
@@ -70739,7 +72695,7 @@ var directives = {
   destroy: function unbindDirectives (vnode) {
     updateDirectives(vnode, emptyNode);
   }
-}
+};
 
 function updateDirectives (oldVnode, vnode) {
   if (oldVnode.data.directives || vnode.data.directives) {
@@ -70769,6 +72725,7 @@ function _update (oldVnode, vnode) {
     } else {
       // existing directive, update
       dir.oldValue = oldDir.value;
+      dir.oldArg = oldDir.arg;
       callHook$1(dir, 'update', vnode, oldVnode);
       if (dir.def && dir.def.componentUpdated) {
         dirsWithPostpatch.push(dir);
@@ -70850,7 +72807,7 @@ function callHook$1 (dir, hook, vnode, oldVnode, isDestroy) {
 var baseModules = [
   ref,
   directives
-]
+];
 
 /*  */
 
@@ -70912,7 +72869,7 @@ function setAttr (el, key, value) {
       el.setAttribute(key, value);
     }
   } else if (isEnumeratedAttr(key)) {
-    el.setAttribute(key, isFalsyAttrValue(value) || value === 'false' ? 'false' : 'true');
+    el.setAttribute(key, convertEnumeratedValue(key, value));
   } else if (isXlink(key)) {
     if (isFalsyAttrValue(value)) {
       el.removeAttributeNS(xlinkNS, getXlinkProp(key));
@@ -70935,7 +72892,7 @@ function baseSetAttr (el, key, value) {
     if (
       isIE && !isIE9 &&
       el.tagName === 'TEXTAREA' &&
-      key === 'placeholder' && !el.__ieph
+      key === 'placeholder' && value !== '' && !el.__ieph
     ) {
       var blocker = function (e) {
         e.stopImmediatePropagation();
@@ -70952,7 +72909,7 @@ function baseSetAttr (el, key, value) {
 var attrs = {
   create: updateAttrs,
   update: updateAttrs
-}
+};
 
 /*  */
 
@@ -70990,7 +72947,7 @@ function updateClass (oldVnode, vnode) {
 var klass = {
   create: updateClass,
   update: updateClass
-}
+};
 
 /*  */
 
@@ -71092,9 +73049,13 @@ function wrapFilter (exp, filter) {
 
 /*  */
 
-function baseWarn (msg) {
+
+
+/* eslint-disable no-unused-vars */
+function baseWarn (msg, range) {
   console.error(("[Vue compiler]: " + msg));
 }
+/* eslint-enable no-unused-vars */
 
 function pluckModuleFunction (
   modules,
@@ -71105,20 +73066,23 @@ function pluckModuleFunction (
     : []
 }
 
-function addProp (el, name, value) {
-  (el.props || (el.props = [])).push({ name: name, value: value });
+function addProp (el, name, value, range, dynamic) {
+  (el.props || (el.props = [])).push(rangeSetItem({ name: name, value: value, dynamic: dynamic }, range));
   el.plain = false;
 }
 
-function addAttr (el, name, value) {
-  (el.attrs || (el.attrs = [])).push({ name: name, value: value });
+function addAttr (el, name, value, range, dynamic) {
+  var attrs = dynamic
+    ? (el.dynamicAttrs || (el.dynamicAttrs = []))
+    : (el.attrs || (el.attrs = []));
+  attrs.push(rangeSetItem({ name: name, value: value, dynamic: dynamic }, range));
   el.plain = false;
 }
 
 // add a raw attr (use this in preTransforms)
-function addRawAttr (el, name, value) {
+function addRawAttr (el, name, value, range) {
   el.attrsMap[name] = value;
-  el.attrsList.push({ name: name, value: value });
+  el.attrsList.push(rangeSetItem({ name: name, value: value }, range));
 }
 
 function addDirective (
@@ -71127,10 +73091,25 @@ function addDirective (
   rawName,
   value,
   arg,
-  modifiers
+  isDynamicArg,
+  modifiers,
+  range
 ) {
-  (el.directives || (el.directives = [])).push({ name: name, rawName: rawName, value: value, arg: arg, modifiers: modifiers });
+  (el.directives || (el.directives = [])).push(rangeSetItem({
+    name: name,
+    rawName: rawName,
+    value: value,
+    arg: arg,
+    isDynamicArg: isDynamicArg,
+    modifiers: modifiers
+  }, range));
   el.plain = false;
+}
+
+function prependModifierMarker (symbol, name, dynamic) {
+  return dynamic
+    ? ("_p(" + name + ",\"" + symbol + "\")")
+    : symbol + name // mark the event as captured
 }
 
 function addHandler (
@@ -71139,46 +73118,55 @@ function addHandler (
   value,
   modifiers,
   important,
-  warn
+  warn,
+  range,
+  dynamic
 ) {
   modifiers = modifiers || emptyObject;
   // warn prevent and passive modifier
   /* istanbul ignore if */
   if (
-    "development" !== 'production' && warn &&
+    warn &&
     modifiers.prevent && modifiers.passive
   ) {
     warn(
       'passive and prevent can\'t be used together. ' +
-      'Passive handler can\'t prevent default event.'
+      'Passive handler can\'t prevent default event.',
+      range
     );
-  }
-
-  // check capture modifier
-  if (modifiers.capture) {
-    delete modifiers.capture;
-    name = '!' + name; // mark the event as captured
-  }
-  if (modifiers.once) {
-    delete modifiers.once;
-    name = '~' + name; // mark the event as once
-  }
-  /* istanbul ignore if */
-  if (modifiers.passive) {
-    delete modifiers.passive;
-    name = '&' + name; // mark the event as passive
   }
 
   // normalize click.right and click.middle since they don't actually fire
   // this is technically browser-specific, but at least for now browsers are
   // the only target envs that have right/middle clicks.
-  if (name === 'click') {
-    if (modifiers.right) {
+  if (modifiers.right) {
+    if (dynamic) {
+      name = "(" + name + ")==='click'?'contextmenu':(" + name + ")";
+    } else if (name === 'click') {
       name = 'contextmenu';
       delete modifiers.right;
-    } else if (modifiers.middle) {
+    }
+  } else if (modifiers.middle) {
+    if (dynamic) {
+      name = "(" + name + ")==='click'?'mouseup':(" + name + ")";
+    } else if (name === 'click') {
       name = 'mouseup';
     }
+  }
+
+  // check capture modifier
+  if (modifiers.capture) {
+    delete modifiers.capture;
+    name = prependModifierMarker('!', name, dynamic);
+  }
+  if (modifiers.once) {
+    delete modifiers.once;
+    name = prependModifierMarker('~', name, dynamic);
+  }
+  /* istanbul ignore if */
+  if (modifiers.passive) {
+    delete modifiers.passive;
+    name = prependModifierMarker('&', name, dynamic);
   }
 
   var events;
@@ -71189,9 +73177,7 @@ function addHandler (
     events = el.events || (el.events = {});
   }
 
-  var newHandler = {
-    value: value.trim()
-  };
+  var newHandler = rangeSetItem({ value: value.trim(), dynamic: dynamic }, range);
   if (modifiers !== emptyObject) {
     newHandler.modifiers = modifiers;
   }
@@ -71207,6 +73193,15 @@ function addHandler (
   }
 
   el.plain = false;
+}
+
+function getRawBindingAttr (
+  el,
+  name
+) {
+  return el.rawAttrsMap[':' + name] ||
+    el.rawAttrsMap['v-bind:' + name] ||
+    el.rawAttrsMap[name]
 }
 
 function getBindingAttr (
@@ -71252,6 +73247,35 @@ function getAndRemoveAttr (
   return val
 }
 
+function getAndRemoveAttrByRegex (
+  el,
+  name
+) {
+  var list = el.attrsList;
+  for (var i = 0, l = list.length; i < l; i++) {
+    var attr = list[i];
+    if (name.test(attr.name)) {
+      list.splice(i, 1);
+      return attr
+    }
+  }
+}
+
+function rangeSetItem (
+  item,
+  range
+) {
+  if (range) {
+    if (range.start != null) {
+      item.start = range.start;
+    }
+    if (range.end != null) {
+      item.end = range.end;
+    }
+  }
+  return item
+}
+
 /*  */
 
 /**
@@ -71281,7 +73305,7 @@ function genComponentModel (
 
   el.model = {
     value: ("(" + value + ")"),
-    expression: ("\"" + value + "\""),
+    expression: JSON.stringify(value),
     callback: ("function (" + baseValueExpression + ") {" + assignment + "}")
   };
 }
@@ -71316,12 +73340,7 @@ function genAssignmentCode (
  *
  */
 
-var len;
-var str;
-var chr;
-var index$1;
-var expressionPos;
-var expressionEndPos;
+var len, str, chr, index$1, expressionPos, expressionEndPos;
 
 
 
@@ -71425,13 +73444,14 @@ function model (
   var tag = el.tag;
   var type = el.attrsMap.type;
 
-  if (true) {
+  {
     // inputs with type="file" are read only and setting the input's
     // value will throw an error.
     if (tag === 'input' && type === 'file') {
       warn$1(
         "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
-        "File inputs are read only. Use a v-on:change listener instead."
+        "File inputs are read only. Use a v-on:change listener instead.",
+        el.rawAttrsMap['v-model']
       );
     }
   }
@@ -71452,12 +73472,13 @@ function model (
     genComponentModel(el, value, modifiers);
     // component v-model doesn't need extra runtime
     return false
-  } else if (true) {
+  } else {
     warn$1(
       "<" + (el.tag) + " v-model=\"" + value + "\">: " +
       "v-model is not supported on this element type. " +
       'If you are working with contenteditable, it\'s recommended to ' +
-      'wrap a library dedicated for that purpose inside a custom component.'
+      'wrap a library dedicated for that purpose inside a custom component.',
+      el.rawAttrsMap['v-model']
     );
   }
 
@@ -71534,14 +73555,15 @@ function genDefaultModel (
 
   // warn if v-bind:value conflicts with v-model
   // except for inputs with v-bind:type
-  if (true) {
+  {
     var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
     var typeBinding = el.attrsMap['v-bind:type'] || el.attrsMap[':type'];
     if (value$1 && !typeBinding) {
       var binding = el.attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
       warn$1(
         binding + "=\"" + value$1 + "\" conflicts with v-model on the same element " +
-        'because the latter already expands to a value binding internally'
+        'because the latter already expands to a value binding internally',
+        el.rawAttrsMap[binding]
       );
     }
   }
@@ -71602,7 +73624,7 @@ function normalizeEvents (on) {
 
 var target$1;
 
-function createOnceHandler (handler, event, capture) {
+function createOnceHandler$1 (event, handler, capture) {
   var _target = target$1; // save current target element in closure
   return function onceHandler () {
     var res = handler.apply(null, arguments);
@@ -71612,17 +73634,49 @@ function createOnceHandler (handler, event, capture) {
   }
 }
 
+// #9446: Firefox <= 53 (in particular, ESR 52) has incorrect Event.timeStamp
+// implementation and does not fire microtasks in between event propagation, so
+// safe to exclude.
+var useMicrotaskFix = isUsingMicroTask && !(isFF && Number(isFF[1]) <= 53);
+
 function add$1 (
-  event,
+  name,
   handler,
-  once$$1,
   capture,
   passive
 ) {
-  handler = withMacroTask(handler);
-  if (once$$1) { handler = createOnceHandler(handler, event, capture); }
+  // async edge case #6566: inner click event triggers patch, event handler
+  // attached to outer element during patch, and triggered again. This
+  // happens because browsers fire microtask ticks between event propagation.
+  // the solution is simple: we save the timestamp when a handler is attached,
+  // and the handler would only fire if the event passed to it was fired
+  // AFTER it was attached.
+  if (useMicrotaskFix) {
+    var attachedTimestamp = currentFlushTimestamp;
+    var original = handler;
+    handler = original._wrapper = function (e) {
+      if (
+        // no bubbling, should always fire.
+        // this is just a safety net in case event.timeStamp is unreliable in
+        // certain weird environments...
+        e.target === e.currentTarget ||
+        // event is fired after handler attachment
+        e.timeStamp >= attachedTimestamp ||
+        // bail for environments that have buggy event.timeStamp implementations
+        // #9462 iOS 9 bug: event.timeStamp is 0 after history.pushState
+        // #9681 QtWebEngine event.timeStamp is negative value
+        e.timeStamp <= 0 ||
+        // #9448 bail if event is fired in another document in a multi-page
+        // electron/nw.js app, since event.timeStamp will be using a different
+        // starting reference
+        e.target.ownerDocument !== document
+      ) {
+        return original.apply(this, arguments)
+      }
+    };
+  }
   target$1.addEventListener(
-    event,
+    name,
     handler,
     supportsPassive
       ? { capture: capture, passive: passive }
@@ -71631,14 +73685,14 @@ function add$1 (
 }
 
 function remove$2 (
-  event,
+  name,
   handler,
   capture,
   _target
 ) {
   (_target || target$1).removeEventListener(
-    event,
-    handler._withTask || handler,
+    name,
+    handler._wrapper || handler,
     capture
   );
 }
@@ -71651,16 +73705,18 @@ function updateDOMListeners (oldVnode, vnode) {
   var oldOn = oldVnode.data.on || {};
   target$1 = vnode.elm;
   normalizeEvents(on);
-  updateListeners(on, oldOn, add$1, remove$2, vnode.context);
+  updateListeners(on, oldOn, add$1, remove$2, createOnceHandler$1, vnode.context);
   target$1 = undefined;
 }
 
 var events = {
   create: updateDOMListeners,
   update: updateDOMListeners
-}
+};
 
 /*  */
+
+var svgContainer;
 
 function updateDOMProps (oldVnode, vnode) {
   if (isUndef(oldVnode.data.domProps) && isUndef(vnode.data.domProps)) {
@@ -71676,10 +73732,11 @@ function updateDOMProps (oldVnode, vnode) {
   }
 
   for (key in oldProps) {
-    if (isUndef(props[key])) {
+    if (!(key in props)) {
       elm[key] = '';
     }
   }
+
   for (key in props) {
     cur = props[key];
     // ignore children if the node has textContent or innerHTML,
@@ -71695,7 +73752,7 @@ function updateDOMProps (oldVnode, vnode) {
       }
     }
 
-    if (key === 'value') {
+    if (key === 'value' && elm.tagName !== 'PROGRESS') {
       // store value as _value as well since
       // non-string values will be stringified
       elm._value = cur;
@@ -71704,8 +73761,29 @@ function updateDOMProps (oldVnode, vnode) {
       if (shouldUpdateValue(elm, strCur)) {
         elm.value = strCur;
       }
-    } else {
-      elm[key] = cur;
+    } else if (key === 'innerHTML' && isSVG(elm.tagName) && isUndef(elm.innerHTML)) {
+      // IE doesn't support innerHTML for SVG elements
+      svgContainer = svgContainer || document.createElement('div');
+      svgContainer.innerHTML = "<svg>" + cur + "</svg>";
+      var svg = svgContainer.firstChild;
+      while (elm.firstChild) {
+        elm.removeChild(elm.firstChild);
+      }
+      while (svg.firstChild) {
+        elm.appendChild(svg.firstChild);
+      }
+    } else if (
+      // skip the update if old and new VDOM state is the same.
+      // `value` is handled separately because the DOM value may be temporarily
+      // out of sync with VDOM state due to focus, composition and modifiers.
+      // This  #4521 by skipping the unnecesarry `checked` update.
+      cur !== oldProps[key]
+    ) {
+      // some property updates can throw
+      // e.g. `value` on <progress> w/ non-finite value
+      try {
+        elm[key] = cur;
+      } catch (e) {}
     }
   }
 }
@@ -71735,10 +73813,6 @@ function isDirtyWithModifiers (elm, newVal) {
   var value = elm.value;
   var modifiers = elm._vModifiers; // injected by v-model runtime
   if (isDef(modifiers)) {
-    if (modifiers.lazy) {
-      // inputs with lazy should only be updated when not in focus
-      return false
-    }
     if (modifiers.number) {
       return toNumber(value) !== toNumber(newVal)
     }
@@ -71752,7 +73826,7 @@ function isDirtyWithModifiers (elm, newVal) {
 var domProps = {
   create: updateDOMProps,
   update: updateDOMProps
-}
+};
 
 /*  */
 
@@ -71833,7 +73907,7 @@ var setProp = function (el, name, val) {
   if (cssVarRE.test(name)) {
     el.style.setProperty(name, val);
   } else if (importantRE.test(val)) {
-    el.style.setProperty(name, val.replace(importantRE, ''), 'important');
+    el.style.setProperty(hyphenate(name), val.replace(importantRE, ''), 'important');
   } else {
     var normalizedName = normalize(name);
     if (Array.isArray(val)) {
@@ -71913,9 +73987,11 @@ function updateStyle (oldVnode, vnode) {
 var style = {
   create: updateStyle,
   update: updateStyle
-}
+};
 
 /*  */
+
+var whitespaceRE = /\s+/;
 
 /**
  * Add class with compatibility for SVG since classList is not supported on
@@ -71930,7 +74006,7 @@ function addClass (el, cls) {
   /* istanbul ignore else */
   if (el.classList) {
     if (cls.indexOf(' ') > -1) {
-      cls.split(/\s+/).forEach(function (c) { return el.classList.add(c); });
+      cls.split(whitespaceRE).forEach(function (c) { return el.classList.add(c); });
     } else {
       el.classList.add(cls);
     }
@@ -71955,7 +74031,7 @@ function removeClass (el, cls) {
   /* istanbul ignore else */
   if (el.classList) {
     if (cls.indexOf(' ') > -1) {
-      cls.split(/\s+/).forEach(function (c) { return el.classList.remove(c); });
+      cls.split(whitespaceRE).forEach(function (c) { return el.classList.remove(c); });
     } else {
       el.classList.remove(cls);
     }
@@ -71979,20 +74055,20 @@ function removeClass (el, cls) {
 
 /*  */
 
-function resolveTransition (def) {
-  if (!def) {
+function resolveTransition (def$$1) {
+  if (!def$$1) {
     return
   }
   /* istanbul ignore else */
-  if (typeof def === 'object') {
+  if (typeof def$$1 === 'object') {
     var res = {};
-    if (def.css !== false) {
-      extend(res, autoCssTransition(def.name || 'v'));
+    if (def$$1.css !== false) {
+      extend(res, autoCssTransition(def$$1.name || 'v'));
     }
-    extend(res, def);
+    extend(res, def$$1);
     return res
-  } else if (typeof def === 'string') {
-    return autoCssTransition(def)
+  } else if (typeof def$$1 === 'string') {
+    return autoCssTransition(def$$1)
   }
 }
 
@@ -72095,11 +74171,12 @@ var transformRE = /\b(transform|all)(,|$)/;
 
 function getTransitionInfo (el, expectedType) {
   var styles = window.getComputedStyle(el);
-  var transitionDelays = styles[transitionProp + 'Delay'].split(', ');
-  var transitionDurations = styles[transitionProp + 'Duration'].split(', ');
+  // JSDOM may return undefined for transition properties
+  var transitionDelays = (styles[transitionProp + 'Delay'] || '').split(', ');
+  var transitionDurations = (styles[transitionProp + 'Duration'] || '').split(', ');
   var transitionTimeout = getTimeout(transitionDelays, transitionDurations);
-  var animationDelays = styles[animationProp + 'Delay'].split(', ');
-  var animationDurations = styles[animationProp + 'Duration'].split(', ');
+  var animationDelays = (styles[animationProp + 'Delay'] || '').split(', ');
+  var animationDurations = (styles[animationProp + 'Duration'] || '').split(', ');
   var animationTimeout = getTimeout(animationDelays, animationDurations);
 
   var type;
@@ -72153,8 +74230,12 @@ function getTimeout (delays, durations) {
   }))
 }
 
+// Old versions of Chromium (below 61.0.3163.100) formats floating pointer numbers
+// in a locale-dependent way, using a comma instead of a dot.
+// If comma is not replaced with a dot, the input will be rounded down (i.e. acting
+// as a floor function) causing unexpected behaviors
 function toMs (s) {
-  return Number(s.slice(0, -1)) * 1000
+  return Number(s.slice(0, -1).replace(',', '.')) * 1000
 }
 
 /*  */
@@ -72203,8 +74284,8 @@ function enter (vnode, toggleDisplay) {
   var context = activeInstance;
   var transitionNode = activeInstance.$vnode;
   while (transitionNode && transitionNode.parent) {
-    transitionNode = transitionNode.parent;
     context = transitionNode.context;
+    transitionNode = transitionNode.parent;
   }
 
   var isAppear = !context._isMounted || !vnode.isRootInsert;
@@ -72242,7 +74323,7 @@ function enter (vnode, toggleDisplay) {
       : duration
   );
 
-  if ("development" !== 'production' && explicitEnterDuration != null) {
+  if (explicitEnterDuration != null) {
     checkDuration(explicitEnterDuration, 'enter', vnode);
   }
 
@@ -72350,7 +74431,7 @@ function leave (vnode, rm) {
       : duration
   );
 
-  if ("development" !== 'production' && isDef(explicitLeaveDuration)) {
+  if (isDef(explicitLeaveDuration)) {
     checkDuration(explicitLeaveDuration, 'leave', vnode);
   }
 
@@ -72386,7 +74467,7 @@ function leave (vnode, rm) {
       return
     }
     // record leaving element
-    if (!vnode.data.show) {
+    if (!vnode.data.show && el.parentNode) {
       (el.parentNode._pending || (el.parentNode._pending = {}))[(vnode.key)] = vnode;
     }
     beforeLeave && beforeLeave(el);
@@ -72475,7 +74556,7 @@ var transition = inBrowser ? {
       rm();
     }
   }
-} : {}
+} : {};
 
 var platformModules = [
   attrs,
@@ -72484,7 +74565,7 @@ var platformModules = [
   domProps,
   style,
   transition
-]
+];
 
 /*  */
 
@@ -72577,7 +74658,7 @@ function actuallySetSelected (el, binding, vm) {
   var value = binding.value;
   var isMultiple = el.multiple;
   if (isMultiple && !Array.isArray(value)) {
-    "development" !== 'production' && warn(
+    warn(
       "<select multiple v-model=\"" + (binding.expression) + "\"> " +
       "expects an Array value for its binding, but got " + (Object.prototype.toString.call(value).slice(8, -1)),
       vm
@@ -72695,17 +74776,14 @@ var show = {
       el.style.display = el.__vOriginalDisplay;
     }
   }
-}
+};
 
 var platformDirectives = {
   model: directive,
   show: show
-}
+};
 
 /*  */
-
-// Provides transition support for a single element/component.
-// supports transition mode (out-in / in-out)
 
 var transitionProps = {
   name: String,
@@ -72772,6 +74850,10 @@ function isSameChild (child, oldChild) {
   return oldChild.key === child.key && oldChild.tag === child.tag
 }
 
+var isNotTextNode = function (c) { return c.tag || isAsyncPlaceholder(c); };
+
+var isVShowDirective = function (d) { return d.name === 'show'; };
+
 var Transition = {
   name: 'transition',
   props: transitionProps,
@@ -72786,14 +74868,14 @@ var Transition = {
     }
 
     // filter out text nodes (possible whitespaces)
-    children = children.filter(function (c) { return c.tag || isAsyncPlaceholder(c); });
+    children = children.filter(isNotTextNode);
     /* istanbul ignore if */
     if (!children.length) {
       return
     }
 
     // warn multiple elements
-    if ("development" !== 'production' && children.length > 1) {
+    if (children.length > 1) {
       warn(
         '<transition> can only be used on a single element. Use ' +
         '<transition-group> for lists.',
@@ -72804,8 +74886,7 @@ var Transition = {
     var mode = this.mode;
 
     // warn invalid mode
-    if ("development" !== 'production' &&
-      mode && mode !== 'in-out' && mode !== 'out-in'
+    if (mode && mode !== 'in-out' && mode !== 'out-in'
     ) {
       warn(
         'invalid <transition> mode: ' + mode,
@@ -72851,7 +74932,7 @@ var Transition = {
 
     // mark v-show
     // so that the transition module can hand over the control to the directive
-    if (child.data.directives && child.data.directives.some(function (d) { return d.name === 'show'; })) {
+    if (child.data.directives && child.data.directives.some(isVShowDirective)) {
       child.data.show = true;
     }
 
@@ -72889,20 +74970,9 @@ var Transition = {
 
     return rawChild
   }
-}
+};
 
 /*  */
-
-// Provides transition support for list items.
-// supports move transitions using the FLIP technique.
-
-// Because the vdom's children update algorithm is "unstable" - i.e.
-// it doesn't guarantee the relative positioning of removed elements,
-// we force transition-group to update its children into two passes:
-// in the first pass, we remove all nodes that need to be removed,
-// triggering their leaving transition; in the second pass, we insert/move
-// into the final desired state. This way in the second pass removed
-// nodes will remain where they should be.
 
 var props = extend({
   tag: String,
@@ -72913,6 +74983,25 @@ delete props.mode;
 
 var TransitionGroup = {
   props: props,
+
+  beforeMount: function beforeMount () {
+    var this$1 = this;
+
+    var update = this._update;
+    this._update = function (vnode, hydrating) {
+      var restoreActiveInstance = setActiveInstance(this$1);
+      // force removing pass
+      this$1.__patch__(
+        this$1._vnode,
+        this$1.kept,
+        false, // hydrating
+        true // removeOnly (!important, avoids unnecessary moves)
+      );
+      this$1._vnode = this$1.kept;
+      restoreActiveInstance();
+      update.call(this$1, vnode, hydrating);
+    };
+  },
 
   render: function render (h) {
     var tag = this.tag || this.$vnode.data.tag || 'span';
@@ -72929,7 +75018,7 @@ var TransitionGroup = {
           children.push(c);
           map[c.key] = c
           ;(c.data || (c.data = {})).transition = transitionData;
-        } else if (true) {
+        } else {
           var opts = c.componentOptions;
           var name = opts ? (opts.Ctor.options.name || opts.tag || '') : c.tag;
           warn(("<transition-group> children must be keyed: <" + name + ">"));
@@ -72957,17 +75046,6 @@ var TransitionGroup = {
     return h(tag, null, children)
   },
 
-  beforeUpdate: function beforeUpdate () {
-    // force removing pass
-    this.__patch__(
-      this._vnode,
-      this.kept,
-      false, // hydrating
-      true // removeOnly (!important, avoids unnecessary moves)
-    );
-    this._vnode = this.kept;
-  },
-
   updated: function updated () {
     var children = this.prevChildren;
     var moveClass = this.moveClass || ((this.name || 'v') + '-move');
@@ -72993,6 +75071,9 @@ var TransitionGroup = {
         addTransitionClass(el, moveClass);
         s.transform = s.WebkitTransform = s.transitionDuration = '';
         el.addEventListener(transitionEndEvent, el._moveCb = function cb (e) {
+          if (e && e.target !== el) {
+            return
+          }
           if (!e || /transform$/.test(e.propertyName)) {
             el.removeEventListener(transitionEndEvent, cb);
             el._moveCb = null;
@@ -73030,7 +75111,7 @@ var TransitionGroup = {
       return (this._hasMove = info.hasTransform)
     }
   }
-}
+};
 
 function callPendingCbs (c) {
   /* istanbul ignore if */
@@ -73063,7 +75144,7 @@ function applyTranslation (c) {
 var platformComponents = {
   Transition: Transition,
   TransitionGroup: TransitionGroup
-}
+};
 
 /*  */
 
@@ -73097,20 +75178,14 @@ if (inBrowser) {
     if (config.devtools) {
       if (devtools) {
         devtools.emit('init', Vue);
-      } else if (
-        "development" !== 'production' &&
-        "development" !== 'test' &&
-        isChrome
-      ) {
+      } else {
         console[console.info ? 'info' : 'log'](
           'Download the Vue Devtools extension for a better development experience:\n' +
           'https://github.com/vuejs/vue-devtools'
         );
       }
     }
-    if ("development" !== 'production' &&
-      "development" !== 'test' &&
-      config.productionTip !== false &&
+    if (config.productionTip !== false &&
       typeof console !== 'undefined'
     ) {
       console[console.info ? 'info' : 'log'](
@@ -73124,7 +75199,7 @@ if (inBrowser) {
 
 /*  */
 
-var defaultTagRE = /\{\{((?:.|\n)+?)\}\}/g;
+var defaultTagRE = /\{\{((?:.|\r?\n)+?)\}\}/g;
 var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
 
 var buildRegex = cached(function (delimiters) {
@@ -73175,14 +75250,15 @@ function parseText (
 function transformNode (el, options) {
   var warn = options.warn || baseWarn;
   var staticClass = getAndRemoveAttr(el, 'class');
-  if ("development" !== 'production' && staticClass) {
+  if (staticClass) {
     var res = parseText(staticClass, options.delimiters);
     if (res) {
       warn(
         "class=\"" + staticClass + "\": " +
         'Interpolation inside attributes has been removed. ' +
         'Use v-bind or the colon shorthand instead. For example, ' +
-        'instead of <div class="{{ val }}">, use <div :class="val">.'
+        'instead of <div class="{{ val }}">, use <div :class="val">.',
+        el.rawAttrsMap['class']
       );
     }
   }
@@ -73210,7 +75286,7 @@ var klass$1 = {
   staticKeys: ['staticClass'],
   transformNode: transformNode,
   genData: genData
-}
+};
 
 /*  */
 
@@ -73219,14 +75295,15 @@ function transformNode$1 (el, options) {
   var staticStyle = getAndRemoveAttr(el, 'style');
   if (staticStyle) {
     /* istanbul ignore if */
-    if (true) {
+    {
       var res = parseText(staticStyle, options.delimiters);
       if (res) {
         warn(
           "style=\"" + staticStyle + "\": " +
           'Interpolation inside attributes has been removed. ' +
           'Use v-bind or the colon shorthand instead. For example, ' +
-          'instead of <div style="{{ val }}">, use <div :style="val">.'
+          'instead of <div style="{{ val }}">, use <div :style="val">.',
+          el.rawAttrsMap['style']
         );
       }
     }
@@ -73254,7 +75331,7 @@ var style$1 = {
   staticKeys: ['staticStyle'],
   transformNode: transformNode$1,
   genData: genData$1
-}
+};
 
 /*  */
 
@@ -73266,7 +75343,7 @@ var he = {
     decoder.innerHTML = html;
     return decoder.textContent
   }
-}
+};
 
 /*  */
 
@@ -73295,18 +75372,10 @@ var isNonPhrasingTag = makeMap(
  * Not type-checking this file because it's mostly vendor code.
  */
 
-/*!
- * HTML Parser By John Resig (ejohn.org)
- * Modified by Juriy "kangax" Zaytsev
- * Original code by Erik Arvidsson, Mozilla Public License
- * http://erik.eae.net/simplehtmlparser/simplehtmlparser.js
- */
-
 // Regular Expressions for parsing tags and attributes
 var attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
-// could use https://www.w3.org/TR/1999/REC-xml-names-19990114/#NT-QName
-// but for Vue templates we can enforce a simple charset
-var ncname = '[a-zA-Z_][\\w\\-\\.]*';
+var dynamicArgAttribute = /^\s*((?:v-[\w-]+:|@|:|#)\[[^=]+\][^\s"'<>\/=]*)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/;
+var ncname = "[a-zA-Z_][\\-\\.0-9_a-zA-Z" + (unicodeRegExp.source) + "]*";
 var qnameCapture = "((?:" + ncname + "\\:)?" + ncname + ")";
 var startTagOpen = new RegExp(("^<" + qnameCapture));
 var startTagClose = /^\s*(\/?)>/;
@@ -73315,11 +75384,6 @@ var doctype = /^<!DOCTYPE [^>]+>/i;
 // #7298: escape - to avoid being pased as HTML comment when inlined in page
 var comment = /^<!\--/;
 var conditionalComment = /^<!\[/;
-
-var IS_REGEX_CAPTURING_BROKEN = false;
-'x'.replace(/x(.)?/g, function (m, g) {
-  IS_REGEX_CAPTURING_BROKEN = g === '';
-});
 
 // Special Elements (can contain anything)
 var isPlainTextElement = makeMap('script,style,textarea', true);
@@ -73331,10 +75395,11 @@ var decodingMap = {
   '&quot;': '"',
   '&amp;': '&',
   '&#10;': '\n',
-  '&#9;': '\t'
+  '&#9;': '\t',
+  '&#39;': "'"
 };
-var encodedAttr = /&(?:lt|gt|quot|amp);/g;
-var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#10|#9);/g;
+var encodedAttr = /&(?:lt|gt|quot|amp|#39);/g;
+var encodedAttrWithNewLines = /&(?:lt|gt|quot|amp|#39|#10|#9);/g;
 
 // #5992
 var isIgnoreNewlineTag = makeMap('pre,textarea', true);
@@ -73364,7 +75429,7 @@ function parseHTML (html, options) {
 
           if (commentEnd >= 0) {
             if (options.shouldKeepComment) {
-              options.comment(html.substring(4, commentEnd));
+              options.comment(html.substring(4, commentEnd), index, index + commentEnd + 3);
             }
             advance(commentEnd + 3);
             continue
@@ -73401,7 +75466,7 @@ function parseHTML (html, options) {
         var startTagMatch = parseStartTag();
         if (startTagMatch) {
           handleStartTag(startTagMatch);
-          if (shouldIgnoreFirstNewline(lastTag, html)) {
+          if (shouldIgnoreFirstNewline(startTagMatch.tagName, html)) {
             advance(1);
           }
           continue
@@ -73424,16 +75489,18 @@ function parseHTML (html, options) {
           rest = html.slice(textEnd);
         }
         text = html.substring(0, textEnd);
-        advance(textEnd);
       }
 
       if (textEnd < 0) {
         text = html;
-        html = '';
+      }
+
+      if (text) {
+        advance(text.length);
       }
 
       if (options.chars && text) {
-        options.chars(text);
+        options.chars(text, index - text.length, index);
       }
     } else {
       var endTagLength = 0;
@@ -73461,8 +75528,8 @@ function parseHTML (html, options) {
 
     if (html === last) {
       options.chars && options.chars(html);
-      if ("development" !== 'production' && !stack.length && options.warn) {
-        options.warn(("Mal-formatted tag at end of template: \"" + html + "\""));
+      if (!stack.length && options.warn) {
+        options.warn(("Mal-formatted tag at end of template: \"" + html + "\""), { start: index + html.length });
       }
       break
     }
@@ -73486,8 +75553,10 @@ function parseHTML (html, options) {
       };
       advance(start[0].length);
       var end, attr;
-      while (!(end = html.match(startTagClose)) && (attr = html.match(attribute))) {
+      while (!(end = html.match(startTagClose)) && (attr = html.match(dynamicArgAttribute) || html.match(attribute))) {
+        attr.start = index;
         advance(attr[0].length);
+        attr.end = index;
         match.attrs.push(attr);
       }
       if (end) {
@@ -73518,12 +75587,6 @@ function parseHTML (html, options) {
     var attrs = new Array(l);
     for (var i = 0; i < l; i++) {
       var args = match.attrs[i];
-      // hackish work around FF bug https://bugzilla.mozilla.org/show_bug.cgi?id=369778
-      if (IS_REGEX_CAPTURING_BROKEN && args[0].indexOf('""') === -1) {
-        if (args[3] === '') { delete args[3]; }
-        if (args[4] === '') { delete args[4]; }
-        if (args[5] === '') { delete args[5]; }
-      }
       var value = args[3] || args[4] || args[5] || '';
       var shouldDecodeNewlines = tagName === 'a' && args[1] === 'href'
         ? options.shouldDecodeNewlinesForHref
@@ -73532,10 +75595,14 @@ function parseHTML (html, options) {
         name: args[1],
         value: decodeAttr(value, shouldDecodeNewlines)
       };
+      if (options.outputSourceRange) {
+        attrs[i].start = args.start + args[0].match(/^\s*/).length;
+        attrs[i].end = args.end;
+      }
     }
 
     if (!unary) {
-      stack.push({ tag: tagName, lowerCasedTag: tagName.toLowerCase(), attrs: attrs });
+      stack.push({ tag: tagName, lowerCasedTag: tagName.toLowerCase(), attrs: attrs, start: match.start, end: match.end });
       lastTag = tagName;
     }
 
@@ -73549,12 +75616,9 @@ function parseHTML (html, options) {
     if (start == null) { start = index; }
     if (end == null) { end = index; }
 
-    if (tagName) {
-      lowerCasedTagName = tagName.toLowerCase();
-    }
-
     // Find the closest opened tag of the same type
     if (tagName) {
+      lowerCasedTagName = tagName.toLowerCase();
       for (pos = stack.length - 1; pos >= 0; pos--) {
         if (stack[pos].lowerCasedTag === lowerCasedTagName) {
           break
@@ -73568,12 +75632,12 @@ function parseHTML (html, options) {
     if (pos >= 0) {
       // Close all the open elements, up the stack
       for (var i = stack.length - 1; i >= pos; i--) {
-        if ("development" !== 'production' &&
-          (i > pos || !tagName) &&
+        if (i > pos || !tagName &&
           options.warn
         ) {
           options.warn(
-            ("tag <" + (stack[i].tag) + "> has no matching end tag.")
+            ("tag <" + (stack[i].tag) + "> has no matching end tag."),
+            { start: stack[i].start, end: stack[i].end }
           );
         }
         if (options.end) {
@@ -73603,15 +75667,25 @@ function parseHTML (html, options) {
 
 var onRE = /^@|^v-on:/;
 var dirRE = /^v-|^@|^:/;
-var forAliasRE = /([^]*?)\s+(?:in|of)\s+([^]*)/;
+var forAliasRE = /([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/;
 var forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
 var stripParensRE = /^\(|\)$/g;
+var dynamicArgRE = /^\[.*\]$/;
 
 var argRE = /:(.*)$/;
-var bindRE = /^:|^v-bind:/;
-var modifierRE = /\.[^.]+/g;
+var bindRE = /^:|^\.|^v-bind:/;
+var modifierRE = /\.[^.\]]+(?=[^\]]*$)/g;
+
+var slotRE = /^v-slot(:|$)|^#/;
+
+var lineBreakRE = /[\r\n]/;
+var whitespaceRE$1 = /\s+/g;
+
+var invalidAttributeRE = /[\s"'<>\/=]/;
 
 var decodeHTMLCached = cached(he.decode);
+
+var emptySlotScopeToken = "_empty_";
 
 // configurable state
 var warn$2;
@@ -73622,8 +75696,7 @@ var postTransforms;
 var platformIsPreTag;
 var platformMustUseProp;
 var platformGetTagNamespace;
-
-
+var maybeComponent;
 
 function createASTElement (
   tag,
@@ -73635,6 +75708,7 @@ function createASTElement (
     tag: tag,
     attrsList: attrs,
     attrsMap: makeAttrsMap(attrs),
+    rawAttrsMap: {},
     parent: parent,
     children: []
   }
@@ -73652,6 +75726,8 @@ function parse (
   platformIsPreTag = options.isPreTag || no;
   platformMustUseProp = options.mustUseProp || no;
   platformGetTagNamespace = options.getTagNamespace || no;
+  var isReservedTag = options.isReservedTag || no;
+  maybeComponent = function (el) { return !!el.component || !isReservedTag(el.tag); };
 
   transforms = pluckModuleFunction(options.modules, 'transformNode');
   preTransforms = pluckModuleFunction(options.modules, 'preTransformNode');
@@ -73661,20 +75737,67 @@ function parse (
 
   var stack = [];
   var preserveWhitespace = options.preserveWhitespace !== false;
+  var whitespaceOption = options.whitespace;
   var root;
   var currentParent;
   var inVPre = false;
   var inPre = false;
   var warned = false;
 
-  function warnOnce (msg) {
+  function warnOnce (msg, range) {
     if (!warned) {
       warned = true;
-      warn$2(msg);
+      warn$2(msg, range);
     }
   }
 
   function closeElement (element) {
+    trimEndingWhitespace(element);
+    if (!inVPre && !element.processed) {
+      element = processElement(element, options);
+    }
+    // tree management
+    if (!stack.length && element !== root) {
+      // allow root elements with v-if, v-else-if and v-else
+      if (root.if && (element.elseif || element.else)) {
+        {
+          checkRootConstraints(element);
+        }
+        addIfCondition(root, {
+          exp: element.elseif,
+          block: element
+        });
+      } else {
+        warnOnce(
+          "Component template should contain exactly one root element. " +
+          "If you are using v-if on multiple elements, " +
+          "use v-else-if to chain them instead.",
+          { start: element.start }
+        );
+      }
+    }
+    if (currentParent && !element.forbidden) {
+      if (element.elseif || element.else) {
+        processIfConditions(element, currentParent);
+      } else {
+        if (element.slotScope) {
+          // scoped slot
+          // keep it in the children list so that v-else(-if) conditions can
+          // find it as the prev node.
+          var name = element.slotTarget || '"default"'
+          ;(currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element;
+        }
+        currentParent.children.push(element);
+        element.parent = currentParent;
+      }
+    }
+
+    // final children cleanup
+    // filter out scoped slots
+    element.children = element.children.filter(function (c) { return !(c).slotScope; });
+    // remove trailing whitespace node again
+    trimEndingWhitespace(element);
+
     // check pre state
     if (element.pre) {
       inVPre = false;
@@ -73688,6 +75811,37 @@ function parse (
     }
   }
 
+  function trimEndingWhitespace (el) {
+    // remove trailing whitespace node
+    if (!inPre) {
+      var lastNode;
+      while (
+        (lastNode = el.children[el.children.length - 1]) &&
+        lastNode.type === 3 &&
+        lastNode.text === ' '
+      ) {
+        el.children.pop();
+      }
+    }
+  }
+
+  function checkRootConstraints (el) {
+    if (el.tag === 'slot' || el.tag === 'template') {
+      warnOnce(
+        "Cannot use <" + (el.tag) + "> as component root element because it may " +
+        'contain multiple nodes.',
+        { start: el.start }
+      );
+    }
+    if (el.attrsMap.hasOwnProperty('v-for')) {
+      warnOnce(
+        'Cannot use v-for on stateful component root element because ' +
+        'it renders multiple elements.',
+        el.rawAttrsMap['v-for']
+      );
+    }
+  }
+
   parseHTML(template, {
     warn: warn$2,
     expectHTML: options.expectHTML,
@@ -73696,7 +75850,8 @@ function parse (
     shouldDecodeNewlines: options.shouldDecodeNewlines,
     shouldDecodeNewlinesForHref: options.shouldDecodeNewlinesForHref,
     shouldKeepComment: options.comments,
-    start: function start (tag, attrs, unary) {
+    outputSourceRange: options.outputSourceRange,
+    start: function start (tag, attrs, unary, start$1, end) {
       // check namespace.
       // inherit parent ns if there is one
       var ns = (currentParent && currentParent.ns) || platformGetTagNamespace(tag);
@@ -73712,12 +75867,36 @@ function parse (
         element.ns = ns;
       }
 
+      {
+        if (options.outputSourceRange) {
+          element.start = start$1;
+          element.end = end;
+          element.rawAttrsMap = element.attrsList.reduce(function (cumulated, attr) {
+            cumulated[attr.name] = attr;
+            return cumulated
+          }, {});
+        }
+        attrs.forEach(function (attr) {
+          if (invalidAttributeRE.test(attr.name)) {
+            warn$2(
+              "Invalid dynamic argument expression: attribute names cannot contain " +
+              "spaces, quotes, <, >, / or =.",
+              {
+                start: attr.start + attr.name.indexOf("["),
+                end: attr.start + attr.name.length
+              }
+            );
+          }
+        });
+      }
+
       if (isForbiddenTag(element) && !isServerRendering()) {
         element.forbidden = true;
-        "development" !== 'production' && warn$2(
+        warn$2(
           'Templates should only be responsible for mapping the state to the ' +
           'UI. Avoid placing tags with side-effects in your templates, such as ' +
-          "<" + tag + ">" + ', as they will not be parsed.'
+          "<" + tag + ">" + ', as they will not be parsed.',
+          { start: element.start }
         );
       }
 
@@ -73742,58 +75921,15 @@ function parse (
         processFor(element);
         processIf(element);
         processOnce(element);
-        // element-scope stuff
-        processElement(element, options);
       }
 
-      function checkRootConstraints (el) {
-        if (true) {
-          if (el.tag === 'slot' || el.tag === 'template') {
-            warnOnce(
-              "Cannot use <" + (el.tag) + "> as component root element because it may " +
-              'contain multiple nodes.'
-            );
-          }
-          if (el.attrsMap.hasOwnProperty('v-for')) {
-            warnOnce(
-              'Cannot use v-for on stateful component root element because ' +
-              'it renders multiple elements.'
-            );
-          }
-        }
-      }
-
-      // tree management
       if (!root) {
         root = element;
-        checkRootConstraints(root);
-      } else if (!stack.length) {
-        // allow root elements with v-if, v-else-if and v-else
-        if (root.if && (element.elseif || element.else)) {
-          checkRootConstraints(element);
-          addIfCondition(root, {
-            exp: element.elseif,
-            block: element
-          });
-        } else if (true) {
-          warnOnce(
-            "Component template should contain exactly one root element. " +
-            "If you are using v-if on multiple elements, " +
-            "use v-else-if to chain them instead."
-          );
+        {
+          checkRootConstraints(root);
         }
       }
-      if (currentParent && !element.forbidden) {
-        if (element.elseif || element.else) {
-          processIfConditions(element, currentParent);
-        } else if (element.slotScope) { // scoped slot
-          currentParent.plain = false;
-          var name = element.slotTarget || '"default"';(currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element;
-        } else {
-          currentParent.children.push(element);
-          element.parent = currentParent;
-        }
-      }
+
       if (!unary) {
         currentParent = element;
         stack.push(element);
@@ -73802,29 +75938,29 @@ function parse (
       }
     },
 
-    end: function end () {
-      // remove trailing whitespace
+    end: function end (tag, start, end$1) {
       var element = stack[stack.length - 1];
-      var lastNode = element.children[element.children.length - 1];
-      if (lastNode && lastNode.type === 3 && lastNode.text === ' ' && !inPre) {
-        element.children.pop();
-      }
       // pop stack
       stack.length -= 1;
       currentParent = stack[stack.length - 1];
+      if (options.outputSourceRange) {
+        element.end = end$1;
+      }
       closeElement(element);
     },
 
-    chars: function chars (text) {
+    chars: function chars (text, start, end) {
       if (!currentParent) {
-        if (true) {
+        {
           if (text === template) {
             warnOnce(
-              'Component template requires a root element, rather than just text.'
+              'Component template requires a root element, rather than just text.',
+              { start: start }
             );
           } else if ((text = text.trim())) {
             warnOnce(
-              ("text \"" + text + "\" outside root element will be ignored.")
+              ("text \"" + text + "\" outside root element will be ignored."),
+              { start: start }
             );
           }
         }
@@ -73839,33 +75975,66 @@ function parse (
         return
       }
       var children = currentParent.children;
-      text = inPre || text.trim()
-        ? isTextTag(currentParent) ? text : decodeHTMLCached(text)
-        // only preserve whitespace if its not right after a starting tag
-        : preserveWhitespace && children.length ? ' ' : '';
+      if (inPre || text.trim()) {
+        text = isTextTag(currentParent) ? text : decodeHTMLCached(text);
+      } else if (!children.length) {
+        // remove the whitespace-only node right after an opening tag
+        text = '';
+      } else if (whitespaceOption) {
+        if (whitespaceOption === 'condense') {
+          // in condense mode, remove the whitespace node if it contains
+          // line break, otherwise condense to a single space
+          text = lineBreakRE.test(text) ? '' : ' ';
+        } else {
+          text = ' ';
+        }
+      } else {
+        text = preserveWhitespace ? ' ' : '';
+      }
       if (text) {
+        if (!inPre && whitespaceOption === 'condense') {
+          // condense consecutive whitespaces into single space
+          text = text.replace(whitespaceRE$1, ' ');
+        }
         var res;
+        var child;
         if (!inVPre && text !== ' ' && (res = parseText(text, delimiters))) {
-          children.push({
+          child = {
             type: 2,
             expression: res.expression,
             tokens: res.tokens,
             text: text
-          });
+          };
         } else if (text !== ' ' || !children.length || children[children.length - 1].text !== ' ') {
-          children.push({
+          child = {
             type: 3,
             text: text
-          });
+          };
+        }
+        if (child) {
+          if (options.outputSourceRange) {
+            child.start = start;
+            child.end = end;
+          }
+          children.push(child);
         }
       }
     },
-    comment: function comment (text) {
-      currentParent.children.push({
-        type: 3,
-        text: text,
-        isComment: true
-      });
+    comment: function comment (text, start, end) {
+      // adding anyting as a sibling to the root node is forbidden
+      // comments should still be allowed, but ignored
+      if (currentParent) {
+        var child = {
+          type: 3,
+          text: text,
+          isComment: true
+        };
+        if (options.outputSourceRange) {
+          child.start = start;
+          child.end = end;
+        }
+        currentParent.children.push(child);
+      }
     }
   });
   return root
@@ -73878,14 +76047,19 @@ function processPre (el) {
 }
 
 function processRawAttrs (el) {
-  var l = el.attrsList.length;
-  if (l) {
-    var attrs = el.attrs = new Array(l);
-    for (var i = 0; i < l; i++) {
+  var list = el.attrsList;
+  var len = list.length;
+  if (len) {
+    var attrs = el.attrs = new Array(len);
+    for (var i = 0; i < len; i++) {
       attrs[i] = {
-        name: el.attrsList[i].name,
-        value: JSON.stringify(el.attrsList[i].value)
+        name: list[i].name,
+        value: JSON.stringify(list[i].value)
       };
+      if (list[i].start != null) {
+        attrs[i].start = list[i].start;
+        attrs[i].end = list[i].end;
+      }
     }
   } else if (!el.pre) {
     // non root node in pre blocks with no attributes
@@ -73893,27 +76067,53 @@ function processRawAttrs (el) {
   }
 }
 
-function processElement (element, options) {
+function processElement (
+  element,
+  options
+) {
   processKey(element);
 
   // determine whether this is a plain element after
   // removing structural attributes
-  element.plain = !element.key && !element.attrsList.length;
+  element.plain = (
+    !element.key &&
+    !element.scopedSlots &&
+    !element.attrsList.length
+  );
 
   processRef(element);
-  processSlot(element);
+  processSlotContent(element);
+  processSlotOutlet(element);
   processComponent(element);
   for (var i = 0; i < transforms.length; i++) {
     element = transforms[i](element, options) || element;
   }
   processAttrs(element);
+  return element
 }
 
 function processKey (el) {
   var exp = getBindingAttr(el, 'key');
   if (exp) {
-    if ("development" !== 'production' && el.tag === 'template') {
-      warn$2("<template> cannot be keyed. Place the key on real elements instead.");
+    {
+      if (el.tag === 'template') {
+        warn$2(
+          "<template> cannot be keyed. Place the key on real elements instead.",
+          getRawBindingAttr(el, 'key')
+        );
+      }
+      if (el.for) {
+        var iterator = el.iterator2 || el.iterator1;
+        var parent = el.parent;
+        if (iterator && iterator === exp && parent && parent.tag === 'transition-group') {
+          warn$2(
+            "Do not use v-for index as key on <transition-group> children, " +
+            "this is the same as not using keys.",
+            getRawBindingAttr(el, 'key'),
+            true /* tip */
+          );
+        }
+      }
     }
     el.key = exp;
   }
@@ -73933,9 +76133,10 @@ function processFor (el) {
     var res = parseFor(exp);
     if (res) {
       extend(el, res);
-    } else if (true) {
+    } else {
       warn$2(
-        ("Invalid v-for expression: " + exp)
+        ("Invalid v-for expression: " + exp),
+        el.rawAttrsMap['v-for']
       );
     }
   }
@@ -73951,7 +76152,7 @@ function parseFor (exp) {
   var alias = inMatch[1].trim().replace(stripParensRE, '');
   var iteratorMatch = alias.match(forIteratorRE);
   if (iteratorMatch) {
-    res.alias = alias.replace(forIteratorRE, '');
+    res.alias = alias.replace(forIteratorRE, '').trim();
     res.iterator1 = iteratorMatch[1].trim();
     if (iteratorMatch[2]) {
       res.iterator2 = iteratorMatch[2].trim();
@@ -73988,10 +76189,11 @@ function processIfConditions (el, parent) {
       exp: el.elseif,
       block: el
     });
-  } else if (true) {
+  } else {
     warn$2(
       "v-" + (el.elseif ? ('else-if="' + el.elseif + '"') : 'else') + " " +
-      "used on element <" + (el.tag) + "> without corresponding v-if."
+      "used on element <" + (el.tag) + "> without corresponding v-if.",
+      el.rawAttrsMap[el.elseif ? 'v-else-if' : 'v-else']
     );
   }
 }
@@ -74002,10 +76204,11 @@ function findPrevElement (children) {
     if (children[i].type === 1) {
       return children[i]
     } else {
-      if ("development" !== 'production' && children[i].text !== ' ') {
+      if (children[i].text !== ' ') {
         warn$2(
           "text \"" + (children[i].text.trim()) + "\" between v-if and v-else(-if) " +
-          "will be ignored."
+          "will be ignored.",
+          children[i]
         );
       }
       children.pop();
@@ -74027,51 +76230,157 @@ function processOnce (el) {
   }
 }
 
-function processSlot (el) {
+// handle content being passed to a component as slot,
+// e.g. <template slot="xxx">, <div slot-scope="xxx">
+function processSlotContent (el) {
+  var slotScope;
+  if (el.tag === 'template') {
+    slotScope = getAndRemoveAttr(el, 'scope');
+    /* istanbul ignore if */
+    if (slotScope) {
+      warn$2(
+        "the \"scope\" attribute for scoped slots have been deprecated and " +
+        "replaced by \"slot-scope\" since 2.5. The new \"slot-scope\" attribute " +
+        "can also be used on plain elements in addition to <template> to " +
+        "denote scoped slots.",
+        el.rawAttrsMap['scope'],
+        true
+      );
+    }
+    el.slotScope = slotScope || getAndRemoveAttr(el, 'slot-scope');
+  } else if ((slotScope = getAndRemoveAttr(el, 'slot-scope'))) {
+    /* istanbul ignore if */
+    if (el.attrsMap['v-for']) {
+      warn$2(
+        "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
+        "(v-for takes higher priority). Use a wrapper <template> for the " +
+        "scoped slot to make it clearer.",
+        el.rawAttrsMap['slot-scope'],
+        true
+      );
+    }
+    el.slotScope = slotScope;
+  }
+
+  // slot="xxx"
+  var slotTarget = getBindingAttr(el, 'slot');
+  if (slotTarget) {
+    el.slotTarget = slotTarget === '""' ? '"default"' : slotTarget;
+    el.slotTargetDynamic = !!(el.attrsMap[':slot'] || el.attrsMap['v-bind:slot']);
+    // preserve slot as an attribute for native shadow DOM compat
+    // only for non-scoped slots.
+    if (el.tag !== 'template' && !el.slotScope) {
+      addAttr(el, 'slot', slotTarget, getRawBindingAttr(el, 'slot'));
+    }
+  }
+
+  // 2.6 v-slot syntax
+  {
+    if (el.tag === 'template') {
+      // v-slot on <template>
+      var slotBinding = getAndRemoveAttrByRegex(el, slotRE);
+      if (slotBinding) {
+        {
+          if (el.slotTarget || el.slotScope) {
+            warn$2(
+              "Unexpected mixed usage of different slot syntaxes.",
+              el
+            );
+          }
+          if (el.parent && !maybeComponent(el.parent)) {
+            warn$2(
+              "<template v-slot> can only appear at the root level inside " +
+              "the receiving the component",
+              el
+            );
+          }
+        }
+        var ref = getSlotName(slotBinding);
+        var name = ref.name;
+        var dynamic = ref.dynamic;
+        el.slotTarget = name;
+        el.slotTargetDynamic = dynamic;
+        el.slotScope = slotBinding.value || emptySlotScopeToken; // force it into a scoped slot for perf
+      }
+    } else {
+      // v-slot on component, denotes default slot
+      var slotBinding$1 = getAndRemoveAttrByRegex(el, slotRE);
+      if (slotBinding$1) {
+        {
+          if (!maybeComponent(el)) {
+            warn$2(
+              "v-slot can only be used on components or <template>.",
+              slotBinding$1
+            );
+          }
+          if (el.slotScope || el.slotTarget) {
+            warn$2(
+              "Unexpected mixed usage of different slot syntaxes.",
+              el
+            );
+          }
+          if (el.scopedSlots) {
+            warn$2(
+              "To avoid scope ambiguity, the default slot should also use " +
+              "<template> syntax when there are other named slots.",
+              slotBinding$1
+            );
+          }
+        }
+        // add the component's children to its default slot
+        var slots = el.scopedSlots || (el.scopedSlots = {});
+        var ref$1 = getSlotName(slotBinding$1);
+        var name$1 = ref$1.name;
+        var dynamic$1 = ref$1.dynamic;
+        var slotContainer = slots[name$1] = createASTElement('template', [], el);
+        slotContainer.slotTarget = name$1;
+        slotContainer.slotTargetDynamic = dynamic$1;
+        slotContainer.children = el.children.filter(function (c) {
+          if (!c.slotScope) {
+            c.parent = slotContainer;
+            return true
+          }
+        });
+        slotContainer.slotScope = slotBinding$1.value || emptySlotScopeToken;
+        // remove children as they are returned from scopedSlots now
+        el.children = [];
+        // mark el non-plain so data gets generated
+        el.plain = false;
+      }
+    }
+  }
+}
+
+function getSlotName (binding) {
+  var name = binding.name.replace(slotRE, '');
+  if (!name) {
+    if (binding.name[0] !== '#') {
+      name = 'default';
+    } else {
+      warn$2(
+        "v-slot shorthand syntax requires a slot name.",
+        binding
+      );
+    }
+  }
+  return dynamicArgRE.test(name)
+    // dynamic [name]
+    ? { name: name.slice(1, -1), dynamic: true }
+    // static name
+    : { name: ("\"" + name + "\""), dynamic: false }
+}
+
+// handle <slot/> outlets
+function processSlotOutlet (el) {
   if (el.tag === 'slot') {
     el.slotName = getBindingAttr(el, 'name');
-    if ("development" !== 'production' && el.key) {
+    if (el.key) {
       warn$2(
         "`key` does not work on <slot> because slots are abstract outlets " +
         "and can possibly expand into multiple elements. " +
-        "Use the key on a wrapping element instead."
+        "Use the key on a wrapping element instead.",
+        getRawBindingAttr(el, 'key')
       );
-    }
-  } else {
-    var slotScope;
-    if (el.tag === 'template') {
-      slotScope = getAndRemoveAttr(el, 'scope');
-      /* istanbul ignore if */
-      if ("development" !== 'production' && slotScope) {
-        warn$2(
-          "the \"scope\" attribute for scoped slots have been deprecated and " +
-          "replaced by \"slot-scope\" since 2.5. The new \"slot-scope\" attribute " +
-          "can also be used on plain elements in addition to <template> to " +
-          "denote scoped slots.",
-          true
-        );
-      }
-      el.slotScope = slotScope || getAndRemoveAttr(el, 'slot-scope');
-    } else if ((slotScope = getAndRemoveAttr(el, 'slot-scope'))) {
-      /* istanbul ignore if */
-      if ("development" !== 'production' && el.attrsMap['v-for']) {
-        warn$2(
-          "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
-          "(v-for takes higher priority). Use a wrapper <template> for the " +
-          "scoped slot to make it clearer.",
-          true
-        );
-      }
-      el.slotScope = slotScope;
-    }
-    var slotTarget = getBindingAttr(el, 'slot');
-    if (slotTarget) {
-      el.slotTarget = slotTarget === '""' ? '"default"' : slotTarget;
-      // preserve slot as an attribute for native shadow DOM compat
-      // only for non-scoped slots.
-      if (el.tag !== 'template' && !el.slotScope) {
-        addAttr(el, 'slot', slotTarget);
-      }
     }
   }
 }
@@ -74088,7 +76397,7 @@ function processComponent (el) {
 
 function processAttrs (el) {
   var list = el.attrsList;
-  var i, l, name, rawName, value, modifiers, isProp;
+  var i, l, name, rawName, value, modifiers, syncGen, isDynamic;
   for (i = 0, l = list.length; i < l; i++) {
     name = rawName = list[i].name;
     value = list[i].value;
@@ -74096,74 +76405,124 @@ function processAttrs (el) {
       // mark element as dynamic
       el.hasBindings = true;
       // modifiers
-      modifiers = parseModifiers(name);
+      modifiers = parseModifiers(name.replace(dirRE, ''));
+      // support .foo shorthand syntax for the .prop modifier
       if (modifiers) {
         name = name.replace(modifierRE, '');
       }
       if (bindRE.test(name)) { // v-bind
         name = name.replace(bindRE, '');
         value = parseFilters(value);
-        isProp = false;
+        isDynamic = dynamicArgRE.test(name);
+        if (isDynamic) {
+          name = name.slice(1, -1);
+        }
+        if (
+          value.trim().length === 0
+        ) {
+          warn$2(
+            ("The value for a v-bind expression cannot be empty. Found in \"v-bind:" + name + "\"")
+          );
+        }
         if (modifiers) {
-          if (modifiers.prop) {
-            isProp = true;
+          if (modifiers.prop && !isDynamic) {
             name = camelize(name);
             if (name === 'innerHtml') { name = 'innerHTML'; }
           }
-          if (modifiers.camel) {
+          if (modifiers.camel && !isDynamic) {
             name = camelize(name);
           }
           if (modifiers.sync) {
-            addHandler(
-              el,
-              ("update:" + (camelize(name))),
-              genAssignmentCode(value, "$event")
-            );
+            syncGen = genAssignmentCode(value, "$event");
+            if (!isDynamic) {
+              addHandler(
+                el,
+                ("update:" + (camelize(name))),
+                syncGen,
+                null,
+                false,
+                warn$2,
+                list[i]
+              );
+              if (hyphenate(name) !== camelize(name)) {
+                addHandler(
+                  el,
+                  ("update:" + (hyphenate(name))),
+                  syncGen,
+                  null,
+                  false,
+                  warn$2,
+                  list[i]
+                );
+              }
+            } else {
+              // handler w/ dynamic event name
+              addHandler(
+                el,
+                ("\"update:\"+(" + name + ")"),
+                syncGen,
+                null,
+                false,
+                warn$2,
+                list[i],
+                true // dynamic
+              );
+            }
           }
         }
-        if (isProp || (
+        if ((modifiers && modifiers.prop) || (
           !el.component && platformMustUseProp(el.tag, el.attrsMap.type, name)
         )) {
-          addProp(el, name, value);
+          addProp(el, name, value, list[i], isDynamic);
         } else {
-          addAttr(el, name, value);
+          addAttr(el, name, value, list[i], isDynamic);
         }
       } else if (onRE.test(name)) { // v-on
         name = name.replace(onRE, '');
-        addHandler(el, name, value, modifiers, false, warn$2);
+        isDynamic = dynamicArgRE.test(name);
+        if (isDynamic) {
+          name = name.slice(1, -1);
+        }
+        addHandler(el, name, value, modifiers, false, warn$2, list[i], isDynamic);
       } else { // normal directives
         name = name.replace(dirRE, '');
         // parse arg
         var argMatch = name.match(argRE);
         var arg = argMatch && argMatch[1];
+        isDynamic = false;
         if (arg) {
           name = name.slice(0, -(arg.length + 1));
+          if (dynamicArgRE.test(arg)) {
+            arg = arg.slice(1, -1);
+            isDynamic = true;
+          }
         }
-        addDirective(el, name, rawName, value, arg, modifiers);
-        if ("development" !== 'production' && name === 'model') {
+        addDirective(el, name, rawName, value, arg, isDynamic, modifiers, list[i]);
+        if (name === 'model') {
           checkForAliasModel(el, value);
         }
       }
     } else {
       // literal attribute
-      if (true) {
+      {
         var res = parseText(value, delimiters);
         if (res) {
           warn$2(
             name + "=\"" + value + "\": " +
             'Interpolation inside attributes has been removed. ' +
             'Use v-bind or the colon shorthand instead. For example, ' +
-            'instead of <div id="{{ val }}">, use <div :id="val">.'
+            'instead of <div id="{{ val }}">, use <div :id="val">.',
+            list[i]
           );
         }
       }
-      addAttr(el, name, JSON.stringify(value));
+      addAttr(el, name, JSON.stringify(value), list[i]);
       // #6887 firefox doesn't update muted state if set via attribute
       // even immediately after element creation
       if (!el.component &&
           name === 'muted' &&
           platformMustUseProp(el.tag, el.attrsMap.type, name)) {
-        addProp(el, name, 'true');
+        addProp(el, name, 'true', list[i]);
       }
     }
   }
@@ -74193,10 +76552,9 @@ function makeAttrsMap (attrs) {
   var map = {};
   for (var i = 0, l = attrs.length; i < l; i++) {
     if (
-      "development" !== 'production' &&
       map[attrs[i].name] && !isIE && !isEdge
     ) {
-      warn$2('duplicate attribute: ' + attrs[i].name);
+      warn$2('duplicate attribute: ' + attrs[i].name, attrs[i]);
     }
     map[attrs[i].name] = attrs[i].value;
   }
@@ -74243,7 +76601,8 @@ function checkForAliasModel (el, value) {
         "You are binding v-model directly to a v-for iteration alias. " +
         "This will not be able to modify the v-for source array because " +
         "writing to the alias is like modifying a function local variable. " +
-        "Consider using an array of objects and use v-model on an object property instead."
+        "Consider using an array of objects and use v-model on an object property instead.",
+        el.rawAttrsMap['v-model']
       );
     }
     _el = _el.parent;
@@ -74251,16 +76610,6 @@ function checkForAliasModel (el, value) {
 }
 
 /*  */
-
-/**
- * Expand input[v-model] with dyanmic type bindings into v-if-else chains
- * Turn this:
- *   <input v-model="data[type]" :type="type">
- * into this:
- *   <input v-if="type === 'checkbox'" type="checkbox" v-model="data[type]">
- *   <input v-else-if="type === 'radio'" type="radio" v-model="data[type]">
- *   <input v-else :type="type" v-model="data[type]">
- */
 
 function preTransformNode (el, options) {
   if (el.tag === 'input') {
@@ -74328,21 +76677,21 @@ function cloneASTElement (el) {
   return createASTElement(el.tag, el.attrsList.slice(), el.parent)
 }
 
-var model$2 = {
+var model$1 = {
   preTransformNode: preTransformNode
-}
+};
 
 var modules$1 = [
   klass$1,
   style$1,
-  model$2
-]
+  model$1
+];
 
 /*  */
 
 function text (el, dir) {
   if (dir.value) {
-    addProp(el, 'textContent', ("_s(" + (dir.value) + ")"));
+    addProp(el, 'textContent', ("_s(" + (dir.value) + ")"), dir);
   }
 }
 
@@ -74350,7 +76699,7 @@ function text (el, dir) {
 
 function html (el, dir) {
   if (dir.value) {
-    addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"));
+    addProp(el, 'innerHTML', ("_s(" + (dir.value) + ")"), dir);
   }
 }
 
@@ -74358,7 +76707,7 @@ var directives$1 = {
   model: model,
   text: text,
   html: html
-}
+};
 
 /*  */
 
@@ -74405,7 +76754,7 @@ function optimize (root, options) {
 
 function genStaticKeys$1 (keys) {
   return makeMap(
-    'type,tag,attrsList,attrsMap,plain,parent,children,attrs' +
+    'type,tag,attrsList,attrsMap,plain,parent,children,attrs,start,end,rawAttrsMap' +
     (keys ? ',' + keys : '')
   )
 }
@@ -74504,7 +76853,8 @@ function isDirectChildOfTemplateFor (node) {
 
 /*  */
 
-var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/;
+var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*(?:[\w$]+)?\s*\(/;
+var fnInvokeRE = /\([^)]*?\);*$/;
 var simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/;
 
 // KeyboardEvent.keyCode aliases
@@ -74522,16 +76872,19 @@ var keyCodes = {
 
 // KeyboardEvent.key aliases
 var keyNames = {
-  esc: 'Escape',
+  // #7880: IE11 and Edge use `Esc` for Escape key name.
+  esc: ['Esc', 'Escape'],
   tab: 'Tab',
   enter: 'Enter',
-  space: ' ',
+  // #9112: IE11 uses `Spacebar` for Space key name.
+  space: [' ', 'Spacebar'],
   // #7806: IE11 uses key names without `Arrow` prefix for arrow keys.
   up: ['Up', 'ArrowUp'],
   left: ['Left', 'ArrowLeft'],
   right: ['Right', 'ArrowRight'],
   down: ['Down', 'ArrowDown'],
-  'delete': ['Backspace', 'Delete']
+  // #9112: IE11 uses `Del` for Delete key name.
+  'delete': ['Backspace', 'Delete', 'Del']
 };
 
 // #4868: modifiers that prevent the execution of the listener
@@ -74554,37 +76907,45 @@ var modifierCode = {
 
 function genHandlers (
   events,
-  isNative,
-  warn
+  isNative
 ) {
-  var res = isNative ? 'nativeOn:{' : 'on:{';
+  var prefix = isNative ? 'nativeOn:' : 'on:';
+  var staticHandlers = "";
+  var dynamicHandlers = "";
   for (var name in events) {
-    res += "\"" + name + "\":" + (genHandler(name, events[name])) + ",";
+    var handlerCode = genHandler(events[name]);
+    if (events[name] && events[name].dynamic) {
+      dynamicHandlers += name + "," + handlerCode + ",";
+    } else {
+      staticHandlers += "\"" + name + "\":" + handlerCode + ",";
+    }
   }
-  return res.slice(0, -1) + '}'
+  staticHandlers = "{" + (staticHandlers.slice(0, -1)) + "}";
+  if (dynamicHandlers) {
+    return prefix + "_d(" + staticHandlers + ",[" + (dynamicHandlers.slice(0, -1)) + "])"
+  } else {
+    return prefix + staticHandlers
+  }
 }
 
-function genHandler (
-  name,
-  handler
-) {
+function genHandler (handler) {
   if (!handler) {
     return 'function(){}'
   }
 
   if (Array.isArray(handler)) {
-    return ("[" + (handler.map(function (handler) { return genHandler(name, handler); }).join(',')) + "]")
+    return ("[" + (handler.map(function (handler) { return genHandler(handler); }).join(',')) + "]")
   }
 
   var isMethodPath = simplePathRE.test(handler.value);
   var isFunctionExpression = fnExpRE.test(handler.value);
+  var isFunctionInvocation = simplePathRE.test(handler.value.replace(fnInvokeRE, ''));
 
   if (!handler.modifiers) {
     if (isMethodPath || isFunctionExpression) {
       return handler.value
     }
-    /* istanbul ignore if */
-    return ("function($event){" + (handler.value) + "}") // inline statement
+    return ("function($event){" + (isFunctionInvocation ? ("return " + (handler.value)) : handler.value) + "}") // inline statement
   } else {
     var code = '';
     var genModifierCode = '';
@@ -74619,14 +76980,21 @@ function genHandler (
       ? ("return " + (handler.value) + "($event)")
       : isFunctionExpression
         ? ("return (" + (handler.value) + ")($event)")
-        : handler.value;
-    /* istanbul ignore if */
+        : isFunctionInvocation
+          ? ("return " + (handler.value))
+          : handler.value;
     return ("function($event){" + code + handlerCode + "}")
   }
 }
 
 function genKeyFilter (keys) {
-  return ("if(!('button' in $event)&&" + (keys.map(genFilterCode).join('&&')) + ")return null;")
+  return (
+    // make sure the key filters only apply to KeyboardEvents
+    // #9441: can't use 'keyCode' in $event because Chrome autofill fires fake
+    // key events that do not have keyCode property...
+    "if(!$event.type.indexOf('key')&&" +
+    (keys.map(genFilterCode).join('&&')) + ")return null;"
+  )
 }
 
 function genFilterCode (key) {
@@ -74649,7 +77017,7 @@ function genFilterCode (key) {
 /*  */
 
 function on (el, dir) {
-  if ("development" !== 'production' && dir.modifiers) {
+  if (dir.modifiers) {
     warn("v-on without argument does not support modifiers.");
   }
   el.wrapListeners = function (code) { return ("_g(" + code + "," + (dir.value) + ")"); };
@@ -74669,9 +77037,13 @@ var baseDirectives = {
   on: on,
   bind: bind$1,
   cloak: noop
-}
+};
 
 /*  */
+
+
+
+
 
 var CodegenState = function CodegenState (options) {
   this.options = options;
@@ -74680,9 +77052,10 @@ var CodegenState = function CodegenState (options) {
   this.dataGenFns = pluckModuleFunction(options.modules, 'genData');
   this.directives = extend(extend({}, baseDirectives), options.directives);
   var isReservedTag = options.isReservedTag || no;
-  this.maybeComponent = function (el) { return !isReservedTag(el.tag); };
+  this.maybeComponent = function (el) { return !!el.component || !isReservedTag(el.tag); };
   this.onceId = 0;
   this.staticRenderFns = [];
+  this.pre = false;
 };
 
 
@@ -74700,6 +77073,10 @@ function generate (
 }
 
 function genElement (el, state) {
+  if (el.parent) {
+    el.pre = el.pre || el.parent.pre;
+  }
+
   if (el.staticRoot && !el.staticProcessed) {
     return genStatic(el, state)
   } else if (el.once && !el.onceProcessed) {
@@ -74708,7 +77085,7 @@ function genElement (el, state) {
     return genFor(el, state)
   } else if (el.if && !el.ifProcessed) {
     return genIf(el, state)
-  } else if (el.tag === 'template' && !el.slotTarget) {
+  } else if (el.tag === 'template' && !el.slotTarget && !state.pre) {
     return genChildren(el, state) || 'void 0'
   } else if (el.tag === 'slot') {
     return genSlot(el, state)
@@ -74718,7 +77095,10 @@ function genElement (el, state) {
     if (el.component) {
       code = genComponent(el.component, el, state);
     } else {
-      var data = el.plain ? undefined : genData$2(el, state);
+      var data;
+      if (!el.plain || (el.pre && state.maybeComponent(el))) {
+        data = genData$2(el, state);
+      }
 
       var children = el.inlineTemplate ? null : genChildren(el, state, true);
       code = "_c('" + (el.tag) + "'" + (data ? ("," + data) : '') + (children ? ("," + children) : '') + ")";
@@ -74734,7 +77114,15 @@ function genElement (el, state) {
 // hoist static sub-trees out
 function genStatic (el, state) {
   el.staticProcessed = true;
+  // Some elements (templates) need to behave differently inside of a v-pre
+  // node.  All pre nodes are static roots, so we can use this as a location to
+  // wrap a state change and reset it upon exiting the pre node.
+  var originalPreState = state.pre;
+  if (el.pre) {
+    state.pre = el.pre;
+  }
   state.staticRenderFns.push(("with(this){return " + (genElement(el, state)) + "}"));
+  state.pre = originalPreState;
   return ("_m(" + (state.staticRenderFns.length - 1) + (el.staticInFor ? ',true' : '') + ")")
 }
 
@@ -74754,8 +77142,9 @@ function genOnce (el, state) {
       parent = parent.parent;
     }
     if (!key) {
-      "development" !== 'production' && state.warn(
-        "v-once can only be used inside v-for that is keyed. "
+      state.warn(
+        "v-once can only be used inside v-for that is keyed. ",
+        el.rawAttrsMap['v-once']
       );
       return genElement(el, state)
     }
@@ -74813,8 +77202,7 @@ function genFor (
   var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
   var iterator2 = el.iterator2 ? ("," + (el.iterator2)) : '';
 
-  if ("development" !== 'production' &&
-    state.maybeComponent(el) &&
+  if (state.maybeComponent(el) &&
     el.tag !== 'slot' &&
     el.tag !== 'template' &&
     !el.key
@@ -74823,6 +77211,7 @@ function genFor (
       "<" + (el.tag) + " v-for=\"" + alias + " in " + exp + "\">: component lists rendered with " +
       "v-for should have explicit keys. " +
       "See https://vuejs.org/guide/list.html#key for more info.",
+      el.rawAttrsMap['v-for'],
       true /* tip */
     );
   }
@@ -74867,18 +77256,18 @@ function genData$2 (el, state) {
   }
   // attributes
   if (el.attrs) {
-    data += "attrs:{" + (genProps(el.attrs)) + "},";
+    data += "attrs:" + (genProps(el.attrs)) + ",";
   }
   // DOM props
   if (el.props) {
-    data += "domProps:{" + (genProps(el.props)) + "},";
+    data += "domProps:" + (genProps(el.props)) + ",";
   }
   // event handlers
   if (el.events) {
-    data += (genHandlers(el.events, false, state.warn)) + ",";
+    data += (genHandlers(el.events, false)) + ",";
   }
   if (el.nativeEvents) {
-    data += (genHandlers(el.nativeEvents, true, state.warn)) + ",";
+    data += (genHandlers(el.nativeEvents, true)) + ",";
   }
   // slot target
   // only for non-scoped slots
@@ -74887,7 +77276,7 @@ function genData$2 (el, state) {
   }
   // scoped slots
   if (el.scopedSlots) {
-    data += (genScopedSlots(el.scopedSlots, state)) + ",";
+    data += (genScopedSlots(el, el.scopedSlots, state)) + ",";
   }
   // component v-model
   if (el.model) {
@@ -74901,6 +77290,12 @@ function genData$2 (el, state) {
     }
   }
   data = data.replace(/,$/, '') + '}';
+  // v-bind dynamic argument wrap
+  // v-bind with dynamic arguments must be applied using the same v-bind object
+  // merge helper so that class/style/mustUseProp attrs are handled correctly.
+  if (el.dynamicAttrs) {
+    data = "_b(" + data + ",\"" + (el.tag) + "\"," + (genProps(el.dynamicAttrs)) + ")";
+  }
   // v-bind data wrap
   if (el.wrapData) {
     data = el.wrapData(data);
@@ -74929,7 +77324,7 @@ function genDirectives (el, state) {
     }
     if (needRuntime) {
       hasRuntime = true;
-      res += "{name:\"" + (dir.name) + "\",rawName:\"" + (dir.rawName) + "\"" + (dir.value ? (",value:(" + (dir.value) + "),expression:" + (JSON.stringify(dir.value))) : '') + (dir.arg ? (",arg:\"" + (dir.arg) + "\"") : '') + (dir.modifiers ? (",modifiers:" + (JSON.stringify(dir.modifiers))) : '') + "},";
+      res += "{name:\"" + (dir.name) + "\",rawName:\"" + (dir.rawName) + "\"" + (dir.value ? (",value:(" + (dir.value) + "),expression:" + (JSON.stringify(dir.value))) : '') + (dir.arg ? (",arg:" + (dir.isDynamicArg ? dir.arg : ("\"" + (dir.arg) + "\""))) : '') + (dir.modifiers ? (",modifiers:" + (JSON.stringify(dir.modifiers))) : '') + "},";
     }
   }
   if (hasRuntime) {
@@ -74939,57 +77334,114 @@ function genDirectives (el, state) {
 
 function genInlineTemplate (el, state) {
   var ast = el.children[0];
-  if ("development" !== 'production' && (
-    el.children.length !== 1 || ast.type !== 1
-  )) {
-    state.warn('Inline-template components must have exactly one child element.');
+  if (el.children.length !== 1 || ast.type !== 1) {
+    state.warn(
+      'Inline-template components must have exactly one child element.',
+      { start: el.start }
+    );
   }
-  if (ast.type === 1) {
+  if (ast && ast.type === 1) {
     var inlineRenderFns = generate(ast, state.options);
     return ("inlineTemplate:{render:function(){" + (inlineRenderFns.render) + "},staticRenderFns:[" + (inlineRenderFns.staticRenderFns.map(function (code) { return ("function(){" + code + "}"); }).join(',')) + "]}")
   }
 }
 
 function genScopedSlots (
+  el,
   slots,
   state
 ) {
-  return ("scopedSlots:_u([" + (Object.keys(slots).map(function (key) {
-      return genScopedSlot(key, slots[key], state)
-    }).join(',')) + "])")
+  // by default scoped slots are considered "stable", this allows child
+  // components with only scoped slots to skip forced updates from parent.
+  // but in some cases we have to bail-out of this optimization
+  // for example if the slot contains dynamic names, has v-if or v-for on them...
+  var needsForceUpdate = el.for || Object.keys(slots).some(function (key) {
+    var slot = slots[key];
+    return (
+      slot.slotTargetDynamic ||
+      slot.if ||
+      slot.for ||
+      containsSlotChild(slot) // is passing down slot from parent which may be dynamic
+    )
+  });
+
+  // #9534: if a component with scoped slots is inside a conditional branch,
+  // it's possible for the same component to be reused but with different
+  // compiled slot content. To avoid that, we generate a unique key based on
+  // the generated code of all the slot contents.
+  var needsKey = !!el.if;
+
+  // OR when it is inside another scoped slot or v-for (the reactivity may be
+  // disconnected due to the intermediate scope variable)
+  // #9438, #9506
+  // TODO: this can be further optimized by properly analyzing in-scope bindings
+  // and skip force updating ones that do not actually use scope variables.
+  if (!needsForceUpdate) {
+    var parent = el.parent;
+    while (parent) {
+      if (
+        (parent.slotScope && parent.slotScope !== emptySlotScopeToken) ||
+        parent.for
+      ) {
+        needsForceUpdate = true;
+        break
+      }
+      if (parent.if) {
+        needsKey = true;
+      }
+      parent = parent.parent;
+    }
+  }
+
+  var generatedSlots = Object.keys(slots)
+    .map(function (key) { return genScopedSlot(slots[key], state); })
+    .join(',');
+
+  return ("scopedSlots:_u([" + generatedSlots + "]" + (needsForceUpdate ? ",null,true" : "") + (!needsForceUpdate && needsKey ? (",null,false," + (hash(generatedSlots))) : "") + ")")
+}
+
+function hash(str) {
+  var hash = 5381;
+  var i = str.length;
+  while(i) {
+    hash = (hash * 33) ^ str.charCodeAt(--i);
+  }
+  return hash >>> 0
+}
+
+function containsSlotChild (el) {
+  if (el.type === 1) {
+    if (el.tag === 'slot') {
+      return true
+    }
+    return el.children.some(containsSlotChild)
+  }
+  return false
 }
 
 function genScopedSlot (
-  key,
   el,
   state
 ) {
-  if (el.for && !el.forProcessed) {
-    return genForScopedSlot(key, el, state)
+  var isLegacySyntax = el.attrsMap['slot-scope'];
+  if (el.if && !el.ifProcessed && !isLegacySyntax) {
+    return genIf(el, state, genScopedSlot, "null")
   }
-  var fn = "function(" + (String(el.slotScope)) + "){" +
+  if (el.for && !el.forProcessed) {
+    return genFor(el, state, genScopedSlot)
+  }
+  var slotScope = el.slotScope === emptySlotScopeToken
+    ? ""
+    : String(el.slotScope);
+  var fn = "function(" + slotScope + "){" +
     "return " + (el.tag === 'template'
-      ? el.if
-        ? ((el.if) + "?" + (genChildren(el, state) || 'undefined') + ":undefined")
+      ? el.if && isLegacySyntax
+        ? ("(" + (el.if) + ")?" + (genChildren(el, state) || 'undefined') + ":undefined")
         : genChildren(el, state) || 'undefined'
       : genElement(el, state)) + "}";
-  return ("{key:" + key + ",fn:" + fn + "}")
-}
-
-function genForScopedSlot (
-  key,
-  el,
-  state
-) {
-  var exp = el.for;
-  var alias = el.alias;
-  var iterator1 = el.iterator1 ? ("," + (el.iterator1)) : '';
-  var iterator2 = el.iterator2 ? ("," + (el.iterator2)) : '';
-  el.forProcessed = true; // avoid recursion
-  return "_l((" + exp + ")," +
-    "function(" + alias + iterator1 + iterator2 + "){" +
-      "return " + (genScopedSlot(key, el, state)) +
-    '})'
+  // reverse proxy v-slot without scope on this.$slots
+  var reverseProxy = slotScope ? "" : ",proxy:true";
+  return ("{key:" + (el.slotTarget || "\"default\"") + ",fn:" + fn + reverseProxy + "}")
 }
 
 function genChildren (
@@ -75008,13 +77460,16 @@ function genChildren (
       el$1.tag !== 'template' &&
       el$1.tag !== 'slot'
     ) {
-      return (altGenElement || genElement)(el$1, state)
+      var normalizationType = checkSkip
+        ? state.maybeComponent(el$1) ? ",1" : ",0"
+        : "";
+      return ("" + ((altGenElement || genElement)(el$1, state)) + normalizationType)
     }
-    var normalizationType = checkSkip
+    var normalizationType$1 = checkSkip
       ? getNormalizationType(children, state.maybeComponent)
       : 0;
     var gen = altGenNode || genNode;
-    return ("[" + (children.map(function (c) { return gen(c, state); }).join(',')) + "]" + (normalizationType ? ("," + normalizationType) : ''))
+    return ("[" + (children.map(function (c) { return gen(c, state); }).join(',')) + "]" + (normalizationType$1 ? ("," + normalizationType$1) : ''))
   }
 }
 
@@ -75052,7 +77507,7 @@ function needsNormalization (el) {
 function genNode (node, state) {
   if (node.type === 1) {
     return genElement(node, state)
-  } if (node.type === 3 && node.isComment) {
+  } else if (node.type === 3 && node.isComment) {
     return genComment(node)
   } else {
     return genText(node)
@@ -75073,7 +77528,14 @@ function genSlot (el, state) {
   var slotName = el.slotName || '"default"';
   var children = genChildren(el, state);
   var res = "_t(" + slotName + (children ? ("," + children) : '');
-  var attrs = el.attrs && ("{" + (el.attrs.map(function (a) { return ((camelize(a.name)) + ":" + (a.value)); }).join(',')) + "}");
+  var attrs = el.attrs || el.dynamicAttrs
+    ? genProps((el.attrs || []).concat(el.dynamicAttrs || []).map(function (attr) { return ({
+        // slot props are camelized
+        name: camelize(attr.name),
+        value: attr.value,
+        dynamic: attr.dynamic
+      }); }))
+    : null;
   var bind$$1 = el.attrsMap['v-bind'];
   if ((attrs || bind$$1) && !children) {
     res += ",null";
@@ -75098,15 +77560,23 @@ function genComponent (
 }
 
 function genProps (props) {
-  var res = '';
+  var staticProps = "";
+  var dynamicProps = "";
   for (var i = 0; i < props.length; i++) {
     var prop = props[i];
-    /* istanbul ignore if */
-    {
-      res += "\"" + (prop.name) + "\":" + (transformSpecialNewlines(prop.value)) + ",";
+    var value = transformSpecialNewlines(prop.value);
+    if (prop.dynamic) {
+      dynamicProps += (prop.name) + "," + value + ",";
+    } else {
+      staticProps += "\"" + (prop.name) + "\":" + value + ",";
     }
   }
-  return res.slice(0, -1)
+  staticProps = "{" + (staticProps.slice(0, -1)) + "}";
+  if (dynamicProps) {
+    return ("_d(" + staticProps + ",[" + (dynamicProps.slice(0, -1)) + "])")
+  } else {
+    return staticProps
+  }
 }
 
 // #3895, #4268
@@ -75117,6 +77587,8 @@ function transformSpecialNewlines (text) {
 }
 
 /*  */
+
+
 
 // these keywords should not appear inside expressions, but operators like
 // typeof, instanceof and in are allowed
@@ -75135,95 +77607,154 @@ var unaryOperatorsRE = new RegExp('\\b' + (
 var stripStringRE = /'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*\$\{|\}(?:[^`\\]|\\.)*`|`(?:[^`\\]|\\.)*`/g;
 
 // detect problematic expressions in a template
-function detectErrors (ast) {
-  var errors = [];
+function detectErrors (ast, warn) {
   if (ast) {
-    checkNode(ast, errors);
+    checkNode(ast, warn);
   }
-  return errors
 }
 
-function checkNode (node, errors) {
+function checkNode (node, warn) {
   if (node.type === 1) {
     for (var name in node.attrsMap) {
       if (dirRE.test(name)) {
         var value = node.attrsMap[name];
         if (value) {
+          var range = node.rawAttrsMap[name];
           if (name === 'v-for') {
-            checkFor(node, ("v-for=\"" + value + "\""), errors);
+            checkFor(node, ("v-for=\"" + value + "\""), warn, range);
           } else if (onRE.test(name)) {
-            checkEvent(value, (name + "=\"" + value + "\""), errors);
+            checkEvent(value, (name + "=\"" + value + "\""), warn, range);
           } else {
-            checkExpression(value, (name + "=\"" + value + "\""), errors);
+            checkExpression(value, (name + "=\"" + value + "\""), warn, range);
           }
         }
       }
     }
     if (node.children) {
       for (var i = 0; i < node.children.length; i++) {
-        checkNode(node.children[i], errors);
+        checkNode(node.children[i], warn);
       }
     }
   } else if (node.type === 2) {
-    checkExpression(node.expression, node.text, errors);
+    checkExpression(node.expression, node.text, warn, node);
   }
 }
 
-function checkEvent (exp, text, errors) {
+function checkEvent (exp, text, warn, range) {
   var stipped = exp.replace(stripStringRE, '');
   var keywordMatch = stipped.match(unaryOperatorsRE);
   if (keywordMatch && stipped.charAt(keywordMatch.index - 1) !== '$') {
-    errors.push(
+    warn(
       "avoid using JavaScript unary operator as property name: " +
-      "\"" + (keywordMatch[0]) + "\" in expression " + (text.trim())
+      "\"" + (keywordMatch[0]) + "\" in expression " + (text.trim()),
+      range
     );
   }
-  checkExpression(exp, text, errors);
+  checkExpression(exp, text, warn, range);
 }
 
-function checkFor (node, text, errors) {
-  checkExpression(node.for || '', text, errors);
-  checkIdentifier(node.alias, 'v-for alias', text, errors);
-  checkIdentifier(node.iterator1, 'v-for iterator', text, errors);
-  checkIdentifier(node.iterator2, 'v-for iterator', text, errors);
+function checkFor (node, text, warn, range) {
+  checkExpression(node.for || '', text, warn, range);
+  checkIdentifier(node.alias, 'v-for alias', text, warn, range);
+  checkIdentifier(node.iterator1, 'v-for iterator', text, warn, range);
+  checkIdentifier(node.iterator2, 'v-for iterator', text, warn, range);
 }
 
 function checkIdentifier (
   ident,
   type,
   text,
-  errors
+  warn,
+  range
 ) {
   if (typeof ident === 'string') {
     try {
       new Function(("var " + ident + "=_"));
     } catch (e) {
-      errors.push(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())));
+      warn(("invalid " + type + " \"" + ident + "\" in expression: " + (text.trim())), range);
     }
   }
 }
 
-function checkExpression (exp, text, errors) {
+function checkExpression (exp, text, warn, range) {
   try {
     new Function(("return " + exp));
   } catch (e) {
     var keywordMatch = exp.replace(stripStringRE, '').match(prohibitedKeywordRE);
     if (keywordMatch) {
-      errors.push(
+      warn(
         "avoid using JavaScript keyword as property name: " +
-        "\"" + (keywordMatch[0]) + "\"\n  Raw expression: " + (text.trim())
+        "\"" + (keywordMatch[0]) + "\"\n  Raw expression: " + (text.trim()),
+        range
       );
     } else {
-      errors.push(
+      warn(
         "invalid expression: " + (e.message) + " in\n\n" +
         "    " + exp + "\n\n" +
-        "  Raw expression: " + (text.trim()) + "\n"
+        "  Raw expression: " + (text.trim()) + "\n",
+        range
       );
     }
   }
 }
 
 /*  */
+
+var range = 2;
+
+function generateCodeFrame (
+  source,
+  start,
+  end
+) {
+  if ( start === void 0 ) start = 0;
+  if ( end === void 0 ) end = source.length;
+
+  var lines = source.split(/\r?\n/);
+  var count = 0;
+  var res = [];
+  for (var i = 0; i < lines.length; i++) {
+    count += lines[i].length + 1;
+    if (count >= start) {
+      for (var j = i - range; j <= i + range || end > count; j++) {
+        if (j < 0 || j >= lines.length) { continue }
+        res.push(("" + (j + 1) + (repeat$1(" ", 3 - String(j + 1).length)) + "|  " + (lines[j])));
+        var lineLength = lines[j].length;
+        if (j === i) {
+          // push underline
+          var pad = start - (count - lineLength) + 1;
+          var length = end > count ? lineLength - pad : end - start;
+          res.push("   |  " + repeat$1(" ", pad) + repeat$1("^", length));
+        } else if (j > i) {
+          if (end > count) {
+            var length$1 = Math.min(end - count, lineLength);
+            res.push("   |  " + repeat$1("^", length$1));
+          }
+          count += lineLength + 1;
+        }
+      }
+      break
+    }
+  }
+  return res.join('\n')
+}
+
+function repeat$1 (str, n) {
+  var result = '';
+  if (n > 0) {
+    while (true) { // eslint-disable-line
+      if (n & 1) { result += str; }
+      n >>>= 1;
+      if (n <= 0) { break }
+      str += str;
+    }
+  }
+  return result
+}
+
+/*  */
+
+
 
 function createFunction (code, errors) {
   try {
@@ -75247,7 +77778,7 @@ function createCompileToFunctionFn (compile) {
     delete options.warn;
 
     /* istanbul ignore if */
-    if (true) {
+    {
       // detect possible CSP restriction
       try {
         new Function('return 1');
@@ -75276,16 +77807,30 @@ function createCompileToFunctionFn (compile) {
     var compiled = compile(template, options);
 
     // check compilation errors/tips
-    if (true) {
+    {
       if (compiled.errors && compiled.errors.length) {
-        warn$$1(
-          "Error compiling template:\n\n" + template + "\n\n" +
-          compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
-          vm
-        );
+        if (options.outputSourceRange) {
+          compiled.errors.forEach(function (e) {
+            warn$$1(
+              "Error compiling template:\n\n" + (e.msg) + "\n\n" +
+              generateCodeFrame(template, e.start, e.end),
+              vm
+            );
+          });
+        } else {
+          warn$$1(
+            "Error compiling template:\n\n" + template + "\n\n" +
+            compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
+            vm
+          );
+        }
       }
       if (compiled.tips && compiled.tips.length) {
-        compiled.tips.forEach(function (msg) { return tip(msg, vm); });
+        if (options.outputSourceRange) {
+          compiled.tips.forEach(function (e) { return tip(e.msg, vm); });
+        } else {
+          compiled.tips.forEach(function (msg) { return tip(msg, vm); });
+        }
       }
     }
 
@@ -75301,7 +77846,7 @@ function createCompileToFunctionFn (compile) {
     // this should only happen if there is a bug in the compiler itself.
     // mostly for codegen development use
     /* istanbul ignore if */
-    if (true) {
+    {
       if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
         warn$$1(
           "Failed to generate render function:\n\n" +
@@ -75331,11 +77876,29 @@ function createCompilerCreator (baseCompile) {
       var finalOptions = Object.create(baseOptions);
       var errors = [];
       var tips = [];
-      finalOptions.warn = function (msg, tip) {
+
+      var warn = function (msg, range, tip) {
         (tip ? tips : errors).push(msg);
       };
 
       if (options) {
+        if (options.outputSourceRange) {
+          // $flow-disable-line
+          var leadingSpaceLength = template.match(/^\s*/)[0].length;
+
+          warn = function (msg, range, tip) {
+            var data = { msg: msg };
+            if (range) {
+              if (range.start != null) {
+                data.start = range.start + leadingSpaceLength;
+              }
+              if (range.end != null) {
+                data.end = range.end + leadingSpaceLength;
+              }
+            }
+            (tip ? tips : errors).push(data);
+          };
+        }
         // merge custom modules
         if (options.modules) {
           finalOptions.modules =
@@ -75356,9 +77919,11 @@ function createCompilerCreator (baseCompile) {
         }
       }
 
-      var compiled = baseCompile(template, finalOptions);
-      if (true) {
-        errors.push.apply(errors, detectErrors(compiled.ast));
+      finalOptions.warn = warn;
+
+      var compiled = baseCompile(template.trim(), finalOptions);
+      {
+        detectErrors(compiled.ast, warn);
       }
       compiled.errors = errors;
       compiled.tips = tips;
@@ -75396,6 +77961,7 @@ var createCompiler = createCompilerCreator(function baseCompile (
 /*  */
 
 var ref$1 = createCompiler(baseOptions);
+var compile = ref$1.compile;
 var compileToFunctions = ref$1.compileToFunctions;
 
 /*  */
@@ -75429,7 +77995,7 @@ Vue.prototype.$mount = function (
 
   /* istanbul ignore if */
   if (el === document.body || el === document.documentElement) {
-    "development" !== 'production' && warn(
+    warn(
       "Do not mount Vue to <html> or <body> - mount to normal elements instead."
     );
     return this
@@ -75444,7 +78010,7 @@ Vue.prototype.$mount = function (
         if (template.charAt(0) === '#') {
           template = idToTemplate(template);
           /* istanbul ignore if */
-          if ("development" !== 'production' && !template) {
+          if (!template) {
             warn(
               ("Template element not found or is empty: " + (options.template)),
               this
@@ -75454,7 +78020,7 @@ Vue.prototype.$mount = function (
       } else if (template.nodeType) {
         template = template.innerHTML;
       } else {
-        if (true) {
+        {
           warn('invalid template option:' + template, this);
         }
         return this
@@ -75464,11 +78030,12 @@ Vue.prototype.$mount = function (
     }
     if (template) {
       /* istanbul ignore if */
-      if ("development" !== 'production' && config.performance && mark) {
+      if (config.performance && mark) {
         mark('compile');
       }
 
       var ref = compileToFunctions(template, {
+        outputSourceRange: "development" !== 'production',
         shouldDecodeNewlines: shouldDecodeNewlines,
         shouldDecodeNewlinesForHref: shouldDecodeNewlinesForHref,
         delimiters: options.delimiters,
@@ -75480,7 +78047,7 @@ Vue.prototype.$mount = function (
       options.staticRenderFns = staticRenderFns;
 
       /* istanbul ignore if */
-      if ("development" !== 'production' && config.performance && mark) {
+      if (config.performance && mark) {
         mark('compile end');
         measure(("vue " + (this._name) + " compile"), 'compile', 'compile end');
       }
@@ -75507,27 +78074,46 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js"), __webpack_require__("./node_modules/timers-browserify/main.js").setImmediate))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
+/***/ "./node_modules/vue/dist/vue.common.js":
+/*!*********************************************!*\
+  !*** ./node_modules/vue/dist/vue.common.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./vue.common.dev.js */ "./node_modules/vue/dist/vue.common.dev.js")
+}
+
 
 /***/ }),
 
 /***/ "./node_modules/vuex/dist/vuex.esm.js":
+/*!********************************************!*\
+  !*** ./node_modules/vuex/dist/vuex.esm.js ***!
+  \********************************************/
+/*! exports provided: default, Store, install, mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export Store */
-/* unused harmony export install */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return mapState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapMutations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapGetters; });
-/* unused harmony export mapActions */
-/* unused harmony export createNamespacedHelpers */
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
 /**
- * vuex v3.0.1
- * (c) 2017 Evan You
+ * vuex v3.1.1
+ * (c) 2019 Evan You
  * @license MIT
  */
-var applyMixin = function (Vue) {
+function applyMixin (Vue) {
   var version = Number(Vue.version.split('.')[0]);
 
   if (version >= 2) {
@@ -75561,11 +78147,14 @@ var applyMixin = function (Vue) {
       this.$store = options.parent.$store;
     }
   }
-};
+}
 
-var devtoolHook =
-  typeof window !== 'undefined' &&
-  window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+var target = typeof window !== 'undefined'
+  ? window
+  : typeof global !== 'undefined'
+    ? global
+    : {};
+var devtoolHook = target.__VUE_DEVTOOLS_GLOBAL_HOOK__;
 
 function devtoolPlugin (store) {
   if (!devtoolHook) { return }
@@ -75591,16 +78180,6 @@ function devtoolPlugin (store) {
  * @param {Function} f
  * @return {*}
  */
-/**
- * Deep copy the given object considering circular structure.
- * This function caches all nested objects and its copies.
- * If it detects circular structure, use cached copy to avoid infinite loop.
- *
- * @param {*} obj
- * @param {Array<Object>} cache
- * @return {*}
- */
-
 
 /**
  * forEach for object
@@ -75621,17 +78200,28 @@ function assert (condition, msg) {
   if (!condition) { throw new Error(("[vuex] " + msg)) }
 }
 
+function partial (fn, arg) {
+  return function () {
+    return fn(arg)
+  }
+}
+
+// Base data struct for store's module, package with some attribute and method
 var Module = function Module (rawModule, runtime) {
   this.runtime = runtime;
+  // Store some children item
   this._children = Object.create(null);
+  // Store the origin module object which passed by programmer
   this._rawModule = rawModule;
   var rawState = rawModule.state;
+
+  // Store the origin module's state
   this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
 };
 
-var prototypeAccessors$1 = { namespaced: { configurable: true } };
+var prototypeAccessors = { namespaced: { configurable: true } };
 
-prototypeAccessors$1.namespaced.get = function () {
+prototypeAccessors.namespaced.get = function () {
   return !!this._rawModule.namespaced
 };
 
@@ -75682,7 +78272,7 @@ Module.prototype.forEachMutation = function forEachMutation (fn) {
   }
 };
 
-Object.defineProperties( Module.prototype, prototypeAccessors$1 );
+Object.defineProperties( Module.prototype, prototypeAccessors );
 
 var ModuleCollection = function ModuleCollection (rawRootModule) {
   // register root module (Vuex.Store options)
@@ -75825,16 +78415,11 @@ var Store = function Store (options) {
   if (true) {
     assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
     assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
-    assert(this instanceof Store, "Store must be called with the new operator.");
+    assert(this instanceof Store, "store must be called with the new operator.");
   }
 
   var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
   var strict = options.strict; if ( strict === void 0 ) strict = false;
-
-  var state = options.state; if ( state === void 0 ) state = {};
-  if (typeof state === 'function') {
-    state = state() || {};
-  }
 
   // store internal state
   this._committing = false;
@@ -75862,6 +78447,8 @@ var Store = function Store (options) {
   // strict mode
   this.strict = strict;
 
+  var state = this._modules.root.state;
+
   // init root module.
   // this also recursively registers all sub-modules
   // and collects all module getters inside this._wrappedGetters
@@ -75874,20 +78461,21 @@ var Store = function Store (options) {
   // apply plugins
   plugins.forEach(function (plugin) { return plugin(this$1); });
 
-  if (Vue.config.devtools) {
+  var useDevtools = options.devtools !== undefined ? options.devtools : Vue.config.devtools;
+  if (useDevtools) {
     devtoolPlugin(this);
   }
 };
 
-var prototypeAccessors = { state: { configurable: true } };
+var prototypeAccessors$1 = { state: { configurable: true } };
 
-prototypeAccessors.state.get = function () {
+prototypeAccessors$1.state.get = function () {
   return this._vm._data.$$state
 };
 
-prototypeAccessors.state.set = function (v) {
+prototypeAccessors$1.state.set = function (v) {
   if (true) {
-    assert(false, "Use store.replaceState() to explicit replace store state.");
+    assert(false, "use store.replaceState() to explicit replace store state.");
   }
 };
 
@@ -75916,7 +78504,7 @@ Store.prototype.commit = function commit (_type, _payload, _options) {
   this._subscribers.forEach(function (sub) { return sub(mutation, this$1.state); });
 
   if (
-    "development" !== 'production' &&
+     true &&
     options && options.silent
   ) {
     console.warn(
@@ -75943,11 +78531,34 @@ Store.prototype.dispatch = function dispatch (_type, _payload) {
     return
   }
 
-  this._actionSubscribers.forEach(function (sub) { return sub(action, this$1.state); });
+  try {
+    this._actionSubscribers
+      .filter(function (sub) { return sub.before; })
+      .forEach(function (sub) { return sub.before(action, this$1.state); });
+  } catch (e) {
+    if (true) {
+      console.warn("[vuex] error in before action subscribers: ");
+      console.error(e);
+    }
+  }
 
-  return entry.length > 1
+  var result = entry.length > 1
     ? Promise.all(entry.map(function (handler) { return handler(payload); }))
-    : entry[0](payload)
+    : entry[0](payload);
+
+  return result.then(function (res) {
+    try {
+      this$1._actionSubscribers
+        .filter(function (sub) { return sub.after; })
+        .forEach(function (sub) { return sub.after(action, this$1.state); });
+    } catch (e) {
+      if (true) {
+        console.warn("[vuex] error in after action subscribers: ");
+        console.error(e);
+      }
+    }
+    return res
+  })
 };
 
 Store.prototype.subscribe = function subscribe (fn) {
@@ -75955,7 +78566,8 @@ Store.prototype.subscribe = function subscribe (fn) {
 };
 
 Store.prototype.subscribeAction = function subscribeAction (fn) {
-  return genericSubscribe(fn, this._actionSubscribers)
+  var subs = typeof fn === 'function' ? { before: fn } : fn;
+  return genericSubscribe(subs, this._actionSubscribers)
 };
 
 Store.prototype.watch = function watch (getter, cb, options) {
@@ -76020,7 +78632,7 @@ Store.prototype._withCommit = function _withCommit (fn) {
   this._committing = committing;
 };
 
-Object.defineProperties( Store.prototype, prototypeAccessors );
+Object.defineProperties( Store.prototype, prototypeAccessors$1 );
 
 function genericSubscribe (fn, subs) {
   if (subs.indexOf(fn) < 0) {
@@ -76055,7 +78667,9 @@ function resetStoreVM (store, state, hot) {
   var computed = {};
   forEachValue(wrappedGetters, function (fn, key) {
     // use computed to leverage its lazy-caching mechanism
-    computed[key] = function () { return fn(store); };
+    // direct inline function use will lead to closure preserving oldVm.
+    // using partial to return function with only arguments preserved in closure enviroment.
+    computed[key] = partial(fn, store);
     Object.defineProperty(store.getters, key, {
       get: function () { return store._vm[key]; },
       enumerable: true // for local getters
@@ -76149,7 +78763,7 @@ function makeLocalContext (store, namespace, path) {
 
       if (!options || !options.root) {
         type = namespace + type;
-        if ("development" !== 'production' && !store._actions[type]) {
+        if ( true && !store._actions[type]) {
           console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
           return
         }
@@ -76166,7 +78780,7 @@ function makeLocalContext (store, namespace, path) {
 
       if (!options || !options.root) {
         type = namespace + type;
-        if ("development" !== 'production' && !store._mutations[type]) {
+        if ( true && !store._mutations[type]) {
           console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
           return
         }
@@ -76267,7 +78881,7 @@ function registerGetter (store, type, rawGetter, local) {
 function enableStrictMode (store) {
   store._vm.$watch(function () { return this._data.$$state }, function () {
     if (true) {
-      assert(store._committing, "Do not mutate vuex store state outside mutation handlers.");
+      assert(store._committing, "do not mutate vuex store state outside mutation handlers.");
     }
   }, { deep: true, sync: true });
 }
@@ -76286,7 +78900,7 @@ function unifyObjectStyle (type, payload, options) {
   }
 
   if (true) {
-    assert(typeof type === 'string', ("Expects string as the type, but found " + (typeof type) + "."));
+    assert(typeof type === 'string', ("expects string as the type, but found " + (typeof type) + "."));
   }
 
   return { type: type, payload: payload, options: options }
@@ -76305,6 +78919,12 @@ function install (_Vue) {
   applyMixin(Vue);
 }
 
+/**
+ * Reduce the code which written in Vue.js for getting the state.
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} states # Object's item can be a function which accept state and getters for param, you can do something for state and getters in it.
+ * @param {Object}
+ */
 var mapState = normalizeNamespace(function (namespace, states) {
   var res = {};
   normalizeMap(states).forEach(function (ref) {
@@ -76332,6 +78952,12 @@ var mapState = normalizeNamespace(function (namespace, states) {
   return res
 });
 
+/**
+ * Reduce the code which written in Vue.js for committing the mutation
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} mutations # Object's item can be a function which accept `commit` function as the first param, it can accept anthor params. You can commit mutation and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
 var mapMutations = normalizeNamespace(function (namespace, mutations) {
   var res = {};
   normalizeMap(mutations).forEach(function (ref) {
@@ -76342,6 +78968,7 @@ var mapMutations = normalizeNamespace(function (namespace, mutations) {
       var args = [], len = arguments.length;
       while ( len-- ) args[ len ] = arguments[ len ];
 
+      // Get the commit method from store
       var commit = this.$store.commit;
       if (namespace) {
         var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
@@ -76358,18 +78985,25 @@ var mapMutations = normalizeNamespace(function (namespace, mutations) {
   return res
 });
 
+/**
+ * Reduce the code which written in Vue.js for getting the getters
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} getters
+ * @return {Object}
+ */
 var mapGetters = normalizeNamespace(function (namespace, getters) {
   var res = {};
   normalizeMap(getters).forEach(function (ref) {
     var key = ref.key;
     var val = ref.val;
 
+    // The namespace has been mutated by normalizeNamespace
     val = namespace + val;
     res[key] = function mappedGetter () {
       if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
         return
       }
-      if ("development" !== 'production' && !(val in this.$store.getters)) {
+      if ( true && !(val in this.$store.getters)) {
         console.error(("[vuex] unknown getter: " + val));
         return
       }
@@ -76381,6 +79015,12 @@ var mapGetters = normalizeNamespace(function (namespace, getters) {
   return res
 });
 
+/**
+ * Reduce the code which written in Vue.js for dispatch the action
+ * @param {String} [namespace] - Module's namespace
+ * @param {Object|Array} actions # Object's item can be a function which accept `dispatch` function as the first param, it can accept anthor params. You can dispatch action and do any other things in this function. specially, You need to pass anthor params from the mapped function.
+ * @return {Object}
+ */
 var mapActions = normalizeNamespace(function (namespace, actions) {
   var res = {};
   normalizeMap(actions).forEach(function (ref) {
@@ -76391,6 +79031,7 @@ var mapActions = normalizeNamespace(function (namespace, actions) {
       var args = [], len = arguments.length;
       while ( len-- ) args[ len ] = arguments[ len ];
 
+      // get dispatch function from store
       var dispatch = this.$store.dispatch;
       if (namespace) {
         var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
@@ -76407,6 +79048,11 @@ var mapActions = normalizeNamespace(function (namespace, actions) {
   return res
 });
 
+/**
+ * Rebinding namespace param for mapXXX function in special scoped, and return them by simple object
+ * @param {String} namespace
+ * @return {Object}
+ */
 var createNamespacedHelpers = function (namespace) { return ({
   mapState: mapState.bind(null, namespace),
   mapGetters: mapGetters.bind(null, namespace),
@@ -76414,12 +79060,24 @@ var createNamespacedHelpers = function (namespace) { return ({
   mapActions: mapActions.bind(null, namespace)
 }); };
 
+/**
+ * Normalize the map
+ * normalizeMap([1, 2, 3]) => [ { key: 1, val: 1 }, { key: 2, val: 2 }, { key: 3, val: 3 } ]
+ * normalizeMap({a: 1, b: 2, c: 3}) => [ { key: 'a', val: 1 }, { key: 'b', val: 2 }, { key: 'c', val: 3 } ]
+ * @param {Array|Object} map
+ * @return {Object}
+ */
 function normalizeMap (map) {
   return Array.isArray(map)
     ? map.map(function (key) { return ({ key: key, val: key }); })
     : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
 }
 
+/**
+ * Return a function expect two param contains namespace and map. it will normalize the namespace and then the param's function will handle the new namespace and the map.
+ * @param {Function} fn
+ * @return {Function}
+ */
 function normalizeNamespace (fn) {
   return function (namespace, map) {
     if (typeof namespace !== 'string') {
@@ -76432,9 +79090,16 @@ function normalizeNamespace (fn) {
   }
 }
 
+/**
+ * Search a special module from store by namespace. if module not exist, print error message.
+ * @param {Object} store
+ * @param {String} helper
+ * @param {String} namespace
+ * @return {Object}
+ */
 function getModuleByNamespace (store, helper, namespace) {
   var module = store._modulesNamespaceMap[namespace];
-  if ("development" !== 'production' && !module) {
+  if ( true && !module) {
     console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
   }
   return module
@@ -76443,7 +79108,7 @@ function getModuleByNamespace (store, helper, namespace) {
 var index_esm = {
   Store: Store,
   install: install,
-  version: '3.0.1',
+  version: '3.1.1',
   mapState: mapState,
   mapMutations: mapMutations,
   mapGetters: mapGetters,
@@ -76451,13 +79116,18 @@ var index_esm = {
   createNamespacedHelpers: createNamespacedHelpers
 };
 
+/* harmony default export */ __webpack_exports__["default"] = (index_esm);
 
-/* harmony default export */ __webpack_exports__["a"] = (index_esm);
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 var g;
@@ -76469,11 +79139,10 @@ g = (function() {
 
 try {
 	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
+	g = g || new Function("return this")();
+} catch (e) {
 	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
+	if (typeof window === "object") g = window;
 }
 
 // g can still be undefined, but nothing to do about it...
@@ -76486,14 +79155,18 @@ module.exports = g;
 /***/ }),
 
 /***/ "./node_modules/webpack/buildin/module.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
-	if(!module.webpackPolyfill) {
+	if (!module.webpackPolyfill) {
 		module.deprecate = function() {};
 		module.paths = [];
 		// module.parent = undefined by default
-		if(!module.children) module.children = [];
+		if (!module.children) module.children = [];
 		Object.defineProperty(module, "loaded", {
 			enumerable: true,
 			get: function() {
@@ -76515,23 +79188,33 @@ module.exports = function(module) {
 /***/ }),
 
 /***/ "./resources/assets/js/app.js":
+/*!************************************!*\
+  !*** ./resources/assets/js/app.js ***!
+  \************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__("./resources/assets/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
-__webpack_require__("./resources/assets/js/apps/parla.js");
+__webpack_require__(/*! ./apps/parla.js */ "./resources/assets/js/apps/parla.js");
 
-__webpack_require__("./resources/assets/js/apps/admin.js");
+__webpack_require__(/*! ./apps/admin.js */ "./resources/assets/js/apps/admin.js");
 
 /***/ }),
 
 /***/ "./resources/assets/js/apps/admin.js":
+/*!*******************************************!*\
+  !*** ./resources/assets/js/apps/admin.js ***!
+  \*******************************************/
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__("./node_modules/vuex/dist/vuex.esm.js");
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var appName = 'vue-admin';
 
@@ -76539,668 +79222,611 @@ var appName = 'vue-admin';
 
 
 if (jQuery('#' + appName).length > 0) {
-    new Vue({
-        el: '#' + appName,
-
-        store: window.vuexAdminStore,
-
-        methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])(['setEditions', 'setEditorial', 'setEditorialCopy', 'setBusy', 'setFilter', 'setOrderBy', 'setTimeout', 'setCurrentArticle', 'setIFrameUrl', 'setNewEditionNumber', 'setNewEditionYear', 'setNewEditionMonth', 'setCurrentPhotoId', 'setNewPhotoAuthor', 'setNewPhotoUrlHighres', 'setNewPhotoUrlLowres', 'setNewPhotoNotes']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapMutations */])({
-            __updateCurrentArticleField: 'updateCurrentArticleField',
-            __updateCurrentPhotoField: 'updateCurrentPhotoField',
-            __updateLead: 'updateLead',
-            __updateLeadMutator: 'updateLead',
-            __updateBodyMutator: 'updateBody',
-            __updateLeadHtml: 'updateLeadHtml',
-            __updateBodyHtml: 'updateBodyHtml',
-            __pushArticle: 'pushArticle',
-            __setCurrentArticleFeatured: 'setCurrentArticleFeatured',
-            __clearNewEdition: 'clearNewEdition',
-            __clearNewPhoto: 'clearNewPhoto',
-            __setCurrentEdition: 'setCurrentEdition',
-            __setEditionArticles: 'setEditionArticles'
-        }), {
-            __typeKeyUp: function __typeKeyUp() {
-                clearTimeout(this.timeout);
-
-                var me = this;
-
-                this.setTimeout(setTimeout(function () {
-                    me.__refreshMarkdown();
-                }, 500));
-            },
-            __clearFilter: function __clearFilter() {
-                this.setFilter('');
-            },
-
-
-            __findFirstArticle: function __findFirstArticle() {
-                if (!empty(this.currentArticle)) {
-                    if (this.currentArticle.new) {
-                        return findItemByValue(this.currentArticle.title, this.editionArticles[this.currentEdition.id], 'title');
-                    }
-
-                    return this.__findArticleById(this.currentArticle.id);
-                }
-
-                return !empty(this.editionArticles) && !empty(this.editionArticles[this.currentEdition.id]) && !empty(this.editionArticles[this.currentEdition.id][0]) ? this.editionArticles[this.currentEdition.id][0] : null;
-            },
-
-            __loadArticles: function __loadArticles() {
-                var me = this;
-
-                me.setBusy(true);
-
-                if (!empty(me.currentEdition)) {
-                    return axios.get('/api/posts/' + me.currentEdition.id + '/all').then(function (response) {
-                        me.__setEditionArticles({
-                            editionId: me.currentEdition.id,
-                            value: response.data
-                        });
-
-                        me.__selectArticle(me.__findFirstArticle());
-
-                        me.setBusy(false);
-                    });
-                }
-            },
-            __loadEditions: function __loadEditions() {
-                var me = this;
-
-                me.setBusy(true);
-
-                return axios.get('/api/editions?allowUnpublished=1').then(function (response) {
-                    me.setEditions(response.data);
-
-                    me.__selectCurrentOrLastEdition();
-                });
-            },
-            __loadEditorial: function __loadEditorial() {
-                var me = this;
-
-                return axios.get('/api/editorial').then(function (response) {
-                    me.setEditorial(response.data.text);
-
-                    me.setEditorialCopy(response.data.text);
-                });
-            },
-            __saveEditorial: function __saveEditorial() {
-                var me = this;
-
-                return axios.post('/api/editorial', { editorial: this.editorial }).then(function (response) {
-                    me.__loadEditorial();
-                });
-            },
-            __selectCurrentOrLastEdition: function __selectCurrentOrLastEdition(forceLast) {
-                this.__selectEdition(this.currentEdition && !forceLast ? this.__findEditionById(this.currentEdition.id) : this.editions[this.editions.length - 1], true);
-            },
-            __getArrowClass: function __getArrowClass() {
-                if (this.orderType == 'asc') {
-                    return 'fa-arrow-down';
-                }
-
-                return 'fa-arrow-up';
-            },
-            __selectEdition: function __selectEdition(edition, force) {
-                if (!empty(force) && force || empty(this.currentEdition)) {
-                    this.__setCurrentEdition(edition);
-                }
-
-                this.__loadArticles();
-            },
-            __selectArticle: function __selectArticle(article) {
-                if (!article) {
-                    return;
-                }
-
-                this.setCurrentArticle(this.__findArticleById(article.id));
-
-                if (this.currentPhotoId) {
-                    this.setCurrentPhotoId(this.currentPhotoId);
-                }
-            },
-            __isCurrentArticle: function __isCurrentArticle(article) {
-                return article && this.currentArticle && article.id === this.currentArticle.id;
-            },
-            __unchanged: function __unchanged() {
-                if (empty(this.currentArticle)) {
-                    return true;
-                }
-
-                return JSON.stringify(this.currentArticle) === JSON.stringify(this.__findArticleById(this.currentArticle.id, this.editionArticlesOriginals[this.currentEdition.id]));
-            },
-            __photoUnchanged: function __photoUnchanged() {
-                return JSON.stringify(this.currentPhoto) === JSON.stringify(this.currentPhotoOriginal);
-            },
-            __newPhotoUnchanged: function __newPhotoUnchanged() {
-                return JSON.stringify(this.newPhoto) === JSON.stringify(this.cleanNewPhoto);
-            },
-            __updateLead: function __updateLead(lead) {
-                this.__updateLeadMutator(lead);
-
-                this.__typeKeyUp();
-            },
-            __updateBody: function __updateBody(body) {
-                this.__updateBodyMutator(body);
-
-                this.__typeKeyUp();
-            },
-            __refreshMarkdown: function __refreshMarkdown() {
-                var article = this.currentArticle;
-
-                var me = this;
-
-                axios.post('/api/markdown/to/html', {
-                    lead: article.lead,
-                    body: article.body
-                }).then(function (response) {
-                    me.__updateLeadHtml(response.data.lead_html);
-
-                    me.__updateBodyHtml(response.data.body_html);
-                });
-            },
-            __createArticle: function __createArticle() {
-                var currentArticle = this.currentArticle;
-
-                var article = clone(currentArticle ? currentArticle : {});
-
-                for (var prop in article) {
-                    if (article.hasOwnProperty(prop)) {
-                        article[prop] = null;
-                    }
-                }
-
-                article['id'] = -1;
-
-                article['new'] = true;
-
-                article['edition_id'] = this.currentEdition.id;
-
-                article['order'] = this.__getLastArticleOrder() + 1;
-
-                this.__pushArticle(article);
-
-                this.__selectArticle(article);
-            },
-            __toggleCurrentPublished: function __toggleCurrentPublished() {
-                var me = this;
-
-                var command = this.currentArticle.published_at ? 'unpublish' : 'publish';
-
-                this.__get('/api/posts/' + this.currentArticle.edition.id + '/' + this.currentArticle.id + '/' + command).then(function () {
-                    me.__loadEditions();
-                });
-            },
-            __toggleCurrentPhotoMain: function __toggleCurrentPhotoMain() {
-                var me = this;
-
-                var command = !this.currentPhoto.main ? 'setMain' : 'unsetMain';
-
-                this.__get('/api/photos/' + this.currentPhoto.id + '/' + command).then(function () {
-                    me.__loadArticles();
-                });
-            },
-            __toggleCurrentFeatured: function __toggleCurrentFeatured() {
-                this.__setCurrentArticleFeatured(!this.currentArticle.featured);
-
-                this.__saveCurrent();
-            },
-            __togglePublishedEdition: function __togglePublishedEdition() {
-                var me = this;
-
-                var command = this.currentEdition.published_at ? 'unpublish' : 'publish';
-
-                this.__get('/api/editions/' + this.currentEdition.id + '/' + command).then(function () {
-                    me.__loadEditions();
-                });
-            },
-            __get: function __get(url) {
-                var me = this;
-
-                me.setBusy(true);
-
-                return axios.get(url).then(function () {
-                    me.setBusy(false);
-                });
-            },
-            __saveCurrent: function __saveCurrent() {
-                var me = this;
-
-                axios.post('/api/posts/', { article: me.currentArticle }).then(function () {
-                    me.__loadArticles();
-                });
-            },
-            __saveCurrentPhoto: function __saveCurrentPhoto() {
-                var me = this;
-
-                axios.post('/api/photos/' + me.currentPhoto.id, me.currentPhoto).then(function () {
-                    me.__loadArticles();
-                });
-            },
-            __moveUp: function __moveUp(article) {
-                var me = this;
-
-                this.__get('/api/posts/' + article.id + '/move-up').then(function () {
-                    me.__loadArticles();
-                });
-            },
-            __moveDown: function __moveDown(article) {
-                var me = this;
-
-                this.__get('/api/posts/' + article.id + '/move-down').then(function () {
-                    me.__loadArticles();
-                });
-            },
-            __canMoveUp: function __canMoveUp(article) {
-                return article.order > 1;
-            },
-            __canMoveDown: function __canMoveDown(article) {
-                return article.order < this.__getLastArticleOrder();
-            },
-            __getLastArticleOrder: function __getLastArticleOrder() {
-                var articles = this.__currentArticles();
-
-                if (empty(articles)) {
-                    return 0;
-                }
-
-                return articles.reduce(function (a, b) {
-                    return a.order >= b.order ? a : b;
-                }).order;
-            },
-            __findArticleById: function __findArticleById(id, articles, field) {
-                if (!articles || typeof articles === 'undefined') {
-                    if (!this.currentEdition) {
-                        return null;
-                    }
-                    articles = this.__currentArticles();
-                }
-
-                return findItemByValue(id, articles, field);
-            },
-            __findEditionById: function __findEditionById(id) {
-                for (var i = 0; i < this.editions.length; i++) {
-                    if (this.editions[i].id == id) {
-                        return this.editions[i];
-                    }
-                }
-            },
-            __filteredArticles: function __filteredArticles() {
-                var filter = unaccent(this.filter.trim());
-
-                var split = filter.split(' ');
-
-                if (split.length > 1) {
-                    filter = '^(?=.*\\b' + split.join('\\b)(?=.*\\b') + '\\b).+';
-                    filter = '(?=.*' + split.join(')(?=.*') + ')';
-                }
-
-                var filtered = _.filter(this.__currentArticles(), function (item) {
-                    for (var key in item) {
-                        if (unaccent(String(item[key])).match(new RegExp(filter, 'i'))) {
-                            return true;
-                        }
-                    }
-
-                    return false;
-                });
-
-                var orderBy = this.orderBy;
-
-                var orderType = this.orderType;
-
-                var ordered = _.orderBy(filtered, function (item) {
-                    return item[orderBy] || '';
-                }, orderType);
-
-                return ordered;
-            },
-            __orderedPhotos: function __orderedPhotos() {
-                return _.orderBy(this.currentArticle.photos, 'id', 'desc');
-            },
-            __filteredEditions: function __filteredEditions() {
-                return _.orderBy(this.editions, 'number', 'desc');
-            },
-            __selectAdminPane: function __selectAdminPane() {
-                this.setIFrameUrl(null);
-            },
-            __selectPreviewPane: function __selectPreviewPane() {
-                this.setIFrameUrl('/editions/' + this.currentEdition.number);
-            },
-            __selectEditorialPane: function __selectEditorialPane() {
-                this.setIFrameUrl(null);
-            },
-            __updateField: function __updateField(field, value) {
-                this.__updateCurrentArticleField({ field: field, value: value });
-            },
-            __updatePhotoField: function __updatePhotoField(field, value) {
-                this.__updateCurrentPhotoField({ field: field, value: value });
-            },
-            __createNewEdition: function __createNewEdition() {
-                var me = this;
-
-                axios.post('/api/editions', this.newEdition).then(function (response) {
-                    me.setEditions(response.data);
-
-                    me.__selectCurrentOrLastEdition(true);
-
-                    me.__clearNewEdition();
-                });
-            },
-            __createNewPhoto: function __createNewPhoto() {
-                var me = this;
-
-                var newPhoto = this.newPhoto;
-
-                newPhoto.article_id = this.currentArticle.id;
-
-                axios.post('/api/photos/', newPhoto).then(function () {
-                    me.__loadArticles();
-
-                    me.__clearNewPhoto();
-                });
-            },
-            __currentArticles: function __currentArticles() {
-                return this.currentArticles;
-            },
-            __selectPhoto: function __selectPhoto(photo) {
-                this.setCurrentPhotoId(photo.id);
-            },
-            __currentEditionIsPublished: function __currentEditionIsPublished() {
-                if (empty(this.currentEdition)) {
-                    return false;
-                }
-
-                return this.currentEdition.published_at;
-            },
-            __backup: function __backup() {
-                window.location = '/admin/backup';
-            }
-        }),
-
-        computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['currentArticles']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])({
-            editions: function editions(state) {
-                return state.editions;
-            },
-
-            busy: function busy(state) {
-                return state.busy;
-            },
-
-            filter: function filter(state) {
-                return state.filter;
-            },
-
-            orderBy: function orderBy(state) {
-                return state.orderBy;
-            },
-
-            currentEdition: function currentEdition(state) {
-                return state.currentEdition;
-            },
-
-            editionArticles: function editionArticles(state) {
-                return state.editionArticles;
-            },
-
-            editionArticlesOriginals: function editionArticlesOriginals(state) {
-                return state.editionArticlesOriginals;
-            },
-
-            newEdition: function newEdition(state) {
-                return state.newEdition;
-            },
-
-            newPhoto: function newPhoto(state) {
-                return state.newPhoto;
-            },
-
-            cleanNewPhoto: function cleanNewPhoto(state) {
-                return state.cleanNewPhoto;
-            },
-
-            iFrameUrl: function iFrameUrl(state) {
-                return state.iFrameUrl;
-            },
-
-            currentArticle: function currentArticle(state) {
-                return state.currentArticle;
-            },
-
-            timeout: function timeout(state) {
-                return state.timeout;
-            },
-
-            currentPhotoId: function currentPhotoId(state) {
-                return state.currentPhotoId;
-            },
-
-            currentPhoto: function currentPhoto(state) {
-                return state.currentPhoto;
-            },
-
-            currentPhotoOriginal: function currentPhotoOriginal(state) {
-                return state.currentPhotoOriginal;
-            },
-
-            editorialCopy: function editorialCopy(state) {
-                return state.editorialCopy;
-            }
-        }), {
-
-            editorial: {
-                get: function get() {
-                    return this.$store.state.editorial;
-                },
-                set: function set(value) {
-                    this.$store.commit('setEditorial', value);
-                }
-            }
-        }),
-        mounted: function mounted() {
-            this.__clearNewEdition();
-
-            this.__clearNewPhoto();
-
-            this.__loadEditions();
-
-            this.__loadEditorial();
-
-            this.__clearFilter();
-
-            jQuery('textarea').autogrow();
+  new Vue({
+    el: '#' + appName,
+    store: window.vuexAdminStore,
+    methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['setEditions', 'setEditorial', 'setEditorialCopy', 'setBusy', 'setFilter', 'setOrderBy', 'setTimeout', 'setCurrentArticle', 'setIFrameUrl', 'setNewEditionNumber', 'setNewEditionYear', 'setNewEditionMonth', 'setCurrentPhotoId', 'setNewPhotoAuthor', 'setNewPhotoUrlHighres', 'setNewPhotoUrlLowres', 'setNewPhotoNotes']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
+      __updateCurrentArticleField: 'updateCurrentArticleField',
+      __updateCurrentPhotoField: 'updateCurrentPhotoField',
+      __updateLead: 'updateLead',
+      __updateLeadMutator: 'updateLead',
+      __updateBodyMutator: 'updateBody',
+      __updateLeadHtml: 'updateLeadHtml',
+      __updateBodyHtml: 'updateBodyHtml',
+      __pushArticle: 'pushArticle',
+      __setCurrentArticleFeatured: 'setCurrentArticleFeatured',
+      __clearNewEdition: 'clearNewEdition',
+      __loadNewEditionData: 'loadNewEditionData',
+      __clearNewPhoto: 'clearNewPhoto',
+      __setCurrentEdition: 'setCurrentEdition',
+      __setEditionArticles: 'setEditionArticles'
+    }), {
+      __typeKeyUp: function __typeKeyUp() {
+        clearTimeout(this.timeout);
+        var me = this;
+        this.setTimeout(setTimeout(function () {
+          me.__refreshMarkdown();
+        }, 500));
+      },
+      __clearFilter: function __clearFilter() {
+        this.setFilter('');
+      },
+      __findFirstArticle: function __findFirstArticle() {
+        if (!empty(this.currentArticle)) {
+          if (this.currentArticle["new"]) {
+            return findItemByValue(this.currentArticle.title, this.editionArticles[this.currentEdition.id], 'title');
+          }
+
+          return this.__findArticleById(this.currentArticle.id);
         }
-    });
+
+        return !empty(this.editionArticles) && !empty(this.editionArticles[this.currentEdition.id]) && !empty(this.editionArticles[this.currentEdition.id][0]) ? this.editionArticles[this.currentEdition.id][0] : null;
+      },
+      __loadArticles: function __loadArticles() {
+        var me = this;
+        me.setBusy(true);
+
+        if (!empty(me.currentEdition)) {
+          return axios.get('/api/posts/' + me.currentEdition.id + '/all').then(function (response) {
+            me.__setEditionArticles({
+              editionId: me.currentEdition.id,
+              value: response.data
+            });
+
+            me.__selectArticle(me.__findFirstArticle());
+
+            me.setBusy(false);
+          });
+        }
+      },
+      __loadEditions: function __loadEditions() {
+        var me = this;
+        me.setBusy(true);
+        return axios.get('/api/editions?allowUnpublished=1').then(function (response) {
+          me.setEditions(response.data);
+
+          me.__selectCurrentOrLastEdition();
+        });
+      },
+      __loadEditorial: function __loadEditorial() {
+        var me = this;
+        return axios.get('/api/editorial').then(function (response) {
+          me.setEditorial(response.data.text);
+          me.setEditorialCopy(response.data.text);
+        });
+      },
+      __saveEditorial: function __saveEditorial() {
+        var me = this;
+        return axios.post('/api/editorial', {
+          editorial: this.editorial
+        }).then(function (response) {
+          me.__loadEditorial();
+        });
+      },
+      __selectCurrentOrLastEdition: function __selectCurrentOrLastEdition(forceLast) {
+        this.__selectEdition(this.currentEdition && !forceLast ? this.__findEditionById(this.currentEdition.id) : this.editions[this.editions.length - 1], true);
+      },
+      __getArrowClass: function __getArrowClass() {
+        if (this.orderType == 'asc') {
+          return 'fa-arrow-down';
+        }
+
+        return 'fa-arrow-up';
+      },
+      __selectEdition: function __selectEdition(edition, force) {
+        if (!empty(force) && force || empty(this.currentEdition)) {
+          this.__setCurrentEdition(edition);
+        }
+
+        this.__loadArticles();
+      },
+      __selectArticle: function __selectArticle(article) {
+        if (!article) {
+          return;
+        }
+
+        this.setCurrentArticle(this.__findArticleById(article.id));
+
+        if (this.currentPhotoId) {
+          this.setCurrentPhotoId(this.currentPhotoId);
+        }
+      },
+      __isCurrentArticle: function __isCurrentArticle(article) {
+        return article && this.currentArticle && article.id === this.currentArticle.id;
+      },
+      __unchanged: function __unchanged() {
+        if (empty(this.currentArticle)) {
+          return true;
+        }
+
+        return JSON.stringify(this.currentArticle) === JSON.stringify(this.__findArticleById(this.currentArticle.id, this.editionArticlesOriginals[this.currentEdition.id]));
+      },
+      __photoUnchanged: function __photoUnchanged() {
+        return JSON.stringify(this.currentPhoto) === JSON.stringify(this.currentPhotoOriginal);
+      },
+      __newPhotoUnchanged: function __newPhotoUnchanged() {
+        return JSON.stringify(this.newPhoto) === JSON.stringify(this.cleanNewPhoto);
+      },
+      __updateLead: function __updateLead(lead) {
+        this.__updateLeadMutator(lead);
+
+        this.__typeKeyUp();
+      },
+      __updateBody: function __updateBody(body) {
+        this.__updateBodyMutator(body);
+
+        this.__typeKeyUp();
+      },
+      __refreshMarkdown: function __refreshMarkdown() {
+        var article = this.currentArticle;
+        var me = this;
+        axios.post('/api/markdown/to/html', {
+          lead: article.lead,
+          body: article.body
+        }).then(function (response) {
+          me.__updateLeadHtml(response.data.lead_html);
+
+          me.__updateBodyHtml(response.data.body_html);
+        });
+      },
+      __createArticle: function __createArticle() {
+        var currentArticle = this.currentArticle;
+        var article = clone(currentArticle ? currentArticle : {});
+
+        for (var prop in article) {
+          if (article.hasOwnProperty(prop)) {
+            article[prop] = null;
+          }
+        }
+
+        article['id'] = -1;
+        article['new'] = true;
+        article['edition_id'] = this.currentEdition.id;
+        article['order'] = this.__getLastArticleOrder() + 1;
+
+        this.__pushArticle(article);
+
+        this.__selectArticle(article);
+      },
+      __toggleCurrentPublished: function __toggleCurrentPublished() {
+        var me = this;
+        var command = this.currentArticle.published_at ? 'unpublish' : 'publish';
+
+        this.__get('/api/posts/' + this.currentArticle.edition.id + '/' + this.currentArticle.id + '/' + command).then(function () {
+          me.__loadEditions();
+        });
+      },
+      __toggleCurrentPhotoMain: function __toggleCurrentPhotoMain() {
+        var me = this;
+        var command = !this.currentPhoto.main ? 'setMain' : 'unsetMain';
+
+        this.__get('/api/photos/' + this.currentPhoto.id + '/' + command).then(function () {
+          me.__loadArticles();
+        });
+      },
+      __toggleCurrentFeatured: function __toggleCurrentFeatured() {
+        this.__setCurrentArticleFeatured(!this.currentArticle.featured);
+
+        this.__saveCurrent();
+      },
+      __togglePublishedEdition: function __togglePublishedEdition() {
+        var me = this;
+        var command = this.currentEdition.published_at ? 'unpublish' : 'publish';
+
+        this.__get('/api/editions/' + this.currentEdition.id + '/' + command).then(function () {
+          me.__loadEditions();
+        });
+      },
+      __get: function __get(url) {
+        var me = this;
+        me.setBusy(true);
+        return axios.get(url).then(function () {
+          me.setBusy(false);
+        });
+      },
+      __saveCurrent: function __saveCurrent() {
+        var me = this;
+        axios.post('/api/posts/', {
+          article: me.currentArticle
+        }).then(function () {
+          me.__loadArticles();
+        });
+      },
+      __saveCurrentPhoto: function __saveCurrentPhoto() {
+        var me = this;
+        axios.post('/api/photos/' + me.currentPhoto.id, me.currentPhoto).then(function () {
+          me.__loadArticles();
+        });
+      },
+      __moveUp: function __moveUp(article) {
+        var me = this;
+
+        this.__get('/api/posts/' + article.id + '/move-up').then(function () {
+          me.__loadArticles();
+        });
+      },
+      __moveDown: function __moveDown(article) {
+        var me = this;
+
+        this.__get('/api/posts/' + article.id + '/move-down').then(function () {
+          me.__loadArticles();
+        });
+      },
+      __canMoveUp: function __canMoveUp(article) {
+        return article.order > 1;
+      },
+      __canMoveDown: function __canMoveDown(article) {
+        return article.order < this.__getLastArticleOrder();
+      },
+      __getLastArticleOrder: function __getLastArticleOrder() {
+        var articles = this.__currentArticles();
+
+        if (empty(articles)) {
+          return 0;
+        }
+
+        return articles.reduce(function (a, b) {
+          return a.order >= b.order ? a : b;
+        }).order;
+      },
+      __findArticleById: function __findArticleById(id, articles, field) {
+        if (!articles || typeof articles === 'undefined') {
+          if (!this.currentEdition) {
+            return null;
+          }
+
+          articles = this.__currentArticles();
+        }
+
+        return findItemByValue(id, articles, field);
+      },
+      __findEditionById: function __findEditionById(id) {
+        for (var i = 0; i < this.editions.length; i++) {
+          if (this.editions[i].id == id) {
+            return this.editions[i];
+          }
+        }
+      },
+      __filteredArticles: function __filteredArticles() {
+        var filter = unaccent(this.filter.trim());
+        var split = filter.split(' ');
+
+        if (split.length > 1) {
+          filter = '^(?=.*\\b' + split.join('\\b)(?=.*\\b') + '\\b).+';
+          filter = '(?=.*' + split.join(')(?=.*') + ')';
+        }
+
+        var filtered = _.filter(this.__currentArticles(), function (item) {
+          for (var key in item) {
+            if (unaccent(String(item[key])).match(new RegExp(filter, 'i'))) {
+              return true;
+            }
+          }
+
+          return false;
+        });
+
+        var orderBy = this.orderBy;
+        var orderType = this.orderType;
+
+        var ordered = _.orderBy(filtered, function (item) {
+          return item[orderBy] || '';
+        }, orderType);
+
+        return ordered;
+      },
+      __orderedPhotos: function __orderedPhotos() {
+        return _.orderBy(this.currentArticle.photos, 'id', 'desc');
+      },
+      __filteredEditions: function __filteredEditions() {
+        return _.orderBy(this.editions, 'number', 'desc');
+      },
+      __selectAdminPane: function __selectAdminPane() {
+        this.setIFrameUrl(null);
+      },
+      __selectPreviewPane: function __selectPreviewPane() {
+        this.setIFrameUrl('/editions/' + this.currentEdition.number);
+      },
+      __selectEditorialPane: function __selectEditorialPane() {
+        this.setIFrameUrl(null);
+      },
+      __updateField: function __updateField(field, value) {
+        this.__updateCurrentArticleField({
+          field: field,
+          value: value
+        });
+      },
+      __updatePhotoField: function __updatePhotoField(field, value) {
+        this.__updateCurrentPhotoField({
+          field: field,
+          value: value
+        });
+      },
+      __createNewEdition: function __createNewEdition() {
+        var me = this;
+        axios.post('/api/editions', this.newEdition).then(function (response) {
+          me.setEditions(response.data);
+
+          me.__selectCurrentOrLastEdition(true);
+
+          me.__clearNewEdition();
+        });
+      },
+      __updateNewEdition: function __updateNewEdition() {
+        var me = this;
+        axios.post('/api/editions/' + this.newEdition.id, this.newEdition).then(function (response) {
+          me.setEditions(response.data);
+        });
+      },
+      __createNewPhoto: function __createNewPhoto() {
+        var me = this;
+        var newPhoto = this.newPhoto;
+        newPhoto.article_id = this.currentArticle.id;
+        axios.post('/api/photos/', newPhoto).then(function () {
+          me.__loadArticles();
+
+          me.__clearNewPhoto();
+        });
+      },
+      __currentArticles: function __currentArticles() {
+        return this.currentArticles;
+      },
+      __selectPhoto: function __selectPhoto(photo) {
+        this.setCurrentPhotoId(photo.id);
+      },
+      __currentEditionIsPublished: function __currentEditionIsPublished() {
+        if (empty(this.currentEdition)) {
+          return false;
+        }
+
+        return this.currentEdition.published_at;
+      },
+      __backup: function __backup() {
+        window.location = '/admin/backup';
+      }
+    }),
+    computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['currentArticles']), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+      editions: function editions(state) {
+        return state.editions;
+      },
+      busy: function busy(state) {
+        return state.busy;
+      },
+      filter: function filter(state) {
+        return state.filter;
+      },
+      orderBy: function orderBy(state) {
+        return state.orderBy;
+      },
+      currentEdition: function currentEdition(state) {
+        return state.currentEdition;
+      },
+      editionArticles: function editionArticles(state) {
+        return state.editionArticles;
+      },
+      editionArticlesOriginals: function editionArticlesOriginals(state) {
+        return state.editionArticlesOriginals;
+      },
+      newEdition: function newEdition(state) {
+        return state.newEdition;
+      },
+      newPhoto: function newPhoto(state) {
+        return state.newPhoto;
+      },
+      cleanNewPhoto: function cleanNewPhoto(state) {
+        return state.cleanNewPhoto;
+      },
+      iFrameUrl: function iFrameUrl(state) {
+        return state.iFrameUrl;
+      },
+      currentArticle: function currentArticle(state) {
+        return state.currentArticle;
+      },
+      timeout: function timeout(state) {
+        return state.timeout;
+      },
+      currentPhotoId: function currentPhotoId(state) {
+        return state.currentPhotoId;
+      },
+      currentPhoto: function currentPhoto(state) {
+        return state.currentPhoto;
+      },
+      currentPhotoOriginal: function currentPhotoOriginal(state) {
+        return state.currentPhotoOriginal;
+      },
+      editorialCopy: function editorialCopy(state) {
+        return state.editorialCopy;
+      }
+    }), {
+      editorial: {
+        get: function get() {
+          return this.$store.state.editorial;
+        },
+        set: function set(value) {
+          this.$store.commit('setEditorial', value);
+        }
+      }
+    }),
+    mounted: function mounted() {
+      this.__clearNewEdition();
+
+      this.__clearNewPhoto();
+
+      this.__loadEditions();
+
+      this.__loadEditorial();
+
+      this.__clearFilter();
+
+      jQuery('textarea').autogrow();
+    }
+  });
 }
 
 /***/ }),
 
 /***/ "./resources/assets/js/apps/parla.js":
+/*!*******************************************!*\
+  !*** ./resources/assets/js/apps/parla.js ***!
+  \*******************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 var appName = 'vue-parla';
 
 if (jQuery('#' + appName).length > 0) {
-    var app = new Vue({
-        el: '#' + appName,
+  var app = new Vue({
+    el: '#' + appName,
+    data: {
+      edition: {
+        columns: 3,
+        column_size: 4
+      },
+      tables: {
+        all: [],
+        featured: [],
+        nonFeatured: [],
+        editions: []
+      },
+      refreshing: false,
+      filler: false,
+      currentPost: {
+        laravel: Laravel.currentPost,
+        imported: null
+      },
+      search: '',
+      laravel: Laravel
+    },
+    computed: {
+      filteredFeaturedPosts: function filteredFeaturedPosts() {
+        return this.tables.featured;
+      },
+      filteredNonFeaturedPosts: function filteredNonFeaturedPosts() {
+        return this.tables.nonFeatured;
+      },
+      allFiltered: function allFiltered() {
+        var _this = this;
 
-        data: {
-            edition: {
-                columns: 3,
-                column_size: 4
-            },
+        return this.tables.all.filter(function (item) {
+          return _this.canShowItem(item);
+        });
+      },
+      editions: function editions() {
+        return _.orderBy(this.tables.editions, ['number'], ['desc']);
+      }
+    },
+    methods: {
+      canShowItem: function canShowItem(item) {
+        var can = this.search.length === 0 || item.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.lead.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.subtitle.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.body.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+        return can;
+      },
+      typeKeyUp: function typeKeyUp() {// clearTimeout(this.timeout)
+        //
+        // me = this
+        //
+        // this.timeout = setTimeout(function () {
+        //     me.refresh()
+        // }, 500)
+      },
+      clearSearch: function clearSearch() {
+        this.pesquisa = '';
+        this.refresh();
+      },
+      filter: function filter() {
+        this.advancedFilter = true;
+        this.refresh();
+      },
+      turnAdvancedFilterOff: function turnAdvancedFilterOff() {
+        this.advancedFilter = false;
+        this.refresh();
+      },
+      refreshTable: function refreshTable(table) {
+        me = this;
+        axios.get('/api/posts/' + this.laravel.currentEdition.id + '/' + table).then(function (response) {
+          me.tables[table] = response.data;
+        })["catch"](function (error) {
+          console.log(error);
+          me.tables[table] = [];
+        });
+      },
+      loadEditions: function loadEditions() {
+        me = this;
+        axios.get('/api/editions').then(function (response) {
+          me.tables.editions = response.data;
+        });
+      },
+      openProcesso: function openProcesso(id) {
+        window.location.href = '/processos/' + id;
+      },
+      count: function count(items) {
+        return Object.keys(items).length;
+      },
+      currentPostPhotos: function currentPostPhotos(items) {
+        Object.keys(items).length;
+      },
+      slice: function slice(items, start, end) {
+        var sliced = [];
 
-            tables: {
-                all: [],
-
-                featured: [],
-
-                nonFeatured: [],
-
-                editions: []
-            },
-
-            refreshing: false,
-
-            filler: false,
-
-            currentPost: {
-                laravel: Laravel.currentPost,
-                imported: null
-            },
-
-            search: '',
-
-            laravel: Laravel
-        },
-
-        computed: {
-            filteredFeaturedPosts: function filteredFeaturedPosts() {
-                return this.tables.featured;
-            },
-            filteredNonFeaturedPosts: function filteredNonFeaturedPosts() {
-                return this.tables.nonFeatured;
-            },
-            allFiltered: function allFiltered() {
-                var _this = this;
-
-                return this.tables.all.filter(function (item) {
-                    return _this.canShowItem(item);
-                });
-            },
-            editions: function editions() {
-                return _.orderBy(this.tables.editions, ['number'], ['desc']);
-            }
-        },
-
-        methods: {
-            canShowItem: function canShowItem(item) {
-                var can = this.search.length === 0 || item.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.lead.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.subtitle.toLowerCase().indexOf(this.search.toLowerCase()) > -1 || item.body.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
-
-                return can;
-            },
-            typeKeyUp: function typeKeyUp() {
-                // clearTimeout(this.timeout)
-                //
-                // me = this
-                //
-                // this.timeout = setTimeout(function () {
-                //     me.refresh()
-                // }, 500)
-            },
-            clearSearch: function clearSearch() {
-                this.pesquisa = '';
-
-                this.refresh();
-            },
-            filter: function filter() {
-                this.advancedFilter = true;
-
-                this.refresh();
-            },
-            turnAdvancedFilterOff: function turnAdvancedFilterOff() {
-                this.advancedFilter = false;
-
-                this.refresh();
-            },
-            refreshTable: function refreshTable(table) {
-                me = this;
-
-                axios.get('/api/posts/' + this.laravel.currentEdition.id + '/' + table).then(function (response) {
-                    me.tables[table] = response.data;
-                }).catch(function (error) {
-                    console.log(error);
-
-                    me.tables[table] = [];
-                });
-            },
-            loadEditions: function loadEditions() {
-                me = this;
-
-                axios.get('/api/editions').then(function (response) {
-                    me.tables.editions = response.data;
-                });
-            },
-            openProcesso: function openProcesso(id) {
-                window.location.href = '/processos/' + id;
-            },
-            count: function count(items) {
-                return Object.keys(items).length;
-            },
-            currentPostPhotos: function currentPostPhotos(items) {
-                Object.keys(items).length;
-            },
-            slice: function slice(items, start, end) {
-                var sliced = [];
-
-                for (var i = start + 1; i < end + 1; i++) {
-                    if (items[i]) {
-                        sliced.push(items[i]);
-                    }
-                }
-
-                return sliced;
-            },
-
-
-            refreshCurrentPost: function refreshCurrentPost() {
-                if (this.currentPost.laravel && this.currentPost.laravel.slug) {
-                    axios.get('/api/posts/' + this.currentPost.laravel.slug).then(function (response) {
-                        me.currentPost.imported = response.data;
-                    }).catch(function (error) {
-                        console.log(error);
-
-                        me.currentPost.imported = null;
-                    });
-                }
-            },
-
-            otherPhotosForLightbox: function otherPhotosForLightbox() {
-                if (!this.currentPost.imported || !this.currentPost.imported.other_photos) {
-                    return [];
-                }
-
-                return this.currentPost.imported.other_photos.map(function (photo) {
-                    return {
-                        thumb: photo.url_lowres,
-                        src: photo.url_hires,
-                        caption: photo.notes_and_author
-                    };
-                });
-            },
-
-
-            configureLightbox: function configureLightbox() {
-                lightbox.option({
-                    albumLabel: 'Foto %1 de %2'
-                });
-            }
-        },
-
-        mounted: function mounted() {
-            this.refreshTable('featured');
-
-            this.refreshTable('nonFeatured');
-
-            this.refreshTable('all');
-
-            this.loadEditions();
-
-            this.refreshCurrentPost();
-
-            this.configureLightbox();
+        for (var i = start + 1; i < end + 1; i++) {
+          if (items[i]) {
+            sliced.push(items[i]);
+          }
         }
-    });
+
+        return sliced;
+      },
+      refreshCurrentPost: function refreshCurrentPost() {
+        if (this.currentPost.laravel && this.currentPost.laravel.slug) {
+          axios.get('/api/posts/' + this.currentPost.laravel.slug).then(function (response) {
+            me.currentPost.imported = response.data;
+          })["catch"](function (error) {
+            console.log(error);
+            me.currentPost.imported = null;
+          });
+        }
+      },
+      otherPhotosForLightbox: function otherPhotosForLightbox() {
+        if (!this.currentPost.imported || !this.currentPost.imported.other_photos) {
+          return [];
+        }
+
+        return this.currentPost.imported.other_photos.map(function (photo) {
+          return {
+            thumb: photo.url_lowres,
+            src: photo.url_hires,
+            caption: photo.notes_and_author
+          };
+        });
+      },
+      configureLightbox: function configureLightbox() {
+        lightbox.option({
+          albumLabel: 'Foto %1 de %2'
+        });
+      }
+    },
+    mounted: function mounted() {
+      this.refreshTable('featured');
+      this.refreshTable('nonFeatured');
+      this.refreshTable('all');
+      this.loadEditions();
+      this.refreshCurrentPost();
+      this.configureLightbox();
+    }
+  });
 }
 
 /***/ }),
 
 /***/ "./resources/assets/js/bootstrap.js":
+/*!******************************************!*\
+  !*** ./resources/assets/js/bootstrap.js ***!
+  \******************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__("./resources/assets/js/helpers.js");
+__webpack_require__(/*! ./helpers */ "./resources/assets/js/helpers.js");
 
-window._ = __webpack_require__("./node_modules/lodash/lodash.js");
-
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -77208,41 +79834,36 @@ window._ = __webpack_require__("./node_modules/lodash/lodash.js");
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__("./node_modules/jquery/dist/jquery.js");
+  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-  __webpack_require__("./node_modules/autogrow/autogrow.js");
+  __webpack_require__(/*! autogrow */ "./node_modules/autogrow/autogrow.js");
 
-  __webpack_require__("./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
+  __webpack_require__(/*! bootstrap-sass */ "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
 } catch (e) {}
-
 /**
  * Vue
  */
 
-window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * Lightbox 2
  */
 
-window.lightbox = __webpack_require__("./node_modules/lightbox2/dist/js/lightbox.js");
-
+window.lightbox = __webpack_require__(/*! lightbox2 */ "./node_modules/lightbox2/dist/js/lightbox.js");
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__("./node_modules/axios/index.js");
-
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
 /**
  * Fullcalendar
  */
 
-window.fullcalendar = __webpack_require__("./node_modules/fullcalendar/dist/fullcalendar.js");
-
+window.fullcalendar = __webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/dist/fullcalendar.js");
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -77256,25 +79877,21 @@ if (token) {
 } else {
   console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
 /**
  * UUID v4
  */
 
-window.uuidv4 = __webpack_require__("./node_modules/uuid/v4.js");
 
-__webpack_require__("./resources/assets/js/store/adminStore.js");
+window.uuidv4 = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
 
+__webpack_require__(/*! ./store/adminStore */ "./resources/assets/js/store/adminStore.js");
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
-
 // import Echo from 'laravel-echo'
-
 // window.Pusher = require('pusher-js');
-
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key',
@@ -77285,39 +79902,41 @@ __webpack_require__("./resources/assets/js/store/adminStore.js");
 /***/ }),
 
 /***/ "./resources/assets/js/helpers.js":
+/*!****************************************!*\
+  !*** ./resources/assets/js/helpers.js ***!
+  \****************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 window.dd = function () {
-    for (i = 0; i < arguments.length; i++) {
-        console.log(arguments[i]);
-    }
+  for (i = 0; i < arguments.length; i++) {
+    console.log(arguments[i]);
+  }
 };
 
 window.unaccent = function (inStr) {
-    if (typeof inStr == 'string') {
-        return inStr.replace(/([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])/g, function (str, a, c, e, i, n, o, s, u, y, ae) {
-            if (a) return 'a';else if (c) return 'c';else if (e) return 'e';else if (i) return 'i';else if (n) return 'n';else if (o) return 'o';else if (s) return 's';else if (u) return 'u';else if (y) return 'y';else if (ae) return 'ae';
-        });
-    }
+  if (typeof inStr == 'string') {
+    return inStr.replace(/([àáâãäå])|([ç])|([èéêë])|([ìíîï])|([ñ])|([òóôõöø])|([ß])|([ùúûü])|([ÿ])|([æ])/g, function (str, a, c, e, i, n, o, s, u, y, ae) {
+      if (a) return 'a';else if (c) return 'c';else if (e) return 'e';else if (i) return 'i';else if (n) return 'n';else if (o) return 'o';else if (s) return 's';else if (u) return 'u';else if (y) return 'y';else if (ae) return 'ae';
+    });
+  }
 
-    return '';
+  return '';
 };
 
 window.uuid = function () {
-    function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-    }
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
 
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 };
 
 window.clone = function (obj) {
-    return JSON.parse(JSON.stringify(obj));
-};
-
-// --------------------------- empty()
+  return JSON.parse(JSON.stringify(obj));
+}; // --------------------------- empty()
 // dd(empty(false))
 // dd(empty(''))
 // dd(empty(' '))
@@ -77328,234 +79947,222 @@ window.clone = function (obj) {
 // dd(empty({}))
 // dd(empty(thisVariableDoesNotExists))
 
-window.empty = function (variable) {
-    if (variable === false || variable === null || variable === '' || typeof variable === 'undefined' || typeof variable === 'string' && variable.trim().length === 0 || variable instanceof Array && variable.length === 0 || (typeof variable === 'undefined' ? 'undefined' : _typeof(variable)) === 'object' && Object.keys(variable).length === 0 && variable.constructor === Object) {
-        return true;
-    }
 
-    return false;
+window.empty = function (variable) {
+  if (variable === false || variable === null || variable === '' || typeof variable === 'undefined' || typeof variable === 'string' && variable.trim().length === 0 || variable instanceof Array && variable.length === 0 || _typeof(variable) === 'object' && Object.keys(variable).length === 0 && variable.constructor === Object) {
+    return true;
+  }
+
+  return false;
 };
 
 window.findItemByValue = function (item, list, field) {
-    field = !field ? 'id' : field;
+  field = !field ? 'id' : field;
 
-    if (empty(list) || item === null) {
-        return null;
-    }
-
-    if ((typeof list === 'undefined' ? 'undefined' : _typeof(list)) === 'object') {
-        for (var key in list) {
-            if (list[key][field] === item) {
-                return list[key];
-            }
-        }
-    }
-
-    if (typeof list === 'array') {
-        for (var _i = 0; _i < list.length; _i++) {
-            if (list[_i][field] === item) {
-                return list[_i];
-            }
-        }
-    }
-
+  if (empty(list) || item === null) {
     return null;
+  }
+
+  if (_typeof(list) === 'object') {
+    for (var key in list) {
+      if (list[key][field] === item) {
+        return list[key];
+      }
+    }
+  }
+
+  if (typeof list === 'array') {
+    for (var _i = 0; _i < list.length; _i++) {
+      if (list[_i][field] === item) {
+        return list[_i];
+      }
+    }
+  }
+
+  return null;
 };
 
 /***/ }),
 
 /***/ "./resources/assets/js/store/adminStore.js":
+/*!*************************************************!*\
+  !*** ./resources/assets/js/store/adminStore.js ***!
+  \*************************************************/
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__("./node_modules/vuex/dist/vuex.esm.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /**
  * Vuex
  */
 
-
-
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */]);
-
-window.vuexAdminStore = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */].Store({
-    state: {
-        editions: [],
-
-        editorial: '',
-
-        editorialCopy: '',
-
-        busy: false,
-
-        filter: '',
-
-        orderBy: '',
-
-        timeout: null,
-
-        currentEdition: null,
-
-        currentArticle: null,
-
-        currentPhotoId: null,
-
-        currentPhoto: null,
-
-        currentPhotoOriginal: null,
-
-        currentArticleOriginal: null,
-
-        currentArticles: {},
-
-        editionArticles: [],
-
-        editionArticlesOriginals: [],
-
-        iFrameUrl: null,
-
-        newEdition: {
-            number: null,
-            year: null,
-            month: null
-        },
-
-        cleanNewPhoto: {
-            article_id: null,
-            author: '',
-            url_highres: '',
-            url_lowres: '',
-            notes: ''
-        },
-
-        newPhoto: null
+Vue.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
+window.vuexAdminStore = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
+  state: {
+    editions: [],
+    editorial: '',
+    editorialCopy: '',
+    busy: false,
+    filter: '',
+    orderBy: '',
+    timeout: null,
+    currentEdition: null,
+    currentArticle: null,
+    currentPhotoId: null,
+    currentPhoto: null,
+    currentPhotoOriginal: null,
+    currentArticleOriginal: null,
+    currentArticles: {},
+    editionArticles: [],
+    editionArticlesOriginals: [],
+    iFrameUrl: null,
+    newEdition: {
+      id: null,
+      number: null,
+      year: null,
+      month: null
     },
-
-    mutations: {
-        setEditions: function setEditions(state, payload) {
-            state.editions = payload;
-        },
-        setEditorial: function setEditorial(state, payload) {
-            state.editorial = payload;
-        },
-        setEditorialCopy: function setEditorialCopy(state, payload) {
-            state.editorialCopy = payload;
-        },
-        setBusy: function setBusy(state, payload) {
-            state.busy = payload;
-        },
-        setFilter: function setFilter(state, payload) {
-            state.filter = payload;
-        },
-        setOrderBy: function setOrderBy(state, payload) {
-            state.orderBy = payload;
-        },
-        setIFrameUrl: function setIFrameUrl(state, payload) {
-            state.iFrameUrl = payload;
-        },
-        setTimeout: function setTimeout(state, payload) {
-            state.timeout = payload;
-        },
-        setCurrentPhotoId: function setCurrentPhotoId(state, payload) {
-            state.currentPhotoId = payload;
-
-            if (state.currentPhotoId && state.currentArticle) {
-                state.currentPhoto = findItemByValue(state.currentPhotoId, state.currentArticle.photos, 'id');
-
-                state.currentPhotoOriginal = clone(state.currentPhoto);
-            }
-        },
-        setCurrentArticle: function setCurrentArticle(state, payload) {
-            Vue.set(state.currentArticles, state.currentEdition.id, payload);
-
-            state.currentArticle = state.currentArticles[state.currentEdition.id];
-
-            state.currentArticleOriginal = state.editionArticlesOriginals[state.currentEdition.id][payload.id];
-        },
-        updateCurrentArticleField: function updateCurrentArticleField(state, payload) {
-            Vue.set(state.currentArticles[state.currentEdition.id], payload.field, payload.value);
-        },
-        updateCurrentPhotoField: function updateCurrentPhotoField(state, payload) {
-            Vue.set(state.currentPhoto, payload.field, payload.value);
-        },
-        updateLead: function updateLead(state, payload) {
-            Vue.set(state.currentArticles[state.currentEdition.id], 'lead', payload);
-        },
-        updateLeadHtml: function updateLeadHtml(state, payload) {
-            Vue.set(state.currentArticles[state.currentEdition.id], 'lead_html', payload);
-        },
-        updateBodyHtml: function updateBodyHtml(state, payload) {
-            Vue.set(state.currentArticles[state.currentEdition.id], 'body_html', payload);
-        },
-        updateBody: function updateBody(state, payload) {
-            Vue.set(state.currentArticles[state.currentEdition.id], 'body', payload);
-        },
-        setEditionArticles: function setEditionArticles(state, payload) {
-            Vue.set(state.editionArticles, payload.editionId, payload.value);
-
-            Vue.set(state.editionArticlesOriginals, payload.editionId, clone(payload.value));
-        },
-        pushArticle: function pushArticle(state, payload) {
-            state.editionArticles[state.currentEdition.id].push(payload);
-
-            Vue.set(state.currentArticles, state.currentEdition.id, payload);
-
-            state.editionArticlesOriginals[state.currentEdition.id].push(clone(payload));
-        },
-        setCurrentArticleFeatured: function setCurrentArticleFeatured(state, payload) {
-            state.currentArticle.featured = payload;
-        },
-        clearNewEdition: function clearNewEdition(state, payload) {
-            state.newEdition = {
-                number: null,
-                year: null,
-                month: null
-            };
-        },
-        clearNewPhoto: function clearNewPhoto(state) {
-            state.newPhoto = clone(state.cleanNewPhoto);
-        },
-        fillNewPhotoArticle: function fillNewPhotoArticle(state, payload) {
-            state.newEdition.article_id = state.currentArticle.id;
-        },
-        setCurrentEdition: function setCurrentEdition(state, payload) {
-            state.currentEdition = payload;
-
-            state.currentArticle = empty(state.currentArticles) || empty(state.currentArticles[state.currentEdition.id]) ? null : state.currentArticles[state.currentEdition.id];
-        },
-        setNewEditionNumber: function setNewEditionNumber(state, payload) {
-            state.newEdition.number = payload;
-        },
-        setNewEditionYear: function setNewEditionYear(state, payload) {
-            state.newEdition.year = payload;
-        },
-        setNewEditionMonth: function setNewEditionMonth(state, payload) {
-            state.newEdition.month = payload;
-        },
-        setNewPhotoAuthor: function setNewPhotoAuthor(state, payload) {
-            state.newPhoto.author = payload;
-        },
-        setNewPhotoUrlLowres: function setNewPhotoUrlLowres(state, payload) {
-            state.newPhoto.url_lowres = payload;
-        },
-        setNewPhotoUrlHighres: function setNewPhotoUrlHighres(state, payload) {
-            state.newPhoto.url_highres = payload;
-        },
-        setNewPhotoNotes: function setNewPhotoNotes(state, payload) {
-            state.newPhoto.notes = payload;
-        }
+    cleanNewPhoto: {
+      article_id: null,
+      author: '',
+      url_highres: '',
+      url_lowres: '',
+      notes: ''
     },
+    newPhoto: null
+  },
+  mutations: {
+    setEditions: function setEditions(state, payload) {
+      state.editions = payload;
+    },
+    setEditorial: function setEditorial(state, payload) {
+      state.editorial = payload;
+    },
+    setEditorialCopy: function setEditorialCopy(state, payload) {
+      state.editorialCopy = payload;
+    },
+    setBusy: function setBusy(state, payload) {
+      state.busy = payload;
+    },
+    setFilter: function setFilter(state, payload) {
+      state.filter = payload;
+    },
+    setOrderBy: function setOrderBy(state, payload) {
+      state.orderBy = payload;
+    },
+    setIFrameUrl: function setIFrameUrl(state, payload) {
+      state.iFrameUrl = payload;
+    },
+    setTimeout: function setTimeout(state, payload) {
+      state.timeout = payload;
+    },
+    setCurrentPhotoId: function setCurrentPhotoId(state, payload) {
+      state.currentPhotoId = payload;
 
-    getters: {
-        currentArticles: function currentArticles(state, getters) {
-            return empty(state.editionArticles) || empty(state.currentEdition) || empty(state.editionArticles[state.currentEdition.id]) ? [] : state.editionArticles[state.currentEdition.id];
-        }
+      if (state.currentPhotoId && state.currentArticle) {
+        state.currentPhoto = findItemByValue(state.currentPhotoId, state.currentArticle.photos, 'id');
+        state.currentPhotoOriginal = clone(state.currentPhoto);
+      }
+    },
+    setCurrentArticle: function setCurrentArticle(state, payload) {
+      Vue.set(state.currentArticles, state.currentEdition.id, payload);
+      state.currentArticle = state.currentArticles[state.currentEdition.id];
+      state.currentArticleOriginal = state.editionArticlesOriginals[state.currentEdition.id][payload.id];
+    },
+    updateCurrentArticleField: function updateCurrentArticleField(state, payload) {
+      Vue.set(state.currentArticles[state.currentEdition.id], payload.field, payload.value);
+    },
+    updateCurrentPhotoField: function updateCurrentPhotoField(state, payload) {
+      Vue.set(state.currentPhoto, payload.field, payload.value);
+    },
+    updateLead: function updateLead(state, payload) {
+      Vue.set(state.currentArticles[state.currentEdition.id], 'lead', payload);
+    },
+    updateLeadHtml: function updateLeadHtml(state, payload) {
+      Vue.set(state.currentArticles[state.currentEdition.id], 'lead_html', payload);
+    },
+    updateBodyHtml: function updateBodyHtml(state, payload) {
+      Vue.set(state.currentArticles[state.currentEdition.id], 'body_html', payload);
+    },
+    updateBody: function updateBody(state, payload) {
+      Vue.set(state.currentArticles[state.currentEdition.id], 'body', payload);
+    },
+    setEditionArticles: function setEditionArticles(state, payload) {
+      Vue.set(state.editionArticles, payload.editionId, payload.value);
+      Vue.set(state.editionArticlesOriginals, payload.editionId, clone(payload.value));
+    },
+    pushArticle: function pushArticle(state, payload) {
+      state.editionArticles[state.currentEdition.id].push(payload);
+      Vue.set(state.currentArticles, state.currentEdition.id, payload);
+      state.editionArticlesOriginals[state.currentEdition.id].push(clone(payload));
+    },
+    setCurrentArticleFeatured: function setCurrentArticleFeatured(state, payload) {
+      state.currentArticle.featured = payload;
+    },
+    clearNewEdition: function clearNewEdition(state, payload) {
+      state.newEdition = {
+        id: null,
+        number: null,
+        year: null,
+        month: null
+      };
+    },
+    loadNewEditionData: function loadNewEditionData(state, payload) {
+      state.newEdition = {
+        id: payload.id,
+        number: payload.number,
+        year: payload.year,
+        month: payload.month
+      };
+    },
+    clearNewPhoto: function clearNewPhoto(state) {
+      state.newPhoto = clone(state.cleanNewPhoto);
+    },
+    fillNewPhotoArticle: function fillNewPhotoArticle(state, payload) {
+      state.newEdition.article_id = state.currentArticle.id;
+    },
+    setCurrentEdition: function setCurrentEdition(state, payload) {
+      state.currentEdition = payload;
+      state.currentArticle = empty(state.currentArticles) || empty(state.currentArticles[state.currentEdition.id]) ? null : state.currentArticles[state.currentEdition.id];
+    },
+    setNewEditionNumber: function setNewEditionNumber(state, payload) {
+      state.newEdition.number = payload;
+    },
+    setNewEditionYear: function setNewEditionYear(state, payload) {
+      state.newEdition.year = payload;
+    },
+    setNewEditionMonth: function setNewEditionMonth(state, payload) {
+      state.newEdition.month = payload;
+    },
+    setNewPhotoAuthor: function setNewPhotoAuthor(state, payload) {
+      state.newPhoto.author = payload;
+    },
+    setNewPhotoUrlLowres: function setNewPhotoUrlLowres(state, payload) {
+      state.newPhoto.url_lowres = payload;
+    },
+    setNewPhotoUrlHighres: function setNewPhotoUrlHighres(state, payload) {
+      state.newPhoto.url_highres = payload;
+    },
+    setNewPhotoNotes: function setNewPhotoNotes(state, payload) {
+      state.newPhoto.notes = payload;
     }
+  },
+  getters: {
+    currentArticles: function currentArticles(state, getters) {
+      return empty(state.editionArticles) || empty(state.currentEdition) || empty(state.editionArticles[state.currentEdition.id]) ? [] : state.editionArticles[state.currentEdition.id];
+    }
+  }
 });
 
 /***/ }),
 
 /***/ "./resources/assets/sass/app.scss":
+/*!****************************************!*\
+  !*** ./resources/assets/sass/app.scss ***!
+  \****************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -77563,10 +80170,14 @@ window.vuexAdminStore = new __WEBPACK_IMPORTED_MODULE_0_vuex__["a" /* default */
 /***/ }),
 
 /***/ 0:
+/*!***************************************************************************!*\
+  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__("./resources/assets/js/app.js");
-module.exports = __webpack_require__("./resources/assets/sass/app.scss");
+__webpack_require__(/*! /Users/antoniocarlosribeiro/code/alerj/parla/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/antoniocarlosribeiro/code/alerj/parla/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
 
 
 /***/ })

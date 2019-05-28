@@ -7,7 +7,7 @@
                         <div class="btn-toolbar">
                             @{{ editions.length }} edições
 
-                            <div class="btn btn-danger btn-sm pull-right" data-toggle="modal" data-target="#add-edition-modal">
+                            <div class="btn btn-danger btn-sm pull-right" data-toggle="modal" @click="__clearNewEdition()" data-target="#add-edition-modal">
                                 <i class="fa fa-plus"></i>
                             </div>
 
@@ -31,16 +31,27 @@
                             <ul class="list-group">
                                 <li v-for="edition in __filteredEditions()" @click="busy ? false : __selectEdition(edition, true)" :class="'list-group-item cursor-pointer bg-info ' + (currentEdition && currentEdition.id == edition.id ? 'active' : '')">
                                     <div class="row">
-                                        <div class="col-xs-9">
+                                        <div class="col-xs-8">
                                             <span v-if="edition.published_at"><i class="fa fa-check"></i></span>
                                             <span v-if="!edition.published_at"><i class="fa fa-ban"></i></span>
 
                                             Parla @{{ edition.number }} - @{{ edition.year }}/@{{ edition.month }}
                                         </div>
-                                        <div class="col-xs-3 text-right">
-                                            <span v-if="currentEdition && currentEdition.id === edition.id && busy">
-                                                <i class="fa fa-cog fa-spin"></i>
-                                            </span>
+
+                                        <div class="col-xs-4 text-right">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <span v-if="currentEdition && currentEdition.id === edition.id && busy">
+                                                        <i class="fa fa-cog fa-spin"></i>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-xs-9 pull-right">
+                                                    <button class="pull-right btn btn-sm btn-danger" @click="__loadNewEditionData(edition)" data-toggle="modal" data-target="#edit-edition-modal">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -200,70 +211,17 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="add-edition-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Nova edição</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-xs-6 text-right">
-                                <label>Parla número</label>
-                            </div>
-                            <div class="col-xs-6">
-                                <input
-                                    type="text"
-                                    :value="newEdition.number"
-                                    @input="setNewEditionNumber($event.target.value)"
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-xs-6 text-right">
-                                <label>Ano</label>
-                            </div>
-                            <div class="col-xs-6">
-                                <input
-                                    type="text"
-                                    :value="newEdition.year"
-                                    @input="setNewEditionYear($event.target.value)"
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-xs-6 text-right">
-                                <label>Mês</label>
-                            </div>
-                            <div class="col-xs-6">
-                                <input
-                                    type="text"
-                                    :value="newEdition.month"
-                                    @input="setNewEditionMonth($event.target.value)"
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" @click="__createNewEdition()">Gravar</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
+    <div class="modal fade" id="add-edition-modal" tabindex="-1" role="dialog">
+        @include('admin.home.partials.edit-edition-modal', ['mode' => 'create'])
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="add-photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="edit-edition-modal" tabindex="-1" role="dialog">
+        @include('admin.home.partials.edit-edition-modal', ['mode' => 'edit'])
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="add-photo-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

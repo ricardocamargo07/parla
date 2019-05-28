@@ -20,17 +20,21 @@ class Articles
 
         $nextCode = 0;
 
-        $article->edition->articles->sortBy('order')->each(function (
-            $article
-        ) use (&$lastOrder, &$wasFixed, &$nextCode) {
-            $nextCode++;
+        $article->edition->articles
+            ->sortBy('order')
+            ->each(function ($article) use (
+                &$lastOrder,
+                &$wasFixed,
+                &$nextCode
+            ) {
+                $nextCode++;
 
-            if ($article->order !== $nextCode) {
-                $article->order = $nextCode;
-                $article->save();
-                $wasFixed = true;
-            }
-        });
+                if ($article->order !== $nextCode) {
+                    $article->order = $nextCode;
+                    $article->save();
+                    $wasFixed = true;
+                }
+            });
 
         return $wasFixed;
     }
@@ -67,7 +71,7 @@ class Articles
         return Edition::where(
             'number',
             $number === 'last'
-                ? ($this->getLastEdition()->number ?? null)
+                ? $this->getLastEdition()->number ?? null
                 : $number
         )
             ->take(1)
@@ -160,7 +164,7 @@ class Articles
             'year' => $article->edition->year,
             'month' => $article->edition->month,
             'number' => $article->edition->number,
-            'slug' => $slug = $article->slug
+            'slug' => ($slug = $article->slug)
         ]);
 
         $article['authors_string'] = $this->makeAuthorsString(
@@ -213,9 +217,7 @@ class Articles
                 $notes .
                 (!empty($notes) && !empty($author) ? " (Foto: $author)" : '');
 
-            $photo['author_credits'] = (!empty($author)
-                ? "(Foto: $author)"
-                : '');
+            $photo['author_credits'] = !empty($author) ? "(Foto: $author)" : '';
 
             return $photo;
         });
@@ -302,6 +304,17 @@ class Articles
     public function createNewEdition($data)
     {
         Edition::create($data);
+
+        return $this->editions();
+    }
+
+    public function updateEdition($id, $data)
+    {
+        $edition = Edition::find($id);
+
+        $edition->fill($data);
+
+        $edition->save();
 
         return $this->editions();
     }

@@ -41,6 +41,7 @@ if (jQuery('#' + appName).length > 0) {
                 __pushArticle: 'pushArticle',
                 __setCurrentArticleFeatured: 'setCurrentArticleFeatured',
                 __clearNewEdition: 'clearNewEdition',
+                __loadNewEditionData: 'loadNewEditionData',
                 __clearNewPhoto: 'clearNewPhoto',
                 __setCurrentEdition: 'setCurrentEdition',
                 __setEditionArticles: 'setEditionArticles',
@@ -493,6 +494,16 @@ if (jQuery('#' + appName).length > 0) {
                         me.__selectCurrentOrLastEdition(true)
 
                         me.__clearNewEdition()
+                    })
+            },
+
+            __updateNewEdition() {
+                const me = this
+
+                axios
+                    .post('/api/editions/'+this.newEdition.id, this.newEdition)
+                    .then(function(response) {
+                        me.setEditions(response.data)
                     })
             },
 

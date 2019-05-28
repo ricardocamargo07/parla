@@ -1,13 +1,21 @@
 <?php
+
 use Illuminate\Http\Request;
-use App\Data\Repositories\Articles as ArticlesRepository;
 use App\Data\Repositories\Photos as PhotosRepository;
+use App\Data\Repositories\Articles as ArticlesRepository;
 use App\Data\Repositories\Editorial as EditorialRepository;
 
 Route::group(['prefix' => '/editions'], function () {
     Route::get('/', function () {
         return app(ArticlesRepository::class)->editions(
             request()->get('allowUnpublished')
+        );
+    });
+
+    Route::post('/{id}', function (Request $request, $id) {
+        return app(ArticlesRepository::class)->updateEdition(
+            $id,
+            $request->all()
         );
     });
 
@@ -64,8 +72,8 @@ Route::get('/posts/{slug}', function ($slug) {
 
 Route::post('/markdown/to/html', function (Request $request) {
     return [
-        'lead' => $markdown = $request->get('lead'),
-        'body' => $markdown = $request->get('body'),
+        'lead' => ($markdown = $request->get('lead')),
+        'body' => ($markdown = $request->get('body')),
         'lead_html' => app(App\Services\Markdown\Service::class)->convert(
             $request->get('lead')
         ),
