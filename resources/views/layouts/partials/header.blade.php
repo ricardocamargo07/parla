@@ -13,6 +13,11 @@
             <div class="header-right-inner parla-edition aligner-item">
                 Parla n&ordm; @{{ this.laravel.currentEdition.number }} - @{{ this.laravel.currentEdition.month_name }} de @{{ this.laravel.currentEdition.year }}
             </div>
+
+            <div class="header-right-inner parla-edition aligner-item">
+                Balanço das atividades da Alerj
+            </div>
+
         </div>
     </div>
 </div>
